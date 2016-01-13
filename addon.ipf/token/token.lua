@@ -131,7 +131,7 @@ function BEFORE_APPLIED_BOOST_TOKEN_OPEN(invItem)
 	imag = string.format("{img 2multiply_image %d %d}", 55, 45) 
 	prop:SetTextByKey("value",imag .. ClMsg("token_staup")); 
 	local value = ctrlSet:GetChild("value");
-	value:SetTextByKey("value", string.format("{img 2multiply_image2 %d %d}", 100, 45) ); 
+	value:SetTextByKey("value", string.format("{img 2plus_image2 %d %d}", 100, 45) ); 
 
 	GBOX_AUTO_ALIGN(gBox, 0, 3, 0, true, false);
 	local itemobj = GetIES(invItem:GetObject());
