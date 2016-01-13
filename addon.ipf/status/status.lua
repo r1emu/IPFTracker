@@ -1372,8 +1372,9 @@ function STATUS_ACHIEVE_INIT(frame)
 				--eachAchiveCSet:SetEventScript(ui.LBUTTONDOWN, "ACHIEVE_EQUIP");
 				--eachAchiveCSet:SetEventScriptArgNumber(ui.LBUTTONDOWN, cls.ClassID);
 				--eachAchiveCSet:SetTextTooltip(ScpArgMsg('YouCanEquipAchieve'));
-
-				if etcObj['AchieveReward_' .. cls.ClassName] == 0 then
+				local etcObjValue = TryGetProp(etcObj, 'AchieveReward_' .. cls.ClassName);
+				--if etcObj['AchieveReward_' .. cls.ClassName] == 0 then
+				if etcObjValue ~= nil and etcObjValue == 0 then
 					eachAchiveReqBtn:ShowWindow(1);
 				end
 			else
