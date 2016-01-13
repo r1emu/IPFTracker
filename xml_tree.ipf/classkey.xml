@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by IMC (IMCGames Co., Ltd) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <ClassKey>
 	<KeyIDSpc Name="Party">
 		<Key Name="UseLevelLimit" Value="0"/>
@@ -8336,8 +8336,10 @@
 		<Key Name="Hide_1638" Value="10092"/>
 		<Key Name="Hide_1639" Value="10093"/>
 		<Key Name="Hide_1640" Value="10095"/>
-          <Key Name="Hide_1641" Value="10096"/>
-	</KeyIDSpc>
+		<Key Name="Hide_1641" Value="10096"/>
+	<Key Name="InDunCountType_100" Value="10105"/>
+        <Key Name="InDunCountType_200" Value="10106"/>
+        </KeyIDSpc>
 	<KeyIDSpc Name="Account">
 		<Key Name="MaxPVPGrade" Value="6299"/>
 		<Key Name="Medal" Value="6300"/>
@@ -9590,6 +9592,7 @@
 		<Key Name="UseAbility" Value="9295"/>
 		<Key Name="KeyWord_2" Value="9721"/>
 		<Key Name="KeyWord_3" Value="9794"/>
+		<Key Name="AllowDuplicate" Value="10097"/>
 	</KeyIDSpc>
 	<KeyIDSpc Name="Guild">
 		<Key Name="MaxCount" Value="7691"/>

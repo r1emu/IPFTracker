@@ -110,12 +110,12 @@ function TOKEN_ON_MSG(frame, msg, argStr, argNum)
 	end
 	end
 
-	local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 5,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
-	local prop = ctrlSet:GetChild("prop");
-	local imag = string.format("{img dealok_image %d %d}", 55, 45) 
-	prop:SetTextByKey("value", imag..ClMsg("CantTradeAbility")); 
-	local value = ctrlSet:GetChild("value");
-	value:ShowWindow(0);
+--local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 5,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
+--local prop = ctrlSet:GetChild("prop");
+--local imag = string.format("{img dealok_image %d %d}", 55, 45) 
+--prop:SetTextByKey("value", imag..ClMsg("CantTradeAbility")); 
+--local value = ctrlSet:GetChild("value");
+--value:ShowWindow(0);
 	
 	GBOX_AUTO_ALIGN(tokenList, 0, 0, 0, false, false);
 end

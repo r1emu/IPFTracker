@@ -12845,7 +12845,7 @@ return IMCRandom(300, 1000) * 0.001;"/>
                 </Cond>
                 <Exec>
                     <ToolScp Scp="SH_USE_PCSKILL" Client="NO" UseSleep="NO">
-                        <Str Str="Cryomancer_Gust"/>
+                        <Str Str="MonPCSKill_Cryomancer_Gust"/>
                         <Num Num="3"/>
                         <Num Num="1"/>
                     </ToolScp>

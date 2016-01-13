@@ -49,12 +49,12 @@ function BEFORE_APPLIED_TOKEN_OPEN(invItem)
 		value:SetTextByKey("value", txt); 
 	end
 
-	local ctrlSet = gBox:CreateControlSet("tokenDetail", "CTRLSET_" .. 5,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
-	local prop = ctrlSet:GetChild("prop");
-	local imag = string.format("{img dealok_image %d %d}", 55, 45) 
-	prop:SetTextByKey("value", imag..ClMsg("CantTradeAbility")); 
-	local value = ctrlSet:GetChild("value");
-	value:ShowWindow(0);
+--local ctrlSet = gBox:CreateControlSet("tokenDetail", "CTRLSET_" .. 5,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
+--local prop = ctrlSet:GetChild("prop");
+--local imag = string.format("{img dealok_image %d %d}", 55, 45) 
+--prop:SetTextByKey("value", imag..ClMsg("CantTradeAbility")); 
+--local value = ctrlSet:GetChild("value");
+--value:ShowWindow(0);
 
 	GBOX_AUTO_ALIGN(gBox, 0, 3, 0, true, false);
 	local itemobj = GetIES(invItem:GetObject());
@@ -67,6 +67,14 @@ function BEFORE_APPLIED_TOKEN_OPEN(invItem)
 		arg1 = 604800 -- 7일
 	elseif itemobj.ClassName == "PremiumToken_24h" then
 		arg1 = 86400 -- 1일
+	elseif itemobj.ClassName == "PremiumToken_3d" then
+		arg1 = 259200 -- 3일
+	elseif itemobj.ClassName == "PremiumToken_12h" then
+		arg1 = 43200 -- 12시간
+	elseif itemobj.ClassName == "PremiumToken_6h" then
+		arg1 = 21600 -- 6시간
+	elseif itemobj.ClassName == "PremiumToken_3h" then
+		arg1 = 10800 -- 3시간
 	end
 	local endTime = GET_TIME_TXT(arg1, 1)
 	local endTxt = frame:GetChild("endTime");

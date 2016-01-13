@@ -44,4 +44,4 @@
 		<richtext name="friendnoticetext" parent="friend" rect="0 0 20 20" margin="0 0 0 0" layout_gravity="left top" caption="13" fixwidth="false" hittest="false" resizebytext="true" textalign="left center"/>
 		<queue name="alarmqueue" rect="0 0 44 44" margin="0 1000 0 0" layout_gravity="center top" skin="None"/>
 	</controls>
-</uiframe>
+</uiframe
