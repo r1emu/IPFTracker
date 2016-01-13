@@ -405,4 +405,13 @@ function ABIL_FEATHERFOOTREGENERATE_PRICE(pc, abilName, abilLevel, maxLevel)
 	return price, time;
 	
 end
+
+function ABIL_QUARRELSHOOTER9_PRICE(pc, abilName, abilLevel, maxLevel)
+    
+    local price = 1100 + (abilLevel-1) * 100;
+    local time = 60 + (abilLevel-1) * 10;
+    
+	return price, time;
+	
+end
 
