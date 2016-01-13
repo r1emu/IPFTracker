@@ -12,5 +12,5 @@ function INPUT_TEAMNAME_EXEC(parent, ctrl)
 	barrack.ChangeBarrackName(input:GetText());
 	btn:SetEnable(0);
 
-end
-
+	frame:SetUserValue("BeforName", "");
+end
