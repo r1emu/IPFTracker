@@ -316,8 +316,7 @@ function REQ_TOKEN_ITEM(frame, ctrl)
 
 	local find = string.find(argList, "PremiumToken");
 	if find ~= nil then
-		local accountObj = GetMyAccountObj();
-		if accountObj.TokenTime ~= "None" then
+		if true == session.loginInfo.IsPremiumState(ITEM_TOKEN) then
 			ui.MsgBox(ClMsg("IsAppliedToken"));
 			return;
 		end
