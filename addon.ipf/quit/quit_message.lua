@@ -20,24 +20,4 @@ function ON_MEDAL_PRESENTED(frame, msg, name, medalCnt)
 	local msg = ScpArgMsg( "Presented{Count}MedalTo{Receiver}", "Count", medalCnt, "Receiver", name);
 	ui.SysMsg("{#FFFF00}" .. msg);
 
-end
-
-function ON_FAIL_GIFTMEDAL(frame, msg, name, errorType)
-	
-	-- errorrType
-	-- 1 : 줄 수 있는 다이아가 다 떨어졌을때.
-	-- 2 : 받을 수 있는 다이아가 끝났을때
-
-
-	if errorType == 1 then
-
-		local msg = ScpArgMsg( "{Giver}NotenoughGiftMedal", "Giver", name);
-		ui.SysMsg("{#FFFF00}" .. msg);
-
-	elseif errorType == 2 then
-
-		local msg = ScpArgMsg( "{Receiver}isfullreceiveGiftMedal", "Receiver", name);
-		ui.SysMsg("{#FFFF00}" .. msg);
-	end
-	
-en
+end
