@@ -163,7 +163,8 @@ function SET_BUFF_SLOT(slot, capt, class, buffType, handle, slotlist, buffIndex)
 		else
 			argNum = ITEM_TOKEN;
 		end
-		icon:SetTooltipNumArg(argNum);
+
+		icon:SetTooltipArg(argNum, buffType, "");
 	else
 	icon:SetTooltipType('buff');
 	icon:SetTooltipArg(handle, buffType, "");
@@ -286,7 +287,7 @@ function COMMON_BUFF_MSG(frame, msg, buffType, handle, buff_ui, buffIndex)
 			if slot:IsVisible() == 1 then
 				local oldBuffIndex = oldIcon:GetUserIValue("BuffIndex");			
 				local iconInfo = oldIcon:GetInfo();
-				if iconInfo.type == buffType then -- and oldBuffIndex == buffIndex then
+				if iconInfo.type == buffType then
 					CLEAR_BUFF_SLOT(slot, text);
 					local j = GET_BUFF_ARRAY_INDEX(i, colcnt);
 					PULL_BUFF_SLOT_LIST(slotlist, captionlist, j, slotcount, colcnt, buffIndex);
