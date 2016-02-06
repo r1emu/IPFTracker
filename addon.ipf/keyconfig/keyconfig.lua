@@ -122,7 +122,7 @@ end
 function KEYCONFIG_SAVE_INPUT(frame)
 
 	if frame:GetUserValue("EDITING") ~= "YES" then
-		return false;
+		return;
 	end
 
 	frame:SetUserValue("EDITING", "NO");
@@ -150,11 +150,7 @@ function KEYCONFIG_SAVE_INPUT(frame)
 		local useCtrl = txt_key:GetUserValue("UseCtrl");
 		local key = txt_key:GetUserValue("Key");
 		if key == "" then
-			return false;
-		end
-
-		if config.IsOverlapHotKeyInConfig(key, useShift, useAlt, useCtrl) == true then
-			return false;
+			return;
 		end
 
 		config.SetHotKeyElementAttributeForConfig(idx, "Key", key);
@@ -171,41 +167,12 @@ function KEYCONFIG_SAVE_INPUT(frame)
 		
 	end
 
-	return true;
-
-end
-
-function KEYCONFIG_GET_RESTORE_HOTKEY(frame, txt_key)
-	local id = frame:GetUserValue("ID");
-	local bg_key = GET_CHILD(frame, "bg_key");
-	local bg_keylist = GET_CHILD(bg_key, "bg_keylist");
-	local ctrlSet = GET_CHILD_BY_USERVALUE(bg_keylist, "ID", id);
-	
-	if ctrlSet ~= nil then
-		local idx = config.GetHotKeyElementIndex("ID", id);
-
-		local key = config.GetHotKeyElementAttributeForConfig(idx, "Key");
-		if key == "" then
-			return;
-		end
-
-		local useShift = config.GetHotKeyElementAttributeForConfig(idx, "UseShift");
-		local useAlt = config.GetHotKeyElementAttributeForConfig(idx, "UseAlt");
-		local useCtrl = config.GetHotKeyElementAttributeForConfig(idx, "UseCtrl");
-
-		txt_key:SetUserValue("Key", key);
-		txt_key:SetUserValue("UseShift", useShift);
-		txt_key:SetUserValue("UseAlt", useAlt);
-		txt_key:SetUserValue("UseCtrl", useCtrl);
-
-		KEYCONFIG_UPDATE_KEY_TEXT(txt_key);
-	end
 end
 
 function KEYCONFIG_END_INPUT(frame)
 
 		keyboard.EnableHotKey(true);
-		local result = KEYCONFIG_SAVE_INPUT(frame);
+		KEYCONFIG_SAVE_INPUT(frame);
 
 		local id = frame:GetUserValue("ID");
 		local bg_key = GET_CHILD(frame, "bg_key");
@@ -214,10 +181,6 @@ function KEYCONFIG_END_INPUT(frame)
 		if ctrlSet ~= nil then
 			local txt_key = GET_CHILD(ctrlSet, "txt_key");
 			txt_key:SetSkinName("base_btn");
-			
-			if result == false then
-				KEYCONFIG_GET_RESTORE_HOTKEY(frame, txt_key);
-			end
 		end
 
 		if string.find(id, "QuickSlotExecute") ~= nil then
@@ -399,7 +362,6 @@ function KEYCONFIG_RESTORE_DEFAULT(parent)
 	
 	
 end
-
 
 
 
