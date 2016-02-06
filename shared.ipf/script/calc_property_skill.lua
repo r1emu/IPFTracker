@@ -180,13 +180,20 @@ function SCR_Get_SpendSP_Bow(skill)
 	end
 	
 	local abilAddSP = GetAbilityAddSpendValue(pc, skill.ClassName, "SP");
-	basicsp = basicsp + abilAddSP - decsp;
+	local value = basicsp + abilAddSP
 	
-	if basicsp < 1 then
-		basicsp = 1;
+		if IsBuffApplied(pc, 'SteadyAim_Buff') == 'YES' then
+		  local aimSkill = GetSkill(pc, 'Ranger_SteadyAim')
+	    value = value * (0.9 - (0.01 * aimSkill.Level))
+    end
+	
+	  value = value - decsp;
+	
+	if value < 1 then
+		value = 1;
 	end
     
-	return math.floor(basicsp)
+	return math.floor(value)
 
 end
 
@@ -3520,6 +3527,106 @@ function SCR_GET_HoverBomb_Ratio2(skill)
 
 	local pc = GetSkillOwner(skill);
 	local abil = GetAbility(pc, "Sapper27") 
+	local value = 0
+	if abil ~= nil then 
+        return value + abil.Level
+    end
+
+end
+
+function SCR_Get_SkillFactor_Coursing(skill)
+
+	local pc = GetSkillOwner(skill);
+	local value = skill.SklFactor
+
+	local abil = GetAbility(pc, "Hunter9")      -- Skill Damage add
+    if abil ~= nil then
+        value = value + (value * (abil.Level * 0.01))
+    end
+
+    return math.floor(value)
+
+end
+
+function SCR_GET_Coursing_Ratio2(skill)
+
+	local pc = GetSkillOwner(skill);
+	local abil = GetAbility(pc, "Hunter9") 
+	local value = 0
+	if abil ~= nil then 
+        return value + abil.Level
+    end
+
+end
+
+function SCR_Get_SkillFactor_Snatching(skill)
+
+	local pc = GetSkillOwner(skill);
+	local value = skill.SklFactor
+
+	local abil = GetAbility(pc, "Hunter10")      -- Skill Damage add
+    if abil ~= nil then
+        value = value + (value * (abil.Level * 0.01))
+    end
+
+    return math.floor(value)
+
+end
+
+function SCR_GET_Snatching_Ratio(skill)
+
+	local pc = GetSkillOwner(skill);
+	local abil = GetAbility(pc, "Hunter10") 
+	local value = 0
+	if abil ~= nil then 
+        return value + abil.Level
+    end
+
+end
+
+function SCR_Get_SkillFactor_RushDog(skill)
+
+	local pc = GetSkillOwner(skill);
+	local value = skill.SklFactor
+
+	local abil = GetAbility(pc, "Hunter11")      -- Skill Damage add
+    if abil ~= nil then
+        value = value + (value * (abil.Level * 0.01))
+    end
+    
+    return math.floor(value)
+
+end
+
+function SCR_GET_RushDog_Ratio(skill)
+
+	local pc = GetSkillOwner(skill);
+	local abil = GetAbility(pc, "Hunter11") 
+	local value = 0
+	if abil ~= nil then 
+        return value + abil.Level
+    end
+
+end
+
+function SCR_Get_SkillFactor_Retrieve(skill)
+
+	local pc = GetSkillOwner(skill);
+	local value = skill.SklFactor
+
+	local abil = GetAbility(pc, "Hunter12")      -- Skill Damage add
+    if abil ~= nil then
+        value = value + (value * (abil.Level * 0.01))
+    end
+
+    return math.floor(value)
+
+end
+
+function SCR_GET_Retrieve_Ratio2(skill)
+
+	local pc = GetSkillOwner(skill);
+	local abil = GetAbility(pc, "Hunter12") 
 	local value = 0
 	if abil ~= nil then 
         return value + abil.Level
@@ -7061,20 +7168,7 @@ end
 function SCR_Get_SteadyAim_Ratio(skill)
 
     local pc = GetSkillOwner(skill);
-    local value = 7.7 + (skill.Level - 1) * 1.9
-
-    local Ranger21_abil = GetAbility(pc, "Ranger21")    -- 2rank Skill Damage multiple
-    local Ranger22_abil = GetAbility(pc, "Ranger22")    -- 3rank Skill Damage multiple
-    if Ranger22_abil ~= nil then
-        value = value * 1.44
-    elseif Ranger22_abil == nil and Ranger21_abil ~= nil then
-        value = value * 1.38
-    end
-
-    local Ranger14_abil = GetAbility(pc, 'Ranger14');
-    if Ranger14_abil ~= nil then
-        value = value + Ranger14_abil.Level * 2;
-    end
+    local value = 3 * skill.Level
 
     return math.floor(value)
 
@@ -7082,12 +7176,22 @@ end
 
 function SCR_Get_SteadyAim_Ratio2(skill)
 
-    local value = 15 - (skill.Level - 1);
+    local pc = GetSkillOwner(skill)
+    local value = 0
     
-    if value < 0 then
-        value = 0;
+    local Ranger14_abil = GetAbility(pc, 'Ranger14');
+    if Ranger14_abil ~= nil then
+        value = value + Ranger14_abil.Level * 2;
     end
     
+    return value
+
+end
+
+function SCR_Get_SteadyAim_BuffTime(skill)
+
+    local value = 10 + skill.Level
+
     return value
 
 end
@@ -7604,7 +7708,7 @@ end
 
 function SCR_GET_PsychicPressure_Ratio2(skill)
 
-	return 5 - skill.Level * 0.1
+	return 1
 end
 
 function SCR_GET_GravityPole_Ratio(skill)

@@ -305,7 +305,7 @@ function SCR_REFRESH_WEAPON(item)
 		if zero ~= item.MINATK_AC then
 			item.MINATK = item.MINATK + item.MINATK_AC;
 		end
-    else
+    elseif basicProp == 'MATK' then
         if item.DBLHand == "YES" then
             itemATK = itemATK * 1.3;
         end
