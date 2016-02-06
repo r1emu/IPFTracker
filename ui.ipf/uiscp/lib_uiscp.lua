@@ -488,4 +488,16 @@ function GET_QUEST_NPC_NAMES(mapname, npclist, statelist, questIESList, questPro
 		end
 	end
 
-en
+end
+
+function GET_JOB_ICON(job)
+
+	local cls = GetClassByType("Job", job);
+	if cls == nil then
+		return "None";
+	end
+
+	return cls.Icon;
+
+end
+

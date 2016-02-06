@@ -1120,11 +1120,11 @@ end
 
 function GET_WIKI_ITEM_SET_COUNT(wiki)
 
-	local setProp = geItemTable.GetSetByName( wiki:GetTargetClassName() );
+	local setProp = geItemTable.GetSetByName( GetWikiTargetClassName(wiki) );
 	local setCnt = setProp:GetItemCount();
 	local curCnt = 0;		 
 	for j = 0 , setCnt - 1 do
-		local isGetItem = wiki:GetBoolProp("Get_" .. j);
+		local isGetItem = GetWikiBoolProp(wiki, "Get_" .. j);
 		if isGetItem == 1 then
 			curCnt = curCnt + 1;
 		end
@@ -1132,14 +1132,6 @@ function GET_WIKI_ITEM_SET_COUNT(wiki)
 	
 	return curCnt, setCnt;
 end
-
-function GET_WIKI_OBJ(wiki)
-
-	local obj = wiki:GetWikiObject();
-	return GetIES(obj);
-
-end
-
 
 
 function GET_ABIL_LEVEL(self, abilName)
