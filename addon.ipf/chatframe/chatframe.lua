@@ -274,8 +274,10 @@ function DRAW_CHAT_MSG(groupboxname, size, startindex, framename)
 			local fontSize = GET_CHAT_FONT_SIZE();	
 			local chatCtrl = groupbox:CreateOrGetControlSet(chatCtrlName, clustername, horzGravity, ui.TOP, marginLeft, ypos, marginRight, 0);
 			chatCtrl:EnableHitTest(1);
-			--chatCtrl:SetEventScript(ui.RBUTTONDOWN, 'CHAT_RBTN_POPUP'); -- 놓친 기능. 잘 살려보던가.
-			
+			if clusterinfo:GetMsgType() ~= "System" then
+				chatCtrl:SetEventScript(ui.RBUTTONDOWN, 'CHAT_RBTN_POPUP');
+				chatCtrl:SetUserValue("TARGET_NAME", clusterinfo:GetCommanderName());
+			end			
 
 			local label = chatCtrl:GetChild('bg');
 			local txt = GET_CHILD(label, "text", "ui::CRichText");

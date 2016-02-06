@@ -118,11 +118,11 @@ function SET_NECRO_CARD_STATE(frame, bosscardcls, i)
 
 	-- 물리 공격력
 	local richText = GET_CHILD(descriptGbox,'desc_fower',"ui::CRichText")
-	richText:SetTextByKey("value", math.floor(tempObj.MAXPATK));
+	richText:SetTextByKey("value", math.floor(SCR_Get_MON_MAXPATK(tempObj)));
 
 	-- 방어력
 	richText = GET_CHILD(descriptGbox,'desc_defense',"ui::CRichText")
-	richText:SetTextByKey("value", math.floor(tempObj.DEF));
+	richText:SetTextByKey("value", math.floor(SCR_Get_MON_DEF(tempObj)));
 
 	-- 힘
 	richText = GET_CHILD(descriptGbox,'desc_Str',"ui::CRichText")
