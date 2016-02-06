@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by IMC (IMCGames Co., Ltd) -->
 <idspace id="ClientMessage">
 	<Category Name="ErrorMsg">
 		<Class ClassID="1" Data="DirectX 9.0c 이상의 버전이 설치되어 있어야 합니다"/>
@@ -29,11 +29,20 @@
 		<Class ClassID="25" ClassName="PCBangMessage1" Data="넥슨 PC방 정량제 잔여시간이 약 {Time}분 남았습니다."/>
 		<Class ClassID="26" ClassName="ErrorWhileLoadingCharacter_TryAgainAndWhenFailPleaseInquireToGameCustomerCenter" Data="플레이어 로딩 중 에러가 발생했습니다. 재 접속 이후에도 문제 발생시 게임 고객센터에 문의해주세요."/>
 		<Class ClassID="27" ClassName="DataErrorWithErrorCode{ErrorCode}" Data="데이터 응답을 받지 못했습니다. 잠시후 다시 시도해 주세요. 에러코드 : {ErrorCode}"/>
+		<Class ClassID="28" ClassName="XignCodeBan" Data="싸인코드에 의해 게임이용이 차단됩니다."/>
+		<Class ClassID="29" ClassName="DisconnectAuthFail" Data="접속인증에 실패하였습니다."/>
+		<Class ClassID="30" ClassName="DisconnectAleadyExistAID" Data="중복로그인입니다. 접속이 차단됩니다."/>
+		<Class ClassID="31" ClassName="DisconnectSSONotAllowed" Data="세션접속이 차단되었습니다."/>
+		<Class ClassID="32" ClassName="DisconnectNGSLogin" Data="NGS 로그인에 실패하였습니다."/>
+		<Class ClassID="33" ClassName="DisconnectNGSProcess" Data="NGS에 의해 접속이 차단되었습니다."/>
+		<Class ClassID="34" ClassName="DisconnectNGSBlock" Data="NGS에 탐지되었습니다. 접속이 차단됩니다."/>
+    <Class ClassID="35" ClassName="TryLater" Data="잠시 후 다시 시도해 주세요."/>
 	</Category>
 	<Category Name="ChatMsg">
 		<Class ClassID="301" ClassName="CantWhisperToSelf" Data="자기자신에겐 귓속말을 할 수 없습니다."/>
 		<Class ClassID="302" ClassName="ChatMsgLimitedBy{Max}Byte_EmoticonCanTakeLotsOfByte" Data="채팅은 {Max}바이트를 초과할 수 없습니다. 이모티콘은 많은 바이트를 차지할 수 있기 때문에 개수 제한이 있습니다."/>
 		<Class ClassID="303" ClassName="GuildChatting" Data="길드 대화"/>
+    <Class ClassID="304" ClassName="GroupList" Data="대화 목록"/>
 	</Category>
 	<Category Name="SimpleWords">
 		<Class ClassID="1100" ClassName="ValidTime" Data="지속 시간"/>
@@ -353,6 +362,8 @@
 		<Class ClassID="10422" ClassName="YouCantUseOblationInCity" Data="마을에서는 사용할 수 없습니다."/>
 		<Class ClassID="10423" ClassName="OblationNameIsNone" Data="봉헌함 이름을 입력해야 합니다."/>
 		<Class ClassID="10424" ClassName="DoingEnchanting" Data="현재 아이템 마법 부여 중에 있습니다. 잠시 후 다시 시도해 주세요."/>
+	<Class ClassID="10425" ClassName="MaxSilverLimitOver" Data="실버 소지 제한 금액을 초과하였습니다."/>
+		<Class ClassID="10426" ClassName="MarketMaxSilverLimitOver" Data="등록 가능한 최대 금액을 초과하였습니다."/>
 	</Category>
 	<Category Name="Reinforce">
 		<Class ClassID="210401" ClassName="NotEnoughReinforcePotential" Data="강화에 필요한 포텐셜이 부족합니다"/>
@@ -530,6 +541,7 @@
 		<Class ClassID="10795" ClassName="WannaRegWiki?" Data=" 아이템을 모험일지에 등록하시겠습니까?"/>
 		<Class ClassID="10798" ClassName="EnchantOptionNone" Data="옵션없음"/>
 		<Class ClassID="10799" ClassName="WhileChangeItem_ItemPropertyChanged_TryAgain" Data="거래 진행 중, 아이템의 속성이 변경되었습니다. 다시 시도해주세요."/>
+		<Class ClassID="10800" ClassName="Money{MAX}Over" Data="최대 {MAX} 소지금을 초과하여 습득 할 수 없습니다."/>
 	</Category>
 	<Category Name="ItemTooltip">
 		<Class ClassID="10801" ClassName="CoolDown : {Sec} Sec" Data="재사용 대기 시간 : {Sec}초"/>
@@ -819,8 +831,11 @@
 		<Class ClassID="20149" ClassName="TP_Costume_F" Data="여자 코스튬"/>
 		<Class ClassID="20150" ClassName="AutoDeleteTime" Data="삭제예정시간 [{Time}]"/>
 		<Class ClassID="20151" ClassName="InfiDeleteTime" Data="기간 제한 없음"/>
-	<Class ClassID="20152" ClassName="HAT_ON" Data="안보이기"/>
-		<Class ClassID="20153" ClassName="HAT_OFF" Data="보이기"/>
+		<Class ClassID="20152" ClassName="HAT_ON" Data="안보이기"/>
+		<Class ClassID="20153" ClassName="HAT_OFF" Data="보이기  "/>
+		<Class ClassID="20154" ClassName="JustStat" Data="스탯"/>
+		<Class ClassID="20155" ClassName="TP_Hair_M_Premium" Data="[프리미엄]남자 헤어"/>
+		<Class ClassID="20156" ClassName="TP_Hair_F_Premium" Data="[프리미엄]여자 헤어"/>
 	</Category>
 	<Category Name="ChatText">
 		<Class ClassID="20501" ClassName="Guard" Data="방어"/>
@@ -851,6 +866,7 @@
 		<Class ClassID="20618" ClassName="PleaseDropCard" Data="카드를 올려주세요."/>
 		<Class ClassID="20619" ClassName="ObserveMode" Data="관전 모드"/>
 		<Class ClassID="20620" ClassName="EnemyDoesNotExist" Data="상대가 없습니다."/>
+		<Class ClassID="20621" ClassName="DontHaveBossCard" Data="카드를 가지고 있지 않습니다."/>
 	</Category>
 	<Category Name="ScpMsg">
 		<Class ClassID="100" ClassName="MASTER_ORACLE_NORMAL_2_ANSWER1" Data="기간 : {day1} ~ {day2}"/>
@@ -925,6 +941,9 @@
 		<Class ClassID="169" ClassName="QUEST_ABANDON_SELECT_MSG" Data="'{QUEST}' 퀘스트를 포기하시겠습니까?"/>
 		<Class ClassID="170" ClassName="PARTY_PLAYER_SHOP_PROGRESS" Data=" 열려있는 상점을 닫으셔야 {nl} 파티원과 '{NEXT_QUEST}' 퀘스트를 진행하실 수 있습니다"/>
 		<Class ClassID="171" ClassName="QUEST_KILL_MON_UI_MSG1" Data=" {MONSTER} 처치"/>
+		<Class ClassID="172" ClassName="NUMBER_MIXING_VALUE_SELECT1" Data="숫자 조합을 진행 하시겠습니까?"/>
+		<Class ClassID="173" ClassName="NUMBER_MIXING_VALUE_MSG1" Data="계속 진행한다"/>
+		<Class ClassID="174" ClassName="NUMBER_MIXING_VALUE_MSG2" Data="포기 한다"/>
 		<Class ClassID="1000" ClassName="MASTER_ORACLE_NORMAL_2_AGREE8" Data="워프 이동 지역 순위"/>
 		<Class ClassID="1001" ClassName="MASTER_ORACLE_NORMAL_2_AGREE4" Data="몬스터 처치 지역 순위"/>
 		<Class ClassID="1002" ClassName="MASTER_ORACLE_NORMAL_2_AGREE5" Data="계시자 전투불능 지역 순위"/>
@@ -2310,11 +2329,8 @@
 		<Class ClassID="130203" ClassName="YouAlreadyHaveParty_WillYouOutFromCurrentParty?" Data="이미 파티가 있습니다. 탈퇴하시겠습니까?"/>
 		<Class ClassID="130204" ClassName="FindingParty_IfPartyFinded_AutoMaticallyStartGame" Data="파티를 검색 중 입니다.{nl} 완료되면 자동으로 입장 합니다."/>
 		<Class ClassID="130205" ClassName="PartyFinded_GameWillBeStartedSoonAfter" Data="파티를 찾았습니다. 잠시 후 게임에 입장합니다."/>
-		<Class 
-ClassID="130234" 
-ClassName="HIDDEN_RUNECASTER_npc1_msg1" Data="필요한 물건이니 줄 수 없냐고 한다"/>
-		<Class ClassID="130235" 
-ClassName="HIDDEN_RUNECASTER_npc1_msg2" Data="아무일도 아니라고 한다"/>
+		<Class ClassID="130234" ClassName="HIDDEN_RUNECASTER_npc1_msg1" Data="필요한 물건이니 줄 수 없냐고 한다"/>
+		<Class ClassID="130235" ClassName="HIDDEN_RUNECASTER_npc1_msg2" Data="아무일도 아니라고 한다"/>
 		<Class ClassID="130236" ClassName="RUNECASTER_ZACHARIEL_STONE_MSG1" Data="룬 스톤 수집 중"/>
 		<Class ClassID="130237" ClassName="RUNECASTER_SIAULIAI_WEST_STONE_MSG1" Data="상자 뒤지는 중"/>
 		<Class ClassID="130238" ClassName="HIDDEN_RUNECASTER_npc5_msg1" Data="뽑아본다"/>
@@ -2726,7 +2742,7 @@ ClassName="HIDDEN_RUNECASTER_npc1_msg2" Data="아무일도 아니라고 한다"/
 		<Class ClassID="190131" ClassName="ROKAS_36_1_PILLA05_REPAIR" Data="기둥을 수리하는 중"/>
 		<Class ClassID="190132" ClassName="ROKAS_36_1_PILLA05_GET_ITEM" Data="기둥을 수리 할 만한 점성 있는 액체를 구해 오세요!"/>
 		<Class ClassID="190133" ClassName="ROKAS_30_PIPOTI_MAP_ZONE_CHECK" Data="왕의 고원에서만 사용할 수 있습니다"/>
-	<Class ClassID="120353" ClassName="SIAULIAI46_1_HIDDEN_EVENT03" Data="주변에 몬스터들이 너무 많아서 빅 샤울렘 힘줄을 넣을 수 없습니다"/>
+		<Class ClassID="120353" ClassName="SIAULIAI46_1_HIDDEN_EVENT03" Data="주변에 몬스터들이 너무 많아서 빅 샤울렘 힘줄을 넣을 수 없습니다"/>
 		<Class ClassID="120354" ClassName="UNDER67_MQ06_AI_NAME" Data="늙은 관리인"/>
 		<Class ClassID="120355" ClassName="UNDER67_SQ01_GHOST_NAME" Data="원한 서린 병사"/>
 		<Class ClassID="120356" ClassName="UNDER67_MQ4_DIALOG" Data="상황 전달 중"/>
@@ -3288,7 +3304,27 @@ ClassName="HIDDEN_RUNECASTER_npc1_msg2" Data="아무일도 아니라고 한다"/
 		<Class ClassID="22371" ClassName="waitBossSummon" Data="잠시후 보스몬스터가 나타납니다."/>
 		<Class ClassID="22372" ClassName="CantAllowInInstace" Data="인스턴스 던전, 미션에 있는 길드원에게 이동할 수 없습니다."/>
 		<Class ClassID="22373" ClassName="GuildExpUpSuccessByItem" Data="아이템을 통해 길드 경험치를 올렸습니다."/>
-	<Class ClassID="22374" ClassName="YouCannotDisbandGuildInWarStateForNotBoss" Data="전쟁 상태에서는 길드를 탈퇴할 수 없습니다."/>
+		<Class ClassID="22374" ClassName="YouCannotDisbandGuildInWarStateForNotBoss" Data="전쟁 상태에서는 길드를 탈퇴할 수 없습니다."/>
+		<Class ClassID="22378" ClassName="{Name1}GuildDeclaredWarTo{Name2}" Data="{Name1}길드가 {Name2}길드에게 전쟁을 선포했습니다."/>
+		<Class ClassID="22379" ClassName="CancelGuildWar" Data="전쟁 취소"/>
+		<Class ClassID="22380" ClassName="ReallyCancelGuildWar?" Data="정말 길드 전쟁을 취소하시겠습니까?"/>
+		<Class ClassID="22381" ClassName="GuildWarAbleToCancelOnly{Minute}MinuteLasterAfterDeclareWar" Data="길드 전쟁은 선포후 {Minute}분 후에 취소 가능합니다."/>
+		<Class ClassID="22382" ClassName="{Name1}GuildCanceledWarTo{Name2}" Data="{Name1}길드가 {Name2}길드에게 전쟁 선포를 취소했습니다."/>
+		<Class ClassID="22383" ClassName="GuildWarCancelableOnlyLeaderWhoDeclaredWar" Data="전쟁을 선포한 쪽만 취소가 가능합니다."/>
+		<Class ClassID="22384" ClassName="WarWith{Name}GuildRemain{Time}" Data="{Name}길드와 전쟁시간이 {Time}남았습니다."/>
+		<Class ClassID="22385" ClassName="GuildTowerUnderAttackFrom{Name}Guild" Data="길드타워가 {Name}길드에게 공격받고 있습니다."/>
+		<Class ClassID="22386" ClassName="GuildWarBetween{Name1}And{Name2}HasEnded" Data="{Name1}길드와 {Name2}길드의 전쟁이 종료되었습니다."/>
+		<Class ClassID="22387" ClassName="{Name1}GuildDestroyedGuildTowerOf{Name2}" Data="{Name1}길드가 {Name2}길드의 타워를 파괴하였습니다."/>
+		<Class ClassID="22388" ClassName="DestroyedByGuild{Name}" Data="{Name}길드에게 파괴당함."/>
+		<Class ClassID="22389" ClassName="Enemy" Data="적대"/>
+		<Class ClassID="22390" ClassName="ToRebuildableTime" Data="재건 가능까지 남은시간"/>
+		<Class ClassID="22391" ClassName="CantRebuildYet" Data="아직 재건이 불가능합니다."/>
+    <Class ClassID="22392" ClassName="GuildMember{Name}HasKilledBy{From}OfGuild{FromGuild}" Data="길드원 {Name}이 {FromGuild}의 {From}에게 당했습니다."/>
+    <Class ClassID="22393" ClassName="GuildMember{Name}Killed{Target}OfGuild{TargetGuild}" Data="길드원 {Name}이 {TargetGuild}의 {Target}을 처치했습니다."/>
+    <Class ClassID="22394" ClassName="CantCancelWarWhenWarIsResting" Data="휴전중엔 전쟁취소가 불가능합니다."/>
+    <Class ClassID="22397" ClassName="CantRebuildWhileWarState" Data="전쟁중엔 타워를 다시 건설할 수 없습니다."/>
+    <Class ClassID="22398" ClassName="ReturnToOutOfTowerBecauseTowerIsDestroyedAfter{Minute}" Data="타워가 파괴당하여 {Minute}분 후 밖으로 이동됩니다."/>
+    <Class ClassID="22399" ClassName="AbleToRebuild" Data="재건 가능"/>
 	</Category>
 	<Category Name="EqupClasses">
 		<Class ClassID="22501" ClassName="THSword" Data="양손검"/>
@@ -3350,7 +3386,7 @@ ClassName="HIDDEN_RUNECASTER_npc1_msg2" Data="아무일도 아니라고 한다"/
 		<Class ClassID="22815" ClassName="LowPriceFirst" Data="낮은 가격순"/>
 		<Class ClassID="22816" ClassName="HighPriceFirst" Data="높은 가격순"/>
 		<Class ClassID="22817" ClassName="RecentFirst" Data="최신등록순"/>
-		<Class ClassID="22818" ClassName="ItemOverCount" Data="등록하려는 개수가 소비개수보다 많거나, 입력한 값이 음수가 될 수 없습니다."/>
+		<Class ClassID="22818" ClassName="ItemOverCount" Data="거래 가능한 아이템 개수를 초과하여 등록할 수 없습니다."/>
 		<Class ClassID="22819" ClassName="BuffDestroy{Price}" Data="등록수수료 {Price}실버가 소비됩니다. 마켓에 등록하면 해당 버프가 사라집니다. 그래도 등록하시겠습니까?"/>
 		<Class ClassID="22820" ClassName="RemoveMarketItem" Data="이미 판매된 아이템입니다."/>
 		<Class ClassID="22821" ClassName="DontBuySameFamilyName" Data="같은 계정으로 등록된 아이템으로 구매하실 수 없습니다."/>
@@ -3844,6 +3880,8 @@ ClassName="HIDDEN_RUNECASTER_npc1_msg2" Data="아무일도 아니라고 한다"/
 		<Class ClassID="31029" ClassName="CANCEL_LEARING_ABIL" Data="특성배우기가 취소되었습니다."/>
 		<Class ClassID="31031" ClassName="CanNotItemEquip" Data="착용 할 수 있는 아이템이 아닙니다."/>
 		<Class ClassID="31032" ClassName="CanNotLikeIte" Data="해당 캐릭터는 좋아요를 받을 수 있는 상태가 아닙니다."/>
+	<Class ClassID="31033" ClassName="DeathPenaltyGem" Data="현재 지역에서 전투 불능 시, 소지 중인 젬 일부를 유실할 수 있습니다."/>
+    <Class ClassID="31034" ClassName="DeathPenaltyGemSilver" Data="현재 지역에서 전투 불능 시, 소지 중인 젬 일부와 실버를 유실할 수 있습니다."/>
 	</Category>
 	<Category Name="Quest">
 		<Class ClassID="32001" ClassName="ClickToSharedQuestWithParty" Data="{@st59}버튼을 클릭하면 파티원에게 노출합니다."/>
@@ -5007,7 +5045,6 @@ ClassName="HIDDEN_RUNECASTER_npc1_msg2" Data="아무일도 아니라고 한다"/
 		<Class ClassID="91026" ClassName="Auto_DeonJeonipKuLo_HyangHaNeun_Muni_yeolLyeossSeupNiDa" Data="던전입구로 향하는 문이 열렸습니다"/>
 		<Class ClassID="91027" ClassName="Auto_eopeum" Data="없음"/>
 		<Class ClassID="91028" ClassName="Auto__:_eopNeun_BT" Data=" : 없는 BT"/>
-		<Class ClassID="91029" ClassName="Auto_JamSi_Hu_DaSi_SiDoHae_JuSeyo." Data="잠시 후 다시 시도해 주세요."/>
 		<Class ClassID="91030" ClassName="Auto_PogTan_SeolChi_SeongKong" Data="폭탄을 설치했습니다!"/>
 		<Class ClassID="91031" ClassName="Auto_NaeMamDeLo" Data="내맘데로"/>
 		<Class ClassID="91032" ClassName="Auto_ManDeuleoBon" Data="만들어본"/>
@@ -6380,6 +6417,8 @@ ClassName="HIDDEN_RUNECASTER_npc1_msg2" Data="아무일도 아니라고 한다"/
 		<Class ClassID="7006" ClassName="DonExecSkill" Data="해당 지역에서는 실행할 수 없는 스킬입니다."/>
 		<Class ClassID="7007" ClassName="MissionRoomFullCont" Data="해당 던전에 정원이 가득 찾습니다."/>
 		<Class ClassID="7008" ClassName="IsSkillStateInPet" Data="스킬 사용중엔 컴패니언에서 내릴 수 없습니다."/>
+		<Class ClassID="7009" ClassName="AlreadRegSameCard" Data="이미 등록된 카드입니다."/>
+		<Class ClassID="7010" ClassName="CheckCardType" Data="카드 속성을 확인해주세요."/>
 	</Category>
 	<Category Name="HotKey">
 		<Class ClassID="7200" ClassName="Minimap_-" Data="미니맵 -"/>
@@ -6829,8 +6868,10 @@ ClassName="HIDDEN_RUNECASTER_npc1_msg2" Data="아무일도 아니라고 한다"/
 		<Class ClassID="550056" ClassName="EquipPremiumItem" Data="현재 장착중인 헤어는 구입하실 수 없습니다."/>
 		<Class ClassID="550057" ClassName="TPText{Premium}and{Event}" Data="TP : {Premium}  Event : {Event}"/>
 		<Class ClassID="550058" ClassName="AllowTradeByCount" Data="거래 가능 횟수"/>
-    <Class ClassID="550059" ClassName="RemainTradeCountDoesNotExist" Data="거래 가능 횟수가 남지 않았습니다."/>
-    <Class ClassID="550060" ClassName="RemainTradeCountDoesNotExistOfTarget" Data="대상의 거래 가능 횟수가 남지 않았습니다."/>
+		<Class ClassID="550059" ClassName="RemainTradeCountDoesNotExist" Data="거래 가능 횟수가 남지 않았습니다."/>
+		<Class ClassID="550060" ClassName="RemainTradeCountDoesNotExistOfTarget" Data="대상의 거래 가능 횟수가 남지 않았습니다."/>
+		<Class ClassID="550061" ClassName="Premium_StatReset" Data="스탯 초기화"/>
+		<Class ClassID="550062" ClassName="Premium_StatResetLng" Data="전체 스탯을 초기화 시킵니다."/>
 	</Category>
 	<Category Name="TPHistory">
 		<Class ClassID="600001" ClassName="RemainLogoutPC" Data="로그아웃 PC 만들기"/>

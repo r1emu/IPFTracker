@@ -50,6 +50,7 @@ function SHOW_TOKEN_REMAIN_TIME(ctrl)
 end
 
 function TOKEN_ON_MSG(frame, msg, argStr, argNum)
+
 	local logoutGBox = frame:GetChild("logoutGBox");
 	local logoutInternal = logoutGBox:GetChild("logoutInternal");
 	local gToken = logoutInternal:GetChild("gToken");
@@ -129,10 +130,13 @@ function TOKEN_ON_MSG(frame, msg, argStr, argNum)
 
 	local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 7,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
 	local prop = ctrlSet:GetChild("prop");
-    local imag = string.format("{img dealok_image %d %d}", 55, 45) 
-    prop:SetTextByKey("value", imag..ClMsg("AllowTradeByCount")); 
+	local img = string.format("{img dealok_image %d %d}", 55, 45) 
+	prop:SetTextByKey("value", img .. ScpArgMsg("AllowTradeByCount"));
+	
 	local value = ctrlSet:GetChild("value");
-	value:SetTextByKey("value", tostring(30));
+	img = string.format("{img dealok30_image2 %d %d}", 100, 45) 
+	value:SetTextByKey("value", img);
+		
 	
 	GBOX_AUTO_ALIGN(tokenList, 0, 0, 0, false, false);
 end

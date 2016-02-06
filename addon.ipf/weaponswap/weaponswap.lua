@@ -207,7 +207,7 @@ function WEAPONSWAP_SWAP_UPDATE(frame)
 end
 
 function WEAPONSWAP_FAIL()
-	ui.SysMsg(ClMsg("Auto_JamSi_Hu_DaSi_SiDoHae_JuSeyo."));
+	ui.SysMsg(ClMsg("TryLater"));
 	session.SetWeaponSwap(0);
 	WEAPONSWAP_SLOT_UPDATE();
 end

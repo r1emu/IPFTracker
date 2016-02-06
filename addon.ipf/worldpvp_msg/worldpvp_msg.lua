@@ -38,11 +38,11 @@ function WORLDPVP_UI_MSG_KILL(argString)
 	--pic_2:SetImage(selfIcon);
 	local text = frame:GetChild("text");
 	if myTeamID == killerTeamID then
-		local msgString = ScpArgMsg("{Killer}Killed{Killee}", "Killer", "{#00FF00}" .. killerName .. "{/}", "Killee", "{#FF0000}" .. selfName.. "{/}");
+		local msgString = ScpArgMsg("{Killer}Killed{Killee}", "Killer", "{#99CC00}" .. killerName .. "{/}", "Killee", "{#FF5500}" .. selfName.. "{/}");
 		text:SetTextByKey("value", msgString);
 	else
-		local msgString = ScpArgMsg("{Killee}BeKilled{Killer}", "Killee", "{#00FF00}" .. selfName.. "{/}", "Killer", "{#FF0000}" .. killerName.. "{/}");
-		text:SetTextByKey("value", "{#FF3333}" .. msgString);
+		local msgString = ScpArgMsg("{Killee}BeKilled{Killer}", "Killee", "{#FF5500}" .. selfName.. "{/}", "Killer", "{#99CC00}" .. killerName.. "{/}");
+		text:SetTextByKey("value", "{#FFFFFF}" .. msgString);
 	end
 
 end

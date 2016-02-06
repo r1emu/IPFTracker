@@ -177,6 +177,10 @@
 		<!--UI_button_small-->
 		<font name="normal" size="16" space="0" color="FFFFFF" bold="no" italic="no" dropshadow="no" outline="yes" outlinecolor="333333" underline="no" centerline="no"/>
 	</style>
+	<style name="st42_red_small">
+		<!--UI_button_small-->
+		<font name="normal" size="12" space="0" color="FF2222" bold="no" italic="no" dropshadow="no" outline="yes" underline="no" centerline="no" gradation="gradation2"/>
+	</style>
 	<style name="st43">
 		<!--UI_dialog_name-->
 		<font name="normal" size="24" space="0" color="FFFFFF" bold="no" italic="no" dropshadow="yes" outline="yes" outlinecolor="111111" underline="no" centerline="no" gradation="gradation2"/>

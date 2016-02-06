@@ -4211,11 +4211,13 @@
 		<image name="2multiply_image2" file="\skin\paid_skin.tga" imgrect="580 589 100 45"/>
 		<image name="30percent_image2" file="\skin\paid_skin.tga" imgrect="803 212 100 45"/>
 		<image name="20percent_image2" file="\skin\paid_skin.tga" imgrect="922 46 100 45"/>
+		<image name="dealok30_image2" file="\skin\paid_skin.tga" imgrect="904 166 100 45"/>
 		<image name="arrow_red_image" file="\skin\paid_skin.tga" imgrect="131 230 55 15" CMM_Caption="빨간화살표"/>
 		<image name="token_middle" file="\skin\paid_skin.tga" imgrect="288 0 316 165" CMM_Caption="토큰중간이미지"/>
 		<image name="expup_middle" file="\skin\paid_skin.tga" imgrect="605 0 316 165" CMM_Caption="경험의서이미지"/>
-		<image name="resetSkill_middle" file="\skin\paid_skin.tga" imgrect="419 636 316 165" CMM_Caption="스킬초기화"/>
 		<image name="indunFreeEnter_middle" file="\skin\paid_skin.tga" imgrect="419 802 316 165" CMM_Caption="인던3일무제한"/>
+		<image name="resetSkill_middle" file="\skin\paid_skin.tga" imgrect="419 636 316 165" CMM_Caption="스킬초기화"/>
+		<image name="resetStat_middle" file="\skin\paid_skin_title.tga" imgrect="0 0 316 165" CMM_Caption="스텟 초기화"/>
 		<image name="market_sell_updown" file="\skin\paid_skin.tga" imgrect="675 439 328 115" CMM_Caption="마켓상하한가표"/>
 		<image name="M_message_open" file="\skin\barrack.tga" imgrect="1493 721 30 30"/>
 		<image name="M_message_Unopen" file="\skin\barrack.tga" imgrect="1524 721 30 30"/>
@@ -5504,6 +5506,9 @@
 		<image name="button_whisper_talk_exit" file="\skin\HUD.tga" imgrect="780 358 20 20" CMM_Caption="귓속말 채팅선택중 삭제"/>
 		<image name="button_whisper_talk_exit_cursoron" file="\skin\HUD.tga" imgrect="780 379 20 20"/>
 		<image name="button_whisper_talk_exit_clicked" file="\skin\HUD.tga" imgrect="780 400 20 20"/>
+		<image name="button_whisper_talk_new" file="\skin\HUD.tga" imgrect="895 62 20 20" CMM_Caption="귓속말 채팅선택중 새창"/>
+		<image name="button_whisper_talk_new_cursoron" file="\skin\HUD.tga" imgrect="895 83 20 20"/>
+		<image name="button_whisper_talk_new_clicked" file="\skin\HUD.tga" imgrect="895 104 20 20"/>
 		<image name="button_chat_w_invite" file="\skin\HUD.tga" imgrect="759 358 20 20" CMM_Caption="chat_Whisper_invite"/>
 		<image name="button_chat_w_invite_cursoron" file="\skin\HUD.tga" imgrect="759 379 20 20"/>
 		<image name="button_chat_w_invite_clicked" file="\skin\HUD.tga" imgrect="759 400 20 20"/>

@@ -89,7 +89,7 @@ function DROPITEM_REQUEST1_PROGRESS_CHECK_FUNC_SUB(pc)
     if #zoneClassNameList > 0 then
         for y = 1, #zoneClassNameList do
             local targetZone = zoneClassNameList[y]
-            local targetMonList = SCR_GET_ZONE_FACTION_OBJECT(targetZone, 'Monster', 'Normal/Material/Elite')
+            local targetMonList = SCR_GET_ZONE_FACTION_OBJECT(targetZone, 'Monster', 'Normal/Material/Elite', 120000)
             local accMax = 0
             if #targetMonList > 0 then
                 for i = 1, #targetMonList do
@@ -146,10 +146,10 @@ function DROPITEM_REQUEST1_PROGRESS_CHECK_FUNC_SUB(pc)
     
     
     if #zoneClassNameList > 0 then
-        local removeMonList = {"Silvertransporter_Qm"}
+        local removeMonList = {"Silvertransporter_Qm", "Treasure_Goblin"}
         for y = 1, #zoneClassNameList do
             local targetZone = zoneClassNameList[y]
-            local targetMonList = SCR_GET_ZONE_FACTION_OBJECT(targetZone, 'Monster', 'Normal/Material/Elite')
+            local targetMonList = SCR_GET_ZONE_FACTION_OBJECT(targetZone, 'Monster', 'Normal/Material/Elite', 120000)
             local accMax = 0
             if #targetMonList > 0 then
                 for i = 1, #targetMonList do

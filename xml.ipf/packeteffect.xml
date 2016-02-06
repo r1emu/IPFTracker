@@ -151,6 +151,15 @@
         <Effect Name="F_ground092_red"/>
         <Effect Name="f_coral_32_2_elt"/>
         <Effect Name="F_light029_violet"/>
+        <Effect Name="SIAULIAI_35_1_SQ_7_MINI"/>
+        <Effect Name="skl_tincturing_grind2"/>
+        <Effect Name="skl_tincturing_grind1"/>
+        <Effect Name="skl_tincturing_filter2"/>
+        <Effect Name="skl_tincturing_add1"/>
+        <Effect Name="skl_tincturing_shake"/>
+        <Effect Name="skl_tincturing_std"/>
+        <Effect Name="I_force011_green#머리"/>
+        <Effect Name="lv1"/>
     </Category>
     <Category ID="72">
         <Effect Name="std4_1"/>
@@ -351,6 +360,9 @@
         <Effect Name="Centurion_TercioFormation_abil"/>
         <Effect Name="Centurion_WingedFormation_abil"/>
         <Effect Name="Bramble_SpDrain"/>
+        <Effect Name="SKL_BUFF"/>
+        <Effect Name="ASTD_TO_STD"/>
+        <Effect Name="SORCERER_SUMMONING"/>
     </Category>
     <Category ID="42">
         <Effect Name="voice_cleric_m_vashitasiddhi_cast"/>
@@ -840,6 +852,10 @@
         <Effect Name="event_loop3"/>
         <Effect Name="I_force015_white#Bone_mouth"/>
         <Effect Name="TABLELAND70_SUBQ3_mini"/>
+        <Effect Name="F_bg_fire003_green"/>
+        <Effect Name="F_fire018_green"/>
+        <Effect Name="F_burstup027_fire1_green"/>
+        <Effect Name="event_casting"/>
     </Category>
     <Category ID="26">
         <Effect Name="I_warrior_ironhook_hook2"/>
@@ -1608,6 +1624,7 @@
         <Effect Name="LastBoss"/>
         <Effect Name="id_castle_elt"/>
         <Effect Name="id_castle_elt2"/>
+        <Effect Name="MonsterStage"/>
     </Category>
     <Category ID="45">
         <Effect Name="Cleric_Barrier"/>
@@ -2133,6 +2150,15 @@
         <Effect Name="I_arrow009_1#Dummy_q_Force"/>
         <Effect Name="skl_eff_thurisaz_landing"/>
         <Effect Name="F_burstup026_green4"/>
+    <Effect Name="I_force080_green_blue3"/>
+		<Effect Name="I_force080_violet"/>
+		<Effect Name="I_cleric_jincangu_force_mash"/>
+		<Effect Name="F_rize012_violet_water"/>
+		<Effect Name="F_rize012_violet"/>
+	<Effect Name="I_force015_violet#B_eye R1"/>
+        <Effect Name="F_explosion103_violet"/>
+        <Effect Name="I_force015_violet#B_mouth 01"/>
+        <Effect Name="I_force015_violet#Bip001 Spine"/>
     </Category>
     <Category ID="27">
         <Effect Name="SAPPER_TRAP_Sapper_BroomTrap"/>
@@ -2309,6 +2335,7 @@
         <Effect Name="GR_SAMPLE_1_P5_MINI"/>
         <Effect Name="Templer_ReduceCraftTime"/>
         <Effect Name="RoundMaxTime"/>
+        <Effect Name="checkoutofarea"/>
     </Category>
     <Category ID="49">
         <Effect Name="JOB_CENTURION5_1_MINI"/>
@@ -8529,6 +8556,4 @@
     <Category ID="300">
         <Effect Name="DefClass123"/>
     </Category>
-</packeteffects>
-
-<?xml version="1.0" encoding="UTF-8"?
+</packeteffects>

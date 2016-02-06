@@ -2711,6 +2711,14 @@ function SCR_GET_Gae_Bulg_Ratio(skill)
 
 end
 
+
+function SCR_GET_Gae_Bulg_Ratio2(skill)
+
+	local value = 5 + skill.Level * 0.5
+  return value
+
+end
+
 function SCR_Get_SkillFactor_Dragon_Soar(skill)
 
 	local pc = GetSkillOwner(skill);
@@ -9394,7 +9402,7 @@ function SCR_Get_BroadHead_Bufftime(skill)
 end
 
 function SCR_Get_CrossFire_Ratio(skill)
-    return 70 + skill.Level * 10;
+    return 75 + skill.Level * 5;
 end
 
 

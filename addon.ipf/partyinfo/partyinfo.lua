@@ -143,7 +143,7 @@ function ON_PARTYINFO_BUFFLIST_UPDATE(frame)
 						
 						local buffID = partyMemberInfo:GetBuffIDByIndex(j);
 						local cls = GetClassByType("Buff", buffID);											
-						if cls ~= nil then
+						if cls ~= nil and cls.ShowIcon ~= "FALSE" then
 							local buffOver = partyMemberInfo:GetBuffOverByIndex(j);
 							local buffTime = partyMemberInfo:GetBuffTimeByIndex(j);							
 							local slot = nil;

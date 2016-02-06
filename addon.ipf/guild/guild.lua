@@ -3,6 +3,7 @@ function GUILD_ON_INIT(addon, frame)
 	
 	addon:RegisterOpenOnlyMsg("GUILD_PROPERTY_UPDATE", "ON_GUILD_PROPERTY_UPDATE");
 	addon:RegisterOpenOnlyMsg("GUILD_INFO_UPDATE", "ON_GUILD_INFO_UPDATE");
+	addon:RegisterMsg("GAME_START_3SEC", "GUILD_GAME_START_3SEC");	
 	addon:RegisterMsg("MYPC_GUILD_JOIN", "ON_MYPC_GUILD_JOIN");
 	addon:RegisterMsg("GUILD_ENTER", "ON_GUILD_ENTER");
 	addon:RegisterMsg("GUILD_OUT", "ON_GUILD_OUT");
@@ -44,6 +45,27 @@ end
 function ON_GUILD_PROPERTY_UPDATE(frame, msg)
 	UPDATE_GUILDINFO(frame);
 
+end
+
+function GUILD_GAME_START_3SEC(frame)
+
+	local pcparty = session.party.GetPartyInfo(PARTY_GUILD);
+	if pcparty == nil then
+		return;
+	end
+
+	local cnt = pcparty.info:GetEnemyPartyCount();
+	for i = 0 , cnt - 1 do
+		local enemyInfo = pcparty.info:GetEnemyPartyByIndex(i);
+		local serverTime = geTime.GetServerFileTime();
+		local difSec = imcTime.GetIntDifSecByTime(serverTime, enemyInfo:GetStartTime());
+		local remainSec = GUILD_WAR_AUTO_END_MINUTE * 60 - difSec;
+		if remainSec > 0 then
+			local msg = ScpArgMsg("WarWith{Name}GuildRemain{Time}", "Name", enemyInfo:GetPartyName(), "Time", GET_TIME_TXT_DHM(remainSec));
+			ui.SysMsg(msg);
+		end
+	end
+	
 end
 
 function UPDATE_GUILDINFO(frame)
@@ -160,32 +182,61 @@ function GUILD_UPDATE_TOWERINFO(frame, pcparty, partyObj)
 	local txt_guildtowercount = properties:GetChild("txt_guildtowercount");
 	local txt_guildtowerposition = properties:GetChild("txt_guildtowerposition");
 	
+	txt_guildtowerposition:StopUpdateScript("UPDATE_TOWER_REMAIN_TIME");
+	txt_guildtowerposition:StopUpdateScript("UPDATE_TOWER_DESTROY_TIME");
+
 	if houseInfo == "None" then
 
 		local countText = ScpArgMsg("GuildTower") ..  " (0)";
 		txt_guildtowercount:SetTextByKey("value", countText);
 		txt_guildtowerposition:SetTextByKey("value", "");
+		txt_guildtowerposition:SetTextByKey("remaintime", "");
+		txt_guildtowerposition:ShowWindow(0);
 
 	else
 
+		txt_guildtowerposition:ShowWindow(1);
 		local towerInfo = StringSplit(houseInfo, "#");
-		local mapID = towerInfo[1];
-		local towerID = towerInfo[2];
-		local x = towerInfo[3];
-		local y = towerInfo[4];
-		local z = towerInfo[5];
-		local builtTime = towerInfo[6];
-
-		local mapCls = GetClassByType("Map", mapID);
-		
-		local countText = ScpArgMsg("GuildTower") ..  " (1)";
-		txt_guildtowercount:SetTextByKey("value", countText);
-		local positionText = MAKE_LINK_MAP_TEXT(mapCls.ClassName, x, z);
-		txt_guildtowerposition:SetTextByKey("value", positionText);
+		if #towerInfo == 3 then
+			local destroyPartyName = towerInfo[2];
+			local destroyedTime = towerInfo[3];
 	
-		txt_guildtowerposition:SetUserValue("BUILTTIME", builtTime);
-		txt_guildtowerposition:RunUpdateScript("UPDATE_TOWER_REMAIN_TIME", 1, 0, 0, 1);
-		UPDATE_TOWER_REMAIN_TIME(txt_guildtowerposition);
+			local countText = ScpArgMsg("GuildTower") ..  " (1)";
+			txt_guildtowercount:SetTextByKey("value", countText);
+			
+			if destroyPartyName == "None" then
+				destroyPartyName = ScpArgMsg("Enemy");
+			end
+
+			local positionText = "{#FF0000}" .. ScpArgMsg("DestroyedByGuild{Name}", "Name", destroyPartyName) .. "{/}";
+			positionText = positionText .. "{nl}" .. ScpArgMsg("ToRebuildableTime") .. " " ;
+			txt_guildtowerposition:SetTextByKey("value", positionText);
+			txt_guildtowerposition:SetUserValue("PARTYNAME", destroyPartyName);
+	
+			txt_guildtowerposition:SetUserValue("DESTROYTIME", destroyedTime);
+			txt_guildtowerposition:RunUpdateScript("UPDATE_TOWER_DESTROY_TIME", 1, 0, 0, 1);
+			UPDATE_TOWER_DESTROY_TIME(txt_guildtowerposition);
+
+
+		else
+			local mapID = towerInfo[1];
+			local towerID = towerInfo[2];
+			local x = towerInfo[3];
+			local y = towerInfo[4];
+			local z = towerInfo[5];
+			local builtTime = towerInfo[6];
+
+			local mapCls = GetClassByType("Map", mapID);
+		
+			local countText = ScpArgMsg("GuildTower") ..  " (1)";
+			txt_guildtowercount:SetTextByKey("value", countText);
+			local positionText = MAKE_LINK_MAP_TEXT(mapCls.ClassName, x, z);
+			txt_guildtowerposition:SetTextByKey("value", positionText);
+	
+			txt_guildtowerposition:SetUserValue("BUILTTIME", builtTime);
+			txt_guildtowerposition:RunUpdateScript("UPDATE_TOWER_REMAIN_TIME", 1, 0, 0, 1);
+			UPDATE_TOWER_REMAIN_TIME(txt_guildtowerposition);
+		end
 	end
 	
 end
@@ -203,6 +254,27 @@ function UPDATE_TOWER_REMAIN_TIME(txt_guildtowerposition)
 
 end
 
+function UPDATE_TOWER_DESTROY_TIME(txt_guildtowerposition)
+
+	local builtTime = txt_guildtowerposition:GetUserValue("DESTROYTIME");
+	local endTime = imcTime.GetSysTimeByStr(builtTime);
+	endTime = imcTime.AddSec(endTime, GUILD_TOWER_DESTROY_REBUILD_ABLE_MIN * 60);
+	local sysTime = geTime.GetServerSystemTime();
+	local difSec = imcTime.GetDifSec(endTime, sysTime);
+	if difSec > 0 then
+		local difSecString = GET_TIME_TXT_DHM(difSec);
+		txt_guildtowerposition:SetTextByKey("remaintime", difSecString);
+	else
+		local destroyPartyName = txt_guildtowerposition:GetUserValue("PARTYNAME");
+		local positionText = "{#FF0000}" .. ScpArgMsg("DestroyedByGuild{Name}", "Name", destroyPartyName) .. "{/}";
+		txt_guildtowerposition:SetTextByKey("value", positionText);
+		txt_guildtowerposition:SetTextByKey("remaintime", ScpArgMsg("AbleToRebuild"));
+		return 0;
+	end
+
+	return 1;
+
+end
 
 function GUILD_UPDATE_ENEMY_PARTY(frame, pcparty)
 

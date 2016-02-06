@@ -205,7 +205,9 @@ function UPDATE_CARDBATTLE_FRAME(frame, info)
 	info = tolua.cast(info, "CARD_BATTLE_TABLE_INFO");
 	local wincount_1 = frame:GetChild("wincount_1");
 	
-
+	if -1 == info.targetWinCount then
+		info.targetWinCount = 0;
+	end
 	wincount_1:SetTextByKey("value", info.targetWinCount);
 	
 	local wincount_2 = frame:GetChild("wincount_2");

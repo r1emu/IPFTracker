@@ -926,8 +926,8 @@ function APPLY_SORCERER_SUMMON_STAT(self, caster, skl, item)
 
 	--print(self.MATK_BM, self.PATK_BM)
 	
-	self.DEF = (self.DEF /2  + (caster.MNA * sklbonus)) * itembonus
-	self.MDEF = (self.MDEF/2 + (caster.MNA * sklbonus)) * itembonus
+	self.DEF_BM = (self.DEF / 2  + (caster.MNA * sklbonus)) * itembonus
+	self.MDEF_BM = (self.MDEF / 2 + (caster.MNA * sklbonus)) * itembonus
 
 end
 

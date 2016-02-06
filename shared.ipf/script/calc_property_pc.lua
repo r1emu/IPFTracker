@@ -648,6 +648,7 @@ function SCR_GET_RSPTIME(self)
 end
 
 function SCR_Get_RSP(self)
+
     local jobObj = GetJobObject(self);  -- job
     local byJob = jobObj.JobRate_SP;
 	local baseMSP = self.MSP;
@@ -1451,10 +1452,10 @@ end
 
 function SCR_GET_DEF_ARIES(pc)
     local byItem = GetSumOfEquipItem(pc, "AriesDEF");
-    --local byBuff = pc.DefAires_BM;
+    local byBuff = pc.DefAries_BM;
     local byStat = SCR_GET_BASE_WEAPON_DEF(pc)
     
-    local value = byItem;
+    local value = byStat + byItem + byBuff;
     
 	return math.floor(value);
 end

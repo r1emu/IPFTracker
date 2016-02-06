@@ -28,7 +28,7 @@ function treasureBox_event_act(self, pc, argNum, evt, itemname, moneycount)
 
     	xac_ssn.Step1 = 3500
     else
-        SendAddOnMsg(pc, "NOTICE_Dm_!", ScpArgMsg("Auto_JamSi_Hu_DaSi_SiDoHae_JuSeyo."), 1);
+        SendAddOnMsg(pc, "NOTICE_Dm_!", ScpArgMsg("TryLater"), 1);
         return;
     end
     

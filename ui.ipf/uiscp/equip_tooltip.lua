@@ -69,6 +69,14 @@ function DRAW_EQUIP_COMMON_TOOLTIP(tooltipframe, invitem, mainframename, drawnow
 	local gBox = GET_CHILD(tooltipframe, mainframename,'ui::CGroupBox')
 	gBox:RemoveAllChild()
 
+    if invitem.ItemGrade == 0 then -- 유료 프리미엄 아이템 등급: 2~3만원 헤어
+        local SkinName  = GET_ITEM_TOOLTIP_SKIN(invitem);
+    	gBox:SetSkinName('premium_skin');
+    else
+        local SkinName  = GET_ITEM_TOOLTIP_SKIN(invitem);
+    	gBox:SetSkinName('test_Item_tooltip_equip');
+    end
+
 	local equipCommonCSet = gBox:CreateControlSet('tooltip_equip_common', 'equip_common_cset', 0, 0);
 	tolua.cast(equipCommonCSet, "ui::CControlSet");
 

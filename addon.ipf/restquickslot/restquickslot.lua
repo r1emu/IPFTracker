@@ -50,14 +50,10 @@ function ON_RESTQUICKSLOT_OPEN(frame, msg, argStr, argNum)
 	if IsJoyStickMode() == 0 then
 
 		local quickFrame = ui.GetFrame('quickslotnexpbar')
-			if quickFrame:IsVisible() == 1 then
-				quickFrame:ShowWindow(0);
-			end
+		quickFrame:ShowWindow(0);
 	elseif IsJoyStickMode(pc) == 1 then
 		local joystickQuickFrame = ui.GetFrame('joystickquickslot')
-			if joystickQuickFrame:IsVisible() == 1 then
-				joystickQuickFrame:ShowWindow(0);
-			end
+		joystickQuickFrame:ShowWindow(0);
 	end
 end
 
@@ -96,14 +92,10 @@ function ON_RESTQUICKSLOT_CLOSE(frame, msg, argStr, argNum)
 
 	if IsJoyStickMode() == 0 then
 		local quickFrame = ui.GetFrame('quickslotnexpbar')
-		if quickFrame:IsVisible() == 0 then
-			quickFrame:ShowWindow(1);
-		end
+		quickFrame:ShowWindow(1);
 	elseif IsJoyStickMode() == 1 then
 		local joystickQuickFrame = ui.GetFrame('joystickquickslot')
-		if joystickQuickFrame:IsVisible() == 0 then
-			joystickQuickFrame:ShowWindow(1);
-		end
+		joystickQuickFrame:ShowWindow(1);
 	end
 	ui.CloseFrame('reinforce_by_mix')
 

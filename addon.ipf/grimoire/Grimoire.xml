@@ -19,8 +19,8 @@
         <picture name="bgimage_ring" parent="grimoireGbox" rect="0 0 440 200" margin="10 150 0 0" layout_gravity="center top" hittest="false" image="Magic_gli_candle" stretch="true"/>
         <picture name="subboss1_bg" parent="grimoireGbox" rect="0 0 165 220" margin="0 25 0 0" layout_gravity="center top" hittest="false" image="bosscard_big_on" stretch="true"/>
         <picture name="subboss2_bg" parent="grimoireGbox" rect="0 0 98 130" margin="0 360 0 0" layout_gravity="center top" hittest="false" image="bosscard_small_on" stretch="true"/>
-        <slot name="Sorcerer_bosscard1" parent="grimoireGbox" rect="0 0 165 220" margin="0 25 0 0" layout_gravity="center top" DropScp="GRIMOIRE_SLOT_DROP" draw="false" skin="None" stretch="true"/>
-        <slot name="Sorcerer_bosscard2" parent="grimoireGbox" rect="0 0 98 130" margin="0 360 0 0" layout_gravity="center top" DropScp="GRIMOIRE_SLOT_DROP" draw="false" skin="None" stretch="true"/>
+		<slot name="Sorcerer_bosscard1" parent="grimoireGbox" rect="0 0 165 220" margin="0 25 0 0" layout_gravity="center top" DropScp="GRIMOIRE_SLOT_DROP" draw="false" skin="None" stretch="true" PopScp="GRIMOIRE_CARD_UI_RESET" RBtnDownScp="GRIMOIRE_CARD_UI_RESET"/>
+		<slot name="Sorcerer_bosscard2" parent="grimoireGbox" rect="0 0 98 130" margin="0 360 0 0" layout_gravity="center top" DropScp="GRIMOIRE_SLOT_DROP" draw="false" skin="None" stretch="true" PopScp="GRIMOIRE_CARD_UI_RESET" RBtnDownScp="GRIMOIRE_CARD_UI_RESET"/>
         <groupbox name="descriptGbox" parent="grimoireGbox" rect="0 0 440 460" margin="0 0 0 5" layout_gravity="center bottom" draw="true" hittestbox="false" resizebyparent="false" skin="test_frame_midle"/>
         <richtext name="desc_skill" parent="descriptGbox" rect="0 0 250 95" margin="25 20 0 0" layout_gravity="left top" fixwidth="false" fontname="white_18_b" format="{@st42}내 소환수 정보"/>
         <richtext name="desc_main_card" parent="descriptGbox" rect="0 0 250 95" margin="40 50 0 0" layout_gravity="left top" fixwidth="false" fontname="brown_16" format="메인 카드"/>

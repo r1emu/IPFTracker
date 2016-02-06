@@ -29,10 +29,10 @@
         <picture name="subboss2_bg" parent="necoGbox" rect="0 0 102 132" margin="30 160 0 0" layout_gravity="left top" image="bosscard_small_on" stretch="false"/>
         <picture name="subboss3_bg" parent="necoGbox" rect="0 0 102 132" margin="160 270 0 0" layout_gravity="left top" image="bosscard_small_on" stretch="false"/>
         <picture name="subboss4_bg" parent="necoGbox" rect="0 0 102 132" margin="0 210 30 0" layout_gravity="right top" image="bosscard_small_on" stretch="false"/>
-        <slot name="subboss1" parent="necoGbox" rect="0 0 130 174" margin="0 43 0 0" layout_gravity="center top" DropScp="NECRONOMICON_SLOT_DROP" image="monster_card" stretch="false"/>
-        <slot name="subboss2" parent="necoGbox" rect="0 0 91 121" margin="35 165 0 0" layout_gravity="left top" DropScp="NECRONOMICON_SLOT_DROP" image="monster_card" stretch="false"/>
-        <slot name="subboss3" parent="necoGbox" rect="0 0 91 121" margin="165 275 0 0" layout_gravity="left top" DropScp="NECRONOMICON_SLOT_DROP" image="monster_card" stretch="false"/>
-        <slot name="subboss4" parent="necoGbox" rect="0 0 91 121" margin="0 215 36 0" layout_gravity="right top" DropScp="NECRONOMICON_SLOT_DROP" image="monster_card" stretch="false"/>
+		<slot name="subboss1" parent="necoGbox" rect="0 0 130 174" margin="0 43 0 0" layout_gravity="center top" DropScp="NECRONOMICON_SLOT_DROP" PopScp="NECRONOMICON_SLOT_RESET" RBtnDownScp="NECRONOMICON_SLOT_RESET" image="monster_card" stretch="false"/>
+		<slot name="subboss2" parent="necoGbox" rect="0 0 91 121" margin="35 165 0 0" layout_gravity="left top" DropScp="NECRONOMICON_SLOT_DROP" PopScp="NECRONOMICON_SLOT_RESET" RBtnDownScp="NECRONOMICON_SLOT_RESET" image="monster_card" stretch="false"/>
+		<slot name="subboss3" parent="necoGbox" rect="0 0 91 121" margin="165 275 0 0" layout_gravity="left top" DropScp="NECRONOMICON_SLOT_DROP" PopScp="NECRONOMICON_SLOT_RESET" RBtnDownScp="NECRONOMICON_SLOT_RESET" image="monster_card" stretch="false"/>
+		<slot name="subboss4" parent="necoGbox" rect="0 0 91 121" margin="0 215 36 0" layout_gravity="right top" DropScp="NECRONOMICON_SLOT_DROP" PopScp="NECRONOMICON_SLOT_RESET" RBtnDownScp="NECRONOMICON_SLOT_RESET" image="monster_card" stretch="false"/>
         <richtext name="subbosstext1" parent="necoGbox" rect="0 0 80 150" margin="0 200 0 0" layout_gravity="center top" caption="1" stretch="false"/>
         <richtext name="subbosstext2" parent="necoGbox" rect="0 0 80 150" margin="-150 290 0 0" layout_gravity="center top" caption="2" stretch="false"/>
         <richtext name="subbosstext3" parent="necoGbox" rect="0 0 80 150" margin="-20 400 0 0" layout_gravity="center top" caption="3" stretch="false"/>

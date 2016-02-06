@@ -11000,13 +11000,13 @@ if self.HP == 0 then return 1; else return 0; end;">
                 <Num Num="150"/>
                 <Num Num="1"/>
             </ToolScp>
-            <ToolScp Scp="S_AI_SET_BTREE" Client="NO" UseSleep="NO">
-                <Num Num="4"/>
-            </ToolScp>
-            <ToolScp Scp="S_AI_SET_BTREE" Client="NO" UseSleep="NO">
-                <Num Num="4"/>
-            </ToolScp>
             <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+            <ToolScp Scp="S_AI_SET_BTREE" Client="NO" UseSleep="NO">
+                <Num Num="4"/>
+            </ToolScp>
+            <ToolScp Scp="S_AI_SET_TENDENCY" Client="NO" UseSleep="NO">
+                <Str Str="Normal"/>
+        </ToolScp>
         </StartList>
     </AI>
     <AI Name="UNDER_69_MQ010_EMINENT" ActiveMessageMapInBattle="1">

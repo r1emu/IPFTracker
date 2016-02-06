@@ -1353,7 +1353,7 @@ function SCR_POSSIBLE_UI_OPEN_CHECK(pc, questIES)
     return ret
 end
 
-function SCR_GET_ZONE_FACTION_OBJECT(zoneClassName, factionList, monRankList)
+function SCR_GET_ZONE_FACTION_OBJECT(zoneClassName, factionList, monRankList, respawnTime)
     local zoneGentype = 'GenType_'..zoneClassName
     local classCount = GetClassCount(zoneGentype)
     local factionList = SCR_STRING_CUT(factionList)
@@ -1363,6 +1363,7 @@ function SCR_GET_ZONE_FACTION_OBJECT(zoneClassName, factionList, monRankList)
     for i = 0 , classCount -1 do
         local gentypeIES = GetClassByIndex(zoneGentype, i)
         if gentypeIES ~= nil and table.find(factionList, gentypeIES.Faction) > 0 and gentypeIES.MaxPop > 0 then
+            if respawnTime == nil or gentypeIES.RespawnTime <= respawnTime then
             local monIES = GetClass('Monster', gentypeIES.ClassType)
             if monIES ~= nil then
                 local rankFlag = 'YES'
@@ -1390,6 +1391,7 @@ function SCR_GET_ZONE_FACTION_OBJECT(zoneClassName, factionList, monRankList)
                 end
             end
         end
+    end
     end
     
     return monList

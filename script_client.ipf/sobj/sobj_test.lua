@@ -59,6 +59,9 @@ function SSN_CLIENT_GIMMICKCOUNTREFLASH(pc)
                             break
                         end
                     end
+                elseif sObj[reflashIES.PropTimeInfo] == 'None' and GetPropType(sObj, reflashIES.PropDayCount) ~= nil and sObj[reflashIES.PropDayCount] > 0  then
+                    flag = 'YES'
+                    break
             	end
             end
     	end

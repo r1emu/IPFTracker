@@ -21,14 +21,17 @@ function UPDATE_GRIMOIRE_UI(frame)
 
 	local gbox = GET_CHILD(frame,'grimoireGbox',"ui::CGroupBox")
 	for i = 1, MAX_CARD_COUNT do
-		local slotname = 'Sorcerer_bosscard'..i
 		local nowcard_classname = 'Sorcerer_bosscardGUID'..i
-		
 		local bosscardid = etc_pc[nowcard_classname]
-		local invitem = session.GetInvItemByGuid(bosscardid);
+		local invitem  = nil;
+		if "None" ~= bosscardid then
+			 invitem = session.GetInvItemByGuid(bosscardid);
+		end
+	
+		local slotname = 'Sorcerer_bosscard'..i
+		local slotchild = GET_CHILD(gbox, slotname,"ui::CSlot");
 		if nil ~= invitem then
 			local itemobj = GetIES(invitem:GetObject());
-			local slotchild = GET_CHILD(gbox, slotname,"ui::CSlot");
 			if itemobj ~= nil then
 				SET_SLOT_ICON(slotchild, itemobj.TooltipImage);			
 				SET_ITEM_TOOLTIP_BY_OBJ(slotchild:GetIcon(), invitem);
@@ -36,9 +39,116 @@ function UPDATE_GRIMOIRE_UI(frame)
 			else
 				SET_SLOT_ICON(slotchild, 'test_card_slot_point');			
 			end
+
+			local icon = slotchild:GetIcon();
+			if nil ~= icon then
+				icon:SetIESID(invitem:GetIESID());
+			end
+		else
+			slotchild:ClearIcon();
+			GRIMOIRE_STATE_UI_RESET(frame, i)
+			if "None" ~= bosscardid then
+				GRIMOIRE_CARD_UI_RESET(gbox, slotchild, bosscardid);
+			end
 		end
-		
 	end
+end
+
+function GRIMOIRE_CARD_UI_RESET(parent, ctrl, bosscardid)
+	local frame = parent:GetTopParentFrame();
+	local slot = tolua.cast(ctrl, "ui::CSlot");
+	local icon, iconInfo, itemIES = nil, nil, nil;
+	icon = slot:GetIcon();
+	if nil ~= icon then
+		 iconInfo = icon:GetInfo();
+	end
+
+	if nil ~= iconInfo then
+		itemIES = iconInfo:GetIESID();
+	end
+	session.ResetItemList();
+
+	if nil == itemIES and nil ~= bosscardid then
+		 itemIES = bosscardid
+	end
+
+	if nil~= itemIES then
+		session.AddItemID(itemIES);
+	end
+
+	SET_GRI_CARD_COMMIT(slot:GetName(),"UnEquip")
+end
+
+function GRIMOIRE_STATE_TEXT_RESET(descriptGbox)
+	-- 체력
+	local myHp = GET_CHILD(descriptGbox,'my_hp',"ui::CRichText")
+	myHp:SetTextByKey("value", 0);
+	
+	-- 물리 공격력
+	local richText = GET_CHILD(descriptGbox,'my_attack',"ui::CRichText")
+	richText:SetTextByKey("value", 0);
+
+	-- 마법 공격력
+	richText = GET_CHILD(descriptGbox,'my_Mattack',"ui::CRichText")
+	richText:SetTextByKey("value", 0);
+
+	-- 방어력
+	richText = GET_CHILD(descriptGbox,'my_defen',"ui::CRichText")
+	richText:SetTextByKey("value", 0);
+	
+
+	-- 마법 방어력
+	richText = GET_CHILD(descriptGbox,'my_Mdefen',"ui::CRichText")
+	richText:SetTextByKey("value", 0);
+
+	------- 스텟정보
+	-- 힘
+	richText = GET_CHILD(descriptGbox,'my_power',"ui::CRichText")
+	richText:SetTextByKey("value", 0);
+	
+	-- 체력
+	richText = GET_CHILD(descriptGbox,'my_con',"ui::CRichText")
+	richText:SetTextByKey("value", 0);
+
+	-- 지능
+	richText = GET_CHILD(descriptGbox,'my_int',"ui::CRichText")
+	richText:SetTextByKey("value", 0);
+
+	-- 민첩
+	richText = GET_CHILD(descriptGbox,'my_dex',"ui::CRichText")
+	richText:SetTextByKey("value", 0)
+
+	-- 정신
+	richText = GET_CHILD(descriptGbox,'my_mna',"ui::CRichText")
+	richText:SetTextByKey("value", 0);
+end
+
+function GRIMOIRE_STATE_UI_RESET(frame, i)
+	local grimoireGbox = GET_CHILD(frame,'grimoireGbox',"ui::CGroupBox")
+	if nil == grimoireGbox then
+		return;
+	end
+
+	local descriptGbox = GET_CHILD(grimoireGbox,'descriptGbox',"ui::CGroupBox")
+	if nil == descriptGbox then
+		return;
+	end
+
+	if 1 == i then -- 메인카드
+		local gbox = GET_CHILD(descriptGbox,'my_card',"ui::CRichText")
+		if nil ~= gbox then
+			gbox:SetTextByKey("actorcard","");
+		end
+	else
+		local gbox = GET_CHILD(descriptGbox,'my_assist_card',"ui::CRichText")
+		if nil ~= gbox then
+			gbox:SetTextByKey("actorassistcard","");
+		end
+
+		return;
+	end
+
+	GRIMOIRE_STATE_TEXT_RESET(descriptGbox);
 end
 
 function SET_CARD_STATE(frame, bosscardcls, i)
@@ -61,6 +171,15 @@ function SET_CARD_STATE(frame, bosscardcls, i)
 		if nil ~= gbox then
 			gbox:SetTextByKey("actorassistcard",bosscardcls.Name);
 		end
+
+		return;
+	end
+
+	GRIMOIRE_STATE_TEXT_RESET(descriptGbox);
+
+	local skl = session.GetSkillByName('Sorcerer_Summoning');
+	if nil == skl then
+		return;
 	end
 
 	local bossMonID = bosscardcls.NumberArg1;
@@ -75,95 +194,53 @@ function SET_CARD_STATE(frame, bosscardcls, i)
 		return;
 	end
 
-	local skl = session.GetSkillByName('Sorcerer_Summoning');
-	if nil ~= skl then
-		CLIENT_SORCERER_SUMMONING_MON(tempObj, GetMyPCObject(), GetIES(skl:GetObject()), bosscardcls);
-	end
-
+	CLIENT_SORCERER_SUMMONING_MON(tempObj, GetMyPCObject(), GetIES(skl:GetObject()), bosscardcls);
+	
 	-- 체력
 	local myHp = GET_CHILD(descriptGbox,'my_hp',"ui::CRichText")
-	if nil ~= skl then
-		local hp = math.floor(SCR_Get_MON_MHP(tempObj));
-		myHp:SetTextByKey("value", hp);
-	else
-		myHp:SetTextByKey("value", 0);
-	end
+	local hp = math.floor(SCR_Get_MON_MHP(tempObj));
+	myHp:SetTextByKey("value", hp);
 	
 	-- 물리 공격력
 	local richText = GET_CHILD(descriptGbox,'my_attack',"ui::CRichText")
-	if nil ~= skl then
-		richText:SetTextByKey("value", math.floor(tempObj.MAXPATK));
-	else
-		richText:SetTextByKey("value", 0);
-	end
+	richText:SetTextByKey("value", math.floor(tempObj.MAXPATK));
 
 	-- 마법 공격력
 	richText = GET_CHILD(descriptGbox,'my_Mattack',"ui::CRichText")
-	if nil ~= skl then
-		richText:SetTextByKey("value", math.floor(tempObj.MAXMATK));
-	else
-		richText:SetTextByKey("value", 0);
-	end
+	richText:SetTextByKey("value", math.floor(tempObj.MAXMATK));
 
 	-- 방어력
 	richText = GET_CHILD(descriptGbox,'my_defen',"ui::CRichText")
-	if nil ~= skl then
-		richText:SetTextByKey("value", math.floor(tempObj.DEF));
-	else
-		richText:SetTextByKey("value", 0);
-	end
-
+	richText:SetTextByKey("value", math.floor(tempObj.DEF));
+	
 	-- 마법 방어력
 	richText = GET_CHILD(descriptGbox,'my_Mdefen',"ui::CRichText")
-	if nil ~= skl then
-		richText:SetTextByKey("value", math.floor(tempObj.MDEF));
-	else
-		richText:SetTextByKey("value", 0);
-	end
-
+	richText:SetTextByKey("value", math.floor(tempObj.MDEF));
+	
 	------- 스텟정보
 
 	-- 힘
 	richText = GET_CHILD(descriptGbox,'my_power',"ui::CRichText")
-	if nil ~= skl then
-		richText:SetTextByKey("value", GET_MON_STAT(tempObj, tempObj.Lv, "STR"));
-	else
-		richText:SetTextByKey("value", 0);
-	end
-
+	richText:SetTextByKey("value", GET_MON_STAT(tempObj, tempObj.Lv, "STR"));
+	
 	-- 체력
 	richText = GET_CHILD(descriptGbox,'my_con',"ui::CRichText")
 	 -- 기본적으로 GET_MON_STAT을 쓰지만 체력은 따로해달라는 평직씨의 요청
-	 if nil ~= skl then
-		local con = math.floor(GET_MON_STAT_CON(tempObj, tempObj.Lv, "CON"));
-		richText:SetTextByKey("value", con);
-	else
-		richText:SetTextByKey("value", 0);
-	end
+	local con = math.floor(GET_MON_STAT_CON(tempObj, tempObj.Lv, "CON"));
+	richText:SetTextByKey("value", con);
+	
 
 	-- 지능
 	richText = GET_CHILD(descriptGbox,'my_int',"ui::CRichText")
-	if nil ~= skl then
-		richText:SetTextByKey("value", GET_MON_STAT(tempObj, tempObj.Lv, "INT"));
-	else
-		richText:SetTextByKey("value", 0);
-	end
+	richText:SetTextByKey("value", GET_MON_STAT(tempObj, tempObj.Lv, "INT"));
 
 	-- 민첩
 	richText = GET_CHILD(descriptGbox,'my_dex',"ui::CRichText")
-	if nil ~= skl then
-		richText:SetTextByKey("value", GET_MON_STAT(tempObj, tempObj.Lv, "DEX"));
-	else
-		richText:SetTextByKey("value", 0);
-	end
+	richText:SetTextByKey("value", GET_MON_STAT(tempObj, tempObj.Lv, "DEX"));
 
 	-- 정신
 	richText = GET_CHILD(descriptGbox,'my_mna',"ui::CRichText")
-	if nil ~= skl then
-		richText:SetTextByKey("value", GET_MON_STAT(tempObj, tempObj.Lv, "MNA"));
-	else
-		richText:SetTextByKey("value", 0);
-	end
+	richText:SetTextByKey("value", GET_MON_STAT(tempObj, tempObj.Lv, "MNA"));
 
 	-- 생성한 가상몹을 지워야져
 	DestroyIES(tempObj);
@@ -184,21 +261,54 @@ function GRIMOIRE_SLOT_DROP(frame, control, argStr, argNum)
 	local cardobj = GetIES(invenItemInfo:GetObject());
 
 	if cardobj.GroupName ~= 'Card' then
+		ui.SysMsg(ClMsg("PutOnlyCardItem"));
 		return 
 	end
 
+	local cardItemCls = GetClassByType("Item", cardobj.ClassID);
+	if nil == cardItemCls then
+		ui.SysMsg(ClMsg("PutOnlyCardItem"));
+		return;
+	end
+	local monCls = GetClassByType("Monster", cardItemCls.NumberArg1);
+	if monCls == nil then
+		ui.SysMsg(ClMsg("CheckCardType"));
+		return;
+	end
+
+	if monCls.RaceType ~= 'Velnias' then
+		ui.SysMsg(ClMsg("CheckCardType"));
+		return;
+	end
+
+	local etc_pc = GetMyEtcObject();
+	local MAX_CARD_COUNT = 2; 
+	local itemIES = GetIESID(cardobj);
+	for i = 1, MAX_CARD_COUNT do
+		local bosscardslotname = 'Sorcerer_bosscardGUID'..i
+		if etc_pc[bosscardslotname] == itemIES then
+			ui.SysMsg(ClMsg("AlreadRegSameCard"));
+			return;
+		end
+	end
+	
+
 	session.ResetItemList();
 	session.AddItemID(iconInfo:GetIESID());
-
-	SET_GRI_CARD_COMMIT(slot:GetName())
+	SET_GRI_CARD_COMMIT(slot:GetName(), "Equip")
 
 end
 
-function SET_GRI_CARD_COMMIT(slotname)
+function SET_GRI_CARD_COMMIT(slotname, type)
 
 	local resultlist = session.GetItemIDList();
-	local slotnumber = GET_GRI_SLOT_NUMBER(slotname)	
-	item.DialogTransaction("SET_SORCERER_CARD", resultlist, slotnumber);
+	local slotnumber = GET_GRI_SLOT_NUMBER(slotname)
+	local iType = 1;
+	if "UnEquip" == type then
+		iType = 0;
+	end
+	local argStr = string.format("%s %s", tostring(slotnumber), iType);
+	item.DialogTransaction("SET_SORCERER_CARD", resultlist, argStr);
 
 end
 

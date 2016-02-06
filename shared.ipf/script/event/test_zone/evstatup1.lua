@@ -67,7 +67,7 @@ function test_zone_evstatup1_act(self, pc, argNum, evt)
 
 		local ret = TxCommit(tx);
 		local afterValue = pc.StatByBonus
-        CustomMongoLog(pc, "StatByBonusADD", "Layer", GetLayer(pc), "beforeValue", beforeValue, "afterValue", afterValue, "addValue", 1, "Way", "test_zone_evstatup1_act")
+        CustomMongoLog(pc, "StatByBonusADD", "Layer", GetLayer(pc), "beforeValue", beforeValue, "afterValue", afterValue, "addValue", 1, "Way", "test_zone_evstatup1_act", "Type", "F_ZEMINA")
 
 
 

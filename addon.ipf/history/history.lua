@@ -221,7 +221,7 @@ function HISTORY_REQ_ROLL_BACK(frame, btn)
 	ReserveScript("HISTORY_REQ_ROLL_BACK_BTN_ENALBE()", 3);
 	-- 연타방지
 	if 1 == parent:GetUserIValue("Enable") then
-		ui.SysMsg(ClMsg("Auto_JamSi_Hu_DaSi_SiDoHae_JuSeyo."));	
+		ui.SysMsg(ClMsg("TryLater"));	
 		return;
 	end
 

@@ -719,13 +719,13 @@ function WORLDPVP_PUBLIC_GAME_LIST()
 		WORLDPVP_PUBLIC_GAME_SET_PCTEAM(gbox_1, teamVec1, 1);
 		WORLDPVP_PUBLIC_GAME_SET_PCTEAM(gbox_2, teamVec2, 2);
 
-		local heightAddValue = 15;
+		local heightAddValue = 7;
 		local height = math.max(gbox_1:GetHeight(), gbox_2:GetHeight()) + heightAddValue;
 		gbox_ctrlSet:Resize(gbox_ctrlSet:GetWidth(), height);
 
 		local btn = ctrlSet:GetChild("btn");
-		ctrlSet:Resize(ctrlSet:GetWidth(), height + btn:GetHeight() + heightAddValue);
-		gbox_whole:Resize(ctrlSet:GetWidth(), height + btn:GetHeight() + heightAddValue);
+		ctrlSet:Resize(ctrlSet:GetWidth(), height + btn:GetHeight() + heightAddValue +15);
+		gbox_whole:Resize(ctrlSet:GetWidth(), height + btn:GetHeight() + heightAddValue +20);
 
 	end
 

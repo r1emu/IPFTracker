@@ -17,7 +17,7 @@ function SCR_GOODDESS_ZEMINA(self, pc, argNum, evt)
             TxAddIESProp(tx, pc, 'StatByBonus', 1)
             local ret = TxCommit(tx);
             local afterValue = pc.StatByBonus
-            CustomMongoLog(pc, "StatByBonusADD", "Layer", GetLayer(pc), "beforeValue", beforeValue, "afterValue", afterValue, "addValue", 1, "Way", "SCR_GOODDESS_ZEMINA")
+            CustomMongoLog(pc, "StatByBonusADD", "Layer", GetLayer(pc), "beforeValue", beforeValue, "afterValue", afterValue, "addValue", 1, "Way", "SCR_GOODDESS_ZEMINA", "Type", "F_ZEMINA")
 			
             DetachEffect(self, 'F_light024_orange')
             DestroySessionObject(pc, result1)

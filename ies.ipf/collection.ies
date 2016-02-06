@@ -23,7 +23,7 @@ ClassID,ClassName,Name,ItemName_1,ItemName_2,ItemName_3,ItemName_4,ItemName_5,It
 122,COLLECT_122,콜렉션:수정광산 2층,misc_shredded2,misc_shredded3,misc_0016,misc_0013,misc_0106,,,,,MHP_BM/45
 123,COLLECT_123,콜렉션:수정광산 3층,misc_0015,misc_quartz_weaver3,misc_0013,misc_bubeWarriorBlood,,,,,,MSP_BM/18
 124,COLLECT_124,콜렉션:스라우타스 협곡,misc_0019,misc_0018,misc_Grummer,HAND02_123,FOOT02_123,LEG02_123,TOP02_123,,,RHP_BM/5
-125,COLLECT_125,콜렉션:너울 고원,misc_leafly,misc_0018,STF02_101,misc_pantoSword,,,,,,RSP_BM/3
+125,COLLECT_125,콜렉션:겔리 고원,misc_leafly,misc_0018,STF02_101,misc_pantoSword,,,,,,RSP_BM/3
 126,COLLECT_126,콜렉션:네프리타스 벼랑,misc_puragi,misc_0022,misc_firent2,misc_banshee,misc_banshee3,misc_zigri,misc_humming_bud,Hat_628018,,MHR_BM/2
 127,COLLECT_127,콜렉션:테넷 화원,misc_seedmia,misc_0018,misc_mallardu,misc_0115,,,,,,PATK_BM/2
 128,COLLECT_128,콜렉션:베야 골짜기,misc_Tanu,misc_0112,misc_0113,misc_Doyor2,misc_0035,,,,,MATK_BM/2

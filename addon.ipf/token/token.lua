@@ -72,7 +72,9 @@ function BEFORE_APPLIED_TOKEN_OPEN(invItem)
 		local value = GET_CHILD(ctrlSet, "value");
 		local img = string.format("{img dealok_image %d %d}", 55, 45) 
 		prop:SetTextByKey("value", img .. ScpArgMsg("AllowTradeByCount"));
-		value:SetTextByKey("value", itemobj.NumberArg2);
+
+		img = string.format("{img dealok30_image2 %d %d}", 100, 45) 
+		value:SetTextByKey("value", img);
 	else
 		gbox:RemoveChild("CTRLSET_TOKEN_TRADECOUNT");	
 	end	

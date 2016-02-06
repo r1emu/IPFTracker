@@ -217,10 +217,10 @@ end
 	
 function TEST_AYASE()
 	
-	
+
+		
 
 
-	
 end
 
 function JOB_COMMAND()
@@ -569,7 +569,6 @@ function UI_TOGGLE_GUILD()
 
 	local guildinfo = session.GetGuildInfo();
 	if guildinfo == nil then
-		ui.ToggleFrame('guildcreate');
 		return;
 	end
 
@@ -885,7 +884,7 @@ function ADD_EX_TOOLTIP(GroupCtrl, txt, yPos, ySize)
 	ControlSetCtrl:SetGravity(ui.LEFT, ui.TOP);
 	richText:SetGravity(ui.LEFT, ui.TOP);
 	richText:SetFontName(ITEM_TOOLTIP_TEXT_FONT);
-	ControlSetCtrl:Resize(255, ySize);		-- 3?êÎ¶¨ÍπåÏ?Îß?Ï∂úÎ†•?òÏÑú 7~8?êÎ¶¨ÍπåÏ? ?òÎ¶º
+	ControlSetCtrl:Resize(255, ySize);		-- 3??∏Æ±Ó????√‚∑¬??º≠ 7~8??∏Æ±Ó?? ??∏≤
 	ControlSetCtrl:SetTextByKey('text', txt);
 	GroupCtrl:ShowWindow(1)
 	return ControlSetCtrl:GetHeight() + ControlSetCtrl:GetOffsetY();
@@ -1270,6 +1269,8 @@ function GET_ITEM_BG_PICTURE_BY_GRADE(rank)
 		return "four_star_item_bg";
 	elseif rank == 4 then
 		return "five_item_bg";
+	elseif rank == 0 then
+		return "premium_item_bg";
 	end
 
 	return "None";
@@ -1457,7 +1458,7 @@ function IS_RECIPE_ITEM(itemCls)
 
 end
 
--- ???®Ïàò???§ÌÅ¨Î°??ÑÏù¥?úÎèÑ ?úÏãú?????¨Ïö©?©Îãà??
+-- ????ºˆ????≈©????¿Ã??µµ ??Ω√??????øÎ??¥œ??
 function SET_ITEM_TOOLTIP_ALL_TYPE(icon, invitem, className, strType, ItemType, index)
 	
 	if className == 'Scroll_SkillItem' then
@@ -1492,7 +1493,7 @@ function SET_TOOLTIP_SKILLSCROLL(icon, invitem, itemCls)
 	return 1;
 end
 
--- ÎßàÏºì?±Ïóê??Î¨òÏÇ¨?êÏÑú ?§ÌÇ¨Î™??òÏò§?ÑÎ°ù
+-- ∏∂ƒœ??ø°??π¶ªÁ??º≠ ??≈≥????ø¿??∑œ
 function SET_ITEM_DESC(value, desc, item)
 	if desc == "None" then
 		desc = "";
@@ -1572,7 +1573,7 @@ function SCR_GEM_EQUIP(fromitem, toitem)
 	local socketindex = GET_GEM_SOCKET_CNT(toobj,fromobj_gemtype);
 
 	if socketindex == -1 then
-		socketindex = GET_GEM_SOCKET_CNT(toobj,5); -- ?Ï®çÏß∞?T
+		socketindex = GET_GEM_SOCKET_CNT(toobj,5); -- ?¬∏¬Æ?T
 	end
 
 	if socketindex == -1 then
@@ -2003,7 +2004,7 @@ end
 
 
 
--- ON_WORLD_MSG_%d (WORLD_MESSAGE_ACHIEVE_ADD == 0)   : Ï©???êÎ∏ù??Ï©??? Ï®òË??
+-- ON_WORLD_MSG_%d (WORLD_MESSAGE_ACHIEVE_ADD == 0)   : ?????∫Ô?????? ¬∫???
 function ON_WORLD_MSG_0(name, type, pointType, point)
 
 	local list = session.party.GetPartyMemberList(PARTY_NORMAL);
@@ -3618,7 +3619,7 @@ end
 
 function SCR_QUEST_CHECK_T(pc, questname)
 	local result, reason = SCR_QUEST_CHECK(pc, questname);
-		local reasonString = "";
+	local reasonString = "";
 	if reason ~= nil then
 		for j = 1 , #reason do
 			reasonString = reasonString .. reason[j];
@@ -4243,7 +4244,7 @@ end
 function TEST_TIARUA()
 
 ReloadHotKey()
---print("Î¶¨Î°ú?úÌï´??)
+--print("∏Æ∑Œ??«÷??)
 --ui.OpenFrame("joystickrestquickslot");
 --[[
 local quickFrame = ui.GetFrame('quickslotnexpbar')

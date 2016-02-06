@@ -779,6 +779,12 @@ end
 
 function QUICKSLOTNEXPBAR_EXECUTE(slotIndex)
 
+	local chatFrame = ui.GetFrame("chat");
+
+	if chatFrame:IsVisible() == 1 then
+		return;
+	end
+
 	-- ÈÞ½Ä¸ðµå ?½½·Ô Ã³¸®
 	local restFrame = ui.GetFrame('restquickslot')
 	if restFrame:IsVisible() == 1 then

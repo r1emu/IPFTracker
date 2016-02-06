@@ -2126,6 +2126,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 16107,it_amulet_tiny,,,,item_hi\pc_item\weapon\it_amulet_tiny.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 16108,artefact_champagne_glass_set,,,,item_hi\pc_item\weapon\artefact_champagne_glass_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 16109,artefact_champagne_set,,,,item_hi\pc_item\weapon\artefact_champagne_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
+16110,artefact_statuebase_set,,,,item_hi\pc_item\weapon\artefact_statuebase_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 17002,cleric_f_mace_thornhammer,,,,item_hi\pc_item\weapon\it_monk_thornhammer.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 17003,cleric_f_mace_Baptism,,,,char_hi\monster\Baptism_obj_set.xac,char_texture\monster\Baptism_obj\,bg_hi\ErrorBox.mtl,,,NO
 17004,cleric_f_mace_blacksmith,,,,item_hi\pc_item\weapon\cleric_f_mace_blacksmith.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
@@ -3632,6 +3633,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 400921,treemonster,,,,char_hi\monster\monster_treemonster_set.xac,char_texture\monster\treemonster\,bg_hi\ErrorBox.mtl,,,NO
 400941,Zombie_archer,,,,char_hi\monster\monster_zombie_archer_set.xac,char_texture\monster\zombie_Archer\,bg_hi\ErrorBox.mtl,,,NO
 400961,bumegoblin_archer,,,,char_hi\monster\monster_bumegoblin_archer_set.xac,char_texture\monster\,bg_hi\ErrorBox.mtl,,,NO
+400962,bumegoblin_archer_test,,,,char_hi\monster\monster_bumegoblin_archer_set.xac,,bg_hi\ErrorBox.mtl,,,NO
 400981,bumegoblin_spear,,,,char_hi\monster\monster_bumegoblin_spear_set.xac,char_texture\monster\,bg_hi\ErrorBox.mtl,,,NO
 401001,Sauga_s,,,,char_hi\monster\monster_sauga_s_set.xac,char_texture\monster\sauga\,bg_hi\ErrorBox.mtl,,,NO
 401021,Scorpion,,,,char_hi\monster\monster_scorpion_set.xac,char_texture\monster\scorpion\,bg_hi\ErrorBox.mtl,,,NO
@@ -5009,3 +5011,6 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 810236,npc_RUN_master_head,,,,char_hi\npc\npc_runecaster_master\goddess_Laima_hair_std.xac,char_texture\npc\npc_runecaster_master\,bg_hi\ErrorBox.mtl,,,NO
 810237,npc_matron2_head_mercenary,,,,char_hi\npc\npc_matron\npc_matron2_hair_std.xac,char_texture\npc\npc_matron2_head\npc_fedimian_mercenary_1\,bg_hi\ErrorBox.mtl,,,NO
 810243,npc_paladin_follower2A_hair_std_mercenary,,,,char_hi\npc\npc_paladin_Follower2\npc_paladin_follower2A_hair_std.xac,char_texture\npc\npc_paladin_Follower2\fdmian_mercenary\,bg_hi\ErrorBox.mtl,,,NO
+810254,npc_PremierEminent_body,,,,char_hi\npc\PremierEminent\PremierEminent_set.xac,char_texture\npc\PremierEminent\,bg_hi\ErrorBox.mtl,,,NO
+810255,npc_PremierEminent_hair,,,,char_hi\npc\PremierEminent\PremierEminent_hair_std.xac,char_texture\npc\PremierEminent\,bg_hi\ErrorBox.mtl,,,NO
+810256,monster_squire_repair_test,,,,char_hi\monster\monster_squire_repair_set.xac,char_texture\,bg_hi\ErrorBox.mtl,,,NO

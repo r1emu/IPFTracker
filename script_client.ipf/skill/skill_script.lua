@@ -21,6 +21,33 @@ function SKL_OPEN_UI_C(actor, obj, uiName, subUi)
 
 end
 
+function C_SCR_SORCERER_CARD_CHECK(skillType)
+	local skil = session.GetSkill(skillType);
+	if nil == skil then
+		ui.SysMsg(ClMsg("Auto_SeuKil_eopeum"));
+		return 0;
+	end
+
+	local etc_pc = GetMyEtcObject();
+	if nil == etc_pc then
+		return 0;
+	end
+
+	local cardGUID = etc_pc.Sorcerer_bosscardGUID2;
+	-- Name으로 비교하려 했으나, Name은 NT가 안붙어있음.
+	if cardGUID == "None" then
+		ui.SysMsg(ClMsg("NoCardAvailable"));
+		return 0;
+	end
+
+	local invitem = session.GetInvItemByGuid(cardGUID);
+	if nil == invitem then
+		ui.SysMsg(ClMsg("DontHaveBossCard"));
+		return 0;
+	end
+	return 1;
+end
+
 function SCR_ITEMDUNGEON_SKL_UI(skillType)
 	local skill = session.GetSkill(skillType);
 	if skill == nil then

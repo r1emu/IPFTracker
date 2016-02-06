@@ -476,7 +476,7 @@ function TEMP_INV_REMOVE(frame, itemGuid)
 	local itemCls = GetClassByType("Item", invItem.type);
 	local name = itemCls.ClassName;
 	if name == "Vis" or name == "Feso" then
-		DRAW_TOTAL_VIS(frame, 'invenZeny');
+		DRAW_TOTAL_VIS(frame, 'invenZeny', 1);
 		return;
 	end
 
@@ -566,7 +566,7 @@ function GET_SLOT_FROMSLOTSET_BY_IESID(slotset, itemGuid)
 	for i = 0 , count - 1 do
 		local slot = slotset:GetChildByIndex(i);
 		AUTO_CAST(slot);
-		local tooltipIESID = slot:GetIcon():GetTooltipIESID();
+		local tooltipIESID = slot:GetIcon():GetInfo():GetIESID();
 		if tooltipIESID == itemGuid then
 			return slot;
 		end
@@ -1477,10 +1477,13 @@ function EXEC_SHOP_SELL(frame, cnt)
 end
 
 --크론에 대한 텍스트 출력하도록 한다
-function DRAW_TOTAL_VIS(frame, childname)
+function DRAW_TOTAL_VIS(frame, childname, remove)
 
 	local Cron = GET_TOTAL_MONEY();
-
+	if remove == 1 then
+		Cron = 0;
+	end
+	
 	local bottomGbox				= frame:GetChild('bottomGbox');
 	local moneyGbox				= bottomGbox:GetChild('moneyGbox');
 	local INVENTORY_CronCheck	= GET_CHILD(moneyGbox, childname, 'ui::CRichText');
@@ -1854,8 +1857,9 @@ function INV_ICON_SETINFO(frame, slot, invItem, customFunc, scriptArg, count)
 
 	slot:SetOverSound('button_over');
 
-	--slot:EnableDrag(1);
-	--slot:EnableDrop(1);
+	slot:EnablePop(1)
+	slot:EnableDrag(1)
+	slot:EnableDrop(1)
 
 	-- drag && drop recipe blink
 	UPDATE_SLOT_RECIPE_BLINK(frame, slot, invItem);
@@ -2410,6 +2414,7 @@ function INV_HAT_VISIBLE_STATE(frame)
 	else
 		hat_t:SetImage("inventory_hat_layer_off");
 		hat_t:SetTextTooltip(ScpArgMsg('HAT_OFF'))
+
 	end
 
 	if hat_l_Visible == 1 then

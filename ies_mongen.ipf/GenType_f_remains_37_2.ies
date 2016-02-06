@@ -5,7 +5,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,P
 4,4,1,20,-1,60000,1,0,0,0,0,1,monument_05,UnvisibleName,,,,MON_DUMMY,,,REMAINS37_2_MT01,,,NO,YES,NO,Neutral,Anim/05_STD,,,
 5,5,1,20,-1,60000,1,0,0,0,0,1,monument_03,UnvisibleName,,,,,,,REMAINS37_2_MT02,,,NO,YES,NO,Neutral,,,,
 6,6,1,20,-1,60000,1,0,0,0,0,1,monument_03,UnvisibleName,,,,,,,REMAINS37_2_MT03,,,NO,YES,NO,Neutral,,,,
-7,7,1,20,-1,60000,1,0,0,0,0,1,monument_03,UnvisibleName,,,,,,,REMAINS37_2_FAKEMT,,,NO,YES,NO,Neutral,,,,
+7,7,1,20,-1,60000,1,0,0,0,0,1,monument_03,UnvisibleName,,,,,,,,,,NO,YES,NO,Neutral,,,,
 8,8,1,20,-1,60000,1,0,0,0,0,1,dirt_heal_4,UnvisibleName,,,,,,,REMAINS37_2_HEAL,,,NO,YES,NO,Neutral,,,,
 9,9,1,40,-1,60000,8,0,0,0,1,1,noshadow_npc,UnvisibleName,,,,,,,REMAINS37_2_STONES,,,NO,YES,NO,Neutral,,,,
 10,10,1,10,-1,60000,10,0,0,0,1,1,noshadow_npc,UnvisibleName,,,,,,,REMAINS37_2_BRANCHES,,,NO,YES,NO,Neutral,,,,
