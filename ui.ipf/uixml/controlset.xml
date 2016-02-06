@@ -2539,7 +2539,7 @@
 			<richtext name="richtext_partynote_1_1_1_1_1" rect="0 0 126 28" margin="310 218 0 0" layout_gravity="left top" drawbackground="false" fixwidth="true" fontname="white_16_ol" maxwidth="120" slideshow="false" spacey="0" textalign="center center" updateparent="false" format="{@st45tw2}%s" param1="value" param1_def="위치" resizebytext="false"/>
 			<groupbox name="gbox_member" rect="0 0 580 579" margin="5 255 0 0" layout_gravity="left top" draw="true" hittestbox="false" resizebyresolution="true" scrollbar="true" skin="none"/>
 			<groupbox name="gbox_list" rect="0 0 560 573" margin="5 -1 0 0" layout_gravity="left top" draw="true" hittestbox="false" resizebyresolution="true" scrollbar="true" skin="none" parent="gbox_member"/>
-			<checkbox name="chk_showonlyconnected" margin="0 0 15 10" rect="0 0 202 22" clicksound="button_click_big" oversound="button_over" layout_gravity="right bottom" format="{@st45tw2}%s{/}" param1="value" param1_def="접속인원만 보기" LBtnUpScp="GUILD_SHOW_ONLY_CONNECTED" ConfigName="Guild_ShowOnlyConnected"/>
+      <checkbox name="chk_showonlyconnected" margin="430 863 15 0" rect="0 0 202 22" clicksound="button_click_big" oversound="button_over" layout_gravity="right top" format="{@st45tw2}%s{/}" param1="value" param1_def="접속인원만 보기" LBtnUpScp="GUILD_SHOW_ONLY_CONNECTED" ConfigName="Guild_ShowOnlyConnected"/>
 		</controls>
 	</controlset>
 	<controlset name="guild_properties" hittest="true" width="590" height="900" hittestset="false" draw="false" skin="none">
