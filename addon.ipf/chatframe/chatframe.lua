@@ -176,6 +176,10 @@ end
 
 function DRAW_CHAT_MSG(groupboxname, size, startindex, framename)
 
+	if startindex < 0 then
+		return;
+	end
+
 	if framename == nil then
 
 		framename = "chatframe";
@@ -225,10 +229,17 @@ function DRAW_CHAT_MSG(groupboxname, size, startindex, framename)
 					
 				end
 			end
+			if ypos == 0 then
+				DRAW_CHAT_MSG(groupboxname, size, startindex - 1, framename);
+				return;
+			end
 		end
 
 		-- 컨트롤은 이미 만들어 놓은게 있을수도 있음. 있으면 그냥 가져다 씀
 		local clusterinfo = session.ui.GetChatMsgClusterInfo(groupboxname, i)
+		if clusterinfo == nil then
+			return;
+		end
 		local clustername = "cluster_"..clusterinfo:GetClusterID()
 		roomID = clusterinfo:GetRoomID();
 		local cluster = GET_CHILD(groupbox, clustername);
