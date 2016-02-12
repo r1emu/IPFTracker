@@ -7289,6 +7289,18 @@ function SCR_Get_Rain_Ratio(skill)
     return value;
 end
 
+function SCR_GET_SafetyZone_Ratio(skill)
+    local pc = GetSkillOwner(skill);
+    local value = skill.Level * 2;
+    
+    local abil = GetAbility(pc, 'Cleric18')
+    if abil ~= nil and 1 == abil.ActiveState then
+        value = value + abil.Level * 1;
+    end
+    
+    return value;
+end
+
 
 function SCR_GET_Briquetting_Ratio(skill)
     local value = 4.5 + skill.Level * 0.5;

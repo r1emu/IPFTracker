@@ -5744,6 +5744,7 @@
 	<image name="Dlg_port_ShellyPennington" file="\npcimg\ShellyPennington.png" imgrect="0 0 850 900" CMM_Caption="룬캐스터마스터"/>
 		<image name="Dlg_port_KiolRuarawa" file="\npcimg\KiolRuarawa.png" imgrect="0 0 900 900" CMM_Caption="페더풋마스터"/>
 		<image name="Dlg_port_Herkus" file="\npcimg\Herkus.png" imgrect="0 0 700 1000" CMM_Caption="크리비마스터"/>
+	<image name="Dlg_port_Nun_Aiste" file="\npcimg\Nun_Aiste.png" imgrect="0 0 7500 900" CMM_Caption="수녀원npc"/>
 	</imagelist>
 	<imagelist category="bufficon">
 		<image name="icon_Str_up" file="\icon\buff_icon.tga" imgrect="256 384 128 128" CMM_Caption="힘+"/>

@@ -599,6 +599,7 @@ ClassID,ActiveState,Level,ClassName,Name,Icon,Job,SkillCategory,AddSpend,Desc,Bu
 401014,1,1,Cleric8,세이프티 존: 범위 증가,ability_cleric_Cleric8,Char4_1,Cleric_SafetyZone,SP/6,[세이프티 존]이 적용되는 범위가 15로 늘어납니다.,,,NO,SCR_ABIL_NONE,NO,
 401015,1,1,Cleric9,수호성인: 피해 감소,ability_cleric_Cleric9,Char4_1,Cleric_PatronSaint,SP/14,[수호성인]이 적용된 캐릭터가 받는 피해가 특성 레벨당 5% 줄어듭니다.,,,NO,SCR_ABIL_NONE,NO,
 401016,1,1,Cleric10,힐: 피해 제거,ability_cleric_Cleric10,Char4_1,Cleric_Heal,SP/3,[힐]이 적에게 대미지를 주지 않으며, 적이 들어와도 반응하지 않습니다.,,,NO,SCR_ABIL_NONE,NO,
+401017,1,1,Cleric18,세이프티 존: 방어 횟수,ability_cleric_Cleric8,Char4_1,Cleric_SafetyZone,SP/4,스킬 [세이프티 존]의 방어 횟수가 특성 레벨당 1 증가합니다.,,,NO,SCR_ABIL_NONE,NO,
 402001,1,1,Kriwi11,자이바스: 강화,ability_cleric_Kriwi11,Char4_3,Kriwi_Zaibas,,적에게 입히는 [자이바스]의 대미지가 특성 레벨당 1% 증가합니다.,,,YES,SCR_ABIL_NONE,NO,
 402002,1,1,Kriwi12,자이바스: 강화 2,ability_cleric_Kriwi12,,,,[자이바스] 대미지가 크리비 2서클 수준으로 강화됩니다.,,,YES,SCR_ABIL_NONE,NO,
 402003,1,1,Kriwi13,자이바스: 강화 3,ability_cleric_Kriwi13,,,,[자이바스] 대미지가 크리비 3서클 수준으로 강화됩니다.,,,YES,SCR_ABIL_NONE,NO,

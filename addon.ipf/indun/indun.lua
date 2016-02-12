@@ -108,7 +108,7 @@ function DRAW_INDUN_UI(frame, type)
 		end
 	end
 
-	GBOX_AUTO_ALIGN(gbox, 0, 0, 0, true, false);
+	GBOX_AUTO_ALIGN(gbox, 0, -7, 0, true, false);
 end
 
 function OPEN_DUNGEON(frame, ctrl)

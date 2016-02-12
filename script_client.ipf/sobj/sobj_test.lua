@@ -103,6 +103,8 @@ function SSN_CLIENT_PARTYQUEST_REFRESH(pc)
                     control.CustomCommand("PARTYQUEST_REFRESH", 0, 0, 0)
                 end
             end
+        elseif sObj.PARTY_Q_TIME1 == 'None' and sObj.PARTY_Q_COUNT1 > 0 then
+            control.CustomCommand("PARTYQUEST_REFRESH", 0, 0, 0)
     	end
     end
 end

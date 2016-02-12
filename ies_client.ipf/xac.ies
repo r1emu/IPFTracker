@@ -2127,6 +2127,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 16108,artefact_champagne_glass_set,,,,item_hi\pc_item\weapon\artefact_champagne_glass_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 16109,artefact_champagne_set,,,,item_hi\pc_item\weapon\artefact_champagne_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 16110,artefact_statuebase_set,,,,item_hi\pc_item\weapon\artefact_statuebase_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
+16111,artefact_popcorn_set,,,,item_hi\pc_item\weapon\artefact_popcorn_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 17002,cleric_f_mace_thornhammer,,,,item_hi\pc_item\weapon\it_monk_thornhammer.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 17003,cleric_f_mace_Baptism,,,,char_hi\monster\Baptism_obj_set.xac,char_texture\monster\Baptism_obj\,bg_hi\ErrorBox.mtl,,,NO
 17004,cleric_f_mace_blacksmith,,,,item_hi\pc_item\weapon\cleric_f_mace_blacksmith.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO

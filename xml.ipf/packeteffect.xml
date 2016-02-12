@@ -856,6 +856,7 @@
         <Effect Name="F_fire018_green"/>
         <Effect Name="F_burstup027_fire1_green"/>
         <Effect Name="event_casting"/>
+    <Effect Name="F_buff_basic025_white_line_2"/>
     </Category>
     <Category ID="26">
         <Effect Name="I_warrior_ironhook_hook2"/>
@@ -1625,7 +1626,9 @@
         <Effect Name="id_castle_elt"/>
         <Effect Name="id_castle_elt2"/>
         <Effect Name="MonsterStage"/>
-    </Category>
+    <Effect Name="F_spin012_blue##0.5"/>
+		<Effect Name="F_spin012_blue##1"/>
+	</Category>
     <Category ID="45">
         <Effect Name="Cleric_Barrier"/>
         <Effect Name="Wizard_IceGust"/>
@@ -2159,7 +2162,9 @@
         <Effect Name="F_explosion103_violet"/>
         <Effect Name="I_force015_violet#B_mouth 01"/>
         <Effect Name="I_force015_violet#Bip001 Spine"/>
-    </Category>
+    <Effect Name="F_burstup011_violet"/>
+    <Effect Name="TABLEL72_SUBQ8_MINI"/>
+	</Category>
     <Category ID="27">
         <Effect Name="SAPPER_TRAP_Sapper_BroomTrap"/>
         <Effect Name="I_laser005_blue"/>
