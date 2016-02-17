@@ -3,6 +3,7 @@ function GUILDEVENTPOPUP_ON_INIT(addon, frame)
 
 	addon:RegisterMsg("GUILD_PROPERTY_UPDATE", "ON_UPDATE_GUILDEVENT_POPUP");
 	addon:RegisterMsg("GUILD_INFO_UPDATE", "ON_UPDATE_GUILDEVENT_POPUP");
+	addon:RegisterMsg('GAME_START', 'ON_UPDATE_GUILDEVENT_POPUP');
 
 end
 
@@ -26,6 +27,7 @@ function ON_UPDATE_GUILDEVENT_POPUP(frame)
 	local GuildRaidFlag = partyObj.GuildRaidFlag;
 	
 	if GuildInDunFlag == 0 and GuildBossSummonFlag == 0 and GuildRaidFlag == 0 then
+		frame:ShowWindow(0);
 		return;
 	end
 
@@ -44,9 +46,9 @@ function ON_UPDATE_GUILDEVENT_POPUP(frame)
 		LocInfo = guildEventCls.StageLoc_1;
 	end
 	
+	frame:SetUserValue("CLSSID", guildEventCls.ClassID);
 	frame:SetUserValue("STARTWAITSEC", guildEventCls.StartWaitSec);
 
-	
 	local sysTime = geTime.GetServerSystemTime();
 	local endTime = imcTime.GetSysTimeByStr(partyObj.GuildEventStartTime);
 	local difSec = imcTime.GetDifSec(sysTime, endTime);
@@ -76,23 +78,38 @@ function ON_UPDATE_GUILDEVENT_POPUP(frame)
 
 	local isLeader = AM_I_LEADER(PARTY_GUILD);
 	if isLeader == 1 then
-		REQ_JOIN_GUILDEVENT(nil, nil)
+			REQ_JOIN_GUILDEVENT(nil, nil, 1)
 			--return;
 	end
-
 		local etcObj = GetMyEtcObject();
+
+		if etcObj.GuildEventSelectTime ~= "None" and IsLaterThanByStr(etcObj.GuildEventSelectTime) == 0 then
+			if etcObj.GuildEventStartTimeSave == partyObj.GuildEventBroadCastTime then
+			frame:ShowWindow(0);
+			return;
+		end
+		end
+		
+		
+		frame:ShowWindow(1);
 		if etcObj.GuildEventSeq == partyObj.GuildEventSeq then
 			--frame:ShowWindow(0);
 		else
 	frame:ShowWindow(1);
 		end
 
-	local txt_goal = frame:GetChild("txt_goal");
-	local goalTxt = ScpArgMsg("QuestDescBasicTxt");
-	goalTxt = goalTxt .. " " .. guildEventCls.SummaryInfo;
-	local mapLinktext = MAKE_LINK_MAP_TEXT(mapCls.ClassName, posInfo.x, posInfo.z);
-	goalTxt = goalTxt .. "{nl}" .. ScpArgMsg("Location") .. " : " .. mapLinktext;
-	txt_goal:SetTextByKey("value", goalTxt);
+		local goalInfo = GET_CHILD_RECURSIVELY(frame, "goalInfo")
+		goalInfo:SetTextByKey("value", guildEventCls.Name);
+
+		local locationInfo = GET_CHILD_RECURSIVELY(frame, "locationInfo")
+		local txt_locinfo = MAKE_LINK_MAP_TEXT_NO_POS(mapCls.ClassName, posInfo.x, posInfo.z);
+		locationInfo:SetTextByKey("value", txt_locinfo);
+
+		local memberCount =  GET_CHILD_RECURSIVELY(frame, "memberCount")
+		memberCount:SetTextByKey("value", partyObj.GuildEventJoinCount);
+		local aliveMemberCount = session.party.GetAliveMemberCount(PARTY_GUILD);
+		memberCount:SetTextByKey("value2", aliveMemberCount);
+		
 	
 	frame:RunUpdateScript("GUILDEVENTPOPUP_UPDATE_STARTWAITSEC", 0, 0, 0, 1)
 
@@ -103,7 +120,11 @@ function ON_UPDATE_GUILDEVENT_POPUP(frame)
 			btn_join:ShowWindow(0);
 			btn_close:ShowWindow(0);
 		elseif etcObj.GuildEventSeq == partyObj.GuildEventSeq then
+			if IsLaterStrByStr(partyObj.GuildEventBroadCastTime, etcObj.GuildEventJoinSelectTime) == 1 then
+			else
 			btn_join:ShowWindow(0);
+				btn_close:ShowWindow(0);
+			end
 		else
 		btn_join:SetTextByKey("value", ScpArgMsg("Join"));
 		btn_join:ShowWindow(1);
@@ -121,24 +142,36 @@ function ON_UPDATE_GUILDEVENT_POPUP(frame)
 		local isLeader = AM_I_LEADER(PARTY_GUILD);
 
 		if isLeader == 1 then
-			REQ_JOIN_GUILDEVENT(nil, nil)
+			REQ_JOIN_GUILDEVENT(nil, nil, 1)
 			--return;
 		end
-		
+		frame:ShowWindow(1);
 		local etcObj = GetMyEtcObject();
+
+		if etcObj.GuildEventSelectTime ~= "None" and IsLaterThanByStr(etcObj.GuildEventSelectTime) == 0 then
+			if etcObj.GuildEventStartTimeSave == partyObj.GuildEventBroadCastTime then
+				frame:ShowWindow(0);
+				return;
+			end
+		end
+
 		if etcObj.GuildEventSeq == partyObj.GuildEventSeq then
 			--frame:ShowWindow(0);
 		else
 			frame:ShowWindow(1);
 		end
 
+		local goalInfo = GET_CHILD_RECURSIVELY(frame, "goalInfo")
+		goalInfo:SetTextByKey("value", guildEventCls.Name);
+
+		local locationInfo = GET_CHILD_RECURSIVELY(frame, "locationInfo")
+		local txt_locinfo = MAKE_LINK_MAP_TEXT_NO_POS(mapCls.ClassName, posX, posZ);
+		locationInfo:SetTextByKey("value", txt_locinfo);
 			
-		local txt_goal = frame:GetChild("txt_goal");
-		local goalTxt = ScpArgMsg("QuestDescBasicTxt");
-		goalTxt = goalTxt .. " " .. guildEventCls.SummaryInfo;
-		local mapLinktext = MAKE_LINK_MAP_TEXT(mapCls.ClassName, posX, posZ);
-		goalTxt = goalTxt .. "{nl}" .. ScpArgMsg("Location") .. " : " .. mapLinktext;
-		txt_goal:SetTextByKey("value", goalTxt);
+		local memberCount =  GET_CHILD_RECURSIVELY(frame, "memberCount")
+		memberCount:SetTextByKey("value", partyObj.GuildEventJoinCount);
+		local aliveMemberCount = session.party.GetAliveMemberCount(PARTY_GUILD);
+		memberCount:SetTextByKey("value2", aliveMemberCount);
 	
 		frame:RunUpdateScript("GUILDEVENTPOPUP_UPDATE_STARTWAITSEC", 0, 0, 0, 1)
 
@@ -148,8 +181,11 @@ function ON_UPDATE_GUILDEVENT_POPUP(frame)
 			btn_join:ShowWindow(0);
 			btn_close:ShowWindow(0);
 		elseif etcObj.GuildEventSeq == partyObj.GuildEventSeq then
+			if IsLaterStrByStr(partyObj.GuildEventBroadCastTime, etcObj.GuildEventJoinSelectTime) == 1 then
+			else
 			btn_join:ShowWindow(0);
 			btn_close:ShowWindow(0);
+			end
 		else
 			btn_join:SetTextByKey("value", ScpArgMsg("Join"));
 			btn_join:ShowWindow(1);
@@ -160,15 +196,24 @@ function ON_UPDATE_GUILDEVENT_POPUP(frame)
 
 end
 
-function REQ_JOIN_GUILDEVENT(parent, ctrl)
+function REQ_JOIN_GUILDEVENT(parent, ctrl, isLeader)
 
-	control.CustomCommand("GUILDEVENT_JOIN", 0);	
+	if isLeader ~= 1 then
+		isLeader = 0
+	end
+	--local frame = parent:GetTopParentFrame();
+--	frame:Set
+	control.CustomCommand("GUILDEVENT_JOIN", isLeader);
+
 
 end
 
 function REQ_ClOSE_GUILDEVENT(parent, ctrl)
 
 	local frame = parent:GetTopParentFrame();
+
+	control.CustomCommand("GUILDEVENT_REFUSAL", frame:GetUserIValue("CLSSID"));
+
 	frame:ShowWindow(0);
 
 end
@@ -196,5 +241,4 @@ function GUILDEVENTPOPUP_UPDATE_STARTWAITSEC(frame)
 	txt_startwaittime:SetTextByKey("value", timeText);
 
 	return 1;
-end
-
+end

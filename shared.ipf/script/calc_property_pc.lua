@@ -1,4 +1,4 @@
-﻿function SCR_GET_JOB_STR(pc)
+function SCR_GET_JOB_STR(pc)
 	
 	local jobObj = GetJobObject(pc);
 	if jobObj ~= nil then
@@ -1562,15 +1562,29 @@ function SCR_GET_ADDOVERHEAT(pc, skill)
 end
 
 function SCR_GET_PC_LIMIT_BUFF_COUNT(self)
-	
+
 	local count = 5;
+	local TokenBuffCnt = 0
 
 	if 'Warrior' == GetJobObject(self).CtrlType then
 		count = 7;
+	elseif 'Cleric' == GetJobObject(self).CtrlType then
+	  count = 7;
 	end
+	
+	if 1 == IsPremiumState(self, ITEM_TOKEN) then
+	  TokenBuffCnt = 1
+	end
+	
+	local abil = GetAbility(self, "AddBuffCount")
+	if abil ~= nil then
+	    count = count + 1
+	end
+	
+	count = count + self.LimitBuffCount_BM + TokenBuffCnt;
 
-	count = count + self.LimitBuffCount_BM;
 	return count;
+
 end
 
 function GET_MAXHATE_COUNT(self)
@@ -1607,4 +1621,92 @@ function GET_ArmorMaterial_ID(self)
 		self.ArmorMaterial = 'Chain';
 		return 5;
 	end
+end
+
+function SCR_GET_ARIES_ATKFACTOR_PC(self)
+    return self.AriesAtkFactor_PC_BM;
+end
+
+function SCR_GET_SLASH_ATKFACTOR_PC(self)
+    return self.SlashAtkFactor_PC_BM;
+end
+
+function SCR_GET_STRIKE_ATKFACTOR_PC(self)
+    return self.StrikeAtkFactor_PC_BM;
+end
+
+function SCR_GET_MISSILE_ATKFACTOR_PC(self)
+    return self.MissileAtkFactor_PC_BM;
+end
+
+function SCR_GET_FIRE_ATKFACTOR_PC(self)
+    return self.FireAtkFactor_PC_BM;
+end
+
+function SCR_GET_ICE_ATKFACTOR_PC(self)
+    return self.IceAtkFactor_PC_BM;
+end
+
+function SCR_GET_LIGHTNING_ATKFACTOR_PC(self)
+    return self.LightningAtkFactor_PC_BM;
+end
+
+function SCR_GET_POISON_ATKFACTOR_PC(self)
+    return self.PoisonAtkFactor_PC_BM;
+end
+
+function SCR_GET_EARTH_ATKFACTOR_PC(self)
+    return self.EarthAtkFactor_PC_BM;
+end
+
+function SCR_GET_HOLY_ATKFACTOR_PC(self)
+    return self.HolyAtkFactor_PC_BM;
+end
+
+function SCR_GET_DARK_ATKFACTOR_PC(self)
+    return self.DarkAtkFactor_PC_BM;
+end
+
+function SCR_GET_ARIES_DEFFACTOR_PC(self)
+    return self.AriesDefFactor_PC_BM;
+end
+
+function SCR_GET_SLASH_DEFFACTOR_PC(self)
+    return self.SlashDefFactor_PC_BM;
+end
+
+function SCR_GET_STRIKE_DEFFACTOR_PC(self)
+    return self.StrikeDefFactor_PC_BM;
+end
+
+function SCR_GET_MISSILE_DEFFACTOR_PC(self)
+    return self.MissileDefFactor_PC_BM;
+end
+
+function SCR_GET_FIRE_DEFFACTOR_PC(self)
+    return self.FireDefFactor_PC_BM;
+end
+
+function SCR_GET_ICE_DEFFACTOR_PC(self)
+    return self.IceDefFactor_PC_BM;
+end
+
+function SCR_GET_LIGHTNING_DEFFACTOR_PC(self)
+    return self.LightningDefFactor_PC_BM;
+end
+
+function SCR_GET_POISON_DEFFACTOR_PC(self)
+    return self.PoisonDefFactor_PC_BM;
+end
+
+function SCR_GET_EARTH_DEFFACTOR_PC(self)
+    return self.EarthDefFactor_PC_BM;
+end
+
+function SCR_GET_HOLY_DEFFACTOR_PC(self)
+    return self.HolyDefFactor_PC_BM;
+end
+
+function SCR_GET_DARK_DEFFACTOR_PC(self)
+    return self.DarkDefFactor_PC_BM;
 en

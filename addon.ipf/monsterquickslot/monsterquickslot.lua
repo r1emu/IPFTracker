@@ -47,7 +47,10 @@ function MONSTER_QUICKSLOT(isOn, monName, buffType, ableToUseSkill)
 				local sklCls = GetClass("Skill", sklName);
 				local slot = slotset:GetSlotByIndex(i);
 				if slot ~= nil then
-					SET_SLOT_SKILL(slot, sklCls);
+					local type = sklCls.ClassID;
+					local icon = CreateIcon(slot);
+					local imageName = 'icon_' .. sklCls.Icon;
+					icon:Set(imageName, "Skill", type, 0);
 					local slotString 	= 'QuickSlotExecute'.. (i+1);
 					local hotKey = nil
 

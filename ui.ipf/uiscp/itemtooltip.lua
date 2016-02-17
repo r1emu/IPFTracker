@@ -399,4 +399,96 @@ end
 
 function CLOSE_ITEM_TOOLTIP()
 
-end
+end
+
+
+-- ???®Ïàò???§ÌÅ¨Î°??ÑÏù¥?úÎèÑ ?úÏãú?????¨Ïö©?©Îãà??
+function SET_ITEM_TOOLTIP_ALL_TYPE(icon, invitem, className, strType, ItemType, index)
+	
+	if className == 'Scroll_SkillItem' then
+		local obj = GetIES(invitem:GetObject());
+		SET_TOOLTIP_SKILLSCROLL(icon, obj, nil, strType);
+	else
+		icon:SetTooltipType('wholeitem');
+		if nil ~= strType and nil ~= ItemType and nil ~= index then
+			icon:SetTooltipArg(strType, ItemType, index);
+		end
+	end
+end
+
+function SET_ITEM_TOOLTIP_TYPE(prop, itemID, itemCls, tooltipType)
+	
+	local customTooltipScp = TryGetProp(itemCls, "CustomToolTip");
+	if customTooltipScp ~= nil and customTooltipScp ~= "None" then
+		customTooltipScp = _G[customTooltipScp];
+		customTooltipScp(prop, itemCls, nil, tooltipType);
+	else
+		prop:SetTooltipType('wholeitem');
+	end	
+	
+end
+
+function GET_ITEM_TOOLTIP_TYPE(itemID, itemCls)
+
+	return 'wholeitem'
+end
+
+function SET_TOOLTIP_SKILLSCROLL(icon, obj, itemCls, strType)
+
+	if nil == obj or obj.SkillType == 0 then
+		return 0;
+	end 
+
+	SET_SKILL_TOOLTIP_BY_TYPE_LEVEL(icon, obj.SkillType, obj.SkillLevel);
+	if strType ~= nil then
+		local slot = icon:GetParent();
+		if slot ~= nil then
+			slot:SetUserValue("SCROLL_ITEM_ID", GetIESID(obj));
+			slot:SetUserValue("SCROLL_ITEM_INVTYPE", strType);
+		end
+		
+		icon:SetUserValue("SCROLL_ITEM_ID", GetIESID(obj));
+		icon:SetUserValue("SCROLL_ITEM_INVTYPE", strType);
+	end
+
+	return 1;
+end
+
+-- ÎßàÏºì?±Ïóê??Î¨òÏÇ¨?êÏÑú ?§ÌÇ¨Î™??òÏò§?ÑÎ°ù
+function SET_ITEM_DESC(value, desc, item)
+	if desc == "None" then
+		desc = "";
+	end
+
+	local obj = GetIES(item:GetObject());
+
+	if nil ~= obj and
+	   obj.ClassName == 'Scroll_SkillItem' then		
+		local sklCls = GetClassByType("Skill", obj.SkillType)
+		value:SetTextByKey("value", obj.SkillLevel .. " Level/ "..  sklCls.Name);
+	else
+		value:SetTextByKey("value", desc);
+	end
+end
+
+function ICON_SET_INVENTORY_TOOLTIP(icon, invitem, strarg, itemCls)
+
+	if strarg == nil then
+		strarg = 'inven';
+	end
+
+	SET_ITEM_TOOLTIP_ALL_TYPE(icon, invitem, itemCls.ClassName, strarg, 0, invitem:GetIESID());
+
+	local itemobj = GetIES(invitem:GetObject());
+	if itemobj.ItemType == "Equip" and itemobj.MaxDur ~= 0 and itemobj.Dur == 0 then
+		icon:SetColorTone("FFFF0000");
+	end
+
+end
+
+function ICON_SET_EQUIPITEM_TOOLTIP(icon, equipitem)
+
+	SET_ITEM_TOOLTIP_TYPE(icon, equipitem.type);
+	icon:SetTooltipArg('equip', equipitem.type, equipitem:GetIESID());
+
+en

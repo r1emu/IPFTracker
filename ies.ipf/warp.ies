@@ -571,3 +571,5 @@ ClassID,TargetX,TargetY,TargetZ,Latitude,Longitude,StartDir,ClassName,CMM_Name,T
 570,-1561,503,2205,45,45,0,ROKAS24_KATYN12,대왕의 관문 -> 레타스 개울가,f_katyn_12
 571,2066,288,213,45,45,0,UNDERFORTRESS65_TABLELAND72,전초구역 -> 스벤티마스 유형지,f_tableland_72
 572,-1677,128,1114,45,45,0,TABLELAND72_UNDERFORTRESS65,스벤티마스 유형지 -> 전초구역,d_underfortress_65
+573,490,-75,151,45,45,0,PILGRIM47_NUNNERY,필그림 들길 -> 살러스 수녀원,c_nunnery
+574,-1124,154,1360,45,45,0,NUNNERY_PILGRIM47,살러스 수녀원 -> 필그림 들길,f_pilgrimroad_47

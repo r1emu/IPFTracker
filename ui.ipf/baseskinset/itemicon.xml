@@ -360,6 +360,14 @@
 		<image name="icon_item_pants_skirmisher" file="\icon\equip\pants_skirmisher.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_gloves_skirmisher" file="\icon\equip\gloves_skirmisher.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_boots_skirmisher" file="\icon\equip\boots_skirmisher.png" imgrect="0 0 256 256"/>
+	<image name="icon_item_shirts_acolyte_yellow" file="\icon\equip\shirts_acolyte_yellow.png" imgrect="0 0 256 256" CMM_Caption="천방어구세트03_yellow"/>
+		<image name="icon_item_pants_acolyte_yellow" file="\icon\equip\pants_acolyte_yellow.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_gloves_acolyte_yellow" file="\icon\equip\gloves_acolyte_yellow.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_boots_acolyte_yellow" file="\icon\equip\boots_acolyte_yellow.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_shirts_nobleLeather_yellow" file="\icon\equip\shirts_nobleLeather_yellow.png" imgrect="0 0 256 256" CMM_Caption="가죽방어구세트05_yellow"/>
+		<image name="icon_item_pants_nobleLeather_yellow" file="\icon\equip\pants_nobleLeather_yellow.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_gloves_nobleLeather_yellow" file="\icon\equip\gloves_nobleLeather_yellow.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_boots_nobleLeather_yellow" file="\icon\equip\boots_nobleLeather_yellow.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="256_costume_icons">
 		<image name="icon_item_Alchemist_f" file="\icon\equip\Alchemist_f_icon.png" imgrect="0 0 256 256" CMM_Caption="알케미스트"/>
@@ -1119,7 +1127,7 @@
 		<image name="oak_wand_red" file="\icon\weapon\oak_wand_red.png" imgrect="0 0 256 256"/>
 		<image name="born_wand_red" file="\icon\weapon\born_wand_red.png" imgrect="0 0 256 256"/>
 		<image name="corona_stick_red" file="\icon\weapon\wand_corona_stick_red.png" imgrect="0 0 256 256"/>
-		<image name="corona_stick_up_yellow" file="\icon\weapon\wand_corona_stick_up_yellow.png" imgrect="0 0 256 256"/>
+		<image name="corona_stick_up_yellow" file="\icon\weapon\corona_stick_up_yellow.png" imgrect="0 0 256 256"/>
 		<image name="serpens_red" file="\icon\weapon\serpens_red.png" imgrect="0 0 256 256"/>
 		<image name="shaman_wand_red" file="\icon\weapon\shaman_wand_red.png" imgrect="0 0 256 256"/>
 		<image name="altaria_wand_red" file="\icon\weapon\altaria_wand_red.png" imgrect="0 0 256 256"/>
@@ -2006,6 +2014,7 @@
 		<image name="fulgur_red" file="\icon\weapon\fulgur_red.png" imgrect="0 0 256 256"/>
 		<image name="chargebow_black_red" file="\icon\weapon\chargebow_black_red.png" imgrect="0 0 256 256"/>
 		<image name="coritos_up_purple" file="\icon\weapon\coritos_up_purple.png" imgrect="0 0 256 256"/>
+	<image name="OTL_flag" file="\icon\weapon\OTL_flag.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="acc_item">
 		<image name="item_necklace_01" file="\icon\acc\item_necklace_1.png" imgrect="0 0 256 256" CMM_Caption="목걸이"/>
@@ -2015,8 +2024,12 @@
 		<image name="item_necklace_05" file="\icon\acc\item_necklace_5.png" imgrect="0 0 256 256"/>
 		<image name="item_necklace_06" file="\icon\acc\item_necklace_6.png" imgrect="0 0 256 256"/>
 		<image name="item_necklace_07" file="\icon\acc\item_necklace_7.png" imgrect="0 0 256 256"/>
+		<image name="item_necklace_07_orange" file="\icon\acc\item_necklace_7_orange.png" imgrect="0 0 256 256"/>
+		<image name="item_necklace_07_red" file="\icon\acc\item_necklace_7_red.png" imgrect="0 0 256 256"/>
 		<image name="item_necklace_08" file="\icon\acc\item_necklace_8.png" imgrect="0 0 256 256"/>
 		<image name="item_necklace_09" file="\icon\acc\item_necklace_9.png" imgrect="0 0 256 256"/>
+		<image name="item_necklace_09_blue" file="\icon\acc\item_necklace_9_blue.png" imgrect="0 0 256 256"/>
+		<image name="item_necklace_09_dark" file="\icon\acc\item_necklace_9_dark.png" imgrect="0 0 256 256"/>
 		<image name="item_necklace_10" file="\icon\acc\item_necklace_10.png" imgrect="0 0 256 256"/>
 		<image name="item_necklace_11" file="\icon\acc\item_necklace_11.png" imgrect="0 0 256 256"/>
 		<image name="item_necklace_12" file="\icon\acc\item_necklace_12.png" imgrect="0 0 256 256"/>
@@ -2043,9 +2056,13 @@
 		<image name="item_bracelet_07" file="\icon\acc\item_bracelet_07.png" imgrect="0 0 256 256"/>
 		<image name="item_bracelet_08" file="\icon\acc\item_bracelet_08.png" imgrect="0 0 256 256"/>
 		<image name="item_bracelet_09" file="\icon\acc\item_bracelet_09.png" imgrect="0 0 256 256"/>
+		<image name="item_bracelet_09_red" file="\icon\acc\item_bracelet_09_red.png" imgrect="0 0 256 256"/>
+		<image name="item_bracelet_09_yellow" file="\icon\acc\item_bracelet_09_yellow.png" imgrect="0 0 256 256"/>
 		<image name="item_bracelet_10" file="\icon\acc\item_bracelet_10.png" imgrect="0 0 256 256"/>
 		<image name="item_bracelet_11" file="\icon\acc\item_bracelet_11.png" imgrect="0 0 256 256"/>
 		<image name="item_bracelet_12" file="\icon\acc\item_bracelet_12.png" imgrect="0 0 256 256"/>
+		<image name="item_bracelet_12_blue" file="\icon\acc\item_bracelet_12_blue.png" imgrect="0 0 256 256"/>
+		<image name="item_bracelet_12_purple" file="\icon\acc\item_bracelet_12_purple.png" imgrect="0 0 256 256"/>
 		<image name="item_bracelet_13" file="\icon\acc\item_bracelet_13.png" imgrect="0 0 256 256"/>
 		<image name="item_bracelet_14" file="\icon\acc\item_bracelet_14.png" imgrect="0 0 256 256"/>
 		<image name="item_bracelet_15" file="\icon\acc\item_bracelet_15.png" imgrect="0 0 256 256"/>
@@ -3358,6 +3375,22 @@
 		<image name="icon_item_rune_stone_ice" file="\icon\item\icon_item_rune_stone_ice.png" imgrect="0 0 128 128" CMM_Caption="얼음의룬"/>
 		<image name="icon_item_rune_stone_giant" file="\icon\item\icon_item_rune_stone_giant.png" imgrect="0 0 128 128" CMM_Caption="거인의룬"/>
 		<image name="icon_item_rune_stone_protect" file="\icon\item\icon_item_rune_stone_protect.png" imgrect="0 0 128 128" CMM_Caption="보호의룬"/>
+	<image name="icon_item_initial-a" file="\icon\item\icon_item_initial-a.png" imgrect="0 0 128 128" CMM_Caption="대문자a"/>
+		<image name="icon_item_initial-e" file="\icon\item\icon_item_initial-e.png" imgrect="0 0 128 128" CMM_Caption="대문자e"/>
+		<image name="icon_item_initial-f" file="\icon\item\icon_item_initial-f.png" imgrect="0 0 128 128" CMM_Caption="대문자f"/>
+		<image name="icon_item_initial-i" file="\icon\item\icon_item_initial-i.png" imgrect="0 0 128 128" CMM_Caption="대문자i"/>
+		<image name="icon_item_initial-o" file="\icon\item\icon_item_initial-o.png" imgrect="0 0 128 128" CMM_Caption="대문자o"/>
+		<image name="icon_item_initial-r" file="\icon\item\icon_item_initial-r.png" imgrect="0 0 128 128" CMM_Caption="대문자r"/>
+		<image name="icon_item_initial-s" file="\icon\item\icon_item_initial-s.png" imgrect="0 0 128 128" CMM_Caption="대문자s"/>
+		<image name="icon_item_initial-t" file="\icon\item\icon_item_initial-t.png" imgrect="0 0 128 128" CMM_Caption="대문자t"/>
+		<image name="icon_item_initial-v" file="\icon\item\icon_item_initial-v.png" imgrect="0 0 128 128" CMM_Caption="대문자v"/>
+		<image name="icon_item_luckybox_red" file="\icon\item\icon_item_luckybox_red.png" imgrect="0 0 128 128" CMM_Caption="럭키박스빨강"/>
+		<image name="icon_item_luckybox_blue" file="\icon\item\icon_item_luckybox_blue.png" imgrect="0 0 128 128" CMM_Caption="럭키박스파랑"/>
+		<image name="icon_item_luckybox_orange" file="\icon\item\icon_item_luckybox_orange.png" imgrect="0 0 128 128" CMM_Caption="럭키박스주황"/>
+		<image name="icon_item_luckybox_green" file="\icon\item\icon_item_luckybox_green.png" imgrect="0 0 128 128" CMM_Caption="럭키박스초록"/>
+		<image name="icon_item_luckybox_gold" file="\icon\item\icon_item_luckybox_gold.png" imgrect="0 0 128 128" CMM_Caption="럭키박스황금"/>
+	<image name="icon_item_rosario" file="\icon\item\icon_item_rosario.png" imgrect="0 0 128 128" CMM_Caption="수도원묵주"/>
+		<image name="icon_item_holywater_empty" file="\icon\item\icon_item_holywater_empty.png" imgrect="0 0 128 128" CMM_Caption="빈성수병"/>
 	</imagelist>
 	<imagelist category="payment">
 		<image name="icon_item_hpPotionPremium" file="\icon\payment\icon_item_hpPotionPremium.png" imgrect="0 0 256 256" CMM_Caption="HP포션"/>

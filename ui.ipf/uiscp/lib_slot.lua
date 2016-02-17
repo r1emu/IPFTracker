@@ -241,7 +241,7 @@ end
 
 function GET_SLOT_ITEM(slot)
 
-	slot = tolua.cast(slot, "ui::CSlot");
+	slot = AUTO_CAST(slot);
 	local icon = slot:GetIcon();
 	if icon == nil then
 		return nil;
@@ -259,4 +259,32 @@ function PLAY_SLOT_EFT(slot, eftName, size)
 
 	local posX, posY = GET_SCREEN_XY(slot);
 	movie.PlayUIEffect(eftName, posX, posY, size);
+end
+
+function SLOT_SELECT_COUNT(fullNameStack, maxSelectCount)
+
+	INPUT_NUMBER_BOX(nil, ScpArgMsg("InputCount"), "_EXEC_SLOT_SELECT_COUNT", maxSelectCount, 1, maxSelectCount, nil, fullNameStack);
+
+end
+
+function _EXEC_SLOT_SELECT_COUNT(numberString, inputFrame)
+
+	local nameString = inputFrame:GetUserValue("ArgString");
+
+	local obj = ui.GetObjectByParentNameStackString(nameString);
+	if obj == nil then
+		return;
+	end
+
+	AUTO_CAST(obj);
+	obj:Select(0, 0);
+	if tonumber(numberString) > 0 then
+		obj:Select(1, tonumber(numberString));
+	end
+
+	local slotSet = obj:GetParent();
+	AUTO_CAST(slotSet);
+	slotSet:MakeSelectionList();
+
+
 en

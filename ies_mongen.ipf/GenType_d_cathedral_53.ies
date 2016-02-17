@@ -44,7 +44,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 50,50,1,40,-1,60000,1,0,0,0,1,0,0,npc_zacharial_desk,독서대,,,,,,,CHATHEDRAL54_BOOK,,,NO,YES,NO,Neutral,,,,
 51,51,1,40,-1,60000,1,0,0,0,1,0,0,BOOK_02,먼지 쌓인 책,,,,,,,CHATHEDRAL54_BOOK02,,,NO,YES,NO,Neutral,,,,
 52,52,1,40,-1,60000,1,0,0,0,1,0,0,Hiddennpc,휘장의 서명,,,,MON_DUMMY,,,CHATHEDRAL54_BOOK03,,,NO,YES,NO,Neutral,,,,
-53,53,0,40,30,30000,7,0,0,0,0,0,0,colimen_mage,,,,,,,,,,,NO,YES,NO,Monster,,,,Attack
+53,53,0,40,30,30000,7,0,0,0,0,0,0,anchor_mage,,,,,,,,,,,NO,YES,NO,Monster,,,,Attack
 54,54,1,40,-1,60000,1,0,0,0,1,0,0,npc_cathedral_device_02,메이번의 비밀,,,,,,,CHATHEDRAL53_MQ06_PUZZLE,,,NO,YES,NO,Neutral,,,,
 55,55,0,40,30,20000,5,0,0,0,0,0,0,Colifly,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,
 56,56,0,40,25,30000,6,0,0,0,0,0,0,loftlem_blue,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,

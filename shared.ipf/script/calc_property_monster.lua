@@ -811,8 +811,8 @@ function SCR_Get_MON_MGP(self)
 end
 
 function SCR_Get_MON_SR(self)
-	return self.MonSR + self.SR_BM;
---	return self.MonSR + self.SR_BM + math.floor(self.Lv / 10);
+    local value = self.MonSR + self.SR_BM;
+	return math.floor(value)
 end
 
 function SCR_Get_MON_SDR(self)

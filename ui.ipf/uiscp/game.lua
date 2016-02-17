@@ -1458,80 +1458,6 @@ function IS_RECIPE_ITEM(itemCls)
 
 end
 
--- ????수????크????이??도 ??시??????용??니??
-function SET_ITEM_TOOLTIP_ALL_TYPE(icon, invitem, className, strType, ItemType, index)
-	
-	if className == 'Scroll_SkillItem' then
-		SET_TOOLTIP_SKILLSCROLL(icon, invitem);
-	else
-		icon:SetTooltipType('wholeitem');
-		if nil ~= strType and nil ~= ItemType and nil ~= index then
-			icon:SetTooltipArg(strType, ItemType, index);
-		end
-	end
-end
-
-function SET_ITEM_TOOLTIP_TYPE(prop, itemID, itemCls)
-	prop:SetTooltipType('wholeitem');
-	
-end
-
-function GET_ITEM_TOOLTIP_TYPE(itemID, itemCls)
-
-	return 'wholeitem'
-end
-
-function SET_TOOLTIP_SKILLSCROLL(icon, invitem, itemCls)
-
-	local obj = GetIES(invitem:GetObject());
-
-	if nil == obj or obj.SkillType == 0 then
-		return 0;
-	end 
-
-	SET_SKILL_TOOLTIP_BY_TYPE_LEVEL(icon, obj.SkillType, obj.SkillLevel);
-	return 1;
-end
-
--- 마켓??에??묘사??서 ??킬????오??록
-function SET_ITEM_DESC(value, desc, item)
-	if desc == "None" then
-		desc = "";
-	end
-
-	local obj = GetIES(item:GetObject());
-
-	if nil ~= obj and
-	   obj.ClassName == 'Scroll_SkillItem' then		
-		local sklCls = GetClassByType("Skill", obj.SkillType)
-		value:SetTextByKey("value", obj.SkillLevel .. " Level/ "..  sklCls.Name);
-	else
-		value:SetTextByKey("value", desc);
-	end
-end
-
-function ICON_SET_INVENTORY_TOOLTIP(icon, invitem, strarg, itemCls)
-
-	if strarg == nil then
-		strarg = 'inven';
-	end
-
-	SET_ITEM_TOOLTIP_ALL_TYPE(icon, invitem, itemCls.ClassName, strarg, 0, invitem:GetIESID());
-
-	local itemobj = GetIES(invitem:GetObject());
-	if itemobj.ItemType == "Equip" and itemobj.MaxDur ~= 0 and itemobj.Dur == 0 then
-		icon:SetColorTone("FFFF0000");
-	end
-
-end
-
-function ICON_SET_EQUIPITEM_TOOLTIP(icon, equipitem)
-
-	SET_ITEM_TOOLTIP_TYPE(icon, equipitem.type);
-	icon:SetTooltipArg('equip', equipitem.type, equipitem:GetIESID());
-
-end
-
 function SCR_MAGICAMULET_EQUIP(fromitem, toitem)
 
 	local fromobj = GetIES(fromitem:GetObject());
@@ -4275,7 +4201,9 @@ end
 function UI_MODE_CHANGE(index)
 
 	local quickFrame = ui.GetFrame('quickslotnexpbar')
+	local restquickslot = ui.GetFrame('restquickslot')
 	local joystickQuickFrame = ui.GetFrame('joystickquickslot')
+	local joystickrestquickslot = ui.GetFrame('joystickrestquickslot')
 	local monQuickslot = ui.GetFrame("monsterquickslot")
 	if joystickQuickFrame == nil then
 		return;
@@ -4288,26 +4216,62 @@ function UI_MODE_CHANGE(index)
 	local Set1 = GET_CHILD(joystickQuickFrame,'Set1','ui::CGroupBox');
 	local Set2 = GET_CHILD(joystickQuickFrame,'Set2','ui::CGroupBox');
 
-if index == nil then
-	if IsJoyStickMode() == 1 then
-		quickFrame:ShowWindow(0);
-		joystickQuickFrame:ShowWindow(1);
-		Set1:ShowWindow(1);
-		Set2:ShowWindow(0);	
-	elseif IsJoyStickMode() == 0 then
-		quickFrame:ShowWindow(1);
-		joystickQuickFrame:ShowWindow(0);
-		Set1:ShowWindow(0);
-		Set2:ShowWindow(0);	
-	end
+	if index == nil then
+		if IsJoyStickMode() == 1 then
+			if control.IsRestSit() == true then	
+				joystickQuickFrame:ShowWindow(0);
+				joystickrestquickslot:ShowWindow(1);
+			else
+				joystickQuickFrame:ShowWindow(1);
+				joystickrestquickslot:ShowWindow(0);
+			end
+			
+			quickFrame:ShowWindow(0);
+			restquickslot:ShowWindow(0);
+
+			Set1:ShowWindow(1);
+			Set2:ShowWindow(0);	
+		elseif IsJoyStickMode() == 0 then
+			if control.IsRestSit() == true then	
+				quickFrame:ShowWindow(0);
+				restquickslot:ShowWindow(1);
+			else
+				quickFrame:ShowWindow(1);
+				restquickslot:ShowWindow(0);
+			end
+			
+			joystickQuickFrame:ShowWindow(0);
+			joystickrestquickslot:ShowWindow(0);
+
+			Set1:ShowWindow(0);
+			Set2:ShowWindow(0);	
+		end
 	elseif index == 1 then
+		if control.IsRestSit() == true then	
+			joystickQuickFrame:ShowWindow(0);
+			joystickrestquickslot:ShowWindow(1);
+		else
+			joystickQuickFrame:ShowWindow(1);
+			joystickrestquickslot:ShowWindow(0);
+		end
+			
 		quickFrame:ShowWindow(0);
-		joystickQuickFrame:ShowWindow(1);
+		restquickslot:ShowWindow(0);
+
 		Set1:ShowWindow(1);
 		Set2:ShowWindow(0);	
 	elseif index == 2 then	
-		quickFrame:ShowWindow(1);
+		if control.IsRestSit() == true then	
+			quickFrame:ShowWindow(0);
+			restquickslot:ShowWindow(1);
+		else
+			quickFrame:ShowWindow(1);
+			restquickslot:ShowWindow(0);
+		end
+			
 		joystickQuickFrame:ShowWindow(0);
+		joystickrestquickslot:ShowWindow(0);
+
 		Set1:ShowWindow(0);
 		Set2:ShowWindow(0);	
 	end
@@ -4315,6 +4279,10 @@ end
 
 function KEYBOARD_INPUT()
 	
+	if GetChangeUIMode() == 1 then
+		return;
+	end
+
 	local quickFrame = ui.GetFrame('quickslotnexpbar')
 	local restquickslot = ui.GetFrame('restquickslot')
 	local joystickrestquickslot = ui.GetFrame('joystickrestquickslot')
@@ -4329,15 +4297,25 @@ function KEYBOARD_INPUT()
 		if joystickrestquickslot:IsVisible() == 1 then
 			joystickrestquickslot:ShowWindow(0);
 		end
-		return;
 	end
+
 	if GetChangeUIMode() == 0 then
 		local quickFrame = ui.GetFrame('quickslotnexpbar')
 		local joystickQuickFrame = ui.GetFrame('joystickquickslot')
 		local Set1 = GET_CHILD(joystickQuickFrame,'Set1','ui::CGroupBox');
 		local Set2 = GET_CHILD(joystickQuickFrame,'Set2','ui::CGroupBox');
-		quickFrame:ShowWindow(1);
+
+		if control.IsRestSit() == true then
+			quickFrame:ShowWindow(0);
+			restquickslot:ShowWindow(1);
+		else
+			quickFrame:ShowWindow(1);
+			restquickslot:ShowWindow(0);
+		end
+
 		joystickQuickFrame:ShowWindow(0);
+		joystickrestquickslot:ShowWindow(0);
+
 		Set1:ShowWindow(0);
 		Set2:ShowWindow(0);	
 
@@ -4346,6 +4324,11 @@ function KEYBOARD_INPUT()
 end
 
 function JOYSTICK_INPUT()
+
+	if GetChangeUIMode() == 2 or GetChangeUIMode() == 3 then
+		return;
+	end
+
 	local joystickQuickFrame = ui.GetFrame('joystickquickslot')
 	local joystickrestquickslot = ui.GetFrame('joystickrestquickslot')
 	local restquickslot = ui.GetFrame('restquickslot')
@@ -4360,16 +4343,24 @@ function JOYSTICK_INPUT()
 		if restquickslot:IsVisible() == 1 then	
 			restquickslot:ShowWindow(0);
 		end
-		return;
 	end
-
 
 	if GetChangeUIMode() == 0 then
 		local quickFrame = ui.GetFrame('quickslotnexpbar')
 		local Set1 = GET_CHILD(joystickQuickFrame,'Set1','ui::CGroupBox');
 		local Set2 = GET_CHILD(joystickQuickFrame,'Set2','ui::CGroupBox');
+
+		if control.IsRestSit() == true then
+			joystickQuickFrame:ShowWindow(0);
+			joystickrestquickslot:ShowWindow(1);
+		else
+			joystickQuickFrame:ShowWindow(1);
+			joystickrestquickslot:ShowWindow(0);
+		end
+
 		quickFrame:ShowWindow(0);
-		joystickQuickFrame:ShowWindow(1);
+		restquickslot:ShowWindow(0);
+
 		Set1:ShowWindow(1);
 		Set2:ShowWindow(0);	
 

@@ -8,6 +8,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 7,7,0,40,25,20000,10,0,0,0,0,0,Triffid,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,
 8,8,0,40,9999,15000,30,0,0,0,0,0,rondo_red,,,,,,,,,,,NO,YES,NO,Monster,,,,
 9,9,0,40,9999,20000,4,0,0,0,0,0,Rubabos_red,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,
+10,10,1,30,1,1,1,3,0,0,0,0,Warp_arrow,살러스 수녀원,,,,MON_DUMMY,,,,PILGRIM47_NUNNERY,,NO,YES,NO,Neutral,,,,
 11,11,0,40,30,5000,10,0,0,0,0,0,rondo_red,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,
 12,12,1,40,-1,60000,1,0,0,0,1,0,LOST_PAPER,바스러져 가는 쪽지,,,,MON_DUMMY,,,PILGRIM47_DMSG,,,NO,YES,NO,Neutral,,,,
 13,13,1,30,-1,60000,1,0,0,0,1,0,poison_crystal_01,나태의 나무뿌리 수정,,,,MON_DUMMY,,,PILGRIM47_CRYST01,,,NO,YES,NO,Neutral,,,,

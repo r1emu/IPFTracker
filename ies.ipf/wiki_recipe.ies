@@ -14,6 +14,31 @@ ClassID,WikiPoint,TeachPoint,AutoGet,ClassName,TargetClassName,TargetMapName,Ill
 2008,0,0,0,R_rsc_3_1,R_rsc_3_1,,icon_item_Scroll,제작서-경화제,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,재료를 만들 수 있는 제작서
 2009,0,0,0,R_rsc_3_2,R_rsc_3_2,,icon_item_Scroll,제작서-질긴 힘줄,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,재료를 만들 수 있는 제작서
 2010,0,0,0,R_rsc_4_1,R_rsc_4_1,,icon_item_Scroll,제작서-레지네이트,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,재료를 만들 수 있는 제작서
+3001,0,0,0,R_Drug_AriesAtk_PC,R_Drug_AriesAtk_PC,,icon_item_recipe_misc1,제작서-공격 강화 포션:찌르기,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3002,0,0,0,R_Drug_SlashAtk_PC,R_Drug_SlashAtk_PC,,icon_item_recipe_misc1,제작서-공격 강화 포션:베기,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3003,0,0,0,R_Drug_StrikeAtk_PC,R_Drug_StrikeAtk_PC,,icon_item_recipe_misc1,제작서-공격 강화 포션:때리기,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3004,0,0,0,R_Drug_MissileAtk_PC,R_Drug_MissileAtk_PC,,icon_item_recipe_misc1,제작서-공격 강화 포션:미사일,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3005,0,0,0,R_Drug_FireAtk_PC,R_Drug_FireAtk_PC,,icon_item_recipe_misc1,제작서-공격 강화 포션:불,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3006,0,0,0,R_Drug_IceAtk_PC,R_Drug_IceAtk_PC,,icon_item_recipe_misc1,제작서-공격 강화 포션:얼음,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3007,0,0,0,R_Drug_PoisonAtk_PC,R_Drug_PoisonAtk_PC,,icon_item_recipe_misc1,제작서-공격 강화 포션:독,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3008,0,0,0,R_Drug_LightningAtk_PC,R_Drug_LightningAtk_PC,,icon_item_recipe_misc1,제작서-공격 강화 포션:전기,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3009,0,0,0,R_Drug_EarthAtk_PC,R_Drug_EarthAtk_PC,,icon_item_recipe_misc1,제작서-공격 강화 포션:땅,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3010,0,0,0,R_Drug_HolyAtk_PC,R_Drug_HolyAtk_PC,,icon_item_recipe_misc1,제작서-공격 강화 포션:신성,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3011,0,0,0,R_Drug_DarkAtk_PC,R_Drug_DarkAtk_PC,,icon_item_recipe_misc1,제작서-공격 강화 포션:어둠,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3012,0,0,0,R_Drug_AriesDef_PC,R_Drug_AriesDef_PC,,icon_item_recipe_misc1,제작서-방어 강화 포션:찌르기,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3013,0,0,0,R_Drug_SlashDef_PC,R_Drug_SlashDef_PC,,icon_item_recipe_misc1,제작서-방어 강화 포션:베기,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3014,0,0,0,R_Drug_StrikeDef_PC,R_Drug_StrikeDef_PC,,icon_item_recipe_misc1,제작서-방어 강화 포션:때리기,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3015,0,0,0,R_Drug_MissileDef_PC,R_Drug_MissileDef_PC,,icon_item_recipe_misc1,제작서-방어 강화 포션:미사일,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3016,0,0,0,R_Drug_FireDef_PC,R_Drug_FireDef_PC,,icon_item_recipe_misc1,제작서-방어 강화 포션:불,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3017,0,0,0,R_Drug_IceDef_PC,R_Drug_IceDef_PC,,icon_item_recipe_misc1,제작서-방어 강화 포션:얼음,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3018,0,0,0,R_Drug_PoisonDef_PC,R_Drug_PoisonDef_PC,,icon_item_recipe_misc1,제작서-방어 강화 포션:독,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3019,0,0,0,R_Drug_LightningDef_PC,R_Drug_LightningDef_PC,,icon_item_recipe_misc1,제작서-방어 강화 포션:전기,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3020,0,0,0,R_Drug_EarthDef_PC,R_Drug_EarthDef_PC,,icon_item_recipe_misc1,제작서-방어 강화 포션:땅,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3021,0,0,0,R_Drug_HolyDef_PC,R_Drug_HolyDef_PC,,icon_item_recipe_misc1,제작서-방어 강화 포션:신성,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3022,0,0,0,R_Drug_DarkDef_PC,R_Drug_DarkDef_PC,,icon_item_recipe_misc1,제작서-방어 강화 포션:어둠,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,포션을 만들 수 있는 제작서입니다.
+3023,0,0,0,R_Guild_Academy01,R_Guild_Academy01,,icon_item_recipe_misc1,제작서-아카데미,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,길드 구조물을 만들 수 있는 제작서입니다.
+3024,0,0,0,R_Guild_Forge01,R_Guild_Forge01,,icon_item_recipe_misc1,제작서-포지,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,길드 구조물을 만들 수 있는 제작서입니다.
+3025,0,0,0,R_Guild_ShieldCharger01,R_Guild_ShieldCharger01,,icon_item_recipe_misc1,제작서-쉴드 차져,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,길드 구조물을 만들 수 있는 제작서입니다.
 9001,0,0,0,R_Bocors_doll,R_Bocors_doll,,icon_item_Scroll,제작서-보코르 인형,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,보코르 인형을 만들 수 있는 제작서
 9003,0,0,0,R_TEST2,R_TEST2,,icon_item_weapon_misc1,제작서-글라디우스,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서
 9004,0,0,0,R_SIAULIAI50_DRUG01,R_SIAULIAI50_DRUG01,,icon_item_Scroll,제작서-해독제,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,재료를 만들 수 있는 제작서
@@ -222,6 +247,7 @@ ClassID,WikiPoint,TeachPoint,AutoGet,ClassName,TargetClassName,TargetMapName,Ill
 15063,10,5,0,R_BOW01_131,R_BOW01_131,,icon_item_weapon_misc1,제작서-크랙드 슈터,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 15064,10,5,0,R_BOW01_132,R_BOW01_132,,icon_item_weapon_misc1,제작서-슈페리어 크랙드 슈터,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 15065,10,5,0,R_BOW03_109,R_BOW03_109,,icon_item_weapon_misc4,제작서-밴딧,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+15066,10,5,0,R_BOW03_110,R_BOW03_110,,icon_item_weapon_misc4,제작서-디델 그랜드 크로스,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 15071,10,5,0,R_BOW03_111,R_BOW03_111,,icon_item_weapon_misc4,제작서-세이모스 크로스보우,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 15078,10,5,0,R_BOW03_113,R_BOW03_113,,icon_item_weapon_misc4,제작서-마가스 슈터,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 15081,10,5,0,R_BOW04_106,R_BOW04_106,,icon_item_weapon_misc5,제작서-카타콤 슈터,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
@@ -316,6 +342,7 @@ ClassID,WikiPoint,TeachPoint,AutoGet,ClassName,TargetClassName,TargetMapName,Ill
 18042,10,5,0,R_TSP03_107,R_TSP03_107,,icon_item_weapon_misc4,제작서-세이모스 파이크,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 18049,10,5,0,R_TSP03_109,R_TSP03_109,,icon_item_weapon_misc4,제작서-마가스 파이크,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 18052,10,5,0,R_TSP04_107,R_TSP04_107,,icon_item_weapon_misc5,제작서-카타콤 파이크,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+18059,10,5,0,R_TSP04_109,R_TSP04_109,,icon_item_weapon_misc5,제작서-뚫어뻥,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 19001,10,5,0,R_RAP01_101,R_RAP01_101,,icon_item_weapon_misc1,제작서-레이피어,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 19002,10,5,0,R_RAP01_102,R_RAP01_102,,icon_item_weapon_misc1,제작서-슈페리어 레이피어,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 19005,10,5,0,R_RAP02_102,R_RAP02_102,,icon_item_weapon_misc3,제작서-샤프 레이피어,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
@@ -622,6 +649,7 @@ ClassID,WikiPoint,TeachPoint,AutoGet,ClassName,TargetClassName,TargetMapName,Ill
 31036,10,5,0,R_SHD02_118,R_SHD02_118,,icon_item_shirts_misc3,제작서-알레멧 타워 실드,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 31037,10,5,0,R_SHD03_105,R_SHD03_105,,icon_item_shirts_misc4,제작서-파바이사 실드,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 31045,10,5,0,R_SHD03_107,R_SHD03_107,,icon_item_shirts_misc4,제작서-오트라바 실드,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+31055,10,5,0,R_SHD04_106,R_SHD04_106,,icon_item_shirts_misc5,제작서-아이나 실드,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 32002,10,5,0,R_DAG01_102,R_DAG01_102,,icon_item_weapon_misc1,제작서-슈페리어 나이프,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 32003,10,5,0,R_DAG01_103,R_DAG01_103,,icon_item_weapon_misc1,제작서-더크대거,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 32004,10,5,0,R_DAG01_104,R_DAG01_104,,icon_item_weapon_misc1,제작서-슈페리어 더크대거,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
@@ -656,6 +684,7 @@ ClassID,WikiPoint,TeachPoint,AutoGet,ClassName,TargetClassName,TargetMapName,Ill
 33059,10,5,0,R_NECK01_143,R_NECK01_143,,icon_item_necklace_misc1,제작서-가디언 네클리스,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 33060,10,5,0,R_NECK01_144,R_NECK01_144,,icon_item_necklace_misc1,제작서-슈페리어 가디언 네클리스,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 33062,10,5,0,R_NECK03_106,R_NECK03_106,,icon_item_necklace_misc4,제작서-메이번 네클리스,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+33063,10,5,0,R_NECK04_105,R_NECK04_105,,icon_item_necklace_misc4,제작서-테라리온,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 34007,10,5,0,R_BRC01_115,R_BRC01_115,,icon_item_bracelet_misc1,제작서-아이언 뱅글,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 34012,10,5,0,R_BRC02_101,R_BRC02_101,,icon_item_bracelet_misc3,제작서-크리스탈 뱅글,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 34013,10,5,0,R_BRC02_102,R_BRC02_102,,icon_item_bracelet_misc3,제작서-샤인 브레이슬릿,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
@@ -682,6 +711,8 @@ ClassID,WikiPoint,TeachPoint,AutoGet,ClassName,TargetClassName,TargetMapName,Ill
 34053,10,5,0,R_BRC01_139,R_BRC01_139,,icon_item_bracelet_misc1,제작서-슈페리어 젬 브레이슬릿,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 34054,10,5,0,R_BRC02_115,R_BRC02_115,,icon_item_bracelet_misc3,제작서-크란토 브레이슬릿,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 34055,10,5,0,R_BRC01_138,R_BRC01_138,,icon_item_bracelet_misc3,제작서-젬 브레이슬릿,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+34056,10,5,0,R_BRC03_108,R_BRC03_108,,icon_item_bracelet_misc4,제작서-아크메이지 뱅글,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+34057,10,5,0,R_BRC04_103,R_BRC04_103,,icon_item_bracelet_misc5,제작서-파다,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 35002,10,5,0,R_Hat_628024,R_Hat_628024,,icon_item_helm_misc1,제작서-둥지튼 병아리,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,코스튬을 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 35035,10,5,0,R_Hat_628052,R_Hat_628052,,icon_item_helm_misc1,제작서-강철 투구,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,코스튬을 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 35043,10,5,0,R_Hat_628043,R_Hat_628043,,icon_item_helm_misc1,제작서-산양 뿔,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,코스튬을 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.

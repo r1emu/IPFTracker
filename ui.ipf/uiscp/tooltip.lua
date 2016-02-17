@@ -394,7 +394,7 @@ function UPDATE_ABILITY_TOOLTIP(frame, strarg, numarg1, numarg2)
 	frame:Resize(frame:GetWidth(), ypos + 30);
  end
 
-function UPDATE_SKILL_TOOLTIP(frame, strarg, numarg1, numarg2, userData, obj, noTradeCnt)
+function UPDATE_SKILL_TOOLTIP(frame, strarg, numarg1, numarg2, userData, obj)
 	DESTROY_CHILD_BYNAME(frame, 'SKILL_CAPTION_');
 	local abil = session.GetSkillByGuid(numarg2);
 	local obj = nil;
@@ -547,7 +547,20 @@ function UPDATE_SKILL_TOOLTIP(frame, strarg, numarg1, numarg2, userData, obj, no
 	end
 	
 	local noTrade = GET_CHILD(frame, "trade_text", "ui::CRichText");
-	if 0 <= noTradeCnt then
+	local itemID = frame:GetUserValue("SCROLL_ITEM_ID");
+	local noTradeCnt = nil;
+	if itemID ~= "None" then
+		local scrollInvType = frame:GetUserValue("SCROLL_ITEM_INVTYPE");
+		local itemObj, isReadObj = GET_TOOLTIP_ITEM_OBJECT(scrollInvType, itemID);
+		if itemObj ~= nil then
+			noTradeCnt = TryGetProp(itemObj, "BelongingCount");
+			if isReadObj == 1 then
+				DestroyIES(itemObj);
+			end
+		end
+	end
+	
+	if noTradeCnt ~= nil and 0 <= noTradeCnt then
 		noTrade:SetTextByKey('count', noTradeCnt);
 		noTrade:ShowWindow(1);
 	else

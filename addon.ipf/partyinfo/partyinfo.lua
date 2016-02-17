@@ -190,6 +190,12 @@ function OPEN_PARTY_INFO()
 end
 
 function OUT_PARTY()
+
+	if session.GetCurrentMapProp():GetUsePartyOut() == "NO" then
+		ui.SysMsg(ScpArgMsg("ThatMapCannotPartyOut"));
+		return;
+	end
+
 	ui.Chat("/partyout");	
 	local headsup = ui.GetFrame("headsupdisplay");
 	local leaderMark = GET_CHILD(headsup, "Isleader", "ui::CPicture");
@@ -201,6 +207,12 @@ function BAN_PARTY_MEMBER(name)
 end
 
 function GIVE_PARTY_LEADER(name)
+	
+	if session.GetCurrentMapProp():GetUsePartyOut() == "NO" then
+		ui.SysMsg(ScpArgMsg("ThatMapCannotChangePartyLeader"));
+		return;
+	end
+
 	ui.Chat("/partyleader " .. name);	
 end
 

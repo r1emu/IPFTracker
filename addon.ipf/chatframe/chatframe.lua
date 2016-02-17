@@ -190,21 +190,16 @@ function REMOVE_CHAT_CLUSTER(groupboxname, clusteridlist)
 
 		for i = 1 , #clusteridlist do
 
-			if clusteridlist[i] ~= nil then
+			local clustername = "cluster_"..clusteridlist[i]
 
-				local clustername = "cluster_"..clusteridlist[i]
+		local child = GET_CHILD(groupbox,clustername)
+		if child ~= nil then
+			local beforeLineCount = groupbox:GetLineCount();	
 
-				local child = GET_CHILD(groupbox,clustername)
-				if child ~= nil then
-					local beforeLineCount = groupbox:GetLineCount();	
-
-					addpos = addpos + child:GetHeight()
+				addpos = addpos + child:GetHeight()
 			 
-					DESTROY_CHILD_BYNAME(groupbox, clustername);
-				end
+			DESTROY_CHILD_BYNAME(groupbox, clustername);
 			end
-
-			
 		end
 		
 		ADDYPOS_CHILD_BYNAME(groupbox, "cluster_", -addpos);
@@ -222,23 +217,19 @@ function REMOVE_CHAT_CLUSTER(groupboxname, clusteridlist)
 
 		for i = 1 , #clusteridlist do
 
-			if clusteridlist[i] ~= nil then
+			local clustername = "cluster_"..clusteridlist[i]
 
-				local clustername = "cluster_"..clusteridlist[i]
+		local child = GET_CHILD(groupbox,clustername)
+		if child ~= nil then
+				local beforeLineCount = groupbox:GetLineCount();	
 
-				local child = GET_CHILD(groupbox,clustername)
-				if child ~= nil then
-					local beforeLineCount = groupbox:GetLineCount();	
-
-					addpos = addpos + child:GetHeight()
+				addpos = addpos + child:GetHeight()
 			 
-					DESTROY_CHILD_BYNAME(groupbox, clustername);
-				end
-
+			DESTROY_CHILD_BYNAME(groupbox, clustername);
 			end
 		end
 
-		ADDYPOS_CHILD_BYNAME(groupbox, "cluster_", -addpos);
+			ADDYPOS_CHILD_BYNAME(groupbox, "cluster_", -addpos);
 
 	end
 

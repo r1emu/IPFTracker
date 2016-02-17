@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="yes"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by mayo (IMCGames Co., Ltd) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <ComponentList>
 	<Particle name="pattern018_2" texture="pattern018_2" width="5.00" height="5.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64"/>
 	<Particle name="pattern018_1" texture="pattern018_1" width="5.00" height="5.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64"/>
@@ -362,6 +362,16 @@
 	<Trail name="dash004" texture="dash004" height="4.00" texel_x="128" texel_y="128" texel_width="64" texel_height="64"/>
 	<Trail name="dash001" texture="dash001" height="5.00" texel_x="0" texel_y="0" texel_width="1040" texel_height="640"/>
 	<Trail name="smoke002" texture="smoke002" height="10.00" texel_x="512" texel_y="512" texel_width="64" texel_height="64"/>
+	<Model name="snow_dead" model="snow_dead.xac" motion="snow_dead_ani.xsm" texturepath="char_texture\monster\snow\" overlap="false"/>
+	<Model name="boss_SwordBallista_dead" model="boss_SwordBallista_dead.xac" motion="boss_SwordBallista_dead_ani.xsm" texturepath="char_texture\monster\SwordBallista\" overlap="false"/>
+	<Model name="EventVab" model="EventVab.xac" motion="EventVab.xsm" texturepath="effect\high\modeltexture\" overlap="false"/>
+	<Model name="EventVab02" model="EventVab02.xac" motion="EventVab02.xsm" texturepath="effect\high\modeltexture\" overlap="false"/>
+	<Model name="EventVab03" model="EventVab03.xac" motion="EventVab03.xsm" texturepath="effect\high\modeltexture\" overlap="false"/>
+	<Model name="EventVab04" model="EventVab04.xac" motion="EventVab04.xsm" texturepath="effect\high\modeltexture\" overlap="false"/>
+	<Model name="GroundStone" model="GroundStone.xac" motion="GroundStone.xsm" texturepath="effect\high\modeltexture\" overlap="false"/>
+	<Model name="SlaveStone" model="SlaveStone.xac" motion="SlaveStone.xsm" texturepath="char_texture\monster\Slave\" overlap="false"/>
+	<Model name="Dynamite" model="Dynamite.xac" motion="Dynamite.xsm" texturepath="char_texture\monster\Dynamite\" overlap="false"/>
+	<Model name="boss_Torment_dead" model="boss_Torment_dead.xac" motion="boss_Torment_dead_ani.xsm" texturepath="char_texture\monster\Torment\" overlap="false"/>
 	<Model name="poison_pot" model="poison_pot.xac" motion="None" texturepath="char_texture_low\monster\poison_pot\" overlap="false"/>
 	<Model name="rune_stone_Tiwaz" model="rune_stone_Tiwaz.xac" motion="None" texturepath="effect\high\modeltexture\" overlap="false"/>
 	<Model name="rune_stone_Thurisaz" model="rune_stone_Thurisaz.xac" motion="None" texturepath="effect\high\modeltexture\" overlap="false"/>
@@ -1105,6 +1115,7 @@
 	<Model name="bat_event_drop" model="bat_event_drop.xac" motion="bat_event_drop_ani.xsm" texturepath="char_texture\monster\bat_event\" overlap="true"/>
 	<Model name="stonetablet_stone_dead" model="stonetablet_stone_dead.xac" motion="stonetablet_stone_dead_ani.xsm" texturepath="char_texture\npc\stonetablet_stone\" overlap="true"/>
 	<Model name="npc_rokas_3_dead" model="npc_rokas_3_dead.xac" motion="npc_rokas_3_dead_ani.xsm" texturepath="char_texture\npc\npc_rokas_3\" overlap="false"/>
+	<Model name="vine_01_event_dead" model="vine_01_event_dead.xac" motion="vine_01_event_dead.xsm" texturepath="char_texture\npc\vine\" overlap="true"/>
 	<Text name="Text_damage_self" caption="" fontfilename="nngothicExtraBold.ttf" fontsize="24" bold="0" italic="0" outline="0" dropshadow="0" mindistance="100.00" maxdistance="300.00"/>
 	<Text name="Text_damage_decision" caption="" fontfilename="nngothicExtraBold.ttf" fontsize="20" bold="1" italic="0" outline="1" dropshadow="0" mindistance="50.00" maxdistance="150.00"/>
 	<Text name="Text_destination" caption="" fontfilename="nngothicExtraBold.ttf" fontsize="28" bold="0" italic="0" outline="0" dropshadow="0" mindistance="100.00" maxdistance="300.00"/>

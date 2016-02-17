@@ -56,9 +56,13 @@ function TOKEN_ON_MSG(frame, msg, argStr, argNum)
 	local gToken = logoutInternal:GetChild("gToken");
 	local time = gToken:GetChild("time");
 	time:ShowWindow(0);
-	local accountObj = GetMyAccountObj();
+
 	local tokenList = gToken:GetChild("tokenList");
 	tokenList:RemoveAllChild();
+
+	if argNum ~= ITEM_TOKEN or "NO" == argStr then
+		return;
+	end
 
 		local sysTime = geTime.GetServerSystemTime();
 	local endTime = session.loginInfo.GetTokenTime();
@@ -75,10 +79,6 @@ function TOKEN_ON_MSG(frame, msg, argStr, argNum)
 		time:StopUpdateScript("SHOW_TOKEN_REMAIN_TIME");
 	end
 	
-	if argNum ~= ITEM_TOKEN or "NO" == argStr then
-		return;
-	end
-
 	for i = 0 , 3 do
 		local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. i,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
 		local str, value = GetCashInfo(ITEM_TOKEN, i)
@@ -121,14 +121,10 @@ function TOKEN_ON_MSG(frame, msg, argStr, argNum)
 	imag = string.format("{img 20percent_image2 %d %d}", 100, 45) 
     value:SetTextByKey("value", imag);
 
+	local itemClassID = session.loginInfo.GetPremiumStateArg(ITEM_TOKEN)
+	local itemCls = GetClassByType("Item", itemClassID);
+	if nil ~= itemCls and itemCls.NumberArg2 > 0 then
 	local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 6,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
-	local prop = ctrlSet:GetChild("prop");
-    local imag = string.format("{img paid_pose_image %d %d}", 55, 45) 
-    prop:SetTextByKey("value", imag..ClMsg("AllowPremiumPose")); 
-	local value = ctrlSet:GetChild("value");
-	value:ShowWindow(0);
-
-	local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 7,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
 	local prop = ctrlSet:GetChild("prop");
 	local img = string.format("{img dealok_image %d %d}", 55, 45) 
 	prop:SetTextByKey("value", img .. ScpArgMsg("AllowTradeByCount"));
@@ -136,9 +132,23 @@ function TOKEN_ON_MSG(frame, msg, argStr, argNum)
 	local value = ctrlSet:GetChild("value");
 	img = string.format("{img dealok30_image2 %d %d}", 100, 45) 
 	value:SetTextByKey("value", img);
+	end
 		
+	local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 7,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
+    local prop = ctrlSet:GetChild("prop");
+    local imag = string.format("{img 2plus_image %d %d}", 55, 45) 
+    prop:SetTextByKey("value", imag..ClMsg("CanGetMoreBuff")); 
+    local value = ctrlSet:GetChild("value");
+    value:ShowWindow(0);
+
+	local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 8,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
+    local prop = ctrlSet:GetChild("prop");
+    local imag = string.format("{img paid_pose_image %d %d}", 55, 45) 
+    prop:SetTextByKey("value", imag..ClMsg("AllowPremiumPose")); 
+    local value = ctrlSet:GetChild("value");
+    value:ShowWindow(0);
 	
-	GBOX_AUTO_ALIGN(tokenList, 0, 0, 0, false, false);
+	GBOX_AUTO_ALIGN(tokenList, 0, 0, 0, false, true);
 end
 
 function STATUS_ON_PC_COMMENT_CHANGE(frame)

@@ -523,6 +523,8 @@ function GET_TOOLTIP_ITEM_OBJECT(strarg, guid, numarg1)
 		invitem = GET_DUMMYPC_ITEM(guid, numarg1);
 	elseif strarg == "warehouse" then
 		invitem = session.GetWarehouseItemByGuid(guid);
+	elseif strarg == "accountwarehouse" then
+		invitem = session.GetEtcItemByGuid(IT_ACCOUNT_WAREHOUSE, guid);
 	elseif strarg == "party" then
 		invitem = GetItemByID(guid, session.party.GetPartyInfo().inv);
 	elseif strarg == "exchange" then
@@ -572,6 +574,8 @@ function GET_TOOLTIP_ITEM_OBJECT(strarg, guid, numarg1)
 				return ownerItemObj;
 			end
 		end
+	elseif strarg == "guildwarehouse" then
+		invitem = session.GetEtcItemByGuid(IT_GUILD, guid);
 	else
 		invitem = GET_ITEM_BY_GUID(guid, 0);
 	end

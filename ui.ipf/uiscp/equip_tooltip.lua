@@ -232,7 +232,13 @@ function DRAW_EQUIP_ATK_N_DEF(tooltipframe, invitem, yPos, mainframename, strarg
     else
     	typeiconname = 'test_shield_icon'
     	typestring = ScpArgMsg(basicProp);
-		SCR_REFRESH_ARMOR(invitem);
+	if invitem.RefreshScp ~= 'None' then
+		local scp = _G[invitem.RefreshScp];
+		if scp ~= nil then
+			scp(invitem);
+		end
+	end
+		
     	reinforceaddvalue = GET_REINFORCE_ADD_VALUE(basicProp, invitem);
     	arg1 = TryGetProp(invitem, basicProp) - reinforceaddvalue;
         arg2 = TryGetProp(invitem, basicProp) - reinforceaddvalue;
@@ -738,7 +744,7 @@ function DRAW_EQUIP_ONLY_PR(tooltipframe, invitem, yPos, mainframename)
 
 	local classtype = TryGetProp(invitem, "ClassType"); -- 코스튬은 안뜨도록
 	if classtype ~= nil then
-		if classtype == "Outer" or classtype == "Hat" then
+		if classtype == "Outer" or classtype == "Hat" or invitem.BasicTooltipProp == "None" then
 			
 		else
 			return yPos;

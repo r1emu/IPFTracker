@@ -2115,17 +2115,20 @@
             <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
         </StartList>
     </AI>
-    <AI Name="DEV_AI_MODPAT" ActiveMessageMapInBattle="1">
-        <DeadList>
-            <ToolScp Scp="S_AI_DEAD_CRE_MON_IND" Client="NO" UseSleep="NO">
-                <Str Str="Onion"/>
-                <Pos Angle="0" Dist="0" PosType="5"/>
-                <Angle Angle="0"/>
-                <Num Num="1"/>
-                <MonProp List="SimpleAI#DEV_AI_MODPAT#BTree#None#Lv#8#Name#라홍파"/>
-                <Num Num="2"/>
+    <AI Name="DEV_AI_MODPAT" UpdateMS="1000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="GT_STAGE_4_PAD_REVERSI"/>
+                </ToolScp>
+                <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
+                <Num Num="100"/>
+                </ToolScp>
+                </List>
+		<StartList>
+			<ToolScp Scp="S_AI_SET_TENDENCY" Client="NO" UseSleep="NO">
+				<Str Str="Attack"/>
             </ToolScp>
-        </DeadList>
+        </StartList>
     </AI>
     <AI Name="DEV_TEST" ActiveMessageMapInBattle="1">
         <List>
@@ -2368,7 +2371,7 @@
             </ToolScp>
         </StartList>
     </AI>
-    <AI Name="Dievdirbys_Owl_1" UpdateMS="3000" ActiveMessageMapInBattle="1">
+    <AI Name="Dievdirbys_Owl_1" UpdateMS="500" ActiveMessageMapInBattle="1">
         <List>
             <ToolScp Scp="S_AI_SET_TENDENCY" Client="NO" UseSleep="NO">
                 <Str Str="Attack"/>
@@ -2393,7 +2396,7 @@
             </ToolScp>
         </StartList>
     </AI>
-    <AI Name="Dievdirbys_Owl_2" UpdateMS="3000" ActiveMessageMapInBattle="1">
+    <AI Name="Dievdirbys_Owl_2" UpdateMS="500" ActiveMessageMapInBattle="1">
         <List>
             <ToolScp Scp="S_AI_SET_TENDENCY" Client="NO" UseSleep="NO">
                 <Str Str="Attack"/>
@@ -5192,7 +5195,62 @@
             </ToolScp>
         </StartList>
     </AI>
-    <AI Name="GUILD_BOSS_EDGE_SKL" UpdateMS="1000" ActiveMessageMapInBattle="1">
+    <AI Name="GT_STAGE_12_MISSILE" UpdateMS="1000" ActiveMessageMapInBattle="1">
+		<List>
+			<ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+				<AbsPos X="-2654.4436" Y="241.47961" Z="-2246.6987" Random="10"/>
+			</ToolScp>
+			<ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+				<Str Str="GT_STAGE_12_MISSILE_AI_1"/>
+			</ToolScp>
+		</List>
+		<StartList>
+			<ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+			<ToolScp Scp="S_AI_EFFECT_ATTACH" Client="NO" UseSleep="NO">
+				<Num Num="0"/>
+				<Str_Arg Str="I_force018_trail_dark" Arg="3"/>
+				<Str Str="TOP"/>
+			</ToolScp>
+		</StartList>
+	</AI>
+	<AI Name="GT_STAGE_18_RUMBLE_AI" ActiveMessageMapInBattle="1">
+		<StartList>
+			<ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+			<ToolScp Scp="S_AI_EFFECT_ATTACH" Client="NO" UseSleep="NO">
+				<Num Num="0"/>
+				<Str_Arg Str="I_force019_violet" Arg="1"/>
+				<Str Str="TOP"/>
+			</ToolScp>
+		</StartList>
+	</AI>
+	<AI Name="GT_STAGE_7_PAD_AI" UpdateMS="5000" ActiveMessageMapInBattle="1">
+		<List>
+			<ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+				<Str Str="GT_STAGE_7_PAD_CNT"/>
+			</ToolScp>
+			<ToolScp Scp="S_AI_EFFECT_ATTACH" Client="NO" UseSleep="NO">
+				<Num Num="0"/>
+				<Str_Arg Str="I_spread_in007_white" Arg="3"/>
+				<Str Str="MID"/>
+			</ToolScp>
+			<ToolScp Scp="S_AI_GTOWER_DM" Client="NO" UseSleep="NO">
+				<Str Str="GT_STAGE_7_PAD"/>
+				<Num Num="150"/>
+				<Str Str="진행도"/>
+				<Str Str="scroll"/>
+				<Num Num="6"/>
+			</ToolScp>
+		</List>
+		<StartList>
+			<ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+			<ToolScp Scp="S_AI_EFFECT_ATTACH" Client="NO" UseSleep="NO">
+				<Num Num="0"/>
+				<Str_Arg Str="F_light055_black" Arg="5"/>
+				<Str Str="TOP"/>
+			</ToolScp>
+		</StartList>
+	</AI>
+	<AI Name="GUILD_BOSS_EDGE_SKL" UpdateMS="1000" ActiveMessageMapInBattle="1">
         <List>
             <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
                 <Str Str="GUILD_BOSS_EDGE_SKL"/>
@@ -12212,17 +12270,16 @@ return IMCRandom(300, 1000) * 0.001;"/>
         <InBattleState>
             <ScpSet RelationBit="2" CheckClassName="None" CheckClassNameByFunc="0">
                 <Cond>
-                    <ToolScp Scp="SH_COND_ENEMYDIST" Client="NO" UseSleep="NO">
-                        <Num Num="100"/>
-                        <Num Num="150"/>
+                    <ToolScp Scp="SH_COND_CHECK_COUNT" Client="NO" UseSleep="NO">
+                        <Num Num="2"/>
+                        <Str Str="2_17_14_32_41"/>
                     </ToolScp>
-                    <ToolScp Scp="SH_COND_COOLDOWN_MINIMON" Client="NO" UseSleep="NO">
-                        <Num Num="5"/>
+                    <ToolScp Scp="SH_COND_RAND" Client="NO" UseSleep="NO">
+                        <Num Num="30"/>
+                        </ToolScp>
+                        <ToolScp Scp="SH_COND_ENEMYDIST" Client="NO" UseSleep="NO">
                         <Num Num="50"/>
-                        <Num Num="100"/>
-                        <Num Num="3"/>
-                        <Num Num="5"/>
-                        <Str Str="4_1_8_28_12"/>
+                        <Num Num="150"/>
                     </ToolScp>
                 </Cond>
                 <Exec>
@@ -12647,6 +12704,30 @@ return IMCRandom(300, 1000) * 0.001;"/>
                 </Exec>
             </ScpSet>
         </Attacked>
+    </AI>
+    <AI Name="handler_magic_Lachrymator" ActiveMessageMapInBattle="1">
+        <InBattleState>
+            <ScpSet RelationBit="7" CheckClassName="None" CheckClassNameByFunc="0">
+                <Cond>
+                    <ToolScp Scp="SH_COND_CHECK_COUNT" Client="NO" UseSleep="NO">
+                        <Num Num="1"/>
+                        <Str Str="2_17_13_46_49"/>
+                    </ToolScp>
+                    <ToolScp Scp="SH_COND_BUFF_CHECK" Client="NO" UseSleep="NO">
+                        <Str Str="Lachrymator_Debuff"/>
+                    </ToolScp>
+                    <ToolScp Scp="SH_COND_RAND" Client="NO" UseSleep="NO">
+                        <Num Num="25"/>
+                    </ToolScp>
+                </Cond>
+                <Exec>
+                    <ToolScp Scp="SH_EXEC_RUNAWAY" Client="NO" UseSleep="YES">
+                        <Num Num="50"/>
+                        <Num Num="250"/>
+                    </ToolScp>
+                </Exec>
+            </ScpSet>
+        </InBattleState>
     </AI>
     <AI Name="handler_magic_armorbreak" ActiveMessageMapInBattle="1">
         <SomeOneAttacked>

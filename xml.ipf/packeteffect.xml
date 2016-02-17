@@ -2,180 +2,58 @@
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <packeteffects>
     <Category ID="48">
-        <Effect Name="stun"/>
-        <Effect Name="knockdown"/>
-        <Effect Name="knockdown_bounce"/>
-        <Effect Name="F_archer_chargeshot_shot_smoke"/>
-        <Effect Name="F_light055_black##2"/>
+        <Effect>stun</Effect>
     </Category>
     <Category ID="81">
-        <Effect Name="QTEX_07_MINI"/>
-        <Effect Name="QPEX03_MINI"/>
-        <Effect Name="F_SIAULIAI_OUT_2_MQ_6_MINI"/>
-        <Effect Name="F_SIAULIAI_OUT_2_SQ_6_MINI"/>
-        <Effect Name="I_force023_fire2"/>
-        <Effect Name="F_explosion035_violet"/>
-        <Effect Name="F_bg_drop_water004##2"/>
-        <Effect Name="F_bg_drop_water003##2"/>
-        <Effect Name="F_pc_run_water"/>
-        <Effect Name="I_ground008_water"/>
-        <Effect Name="F_spread_out030_leaf2"/>
-        <Effect Name="GR_SAMPLE_1_P5_MINI"/>
-        <Effect Name="GR_SAMPLE_1_P6_MINI"/>
-        <Effect Name="F_cleric_Gematria_shot_light_red"/>
-        <Effect Name="EVENT_WARP"/>
-        <Effect Name="f_castle_65_1_elt"/>
-        <Effect Name="F_ground051_loop3"/>
-        <Effect Name="GR_TEST_S1"/>
+        <Effect>knockdown</Effect>
+        <Effect Name="M_GTOWER_INIT"/>
         <Effect Name="d_underfortress_68_2_elt"/>
         <Effect Name="d_underfortress_68_2_elt2"/>
-        <Effect Name="CORAL_32_1_SQ_8_MINI"/>
-        <Effect Name="setting"/>
-        <Effect Name="onlook2"/>
-        <Effect Name="I_smoke053_mint_loop"/>
-        <Effect Name="I_smoke004_3"/>
-        <Effect Name="I_smoke053_mint_loop"/>
-        <Effect Name="M_GTOWER_STAGE_15"/>
-        <Effect Name="M_GTOWER_STAGE_13"/>
-        <Effect Name="M_GTOWER_STAGE_14"/>
-        <Effect Name="M_GTOWER_STAGE_10"/>
-        <Effect Name="M_GTOWER_STAGE_11"/>
-        <Effect Name="M_GTOWER_STAGE_12"/>
-        <Effect Name="M_GTOWER_STAGE_16"/>
-        <Effect Name="M_GTOWER_STAGE_17"/>
-        <Effect Name="M_GTOWER_STAGE_18"/>
-        <Effect Name="M_GTOWER_STAGE_19"/>
-        <Effect Name="M_GTOWER_STAGE_20"/>
-        <Effect Name="M_GTOWER_STAGE_6"/>
-        <Effect Name="M_GTOWER_STAGE_7"/>
-        <Effect Name="M_GTOWER_STAGE_8"/>
-        <Effect Name="M_GTOWER_STAGE_9"/>
-        <Effect Name="f_coral_32_2_elt"/>
+        <Effect Name="F_bg_smoke006"/>
+        <Effect Name="I_spread_in008_dark"/>
+        <Effect Name="wave1"/>
+        <Effect Name="wave2"/>
+        <Effect Name="wave3"/>
+        <Effect Name="wave4"/>
+        <Effect Name="F_light031_alpha"/>
+        <Effect Name="I_light015_yellow"/>
+        <Effect Name="F_full_charge_ground"/>
+        <Effect Name="timer"/>
+        <Effect Name="ABSORB"/>
     </Category>
     <Category ID="75">
-        <Effect Name="F_wizard_MAGNUMOPUS_COVER_LOOP_fire_loop"/>
-        <Effect Name="E_wizard_shoggoth_force"/>
-        <Effect Name="I_wizard_necromancer_force"/>
-        <Effect Name="F_wizard_dirtywall_loop"/>
-        <Effect Name="F_explosion079_blood"/>
-        <Effect Name="F_archer_circling_ground"/>
-        <Effect Name="I_force019_blue"/>
-        <Effect Name="F_item_drop_white_loop"/>
-        <Effect Name="I_cleric_1inchpunch_cast_smoke"/>
-        <Effect Name="I_boss_skl_pillarobb_dead_mash"/>
-        <Effect Name="up"/>
-        <Effect Name="event_sit"/>
-        <Effect Name="F_buff_basic019_white_fire"/>
-        <Effect Name="F_cleric_AustrasKoks_shot_ground"/>
-        <Effect Name="F_hit001_light_dark"/>
-        <Effect Name="voice_cleric_m_carvelaima_cast"/>
+        <Effect>knockdown_bounce</Effect>
         <Effect Name="f_orchard_34_2_elevator"/>
-        <Effect Name="I_force071_mintdark2##0.5"/>
-        <Effect Name="ORCHARD_342_MQ_03_MINI"/>
-        <Effect Name="EVENT_STANDUP"/>
-        <Effect Name="I_dash015_white"/>
-        <Effect Name="F_hit001_light_red"/>
-        <Effect Name="I_chain004_mash_loop"/>
-        <Effect Name="F_levitation032_red_loop"/>
         <Effect Name="f_orchard_32_4_wheel"/>
         <Effect Name="f_orchard_32_4_elt"/>
-        <Effect Name="write"/>
-        <Effect Name="F_light084_yellow2"/>
-        <Effect Name="F_ground134_red_loop2"/>
-        <Effect Name="F_ground134_red_loop2"/>
-        <Effect Name="scroll"/>
-        <Effect Name="I_smoke013_dark5_green"/>
-        <Effect Name="I_smoke026_spread_out"/>
-        <Effect Name="Lv1"/>
-        <Effect Name="Lv2"/>
-        <Effect Name="Lv3"/>
-        <Effect Name="F_levitation005_yellow"/>
-        <Effect Name="F_buff_basic021_yellow_fire"/>
-        <Effect Name="F_buff_basic034_pink"/>
-        <Effect Name="F_levitation005_dark_red"/>
-        <Effect Name="F_light066_yellow_loop2"/>
-        <Effect Name="F_circle25_2"/>
-        <Effect Name="ABSORB"/>
-        <Effect Name="F_levitation005_dark_red2"/>
-        <Effect Name="F_levitation005_dark_blue2"/>
-        <Effect Name="I_force080_green_blue"/>
-        <Effect Name="F_levitation037_blue"/>
-        <Effect Name="F_levitation004_violet_ride"/>
-        <Effect Name="F_buff_basic025_white_line##10"/>
-        <Effect Name="F_levitation039_green"/>
-        <Effect Name="I_chain001_mash"/>
-        <Effect Name="I_chain004_mash_loop2"/>
-        <Effect Name="F_summon_ground_yellow"/>
-        <Effect Name="F_smoke130_yellow_loop2"/>
-        <Effect Name="F_light085_yellow"/>
-        <Effect Name="I_breath008_circle_3"/>
-        <Effect Name="absorb"/>
-        <Effect Name="CASTLE65_3_MQ02_MINI"/>
-        <Effect Name="CASTLE65_3_MQ07_MINI"/>
-        <Effect Name="CASTLE65_3_MQ03_MINI"/>
-        <Effect Name="F_levitation039_yellow"/>
-        <Effect Name="I_light010_2"/>
-        <Effect Name="I_light015_yellow"/>
-        <Effect Name="I_force0082"/>
-        <Effect Name="F_bg_smoke006"/>
-        <Effect Name="std_sick"/>
-        <Effect Name="GR_SAMPLE_1_P5_MINI"/>
-        <Effect Name="GR_SAMPLE_1_P6_MINI"/>
-        <Effect Name="f_bracken_63_2_elt"/>
-        <Effect Name="d_abbey_64_2_elt"/>
-        <Effect Name="d_abbey_64_3_elt"/>
-        <Effect Name="F_smoke143_dark_red_loop"/>
-        <Effect Name="f_castle_65_2_elt"/>
-        <Effect Name="f_castle_65_3_elt"/>
-        <Effect Name="F_smoke018"/>
-        <Effect Name="m_boss_scenario2"/>
-        <Effect Name="Knockdown"/>
-        <Effect Name="d_castle_67_1_elt"/>
         <Effect Name="d_castle_67_2_elt"/>
         <Effect Name="d_castle_67_2_elt2"/>
-        <Effect Name="F_bg_fire001_2##10"/>
-        <Effect Name="F_ground071_fire"/>
-        <Effect Name="ORCHARD_324_MQ_01_AFTER"/>
-        <Effect Name="F_light096_red_loop2"/>
-        <Effect Name="F_light096_red_loop2"/>
-        <Effect Name="event_stop"/>
-        <Effect Name="I_pilgrim_shrine_dead"/>
-        <Effect Name="F_smoke006_1 "/>
-        <Effect Name="pilgrim_shrine_dead"/>
-        <Effect Name="F_smoke006_1"/>
-        <Effect Name="TABLELAND_11_1_SQ_04_MINI"/>
-        <Effect Name="campfire_add"/>
-        <Effect Name="I_smoke_red2"/>
-        <Effect Name="voice_die_war_f"/>
-        <Effect Name="I_wizard_necromancer_force2"/>
-        <Effect Name="F_ground092_red"/>
         <Effect Name="f_coral_32_2_elt"/>
-        <Effect Name="F_light029_violet"/>
-        <Effect Name="SIAULIAI_35_1_SQ_7_MINI"/>
+        <Effect Name="F_ground051_loop3"/>
+        <Effect Name="voice_wiz_m_psychicpressure_shot"/>
+        <Effect Name="rest_ready"/>
+        <Effect Name="event_dead"/>
         <Effect Name="skl_tincturing_grind2"/>
         <Effect Name="skl_tincturing_grind1"/>
         <Effect Name="skl_tincturing_filter2"/>
         <Effect Name="skl_tincturing_add1"/>
         <Effect Name="skl_tincturing_shake"/>
         <Effect Name="skl_tincturing_std"/>
+        <Effect Name="F_buff_basic018_blue_fire_1"/>
         <Effect Name="I_force011_green#머리"/>
-        <Effect Name="lv1"/>
+        <Effect Name="worship2"/>
+        <Effect Name="knockdown_bounce"/>
+        <Effect Name="F_ground044_lineup"/>
+        <Effect Name="F_ground134_red_loop2"/>
+        <Effect Name="I_force0082"/>
+        <Effect Name="F_rize006_red"/>
+        <Effect Name="event_sit"/>
     </Category>
     <Category ID="72">
-        <Effect Name="std4_1"/>
-        <Effect Name="std5"/>
-        <Effect Name="std6"/>
-        <Effect Name="voice_wiz_stonecurse_shot"/>
-        <Effect Name="std2"/>
-        <Effect Name="std2_1"/>
-        <Effect Name="std3"/>
+        <Effect>F_archer_chargeshot_shot_smoke</Effect>
     </Category>
     <Category ID="74">
-        <Effect Name="voice_wiz_psychicpressure_shot"/>
-        <Effect Name="voice_wiz_swap_shot"/>
-        <Effect Name="Mage_m_tsf_skl_swap.xsm"/>
-        <Effect Name="voice_wiz_m_psychicpressure_shot"/>
-        <Effect Name="voice_archer_dummypheasant_shot"/>
+        <Effect>F_light055_black##2</Effect>
     </Category>
     <Category ID="62">
         <Effect Name="I_force007_vilolet"/>
@@ -856,7 +734,10 @@
         <Effect Name="F_fire018_green"/>
         <Effect Name="F_burstup027_fire1_green"/>
         <Effect Name="event_casting"/>
-    <Effect Name="F_buff_basic025_white_line_2"/>
+        <Effect Name="F_buff_basic025_white_line_2"/>
+        <Effect Name="TABLELAND_73_SUBQ5_ICE"/>
+        <Effect Name="I_light015_yellow"/>
+        <Effect Name="F_light056_green"/>
     </Category>
     <Category ID="26">
         <Effect Name="I_warrior_ironhook_hook2"/>
@@ -906,6 +787,8 @@
         <Effect Name="quest_success_2"/>
         <Effect Name="m_boss_a"/>
         <Effect Name="m_boss_scenario"/>
+        <Effect Name="MISSION_REMAIN_02"/>
+        <Effect Name="FailCheck"/>
     </Category>
     <Category ID="61">
         <Effect Name="F_ground083_smoke"/>
@@ -1626,9 +1509,51 @@
         <Effect Name="id_castle_elt"/>
         <Effect Name="id_castle_elt2"/>
         <Effect Name="MonsterStage"/>
-    <Effect Name="F_spin012_blue##0.5"/>
-		<Effect Name="F_spin012_blue##1"/>
-	</Category>
+        <Effect Name="F_spin012_blue##0.5"/>
+        <Effect Name="F_spin012_blue##1"/>
+        <Effect Name="F_fire023_loop"/>
+        <Effect Name="F_fire023_loop"/>
+        <Effect Name="F_explosion061_smoke"/>
+        <Effect Name="I_simorph_skl_3Deffect_mash#Back_Acc_03"/>
+        <Effect Name="I_simorph_skl_3Deffect_mash#Back_Acc_03#0.5"/>
+        <Effect Name="F_burstup003_1"/>
+        <Effect Name="F_wizard_earthquake_shot_burstup##0.5"/>
+        <Effect Name="F_wizard_earthquake_shot_burstup##0.7"/>
+        <Effect Name="F_warrior_bash_shot_ground##0.5"/>
+        <Effect Name="F_warrior_bash_shot_ground##0.7"/>
+        <Effect Name="F_ground009##0.7"/>
+        <Effect Name="F_ground009##0.5"/>
+        <Effect Name="F_ground00##3"/>
+        <Effect Name="F_ground009##3"/>
+        <Effect Name="F_ground046_smoke##0.5"/>
+        <Effect Name="F_ground046_smoke##0.7"/>
+        <Effect Name="F_ground046_smoke##3"/>
+        <Effect Name="F_ground076_smoke##0.5"/>
+        <Effect Name="F_ground076_smoke##0.7"/>
+        <Effect Name="F_ground078_smoke##0.5"/>
+        <Effect Name="F_ground078_smoke##0.7"/>
+        <Effect Name="F_ground078_smoke##3"/>
+        <Effect Name="F_ground093_dark##0.5"/>
+        <Effect Name="F_ground093_dark##0.7"/>
+        <Effect Name="F_ground093_dark##3"/>
+        <Effect Name="F_ground093_dark##1"/>
+        <Effect Name="F_ground093_dark##1.5"/>
+        <Effect Name="F_spin037"/>
+        <Effect Name="F_spin007_3"/>
+        <Effect Name="f_orchard_34_2_elevator"/>
+        <Effect Name="f_orchard_32_4_wheel"/>
+        <Effect Name="f_orchard_32_4_elt"/>
+        <Effect Name="d_castle_67_2_elt"/>
+        <Effect Name="d_castle_67_2_elt2"/>
+        <Effect Name="M_GTOWER_INIT"/>
+        <Effect Name="I_wizard_necromancer_force_dark"/>
+        <Effect Name="F_smoke058_violet"/>
+        <Effect Name="I_force019_blue"/>
+        <Effect Name="I_ice_mash"/>
+        <Effect Name="I_ice_mash"/>
+        <Effect Name="I_force066_ice_explosion"/>
+        <Effect Name="I_force066_ice_explosion"/>
+    </Category>
     <Category ID="45">
         <Effect Name="Cleric_Barrier"/>
         <Effect Name="Wizard_IceGust"/>
@@ -1750,6 +1675,34 @@
         <Effect Name="I_rize004_green_force#Point003"/>
         <Effect Name="I_rize004_green1_force#Point003"/>
         <Effect Name="F_smoke014#BoundingBox"/>
+        <Effect Name="KATYN_45_2_SQ_10_MINI"/>
+        <Effect Name="KATYN_45_3_SQ_7_MINI"/>
+        <Effect Name="KATYN_45_1_SQ_3_MINI"/>
+        <Effect Name="I_SlaveStone_mash#Back_Acc_03#0.5"/>
+        <Effect Name="F_sys_stone_shader_start"/>
+        <Effect Name="guildbattle_lock"/>
+        <Effect Name="SIAULIAI_35_1_SQ_7_MINI"/>
+        <Effect Name="ORCHARD_342_MQ_03_MINI"/>
+        <Effect Name="M_GTOWER_STAGE_9"/>
+        <Effect Name="M_GTOWER_STAGE_8"/>
+        <Effect Name="M_GTOWER_STAGE_7"/>
+        <Effect Name="M_GTOWER_STAGE_6"/>
+        <Effect Name="M_GTOWER_STAGE_17"/>
+        <Effect Name="M_GTOWER_STAGE_16"/>
+        <Effect Name="M_GTOWER_STAGE_15"/>
+        <Effect Name="M_GTOWER_STAGE_14"/>
+        <Effect Name="M_GTOWER_STAGE_12"/>
+        <Effect Name="M_GTOWER_STAGE_19"/>
+        <Effect Name="M_GTOWER_STAGE_13"/>
+        <Effect Name="M_GTOWER_STAGE_20"/>
+        <Effect Name="guildtowerbattle"/>
+        <Effect Name="TABLELAND_11_1_SQ_04_MINI"/>
+        <Effect Name="M_GTOWER_STAGE_10"/>
+        <Effect Name="M_GTOWER_STAGE_18"/>
+        <Effect Name="CORAL_32_1_SQ_8_MINI"/>
+        <Effect Name="M_GTOWER_STAGE_11"/>
+        <Effect Name="ABBEY_35_3_SQ_4_MINI"/>
+        <Effect Name="I_smoke056"/>
     </Category>
     <Category ID="43">
         <Effect Name="Cleric_ResistElements"/>
@@ -2153,18 +2106,18 @@
         <Effect Name="I_arrow009_1#Dummy_q_Force"/>
         <Effect Name="skl_eff_thurisaz_landing"/>
         <Effect Name="F_burstup026_green4"/>
-    <Effect Name="I_force080_green_blue3"/>
-		<Effect Name="I_force080_violet"/>
-		<Effect Name="I_cleric_jincangu_force_mash"/>
-		<Effect Name="F_rize012_violet_water"/>
-		<Effect Name="F_rize012_violet"/>
-	<Effect Name="I_force015_violet#B_eye R1"/>
+        <Effect Name="I_force080_green_blue3"/>
+        <Effect Name="I_force080_violet"/>
+        <Effect Name="I_cleric_jincangu_force_mash"/>
+        <Effect Name="F_rize012_violet_water"/>
+        <Effect Name="F_rize012_violet"/>
+        <Effect Name="I_force015_violet#B_eye R1"/>
         <Effect Name="F_explosion103_violet"/>
         <Effect Name="I_force015_violet#B_mouth 01"/>
         <Effect Name="I_force015_violet#Bip001 Spine"/>
-    <Effect Name="F_burstup011_violet"/>
-    <Effect Name="TABLEL72_SUBQ8_MINI"/>
-	</Category>
+        <Effect Name="F_burstup011_violet"/>
+        <Effect Name="TABLEL72_SUBQ8_MINI"/>
+    </Category>
     <Category ID="27">
         <Effect Name="SAPPER_TRAP_Sapper_BroomTrap"/>
         <Effect Name="I_laser005_blue"/>
@@ -2341,6 +2294,9 @@
         <Effect Name="Templer_ReduceCraftTime"/>
         <Effect Name="RoundMaxTime"/>
         <Effect Name="checkoutofarea"/>
+        <Effect Name="Dialog_prog"/>
+        <Effect Name="Timmer_cnt"/>
+        <Effect Name="mission_groundtower"/>
     </Category>
     <Category ID="49">
         <Effect Name="JOB_CENTURION5_1_MINI"/>
@@ -2512,6 +2468,7 @@
         <Effect Name="I_force0082_1"/>
         <Effect Name="skl_eff_stone_grind"/>
         <Effect Name="skl_eff_stone_grind_2"/>
+        <Effect Name="M_GTOWER_INIT"/>
     </Category>
     <Category ID="23">
         <Effect Name="I_force004_pink#Bip01 R Finger0"/>
@@ -2627,6 +2584,12 @@
         <Effect Name="Dragoon_Gae_Bulg_defabil"/>
         <Effect Name="Cleric_DivineMight_abil"/>
         <Effect Name="Invocation_DARKATK_Abil"/>
+        <Effect Name="I_EventVab02_mash##2"/>
+        <Effect Name="I_EventVab03_mash##2.5"/>
+        <Effect Name="I_EventVab02_mash##1"/>
+        <Effect Name="I_EventVab04_mash##6"/>
+        <Effect Name="I_EventVab_mash##3"/>
+        <Effect Name="F_warrior_warcry_shot_smoke"/>
     </Category>
     <Category ID="175">
         <Effect Name="Cleric_Raima"/>
@@ -3158,6 +3121,18 @@
         <Effect Name="INIT"/>
         <Effect Name="OPEN_STAGE_1"/>
         <Effect Name="CNT"/>
+        <Effect Name="F_light079_blue_loop_att"/>
+        <Effect Name="CHECK"/>
+        <Effect Name="OUT"/>
+        <Effect Name="E_Slave_SKL"/>
+        <Effect Name="Dialog_prog"/>
+        <Effect Name="Timmer_cnt"/>
+        <Effect Name="mission_groundtower"/>
+        <Effect Name="groundtower_stair"/>
+        <Effect Name="Dialog_prog"/>
+        <Effect Name="Timmer_cnt"/>
+        <Effect Name="InDun_Clear"/>
+        <Effect Name="Indun_Clear"/>
     </Category>
     <Category ID="180">
         <Effect Name="I_ice005_mash###1"/>
@@ -8561,4 +8536,7 @@
     <Category ID="300">
         <Effect Name="DefClass123"/>
     </Category>
-</packeteffects>
+</packeteffects>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?
