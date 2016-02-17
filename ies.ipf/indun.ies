@@ -18,7 +18,7 @@ ClassID,FindType,Level,AutoMatchLevelLimit,AutoMatchLevelLimit_5MinuteLater,Play
 17,0,260,20,30,5,1,1,400,M_GTOWER_1,대지의 탑 롤로펜서 구간,mission_groundtower_1,100/100,M_GTOWER_INIT
 18,0,145,20,30,5,5,0,100,Indun_thorn2,공허의 가시숲,f_siauliai_west,100/100,ID_THORN_MINI_02
 19,0,240,20,30,5,5,0,100,Indun_castle,푸른 요새 던전,f_siauliai_west,100/100,ID_CASTLE_MINI
-20,23,240,20,20,5,1,2,300,Request_Mission7,협곡지대 미션,c_nunnery,100/100,MISSION_ROKAS_01
-21,23,240,20,20,5,1,2,300,Request_Mission8,왕릉 미션,c_nunnery,100/100,MISSION_ZACHA_01
-22,23,240,20,20,5,1,2,300,Request_Mission9,유적지대 미션,c_nunnery,100/100,MISSION_REMAIN_02
-23,23,240,20,20,5,1,2,0,Nunnery_Dummy,수녀원 랜덤매칭,c_nunnery,100/100,
+20,23,240,20,20,5,1,1,300,Request_Mission7,협곡지대 미션,c_nunnery,100/100,MISSION_ROKAS_01
+21,23,240,20,20,5,1,1,300,Request_Mission8,왕릉 미션,c_nunnery,100/100,MISSION_ZACHA_01
+22,23,240,20,20,5,1,1,300,Request_Mission9,유적지대 미션,c_nunnery,100/100,MISSION_REMAIN_02
+23,23,240,20,20,5,1,1,0,Nunnery_Dummy,수녀원 랜덤매칭,c_nunnery,100/100,
