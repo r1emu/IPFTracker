@@ -169,4 +169,5 @@
 	<ReadXml Name="worldpvp_expcard"/>
 	<ReadXml Name="sharedconst_system"/>
 	<ReadXml Name="EarthTowerRecipe"/>
+	<ReadXml Name="reward_property"/>
 </Category>

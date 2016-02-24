@@ -73,22 +73,12 @@ function UPDATE_INVENTORY_SLOT(slot, invItem, itemCls)
 		INIT_INVEN_SLOT(slot)						
 
 		--거래목록 또는 상점 판매목록에서 올려놓은 아이템(슬롯) 표시 기능
-		if itemCls.MaxStack > 1 then
 			local remainInvItemCount = GET_REMAIN_INVITEM_COUNT(invItem);
 			if remainInvItemCount ~= invItem.count then
 				slot:Select(1)
 			else
 				slot:Select(0)
 			end
-		else
-			slot:Select(0)
-			for iesid, selllistcount in pairs(SHOP_SELECT_ITEM_LIST) do
-				if invItem:GetIESID() == iesid then
-					slot:Select(1)
-					break;
-				end
-			end
-		end
 
 end
 

@@ -12,7 +12,6 @@ ClassID,FindType,Level,AutoMatchLevelLimit,AutoMatchLevelLimit_5MinuteLater,Play
 11,0,100,20,20,5,5,0,200,Request_Mission5,칠채곡 미션,c_request_1,100/100,MISSION_HUEVILLAGE_01
 12,0,100,20,20,5,5,0,200,Request_Mission6,카타콤 미션,c_request_1,100/100,catacomb_2
 13,0,160,20,30,5,5,0,100,Indun_Remains2,무너진 저택가,f_farm_49_1,100/100,MISSION_REMAIN_01
-14,0,200,20,30,5,5,0,100,Indun_Catacom2,카타콤 지하 던전2,f_siauliai_west,100/100,ID_CATACOM_MINI_02
 15,0,217,20,30,5,5,0,100,Indun_Underfortress,깊숙한 지하감옥 던전,f_siauliai_west,100/100,ID_UNDERFORTRESS_MINI
 16,0,115,20,30,5,5,0,100,Indun_Remains3,염원의 비석로 던전,f_siauliai_west,100/100,ID_REMAINS_MINI_03
 17,0,260,20,30,5,1,1,400,M_GTOWER_1,대지의 탑 롤로펜서 구간,mission_groundtower_1,100/100,M_GTOWER_INIT

@@ -5022,6 +5022,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 810235,npc_RUN_master,,,,char_hi\npc\npc_runecaster_master\runecaster_master_set.xac,char_texture\npc\npc_runecaster_master\,bg_hi\ErrorBox.mtl,,,NO
 810236,npc_RUN_master_head,,,,char_hi\npc\npc_runecaster_master\goddess_Laima_hair_std.xac,char_texture\npc\npc_runecaster_master\,bg_hi\ErrorBox.mtl,,,NO
 810237,npc_matron2_head_mercenary,,,,char_hi\npc\npc_matron\npc_matron2_hair_std.xac,char_texture\npc\npc_matron2_head\npc_fedimian_mercenary_1\,bg_hi\ErrorBox.mtl,,,NO
+810239,npc_alchemist_f,,,,char_hi\npc\npc_alchemist_f\npc_alchemist_f_set.xac,char_texture\npc\npc_alchemist_f\,bg_hi\ErrorBox.mtl,,,NO
 810243,npc_paladin_follower2A_hair_std_mercenary,,,,char_hi\npc\npc_paladin_Follower2\npc_paladin_follower2A_hair_std.xac,char_texture\npc\npc_paladin_Follower2\fdmian_mercenary\,bg_hi\ErrorBox.mtl,,,NO
 810244,npc_goddess_zemina_body,,,,char_hi\npc\npc_goddess_zemina\npc_goddess_zemina_set.xac,char_texture\npc\npc_goddess_zemina\,bg_hi\ErrorBox.mtl,,,NO
 810245,npc_goddess_zemina_hair,,,,char_hi\npc\npc_goddess_zemina\npc_goddess_zemina_hair_std.xac,char_texture\npc\npc_goddess_zemina\,bg_hi\ErrorBox.mtl,,,NO
@@ -5045,3 +5046,10 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 810275,vab_brown,,,,char_hi\monster\monster_vab_set.xac,char_texture\monster\vab\brown\,bg_hi\ErrorBox.mtl,,,NO
 810276,MorningStarGolem,,,,char_hi\monster\Monster_MorningStarGolem_set.xac,char_texture\monster\MorningStarGolem\,bg_hi\ErrorBox.mtl,,,NO
 810277,DevilLantren,,,,char_hi\monster\Monster_DevilLantern_set.xac,char_texture\monster\DevilLantern\,bg_hi\ErrorBox.mtl,,,NO
+810280,npc_friar_04_2,,,,char_hi\npc\npc_friar_04_2\npc_friar_04_2_set.xac,\char_texture\npc\npc_tila_monk\black\,bg_hi\ErrorBox.mtl,,,NO
+810281,npc_fedimian_storekeeper,,,,char_hi\npc\npc_fedimian_storekeeper\npc_fedimian_storekeeper_set.xac,\char_texture\npc\npc_fedimian_storekeeper\,bg_hi\ErrorBox.mtl,,,NO
+810282,npc_fedimian_storekeeper_head,,,,char_hi\npc\npc_fedimian_storekeeper\npc_fedimian_storekeeper_std.xac,\char_texture\npc\npc_fedimian_storekeeper\,bg_hi\ErrorBox.mtl,,,NO
+810287,boss_Riteris_blue,,,,char_hi\monster\monster_Riteris_set.xac,char_texture\monster\Riteris\blue\,bg_hi\ErrorBox.mtl,,,NO
+810288,boss_Riteris_brown,,,,char_hi\monster\monster_Riteris_set.xac,char_texture\monster\Riteris\brown\,bg_hi\ErrorBox.mtl,,,NO
+810289,vine_kink,,,,char_hi\npc\vine_kink\vine_kink_set.xac,char_texture\npc\vine\,bg_hi\ErrorBox.mtl,,,NO
+810290,d_abbey_35_4_vine,,,,char_hi\npc\d_abbey_35_4_vine\d_abbey_35_4_vine_set.xac,char_texture\npc\d_abbey_35_4_vine\,bg_hi\ErrorBox.mtl,,,NO

@@ -74,6 +74,11 @@
                 </StageEvents>
             </Stage>
             <Stage Name="SETTING">
+                <StartScpList>
+                    <ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
+                        <Str Str="Start"/>
+                    </ToolScp>
+                </StartScpList>
                 <ObjList>
                     <Obj Type="Monster" MonType="154013" Pos="3078.03#266.48#-6287.66" genCount="1" genTime="20000" autoGen="0" objectKey="0" autoDestroy="0" propList="&apos;Name&apos; &apos;큐폴 루타&apos; &apos;Dialog&apos; &apos;GT_LUTHA_NPC&apos; "/>
                     <Obj Type="Monster" MonType="153140" Pos="3194.00#266.00#-6060.00" angle="-90" genCount="1" genTime="20000" objectKey="1" propList="&apos;Faction&apos; &apos;Neutral&apos; "/>
