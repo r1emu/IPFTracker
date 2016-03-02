@@ -350,7 +350,7 @@
 	<controlset name="tooltip_set_each_prop_text" toggle="false" hittest="false" width="400" height="25">
 		<!--set_gbox_prop의 child로 들어가는 컨트롤셋이다.-->
 		<controls>
-			<richtext name="set_prop_Text" format="%s %s" param1="setTitle" param1_def="DefVal" param2="setDesc" param2_def="DefVal" rect="0 0 390 24" margin="20 0 0 0" fixwidth="true" hittest="false" fontname="idiotbrown_16_b"/>
+			<richtext name="set_prop_Text" format="%s %s" param1="setTitle" param1_def="DefVal" param2="setDesc" param2_def="DefVal" rect="0 0 380 24" margin="20 0 0 0" fixwidth="true" hittest="false" fontname="idiotbrown_16_b"/>
 		</controls>
 	</controlset>
 	<controlset name="tooltip_available_property" hittest="true" width="410" height="60">
@@ -529,13 +529,15 @@
 		<controls>
 			<picture name="icon" layout_gravity="left top" rect="0 0 64 64" margin="8 8 0 0" stretch="true"/>
 			<picture name="skillicon" layout_gravity="left top" rect="0 0 30 30" margin="80 70 0 0" hittest="false" image="mainpc_crown" stretch="true" changecursor="false"/>
+			<button name="complete" layout_gravity="left top" margin="3 3 0 0" rect="0 0 74 80" hittest="false" skin="journal_complete_skin"/>
 			<page name="drop" rect="0 0 270 30" margin="80 30 0 0" layout_gravity="left top" slotsize="30 30" slotscp="10 0" skin="" hittestpage="false"/>
 			<richtext name="name" rect="0 0 300 20" margin="80 8 0 0" hittest="false" layout_gravity="left top" textalign="left center" resizebytext="false" fixwidth="true" format="{@st42}%s{/}" param1="value" param1_def=""/>
 			<richtext name="point" rect="0 0 60 20" margin="0 8 15 0" hittest="false" layout_gravity="right top" textalign="right center" resizebytext="false" fixwidth="true" format="{@st65}%s점{/}" param1="value" param1_def="123"/>
 			<richtext name="itemcount" rect="0 0 60 30" margin="0 30 15 0" hittest="false" layout_gravity="right top" textalign="right center" resizebytext="false" fixwidth="true" format="{@st65}%s개{/}" param1="value" param1_def="123"/>
-			<richtext name="skillValue" rect="0 0 185 20" margin="0 78 15 0" hittest="false" layout_gravity="right top" textalign="right center" resizebytext="false" fixwidth="true" format="{@st65}%s{/}" param1="value" param1_def="Damage 123"/>
+			<richtext name="skillValue" rect="0 0 185 20" margin="0 78 15 0" hittest="false" layout_gravity="right top" textalign="right center" resizebytext="false" fixwidth="true" format="{@st65}피해량 %s{/}" param1="value" param1_def="Damage 123"/>
 			<richtext name="skillName" rect="0 0 185 20" margin="120 78 0 0" hittest="false" layout_gravity="left top" textalign="left center" resizebytext="false" fixwidth="true" format="{@st65}%s{/}" param1="value" param1_def="Skill_Name"/>
-			<richtext name="t_date" rect="0 0 70 30" margin="3 74 0 0" layout_gravity="left top" textalign="center center" resizebytext="false" fixwidth="true" format="{@st65}{s12}%s{/}" param1="value" param1_def="oneyear"/>
+			<richtext name="t_date" rect="0 0 70 35" margin="3 74 0 0" layout_gravity="left top" textalign="center center" resizebytext="false" fixwidth="true" format="{@st65}{s12}%s{/}" param1="value" param1_def="oneyear"/>
+		<richtext name="t_complete" rect="0 0 70 35" margin="3 54 0 0" layout_gravity="left top" textalign="center center" resizebytext="false" fixwidth="true" format="{@st65}{s12}달성{/}"/>
 		</controls>
 	</controlset>
 	<controlset name="journalMap" hittest="false" width="540" height="60">

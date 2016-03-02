@@ -6937,41 +6937,25 @@ return 15000 + obj.Level * 5000"/>
             </ToolScp>
         </createEvent>
         <enterEvent>
-            <ToolScp Scp="PAD_TGT_RAISE" Client="NO" UseSleep="NO">
+            <ToolScp Scp="PAD_TGT_BUFF" Client="NO" UseSleep="NO">
                 <Str Str="ENEMY"/>
-                <Num Num="70"/>
-                <Num Num="0.5"/>
-                <Num Num="10"/>
                 <Num Num="0"/>
                 <Num Num="0"/>
-            </ToolScp>
-            <ToolScp Scp="PAD_TGT_ACTOR_VIBRATE_CONCORRENT_COUNT" Client="NO" UseSleep="NO">
-                <Str Str="ENEMY"/>
+                <Str Str="Raise_Debuff"/>
+                <Num Num="1"/>
+                <Num Num="0"/>
+                <Num Num="0"/>
+                <Num Num="1"/>
                 <Num Num="100"/>
-                <Num Num="1.5"/>
-                <Num Num="10"/>
-                <Num Num="0.1"/>
-                <Num Num="0"/>
                 <Num Num="0"/>
             </ToolScp>
         </enterEvent>
         <leaveEvent>
-            <ToolScp Scp="PAD_TGT_ACTOR_VIBRATE" Client="NO" UseSleep="NO">
-                <Str Str="ENEMY"/>
-                <Num Num="0.1"/>
+            <ToolScp Scp="PAD_TGT_BUFF_REMOVE" Client="NO" UseSleep="NO">
+                <Str Str="ALL"/>
                 <Num Num="0"/>
                 <Num Num="0"/>
-                <Num Num="0"/>
-                <Num Num="0"/>
-                <Num Num="0"/>
-            </ToolScp>
-            <ToolScp Scp="PAD_TGT_RAISE" Client="NO" UseSleep="NO">
-                <Str Str="ENEMY"/>
-                <Num Num="0"/>
-                <Num Num="0.1"/>
-                <Num Num="0.5"/>
-                <Num Num="0"/>
-                <Num Num="0"/>
+                <Str Str="Raise_Debuff"/>
             </ToolScp>
         </leaveEvent>
         <updateEvent>
@@ -9661,7 +9645,19 @@ return obj.Level"/>
                 <Num Num="9999"/>
             </ToolScp>
             <ToolScp Scp="C_PAD_EFFECT_POS" Client="YES" UseSleep="NO">
-                <Str_Arg Str="F_ground117_loop" Arg="1.1"/>
+                <Str_Arg Str="F_explosion092_ice" Arg="1"/>
+                <Pos Angle="0" Dist="0"/>
+                <Num Num="0"/>
+                <Str_Arg Str="None" Arg="1"/>
+            </ToolScp>
+            <ToolScp Scp="C_PAD_EFFECT_POS" Client="YES" UseSleep="NO">
+                <Str_Arg Str="I_ice006_violet_mash" Arg="0.80000001"/>
+                <Pos Angle="0" Dist="0"/>
+                <Num Num="0"/>
+                <Str_Arg Str="None" Arg="1"/>
+            </ToolScp>
+            <ToolScp Scp="C_PAD_EFFECT_POS" Client="YES" UseSleep="NO">
+                <Str_Arg Str="F_ground143_violet_ice" Arg="1.8"/>
                 <Pos Angle="0" Dist="0"/>
                 <Num Num="0"/>
                 <Str_Arg Str="None" Arg="1"/>
@@ -9675,8 +9671,8 @@ return obj.Level"/>
             <ToolScp Scp="PAD_MSL_FALL" Client="NO" UseSleep="NO">
                 <Num Num="85"/>
                 <Num Num="55"/>
-                <Str_Arg Str="I_wizard_hail_force" Arg="0.30000001"/>
-                <Str_Arg Str="F_wizard_hail_hit_ice" Arg="0.30000001"/>
+                <Str_Arg Str="I_wizard_hail_force" Arg="0.2"/>
+                <Str_Arg Str="F_wizard_hail_hit_ice" Arg="0.2"/>
                 <Str_Arg Str="None" Arg="1"/>
                 <Num Num="10"/>
                 <Num Num="0"/>

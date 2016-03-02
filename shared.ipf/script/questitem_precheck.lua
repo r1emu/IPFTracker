@@ -4896,6 +4896,19 @@ function SCR_PRE_TABLELAND_11_1_SQ_06_CHARM(self, argObj, BuffName, arg1, arg2)
     return 0
 end
 
+--CORAL_32_1_SQ_11_ITEM1
+function SCR_PRE_CORAL_32_1_SQ_11_ITEM1(self, argObj, BuffName, arg1, arg2)
+    local result = SCR_QUEST_CHECK(self, 'CORAL_32_1_SQ_11')
+    if result == 'PROGRESS' then
+        if GetZoneName(self) == 'f_coral_32_1' then
+            if GetLayer(self) == 0 then
+                return 1;
+            end
+        end
+    end
+    return 0;
+end
+
 --TABLELAND_11_1_SQ_10_LETTER
 function SCR_PRE_TABLELAND_11_1_SQ_10_LETTER(self, argObj, BuffName, arg1, arg2)
     local result = SCR_QUEST_CHECK(self, 'TABLELAND_11_1_SQ_09')

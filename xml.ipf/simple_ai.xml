@@ -2071,7 +2071,77 @@
             </ToolScp>
         </StartList>
     </AI>
-    <AI Name="Cappella" ActiveMessageMapInBattle="1"/>
+
+<AI
+Name="CORAL_32_1_SQ_3_AI" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                <AbsPos X="-286.0412" Y="236.25188" Z="-1363.2856"/>
+            </ToolScp>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="SCR_CORAL_32_1_SQ_3_RUN2"/>
+            </ToolScp>
+        </List>
+        <StartList>
+            <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+        </StartList>
+    </AI>
+    <AI Name="CORAL_32_1_SQ_3_AI2" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                <AbsPos X="-230.01559" Y="236.25188" Z="-1208.6389"/>
+            </ToolScp>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="SCR_CORAL_32_1_SQ_3_RUN4"/>
+            </ToolScp>
+        </List>
+        <StartList>
+            <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+        </StartList>
+    </AI>
+    <AI Name="CORAL_32_1_SQ_4_AI" ActiveMessageMapInBattle="1">
+        <StartList>
+            <ToolScp Scp="S_AI_EFFECT_ATTACH" Client="NO" UseSleep="NO" CondFunc="">
+                <Num Num="0"/>
+                <Str_Arg Str="I_smoke053_mint_loop" Arg="1.5"/>
+                <Str Str="MID"/>
+            </ToolScp>
+        </StartList>
+    </AI>
+    <AI Name="CORAL_32_1_SQ_6_AI" UpdateMS="1000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="CORAL_32_1_SQ_6_NPC_AI"/>
+            </ToolScp>
+        </List>
+    </AI>
+    <AI Name="CORAL_32_1_SQ_8_AI" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
+                <Num Num="500"/>
+            </ToolScp>
+        </List>
+        <StartList>
+            <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+        </StartList>
+    </AI>
+    <AI Name="CORAL_32_1_SQ_9_AI" ActiveMessageMapInBattle="1">
+        <DeadList>
+            <ToolScp Scp="SAI_DEAD_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="SCR_CORAL_32_1_SQ_9_MON_AI"/>
+            </ToolScp>
+        </DeadList>
+        <StartList>
+            <ToolScp Scp="S_AI_SET_BTREE" Client="NO" UseSleep="NO">
+                <Num Num="4"/>
+            </ToolScp>
+            <ToolScp Scp="S_AI_SET_TENDENCY" Client="NO" UseSleep="NO">
+                <Str Str="Attack"/>
+            </ToolScp>
+            <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+        </StartList>
+    </AI>
+<AI Name="Cappella" ActiveMessageMapInBattle="1"/>
     <AI Name="Chaplain_Cappella" ActiveMessageMapInBattle="1">
         <DeadList>
             <ToolScp Scp="SAI_DEAD_REMOVE_PAD" Client="NO" UseSleep="NO">

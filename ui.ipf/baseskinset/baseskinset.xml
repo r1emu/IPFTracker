@@ -2701,6 +2701,28 @@
 			<img name="bottomcore" imgrect="1847 469 150 50"/>
 			<img name="bottomright" imgrect="1998 469 50 50"/>
 		</skin>
+	<skin name="journal_mon_skin" texture="\skin\pip_test_item.tga">
+			<img name="topleft" imgrect="1673 397 50 50"/>
+			<img name="topcore" imgrect="1714 397 50 50"/>
+			<img name="topright" imgrect="1755 397 50 50"/>
+			<img name="bodyleft" imgrect="1673 438 50 50"/>
+			<img name="bodycore" imgrect="1714 438 50 50"/>
+			<img name="bodyright" imgrect="1755 438 50 50"/>
+			<img name="bottomleft" imgrect="1673 497 50 50"/>
+			<img name="bottomcore" imgrect="1714 497 50 50"/>
+			<img name="bottomright" imgrect="1755 497 50 50"/>
+		</skin>
+		<skin name="journal_complete_skin" texture="\skin\pip_test_item.tga">
+			<img name="topleft" imgrect="1409 862 20 20"/>
+			<img name="topcore" imgrect="1430 862 20 20"/>
+			<img name="topright" imgrect="1451 862 20 20"/>
+			<img name="bodyleft" imgrect="1409 883 20 20"/>
+			<img name="bodycore" imgrect="1430 883 20 20"/>
+			<img name="bodyright" imgrect="1451 883 20 20"/>
+			<img name="bottomleft" imgrect="1409 904 20 29"/>
+			<img name="bottomcore" imgrect="1430 904 20 29"/>
+			<img name="bottomright" imgrect="1451 904 20 29"/>
+		</skin>
 	</skinlist>
 	<skinlist category="buttons">
 		<skin name="button_companion" texture="\skin\barrack.tga">

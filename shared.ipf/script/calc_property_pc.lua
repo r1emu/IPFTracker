@@ -1609,7 +1609,7 @@ function SCR_GET_PC_LIMIT_BUFF_COUNT(self)
 	  count = 7;
 	end
 	
-	-- »çµÎÀ¯Ã¼°¡... 
+	-- ï¿½ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½... 
 	if 1 == IsDummyPC(self) then
 		return count;
 	end
@@ -1757,12 +1757,13 @@ function GET_REWARD_PROPERTY(self, propertyName)
 	
 	local sObj = GetSessionObject(self, 'ssn_klapeda')
 	local rewardProperty = 0;
+
 	if sObj ~= nil then
 		local list, listCnt = GetClassList("reward_property");
 		
 		for i = 0, listCnt -1 do
 			local cls = GetClassByIndexFromList(list, i);
-			if cls.Property == propertyName then
+			if cls ~= nil and cls.Property == propertyName then
 				if sObj[cls.ClassName] == 300 then
 					rewardProperty = rewardProperty + cls.Value
 				end

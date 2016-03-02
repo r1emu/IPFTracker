@@ -3172,8 +3172,28 @@
 		<Class ClassID="180192" ClassName="CASTLE65_2_PILLAR" Data="마력 공급 장치"/>
 		<Class ClassID="120566" ClassName="MON_KILL_CNT_ERROR1" Data="오늘 진행가능한 {DAYMAXCOUNT}회 중 {DAYPLAYCOUNT}회를 모두 완료하셨습니다"/>
 		<Class ClassID="120565" ClassName="ITEML_CNT_ERROR1" Data="오늘 진행가능한 {DAYMAXCOUNT}회 중 {DAYPLAYCOUNT}회를 모두 완료하셨습니다"/>
-		<Class ClassID="180193" ClassName="CASTLE65_3_MQ01_FAIL" Data="미하일이 쓰러졌습니다"/>
-	</Category>
+		<Class ClassID="210052" ClassName="CORAL_32_1_SQ_3_NPC1" Data="상단 일꾼"/>
+		<Class ClassID="210053" ClassName="CORAL_32_1_SQ_3_NPC2" Data="영주 대리인"/>
+		<Class ClassID="210054" ClassName="CORAL_32_1_SQ_3_CHAT1" Data="시모나스님! 채취장에 몬스터가 다시 몰려옵니다!"/>
+		<Class ClassID="210055" ClassName="CORAL_32_1_SQ_3_CHAT2" Data="촌장, 우리도 계속 이렇게 있을 수 없습니다. 공물을 못내겠다면 철수해야 합니다."/>
+		<Class ClassID="210056" ClassName="CORAL_32_1_SQ_3_CHAT3" Data="아 참, 토벌을 부탁하시려면 빨리하시지요. 그래야 하루라도 빨리 다시 채취하지 않겠소?"/>
+		<Class ClassID="210057" ClassName="CORAL_32_1_SQ_4_TRAP" Data="조사하는 중"/>
+		<Class ClassID="210058" ClassName="CORAL_32_1_SQ_4_ITEM" Data="수상한 주머니를 발견했습니다"/>
+		<Class ClassID="210059" ClassName="CORAL_32_1_SQ_9_CORAL1" Data="산호 확인하는 중"/>
+		<Class ClassID="210060" ClassName="CORAL_32_1_SQ_11" Data="낡고 헤진 가방"/>
+		<Class ClassID="210061" ClassName="CORAL_32_1_SQ_11_ROD1" Data="마력 탐지중"/>
+		<Class ClassID="210062" ClassName="CORAL_32_1_SQ_11_ROD2" Data="탐지기가 가방에서 뿜어져나온 마력에 반응하고 있습니다!"/>
+		<Class ClassID="210063" ClassName="CORAL_32_1_SQ_11_ROD3" Data="탐지기는 아무런 반응을 보이지 않습니다"/>
+		<Class ClassID="210064" ClassName="CORAL_32_1_SQ_9_CORAL2" Data="아르님 산호의 서식지를 찾았습니다!"/>
+		<Class ClassID="210065" ClassName="CORAL_32_1_SQ_9_CORAL3" Data="이미 확인한 산호 입니다"/>
+		<Class ClassID="210066" ClassName="CORAL_32_1_SQ_4_ITEM2" Data="아무것도 발견하지 못했습니다"/>
+		<Class ClassID="210067" ClassName="CORAL_32_1_SQ_7" Data="수상한 주머니를 파냈습니다"/>
+		<Class ClassID="210068" ClassName="CORAL_32_1_SQ_6_1" Data="촌장 프레제와 파견병 바질리우스가 이 쪽으로 옵니다"/>
+		<Class ClassID="210069" ClassName="CORAL_32_1_SQ_2_1" Data="파견병이 이쪽으로 뛰어옵니다"/>
+		<Class ClassID="210070" ClassName="CORAL_32_1_SQ_2_2" Data="누군가 이쪽으로 오고있습니다"/>
+		<Class ClassID="210071" ClassName="CORAL_32_1_SQ_6_2" Data="촌장 프레제"/>
+		<Class ClassID="210072" ClassName="CORAL_32_1_SQ_6_3" Data="파견병 바질리우스"/>
+</Category>
 	<Category Name="BattleText">
 		<Class ClassID="21300" ClassName="ADD_DAMAGE_{Auto_1}!" Data="추가 데미지 {Auto_1}!"/>
 		<Class ClassID="21301" ClassName="ADD_BUFF_{Auto_1}!" Data="{Auto_1}!"/>
@@ -3443,6 +3463,7 @@
     <Class ClassID="22410" ClassName="SelectItemByMouseLeftButton" Data="마우스 왼쪽 버튼으로 아이템을 선택해주세요."/>
     <Class ClassID="22411" ClassName="CantDiscardTowerWhileWarState" Data="전쟁중엔 타워를 철거할 수 없습니다."/>
   <Class ClassID="22412" ClassName="CantPlantSeedBczNotOurGuild" Data="길드원이 아니면 작물을 심을 수 없습니다."/>
+	<Class ClassID="22413" ClassName="doNotJoinGuildEvent" Data="길드 이벤트에 참여하지 않았습니다."/>
 	</Category>
 	<Category Name="EqupClasses">
 		<Class ClassID="22501" ClassName="THSword" Data="양손검"/>
@@ -3506,7 +3527,7 @@
 		<Class ClassID="22817" ClassName="RecentFirst" Data="최신등록순"/>
 		<Class ClassID="22818" ClassName="ItemOverCount" Data="거래 가능한 아이템 개수를 초과하여 등록할 수 없습니다."/>
 		<Class ClassID="22819" ClassName="BuffDestroy{Price}" Data="등록수수료 {Price}실버가 소비됩니다. 마켓에 등록하면 해당 버프가 사라집니다. 그래도 등록하시겠습니까?"/>
-		<Class ClassID="22820" ClassName="RemoveMarketItem" Data="이미 판매된 아이템입니다."/>
+		<Class ClassID="22820" ClassName="UpdateMarketItemInfor" Data="해당 아이템 정보가 변경되었습니다."/>
 		<Class ClassID="22821" ClassName="DontBuySameFamilyName" Data="같은 계정으로 등록된 아이템으로 구매하실 수 없습니다."/>
 		<Class ClassID="22822" ClassName="MarketRegTimeOver" Data="판매 시간이 지났습니다. 수령함에서 확인해주세요."/>
 		<Class ClassID="22823" ClassName="MarketRegAfter{TIME}" Data="{TIME}후에 마켓 리스트에 등록됩니다."/>
@@ -3519,9 +3540,12 @@
 		<Class ClassID="22830" ClassName="SellPriceMustOverThen100Silver" Data="판매가격은 100실버 이상이여야 합니다."/>
 		<Class ClassID="22831" ClassName="AutoAdjustToMinPrice" Data="최소 가격 단위로 금액이 자동 변경됩니다."/>
 		<Class ClassID="22832" ClassName="CantRegisterEquipItemToEnchant" Data="착용 중인 아이템은 인챈트 아이템으로 각성 시킬 수 없습니다."/>
-		<Class ClassID="22834" ClassName="DecreasePotaionWhenPutItToAccountWareHouse_Continue?" Data="해당 아이템을 팀 창고에 넣으면{nl}포텐셜이 감소합니다.{nl}하지만 팀 창고에서 꺼낼땐 포텐셜이 감소하지 않습니다.{nl}그래도 넣으시겠습니까?"/>
-		<Class ClassID="22835" ClassName="IfPutItemToWareHouse_TradePossibleItemWillBePut_Continue?" Data="해당 아이템을 팀 창고에 넣으면{nl}거래 가능한 아이템의 수량만큼 차감됩니다.{nl}그래도 넣으시겠습니까?"/>
+		<Class ClassID="22833" ClassName="ItemSoldAtMarket" Data="이미 판매된 아이템 입니다. 수령함을 확인해주세요."/>
+		<Class ClassID="22834" ClassName="DecreasePotaionWhenPutItToAccountWareHouse_Continue?" Data="{#550000}남은 거래 횟수 : {COUNT}{nl}{#0f0f0f}해당 아이템을 팀 창고에 넣으면{nl}포텐셜이 감소합니다.{nl}하지만 팀 창고에서 꺼낼땐 포텐셜이 감소하지 않습니다.{nl}그래도 넣으시겠습니까?"/>
+		<Class ClassID="22835" ClassName="IfPutItemToWareHouse_TradePossibleItemWillBePut_Continue?" Data="{#550000}남은 거래 횟수 : {COUNT}{nl}{#0f0f0f}해당 아이템을 팀 창고에 넣으면{nl}거래 가능한 아이템의 수량만큼 차감됩니다.{nl}그래도 넣으시겠습니까?"/>
 		<Class ClassID="22836" ClassName="NotEnoughTradePossibleCount" Data="거래 가능 횟수가 부족합니다."/>
+<Class ClassID="22838" ClassName="WANNING_DecreasePotaionWhenPutItToAccountWareHouse_Continue?" Data="{#FF0000}남은 거래 횟수 : {COUNT}{nl}{#0f0f0f}해당 아이템을 팀 창고에 넣으면{nl}포텐셜이 감소합니다.{nl}하지만 팀 창고에서 꺼낼땐 포텐셜이 감소하지 않습니다.{nl}그래도 넣으시겠습니까?"/>
+		<Class ClassID="22839" ClassName="WANNING_IfPutItemToWareHouse_TradePossibleItemWillBePut_Continue?" Data="{#FF0000}남은 거래 횟수 : {COUNT}{nl}{#0f0f0f}해당 아이템을 팀 창고에 넣으면{nl}거래 가능한 아이템의 수량만큼 차감됩니다.{nl}그래도 넣으시겠습니까?"/>
 		</Category>
 	<Category Name="AutoSeller">
 		<Class ClassID="22900" ClassName="InputPriceMoreThanOne" Data="가격을 1이상 입력해주세요."/>
@@ -3901,8 +3925,8 @@
 		<Class ClassID="29743" ClassName="ItemCategory_Date" Data="날짜"/>
 		<Class ClassID="29744" ClassName="ShortTimeAgo" Data="얼마전"/>
 		<Class ClassID="29745" ClassName="MyRanking" Data="내 랭킹"/>
-		<Class ClassID="29746" ClassName="KillRanking" Data="킬 랭킹"/>
-		<Class ClassID="29747" ClassName="DamageRanking" Data="대미지 랭킹"/>
+		<Class ClassID="29746" ClassName="KillRanking" Data="처치 랭킹"/>
+		<Class ClassID="29747" ClassName="DamageRanking" Data="피해량 랭킹"/>
 		<Class ClassID="29748" ClassName="AlreadyAddrecipe" Data="이미 등록되어 있는 제작서입니다."/>
 		<Class ClassID="29749" ClassName="SuccessAddrecipe" Data="제작서가 등록되었습니다."/>
     <Class ClassID="29750" ClassName="JournalRank{Rank}" Data="모험지수 {Rank}위"/>
@@ -6545,6 +6569,7 @@
 		<Class ClassID="7009" ClassName="AlreadRegSameCard" Data="이미 등록된 카드입니다."/>
 		<Class ClassID="7010" ClassName="CheckCardType" Data="카드 속성을 확인해주세요."/>
 	<Class ClassID="7011" ClassName="CannotRideState" Data="해당 스킬 중엔 탑승을 시도할 수 없습니다."/>
+	<Class ClassID="7012" ClassName="CannotTryEquipAndUnEquip" Data="해당 스킬 중엔 장비 장착 및 해제를 할 수 없습니다."/>
 	</Category>
 	<Category Name="HotKey">
 		<Class ClassID="7200" ClassName="Minimap_-" Data="미니맵 -"/>

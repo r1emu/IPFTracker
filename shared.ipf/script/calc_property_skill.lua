@@ -7744,7 +7744,7 @@ end
 
 
 function SCR_GET_PsychicPressure_Ratio(skill)
-	return 4 + skill.Level
+	return skill.Level + 4
 end
 
 
