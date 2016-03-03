@@ -97,28 +97,35 @@ end
 
 function UPDATE_SNIPE_POSITION(child, totalTime, elapsedTime)
 
+	if session.config.IsMouseMode() == true then
+		local x, y = GET_MOUSE_POS();
+		local frame = child:GetTopParentFrame();
+		local pt = frame:ScreenPosToFramePos(x, y);
+		SNIPE_SETPOS(child, pt.x, pt.y);
+		return 1;
+	end
+
 	local x = tonumber(child:GetUserValue("CURX"));
 	local y = tonumber(child:GetUserValue("CURY"));
 	
 	local spd = 1000 * elapsedTime;
 	local changed = false;
-	if 1 == keyboard.IsKeyPressed("LEFT") then
+	if true == imcinput.IsHotKeyPressed("MoveLeft") then
 			x = x - spd;
 			changed = true;
 	end
 	
-	if 1 == keyboard.IsKeyPressed("RIGHT") then
+	if true  == imcinput.IsHotKeyPressed("MoveRight") then
 			x = x + spd;
 			changed = true;
-		--			print(x);
 	end
 
-	if 1 == keyboard.IsKeyPressed("UP") then
+	if true == imcinput.IsHotKeyPressed("MoveUp") then
 			y = y - spd;
 			changed = true;
 	end
 	
-	if 1 == keyboard.IsKeyPressed("DOWN") then
+	if true == imcinput.IsHotKeyPressed("MoveDown") then
 			y = y + spd;
 			changed = true;
 	end
