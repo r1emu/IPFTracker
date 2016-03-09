@@ -139,6 +139,7 @@ function UPDATE_ARTICLE_Monster(ctrlset)
                 if killcount >= jIES.Count1 then
 					completeBtn:SetVisible(1);
 					completeText:SetVisible(1);
+					ctrlset:SetSkinName("journal_mon_skin")
 --                    local picMonKillReward = ctrlset:CreateControl('picture', 'COM_'..monCls.ClassName, 0, 0, 75, 75)
 --        			tolua.cast(picMonKillReward, 'ui::CPicture')
 --                	picMonKillReward:SetImage('icon_item_expcard');

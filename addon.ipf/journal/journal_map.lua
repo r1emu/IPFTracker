@@ -54,7 +54,26 @@ function CREATE_JOURNAL_ARTICLE_MAP(frame, grid, key, text, iconImage, callback)
 		else
 			totalScore = totalScore + recoverRate;
 		end
-		rating:SetText(string.format("{@st41b} %d%%", recoverRate));
+		
+		local mapRewardImg
+		local pcetc = GetMyEtcObject()
+		if cls ~= nil and cls.MapRatingRewardItem1 ~= 'None' and cls.WorldMapPreOpen == 'YES' and cls.UseMapFog ~= 0  then
+		    local mapClassName = cls.ClassName
+		    local property = 'Reward_'..mapClassName
+		    if GetPropType(pcetc, property) ~= nil then
+		        if pcetc[property] == 1 then
+		            mapRewardImg = '{img M_message_open 30 30}'
+		        elseif recoverRate >= 100 then
+		            mapRewardImg = '{img M_message_Unopen 30 30}'
+		        end
+		    end
+		end
+		local ratingTxt = string.format("{@st41b} %d%%", recoverRate)
+		if mapRewardImg ~= nil then
+		    ratingTxt = mapRewardImg..ratingTxt
+		    rating:Resize(100, 40)
+		end
+		rating:SetText(ratingTxt);
 	end
 
 	--- Calculate Whole Category Map List;

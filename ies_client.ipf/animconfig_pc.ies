@@ -963,3 +963,4 @@ ClassID,BlendIn,BlendOut,Priority,OffsetValue,ClassName,Main,Loop,Freeze,Additiv
 985,0,0,4,0,THANKS2,YES,NO,YES,NO,YES,NO,NO,,NO,QuestAnim
 986,0,0,4,0,DANCE,YES,YES,YES,NO,YES,NO,NO,,NO,QuestAnim
 987,0,0,4,0,KICK,YES,NO,YES,NO,YES,NO,NO,,NO,QuestAnim
+988,0,0,4,0,KICK_RIDE,YES,NO,YES,NO,YES,NO,NO,,NO,QuestAnim

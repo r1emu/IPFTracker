@@ -40,6 +40,9 @@
 					<ToolScp Scp="MGAME_SET_TIMEOUT" Client="NO" UseSleep="NO">
 						<Num Num="20"/>
 					</ToolScp>
+					<ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
+						<Str Str="Success"/>
+					</ToolScp>
 				</StartScpList>
 				<ObjList>
 					<Obj Type="Monster" MonType="40001" Pos="2875.86#266.33#2442.23" angle="91" genCount="1" genTime="20000" objectKey="0" autoDestroy="0" propList="&apos;Name&apos; &apos;대지의 탑 5층&apos; &apos;Range&apos; &apos;50&apos; &apos;Enter&apos; &apos;G_TOWER_WARP_TO_5&apos; ">
@@ -80,6 +83,9 @@
 						<Str Str="raid_fail"/>
 						<Num Num="30"/>
 					</ToolScp>
+					<ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
+						<Str Str="Fail"/>
+					</ToolScp>
 				</StartScpList>
 				<ObjList/>
 				<StageEvents>
@@ -117,6 +123,9 @@
 						<Str Str="첫 번째 목표가 시작되었습니다{nl}몬스터들의 공격으로부터 270초간 살아남으세요"/>
 						<Str Str="stage_start"/>
 						<Num Num="20"/>
+					</ToolScp>
+					<ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
+						<Str Str="Start"/>
 					</ToolScp>
 				</StartScpList>
 				<ObjList>
@@ -514,7 +523,7 @@
 							<ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
 								<Num Num="270"/>
 							</ToolScp>
-							<ToolScp Scp="SCR_MGAME_VALUE_CHECK_2" Client="NO" UseSleep="NO">
+							<ToolScp Scp="GAME_ST_EVT_COND_VALUE" Client="NO" UseSleep="NO">
 								<Str Str="GT_STAGE_POINT_4"/>
 								<Str Str="OVER"/>
 								<Num Num="200"/>
@@ -549,7 +558,7 @@
 							<ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
 								<Num Num="270"/>
 							</ToolScp>
-							<ToolScp Scp="SCR_MGAME_VALUE_CHECK_2" Client="NO" UseSleep="NO">
+							<ToolScp Scp="GAME_ST_EVT_COND_VALUE" Client="NO" UseSleep="NO">
 								<Str Str="GT_STAGE_POINT_4"/>
 								<Str Str="UNDER"/>
 								<Num Num="199"/>

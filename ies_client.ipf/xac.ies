@@ -2128,6 +2128,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 16109,artefact_champagne_set,,,,item_hi\pc_item\weapon\artefact_champagne_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 16110,artefact_statuebase_set,,,,item_hi\pc_item\weapon\artefact_statuebase_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 16111,artefact_popcorn_set,,,,item_hi\pc_item\weapon\artefact_popcorn_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
+16112,artefact_metaldetector_quest,,,,item_hi\pc_item\weapon\metaldetector_quest.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 17002,cleric_f_mace_thornhammer,,,,item_hi\pc_item\weapon\it_monk_thornhammer.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 17003,cleric_f_mace_Baptism,,,,char_hi\monster\Baptism_obj_set.xac,char_texture\monster\Baptism_obj\,bg_hi\ErrorBox.mtl,,,NO
 17004,cleric_f_mace_blacksmith,,,,item_hi\pc_item\weapon\cleric_f_mace_blacksmith.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
@@ -5078,3 +5079,11 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 810290,d_abbey_35_4_vine,,,,char_hi\npc\d_abbey_35_4_vine\d_abbey_35_4_vine_set.xac,char_texture\npc\d_abbey_35_4_vine\,bg_hi\ErrorBox.mtl,,,NO
 810291,npc_kabbalist_m,,,,char_hi\npc\npc_kabbalist_m\npc_kabbalist_m_set.xac,char_texture\npc\npc_kabbalist_m\,bg_hi\ErrorBox.mtl,,,NO
 810292,velnias_sword,,,,char_hi\npc\velnias_sword\velnias_sword.xac,char_texture\npc\velnias_sword\,bg_hi\ErrorBox.mtl,,,NO
+810293,npc_pilgrim_old,,,,char_hi\npc\npc_pilgrim_old\npc_pilgrim_old_set.xac,char_texture\npc\npc_pilgrim_old\,bg_hi\ErrorBox.mtl,,,NO
+810294,npc_friar_old_down_head,,,,char_hi\npc\npc_tila_monk_down\npc_tila_monk_hair_std.xac,char_texture\npc\npc_Paladin_follower1\,bg_hi\ErrorBox.mtl,,,NO
+810295,f_coral_35_2_elt,,,,char_hi\npc\f_coral_35_2_elt\f_coral_35_2_elt_set.xac,char_texture\npc\f_coral_35_2_elt\,bg_hi\ErrorBox.mtl,,,NO
+810299,abbey_gate,,,,char_hi\npc\abbey_gate\abbey_gate_set.xac,char_texture\npc\abbey_gate\,bg_hi\ErrorBox.mtl,,,NO
+810300,abbey_gate_opened,,,,char_hi\npc\abbey_gate_open\abbey_gate_open_set.xac,char_texture\npc\abbey_gate\,bg_hi\ErrorBox.mtl,,,NO
+810301,tubers,,,,char_hi\npc\tubers\tubers_set.xac,char_texture\npc\tubers\,bg_hi\ErrorBox.mtl,,,NO
+810303,npc_cauldron_water,,,,char_hi\npc\npc_cauldron_water\npc_cauldron_water_set.xac,char_texture\npc\npc_cauldron_water\,bg_hi\ErrorBox.mtl,,,NO
+810304,npc_cauldron_stew,,,,char_hi\npc\npc_cauldron_stew\npc_cauldron_stew_set.xac,char_texture\npc\npc_cauldron_stew\,bg_hi\ErrorBox.mtl,,,NO

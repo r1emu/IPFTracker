@@ -105,6 +105,8 @@ function ON_PARTYINFO_BUFFLIST_UPDATE(frame)
 	local count = list:Count();
 	local memberIndex = 0;
 
+	local myInfo = session.party.GetMyPartyObj();
+
 	-- 접속중 파티원 버프리스트
 	for i = 0 , count - 1 do
 		local partyMemberInfo = list:Element(i);
@@ -143,7 +145,7 @@ function ON_PARTYINFO_BUFFLIST_UPDATE(frame)
 						
 						local buffID = partyMemberInfo:GetBuffIDByIndex(j);
 						local cls = GetClassByType("Buff", buffID);											
-						if cls ~= nil and cls.ShowIcon ~= "FALSE" then
+						if cls ~= nil and cls.ShowIcon ~= "FALSE" and cls.ClassName ~= "TeamLevel" then
 							local buffOver = partyMemberInfo:GetBuffOverByIndex(j);
 							local buffTime = partyMemberInfo:GetBuffTimeByIndex(j);							
 							local slot = nil;
@@ -162,9 +164,17 @@ function ON_PARTYINFO_BUFFLIST_UPDATE(frame)
 									icon = CreateIcon(slot);
 								end
 
+								local handle = 0;
+								if myInfo ~= nil then
+									if myInfo:GetMapID() == partyMemberInfo:GetMapID() and myInfo:GetChannel() == partyMemberInfo:GetChannel() then
+										handle  = partyMemberInfo:GetHandle();
+									end
+										
+								end
+								handle = tostring(handle);
 								icon:SetDrawCoolTimeText( math.floor(buffTime/1000) );
 								icon:SetTooltipType('buff');
-								icon:SetTooltipArg(0, buffID, "");
+								icon:SetTooltipArg(handle, buffID, "");
 
 								local imageName = 'icon_' .. cls.Icon;
 								icon:Set(imageName, 'BUFF', buffID, 0);
@@ -223,6 +233,10 @@ function OPEN_PARTY_MEMBER_INFO(name)
 end
 
 function CONTEXT_PARTY(frame, ctrl, aid)
+
+	if session.world.IsIntegrateServer() == true then
+		return;
+	end
 	
 	local myAid = session.loginInfo.GetAID();
 	

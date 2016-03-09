@@ -9873,6 +9873,8 @@
         <Key Name="Hide_1662" Value="12562"/>
         <Key Name="Hide_1676" Value="12563"/>
         <Key Name="Hide_1677" Value="12564"/>
+        <Key Name="Kill_boss_Mandara_Q1" Value="12565"/>
+        <Key Name="Kill_boss_Grinender_Q1" Value="12566"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Account">
         <Key Name="MaxPVPGrade" Value="6299"/>

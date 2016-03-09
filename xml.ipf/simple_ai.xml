@@ -14108,26 +14108,26 @@ return IMCRandom(300, 1000) * 0.001;"/>
     </AI>
     <AI Name="handler_s_goldenbell_shield" ActiveMessageMapInBattle="1">
         <Attacked>
-            <ScpSet Range="40" RelationBit="2" CheckClassName="None" CheckClassNameByFunc="0">
+            <ScpSet Range="100" RelationBit="2" CheckClassName="None" CheckClassNameByFunc="0">
                 <Cond>
                     <ToolScp Scp="SH_COND_EXEC_COUNT" Client="NO" UseSleep="NO">
                         <Num Num="2"/>
                         <Str Str="12_13_12_20_30"/>
                     </ToolScp>
-                    <ToolScp Scp="SH_COND_COOLDOWN_MINIMON" Client="NO" UseSleep="NO" CondFunc="">
-                        <Num Num="60"/>
-                        <Num Num="50"/>
-                        <Num Num="250"/>
-                        <Num Num="3"/>
-                        <Num Num="5"/>
-                        <Str Str="12_13_12_20_36"/>
-                    </ToolScp>
+                    <ToolScp Scp="SH_COND_RAND" Client="NO" UseSleep="NO" >
+                        <Num Num="25"/>
+                        </ToolScp>
                 </Cond>
                 <Exec>
-                    <ToolScp Scp="SH_USE_PCSKILL" Client="NO" UseSleep="NO">
-                        <Str Str="Monk_Golden_Bell_Shield"/>
-                        <Num Num="10"/>
+                    <ToolScp Scp="SH_EXEC_BUFF" Client="NO" UseSleep="NO">
+                        <Str Str="Mon_Golden_Bell_Shield_Buff"/>
                         <Num Num="1"/>
+                        <Num Num="0"/>
+                        <Num Num="10000"/>
+                        <Num Num="1"/>
+                    </ToolScp>
+                <ToolScp Scp="SH_EXEC_CHAT" Client="NO" UseSleep="YES">
+                        <Str Str="금종조"/>
                     </ToolScp>
                 </Exec>
             </ScpSet>

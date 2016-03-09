@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="yes"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by mayo (IMCGames Co., Ltd) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <ComponentList>
 	<Particle name="square008" texture="background002" width="5.00" height="5.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64"/>
 	<Particle name="pattern018_2" texture="pattern018_2" width="5.00" height="5.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64"/>
@@ -1117,6 +1117,11 @@
 	<Model name="stonetablet_stone_dead" model="stonetablet_stone_dead.xac" motion="stonetablet_stone_dead_ani.xsm" texturepath="char_texture\npc\stonetablet_stone\" overlap="true"/>
 	<Model name="npc_rokas_3_dead" model="npc_rokas_3_dead.xac" motion="npc_rokas_3_dead_ani.xsm" texturepath="char_texture\npc\npc_rokas_3\" overlap="false"/>
 	<Model name="vine_01_event_dead" model="vine_01_event_dead.xac" motion="vine_01_event_dead.xsm" texturepath="char_texture\npc\vine\" overlap="true"/>
+	<Model name="npc_figurine_dead" model="npc_figurine_dead.xac" motion="npc_figurine_dead_ani.xsm" texturepath="effect\high\modeltexture\" overlap="true"/>
+	<Model name="npc_figurine_device_dead" model="npc_figurine_device_dead.xac" motion="npc_figurine_device_dead_ani.xsm" texturepath="effect\high\modeltexture\" overlap="true"/>
+	<Model name="npc_telepty_device_dead" model="npc_telepty_device_dead.xac" motion="npc_telepty_device_dead_ani.xsm" texturepath="effect\high\modeltexture\" overlap="true"/>
+	<Model name="f_farm_47_power_01_dead" model="f_farm_47_power_01_dead.xac" motion="f_farm_47_power_01_dead_ani.xsm" texturepath="effect\high\modeltexture\" overlap="true"/>
+	<Model name="closing_device_dead" model="closing_device_dead.xac" motion="closing_device_dead_ani.xsm" texturepath="effect\high\modeltexture\" overlap="true"/>
 	<Text name="Text_damage_self" caption="" fontfilename="nngothicExtraBold.ttf" fontsize="24" bold="0" italic="0" outline="0" dropshadow="0" mindistance="100.00" maxdistance="300.00"/>
 	<Text name="Text_damage_decision" caption="" fontfilename="nngothicExtraBold.ttf" fontsize="20" bold="1" italic="0" outline="1" dropshadow="0" mindistance="50.00" maxdistance="150.00"/>
 	<Text name="Text_destination" caption="" fontfilename="nngothicExtraBold.ttf" fontsize="28" bold="0" italic="0" outline="0" dropshadow="0" mindistance="100.00" maxdistance="300.00"/>

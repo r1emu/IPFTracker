@@ -1187,7 +1187,7 @@ return obj.Level"/>
         </destroyEvent>
         <enterEvent>
             <ToolScp Scp="PAD_TGT_BUFF" Client="NO" UseSleep="NO">
-                <Str Str="NEUTRAL"/>
+                <Str Str="PARTY"/>
                 <Num Num="0"/>
                 <Num Num="-1"/>
                 <Str Str="Pass_Buff"/>
@@ -1689,7 +1689,7 @@ return 10000 + obj.Level * 2000"/>
                 <Str Str="CarveLaima_Debuff"/>
             </ToolScp>
             <ToolScp Scp="PAD_TGT_BUFF_REMOVE" Client="NO" UseSleep="NO">
-                <Str Str="ENEMY"/>
+                <Str Str="ALL"/>
                 <Num Num="0"/>
                 <Num Num="0"/>
                 <Str Str="CarveLaima_MSPD_Debuff"/>
@@ -3182,7 +3182,7 @@ return 4000 + obj.Level*2000 + abil_lev*1000;"/>
         </enterEvent>
         <leaveEvent>
             <ToolScp Scp="PAD_TGT_BUFF_REMOVE" Client="NO" UseSleep="NO">
-                <Str Str="ENEMY"/>
+                <Str Str="ALL"/>
                 <Num Num="0"/>
                 <Num Num="0"/>
                 <Str Str="CarveAustrasKoks_Debuff"/>
@@ -3226,7 +3226,7 @@ return 4000 + obj.Level*2000 + abil_lev*1000;"/>
         </enterEvent>
         <leaveEvent>
             <ToolScp Scp="PAD_TGT_BUFF_REMOVE" Client="NO" UseSleep="NO">
-                <Str Str="ENEMY"/>
+                <Str Str="ALL"/>
                 <Num Num="0"/>
                 <Num Num="0"/>
                 <Str Str="CarveAustrasKoks_Debuff"/>
@@ -3603,7 +3603,7 @@ end"/>
         </enterEvent>
         <leaveEvent>
             <ToolScp Scp="PAD_TGT_BUFF_REMOVE" Client="NO" UseSleep="NO">
-                <Str Str="FRIEND"/>
+                <Str Str="ALL"/>
                 <Num Num="0"/>
                 <Num Num="0"/>
                 <Str Str="CarveZemina_Buff"/>
@@ -9830,7 +9830,7 @@ return obj.Level"/>
         </enterEvent>
         <leaveEvent>
             <ToolScp Scp="PAD_TGT_BUFF_REMOVE" Client="NO" UseSleep="NO">
-                <Str Str="FRIEND"/>
+                <Str Str="ALL"/>
                 <Num Num="0"/>
                 <Num Num="0"/>
                 <Str Str="CounterSpell_Buff"/>

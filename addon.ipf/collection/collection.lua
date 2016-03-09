@@ -56,6 +56,7 @@ function ON_ADD_COLLECTION(frame, msg)
 	if colls:Count() == 1 then
 		SYSMENU_FORCE_ALARM("collection", "Collection");
 	end
+	imcSound.PlaySoundEvent('cllection_register');
 	frame:Invalidate();
 
 	end
@@ -288,6 +289,7 @@ end
 
 function OPEN_DECK_DETAIL(parent, ctrl)
 
+	imcSound.PlaySoundEvent('cllection_inven_open');
 	local col = parent:GetParent();
 	col = tolua.cast(col, "ui::CCollection");
 	col:DetailView(parent, "MAKE_DECK_DETAIL");
@@ -510,6 +512,7 @@ function COLLECTION_DROP(frame, slot)
 	local needcnt = colinfo:GetNeedItemCount(liftIcon.type)
 
 	if nowcnt < needcnt then
+		imcSound.PlaySoundEvent('sys_popup_open_1');
 		local yesScp = string.format("EXEC_PUT_COLLECTION(\"%s\", %d)", liftIcon:GetIESID(), type);
 		ui.MsgBox(ScpArgMsg("CollectionIsSharedToTeamAndCantTakeBackItem_Continue?"), yesScp, "None");
 	end

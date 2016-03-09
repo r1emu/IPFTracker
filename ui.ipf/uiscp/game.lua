@@ -4333,12 +4333,14 @@ function KEYBOARD_INPUT()
 		local Set1 = GET_CHILD(joystickQuickFrame,'Set1','ui::CGroupBox');
 		local Set2 = GET_CHILD(joystickQuickFrame,'Set2','ui::CGroupBox');
 
+		if monsterquickslot:IsVisible() ~= 1 then
 		if control.IsRestSit() == true then
 			quickFrame:ShowWindow(0);
 			restquickslot:ShowWindow(1);
 		else
 			quickFrame:ShowWindow(1);
 			restquickslot:ShowWindow(0);
+		end
 		end
 
 		joystickQuickFrame:ShowWindow(0);
@@ -4378,12 +4380,14 @@ function JOYSTICK_INPUT()
 		local Set1 = GET_CHILD(joystickQuickFrame,'Set1','ui::CGroupBox');
 		local Set2 = GET_CHILD(joystickQuickFrame,'Set2','ui::CGroupBox');
 
+		if monsterquickslot:IsVisible() ~= 1 then
 		if control.IsRestSit() == true then
 			joystickQuickFrame:ShowWindow(0);
 			joystickrestquickslot:ShowWindow(1);
 		else
 			joystickQuickFrame:ShowWindow(1);
 			joystickrestquickslot:ShowWindow(0);
+		end
 		end
 
 		quickFrame:ShowWindow(0);

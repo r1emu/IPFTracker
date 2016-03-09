@@ -938,10 +938,6 @@ function SCR_Get_SR(pc)
 	local jobObj = GetJobObject(pc);
 	if jobObj.CtrlType == 'Warrior' then
 	    byStat = 4;
-	    local abil = GetAbility(pc, 'Hoplite9');
-	    if abil ~= nil and IsBuffApplied(pc, 'Finestra_Buff') == 'YES' then
-		    byStat = byStat + 3;
-	    end
 	end
 	if jobObj.CtrlType == 'Archer' then
     	byStat = 0;
@@ -1758,12 +1754,17 @@ function GET_REWARD_PROPERTY(self, propertyName)
 	local sObj = GetSessionObject(self, 'ssn_klapeda')
 	local rewardProperty = 0;
 
+	if sObj == nil and IsServerObj(self) == 0 then
+		local pc = GetMyPCObject()
+		sObj = GetSessionObject(pc, 'ssn_klapeda')
+	end
+
 	if sObj ~= nil then
 		local list, listCnt = GetClassList("reward_property");
 		
 		for i = 0, listCnt -1 do
 			local cls = GetClassByIndexFromList(list, i);
-			if cls ~= nil and cls.Property == propertyName then
+			if cls ~= nil and TryGetProp(cls, "Property") == propertyName then
 				if sObj[cls.ClassName] == 300 then
 					rewardProperty = rewardProperty + cls.Value
 				end

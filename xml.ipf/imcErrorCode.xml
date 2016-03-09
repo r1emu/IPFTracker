@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <imcErrorCode>
 	<Type Type="LOGIC">
@@ -96,6 +96,7 @@
     <Code Code="ERRCODE_LOGIC_CHAT_ROOM" CallStack="NO" Desc="채팅 방 오류"/>
 
 
+		<Code Code="ERRCODE_LOGIC" CallStack="NO" Desc="로직 오류"/>
 	</Type>
 	<Type Type="DATA">
 		<Code Code="ERRCODE_DATA_INIT_TABLE" CallStack="NO" Desc="테이블 초기화에 실패하였습니다. 다음 정보를 참조하세요."/>

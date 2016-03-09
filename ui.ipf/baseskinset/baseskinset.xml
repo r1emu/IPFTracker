@@ -2702,15 +2702,15 @@
 			<img name="bottomright" imgrect="1998 469 50 50"/>
 		</skin>
 	<skin name="journal_mon_skin" texture="\skin\pip_test_item.tga">
-			<img name="topleft" imgrect="1673 397 50 50"/>
-			<img name="topcore" imgrect="1714 397 50 50"/>
-			<img name="topright" imgrect="1755 397 50 50"/>
-			<img name="bodyleft" imgrect="1673 438 50 50"/>
-			<img name="bodycore" imgrect="1714 438 50 50"/>
-			<img name="bodyright" imgrect="1755 438 50 50"/>
-			<img name="bottomleft" imgrect="1673 497 50 50"/>
-			<img name="bottomcore" imgrect="1714 497 50 50"/>
-			<img name="bottomright" imgrect="1755 497 50 50"/>
+			<img name="topleft" imgrect="1673 397 40 40"/>
+			<img name="topcore" imgrect="1714 397 40 40"/>
+			<img name="topright" imgrect="1755 397 40 40"/>
+			<img name="bodyleft" imgrect="1673 438 40 40"/>
+			<img name="bodycore" imgrect="1714 438 40 40"/>
+			<img name="bodyright" imgrect="1755 438 40 40"/>
+			<img name="bottomleft" imgrect="1673 479 40 40"/>
+			<img name="bottomcore" imgrect="1714 479 40 40"/>
+			<img name="bottomright" imgrect="1755 479 40 40"/>
 		</skin>
 		<skin name="journal_complete_skin" texture="\skin\pip_test_item.tga">
 			<img name="topleft" imgrect="1409 862 20 20"/>
@@ -4123,6 +4123,7 @@
 		<image name="test_pvp_center" file="\skin\pvp_skin.tga" imgrect="278 1 335 160" CMM_Caption="pvp_가운데이미지"/>
 		<image name="test_pvp_center_bg" file="\skin\pvp_skin.tga" imgrect="0 173 250 65" CMM_Caption="pvp_가운데이미지뒷배경"/>
 		<image name="test_pvp_center_bg2" file="\skin\pvp_skin.tga" imgrect="0 247 560 40" CMM_Caption="pvp_가운데사람있는뒷배경"/>
+		<image name="test_pvp_center_bg3" file="\skin\pvp_skin.tga" imgrect="693 743 250 160" CMM_Caption="길드배틀배경"/>
 		<image name="test_pvp_alram_icon" file="\skin\pvp_skin.tga" imgrect="615 65 50 50" CMM_Caption="pvp_알람 아이콘"/>
 		<image name="test_pvp_mvpicon" file="\skin\pvp_skin.tga" imgrect="615 116 45 45" CMM_Caption="mvp아이콘"/>
 		<image name="test_pvp_win" file="\skin\pvp_skin.tga" imgrect="729 342 165 80" CMM_Caption="이김표시"/>
@@ -4255,6 +4256,9 @@
 	<image name="Cube_skin" file="\skin\cube_skin.tga" imgrect="0 0 455 509" CMM_Caption="큐브스킨"/>
 	<image name="tiket_icon" file="\skin\pip_test.tga" imgrect="1797 937 34 21" CMM_Caption="티켓스킨"/>
 	<image name="premium_img" file="\skin\pip_test_item.tga" imgrect="947 684 85 25" CMM_Caption="프리미엄_폰트"/>
+	<image name="guildbattle_ranking_bg" file="\skin\guildbattle_ranking_bg.tga" imgrect="0 0 366 626" CMM_Caption="길드배틀1등표시배경"/>
+	<image name="guildbattle_kill_count" file="\skin\pvp_skin.tga" imgrect="251 204 30 30" CMM_Caption="길드배틀킬카운트"/>
+		<image name="guildbattle_death_count" file="\skin\pvp_skin.tga" imgrect="251 173 30 30" CMM_Caption="길드배틀데쓰카운트"/>
 	</imagelist>
 	<imagelist category="tutorial_img">
 		<image name="tutr_img_btn_left" file="\skin\mainframe_04.tga" imgrect="371 448 44 44"/>
@@ -4505,14 +4509,17 @@
 	<image name="pvp_leageue_btn" file="\skin\PVP_skin.tga" imgrect="286 162 180 60" CMM_Caption="리그참여"/>
 		<image name="pvp_leageue_btn_cursoron" file="\skin\PVP_skin.tga" imgrect="467 162 180 60"/>
 		<image name="pvp_leageue_btn_clicked" file="\skin\PVP_skin.tga" imgrect="614 0 180 60"/>
+	<image name="barrack_message_btn" file="\skin\barrack.tga" imgrect="949 600 90 50" CMM_Caption="메시지버튼"/>
+		<image name="barrack_message_btn_cursoron" file="\skin\barrack.tga" imgrect="949 651 90 50"/>
+		<image name="barrack_message_btn_clicked" file="\skin\barrack.tga" imgrect="949 702 90 50"/>
 	</imagelist>
 	<imagelist category="hair_color">
-		<image name="basic_color" file="\skin\barrack.tga" imgrect="948 491 35 35" CMM_Caption="기본컬러"/>
-		<image name="color_check" file="\skin\barrack.tga" imgrect="1020 527 35 35" CMM_Caption="체크표시"/>
-		<image name="white_color" file="\skin\barrack.tga" imgrect="984 491 35 35" CMM_Caption="화이트컬러"/>
-		<image name="blue_color" file="\skin\barrack.tga" imgrect="1020 491 35 35" CMM_Caption="블루컬러"/>
-		<image name="black_color" file="\skin\barrack.tga" imgrect="948 527 35 35" CMM_Caption="블랙컬러"/>
-		<image name="peach_color" file="\skin\barrack.tga" imgrect="984 527 35 35" CMM_Caption="피치컬러"/>
+		<image name="basic_color" file="\skin\barrack.tga" imgrect="949 492 35 35" CMM_Caption="기본컬러"/>
+		<image name="color_check" file="\skin\barrack.tga" imgrect="1021 528 35 35" CMM_Caption="체크표시"/>
+		<image name="white_color" file="\skin\barrack.tga" imgrect="985 492 35 35" CMM_Caption="화이트컬러"/>
+		<image name="blue_color" file="\skin\barrack.tga" imgrect="1020 492 35 35" CMM_Caption="블루컬러"/>
+		<image name="black_color" file="\skin\barrack.tga" imgrect="949 528 35 35" CMM_Caption="블랙컬러"/>
+		<image name="peach_color" file="\skin\barrack.tga" imgrect="985 528 35 35" CMM_Caption="피치컬러"/>
 	</imagelist>
 	<imagelist category="market">
 		<image name="market_target" file="\skin\market_skin.tga" imgrect="0 156 1780 88"/>
@@ -5222,8 +5229,8 @@
 		<image name="questicon_ef" file="\icon\icon_item_quest_alarm_scroll_ef.tga" imgrect="0 0 80 80"/>
 		<image name="focus_ui" file="\icon\focus_ui.tga" imgrect="0 0 128 128"/>
 		<image name="socket_blank" file="\skin\mainframe_A.tga" imgrect="504 771 24 24"/>
-		<image name="socket_red" file="\skin\mainframe_A.tga" imgrect="554 771 24 24"/>
-		<image name="socket_green" file="\skin\mainframe_A.tga" imgrect="604 771 24 24"/>
+		<image name="socket_red1" file="\skin\mainframe_A.tga" imgrect="554 771 24 24"/>
+		<image name="socket_green1" file="\skin\mainframe_A.tga" imgrect="604 771 24 24"/>
 		<image name="socket_blue" file="\skin\mainframe_A.tga" imgrect="529 771 24 24"/>
 		<image name="socket_yellow" file="\skin\mainframe_A.tga" imgrect="579 771 24 24"/>
 		<image name="socket_blank_cursoron" file="\skin\mainframe_A.tga" imgrect="504 796 24 24"/>
@@ -5874,6 +5881,7 @@
 		<image name="icon_token" file="\icon\buff_icon.tga" imgrect="512 1152 128 128" CMM_Caption="토큰"/>
 		<image name="icon_nexonpc" file="\icon\buff_icon.tga" imgrect="640 1152 128 128" CMM_Caption="넥슨피시방"/>
 		<image name="icon_expup" file="\icon\buff_icon.tga" imgrect="768 1152 128 128" CMM_Caption="경험의서버프"/>
+	<image name="icon_teamexpup" file="\icon\buff_icon.tga" imgrect="896 1152 128 128" CMM_Caption="팀경험치"/>
 	</imagelist>
 	<imagelist category="for frame"/>
 	<imagelist category="roadmap"/>

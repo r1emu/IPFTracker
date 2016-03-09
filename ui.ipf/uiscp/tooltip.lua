@@ -5,7 +5,7 @@ function UPDATE_MONSTER_TOOLTIP(frame, monName)
 	local monCls = GetClass("Monster", monName);
 	local image = GET_CHILD(frame, "image");
 	image:SetImage(GET_MON_ILLUST(monCls));
-
+    
 	local completeBtn = GET_CHILD(frame, "complete");
 	local completeText = GET_CHILD(frame, "t_complete");
 	completeBtn:SetVisible(0);
@@ -89,9 +89,42 @@ function SET_WIKI_MONRANK_INFO(frame, monName, isShow)
 	myDamageTitle:SetText(ScpArgMsg("DamageRanking"));
 	
 	myKillRankText:SetTextByKey("rank", ranking.myKillRank + 1);
-	myKillScoreText:SetTextByKey("score", ranking.myKillScore);
 	myDamageRankText:SetTextByKey("rank", ranking.myDamageRank + 1);
 	myDamageScoreText:SetTextByKey("score", ranking.myDamageScore);
+	
+    local myKillFlag = 0
+    local pcetc = GetMyEtcObject()
+	local jIES = GetClass('Journal_monkill_reward', monName)
+	if jIES ~= nil and pcetc ~= nil then
+	    if jIES ~= nil and jIES.Count1 > 0 then
+	        local wiki = GetWikiByName(monName)
+            if wiki ~= nil then
+                local killcount = ranking.myKillScore
+                local property = 'Reward_'..monName
+    		    if GetPropType(pcetc, property) ~= nil then
+    		        if pcetc[property] == 1 then
+                        local text = '{img M_message_open 30 30}'..ScpArgMsg("myKillScoreText")..killcount
+                        myKillScoreText:SetText(text);
+                        myKillFlag = 1
+    		        end
+    		    end
+    		    if myKillFlag == 0 then
+                    local text = ScpArgMsg("myKillScoreText")..killcount..' / '..jIES.Count1
+                    if jIES.Count1 <= killcount then
+                        text = '{img M_message_Unopen 30 30}'..text
+                    end
+                    myKillScoreText:SetText(text);
+                    myKillFlag = 1
+    		    end
+            end
+	    end
+	end
+	
+	if myKillFlag == 0 then
+        local text = ScpArgMsg("myKillScoreText")..ranking.myKillScore
+        myKillScoreText:SetText(text);
+	end
+	
 
 	SHOW_CHILD_LIST(myGBox, isShow);
 	
