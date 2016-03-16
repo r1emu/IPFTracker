@@ -1793,7 +1793,8 @@
         <Effect Name="M_GTOWER_STAGE_11"/>
         <Effect Name="ABBEY_35_3_SQ_4_MINI"/>
         <Effect Name="I_smoke056"/>
-    </Category>
+    <Effect Name="I_force003_green#Point001"/>
+	</Category>
     <Category ID="43">
         <Effect Name="Cleric_ResistElements"/>
         <Effect Name="Wizard_Hail"/>
@@ -2239,6 +2240,17 @@
 		<Effect Name="F_explosion009_mint"/>
 	<Effect Name="F_wizard_disinter_ground"/>
         <Effect Name="F_ground145_smoke"/>
+    <Effect Name="I_light011_blue#Point001"/>
+		<Effect Name="I_archer_sightshoot_cast_blue#Point001"/>
+		<Effect Name="I_explosion006_blue#Point001"/>
+		<Effect Name="I_explosion006_blue"/>
+	<Effect Name="I_archer_sightshoot_cast_blue#Bip01 L Toe0Nub"/>
+    <Effect Name="I_bomb002_blue#Bip01 L Toe0Nub"/>
+    <Effect Name="I_archer_sightshoot_cast_blue#Bip002 Neck"/>
+    <Effect Name="I_force071_mintdark2##0.5"/>
+		<Effect Name="F_burstup007_yellow"/>
+		<Effect Name="I_rize004_green1_force"/>
+	<Effect Name="I_force027_green"/>
     </Category>
     <Category ID="27">
         <Effect Name="SAPPER_TRAP_Sapper_BroomTrap"/>
@@ -2604,6 +2616,14 @@
         <Effect Name="I_force080_violet2"/>
         <Effect Name="F_summon_ground_red"/>
         <Effect Name="I_pattern004_explosion_mash_violet"/>
+    <Effect Name="f_coral_35_2_elt"/>
+        <Effect Name="F_ground_change_dark"/>
+        <Effect Name="F_levitation004_violet_ride"/>
+        <Effect Name="F_ground_change_dark"/>
+        <Effect Name="I_pattern004_explosion_mash_violet_"/>
+        <Effect Name="F_levitation007_violet"/>
+        <Effect Name="I_light004_red"/>
+        <Effect Name="F_bg_light011_red"/>
     </Category>
     <Category ID="23">
         <Effect Name="I_force004_pink#Bip01 R Finger0"/>
@@ -3276,7 +3296,9 @@
         <Effect Name="I_EventVab02_mash##3"/>
         <Effect Name="I_EventVab02_mash##3"/>
         <Effect Name="d_free"/>
-    </Category>
+    <Effect Name="F_levitation005_yellow_event"/>
+		<Effect Name="F_bg_light011_red_event"/>
+	</Category>
     <Category ID="180">
         <Effect Name="I_ice005_mash###1"/>
         <Effect Name="F_ground037_smoke##0.8"/>

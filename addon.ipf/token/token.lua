@@ -343,7 +343,9 @@ function REQ_TOKEN_ITEM(parent, ctrl)
 	local find = string.find(argList, "PremiumToken");
 	if find ~= nil then
 		if true == session.loginInfo.IsPremiumState(ITEM_TOKEN) then
-			ui.MsgBox(ClMsg("IsAppliedToken"));
+			local str = ScpArgMsg("IsAppliedToken");
+			local yesScp = string.format("pc.ReqExecuteTx_Item(\"%s\",\"%s\",\"%s\")", "SCR_USE_ITEM_TOKEN", itemIES, argList);
+			ui.MsgBox(str, yesScp, "None");
 			return;
 		end
 	elseif argList == "Premium_boostToken" then

@@ -1,5 +1,9 @@
 
 
+function ON_JOURNAL_UPDATE_MAP(frame, msg, argStr, argNum)
+	JOURNAL_BUILD_ALL_LIST(frame, "Map");
+end
+
 function CREATE_JOURNAL_ARTICLE_MAP(frame, grid, key, text, iconImage, callback)
 
 	CREATE_JOURNAL_ARTICLE(frame, grid, key, text, iconImage, callback);

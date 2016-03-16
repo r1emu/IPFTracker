@@ -742,3 +742,17 @@ ClassID,WikiPoint,TeachPoint,AutoGet,ClassName,TargetClassName,TargetMapName,Ill
 36005,10,5,0,R_ABAND01_105,R_ABAND01_105,,icon_item_recipe_misc1,제작서-술달린 암밴드,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,코스튬을 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 37001,10,5,0,R_CAN01_101,R_CAN01_101,,icon_item_weapon_misc1,제작서-캐논,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
 37002,10,5,0,R_CAN01_102,R_CAN01_102,,icon_item_weapon_misc1,제작서-슈페리어 캐논,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+37005,10,5,0,R_CAN01_105,R_CAN01_105,,icon_item_weapon_misc1,제작서-크리티 캐논,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+37006,10,5,0,R_CAN01_106,R_CAN01_106,,icon_item_weapon_misc1,제작서-비스타 캐논,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+37007,10,5,0,R_CAN01_107,R_CAN01_107,,icon_item_weapon_misc1,제작서-이레라 캐논,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+37008,10,5,0,R_CAN01_108,R_CAN01_108,,icon_item_weapon_misc1,제작서-스트로피 캐논,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+37009,10,5,0,R_CAN01_109,R_CAN01_109,,icon_item_weapon_misc1,제작서-아그바라 캐논,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+38001,0,0,0,R_AMU01_101,R_AMU01_101,,icon_item_recipe_misc1,제작서-데모나스 어뮬렛,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+38002,0,0,0,R_AMU01_102,R_AMU01_102,,icon_item_recipe_misc1,제작서-아갈라스 어뮬렛,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+38003,0,0,0,R_AMU01_103,R_AMU01_103,,icon_item_recipe_misc1,제작서-페레지마스 어뮬렛,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+38004,0,0,0,R_AMU01_104,R_AMU01_104,,icon_item_recipe_misc1,제작서-지벨리스 어뮬렛,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+38005,0,0,0,R_AMU01_105,R_AMU01_105,,icon_item_recipe_misc1,제작서-발바라스 어뮬렛,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+38006,0,0,0,R_AMU01_106,R_AMU01_106,,icon_item_recipe_misc1,제작서-마기야 어뮬렛,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+38007,0,0,0,R_AMU01_107,R_AMU01_107,,icon_item_recipe_misc1,제작서-비니스 어뮬렛,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+38008,0,0,0,R_AMU01_108,R_AMU01_108,,icon_item_recipe_misc1,제작서-팔레디마스 어뮬렛,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.
+38009,0,0,0,R_AMU01_109,R_AMU01_109,,icon_item_recipe_misc1,제작서-펄트라우카 어뮬렛,Recipe,{#5090ff}{ol},{/}{/}{/},WIKIPAGE_ITEM,장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다.

@@ -2076,6 +2076,10 @@ function ITEM_EQUIP_MSG(item, slotName)
 		return;
 	end
 
+	if true == BEING_TRADING_STATE() then
+		return;
+	end
+
 	local strscp = string.format("item.Equip(%d)", item.invIndex);
 	if slotName ~= nil then
 		strscp = string.format("item.Equip(\"%s\", %d)", slotName, item.invIndex);

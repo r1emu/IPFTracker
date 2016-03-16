@@ -21,7 +21,7 @@ function UPDATE_PREMIUM_TOOLTIP(tooltipframe, strarg, numarg1, numarg2)
 		local accountObj = GetMyAccountObj();
 		local tokenItemCls = GetClassByType("Item", numarg2);
 		if tokenItemCls ~= nil and tokenItemCls.NumberArg2 > 0 then
-			local tradeCountString = ScpArgMsg("AllowTradeByCount") .. " " .. string.format("(%d/%d)", accountObj.TradeCount, tokenItemCls.NumberArg2);
+			local tradeCountString = ScpArgMsg("AllowTradeByCount") .. " " .. tostring(accountObj.TradeCount)
 			token_tradecount:SetTextByKey("value", tradeCountString);
 			token_tradecount:ShowWindow(1);
 		else

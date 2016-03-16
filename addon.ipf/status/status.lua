@@ -832,7 +832,10 @@ function STATUS_TEXT_SET(textStr)
 end
 
 function STATUS_SLOT_RBTNDOWN(frame, slot, argStr, equipSpot)
-	-- �κ��� �ڸ��ִ��� ���� Ȯ��
+	if true == BEING_TRADING_STATE() then
+		return;
+	end
+	-- 인벤에 자리있는지 먼저 확인
 	local isEmptySlot = false;
 
 	local invItemList = session.GetInvItemList();

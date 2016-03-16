@@ -506,8 +506,10 @@
 		<image name="icon_item_warrior_templar_f" file="\icon\equip\warrior_templar_f.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_warrior_dragoon_m" file="\icon\equip\warrior_dragoon_m.png" imgrect="0 0 256 256" CMM_Caption="드라군"/>
 		<image name="icon_item_warrior_dragoon_f" file="\icon\equip\warrior_dragoon_f.png" imgrect="0 0 256 256"/>
-	<image name="icon_item_archer_costume01_3_m" file="\icon\equip\archer_costume01_3_m.png" imgrect="0 0 256 256" CMM_Caption="3랭크코스튬"/>
+	<image name="icon_item_archer_costume01_3_m" file="\icon\equip\archer_costume01_3_m.png" imgrect="0 0 256 256" CMM_Caption="3랭크코스튬_아쳐"/>
 		<image name="icon_item_archer_costume01_3_f" file="\icon\equip\archer_costume01_3_f.png" imgrect="0 0 256 256"/>
+	<image name="icon_item_cleric_costume01_3_m" file="\icon\equip\cleric_costume01_3_m.png" imgrect="0 0 256 256" CMM_Caption="3랭크코스튬_클레릭"/>
+		<image name="icon_item_cleric_costume01_3_f" file="\icon\equip\cleric_costume01_3_f.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="256_weapone_icons">
 		<image name="icon_item_artefact_210011" file="\icon\weapon\icon_item_artefact_210011.png" imgrect="0 0 256 256" CMM_Caption="요령"/>
@@ -3403,6 +3405,9 @@
 		<image name="icon_item_coral2" file="\icon\item\icon_item_coral2.png" imgrect="0 0 128 128" CMM_Caption="푸른산호"/>
 		<image name="icon_item_coral_jewel" file="\icon\item\icon_item_coral_jewel.png" imgrect="0 0 128 128" CMM_Caption="푸른산호_세공품"/>
 	<image name="icon_item_bomb" file="\icon\item\icon_item_bomb.png" imgrect="0 0 128 128" CMM_Caption="폭탄"/>
+	<image name="icon_item_tail_jukotail" file="\icon\item\icon_item_tail_jukotail.png" imgrect="0 0 128 128" CMM_Caption="유코테일의꼬리"/>
+	<image name="icon_item_maple_25_mouthpiece" file="\icon\item\icon_item_maple_25_mouthpiece.png" imgrect="0 0 128 128" CMM_Caption="의문의목걸이"/>
+		<image name="icon_item_maple_25_grassflute" file="\icon\item\icon_item_maple_25_grassflute.png" imgrect="0 0 128 128" CMM_Caption="풀피리"/>
 	</imagelist>
 	<imagelist category="payment">
 		<image name="icon_item_hpPotionPremium" file="\icon\payment\icon_item_hpPotionPremium.png" imgrect="0 0 256 256" CMM_Caption="HP포션"/>

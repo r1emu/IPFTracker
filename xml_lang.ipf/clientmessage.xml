@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by aasdasd (IMCGames Co., Ltd) -->
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by IMC (IMCGames Co., Ltd) -->
 <idspace id="ClientMessage">
 	<Category Name="ErrorMsg">
 		<Class ClassID="1" Data="DirectX 9.0c 이상의 버전이 설치되어 있어야 합니다"/>
@@ -443,6 +443,11 @@
 		<Class ClassID="10536" ClassName="RecipeGroup_Artefact" Data="아티팩트"/>
 		<Class ClassID="10537" ClassName="RecipeGroup_Rapier" Data="레이피어"/>
 		<Class ClassID="10538" ClassName="CraftUsedtoSit" Data="제작은 앉아서 할 수 있습니다."/>
+		<Class ClassID="10539" ClassName="RecipeGroup_Armband" Data="암밴드"/>
+		<Class ClassID="10540" ClassName="RecipeGroup_MagicAmulet" Data="매직어뮬렛"/>
+		<Class ClassID="10541" ClassName="RecipeGroup_Cannon" Data="캐논"/>
+	<Class ClassID="10542" ClassName="RecipeGroup_Dagger" Data="단검"/>
+		<Class ClassID="10543" ClassName="RecipeGroup_Musket" Data="머스킷"/>
 	</Category>
 	<Category Name="ItemPuzzle">
 		<Class ClassID="10601" ClassName="WouldYouSelectThisCombinationAsAlchemystryTarget?" Data="이 조합을 연금 대상으로 선택합니까?"/>
@@ -2848,6 +2853,37 @@
 		<Class ClassID="190166" ClassName="ABBEY_35_3_SQ_4_NPC_NAME" Data="마을 주민 던컨"/>
 		<Class ClassID="190167" ClassName="ABBEY_35_3_SQ_3_DRAIN_FAIL" Data="이 마족은 영혼을 흡수당하고 있습니다"/>
 		<Class ClassID="190168" ClassName="ABBEY_35_3_SQ_11_SUMMON" Data="숨어있던 마족이 나타났습니다!"/>
+		<Class ClassID="190169" ClassName="CORAL_35_2_SQ_2_TAKE_STONE" Data="돌멩이 줍는 중"/>
+		<Class ClassID="190170" ClassName="CORAL_35_2_SQ_2_STONE_GET" Data="던지기 좋은 크기의 돌멩이를 찾았습니다"/>
+		<Class ClassID="190171" ClassName="CORAL_35_2_SQ_2_STONE_ALREADY" Data="이미 돌멩이를 가지고 있습니다{nl}마법진의 중심을 향해 던져보세요"/>
+		<Class ClassID="190172" ClassName="CORAL_35_2_SQ_2_STONE_SHOT" Data="돌멩이 던지는 중"/>
+		<Class ClassID="190173" ClassName="CORAL_35_2_SQ_2_STONE_FAIL" Data="보통 돌멩이로는 효과가 없는 것 같습니다"/>
+		<Class ClassID="190174" ClassName="CORAL_35_2_SQ_3_PARTS_1" Data="주황 샤울라브의 뿔 조각"/>
+		<Class ClassID="190175" ClassName="CORAL_35_2_SQ_3_PARTS_2" Data="유코테일의 산호 조각"/>
+		<Class ClassID="190176" ClassName="CORAL_35_2_SQ_3_KILL_GREEN" Data="지진과 함께 초록 마법진이 사라졌습니다!"/>
+		<Class ClassID="190177" ClassName="CORAL_35_2_SQ_3_KILL_BLUE" Data="지진과 함께 파란 마법진이 사라졌습니다!"/>
+		<Class ClassID="190178" ClassName="CORAL_35_2_SQ_3_GET_HORN" Data="산호 뿔 조각을 얻었습니다!"/>
+		<Class ClassID="190179" ClassName="CORAL_35_2_SQ_3_THROWING" Data="산호 뿔 조각 던지는 중"/>
+		<Class ClassID="190180" ClassName="CORAL_35_2_SQ_5_NPC_NAME" Data="카발리스트 루타스"/>
+		<Class ClassID="190181" ClassName="CORAL_35_2_SQ_6_ABSORB" Data="대지의 기운을 흡수 중"/>
+		<Class ClassID="190182" ClassName="CORAL_35_2_SQ_6_ABSORB_SUCC" Data="대지의 기운을 흡수했습니다"/>
+		<Class ClassID="190183" ClassName="CORAL_35_2_SQ_6_ABSORB_FAIL" Data="대지의 기운을 흡수하지 못했습니다"/>
+		<Class ClassID="190184" ClassName="CORAL_35_2_SQ_7_DRAIN_BLUE" Data="바다의 기운을 흡수했습니다"/>
+		<Class ClassID="190185" ClassName="CORAL_35_2_SQ_7_DRAIN_GREEN" Data="바다의 마법석에 대지의 기운이 섞여듭니다"/>
+		<Class ClassID="190186" ClassName="CORAL_35_2_SQ_9_FAIL_MSG" Data="루타스의 집중력이 흐려졌습니다"/>
+		<Class ClassID="190187" ClassName="CORAL_35_2_SQ_11_SUCC_MSG" Data="조화의 마법진이 완성되었습니다!"/>
+		<Class ClassID="190188" ClassName="CORAL_35_2_SQ_11_SUCC_ING" Data="조화의 기운을 주입하는 중"/>
+		<Class ClassID="190189" ClassName="CORAL_35_2_SQ_11_USE_FAIL" Data="주위의 몬스터가 기운 주입을 방해하려고 합니다!"/>
+		<Class ClassID="190190" ClassName="CORAL_35_2_SQ_12_DRAIN_BLUE" Data="대지의 마법석에 바다의 기운이 섞여듭니다"/>
+		<Class ClassID="190191" ClassName="CORAL_35_2_SQ_13_SUCC" Data="구속 마법진을 완성했습니다"/>
+		<Class ClassID="190192" ClassName="CORAL_35_2_SQ_13_ING" Data="구속 마법진 만드는 중"/>
+		<Class ClassID="190193" ClassName="CORAL_35_2_SQ_14_OUT" Data="구속 마법진에 걸렸습니다!"/>
+		<Class ClassID="190194" ClassName="CORAL_35_2_SQ_14_SUCC" Data="구속 마법진으로 몬스터를 유인했습니다"/>
+		<Class ClassID="190195" ClassName="CORAL_35_2_SQ_14_FIND" Data="위험한 구속 마법진을 찾았습니다"/>
+		<Class ClassID="190196" ClassName="CORAL_35_2_SQ_14_FIND_FAIL" Data="위험한 구속 마법진을 찾지 못했습니다"/>
+		<Class ClassID="190197" ClassName="CORAL_35_2_SQ_2_MAGIC_KILL" Data="이미 마법진이 사라졌다"/>
+		<Class ClassID="190198" ClassName="CORAL_35_2_SQ_13_ENOUGH" Data="이 곳엔 이미 만들어놓은 마법진이 있습니다"/>
+		<Class ClassID="190199" ClassName="CORAL_35_2_SQ_14_READY" Data="마력 탐지석 사용 중"/>
 		<Class ClassID="120353" ClassName="SIAULIAI46_1_HIDDEN_EVENT03" Data="주변에 몬스터들이 너무 많아서 빅 샤울렘 힘줄을 넣을 수 없습니다"/>
 		<Class ClassID="120354" ClassName="UNDER67_MQ06_AI_NAME" Data="늙은 관리인"/>
 		<Class ClassID="120355" ClassName="UNDER67_SQ01_GHOST_NAME" Data="원한 서린 병사"/>
@@ -3509,12 +3545,13 @@
 		<Class ClassID="22627" ClassName="ItIsAlreadyInProcess" Data="이미 처리중입니다. 원치않으면 취소를 눌러주세요."/>
 	</Category>
 	<Category Name="ShopCommon">
-		<Class ClassID="22700" ClassName="ReallyBuy?" Data="구매하시겠습니까?"/>
-		<Class ClassID="22701" ClassName="ReallyBuyCompanion?" Data="분양받으시겠습니까?"/>
-		<Class ClassID="22702" ClassName="CantRegisterSameTypeGoods" Data="같은 종류의 물건은 등록할 수 없습니다."/>
-		<Class ClassID="22703" ClassName="BuyerNotWantThisItem" Data="구매자가 이 아이템을 원하지 않습니다."/>
-		<Class ClassID="22704" ClassName="ReallySell?" Data="판매하시겠습니까?"/>
-		<Class ClassID="22705" ClassName="CannotSellState" Data="판매를 할 수 없는 상태입니다."/>
+		<Class ClassID="240001" ClassName="ReallyBuy?" Data="구매하시겠습니까?"/>
+		<Class ClassID="240002" ClassName="ReallyBuyCompanion?" Data="분양받으시겠습니까?"/>
+		<Class ClassID="240003" ClassName="CantRegisterSameTypeGoods" Data="같은 종류의 물건은 등록할 수 없습니다."/>
+		<Class ClassID="240004" ClassName="BuyerNotWantThisItem" Data="구매자가 이 아이템을 원하지 않습니다."/>
+		<Class ClassID="240005" ClassName="ReallySell?" Data="판매하시겠습니까?"/>
+		<Class ClassID="240006" ClassName="CannotSellState" Data="판매를 할 수 없는 상태입니다."/>
+		<Class ClassID="240007" ClassName="CannotDoAction" Data="해당 액션을 할 수 있는 상태가 아닙니다."/>
 	</Category>
 	<Category Name="Market">
 		<Class ClassID="22800" ClassName="Seller" Data="판매자"/>
@@ -4040,6 +4077,7 @@
 		<Class ClassID="31032" ClassName="CanNotLikeIte" Data="해당 캐릭터는 좋아요를 받을 수 있는 상태가 아닙니다."/>
 		<Class ClassID="31033" ClassName="DeathPenaltyGem" Data="현재 지역에서 전투 불능 시, 소지 중인 젬 일부를 유실할 수 있습니다."/>
 		<Class ClassID="31034" ClassName="DeathPenaltyGemSilver" Data="현재 지역에서 전투 불능 시, 소지 중인 젬 일부와 실버를 유실할 수 있습니다."/>
+	<Class ClassID="31035" ClassName="CanNotEquipLow{Job}{Grade}" Data="{Job} {Grade}서클만 구매 가능합니다."/>
 	</Category>
 	<Category Name="Quest">
 		<Class ClassID="32001" ClassName="ClickToSharedQuestWithParty" Data="{@st59}버튼을 클릭하면 파티원에게 노출합니다."/>
@@ -4077,7 +4115,25 @@
 		<Class ClassID="33528" ClassName="TeamBattleLeagueRank{Rank}" Data="팀배틀리그 {Rank}위"/>
 		<Class ClassID="33529" ClassName="OnlyAbleOver{Rank}" Data="{Rank}랭크 이상만 참여 가능합니다."/>
 		<Class ClassID="33530" ClassName="CannotFightState" Data="상대가 전투 불능 상태입니다."/>
-		<Class ClassID="33547" ClassName="CantUseThisInIntegrateServer" Data="통합 서버에서는 사용할 수 없는 기능입니다."/>
+		<Class ClassID="33531" ClassName="TeamBattleLeague" Data="팀 배틀 리그"/>
+		<Class ClassID="33532" ClassName="ReviveSomeTimeLater" Data="잠시 후 부활합니다."/>
+		<Class ClassID="33533" ClassName="{Name}Get{Point}BecauseHave{MonName}LastTime" Data="{MonName}을 마지막에 가지고 있던 {Name}이 {Point}포인트를 획득했습니다."/>
+		<Class ClassID="33534" ClassName="RemainTimeToStartGame" Data="게임시작까지 남은 시간"/>
+    <Class ClassID="33535" ClassName="RemainTimeToEndGame" Data="게임종료까지 남은 시간"/>
+		<Class ClassID="33536" ClassName="GameAlreadyStarted" Data="게임이 이미 시작되었습니다."/>
+		<Class ClassID="33537" ClassName="JoinCountLimited" Data="입장 인원이 초과되었습니다."/>
+		<Class ClassID="33538" ClassName="Rank{Value}" Data="{Value} 위"/>
+    <Class ClassID="33539" ClassName="Win{Win}Lose{Lose}" Data="{Win}승 {Lose}패"/>
+		<Class ClassID="33540" ClassName="{Time}WeeklyRankingRefresh" Data="{Time}후 주간 순위 갱신"/>
+    <Class ClassID="33541" ClassName="{Point}Point" Data="{Point}점"/>
+    <Class ClassID="33542" ClassName="{Rank}Rank" Data="{Rank}위"/>
+    <Class ClassID="33543" ClassName="TPChangeTicket" Data="TP 교환권"/>
+    <Class ClassID="33544" ClassName="GuildReward" Data="길드 보상"/>
+    <Class ClassID="33545" ClassName="FirstRankServerReward" Data="1위 서버 보상"/>
+    <Class ClassID="33546" ClassName="ForTheNextRankingRefreshFreeTPPlus{Value}" Data="다음 주간 순위 갱신시까지 무료 TP+{Value}"/>
+
+ClassID="33547" ClassName="CantUseThisInIntegrateServer" Data="통합 서버에서는 사용할 수 없는 기능입니다."/>
+	
 	</Category>
 	<Category Name="MonInfo">
 		<Class ClassID="34001" ClassName="MonInfo_Size" Data="크기"/>
@@ -6994,7 +7050,7 @@
 		<Class ClassID="550022" ClassName="marketUpMax{COUNT}" Data="마켓 물품 등록 개수 {COUNT}개로 증가"/>
 		<Class ClassID="550023" ClassName="abilityMax{COUNT}" Data="특성 동시 수련 가능 개수 {COUNT} 증가"/>
 		<Class ClassID="550024" ClassName="speedUp{COUNT}" Data="이동 속도 +{COUNT} 증가"/>
-		<Class ClassID="550025" ClassName="IsAppliedToken" Data="이미 토큰 아이템이 활성화 중에 있습니다."/>
+		<Class ClassID="550025" ClassName="IsAppliedToken" Data="이미 토큰 아이템의 혜택을 적용받고 있습니다. 그래도 적용하시겠습니까?{nl}만약 중첩하여 적용 하는 경우{nl}전체 사용 기간과 개인 거래 횟수가{nl}누적하여 추가되며 그외의 혜택은 동일한 수치로 유지됩니다."/>
 		<Class ClassID="550026" ClassName="PremiumToken" Data="토큰"/>
 		<Class ClassID="550027" ClassName="Premium_boostToken" Data="경험의 서"/>
 		<Class ClassID="550028" ClassName="CashPurchaseGmMsg" Data="유료상품이 숙소에 도착하였습니다. 숙소에서 상품을 수령하세요."/>
@@ -7038,6 +7094,7 @@
 		<Class ClassID="550064" ClassName="PremiumToken_15d" Data="토큰:15일[증정용]"/>
 		<Class ClassID="550065" ClassName="OnlyTokenUserAbleToUse" Data="토큰 이용자만 이용할 수 있습니다."/>
 		<Class ClassID="550067" ClassName="CanGetMoreBuff" Data="최대 버프 적용 개수 증가"/>
+	<Class ClassID="550068" ClassName="Moreindunmission" Data="인던,미션 1회 추가 입장"/>
 	</Category>
 	<Category Name="TPHistory">
 		<Class ClassID="600001" ClassName="RemainLogoutPC" Data="로그아웃 PC 만들기"/>

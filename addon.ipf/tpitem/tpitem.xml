@@ -50,6 +50,8 @@
 		<labelline name="labelline" parent="rightgbox" margin="0 695 0 0" rect="0 0 360 3" skin="labelline_def_2" layout_gravity="center top"/>
 		<richtext name="remainStaticTP" parent="rightgbox" rect="0 0 200 50" margin="25 700 0 0" layout_gravity="leff top" caption="잔여 TP" drawbackground="false" fixwidth="false" fontname="black_16_b" resizebytext="true" textalign="left center"/>
 		<richtext name="remainTP" parent="rightgbox" rect="0 0 200 50" margin="0 700 20 0" layout_gravity="right top" caption="99999999999" drawbackground="false" fixwidth="false" fontname="black_16_b" resizebytext="true" textalign="left center"/>
-		<button name="basketBuyBtn" parent="rightgbox" rect="0 0 300 50" margin="0 0 0 20" layout_gravity="center bottom" skin="test_red_button" scrollbar="false" hittest="true" caption="{@st49}구매 확정{/}" oversound="button_over" clicksound="button_click_stats" MouseOnAnim="btn_mouseover" MouseOffAnim="btn_mouseoff" LBtnUpScp="TPSHOP_ITEM_BASKET_BUY"/>
+		<button name="btn_hair_prev" margin="50 200  0 0" parent="rightgbox" rect="0 0 40 38" layout_gravity="left top" image="button_left_select" clicksound="button_click_big" oversound="button_over" MouseOnAnim="btn_mouseover" MouseOffAnim="btn_mouseoff" LBtnUpScp="TPSHOP_HAIR_ROT_PREV"/>
+		<button name="btn_hair_next" margin="330 200  0 0" parent="rightgbox" rect="0 0 40 38" layout_gravity="left top" image="button_right_select" clicksound="button_click_big" oversound="button_over" MouseOnAnim="btn_mouseover" MouseOffAnim="btn_mouseoff" LBtnUpScp="TPSHOP_HAIR_ROT_NEXT"/>
+		<button name="basketBuyBtn" margin="0 0 0 20" parent="rightgbox" rect="0 0 300 50" layout_gravity="center bottom" clicksound="button_click_stats" skin="test_red_button" scrollbar="false" hittest="true" caption="{@st49}구매 확정{/}" oversound="button_over" MouseOnAnim="btn_mouseover" MouseOffAnim="btn_mouseoff" LBtnUpScp="TPSHOP_ITEM_BASKET_BUY"/>
 	</controls>
 </uiframe>

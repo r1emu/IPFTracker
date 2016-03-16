@@ -713,6 +713,7 @@ ClassID,ActiveState,Level,ClassName,Name,Icon,Job,SkillCategory,AddSpend,Desc,Bu
 410006,1,1,Druid5,드루이드: 동물형 특화,ability_cleric_Druid5,Char4_5,All,,[쉐입시프팅] 혹은 [트랜스폼]으로 변신한 몬스터가 동물형이면 치명타 발생이 특성 레벨당 10% 증가합니다.,,,NO,SCR_ABIL_NONE,NO,
 410007,1,1,Druid6,드루이드: 식물형 특화,ability_cleric_Druid6,Char4_5,All,,[쉐입시프팅] 혹은 [트랜스폼]으로 변신한 몬스터가 식물형이면 HP 회복력과 SP 회복력이 특성 레벨당 10% 증가합니다.,,,NO,SCR_ABIL_NONE,NO,
 410008,1,1,Druid7,드루이드: 곤충형 특화,ability_cleric_Druid7,Char4_5,All,,[쉐입시프팅] 혹은 [트랜스폼]으로 변신한 몬스터가 곤충형이면 방어력과 마법방어력이 특성 레벨당 8% 증가합니다.,,,NO,SCR_ABIL_NONE,NO,
+410009,1,1,Druid8,육식화: 지속시간,ability_cleric_druid8,Char4_5,Druid_Carnivory,SP/7,스킬 [육식화]의 지속시간이 특성 레벨당 1초씩 증가합니다.,,,NO,SCR_ABIL_NONE,NO,
 411001,1,1,Oracle1,아케인에너지: 대미지추가,ability_cleric_Oracle1,Char4_8,Oracle_ArcaneEnergy,SP/4,스킬 [아케인에너지] 사용시 범위에 있는 적은 [특성 레벨] 만큼의 신성 피해를 받습니다.,,,NO,SCR_ABIL_NONE,NO,
 411002,1,1,Oracle2,콜오브디어티스: 페이드,ability_cleric_Oracle2,Char4_8,Oracle_CallOfDeities,SP/15,캐릭터가 스킬 [콜오브디어티스]로 소환된 몬스터에게 위협 받지 않습니다. (선공형 몬스터는 제외.),,,NO,SCR_ABIL_NONE,NO,
 411003,1,1,Oracle3,포어캐스트: 지속시간,ability_cleric_Oracle3,Char4_8,Oracle_Forecast,CoolDown/5000,스킬 [포어캐스트]의 지속시간이 특성 레벨당 2초씩 증가합니다.,,,NO,SCR_ABIL_NONE,NO,
