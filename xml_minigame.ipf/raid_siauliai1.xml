@@ -570,7 +570,6 @@
                             </List>
                         </SelfAI>
                     </Obj>
-                    <Obj Type="Monster" MonType="47241" Pos="59.26#1.83#607.65" angle="72" genCount="1" genTime="20000" autoGen="0" objectKey="3"/>
                 </ObjList>
                 <StageEvents>
                     <Event eventName="midBossGen">
@@ -706,10 +705,10 @@
             <Stage Name="fail" AutoStart="0">
                 <StartScpList>
                     <ToolScp Scp="MGAME_MSG" Client="YES" UseSleep="NO">
-                        <Str Str="미션 실패 : 30초 후 원래 존으로 돌아갑니다"/>
+                        <Str Str="미션 실패 : 3초 후 원래 존으로 돌아갑니다"/>
                     </ToolScp>
                     <ToolScp Scp="MGAME_SET_TIMEOUT" Client="NO" UseSleep="NO">
-                        <Num Num="30"/>
+                        <Num Num="3"/>
                     </ToolScp>
                 </StartScpList>
                 <ObjList/>
@@ -717,7 +716,7 @@
                     <Event eventName="returnZone">
                         <condList>
                             <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
-                                <Num Num="30"/>
+                                <Num Num="3"/>
                             </ToolScp>
                         </condList>
                         <execList>

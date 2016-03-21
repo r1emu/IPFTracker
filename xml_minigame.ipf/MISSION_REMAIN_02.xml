@@ -705,10 +705,10 @@
             <Stage Name="Fail" AutoStart="0">
                 <StartScpList>
                     <ToolScp Scp="MGAME_SET_QUEST_NAME" Client="NO" UseSleep="NO">
-                        <Str Str="미션 실패 : 30초 후 원래 존으로 돌아갑니다"/>
+                        <Str Str="미션 실패 : 3초 후 원래 존으로 돌아갑니다"/>
                     </ToolScp>
                     <ToolScp Scp="MGAME_SET_DM_ICON" Client="NO" UseSleep="NO">
-                        <Str Str="미션 실패 : 30초 후 원래 존으로 돌아갑니다"/>
+                        <Str Str="미션 실패 : 3초 후 원래 존으로 돌아갑니다"/>
                         <Str Str="scroll"/>
                         <Num Num="10"/>
                     </ToolScp>
@@ -718,7 +718,7 @@
                     <Event execCount="1" eventName="failsec30">
                         <condList>
                             <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
-                                <Num Num="30"/>
+                                <Num Num="3"/>
                             </ToolScp>
                         </condList>
                         <execList>
