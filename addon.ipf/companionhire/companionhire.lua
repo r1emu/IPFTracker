@@ -1,4 +1,4 @@
-
+ï»¿
 function COMPANIONHIRE_ON_INIT(addon, frame)
 	addon:RegisterMsg('BUY_SLOT', 'REQ_CHAR_SLOT_BUY');
 end
@@ -48,7 +48,7 @@ function TRY_COMPANION_HIRE()
 		return;
 	end
 	
-	-- ½½·Ô »ê´Ù´Â°Å
+	-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ù´Â°ï¿½
 	local frame = ui.GetFrame("companionhire");
 	local clsName = frame:GetUserValue("CLSNAME");
 	local exchange = frame:GetUserIValue("EXCHANGE_TIKET");
@@ -93,11 +93,11 @@ function TRY_CECK_BARRACK_SLOT_BY_COMPANION_EXCHANGE(select)
 	local barrackCls = GetClass("BarrackMap", accountInfo:GetThemaName());
 	
 	if myCharCont > barrackCls.MaxCashPC + barrackCls.BaseSlot then
-		ui.SysMsg(ClMsg('CanCreateCharCuzMaxSlot')); -- ±¸ÀÔÇÒ ½½·ÔÀÌ ¾ø´Ù´Â°Å
+		ui.SysMsg(ClMsg('CanCreateCharCuzMaxSlot')); -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù´Â°ï¿½
 		return;
 	end
 
-		-- ½½·Ô »ê´Ù´Â°Å
+		-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ù´Â°ï¿½
 	if myCharCont >= barrackCls.BaseSlot + buySlot then
 		local frame = ui.GetFrame("companionhire");
 		frame:SetUserValue("EXCHANGE_TIKET", select);
@@ -122,6 +122,13 @@ function TRY_CECK_BARRACK_SLOT_BY_COMPANION_EXCHANGE(select)
 			return;
 		end
 		itemIES = item:GetIESID();
+	elseif 3 == select then
+		itemCls = GetClass('Item', 'JOB_HOGLAN_COUPON')
+		local item = session.GetInvItemByName("JOB_HOGLAN_COUPON");
+		if nil == item then
+			return;
+		end
+		itemIES = item:GetIESID();
 	end
 
 	if nil == itemCls then
@@ -142,7 +149,7 @@ function TRY_CHECK_BARRACK_SLOT(handle)
 	local barrackCls = GetClass("BarrackMap", accountInfo:GetThemaName());
 
 	if myCharCont > barrackCls.MaxCashPC + barrackCls.BaseSlot then
-		ui.SysMsg(ClMsg('CanCreateCharCuzMaxSlot')); -- ±¸ÀÔÇÒ ½½·ÔÀÌ ¾ø´Ù´Â°Å
+		ui.SysMsg(ClMsg('CanCreateCharCuzMaxSlot')); -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù´Â°ï¿½
 		return;
 	end
 	

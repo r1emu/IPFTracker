@@ -93,7 +93,7 @@ function TOKEN_ON_MSG(frame, msg, argStr, argNum)
 				prop:SetTextByKey("value", img..ClMsg(str)); 
 				txt = string.format("{img 67percent_image2 %d %d}", 100, 45) 
 			elseif str =="abilityMax" then
-				local img = string.format("{img 2plus_image %d %d}", 55, 45) 
+				local img = string.format("{img 1plus_image %d %d}", 55, 45) 
 				prop:SetTextByKey("value", img..ClMsg(str)); 
 				txt = string.format("{img 2plus_image2 %d %d}", 100, 45) 
 			elseif str == "speedUp"then
@@ -136,7 +136,7 @@ function TOKEN_ON_MSG(frame, msg, argStr, argNum)
 		
 	local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 7,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
     local prop = ctrlSet:GetChild("prop");
-    local imag = string.format("{img 2plus_image %d %d}", 55, 45) 
+    local imag = string.format("{img 1plus_image %d %d}", 55, 45) 
     prop:SetTextByKey("value", imag..ClMsg("CanGetMoreBuff")); 
     local value = ctrlSet:GetChild("value");
     value:ShowWindow(0);

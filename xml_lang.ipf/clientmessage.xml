@@ -443,7 +443,7 @@
 		<Class ClassID="10536" ClassName="RecipeGroup_Artefact" Data="아티팩트"/>
 		<Class ClassID="10537" ClassName="RecipeGroup_Rapier" Data="레이피어"/>
 		<Class ClassID="10538" ClassName="CraftUsedtoSit" Data="제작은 앉아서 할 수 있습니다."/>
-		<Class ClassID="10539" ClassName="RecipeGroup_Armband" Data="암밴드"/>
+	<Class ClassID="10539" ClassName="RecipeGroup_Armband" Data="암밴드"/>
 		<Class ClassID="10540" ClassName="RecipeGroup_MagicAmulet" Data="매직어뮬렛"/>
 		<Class ClassID="10541" ClassName="RecipeGroup_Cannon" Data="캐논"/>
 	<Class ClassID="10542" ClassName="RecipeGroup_Dagger" Data="단검"/>
@@ -2115,6 +2115,18 @@
 		<Class ClassID="140305" ClassName="SIAU11RE_MQ_03_MSG_CLEAR_2" Data="사제들의 물건 파편을 찾았습니다"/>
 		<Class ClassID="140306" ClassName="SIAU11RE_MQ_04_AFTER_DIR_AI_NPC_RUN_PRE" Data="프라나스님!"/>
 		<Class ClassID="140307" ClassName="SIAU11RE_MQ_04_AFTER_DIR_AI_NPC_RUN" Data="제가 오르샤까지 모시겠습니다!"/>
+		<Class ClassID="140308" ClassName="CMINE6_RP_1_DO" Data="마력 수집 중"/>
+		<Class ClassID="140309" ClassName="CMINE6_RP_1_1" Data="이 수정의 마력을 모두 모았습니다"/>
+		<Class ClassID="140310" ClassName="CMINE6_RP_1_2" Data="수집을 멈췄습니다"/>
+		<Class ClassID="140311" ClassName="GELE571_RP_1_DO" Data="제거 중"/>
+		<Class ClassID="140312" ClassName="GELE571_RP_1_1" Data="고원 사탕무 줄기를 제거했습니다"/>
+		<Class ClassID="140313" ClassName="PRISON622_RP_1_DO" Data="함정 회수 중"/>
+		<Class ClassID="140314" ClassName="PRISON622_RP_1_GETITEM" Data="불량 함정을 회수했습니다"/>
+		<Class ClassID="140315" ClassName="PRISON622_RP_1_FAIL" Data="함정을 잘 못 건드렸습니다!{nl}도망치세요!"/>
+		<Class ClassID="140316" ClassName="BRACKEN631_RP_1_DO" Data="흙을 파내는 중"/>
+		<Class ClassID="140317" ClassName="BRACKEN631_RP_1_1" Data="더 파낼 것이 없습니다"/>
+		<Class ClassID="140318" ClassName="BRACKEN631_RP_1_2" Data="삽질을 멈췄습니다"/>
+		<Class ClassID="140319" ClassName="BRACKEN631_RP_1_GETITEM" Data="푸른 석탄을 발견했습니다"/>
 		<Class ClassID="220000" ClassName="GUILDEVENT_SELECT_1" Data="길드 인던 미션"/>
 		<Class ClassID="220001" ClassName="GUILDEVENT_SELECT_2" Data="길드 필드 보스"/>
 		<Class ClassID="220002" ClassName="GUILDEVENT_SELECT_3" Data="길드 레이드"/>
@@ -3509,6 +3521,7 @@
 		<Class ClassID="22413" ClassName="doNotJoinGuildEvent" Data="길드 이벤트에 참여하지 않았습니다."/>
 		<Class ClassID="22414" ClassName="GuildMember{Name}Get{Item}By{Count}FromGuildWareHouse" Data="길드원 {Name}이 길드 보관함으로부터 {Item} {Count}개를 받았습니다."/>
 		<Class ClassID="22415" ClassName="ReceivedItemFromGuildWareHouse_GetItFromBarrack" Data="길드 보관함에 아이템을 수령했습니다. 숙소에서 아이템을 확인하세요."/>
+<Class ClassID="22417" ClassName="YouCanBuildInTheOtherGuildAgit" Data="다른 길드 아지트에서는 사용하실 수 없습니다."/>
 	</Category>
 	<Category Name="EqupClasses">
 		<Class ClassID="22501" ClassName="THSword" Data="양손검"/>

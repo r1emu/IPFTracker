@@ -36,6 +36,10 @@ function PARTY_INFO_UPDATE_TOOLTIP_NORMAL(tooltipframe, strarg, numarg1, numarg2
 		return;
 	end	
 
+	if getterPartyList:IsValidIndex(numarg1) == false then
+		return;
+	end
+
 	local eachpartyinfo = getterPartyList:Element(numarg1).partyInfo;
 	local eachpartymemberlist = getterPartyList:Element(numarg1):GetMemberList();
 

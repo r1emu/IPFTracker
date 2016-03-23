@@ -817,14 +817,6 @@ end
 --- about detail controlset
 function CRAFT_RECIPE_FOCUS(page, ctrlSet)
 	
-	--임시로 막아놓는다.
-	--아이템리스트를 리셋하면서 생기는 문제임. 수정해야한다.
-	if GetCraftState() == 1 then
-		ui.SysMsg(ClMsg("prosessItemCraft"));
-		return;
-	end
-
-
 	session.ResetItemList();
 	page = tolua.cast(page, "ui::CPage");
 	local row = page:GetObjectRow(ctrlSet);

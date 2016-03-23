@@ -2020,6 +2020,7 @@
 		<image name="chargebow_black_red" file="\icon\weapon\chargebow_black_red.png" imgrect="0 0 256 256"/>
 		<image name="coritos_up_purple" file="\icon\weapon\coritos_up_purple.png" imgrect="0 0 256 256"/>
 	<image name="OTL_flag" file="\icon\weapon\OTL_flag.png" imgrect="0 0 256 256"/>
+	<image name="icon_item_balloon_pipe" file="\icon\weapon\icon_item_balloon_pipe.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="acc_item">
 		<image name="item_necklace_01" file="\icon\acc\item_necklace_1.png" imgrect="0 0 256 256" CMM_Caption="목걸이"/>
@@ -2092,6 +2093,7 @@
 		<image name="icon_item_armband_silver" file="\icon\acc\icon_item_armband_silver.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_armband_singleTassel" file="\icon\acc\icon_item_armband_singleTassel.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_armband_chief" file="\icon\acc\icon_item_armband_chief.png" imgrect="0 0 256 256"/>
+	<image name="icon_item_armband_ribbon" file="\icon\acc\icon_item_armband_ribbon.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="hair_accesory">
 		<image name="hairacc_1_egg" file="\icon\hairacc\hairacc_1_egg.png" imgrect="0 0 256 256"/>
@@ -2220,6 +2222,7 @@
 		<image name="hairacc_hat047" file="\icon\hairacc\accessory_hat_047.png" imgrect="0 0 256 256"/>
 		<image name="hairacc_hat069" file="\icon\hairacc\accessory_hat_069.png" imgrect="0 0 256 256"/>
 		<image name="hairacc_hat070" file="\icon\hairacc\accessory_hat_070.png" imgrect="0 0 256 256"/>
+	<image name="accessory_leafhelm" file="\icon\hairacc\accessory_leafhelm.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="collection_item">
 		<image name="icon_collitem_collection" file="\icon\colletion\icon_item_collection.tga" imgrect="0 0 673 419" CMM_Caption="월계수"/>
@@ -3408,6 +3411,11 @@
 	<image name="icon_item_tail_jukotail" file="\icon\item\icon_item_tail_jukotail.png" imgrect="0 0 128 128" CMM_Caption="유코테일의꼬리"/>
 	<image name="icon_item_maple_25_mouthpiece" file="\icon\item\icon_item_maple_25_mouthpiece.png" imgrect="0 0 128 128" CMM_Caption="의문의목걸이"/>
 		<image name="icon_item_maple_25_grassflute" file="\icon\item\icon_item_maple_25_grassflute.png" imgrect="0 0 128 128" CMM_Caption="풀피리"/>
+	<image name="icon_item_staff_bot" file="\icon\item\icon_item_staff_bot.png" imgrect="0 0 128 128" CMM_Caption="로드하단부조각"/>
+		<image name="icon_item_staff_mid" file="\icon\item\icon_item_staff_mid.png" imgrect="0 0 128 128" CMM_Caption="로드중단부 조각"/>
+		<image name="icon_item_staff_top" file="\icon\item\icon_item_staff_top.png" imgrect="0 0 128 128" CMM_Caption="로드 상단부 조각"/>
+		<image name="icon_item_staff_red" file="\icon\item\icon_item_staff_red.png" imgrect="0 0 128 128" CMM_Caption="오래된로드"/>
+	<image name="icon_item_anvil_silver" file="\icon\item\icon_item_anvil_silver.png" imgrect="0 0 80 80" CMM_Caption="모루_실버"/>
 	</imagelist>
 	<imagelist category="payment">
 		<image name="icon_item_hpPotionPremium" file="\icon\payment\icon_item_hpPotionPremium.png" imgrect="0 0 256 256" CMM_Caption="HP포션"/>

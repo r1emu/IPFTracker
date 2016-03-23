@@ -2130,6 +2130,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 16110,artefact_statuebase_set,,,,item_hi\pc_item\weapon\artefact_statuebase_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 16111,artefact_popcorn_set,,,,item_hi\pc_item\weapon\artefact_popcorn_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 16112,artefact_metaldetector_quest,,,,item_hi\pc_item\weapon\metaldetector_quest.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
+16113,artefact_balloon_pipe,,,,item_hi\pc_item\weapon\balloon_pipe.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 17002,cleric_f_mace_thornhammer,,,,item_hi\pc_item\weapon\it_monk_thornhammer.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 17003,cleric_f_mace_Baptism,,,,char_hi\monster\Baptism_obj_set.xac,char_texture\monster\Baptism_obj\,bg_hi\ErrorBox.mtl,,,NO
 17004,cleric_f_mace_blacksmith,,,,item_hi\pc_item\weapon\cleric_f_mace_blacksmith.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
@@ -2732,6 +2733,10 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 30180,armband_exclamationMark_S,,,,item_hi\pc_item\weapon\armband_exclamationMark_S.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 30181,Hat081,,,,char_hi\pc\accessory\accessory_hanaming.xac,char_texture\pc\accessory\,bg_hi\ErrorBox.mtl,,,NO
 30182,Hat082,,,,char_hi\pc\accessory\accessory_popolion.xac,char_texture\pc\accessory\,bg_hi\ErrorBox.mtl,,,NO
+30183,armband_ribbon_L,,,,item_hi\pc_item\weapon\armband_ribbon_L.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
+30184,armband_ribbon_M,,,,item_hi\pc_item\weapon\armband_ribbon_M.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
+30185,armband_ribbon_S,,,,item_hi\pc_item\weapon\armband_ribbon_S.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
+30186,Hat_leafhelm,,,,char_hi\pc\accessory\accessory_leafhelm.xac,char_texture\pc\accessory\,bg_hi\ErrorBox.mtl,,,NO
 40000,Box,,,,char_hi\misc\box.xac,char_texture\monster\,bg_hi\ErrorBox.mtl,,,NO
 40001,Warp_arrow,,,,char_hi\misc\warp_arrow.xac,char_texture\misc\,bg_hi\ErrorBox.mtl,,,NO
 40010,Table,,,,char_hi\misc\table.xac,char_texture\monster\,bg_hi\ErrorBox.mtl,,,NO
@@ -5112,3 +5117,4 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 810318,rompelnuka,,,,char_hi\monster\monster_rompelnuka_set.xac,char_texture\monster\rompelnuka\,bg_hi\ErrorBox.mtl,,,NO
 810319,moringbird,,,,char_hi\monster\monster_moringbird_set.xac,char_texture\monster\moringbird\,bg_hi\ErrorBox.mtl,,,NO
 810320,nabu,,,,char_hi\monster\monster_nabu_set.xac,char_texture\monster\nabu\,bg_hi\ErrorBox.mtl,,,NO
+810321,boss_kurmis,,,,char_hi\monster\monster_kurmis_set.xac,char_texture\monster\kurmis\,bg_hi\ErrorBox.mtl,,,NO

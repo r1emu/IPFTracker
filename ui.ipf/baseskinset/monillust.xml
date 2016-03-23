@@ -604,7 +604,7 @@
 		<image name="mon_Pendinmire" file="\icon\monster\mon\mon_Pendinmire.png" imgrect="0 0 80 80"/>
 		<image name="mon_Pawndel_blue" file="\icon\monster\mon\mon_Pawndel_blue.png" imgrect="0 0 80 80"/>
 		<image name="mon_Pawnd_purple" file="\icon\monster\mon\mon_Pawnd_purple.png" imgrect="0 0 80 80"/>
-		<image name="mon_panto_javelin_Gele" file="\icon\monster\mon\mon_panto_javelin_elite.png" imgrect="0 0 80 80"/>
+		<image name="mon_panto_javelin_elite" file="\icon\monster\mon\mon_panto_javelin_elite.png" imgrect="0 0 80 80"/>
 		<image name="mon_colimen" file="\icon\monster\mon\mon_colimen.png" imgrect="0 0 80 80"/>
 		<image name="mon_mushroom_ent_black" file="\icon\monster\mon\mon_mushroom_ent_black.png" imgrect="0 0 80 80"/>
 		<image name="mon_Bat" file="\icon\monster\mon\mon_mirtislampa.png" imgrect="0 0 80 80"/>
@@ -996,6 +996,6 @@
 		<image name="mon_Velwriggler_blue" file="\icon\monster\mon\mon_Velwriggler_blue.png" imgrect="0 0 80 80"/>
 		<image name="mon_bubbe_mage_priest" file="\icon\monster\mon\mon_bubbe_mage_priest.png" imgrect="0 0 80 80"/>
 		<image name="mon_Stoulet_blue" file="\icon\monster\mon\mon_Stoulet_blue.png" imgrect="0 0 80 80"/>
-	<image name="mon_escape_wendigo" file="\icon\monster\mon\mon_escape_wendigo.png" imgrect="0 0 80 80"/>
-		</imagelist>
+		<image name="mon_escape_wendigo" file="\icon\monster\mon\mon_escape_wendigo.png" imgrect="0 0 80 80"/>
+	</imagelist>
 </skinset>

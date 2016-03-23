@@ -135,7 +135,7 @@ return obj.Level;"/>
             </ToolScp>
         </updateEvent>
     </PadSkill>
-    <PadSkill Name="Archer_SpikeShooter" CheckerType="5" Relation="2">
+    <PadSkill Name="Archer_SpikeShooter" CheckerType="5" Relation="2" EnableSearch="0">
         <createEvent>
             <ToolScp Scp="PAD_SET_LINK_TEXTURE" Client="NO" UseSleep="NO">
                 <Pos Angle="0" Dist="10" PosType="5"/>
@@ -8218,7 +8218,7 @@ return obj.Level"/>
             </ToolScp>
         </updateEvent>
     </PadSkill>
-    <PadSkill Name="Tetmamakla_pad" CheckerType="0" Range="15">
+    <PadSkill Name="Tetmamakla_pad" CheckerType="0" Range="15" EnableSearch="0">
         <createEvent>
             <ToolScp Scp="C_PAD_EFFECT_POS" Client="YES" UseSleep="NO">
                 <Str_Arg Str="None" Arg="1"/>

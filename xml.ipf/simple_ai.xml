@@ -661,6 +661,15 @@
             </ToolScp>
         </List>
     </AI>
+    <AI Name="BRACKEN631_RP_1_FIRE" ActiveMessageMapInBattle="1">
+        <StartList>
+            <ToolScp Scp="S_AI_EFFECT_ATTACH" Client="NO" UseSleep="NO">
+                <Num Num="0"/>
+                <Str_Arg Str="F_fire027_2" Arg="0.5"/>
+                <Str Str="BOT"/>
+            </ToolScp>
+        </StartList>
+    </AI>
     <AI Name="BRACKEN632_MON_CREATE" ActiveMessageMapInBattle="1">
         <List>
             <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">

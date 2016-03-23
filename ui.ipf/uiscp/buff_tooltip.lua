@@ -19,8 +19,7 @@ function UPDATE_PREMIUM_TOOLTIP(tooltipframe, strarg, numarg1, numarg2)
 		token_expup:SetTextByKey("value", ScpArgMsg("Token_ExpUp{PER}", "PER", "20%"));
 		token_staup:SetTextByKey("value", ClMsg("AllowPremiumPose"));
 		local accountObj = GetMyAccountObj();
-		local tokenItemCls = GetClassByType("Item", numarg2);
-		if tokenItemCls ~= nil and tokenItemCls.NumberArg2 > 0 then
+		if accountObj.TradeCount > 0 then
 			local tradeCountString = ScpArgMsg("AllowTradeByCount") .. " " .. tostring(accountObj.TradeCount)
 			token_tradecount:SetTextByKey("value", tradeCountString);
 			token_tradecount:ShowWindow(1);

@@ -5280,6 +5280,18 @@
         <Key Name="CORAL_35_2_SQ_14" Value="12611"/>
         <Key Name="CORAL_35_2_SQ_12_R" Value="12612"/>
         <Key Name="MG_Last_guildtowerbattle" Value="12613"/>
+        <Key Name="BRACKEN631_RP_1_R" Value="12626"/>
+        <Key Name="PRISON623_RP_1_R" Value="12627"/>
+        <Key Name="CMINE6_RP_1" Value="12628"/>
+        <Key Name="CMINE6_RP_1_R" Value="12629"/>
+        <Key Name="GELE572_RP_1" Value="12630"/>
+        <Key Name="GELE572_RP_1_R" Value="12631"/>
+        <Key Name="GELE571_RP_1" Value="12632"/>
+        <Key Name="PRISON622_RP_1_R" Value="12633"/>
+        <Key Name="GELE571_RP_1_R" Value="12634"/>
+        <Key Name="PRISON622_RP_1" Value="12635"/>
+        <Key Name="PRISON623_RP_1" Value="12636"/>
+        <Key Name="BRACKEN631_RP_1" Value="12637"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PCEtc">
         <Key Name="FromMission" Value="3907"/>
@@ -9928,6 +9940,11 @@
         <Key Name="Reward_Sec_goblin_archer_blue" Value="12618"/>
         <Key Name="Reward_Sec_Bat" Value="12619"/>
         <Key Name="Reward_escape_wendigo" Value="12620"/>
+        <Key Name="Kill_boss_deadbone_Q2" Value="12621"/>
+        <Key Name="Hide_1964" Value="12622"/>
+        <Key Name="Hide_1989" Value="12623"/>
+        <Key Name="Hide_1991" Value="12638"/>
+        <Key Name="Hide_1992" Value="12639"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Account">
         <Key Name="MaxPVPGrade" Value="6299"/>
@@ -11262,6 +11279,9 @@
         <Key Name="PVP" Value="11585"/>
         <Key Name="PVPMap" Value="11586"/>
         <Key Name="LifeTime" Value="12614"/>
+        <Key Name="MDefRatio" Value="12624"/>
+        <Key Name="DefRatio" Value="12625"/>
+        <Key Name="ReinforceRatio" Value="12640"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Guild">
         <Key Name="MaxCount" Value="7691"/>
