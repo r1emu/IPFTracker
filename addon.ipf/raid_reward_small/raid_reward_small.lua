@@ -21,7 +21,14 @@ function ITEM_BALLOON_COMMON(handle, itemCls, tooltipEnum, duration, delaySec, s
 		return 0;
 	end
 
-	_G[itemCls.RefreshScp](itemCls);
+	if nil == itemCls then
+		return;
+	end
+
+	local scp = _G[itemCls.RefreshScp];
+	if nil ~= scp then
+		scp(itemCls);
+	end
 
 	delaySec = 0.0;
 
@@ -145,4 +152,4 @@ function RAID_REWARD_BAL_POS(frame)
 	local y = point.y - frame:GetHeight() - 40;
 	frame:MoveFrame(x, y);
 	return 1;
-end
+en
