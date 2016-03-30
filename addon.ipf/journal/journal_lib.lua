@@ -214,7 +214,7 @@ function SET_ITEM_CATEGORY_BY_PROP(tree)
 	end
 end
 
-function SET_CATEGORY_BY_PROP(tree, idSpace, groupName, classType, clMsgHeader, list)
+function SET_CATEGORY_BY_PROP(tree, idSpace, groupName, classType, clMsgHeader, list, marginY)
 
 	tree:Clear();
 	local typeList = nil;
@@ -284,6 +284,7 @@ function SET_CATEGORY_BY_PROP(tree, idSpace, groupName, classType, clMsgHeader, 
 			end
 		end
 	end
+	tree:SetFitToChild(true,marginY);
 
 	if clMsgHeader == nil then
 		GBOX_AUTO_ALIGN(tree, 10, 10, 0)

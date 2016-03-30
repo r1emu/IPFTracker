@@ -169,3 +169,7 @@ ClassID,SellRate,Count,Price,ShopName,IDSpace,ItemName,Description,NeedProperty
 3303,1,1,1,Master_Chaplain,Item,misc_cape,,
 3401,1,1,1,Master_Shinobi,Item,misc_bombShinobi,,
 3501,1,1,1,Master_RuneCaster,Item,misc_runeStone,,
+3601,1,1,1,Klapeda_SilverCostume,Item,costume_war_m_003,,
+3602,1,1,1,Klapeda_SilverCostume,Item,costume_war_f_003,,
+3603,1,1,1,Klapeda_SilverCostume,Item,costume_wiz_m_002,,
+3604,1,1,1,Klapeda_SilverCostume,Item,costume_wiz_f_002,,

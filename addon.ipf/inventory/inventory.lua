@@ -1806,17 +1806,15 @@ function INV_ICON_SETINFO(frame, slot, invItem, customFunc, scriptArg, count)
 	icon:Set(imageName, 'Item', itemType, invItem.invIndex, invItem:GetIESID(), invItem.count);
 
 	ICON_SET_INVENTORY_TOOLTIP(icon, invItem, nil, class);
-	
-	
+	local itemobj = GetIES(invItem:GetObject());	
 
 	if class.ItemType == 'Equip' then
+		local resultLifeTimeOver = IS_LIFETIME_OVER(itemobj);
 		local result = CHECK_EQUIPABLE(itemType);
-		if result ~= "OK" then
+		if (result ~= "OK") or (resultLifeTimeOver == 1) then
 			icon:SetColorTone("FFFF0000");
 		end
 	end
-
-	local itemobj = GetIES(invItem:GetObject());
 
 	SET_SLOT_ITEM_TEXT_USE_INVCOUNT(slot, invItem, itemobj, count);
 
@@ -2118,8 +2116,11 @@ function INVENTORY_DELETE(itemIESID, itemType)
 
 	local itemProp = geItemTable.IsDestroyable(itemType);
 	if cls.Destroyable == 'NO' or geItemTable.IsDestroyable(itemType) == false then
+		local obj = GetIES(invItem:GetObject());
+		if obj.ItemLifeTimeOver == 0 then
 		ui.AlarmMsg("ItemIsNotDestroy");
 		return;
+	end
 	end
 
 	--if cls.UserTrade == 'YES' or cls.ShopTrade == 'YES' then
@@ -2482,4 +2483,31 @@ function INV_HAT_VISIBLE_STEATE_SET(frame)
 	end
 
 	control.CustomCommand("HAT_VISIBLE_STATE", index);
-en
+end
+-- 기간제 아이템 판별 함수
+function IS_LIFETIME_OVER(itemobj)
+
+	if itemobj.LifeTime == nil then
+		return 0;
+
+	elseif 0 ~= itemobj.LifeTime then		
+
+		-- 기간에 따라 정하기
+		local sysTime = geTime.GetServerSystemTime();
+		local endTime = imcTime.GetSysTimeByStr(itemobj.ItemLifeTime);
+		local difSec = imcTime.GetDifSec(endTime, sysTime);		
+		
+		-- 기간만료 일 경우에
+		if 0 > difSec then
+			return 1;
+		end;
+		
+		-- ItemLifeTimeOver으로 검사하는 함수		
+		--[[
+		if 0 ~= itemobj.ItemLifeTimeOver then
+			return 1;
+		end;
+		]]
+	end;
+	return 0;
+end;

@@ -6190,6 +6190,15 @@ Name="CORAL_32_1_SQ_3_AI" ActiveMessageMapInBattle="1">
             </ToolScp>
         </List>
     </AI>
+    <AI Name="KATYN12_RP_1_OBJ_AI" UpdateMS="1000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="S_AI_EFFECT" Client="NO" UseSleep="NO">
+                <Num Num="0"/>
+                <Str_Arg Str="F_smoke141_darkblue_spread_out" Arg="0.30000001"/>
+                <Str Str="TOP"/>
+            </ToolScp>
+        </List>
+    </AI>
     <AI Name="KATYN13_WOOD_AI" ActiveMessageMapInBattle="1">
         <List>
             <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
@@ -9765,6 +9774,15 @@ if self.HP == 0 then return 1; else return 0; end;">
                 <Str Str="TRACK_DEBUFF_TRIGGER"/>
             </ToolScp>
         </List>
+    </AI>
+    <AI Name="THORN21_RP_2_OBJ_AI" ActiveMessageMapInBattle="1">
+        <StartList>
+            <ToolScp Scp="S_AI_EFFECT_ATTACH" Client="NO" UseSleep="NO">
+                <Num Num="0"/>
+                <Str_Arg Str="F_smoke043_loop" Arg="1"/>
+                <Str Str="BOT"/>
+            </ToolScp>
+        </StartList>
     </AI>
     <AI Name="THORN23_HIDDEN_EVENT" ActiveMessageMapInBattle="1">
         <List>

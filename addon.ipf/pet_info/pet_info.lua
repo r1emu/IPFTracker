@@ -332,6 +332,10 @@ end
 
 function DROP_PET_EQUIP(parent, slot, str, num)
 
+	if 1 == 1 then
+		return;
+	end
+
 	local liftIcon = ui.GetLiftIcon():GetInfo();
 	local frame = parent:GetTopParentFrame();
 	local guid = frame:GetUserValue("PET_GUID");

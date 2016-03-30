@@ -138,6 +138,15 @@ function BEFORE_APPLIED_TOKEN_OPEN(invItem)
 end
 
 function BEFORE_APPLIED_BOOST_TOKEN_OPEN(invItem)
+	
+	local obj = GetIES(invItem:GetObject());
+	
+	if obj.ItemLifeTimeOver > 0 then
+		ui.SysMsg(ScpArgMsg('LessThanItemLifeTime'));
+		return;
+	end
+	
+	
 	local frame = ui.GetFrame("token");
 	if invItem.isLockState then 
 		frame:ShowWindow(0)
@@ -206,6 +215,13 @@ function BEFORE_APPLIED_INDUNRESET_OPEN(invItem)
 	local frame = ui.GetFrame("token");
 	if invItem.isLockState then 
 		frame:ShowWindow(0)
+		return;
+	end
+
+	local obj = GetIES(invItem:GetObject());
+	
+	if obj.ItemLifeTimeOver > 0 then
+		ui.SysMsg(ScpArgMsg('LessThanItemLifeTime'));
 		return;
 	end
 
@@ -326,7 +342,7 @@ function REQ_TOKEN_ITEM(parent, ctrl)
 		return;
 	end
 	
-	if argList == 'Premium_indunReset' then
+	if argList == 'Premium_indunReset' or argList == 'Premium_indunReset_14d' or argList == 'Premium_indunReset_14d_test' then
 
 		local etcObj = GetMyEtcObject();
 		local countType1 = "InDunCountType_100";
@@ -348,7 +364,7 @@ function REQ_TOKEN_ITEM(parent, ctrl)
 			ui.MsgBox(str, yesScp, "None");
 			return;
 		end
-	elseif argList == "Premium_boostToken" then
+	elseif argList == "Premium_boostToken" or argList == "Premium_boostToken_14d" or argList == "Premium_boostToken_14d_test" then
 		local myHandle = session.GetMyHandle();
 		local buff = info.GetBuffByName(myHandle, 'Premium_boostToken');
 		if buff ~= nil then

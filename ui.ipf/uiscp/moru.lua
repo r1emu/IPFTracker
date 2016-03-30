@@ -39,6 +39,14 @@ end
 function CLIENT_MORU(invItem)
 	local frame = ui.GetFrame("reinforce_131014");
 	local fromMoruSlot = GET_CHILD(frame, "fromMoruSlot", "ui::CSlot");
+
+	local obj = GetIES(invItem:GetObject());
+	
+	if obj.ItemLifeTimeOver > 0 then
+		ui.SysMsg(ScpArgMsg('LessThanItemLifeTime'));
+		return;
+	end
+
 	SET_SLOT_ITEM(fromMoruSlot, invItem);
 	ui.GuideMsg("SelectItem");
 

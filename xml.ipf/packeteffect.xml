@@ -37,6 +37,8 @@
         <Effect Name="I_ground009_water2"/>
         <Effect Name="F_burstup042_water_blue"/>
         <Effect Name="f_coral_35_2_elt"/>
+        <Effect Name="I_stone014_mash"/>
+        <Effect Name="I_stone005_explosion_mash"/>
     </Category>
     <Category ID="75">
         <Effect>knockdown_bounce</Effect>
@@ -93,7 +95,7 @@
         <Effect Name="I_chain004_mash_loop"/>
         <Effect Name="F_light056_blue"/>
         <Effect Name="I_shadowgaoler_dead_event_mash"/>
-    <Effect Name="absorb"/>
+        <Effect Name="absorb"/>
         <Effect Name="E_wizard_shoggoth_force"/>
     </Category>
     <Category ID="72">
@@ -271,14 +273,14 @@
         <Effect Name="Down"/>
         <Effect Name="F_buff_basic024_black_fire"/>
         <Effect Name="F_light101_blue"/>
-    <Effect Name="F_light029_mint2"/>
+        <Effect Name="F_light029_mint2"/>
         <Effect Name="F_pattern014_ground_red_loop"/>
         <Effect Name="tie"/>
         <Effect Name="gateopen"/>
         <Effect Name="F_spread_out033_ground_light"/>
-    <Effect Name="F_buff_Cleric_Bless_Buff"/>
+        <Effect Name="F_buff_Cleric_Bless_Buff"/>
         <Effect Name="MON"/>
-    <Effect Name="F_light069_white_attach"/>
+        <Effect Name="F_light069_white_attach"/>
     </Category>
     <Category ID="69">
         <Effect Name="voice_wiz_icebolt_cast"/>
@@ -828,11 +830,15 @@
         <Effect Name="I_emo_exclamation#Dummy_head"/>
         <Effect Name="sit3"/>
         <Effect Name="I_force011_green2"/>
-    <Effect Name="EVENT_BURY"/>
+        <Effect Name="EVENT_BURY"/>
         <Effect Name="light_on"/>
         <Effect Name="EVNET_LOOP"/>
-    <Effect Name="I_light004_mint"/>
+        <Effect Name="I_light004_mint"/>
         <Effect Name="F_light001_yellow1"/>
+        <Effect Name="F_hit_poison_hit_green"/>
+        <Effect Name="F_light055_pink"/>
+        <Effect Name="I_force080_green_blue"/>
+        <Effect Name="F_smoke020_green"/>
     </Category>
     <Category ID="26">
         <Effect Name="I_warrior_ironhook_hook2"/>
@@ -1650,7 +1656,7 @@
         <Effect Name="I_force066_ice_explosion"/>
         <Effect Name="I_force004_pink"/>
         <Effect Name="I_force004_pink"/>
-    <Effect Name="I_smoke037_yellow#Bone004"/>
+        <Effect Name="I_smoke037_yellow#Bone004"/>
         <Effect Name="I_force003_green#Bip001 Xtra06Opp03"/>
         <Effect Name="I_force003_green#Bip001 Xtra06Opp02"/>
         <Effect Name="I_force003_green#lapindion_weapon"/>
@@ -1807,8 +1813,8 @@
         <Effect Name="M_GTOWER_STAGE_11"/>
         <Effect Name="ABBEY_35_3_SQ_4_MINI"/>
         <Effect Name="I_smoke056"/>
-    <Effect Name="I_force003_green#Point001"/>
-	</Category>
+        <Effect Name="I_force003_green#Point001"/>
+    </Category>
     <Category ID="43">
         <Effect Name="Cleric_ResistElements"/>
         <Effect Name="Wizard_Hail"/>
@@ -2238,37 +2244,37 @@
         <Effect Name="I_force046_green2#B_light 02"/>
         <Effect Name="I_force046_green2#B_light 03"/>
         <Effect Name="I_force046_green2#B_light 04"/>
-    <Effect Name="I_spread_in006"/>
+        <Effect Name="I_spread_in006"/>
         <Effect Name="F_spread_in001_orange"/>
-    <Effect Name="I_force051_dark##3"/>
+        <Effect Name="I_force051_dark##3"/>
         <Effect Name="I_force019_violet##10"/>
         <Effect Name="I_force018_trail_dark2_loop#Bip001 R Hand#2"/>
         <Effect Name="F_burstup004_dark##1"/>
         <Effect Name="Noe"/>
-    <Effect Name="I_rootcrystal_blue_dead_mash"/>
-    <Effect Name="sitabsorb"/>
-		<Effect Name="I_force050_blue#Bone001"/>
-		<Effect Name="I_force080_green_blue3#Bone001"/>
-		<Effect Name="F_explosion001_blue1"/>
-		<Effect Name="F_ground011_blue"/>
-		<Effect Name="F_explosion009_mint"/>
-	<Effect Name="F_wizard_disinter_ground"/>
+        <Effect Name="I_rootcrystal_blue_dead_mash"/>
+        <Effect Name="sitabsorb"/>
+        <Effect Name="I_force050_blue#Bone001"/>
+        <Effect Name="I_force080_green_blue3#Bone001"/>
+        <Effect Name="F_explosion001_blue1"/>
+        <Effect Name="F_ground011_blue"/>
+        <Effect Name="F_explosion009_mint"/>
+        <Effect Name="F_wizard_disinter_ground"/>
         <Effect Name="F_ground145_smoke"/>
-    <Effect Name="I_light011_blue#Point001"/>
-		<Effect Name="I_archer_sightshoot_cast_blue#Point001"/>
-		<Effect Name="I_explosion006_blue#Point001"/>
-		<Effect Name="I_explosion006_blue"/>
-	<Effect Name="I_archer_sightshoot_cast_blue#Bip01 L Toe0Nub"/>
-    <Effect Name="I_bomb002_blue#Bip01 L Toe0Nub"/>
-    <Effect Name="I_archer_sightshoot_cast_blue#Bip002 Neck"/>
-    <Effect Name="I_force071_mintdark2##0.5"/>
-		<Effect Name="F_burstup007_yellow"/>
-		<Effect Name="I_rize004_green1_force"/>
-	<Effect Name="I_force027_green"/>
-    <Effect Name="I_ground009_water_short2"/>
-    <Effect Name="I_ground009_water_short"/>
+        <Effect Name="I_light011_blue#Point001"/>
+        <Effect Name="I_archer_sightshoot_cast_blue#Point001"/>
+        <Effect Name="I_explosion006_blue#Point001"/>
+        <Effect Name="I_explosion006_blue"/>
+        <Effect Name="I_archer_sightshoot_cast_blue#Bip01 L Toe0Nub"/>
+        <Effect Name="I_bomb002_blue#Bip01 L Toe0Nub"/>
+        <Effect Name="I_archer_sightshoot_cast_blue#Bip002 Neck"/>
+        <Effect Name="I_force071_mintdark2##0.5"/>
+        <Effect Name="F_burstup007_yellow"/>
+        <Effect Name="I_rize004_green1_force"/>
+        <Effect Name="I_force027_green"/>
+        <Effect Name="I_ground009_water_short2"/>
+        <Effect Name="I_ground009_water_short"/>
         <Effect Name="F_explosion020_water_blue"/>
-    <Effect Name="I_archer_sightshoot_cast_blue#Dummy_effect_skl_force"/>
+        <Effect Name="I_archer_sightshoot_cast_blue#Dummy_effect_skl_force"/>
         <Effect Name="I_force088_blue#Dummy_effect_skl_force"/>
     </Category>
     <Category ID="27">
@@ -2635,7 +2641,7 @@
         <Effect Name="I_force080_violet2"/>
         <Effect Name="F_summon_ground_red"/>
         <Effect Name="I_pattern004_explosion_mash_violet"/>
-    <Effect Name="f_coral_35_2_elt"/>
+        <Effect Name="f_coral_35_2_elt"/>
         <Effect Name="F_ground_change_dark"/>
         <Effect Name="F_levitation004_violet_ride"/>
         <Effect Name="F_ground_change_dark"/>
@@ -2643,7 +2649,7 @@
         <Effect Name="F_levitation007_violet"/>
         <Effect Name="I_light004_red"/>
         <Effect Name="F_bg_light011_red"/>
-    <Effect Name="I_force015_violet"/>
+        <Effect Name="I_force015_violet"/>
         <Effect Name="F_ground051_orange_loop"/>
         <Effect Name="F_light029_violet"/>
         <Effect Name="F_summon_ground_yellow"/>
@@ -2660,9 +2666,10 @@
         <Effect Name="F_light056_orange_loop"/>
         <Effect Name="F_light056_orange2"/>
         <Effect Name="F_light056_orange2"/>
-    <Effect Name="I_pattern003_explosion_mash_violet_"/>
+        <Effect Name="I_pattern003_explosion_mash_violet_"/>
         <Effect Name="I_pattern003_explosion_mash_violet_attach"/>
         <Effect Name="I_pattern003_explosion_mash_violet2"/>
+        <Effect Name="F_spread_in010_green"/>
     </Category>
     <Category ID="23">
         <Effect Name="I_force004_pink#Bip01 R Finger0"/>
@@ -3335,9 +3342,12 @@
         <Effect Name="I_EventVab02_mash##3"/>
         <Effect Name="I_EventVab02_mash##3"/>
         <Effect Name="d_free"/>
-    <Effect Name="F_levitation005_yellow_event"/>
-		<Effect Name="F_bg_light011_red_event"/>
-	<Effect Name="F_fire023"/>
+        <Effect Name="F_levitation005_yellow_event"/>
+        <Effect Name="F_bg_light011_red_event"/>
+        <Effect Name="F_fire023"/>
+        <Effect Name="F_smoke141_darkblue_spread_out_loop"/>
+        <Effect Name="F_smoke141_darkblue_spread_out_loop_att"/>
+        <Effect Name="F_light080_blue_loop_attach"/>
     </Category>
     <Category ID="180">
         <Effect Name="I_ice005_mash###1"/>

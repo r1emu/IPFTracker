@@ -5292,6 +5292,28 @@
         <Key Name="PRISON622_RP_1" Value="12635"/>
         <Key Name="PRISON623_RP_1" Value="12636"/>
         <Key Name="BRACKEN631_RP_1" Value="12637"/>
+        <Key Name="BRACKEN632_RP_1_R" Value="12641"/>
+        <Key Name="CM3LAKE83_RP_1_R" Value="12642"/>
+        <Key Name="CHAPLE576_RP_1" Value="12643"/>
+        <Key Name="ROKAS24_RP_1" Value="12644"/>
+        <Key Name="ROKAS24_RP_1_R" Value="12645"/>
+        <Key Name="ROKAS24_RP_2" Value="12646"/>
+        <Key Name="ROKAS24_RP_2_R" Value="12647"/>
+        <Key Name="ROKAS26_RP_1" Value="12648"/>
+        <Key Name="ROKAS26_RP_1_R" Value="12649"/>
+        <Key Name="THORN21_RP_1" Value="12650"/>
+        <Key Name="THORN21_RP_1_R" Value="12651"/>
+        <Key Name="THORN21_RP_2" Value="12652"/>
+        <Key Name="CHAPLE576_RP_1_R" Value="12653"/>
+        <Key Name="THORN21_RP_2_R" Value="12654"/>
+        <Key Name="BRACKEN632_RP_1" Value="12655"/>
+        <Key Name="BRACKEN633_RP_1" Value="12656"/>
+        <Key Name="BRACKEN633_RP_1_R" Value="12657"/>
+        <Key Name="KATYN10_RP_1" Value="12658"/>
+        <Key Name="KATYN10_RP_1_R" Value="12659"/>
+        <Key Name="KATYN12_RP_1" Value="12660"/>
+        <Key Name="KATYN12_RP_1_R" Value="12661"/>
+        <Key Name="CM3LAKE83_RP_1" Value="12662"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PCEtc">
         <Key Name="FromMission" Value="3907"/>
@@ -9945,6 +9967,37 @@
         <Key Name="Hide_1989" Value="12623"/>
         <Key Name="Hide_1991" Value="12638"/>
         <Key Name="Hide_1992" Value="12639"/>
+        <Key Name="Hide_1996" Value="12663"/>
+        <Key Name="Hide_2002" Value="12664"/>
+        <Key Name="Hide_2003" Value="12665"/>
+        <Key Name="Hide_2004" Value="12666"/>
+        <Key Name="TempDailyTimePoint" Value="12669"/>
+        <Key Name="HairColor_blond" Value="12670"/>
+        <Key Name="HairColor_red" Value="12671"/>
+        <Key Name="DailyTimeReward_0" Value="12672"/>
+        <Key Name="DailyTimeReward_1" Value="12673"/>
+        <Key Name="DailyTimeReward_2" Value="12674"/>
+        <Key Name="DailyTimeReward_3" Value="12675"/>
+        <Key Name="DailyTimeReward_4" Value="12676"/>
+        <Key Name="DailyTimeReward_5" Value="12677"/>
+        <Key Name="DailyTimeReward_6" Value="12678"/>
+        <Key Name="DailyTimeReward_7" Value="12679"/>
+        <Key Name="DailyTimeReward_8" Value="12680"/>
+        <Key Name="DailyTimeReward_9" Value="12681"/>
+        <Key Name="DailyTimeReward_10" Value="12682"/>
+        <Key Name="DailyTimeReward_11" Value="12683"/>
+        <Key Name="DailyTimeReward_18" Value="12684"/>
+        <Key Name="DailyTimeReward_12" Value="12685"/>
+        <Key Name="DailyTimeReward_19" Value="12686"/>
+        <Key Name="DailyTimeReward_13" Value="12687"/>
+        <Key Name="DailyTimeReward_20" Value="12688"/>
+        <Key Name="DailyTimeReward_14" Value="12689"/>
+        <Key Name="DailyTimeReward_21" Value="12690"/>
+        <Key Name="DailyTimeReward_15" Value="12691"/>
+        <Key Name="DailyTimeReward_22" Value="12692"/>
+        <Key Name="DailyTimeReward_16" Value="12693"/>
+        <Key Name="DailyTimeReward_23" Value="12694"/>
+        <Key Name="DailyTimeReward_17" Value="12695"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Account">
         <Key Name="MaxPVPGrade" Value="6299"/>
@@ -9960,6 +10013,32 @@
         <Key Name="TokenItemType" Value="11070"/>
         <Key Name="MaxAccountWarehouseCount" Value="11583"/>
         <Key Name="AccountWareHouseExtend" Value="11584"/>
+        <Key Name="DailyTime_ResetTime" Value="12696"/>
+        <Key Name="DailyTimePoint" Value="12697"/>
+        <Key Name="DailyTimeReward_2" Value="12698"/>
+        <Key Name="DailyTimeReward_3" Value="12699"/>
+        <Key Name="DailyTimeReward_4" Value="12700"/>
+        <Key Name="DailyTimeReward_5" Value="12701"/>
+        <Key Name="DailyTimeReward_6" Value="12702"/>
+        <Key Name="DailyTimeReward_9" Value="12703"/>
+        <Key Name="DailyTimeReward_18" Value="12704"/>
+        <Key Name="DailyTimeReward_12" Value="12705"/>
+        <Key Name="DailyTimeReward_19" Value="12706"/>
+        <Key Name="DailyTimeReward_13" Value="12707"/>
+        <Key Name="DailyTimeReward_20" Value="12708"/>
+        <Key Name="DailyTimeReward_14" Value="12709"/>
+        <Key Name="DailyTimeReward_21" Value="12710"/>
+        <Key Name="DailyTimeReward_15" Value="12711"/>
+        <Key Name="DailyTimeReward_22" Value="12712"/>
+        <Key Name="DailyTimeReward_16" Value="12713"/>
+        <Key Name="DailyTimeReward_23" Value="12714"/>
+        <Key Name="DailyTimeReward_17" Value="12715"/>
+        <Key Name="DailyTimeReward_10" Value="12716"/>
+        <Key Name="DailyTimeReward_7" Value="12717"/>
+        <Key Name="DailyTimeReward_0" Value="12718"/>
+        <Key Name="DailyTimeReward_11" Value="12719"/>
+        <Key Name="DailyTimeReward_8" Value="12720"/>
+        <Key Name="DailyTimeReward_1" Value="12721"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Monster">
         <Key Name="MonDmgRate" Value="6305"/>
@@ -11282,6 +11361,8 @@
         <Key Name="MDefRatio" Value="12624"/>
         <Key Name="DefRatio" Value="12625"/>
         <Key Name="ReinforceRatio" Value="12640"/>
+        <Key Name="ItemLifeTimeOver" Value="12667"/>
+        <Key Name="ItemLifeTime" Value="12668"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Guild">
         <Key Name="MaxCount" Value="7691"/>

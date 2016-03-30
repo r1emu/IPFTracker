@@ -528,7 +528,7 @@ ClassID,ActiveState,Level,ClassName,Name,Icon,Job,SkillCategory,AddSpend,Desc,Bu
 307013,1,1,Scout17,스플릿 애로우: 강화,ability_archer_Scout17,Char3_8,Scout_SplitArrow,,적에게 입히는 [스플릿 애로우]의 대미지가 특성 레벨당 1% 증가합니다.,,,YES,SCR_ABIL_NONE,NO,
 308001,1,1,Rogue11,벤데타: 강화,ability_archer_Rogue11,Char3_9,Rogue_Vendetta,,적에게 입히는 [벤데타]의 대미지가 특성 레벨당 1% 증가합니다.,,,YES,SCR_ABIL_NONE,NO,
 308002,1,1,Rogue12,벤데타: 강화 2,ability_archer_Rogue12,,,,[벤데타] 대미지가 로그 3서클 수준으로 강화됩니다.,,,YES,SCR_ABIL_NONE,NO,
-308003,1,1,Rogue13,최루: 대미지추가,ability_Warrior_DeepStraight,Char3_9,Rogue_Lachrymator,SP/10,스킬 [최루] 범위 안에 있는 적들은 2초 마다 [특성 레벨] 만큼의 피해를 받습니다.,,,NO,SCR_ABIL_NONE,NO,
+308003,1,1,Rogue13,최루: 대미지추가,ability_archer_Rogue13,Char3_9,Rogue_Lachrymator,SP/10,스킬 [최루] 범위 안에 있는 적들은 2초 마다 [특성 레벨] 만큼의 피해를 받습니다.,,,NO,SCR_ABIL_NONE,NO,
 308004,1,1,Rogue16,백스텝: 강화,ability_archer_Rogue16,Char3_9,Rogue_Backstab,,적에게 입히는 [백스텝]의 대미지가 특성 레벨당 1% 증가합니다.,,,YES,SCR_ABIL_NONE,NO,
 308005,1,1,Rogue1,스닉 힛: 지속시간,ability_archer_rogue1,Char3_9,Rogue_SneakHit,SP/10,스킬 [스닉 힛]의 지속시간이 특성 레벨당 2초 증가합니다,,,NO,SCR_ABIL_NONE,NO,
 308006,1,1,Rogue6,벤데타: 회심공격,ability_archer_Rogue6,Char3_9,Rogue_Vendetta,SP/18,출혈 상태인 적에게 스킬 [벤데타] 적중 시 두배의 대미지가 적용됩니다.,,,NO,SCR_ABIL_NONE,NO,

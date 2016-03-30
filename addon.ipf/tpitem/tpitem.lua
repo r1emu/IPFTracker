@@ -101,6 +101,8 @@ function MAKE_CATEGORY_TREE()
 		if tpitemtree:IsExist(hsubtreeitem) == 0 and subcategory ~= "None" then
 
 			local added = tpitemtree:Add(htreeitem, "{@st66}"..ScpArgMsg(subcategory), category.."#"..subcategory, "{#000000}");
+			
+			tpitemtree:SetFitToChild(true,10);
 			tpitemtree:SetFoldingScript(htreeitem, "KEYCONFIG_UPDATE_FOLDING");
 			local foldimg = GET_CHILD(categoryCset,"foldimg");
 			foldimg:ShowWindow(1);

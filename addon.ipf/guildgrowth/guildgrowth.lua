@@ -124,7 +124,20 @@ function GUILDGROWTH_OPEN(frame)
 	local currentExp = guildObj.Exp;
 	local curLevelCls = GetClass("GuildExp", lv);
 	local nextLevelCls = GetClass("GuildExp", nextLv);
-	local curExp = currentExp - curLevelCls.Exp;
+	local preLevelCls = GetClass("GuildExp", lv - 1);
+
+	local curExp = 0;
+	local curLevelClsExp = curLevelCls.Exp
+	local nextLevelClsExp = nextLevelCls.Exp
+	local preLevelClsExp = 0
+
+	if preLevelCls ~= nil then
+		curExp = currentExp - preLevelCls.Exp;
+		preLevelClsExp = preLevelCls.Exp
+	else
+		curExp = currentExp
+		preLevelClsExp = 0;
+	end
 
 	local gbox_exp = ctrlset_growth:GetChild("gbox_exp");
 	local gauge = GET_CHILD(gbox_exp, "gauge");
@@ -135,7 +148,7 @@ function GUILDGROWTH_OPEN(frame)
 	if nextLevelCls ~= nil then
 		local text = ScpArgMsg("NextGuildTower") .. " Lv. "  ..nextLv;
 		txt_nextlv:SetTextByKey("value", text);
-		gauge:SetPoint(curExp, nextLevelCls.Exp - curLevelCls.Exp);
+		gauge:SetPoint(curExp, curLevelClsExp - preLevelClsExp);
 		txt_lv_next:SetTextByKey("value", nextLv);
 		txt_lv_next:ShowWindow(1);
 	else

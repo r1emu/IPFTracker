@@ -53,3 +53,5 @@ ClassID,Price,JobGrade,ClassName,Category,SubCategory,ItemClassName,Job
 52,129,0,ClassName52,TP_Costume,TP_Costume_F,costume_arc_f_001,
 53,129,3,ClassName53,TP_Costume,TP_Costume_F,costume_arc_f_002,Char3_1
 54,129,3,ClassName54,TP_Costume,TP_Costume_F,costume_clr_f_002,Char4_2
+55,49,0,ClassName55,TP_Costume,TP_Costume_Color,Premium_hairColor_01,
+56,49,0,ClassName56,TP_Costume,TP_Costume_Color,Premium_hairColor_02,

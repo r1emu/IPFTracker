@@ -912,12 +912,7 @@ function CHECK_EQP_LBTN(frame, slot, argStr, argNum)
 
 	local fromID = GET_USING_ITEM_GUID();
 	if fromID ~= 0 then
-		local fromObj = GET_USING_ITEM_OBJ();
-		if fromObj ~= nil then
-			local strscp = string.format( "LUMIN_EXECUTE(\"%s\", \"%s\")", fromID, iesID);
-			local msg = "["..fromObj.Name..ScpArgMsg("Auto_]_KaDeuLeul_SayongHaSiKessSeupNiKka?");
-			ui.MsgBox(msg, strscp, "None");
-		end
+		SCR_MAGICAMULET_EQUIP(item.GetUsingItem(),GET_ITEM_BY_GUID(iesID, 1));
 	end
 
 end
@@ -1569,6 +1564,14 @@ function GET_HAIRCOLOR_IMGNAME_BY_ENGNAME(engname)
 
 	if engname == 'white' then
 		return "white_color"
+	end
+
+	if engname == 'blond' then
+		return "blond_color"
+	end
+	
+	if engname == 'red' then
+		return "red_color"
 	end
 
 	return "basic_color"

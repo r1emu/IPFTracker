@@ -152,4 +152,4 @@ function RAID_REWARD_BAL_POS(frame)
 	local y = point.y - frame:GetHeight() - 40;
 	frame:MoveFrame(x, y);
 	return 1;
-en
+end

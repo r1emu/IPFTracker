@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by MintPC (Mi) -->
 <idspace id="CreatePcInfo">
 	<Category Name="Parts">
@@ -76,6 +76,34 @@
 				<Node2 ClassID="69" ClassName="Hair14_blue" Face="head14" Hair="hair14_blue"/>
 				<Node2 ClassID="70" ClassName="Hair14_peach" Face="head14" Hair="hair14_peach"/>
 				<Node2 ClassID="71" ClassName="Hair14_white" Face="head14" Hair="hair14_white"/>
+				<Node2 ClassID="72" ClassName="Hair_blond" Face="head" Hair="hair_blond"/>
+				<Node2 ClassID="73" ClassName="Hair_red" Face="head" Hair="hair_red"/>
+				<Node2 ClassID="74" ClassName="Hair2_blond" Face="head2" Hair="hair2_blond"/>
+				<Node2 ClassID="75" ClassName="Hair2_red" Face="head2" Hair="hair2_red"/>
+				<Node2 ClassID="76" ClassName="Hair3_blond" Face="head3" Hair="hair3_blond"/>
+				<Node2 ClassID="77" ClassName="Hair3_red" Face="head3" Hair="hair3_red"/>
+				<Node2 ClassID="78" ClassName="Hair4_blond" Face="head4" Hair="hair4_blond"/>
+				<Node2 ClassID="79" ClassName="Hair4_red" Face="head4" Hair="hair4_red"/>
+				<Node2 ClassID="80" ClassName="Hair5_blond" Face="head5" Hair="hair5_blond"/>
+				<Node2 ClassID="81" ClassName="Hair5_red" Face="head5" Hair="hair5_red"/>
+				<Node2 ClassID="82" ClassName="Hair6_blond" Face="head6" Hair="hair6_blond"/>
+				<Node2 ClassID="83" ClassName="Hair6_red" Face="head6" Hair="hair6_red"/>
+				<Node2 ClassID="84" ClassName="Hair7_blond" Face="head7" Hair="hair7_blond"/>
+				<Node2 ClassID="85" ClassName="Hair7_red" Face="head7" Hair="hair7_red"/>
+				<Node2 ClassID="86" ClassName="Hair8_blond" Face="head8" Hair="hair8_blond"/>
+				<Node2 ClassID="87" ClassName="Hair8_red" Face="head8" Hair="hair8_red"/>
+				<Node2 ClassID="88" ClassName="Hair9_blond" Face="head9" Hair="hair9_blond"/>
+				<Node2 ClassID="89" ClassName="Hair9_red" Face="head9" Hair="hair9_red"/>
+				<Node2 ClassID="90" ClassName="Hair10_blond" Face="head10" Hair="hair10_blond"/>
+				<Node2 ClassID="91" ClassName="Hair10_red" Face="head10" Hair="hair10_red"/>
+				<Node2 ClassID="92" ClassName="Hair11_blond" Face="head11" Hair="hair11_blond"/>
+				<Node2 ClassID="93" ClassName="Hair11_red" Face="head11" Hair="hair11_red"/>
+				<Node2 ClassID="94" ClassName="Hair12_blond" Face="head12" Hair="hair12_blond"/>
+				<Node2 ClassID="95" ClassName="Hair12_red" Face="head12" Hair="hair12_red"/>
+				<Node2 ClassID="96" ClassName="Hair13_blond" Face="head13" Hair="hair13_blond"/>
+				<Node2 ClassID="97" ClassName="Hair13_red" Face="head13" Hair="hair13_red"/>
+				<Node2 ClassID="98" ClassName="Hair14_blond" Face="head14" Hair="hair14_blond"/>
+				<Node2 ClassID="99" ClassName="Hair14_red" Face="head14" Hair="hair14_red"/>
 			</Node1>
 			<Node1 ClassID="2" ClassName="FEMALE">
 				<Node2 ClassID="1" ClassName="Hair01" Face="head" Hair="hair"/>
@@ -160,6 +188,38 @@
 				<Node2 ClassID="80" ClassName="Hair17_blue" Face="head17" Hair="hair17_blue"/>
 				<Node2 ClassID="81" ClassName="Hair17_peach" Face="head17" Hair="hair17_peach"/>
 				<Node2 ClassID="82" ClassName="Hair17_white" Face="head17" Hair="hair17_white"/>
+				<Node2 ClassID="83" ClassName="Hair_blond" Face="head" Hair="hair_blond"/>
+				<Node2 ClassID="84" ClassName="Hair_red" Face="head" Hair="hair_red"/>
+				<Node2 ClassID="85" ClassName="Hair2_blond" Face="head2" Hair="hair2_blond"/>
+				<Node2 ClassID="86" ClassName="Hair2_red" Face="head2" Hair="hair2_red"/>
+				<Node2 ClassID="87" ClassName="Hair3_blond" Face="head3" Hair="hair3_blond"/>
+				<Node2 ClassID="88" ClassName="Hair3_red" Face="head3" Hair="hair3_red"/>
+				<Node2 ClassID="89" ClassName="Hair4_blond" Face="head4" Hair="hair4_blond"/>
+				<Node2 ClassID="90" ClassName="Hair4_red" Face="head4" Hair="hair4_red"/>
+				<Node2 ClassID="91" ClassName="Hair5_blond" Face="head5" Hair="hair5_blond"/>
+				<Node2 ClassID="92" ClassName="Hair5_red" Face="head5" Hair="hair5_red"/>
+				<Node2 ClassID="93" ClassName="Hair6_blond" Face="head6" Hair="hair6_blond"/>
+				<Node2 ClassID="94" ClassName="Hair6_red" Face="head6" Hair="hair6_red"/>
+				<Node2 ClassID="95" ClassName="Hair7_blond" Face="head7" Hair="hair7_blond"/>
+				<Node2 ClassID="96" ClassName="Hair7_red" Face="head7" Hair="hair7_red"/>
+				<Node2 ClassID="97" ClassName="Hair8_blond" Face="head8" Hair="hair8_blond"/>
+				<Node2 ClassID="98" ClassName="Hair8_red" Face="head8" Hair="hair8_red"/>
+				<Node2 ClassID="99" ClassName="Hair9_blond" Face="head9" Hair="hair9_blond"/>
+				<Node2 ClassID="100" ClassName="Hair9_red" Face="head9" Hair="hair9_red"/>
+				<Node2 ClassID="101" ClassName="Hair10_blond" Face="head10" Hair="hair10_blond"/>
+				<Node2 ClassID="102" ClassName="Hair10_red" Face="head10" Hair="hair10_red"/>
+				<Node2 ClassID="103" ClassName="Hair11_blond" Face="head11" Hair="hair11_blond"/>
+				<Node2 ClassID="104" ClassName="Hair11_red" Face="head11" Hair="hair11_red"/>
+				<Node2 ClassID="105" ClassName="Hair12_blond" Face="head12" Hair="hair12_blond"/>
+				<Node2 ClassID="106" ClassName="Hair12_red" Face="head12" Hair="hair12_red"/>
+				<Node2 ClassID="107" ClassName="Hair13_blond" Face="head13" Hair="hair13_blond"/>
+				<Node2 ClassID="108" ClassName="Hair13_red" Face="head13" Hair="hair13_red"/>
+				<Node2 ClassID="109" ClassName="Hair14_blond" Face="head14" Hair="hair14_blond"/>
+				<Node2 ClassID="110" ClassName="Hair14_red" Face="head14" Hair="hair14_red"/>
+				<Node2 ClassID="111" ClassName="Hair16_blond" Face="head16" Hair="hair16_blond"/>
+				<Node2 ClassID="112" ClassName="Hair16_red" Face="head16" Hair="hair16_red"/>
+				<Node2 ClassID="113" ClassName="Hair17_blond" Face="head17" Hair="hair17_blond"/>
+				<Node2 ClassID="114" ClassName="Hair17_red" Face="head17" Hair="hair17_red"/>
 			</Node1>
 		</Class>
 	</Category>

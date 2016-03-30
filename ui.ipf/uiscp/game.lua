@@ -1342,6 +1342,12 @@ function GET_FULL_NAME(item, useNewLine)
 	local ownName = GET_NAME_OWNED(item);
 
 	local reinforce_2 = TryGetProp(item, "Reinforce_2");
+	local isHaveLifeTime = TryGetProp(item, "LifeTime");
+	
+	if 0 ~= isHaveLifeTime then
+		ownName = string.format("{img test_cooltime 30 30 }%s", ownName);
+	end
+	
 	if reinforce_2 ~= nil and reinforce_2 > 0 then
 		ownName = string.format("+%d %s", reinforce_2, ownName);
 	end
@@ -1459,7 +1465,9 @@ function IS_RECIPE_ITEM(itemCls)
 end
 
 function SCR_MAGICAMULET_EQUIP(fromitem, toitem)
-
+	if nil == fromitem or nil == toitem then
+		return;
+	end
 	local fromobj = GetIES(fromitem:GetObject());
 	local toobj = GetIES(toitem:GetObject());
 

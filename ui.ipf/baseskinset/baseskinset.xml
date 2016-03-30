@@ -4524,6 +4524,16 @@
 		<image name="blue_color" file="\skin\barrack.tga" imgrect="1020 492 35 35" CMM_Caption="블루컬러"/>
 		<image name="black_color" file="\skin\barrack.tga" imgrect="949 528 35 35" CMM_Caption="블랙컬러"/>
 		<image name="peach_color" file="\skin\barrack.tga" imgrect="985 528 35 35" CMM_Caption="피치컬러"/>
+	<image name="blond_color" file="\icon\hair_color.tga" imgrect="0 0 35 35"/>
+		<image name="brown_color" file="\icon\hair_color.tga" imgrect="36 0 35 35"/>
+		<image name="gray_color" file="\icon\hair_color.tga" imgrect="72 0 35 35"/>
+		<image name="lightsalmon_color" file="\icon\hair_color.tga" imgrect="108 0 35 35"/>
+		<image name="green_color" file="\icon\hair_color.tga" imgrect="144 0 35 35"/>
+		<image name="midnightblue_color" file="\icon\hair_color.tga" imgrect="180 0 35 35"/>
+		<image name="mint_color" file="\icon\hair_color.tga" imgrect="216 0 35 35"/>
+		<image name="red_color" file="\icon\hair_color.tga" imgrect="0 36 35 35"/>
+		<image name="purple_color" file="\icon\hair_color.tga" imgrect="36 36 35 35"/>
+		<image name="orange_color" file="\icon\hair_color.tga" imgrect="72 36 35 35"/>
 	</imagelist>
 	<imagelist category="market">
 		<image name="market_target" file="\skin\market_skin.tga" imgrect="0 156 1780 88"/>

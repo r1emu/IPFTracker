@@ -61,6 +61,10 @@ function GET_REINFORCE_131014_PRICE(fromItem, moruItem)
 		value = 0;
 	end
 	
+    if moruItem.ClassName == "Moru_Silver_test" then
+		value = 0;
+	end
+	
     value = math.floor(value)
 	return math.floor(value);
 
@@ -77,7 +81,7 @@ function GET_REINFORCE_131014_HITCOUNT(fromItem, moru)
 	--local cls = GetClassByType("itemevolution", prop.evolutionType);
 
 	return 3;
-	---- 모루와 아이템의 컬럼을 이용해서 몇번 모루를 때려야 하는지 계산한다.
+	---- 모루?� ?�이?�의 컬럼???�용?�서 몇번 모루�??�려???�는지 계산?�다.
 	--return cls.HitCount;
 
 end

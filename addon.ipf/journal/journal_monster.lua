@@ -24,7 +24,7 @@ function SET_MON_CATEGORY_FILTER(ctrlset)
 	local list = {};
 	list[#list + 1] = "Normal";
 	list[#list + 1] = "Boss";
-	SET_CATEGORY_BY_PROP(tree, "Monster", "MonRank", "RaceType", "MonCategory_", list)	
+	SET_CATEGORY_BY_PROP(tree, "Monster", "MonRank", "RaceType", "MonCategory_", list, 10)	
 	gBox:EnableScrollBar(0);
 end
 

@@ -149,10 +149,9 @@ function UPDATE_POSTBOX_LETTERS_LIST(gbox_list, onlyNewMessage, startindex)
 					UPDATE_POSTBOX_ITEM(ctrlSet, msgInfo);
 					
 					local timestring = imcTime.GetStringSysTimeYYMMDDHHMM(msgInfo:GetTime())
-
 					local deleteTimeText = nil
 
-					if  timestring == "900-01-01 00:00" or msgInfo:GetDBType() == POST_BOX_DB_ACCOUNT then
+					if  timestring == "900-01-01 00:00" or (msgInfo:GetDBType() == POST_BOX_DB_ACCOUNT and timestring == "900-01-01 00:00") then
 						deleteTimeText = ScpArgMsg("AutoDeleteTime","Time",ScpArgMsg("InfiDeleteTime") );
 					else
 						deleteTimeText = ScpArgMsg("AutoDeleteTime","Time",imcTime.GetStringSysTimeYYMMDDHHMM(msgInfo:GetTime()) );
