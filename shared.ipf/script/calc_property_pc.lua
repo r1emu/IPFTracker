@@ -1212,6 +1212,11 @@ function SCR_GET_PC_GUARDABLE(pc)
 	--	return 1;
 	--end
 	
+	if IsBuffApplied(pc, "Impaler_Buff") == "YES" then
+		return 0;
+	end
+
+
 	if pelGuard ~= nil and (lItem ~= nil and lItem.ClassType == "Shield") then	
 		return 1; 
 	end

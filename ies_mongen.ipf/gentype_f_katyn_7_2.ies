@@ -1,6 +1,6 @@
 ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,AnchorCount,P_MaxDialog,ClassType,Name,UniqueName,QuestName,Tag,Tactics,BTree,SimpleAI,Dialog,Enter,Leave,Save,OnlyPCCheck,SmartGen,Faction,ArgStr1,ArgStr2,ArgStr3,Tendency
 800,800,14,30,9999,5000,20,0,0,0,1,0,rootcrystal_02,나무뿌리 수정,,,,MON_TORCH,,,,,,NO,YES,NO,RootCrystal,,,,
-1,1,1,100,-1,60000,1,1,0,0,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_KATYN_7_2,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,
+1,1,1,100,-1,60000,1,2,0,0,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_KATYN_7_2,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,
 3,3,14,40,1,1000,1,1,0,0,0,0,f_katyn_owl02,약한 부엉이 조각상,,,,,,,KATYN72_SECTOR_01,,,NO,YES,NO,Neutral,,,,
 4,4,14,40,1,1000,1,1,0,0,0,0,f_katyn_owl04,슬픈 부엉이 조각상,,,,,,,KATYN72_SECTOR_02,,,NO,YES,NO,Neutral,,,,
 5,5,14,40,1,1000,1,1,0,0,0,0,f_katyn_owl02,부끄러운 부엉이 조각상,,,,,,,KATYN72_SECTOR_03,,,NO,YES,NO,Neutral,,,,

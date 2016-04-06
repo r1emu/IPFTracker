@@ -17,7 +17,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 50,50,1,1,1,60000,1,1,0,1,0,100,0,npc_CHR_master,[크로노맨서 마스터]{nl}  루시드 윈터스푼,,,,RUNECASTER_CHRONO,,,MASTER_CHRONO,,,NO,YES,NO,Neutral,,,,,
 51,51,1,1,-1,60000,1,1,0,0,0,100,0,npc_FAL_master,  [응사 마스터]{nl}젠클라스 메타이,,,,,,,MASTER_FALCONER,,,NO,YES,NO,Neutral,,,,,
 52,52,0,300,1,60000,2,0,0,0,0,0,0,HiddenTrigger_CantGen300,필드젠X,,,,,,,,,,NO,YES,NO,Neutral,,,,,
-53,53,1,100,-1,60000,1,1,0,0,0,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_REMAINS_37,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,,1
+53,53,1,100,-1,60000,1,2,0,0,0,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_REMAINS_37,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,,1
 54,54,1,150,1,60000,3,0,0,0,0,0,0,HiddenTrigger_CantGen150,필드젠X,,,,,,,,,,NO,YES,NO,Neutral,,,,,
 55,55,1,1,1,30000,4,0,0,0,1,0,1,campfire_wood,장작 더미,,,,,,,REMAIN37_MQ05,,,NO,YES,NO,Neutral,,,,,
 56,56,1,40,1,60000,1,0,0,0,1,0,0,stontablet_down_1,특이한 석판,,,,,,REMAIN37_MQ03_NPC,REMAIN37_MQ03,,,NO,YES,NO,Neutral,,,,,

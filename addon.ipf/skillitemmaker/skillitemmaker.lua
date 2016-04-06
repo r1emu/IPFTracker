@@ -2,7 +2,8 @@ function SKILLITEMMAKER_ON_INIT(addon, frame)
 end
 
 function SKILLITEMMAKER_FIRST_OPEN(frame)
-	SKILLITEMMAKER_REGISTER(frame, 0);
+	CLEAR_SKILLITEMMAKER(frame);
+	_SKILLITEMMAKE_RESET(frame);
 end
 
 function POP_SKILLITEM_MAKER(frame)

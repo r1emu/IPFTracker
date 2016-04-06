@@ -24,7 +24,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 34,34,0,40,1,7200000,0,0,0,1,1,0,0,FD_boss_Canceril,,,,,,,UNDERF592_TYPEA_BOSS,,,,NO,YES,NO,Monster,,,,Attack
 35,35,1,40,100,30000,25,0,0,0,1,0,0,rootcrystal_03,,,,,MON_TORCH,,,,,,NO,YES,NO,RootCrystal,,,,
 36,36,0,40,30,60000,8,0,0,0,0,0,0,FD_spectra,,,,,,,UNDERF592_TYPEB_KILLMON,,,,NO,YES,NO,Monster,,,,Attack
-37,37,1,100,-1,60000,1,1,0,0,1,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_UNDERFORTRESS_59_2,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,
+37,37,1,100,-1,60000,1,2,0,0,1,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_UNDERFORTRESS_59_2,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,
 38,38,1,40,1,1000,1,0,0,1,1,0,0,HiddenControl,TypeB_Final,,,,,,UNDERF592_TYPEB_GATE_FINAL,,,,NO,YES,NO,Neutral,,,,
 39,39,1,40,1,60000,1,0,0,0,1,0,0,BOOK_02,자카리엘 왕의 사초,,,,,,,ROKAS_MEMO02_NPC,,,NO,YES,NO,Neutral,,,,
 40,40,0,40,25,60000,20,0,0,0,0,0,0,FD_spectra,,,,,,,,,,,NO,YES,NO,Monster,,,,Attack

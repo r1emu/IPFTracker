@@ -31,7 +31,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 5055,658,0,40,35,15000,10,0,0,0,0,0,0,operor,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,
 5056,659,0,40,25,20000,15,0,0,0,0,0,0,Whip_vine,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,
 5059,662,0,40,35,20000,15,0,0,0,0,0,0,truffle,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,
-5061,664,1,100,-1,60000,1,1,0,0,1,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_THORN_19,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,
+5061,664,1,100,-1,60000,1,2,0,0,1,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_THORN_19,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,
 5062,665,0,40,9999,15000,12,0,0,0,0,0,0,Velwriggler,,,,,,,,,,,NO,YES,NO,Monster,,,,
 5065,669,0,200,30,20000,10,0,0,0,1,0,0,operor,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,
 5068,671,0,40,30,15000,12,0,0,0,0,0,0,Velwriggler,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,

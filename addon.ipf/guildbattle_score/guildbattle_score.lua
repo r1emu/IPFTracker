@@ -72,18 +72,24 @@ function GUILDBATTLE_SCORE_FIRST_OPEN(frame)
 	local myTeamID = etcObj.Team_Mission;
 	local myName = "";
 	local targetName = "";
+	local myGroupID = "";
+	local targetGroupID ="";
 	if myTeamID == 1 then
 		myName = info:GetGuildName(0);
 		targetName = info:GetGuildName(1);
+		myGroupID = info:GetGuildGroupID(0);
+		targetGroupID = info:GetGuildGroupID(1);
 	else
 		myName = info:GetGuildName(1);
 		targetName = info:GetGuildName(0);
+		myGroupID = info:GetGuildGroupID(1);
+		targetGroupID = info:GetGuildGroupID(0);
 	end
 
 	local txt_guildname_1 = frame:GetChild("txt_guildname_1");
 	local txt_guildname_2 = frame:GetChild("txt_guildname_2");
-	txt_guildname_1:SetTextByKey("value", myName);
-	txt_guildname_2:SetTextByKey("value", targetName);
+	txt_guildname_1:SetTextByKey("value", "["..GetServerNameByGroupID(myGroupID).."]"..myName);
+	txt_guildname_2:SetTextByKey("value", "["..GetServerNameByGroupID(targetGroupID).."]"..targetName);
 	
 	
 

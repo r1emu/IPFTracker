@@ -18,7 +18,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 312,525,1,10,1,600000,1,0,0,0,1,0,HiddenTrigger2,함정형,,,,,,,,REPEAT_MON_GEN_TRIGGER,,NO,YES,NO,Monster,FrontBack/10/Attack,Goblin_Miners;16/Bat;18/Goblin_Miners;16/Bat;18,,
 314,527,1,200,1,60000,6,0,0,0,1,0,HiddenTrigger_CantGen200,필드젠X,,,,,,,,,,NO,YES,NO,Neutral,,,,
 315,528,1,120,1,60000,1,0,0,0,0,0,HiddenTrigger6,JOB_HIGHLANDER4_3_전직퀘,,,,,,,,JOB_HIGHLANDER4_3,,NO,YES,NO,Neutral,,,,
-316,529,1,100,-1,60000,1,1,0,0,1,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_CMINE_01,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,
+316,529,1,100,-1,60000,1,2,0,0,1,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_CMINE_01,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,
 318,531,0,30,30,5000,3,0,0,0,0,0,StonOrca,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,Attack
 319,532,0,40,150,10000,10,0,0,0,0,0,Goblin_Miners,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,Attack
 320,533,1,0,1,1,1,0,0,0,0,0,TreasureBox1,보물 상자 LV2,,,,,,,TREASUREBOX_LV,,,,YES,NO,Neutral,LV2,ITEM:NECK02_114:1,,

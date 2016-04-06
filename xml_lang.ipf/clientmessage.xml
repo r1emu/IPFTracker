@@ -1950,7 +1950,7 @@
 		<Class ClassID="140136" ClassName="FD_FTOWER611_TYPE_A_WE_04" Data="포탈의 동력이 부족하여 이용할 수 없습니다"/>
 		<Class ClassID="140137" ClassName="FD_FIRETOWER612_T02_MONSTER_AI_BORN" Data="마족 기운"/>
 		<Class ClassID="140138" ClassName="FD_FIRETOWER612_T02_MONSTER_BOSS_CNT" Data="마족 봉인구의 힘이 약해집니다"/>
-		<Class ClassID="140139" ClassName="FD_FIRETOWER612_T02_MONSTER_BOSS_BORN" Data="AA의 마족 봉인구가 파괴되고 듀라한이 풀려났습니다!"/>
+		<Class ClassID="140139" ClassName="FD_FIRETOWER612_T02_MONSTER_BOSS_BORN" Data="파켈티 전당의 마족 봉인구가 파괴되고 듀라한이 풀려났습니다!"/>
 		<Class ClassID="140140" ClassName="FIRETOWER612_GROUP_1_1" Data="북쪽"/>
 		<Class ClassID="140141" ClassName="FIRETOWER612_GROUP_2_1" Data="남쪽"/>
 		<Class ClassID="140142" ClassName="FD_FIRETOWER612_T01_GATE_NORTH_CNT" Data="흰색 마력 수정의 힘으로 북쪽 포탈의 동력이 공급되었습니다!{nl}( "/>
@@ -2147,6 +2147,13 @@
 		<Class ClassID="140335" ClassName="ROKAS24_RP_2_1" Data="더 파낼게 없습니다"/>
 		<Class ClassID="140336" ClassName="ROKAS24_RP_2_2" Data="삽질을 멈췄습니다"/>
 		<Class ClassID="140337" ClassName="ROKAS24_RP_2_GETITEM" Data="마모된 고대 자료를 찾았습니다"/>
+		<Class ClassID="140338" ClassName="ROKAS31_RP_1_GETITEM" Data="꼬질꼬질한 꾸러미를 찾았습니다"/>
+		<Class ClassID="140339" ClassName="ZACHA33_RP_1_GETITEM" Data="수호자의 정수를 발견했습니다"/>
+		<Class ClassID="140340" ClassName="CASTLE652_RP_1_DO" Data="파괴 중"/>
+		<Class ClassID="140341" ClassName="CASTLE652_RP_1_1" Data="장원 마력장치를 파괴했습니다"/>
+		<Class ClassID="140342" ClassName="CASTLE652_RP_2_GETITEM" Data="응축된 마기를 획득했습니다"/>
+		<Class ClassID="140343" ClassName="CASTLE653_RP_2_GETITEM" Data="마롤루 풀을 찾았습니다"/>
+		<Class ClassID="140344" ClassName="CASTLE653_RP_2_DO" Data="채집 중"/>
 		<Class ClassID="220000" ClassName="GUILDEVENT_SELECT_1" Data="길드 인던 미션"/>
 		<Class ClassID="220001" ClassName="GUILDEVENT_SELECT_2" Data="길드 필드 보스"/>
 		<Class ClassID="220002" ClassName="GUILDEVENT_SELECT_3" Data="길드 레이드"/>

@@ -28,7 +28,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 47,47,1,40,1,60000,1,0,0,0,0,0,0,Barricade_honeycomb,작은 벌집,,,,,,,GELE574_MQ_01,,,NO,YES,NO,Neutral,,,,,
 48,48,0,40,300,600000,1,0,0,0,0,0,0,panto_javelin_elite,,,,,,,,,,,NO,YES,NO,Monster,,,,,
 49,49,1,40,1,60000,1,0,0,0,0,0,0,goat_totem,,,,,,,,GELE574_MQ_06,,,NO,YES,NO,Neutral,,,,,
-50,50,1,100,-1,60000,1,1,0,0,0,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_GELE_57_4,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,,
+50,50,1,100,-1,60000,1,2,0,0,0,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_GELE_57_4,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,,
 51,51,1,0,1,1,1,0,0,0,0,0,0,TreasureBox1,보물 상자 LV2,,,,,,,TREASUREBOX_LV,,,NO,YES,NO,Neutral,LV2,ITEM:R_Hat_628043:1,,,
 52,52,1,40,1,60000,1,1,0,0,0,0,0,Board1,출입 경고문,,,,,,,UPPER_WARNING_F_GELE_57_4,,,NO,YES,NO,Neutral,,,,,
 53,53,0,40,40,120000,20,0,0,0,2,0,0,Mallardu,,,,,,,,,,,NO,YES,NO,Monster,,,,,

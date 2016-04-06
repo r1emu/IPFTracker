@@ -35,5 +35,5 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,P
 39,39,1,40,1,60000,1,0,0,0,0,0,0,npc_Obelisk,방어 마법진 주춧돌,,,,MON_DUMMY,,,,,,NO,YES,NO,Neutral,AttachAnimLocal/0:STD/5:ON_RED,NPCStateLocal/5:UNDERFORTRESS_69_MQ030:COMPLETE/0:UNDERFORTRESS_69_MQ030:IMPOSSIBLE:POSSIBLE:PROGRESS:SUCCESS,,
 40,40,1,40,-1,60000,1,0,0,0,0,0,0,d_under69_obj,UnvisibleName,,,,,,,,,,NO,YES,NO,Neutral,,,,
 41,41,1,100,-1,60000,1,0,0,0,0,1,0,HiddenTrigger_CantGen100,필드젠X,,,,,,,,,,NO,YES,NO,Neutral,,,,
-42,42,1,100,-1,60000,1,1,0,0,0,1,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_UNDERFORTRESS_69,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,
+42,42,1,100,-1,60000,1,2,0,0,0,1,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_UNDERFORTRESS_69,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,
 43,43,1,40,40,20000,26,0,0,0,0,1,0,rootcrystal_05,,,,,MON_TORCH,,,,,,NO,YES,NO,RootCrystal,,,,

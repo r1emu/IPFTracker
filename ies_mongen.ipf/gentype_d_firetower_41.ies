@@ -14,7 +14,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,P
 111,111,0,40,25,30000,10,0,0,0,0,0,0,Fire_Dragon,드레이크,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,Attack
 112,112,1,40,-1,60000,1,0,0,1,0,0,0,whorfzone,제1 이동 마법진,,,,MON_DUMMY,,,FTOWER41_MQ_02_NPC,,,NO,YES,NO,Neutral,AttachAnimLocal/0:STD/5:ON2,NPCStateLocal/5:FTOWER41_MQ_02:SUCCESS:COMPLETE,,
 114,114,0,40,20,30000,6,0,0,0,0,0,0,flight_hope,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,Attack
-116,116,1,100,-1,60000,1,1,0,0,0,1,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_FIRETOWER_41,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,
+116,116,1,100,-1,60000,1,2,0,0,0,1,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_FIRETOWER_41,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,
 117,117,0,40,9999,30000,15,0,0,0,0,0,0,rubblem,,,,,,,,,,,NO,YES,NO,Monster,,,,Attack
 118,118,0,40,25,30000,15,0,0,0,0,0,0,Armory,,,,,,,,,,,NO,YES,NO,Monster,,,,Attack
 119,119,0,40,25,180000,10,0,0,0,0,1,0,rubblem,,,,,,,,,,,NO,YES,NO,Monster,,,,Attack

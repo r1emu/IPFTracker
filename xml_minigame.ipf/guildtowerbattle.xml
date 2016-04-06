@@ -78,6 +78,9 @@
                             <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_DISABLE" Client="NO" UseSleep="NO">
                                 <Str Str="Battle"/>
                             </ToolScp>
+                            <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
+                                <Str Str="AutoReturnToZone"/>
+                            </ToolScp>
                         </execList>
                     </Event>
                     <Event eventName="Check_Team1_Win">
@@ -96,12 +99,33 @@
                             <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_DISABLE" Client="NO" UseSleep="NO">
                                 <Str Str="Battle"/>
                             </ToolScp>
+                            <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
+                                <Str Str="AutoReturnToZone"/>
+                            </ToolScp>
                         </execList>
                     </Event>
                     <Event execMS="1800000" execCount="1" eventName="Check_TimeOut" execWithStart="0">
                         <execList>
                             <ToolScp Scp="MGAME_EVT_SCRIPT" Client="NO" UseSleep="NO">
                                 <Str Str="GUILD_TOWER_BATTLE_TIMEOUT"/>
+                            </ToolScp>
+                            <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_DISABLE" Client="NO" UseSleep="NO">
+                                <Str Str="Battle"/>
+                            </ToolScp>
+                            <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
+                                <Str Str="AutoReturnToZone"/>
+                            </ToolScp>
+                        </execList>
+                    </Event>
+                </StageEvents>
+            </Stage>
+            <Stage Name="AutoReturnToZone" AutoStart="0">
+                <ObjList/>
+                <StageEvents>
+                    <Event execMS="30000" execCount="1" eventName="returnToZone" execWithStart="0">
+                        <execList>
+                            <ToolScp Scp="MGAME_EVT_SCRIPT" Client="NO" UseSleep="NO">
+                                <Str Str="MGAME_WORLDPVP_RETURNTOZONE"/>
                             </ToolScp>
                         </execList>
                     </Event>
@@ -168,6 +192,7 @@
             <ToolScp Scp="MGAME_INIT_RUN_SCRIPT" Client="NO" UseSleep="NO">
                 <Str Str="MGAME_GUILDBATTLE_RANDOMPOS_SET"/>
             </ToolScp>
+            <ToolScp Scp="MGAME_ENABLE_INSTANT_PARTY" Client="NO" UseSleep="NO"/>
         </WorldInitList>
     </Game>
 </GameList>

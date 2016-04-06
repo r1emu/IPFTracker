@@ -173,3 +173,7 @@ ClassID,SellRate,Count,Price,ShopName,IDSpace,ItemName,Description,NeedProperty
 3602,1,1,1,Klapeda_SilverCostume,Item,costume_war_f_003,,
 3603,1,1,1,Klapeda_SilverCostume,Item,costume_wiz_m_002,,
 3604,1,1,1,Klapeda_SilverCostume,Item,costume_wiz_f_002,,
+3605,1,1,1,Klapeda_SilverCostume,Item,costume_arc_m_003,,
+3606,1,1,1,Klapeda_SilverCostume,Item,costume_arc_f_003,,
+3607,1,1,1,Klapeda_SilverCostume,Item,costume_clr_m_003,,
+3608,1,1,1,Klapeda_SilverCostume,Item,costume_clr_f_003,,

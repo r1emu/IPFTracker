@@ -15,7 +15,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 19,19,1,300,1,10,7,0,0,0,1,0,0,0,HiddenTrigger_CantGen300,몬젠x,,,,,,,,,,NO,YES,NO,Neutral,,,,
 20,20,1,1,-1,10,1,1,0,0,0,0,0,0,dialog_warp_npc_1,숨겨진 방,,,,,,TO_VELNIASP511_PORTAL,PRISON623_TO_PRISON623_1,,,NO,YES,NO,Neutral,,,,
 21,21,1,1,-1,10,1,1,0,0,0,0,0,0,dialog_warp_npc_1,아샤크 지하 감옥 3층,,,,,,TO_VELNIASP511_PORTAL,PRISON623_1_TO_PRISON623,,,NO,YES,NO,Neutral,,,,
-22,22,1,100,-1,10,1,1,0,0,1,0,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_PRISON_62_3,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,
+22,22,1,100,-1,10,1,2,0,0,1,0,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_PRISON_62_3,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,
 23,23,1,40,1,10,1,0,0,0,1,0,0,0,holly_sphere_chapel_01,고해의 제단,,,,,,,PRISON623_MQ_02_NPC,,,NO,YES,NO,Neutral,,,,
 24,24,1,40,1,10,1,0,0,0,1,0,0,0,holly_sphere_chapel_01,고해의 제단,,,,,,,PRISON623_MQ_01_NPC,,,NO,YES,NO,Neutral,,,,
 25,25,1,40,-1,60000,1,0,0,0,1,0,0,600,PrisonWire,UnvisibleName,,,,MON_DUMMY,,,,,,NO,YES,NO,Neutral,AttachAnimLocal/0:STD/5:event_std,NPCStateLocal/0:PRISON623_SQ_04:IMPOSSIBLE:POSSIBLE/5:PRISON623_SQ_04:PROGRESS:SUCCESS:COMPLETE,,

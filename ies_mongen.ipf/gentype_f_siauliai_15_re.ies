@@ -7,7 +7,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 7,7,1,40,1,60000,1,1,0,0,0,0,0,npc_paladin_noinst3_1,추적자 라이티스,,,,MON_DUMMY,,,SIAULIAI15RE_RIGITESS,,,NO,YES,NO,Neutral,,,,
 8,8,1,40,1,60000,1,1,0,0,0,0,0,orsha_soldier_m,정보원 페르니프,,,,MON_DUMMY,,,SIAULIAI15RE_FERNIFF,,,NO,YES,NO,Neutral,,,,
 9,9,1,40,1,60000,1,1,0,0,0,0,0,npc_paladin_follower2_2,추적자 게르메이야,,,,MON_DUMMY,,,SIAULIAI15RE_GERMEYA,,,NO,YES,NO,Neutral,,,,
-10,10,1,100,-1,60000,1,1,0,0,1,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_SIAULIAI_15RE,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,
+10,10,1,100,-1,60000,1,2,0,0,1,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_SIAULIAI_15RE,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,
 11,11,0,40,9999,1000,40,0,0,0,0,0,0,Sec_Jukopus,,,,,,,,,,,NO,YES,NO,Monster,,,,
 12,12,0,40,9999,5000,40,0,0,0,0,0,0,Onion_green,,,,,,,,,,,NO,YES,NO,Monster,,,,
 13,13,0,40,9999,1000,30,0,0,0,0,0,0,Sec_Pokubu,,,,,,,,,,,NO,YES,NO,Monster,,,,

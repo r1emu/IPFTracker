@@ -5,7 +5,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 4,4,1,1,1,100,1,1,0,0,1,0,0,npc_friar_04,사제 아우라나스,,,,MON_DUMMY,,,PRISON621_ARUNARAS,,,NO,YES,NO,Neutral,,,,
 5,5,1,1,1,100,1,1,0,0,1,0,0,npc_friar_05,사제 드라즈니에,,,,MON_DUMMY,,,PRISON622_DRAZUNIE,,,NO,YES,NO,Neutral,,,,
 6,6,1,40,1,60000,1,1,0,0,1,0,0,npc_frair_f_01,사제 이르마,,,,MON_DUMMY,,,PRISON621_IRMA,,,NO,YES,NO,Neutral,AttachAnimLocal/0:STD/5:EVENT_SIT,NPCStateLocal/0:PRISON622_MQ_03:COMPLETE:SUCCESS/5:PRISON622_MQ_03:IMPOSSIBLE:POSSIBLE:PROGRESS,ChangeDialogRotate/0,
-7,7,1,100,-1,60000,1,1,0,0,1,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_PRISON_62_2,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,
+7,7,1,100,-1,60000,1,2,0,0,1,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_PRISON_62_2,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,
 8,8,0,40,9999,25000,60,0,0,0,0,0,0,Goblin_Spear_blue,,,,,,,,,,,NO,YES,NO,Monster,,,,Attack
 9,9,0,40,9999,25000,40,0,0,0,0,0,0,Sec_goblin_archer_blue,,,,,,,,PRISON622_RP_1_OBJ,,,NO,YES,NO,Monster,,,,Attack
 10,10,0,40,9999,25000,25,0,0,0,0,0,0,Sec_escape_wendigo,,,,,,,,,,,NO,YES,NO,Monster,,,,Attack

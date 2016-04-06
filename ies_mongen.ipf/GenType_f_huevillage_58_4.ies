@@ -33,6 +33,6 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,P
 40,40,1,50,1,60000,3,0,0,0,0,1,0,npc_bramble_root_m,가시 덩굴,,,,,,,,PARTY_Q06_THORN02,,NO,YES,NO,Neutral,,,,
 41,41,1,300,1,60000,1,0,0,0,0,0,200,HiddenTrigger_CantGen300,몬젠X,,,,,,,,,,NO,YES,NO,Neutral,,,,
 42,42,1,150,1,60000,4,0,0,0,0,1,0,HiddenTrigger_CantGen150,몬젠X,,,,,,,,,,NO,YES,NO,Neutral,,,,
-43,43,1,100,-1,60000,1,1,0,0,0,1,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_HUEVILLAGE_58_4,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,
+43,43,1,100,-1,60000,1,2,0,0,0,1,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_HUEVILLAGE_58_4,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,
 44,44,1,40,1,60000,1,0,0,0,0,0,0,npc_vine2,UnvisibleName,,,,,,,,HUEVILLAGE_58_4_MQ01_VINE01,,NO,YES,NO,Neutral,AttachEffect/E_vine2/1.0/BOT,,,
 45,45,1,0,1,1,1,0,0,0,0,0,0,treasure_box1,보물 상자 LV1,,,,,,,TREASUREBOX_LV,,,,YES,NO,Neutral,LV1,ITEM:COLLECT_131:1,,

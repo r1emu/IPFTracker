@@ -22,7 +22,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 24,24,1,20,1,10000,3,0,0,0,1,0,1,npc_flash_soldier_05,석화된 병사,,,,MON_DUMMY,,,FLASH64_SQ_03_NPC,,,NO,YES,NO,Neutral,,,,,
 25,25,1,40,10,60000,3,0,0,0,1,0,1,npc_flash_male_02,석화된 도굴꾼,,,,MON_DUMMY,,,FLASH64_SQ_06_NPC,,,NO,YES,NO,Neutral,,,,,
 26,26,1,40,10,60000,3,0,0,0,1,0,1,npc_flash_male_03,석화된 도굴꾼,,,,MON_DUMMY,,,FLASH64_SQ_06_NPC,,,NO,YES,NO,Neutral,,,,,
-27,27,1,100,-1,60000,1,1,0,0,1,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_FLASH_64,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,,
+27,27,1,100,-1,60000,1,2,0,0,1,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_FLASH_64,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,,
 28,28,1,200,1,60000,8,0,0,0,1,0,0,HiddenTrigger_CantGen200,몬젠X,,,,,,,,,,NO,YES,NO,Neutral,,,,,
 29,29,1,1,100,20000,15,0,0,0,1,0,0,rootcrystal_01,,,,,MON_TORCH,,,,,,NO,YES,NO,RootCrystal,,,,,
 30,30,1,40,1,60000,1,0,0,0,0,0,1,HiddenTrigger4,UnvisibleName,,,,,,,UNDER_67_SQ030_NPC,,,NO,YES,NO,Neutral,,,,,

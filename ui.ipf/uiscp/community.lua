@@ -28,6 +28,9 @@ end
 function _SHOW_PC_CONTEXT_MENU(handle)
 
 	local context = SHOW_PC_CONTEXT_MENU(handle);
+	if context == nil then
+		return;
+	end
 	context:SetOffset(g_lastContextMenuX, g_lastContextMenuY);
 	
 

@@ -4261,6 +4261,7 @@
 		<image name="guildbattle_kill_count" file="\skin\pvp_skin.tga" imgrect="251 204 30 30" CMM_Caption="길드배틀킬카운트"/>
 		<image name="guildbattle_death_count" file="\skin\pvp_skin.tga" imgrect="251 173 30 30" CMM_Caption="길드배틀데쓰카운트"/>
 		<image name="market_view_bg" file="\skin\market_view_bg.tga" imgrect="0 0 380 330" CMM_Caption="마켓뷰배경"/>
+	<image name="transcendence_bg" file="\skin\transcendence_skin.tga" imgrect="0 0 480 707" CMM_Caption="초월배경"/>
 	</imagelist>
 	<imagelist category="tutorial_img">
 		<image name="tutr_img_btn_left" file="\skin\mainframe_04.tga" imgrect="371 448 44 44"/>
@@ -4325,6 +4326,7 @@
 		<image name="companion_bad" file="\skin\barrack.tga" imgrect="660 38 20 19"/>
 		<image name="loading_bube" file="\skin\loading_gauge.tga" imgrect="7 183 790 80"/>
 		<image name="cube_ani" file="\skin\cube_ani.tga" imgrect="0 0 3608 400"/>
+		<image name="transcendence_ani" file="\skin\transcendence_ani.tga" imgrect="0 0 5725 706"/>
 		<image name="glimoire_ani" file="\skin\glimoire_ani.tga" imgrect="0 0 2887 360"/>
 		<image name="notice_pos" file="\skin\notice_pos.tga" imgrect="0 0 2800 200"/>
 		<image name="collection_new" file="\skin\HUD.tga" imgrect="559 521 55 55"/>
@@ -4333,6 +4335,7 @@
 		<image name="make_line" file="\skin\HUD.tga" imgrect="1168 60 1 20"/>
 		<image name="target_info_gauge_image" file="\skin\HUD.tga" imgrect="916 690 84 90"/>
 		<image name="elitetarget_info_gauge_image" file="\skin\HUD.tga" imgrect="1427 534 75 80"/>
+		<image name="expert_info_gauge_image" file="\skin\HUD.tga" imgrect="1614 916 84 90"/>
 		<image name="bosstarget_info_gauge_image" file="\skin\glimoire_skin.tga" imgrect="903 0 100 100"/>
 		<image name="companion_eat" file="\skin\barrack.tga" imgrect="726 304 74 74"/>
 		<image name="companion_hand" file="\skin\barrack.tga" imgrect="801 304 74 74"/>
@@ -4879,6 +4882,7 @@
 		<image name="dark_balloon" file="\skin\login_barrack.tga" imgrect="352 0 200 200"/>
 		<image name="star_mark" file="\skin\tooltip_skin_3.tga" imgrect="854 50 95 90"/>
 		<image name="star_mark2" file="\skin\pip_test_item.tga" imgrect="1409 928 95 90"/>
+		<image name="star_mark3" file="\skin\pip_test_item.tga" imgrect="1564 660 95 90"/>
 		<image name="quest_count" file="\skin\mainframe_A.tga" imgrect="373 786 42 42"/>
 		<image name="word_balloon_pc_body" file="\skin\login_barrack.tga" imgrect="255 250 230 120"/>
 		<image name="word_balloon_pc_direction" file="\skin\login_barrack.tga" imgrect="486 300 66 70"/>
@@ -5809,6 +5813,7 @@
 		<image name="Dlg_port_Lutha" file="\npcimg\Lutha.png" imgrect="0 0 850 950" CMM_Caption="루타"/>
 		<image name="Dlg_port_PhilipAureolus" file="\npcimg\PhilipAureolus.png" imgrect="0 0 800 1000" CMM_Caption="플레이그닥터마스터"/>
 		<image name="Dlg_port_zanas_prison" file="\npcimg\zanas_prison.png" imgrect="0 0 800 900" CMM_Caption="자나스"/>
+	<image name="Dlg_port_Jurate" file="\npcimg\Jurate.png" imgrect="0 0 800 1000" CMM_Caption="유라테여신"/>
 	</imagelist>
 	<imagelist category="bufficon">
 		<image name="icon_Str_up" file="\icon\buff_icon.tga" imgrect="256 384 128 128" CMM_Caption="힘+"/>

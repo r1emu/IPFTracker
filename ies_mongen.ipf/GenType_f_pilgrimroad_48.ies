@@ -18,7 +18,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,P
 17,17,1,40,-1,60000,1,0,0,0,0,1,0,HiddenTrigger6,PILGRIM_48_SQ_060퀘스트진행용,,,,,,,PILGRIM_48_EXCAVATION03,,,NO,YES,NO,Neutral,,,,
 18,18,1,10,-1,60000,1,0,0,0,0,1,0,HiddenTrigger6,PILGRIM_48_SQ_060_DISTANCE_CHECK,,,,,,,,PILGRIM_48_SQ_060_E,,NO,YES,NO,Neutral,,,,
 19,19,1,200,-1,60000,1,0,0,0,0,1,0,HiddenTrigger6,PILGRIM_48_SQ_090_DISTANCE_CHECK,,,,,,,,PILGRIM_48_SQ_090_E,,NO,YES,NO,Neutral,,,,
-20,20,1,100,-1,60000,1,1,0,0,0,1,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_PILGRIMROAD_48,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,
+20,20,1,100,-1,60000,1,2,0,0,0,1,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_F_PILGRIMROAD_48,STOUP_CAMP,STOUP_CAMP,NO,YES,NO,Neutral,,,,
 21,21,0,40,200,60000,30,0,0,0,0,6,0,Sec_Lizardman,,,,,,,,,,,NO,YES,NO,Monster,,,,
 22,22,0,40,30,60000,20,0,0,0,0,0,0,Sec_Lizardman,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,
 23,23,0,40,25,60000,35,0,0,0,0,0,0,Sec_InfroBurk,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,

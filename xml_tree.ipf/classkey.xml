@@ -5314,6 +5314,30 @@
         <Key Name="KATYN12_RP_1" Value="12660"/>
         <Key Name="KATYN12_RP_1_R" Value="12661"/>
         <Key Name="CM3LAKE83_RP_1" Value="12662"/>
+        <Key Name="ROKAS27_RP_1" Value="12724"/>
+        <Key Name="ROKAS27_RP_1_R" Value="12725"/>
+        <Key Name="SIAU501_RP_1_R" Value="12726"/>
+        <Key Name="ROKAS31_RP_1" Value="12727"/>
+        <Key Name="ZACHA32_RP_1" Value="12728"/>
+        <Key Name="ZACHA32_RP_1_R" Value="12729"/>
+        <Key Name="SIAU474_RP_1" Value="12730"/>
+        <Key Name="ZACHA33_RP_1" Value="12731"/>
+        <Key Name="ZACHA33_RP_1_R" Value="12732"/>
+        <Key Name="CASTLE652_RP_2" Value="12733"/>
+        <Key Name="PILGRIM311_RP_1" Value="12734"/>
+        <Key Name="CASTLE652_RP_1" Value="12735"/>
+        <Key Name="CATACOMB332_RP_1" Value="12736"/>
+        <Key Name="CASTLE653_RP_2" Value="12737"/>
+        <Key Name="CATACOMB332_RP_1_R" Value="12738"/>
+        <Key Name="SIAU474_RP_1_R" Value="12739"/>
+        <Key Name="CASTLE653_RP_1" Value="12740"/>
+        <Key Name="CASTLE652_RP_1_R" Value="12741"/>
+        <Key Name="SIAU501_RP_1" Value="12742"/>
+        <Key Name="CASTLE652_RP_2_R" Value="12743"/>
+        <Key Name="PILGRIM311_RP_1_R" Value="12744"/>
+        <Key Name="ROKAS31_RP_1_R" Value="12745"/>
+        <Key Name="CASTLE653_RP_1_R" Value="12746"/>
+        <Key Name="CASTLE653_RP_2_R" Value="12747"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PCEtc">
         <Key Name="FromMission" Value="3907"/>
@@ -9998,6 +10022,10 @@
         <Key Name="DailyTimeReward_16" Value="12693"/>
         <Key Name="DailyTimeReward_23" Value="12694"/>
         <Key Name="DailyTimeReward_17" Value="12695"/>
+        <Key Name="Hide_2006" Value="12722"/>
+        <Key Name="Hide_2007" Value="12723"/>
+        <Key Name="HairColor_gray" Value="12748"/>
+        <Key Name="HairColor_green" Value="12749"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Account">
         <Key Name="MaxPVPGrade" Value="6299"/>

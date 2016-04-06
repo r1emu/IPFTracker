@@ -1574,6 +1574,14 @@ function GET_HAIRCOLOR_IMGNAME_BY_ENGNAME(engname)
 		return "red_color"
 	end
 
+	if engname == 'green' then
+		return "green_color"
+	end
+	
+	if engname == 'gray' then
+		return "gray_color"
+	end
+
 	return "basic_color"
 
 end

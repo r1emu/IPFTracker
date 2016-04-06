@@ -39,7 +39,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,P
 38,38,1,40,-1,60000,1,0,0,0,1,1,0,closing_device,불안정한 마력 봉인 수정,,,,,,VELNIASP54_1_EVENT01_START_AI,VELNIASP54_1_EVENT01_START,,,NO,YES,NO,Neutral,,,,
 39,39,1,40,1,60000,1,2,0,0,0,1,0,velniasprison_warp,샤튼 저수구역,,,,MON_DUMMY,,,VELNIASP54_1_TO_FARM49_3,,,NO,YES,NO,Neutral,Anim/ON,,,
 40,40,1,150,1,60000,1,0,0,0,0,1,0,HiddenTrigger_CantGen150,,,,,,,,,,,NO,YES,NO,Neutral,,,,
-41,41,1,40,1,60000,15,0,0,0,0,1,0,rootcrystal_04,,,,,,,,,,,NO,YES,NO,RootCrystal,,,,
+41,41,1,40,10,60000,15,0,0,0,0,1,0,rootcrystal_04,,,,,,,,,,,NO,YES,NO,RootCrystal,,,,
 42,42,1,40,1,60000,1,0,0,0,0,1,0,LOST_PAPER,아루네의 일지,,,,,,,VELNIASP54_MEMO1,,,NO,YES,NO,Neutral,,,,
 43,43,1,40,1,60000,1,0,0,0,0,1,0,LOST_PAPER,시기타의 일지,,,,,,,VELNIASP54_MEMO2,,,NO,YES,NO,Neutral,,,,
 44,44,1,40,1,60000,1,0,0,0,0,1,0,LOST_PAPER,아우슈리네의 명령서,,,,,,,VELNIASP54_MEMO3,,,NO,YES,NO,Neutral,,,,

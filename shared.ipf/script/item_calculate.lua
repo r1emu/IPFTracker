@@ -9,6 +9,8 @@ function INIT_WEAPON_PROP(item, class)
     item.ADD_MATK = class.ADD_MATK;
 	item.ADD_DEF = class.ADD_DEF;
 	item.ADD_MDEF = class.ADD_MDEF;
+	item.DEF = class.DEF;
+	item.MDEF = class.MDEF;
 
     item.PATK = class.PATK;
     item.MATK = class.MATK;

@@ -59,3 +59,6 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,P
 88,88,1,40,1,60000,1,0,0,0,0,0,0,HiddenTrigger6,,,,,,,SIAULIAI50_1_HIDDEN_EVENT_CONTROLL,,,,NO,YES,NO,Neutral,,,,
 89,89,1,100,1,60000,4,0,0,0,0,0,0,HiddenTrigger_CantGen100,필드젠X,,,,,,,,,,NO,YES,NO,Neutral,,,,
 90,90,1,0,1,1,1,0,0,0,0,0,0,treasure_box1,보물 상자 LV1,,,,,,,TREASUREBOX_LV,,,,YES,NO,Neutral,LV1,ITEM:COLLECT_144:1,,
+91,91,1,40,1,1000,1,1,0,0,0,1,0,npc_village_uncle_3,개척민 로도나스,,,,MON_DUMMY,,,SIAU501_RP_1_NPC,,,NO,YES,NO,Neutral,,,,
+92,92,1,40,50,15000,10,0,0,0,0,0,0,Ridimed_purple,,,,,,,,,,,NO,YES,NO,Monster,,,,
+93,93,1,40,50,15000,10,0,0,0,0,0,0,Sakmoli_orange,,,,,,,,,,,NO,YES,NO,Monster,,,,

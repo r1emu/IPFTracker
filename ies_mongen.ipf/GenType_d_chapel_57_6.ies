@@ -12,7 +12,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 11,11,1,300,1,1,1,0,0,0,0,0,0,HiddenTrigger2,,,,,MON_DUMMY,,,,JOB_LINKER2_2_TRIGGER,,NO,YES,NO,Neutral,,,,,
 12,12,1,1,1,1,1,0,0,0,0,0,0,chaple_gate_02,UnvisibleName,,,,MON_DUMMY,,,CHAPLE576_MQ_04,,,NO,YES,NO,Neutral,AttachAnimLocal/0:OFF/5:ASTD,NPCStateLocal/5:CHAPLE576_MQ_04_1:SUCCESS/0:CHAPLE576_MQ_04_1:IMPOSSIBLE:POSSIBLE:PROGRESS,,,
 13,13,0,40,9999,15000,12,0,0,0,0,0,1,Pawndel,,,,,,,,CHAPLE576_MQ_06_MON,,,NO,YES,NO,Monster,,,,Attack,
-18,18,1,100,-1,60000,1,1,0,0,0,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_CHAPEL_57_6,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,,
+18,18,1,100,-1,60000,1,2,0,0,0,0,0,statue_vakarine,여신 바카리네의 상,,,,STOUP_CAMP,,,WARP_D_CHAPEL_57_6,STOUP_CAMP,STOUP_CAMP,,YES,NO,Neutral,,,,,
 19,19,0,40,20,15000,20,0,0,0,0,0,1,Pawndel,,,,,,,,CHAPLE576_MQ_06_MON,,,NO,YES,NO,Monster,SmartGen,,,Attack,
 20,20,0,40,50,15000,20,0,0,0,0,0,0,Corylus,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,Attack,
 21,21,0,40,9999,15000,8,0,0,0,0,0,1,pawnd,,,,,,,,CHAPLE576_MQ_06_MON,,,NO,YES,NO,Monster,,,,Attack,

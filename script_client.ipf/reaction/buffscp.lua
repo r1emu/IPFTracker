@@ -373,13 +373,17 @@ function CalcBuffEffScale(radius)
 end
 
 -- 텔레키네시스처럼 FSM으로는 ASTD이지만 실제로는 스킬캐스팅중 인것들 등록. (버프로 캐스팅중인것 확인)
-function IsSkillStateByBuff()
+function IsSkillStateByBuff(isForGuard)
 
   -- 텔레키네시스
   if info.GetMyPcBuff('TeleCast') ~= nil then
     return 1;
   end
 
+  -- 임페일러
+	if isForGuard == 1 and info.GetMyPcBuff('Impaler_Buff') ~= nil then
+	  return 1;
+	end
   return 0;
 end
 

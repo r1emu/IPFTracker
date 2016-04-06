@@ -8,7 +8,7 @@
     <option hideable="false" closebutton="false"/>
     <script OpenScp="INIT_BARRACK_NAME"/>
     <controls>
-        <richtext name="barrackname" caption="{@st43}{s26}팀 이름{/}" texttooltip="{@st59}팀 이름{/}" layout_gravity="center top" resizebytext="false" rect="0 0 549 40" textalign="left center" margin="200 5 0 0"/>
+        <richtext name="barrackname" caption="{@st43}{s26}팀 이름{/}" texttooltip="{@st59}팀 이름{/}" layout_gravity="left top" resizebytext="true" rect="0 0 20 40" textalign="left center" margin="0 10 0 0"/>
         <button name="upgrade" caption="{@st66b}숙소 변경{/}" texttooltip="{@st59}숙소 꾸미기{/}" rect="0 0 160 50" layout_gravity="right top" margin="0 5 13 80" textalign="center center" skin="test_pvp_btn" clicksound="button_click_big" oversound="button_over" MouseOnAnim="btn_mouseover" MouseOffAnim="btn_mouseoff" LBtnUpScp="ui.ToggleFrame(&apos;barrackthema&apos;)"/>
         <groupbox name="gbox_tp" margin="13 5 0 0" rect="0 0 198 40" hittestbox="false" skin="test_weight_skin" layout_gravity="left top"/>
         <groupbox name="gbox_tp_1" margin="214 5 0 0" rect="0 0 198 40" hittestbox="false" skin="test_weight_skin" layout_gravity="left top"/>

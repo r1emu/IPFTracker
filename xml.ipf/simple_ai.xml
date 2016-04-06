@@ -3747,6 +3747,9 @@ Name="CORAL_32_1_SQ_3_AI" ActiveMessageMapInBattle="1">
             </ToolScp>
         </DeadList>
         <StartList>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="SCR_BOSS_CK_FIRETOWER612_LOG"/>
+            </ToolScp>
             <ToolScp Scp="S_AI_ZONEOBJ_VALUE" Client="NO" UseSleep="NO">
                 <Str Str="FD_FIRETOWER612_T02_CK_CK"/>
                 <Num Num="0"/>
@@ -3820,6 +3823,9 @@ Name="CORAL_32_1_SQ_3_AI" ActiveMessageMapInBattle="1">
     </AI>
     <AI Name="FD_FIRETOWER612_T02_MONSTER_AI_REDEAD" UpdateMS="1000" ActiveMessageMapInBattle="1">
         <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="FD_FIRETOWER612_T02_CK_RUN_LIVE"/>
+            </ToolScp>
             <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
                 <AbsPos X="-37.823711" Y="142.55341" Z="-1506.1927"/>
             </ToolScp>

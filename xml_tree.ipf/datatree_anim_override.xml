@@ -3425,6 +3425,10 @@
 			<Node1 ClassID="11" ClassName="EVENT_IDLE" FileName="npc\Laima\Laima_event_idle"/>
 			<Node1 ClassID="12" ClassName="EVENT_IDLE2" FileName="npc\Laima\Laima_event_idle2"/>
 			<Node1 ClassID="13" ClassName="EVENT_IDLE3" FileName="npc\Laima\Laima_event_idle3"/>
+			<Node1 ClassID="14" ClassName="EVENT_NO" FileName="npc\Laima\Laima_event_no"/>
+			<Node1 ClassID="15" ClassName="EVENT_ATK" FileName="npc\Laima\Laima_event_atk"/>
+			<Node1 ClassID="16" ClassName="EVENT_LOOP3" FileName="npc\Laima\Laima_event_loop3"/>
+			<Node1 ClassID="17" ClassName="EVENT_SIT" FileName="npc\Laima\Laima_event_sit"/>
 		</Class>
 		<Class ClassID="40129" ClassName="npc_sculptor">
 			<Node1 ClassID="1" ClassName="STD" FileName="npc\sculptor\sculptor_std"/>

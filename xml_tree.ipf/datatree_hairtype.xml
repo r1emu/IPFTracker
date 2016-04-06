@@ -102,6 +102,34 @@
 			<Node Index="97" Type="댄디 웨이브컬" EngName="DandyWaveCurl" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
 			<Node Index="98" Type="노블 포니테일" EngName="NovlePonyTail" ColorE="blond" Color="애쉬 블론드" UseableBarrack="NO"/>
 			<Node Index="99" Type="노블 포니테일" EngName="NovlePonyTail" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
+		<Node Index="100" Type="숏 컷" EngName="Shortcut" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="101" Type="숏 컷" EngName="Shortcut" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="102" Type="비대칭 숏 컷" EngName="UnbalancedShortcut" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="103" Type="비대칭 숏 컷" EngName="UnbalancedShortcut" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="104" Type="리젠트" EngName="Regent" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="105" Type="리젠트" EngName="Regent" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="106" Type="숏 샤기" EngName="ShortShaggy" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="107" Type="숏 샤기" EngName="ShortShaggy" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="108" Type="넘긴 머리" EngName="SlickedBack" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="109" Type="넘긴 머리" EngName="SlickedBack" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="110" Type="베이비펌" EngName="Baby" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="111" Type="베이비펌" EngName="Baby" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="112" Type="댄디" EngName="Dandy" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="113" Type="댄디" EngName="Dandy" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="114" Type="숏 포니테일" EngName="ShortPonyTail" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="115" Type="숏 포니테일" EngName="ShortPonyTail" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="116" Type="노블 웨이브" EngName="NovelWave" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="117" Type="노블 웨이브" EngName="NovelWave" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="118" Type="쉐도우펌" EngName="ShadowPerm" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="119" Type="쉐도우펌" EngName="ShadowPerm" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="120" Type="테리우스" EngName="Terius" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="121" Type="테리우스" EngName="Terius" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="122" Type="올림 웨이브" EngName="LifterWaveCut" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="123" Type="올림 웨이브" EngName="LifterWaveCut" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="124" Type="댄디 웨이브컬" EngName="DandyWaveCurl" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="125" Type="댄디 웨이브컬" EngName="DandyWaveCurl" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="126" Type="노블 포니테일" EngName="NovlePonyTail" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="127" Type="노블 포니테일" EngName="NovlePonyTail" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
 		</Class>
 		<Class ClassID="2">
 			<Node Index="1" Type="숏 컷" EngName="Shortcut" ColorE="default" Color="기본" UseableBarrack="YES"/>
@@ -218,6 +246,38 @@
 			<Node Index="112" Type="노블 롱" EngName="NovleLong" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
 			<Node Index="113" Type="숏 컷 펌" EngName="ShortCutPerm" ColorE="blond" Color="애쉬 블론드" UseableBarrack="NO"/>
 			<Node Index="114" Type="숏 컷 펌" EngName="ShortCutPerm" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
+		<Node Index="115" Type="숏 컷" EngName="Shortcut" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="116" Type="숏 컷" EngName="Shortcut" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="117" Type="롱 샤기" EngName="LongShaggy" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="118" Type="롱 샤기" EngName="LongShaggy" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="119" Type="볼륨 컬" EngName="Volume" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="120" Type="볼륨 컬" EngName="Volume" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="121" Type="롱 포니테일" EngName="LongPonyTail" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="122" Type="롱 포니테일" EngName="LongPonyTail" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="123" Type="트윈테일" EngName="TwinTail" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="124" Type="트윈테일" EngName="TwinTail" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="125" Type="레게포니테일" EngName="RPonyTail" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="126" Type="레게포니테일" EngName="RPonyTail" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="127" Type="더블 번" EngName="DoubleBurn" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="128" Type="더블 번" EngName="DoubleBurn" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="129" Type="롱 레이어드" EngName="LongLayered" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="130" Type="롱 레이어드" EngName="LongLayered" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="131" Type="숏 트윈테일" EngName="ShortTwinTail" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="132" Type="숏 트윈테일" EngName="ShortTwinTail" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="133" Type="묶은 롱 웨이브" EngName="TiedLongWave" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="134" Type="묶은 롱 웨이브" EngName="TiedLongWave" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="135" Type="롱 웨이브 트윈테일" EngName="LongWaveTwinTail" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="136" Type="롱 웨이브 트윈테일" EngName="LongWaveTwinTail" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="137" Type="숏 포니테일" EngName="ShortPonyTail" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="138" Type="숏 포니테일" EngName="ShortPonyTail" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="139" Type="볼륨웨이브 트윈테일" EngName="VolumeWaveTwinTail" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="140" Type="볼륨웨이브 트윈테일" EngName="VolumeWaveTwinTail" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="141" Type="볼륨웨이브" EngName="VolumeWave" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="142" Type="볼륨웨이브" EngName="VolumeWave" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="143" Type="노블 롱" EngName="NovleLong" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="144" Type="노블 롱" EngName="NovleLong" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="145" Type="숏 컷 펌" EngName="ShortCutPerm" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="146" Type="숏 컷 펌" EngName="ShortCutPerm" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
 		</Class>
 	</Category>
 </idspace>

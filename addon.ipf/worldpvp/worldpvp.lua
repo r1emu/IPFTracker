@@ -224,7 +224,7 @@ function JOIN_WORLDPVP_BY_TYPE(frame, pvpType)
 	if state == PVP_STATE_NONE then
 
 		if cls.Party == 0 then
-			if session.GetPcTotalJobGrade() < WORLDPVP_MIN_JOB_GRADE then
+			if session.GetPcTotalJobGrade() < WORLDPVP_MIN_JOB_GRADE and cls.MatchType ~= "Guild" then
 				local msg = ScpArgMsg("OnlyAbleOver{Rank}", "Rank", WORLDPVP_MIN_JOB_GRADE);
 				ui.MsgBox(msg);
 				 return;
@@ -271,7 +271,20 @@ function JOIN_WORLDPVP_BY_TYPE(frame, pvpType)
 	elseif state == PVP_STATE_FINDING then
 		worldPVP.ReqJoinPVP(pvpType, PVP_STATE_NONE);
 		join:SetEnable(0);
+	elseif state == PVP_STATE_PLAYING then
+	
+		if cls.MatchType == "Guild" then
+			local isLeader = AM_I_LEADER(PARTY_GUILD);
+			if isLeader == 1 then
+				local pvpGuid = frame:GetUserIValue("GUILD_PVP_GUID_" .. pvpType);
+				if pvpGuid > 0 then
+					print(pvpGuid);
+					worldPVP.ReqJoinGuildPVP(pvpType, pvpGuid);
+				end
+			end
 	end
+end
+
 end
 
 function ON_PVP_STATE_CHANGE(frame, msg, pvpType)

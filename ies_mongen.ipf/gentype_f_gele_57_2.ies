@@ -17,7 +17,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 137,137,1,40,1,60000,1,1,0,0,0,0,0,npc_paladin_follower2_2,파수꾼 모리,,,,,,,GELE572_NPC_MORI,,,NO,YES,NO,Neutral,,,,
 138,138,1,40,-1,60000,1,0,0,0,0,0,0,npc_thorn_flower_yellow,,,,,,,,,GELE572_MQ_05_001,,NO,YES,NO,Neutral,,,,
 139,139,1,40,-1,60000,1,0,0,0,0,0,0,npc_thorn_bigflower_yellow,,,,,,,,GELE572_MQ_05,,,NO,YES,NO,Neutral,,,,
-140,140,1,1,1,30000,9,0,0,0,1,0,0,mon_goat_totem,,,,,,,GELE572_MQ_GOAT_TOTEM,,,,NO,YES,NO,Monster,,,,
+140,140,1,1,1,15000,10,0,0,0,1,0,0,mon_goat_totem,,,,,,,GELE572_MQ_GOAT_TOTEM,,,,NO,YES,NO,Monster,,,,
 141,141,0,1,20,30000,7,0,0,0,2,0,0,Mally,,,,,,,,,,,NO,YES,NO,Monster,,,,
 142,142,1,200,1,60000,1,0,0,0,0,0,0,HiddenTrigger_CantGen200,필드젠X,,,,,,,,,,NO,YES,NO,Neutral,,,,
 143,143,1,300,1,60000,2,0,0,0,0,0,0,HiddenTrigger_CantGen300,필드젠X,,,,,,,,,,NO,YES,NO,Neutral,,,,

@@ -62,6 +62,12 @@ function OPEN_PVP_FRAME(frame)
 	ui.OpenFrame("worldpvp");
 	frame = frame:GetTopParentFrame();
 	frame:ShowWindow(0);
+
+	local pvpFrame = ui.GetFrame("worldpvp");
+	local tab = GET_CHILD(pvpFrame, "tab");
+	if tab ~= nil then
+		tab:SelectTab(0);
+	end
 end
 
 

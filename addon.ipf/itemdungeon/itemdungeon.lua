@@ -75,7 +75,9 @@ function SET_LOCK_ITEM_AWEKING(targetItem, stoneItem)
 	if "None" ~= stoneItem then
 		invframe:SetUserValue("STONE_ITEM_GUID_IN_AWAKEN", stoneItem);
 	end
-	INVENTORY_ON_MSG(invframe, 'ITEM_PROP_UPDATE');
+
+	INVENTORY_ITEM_PROP_UPDATE(invframe, 'ITEM_PROP_UPDATE', targetItem);
+	INVENTORY_ITEM_PROP_UPDATE(invframe, 'ITEM_PROP_UPDATE', stoneItem);
 end
 
 function OPEN_ITEMDUNGEON(frame)
