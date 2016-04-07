@@ -10026,6 +10026,10 @@
         <Key Name="Hide_2007" Value="12723"/>
         <Key Name="HairColor_gray" Value="12748"/>
         <Key Name="HairColor_green" Value="12749"/>
+        <Key Name="Reward_FD_TerraNymph_bow" Value="12750"/>
+        <Key Name="Reward_Nuo" Value="12751"/>
+        <Key Name="Reward_FD_Infrogalas_bow" Value="12752"/>
+        <Key Name="Reward_Cronewt_bow_brown" Value="12753"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Account">
         <Key Name="MaxPVPGrade" Value="6299"/>
