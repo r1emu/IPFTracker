@@ -406,7 +406,6 @@ function ITEMDUNGEON_DROP_WEALTH_ITEM(parent, ctrl)
 
 	SET_SLOT_ITEM(slot, invItem, invItem.count);
 
-	local name = frame:GetUserIValue("Name");
 	if "None" ~= name then
 		local targetSlot = GET_CHILD(frame, "targetSlot");
 		local invItem = GET_SLOT_ITEM(targetSlot);
