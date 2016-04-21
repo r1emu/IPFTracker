@@ -10063,6 +10063,8 @@
         <Key Name="CollectionRead_255" Value="12786"/>
         <Key Name="CollectionRead_256" Value="12787"/>
         <Key Name="CollectionRead_257" Value="12788"/>
+        <Key Name="Hide_2012" Value="12789"/>
+        <Key Name="Hide_2013" Value="12790"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Account">
         <Key Name="MaxPVPGrade" Value="6299"/>
