@@ -881,19 +881,9 @@ function GIVE_PET_REVIVE_ITEM(pcName)
 end
 
 function REQUEST_DELETE_PET(parent, ctrl)
-
 	local mainBox = parent:GetParent();
 	local petGuid = mainBox:GetUserValue("PET_ID");
-	local pet = barrack.GetPet(petGuid);
-	local brkSystem = GetBarrackSystem(pet);
-	local petInfo = brkSystem:GetPetInfo();
-	local monCls = GetClassByType("Monster", petInfo:GetPetType());
-	
-	local nameStr = string.format("%s (%s)", petInfo:GetName(), monCls.Name);
-	local msg = ScpArgMsg("ReallyDelete{Name}", "Name", nameStr);
-	local execScript = string.format("_EXEC_DELETE_PET(\"%s\", \"%s\")", petGuid, brkSystem:GetCID());
-	ui.MsgBox(msg, execScript, "None");
-
+	DELETE_WARNING_BOX_ON_INIT(11, petGuid);
 end
 
 function _EXEC_DELETE_PET(petGuid, charCID)

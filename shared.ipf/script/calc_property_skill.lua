@@ -383,6 +383,69 @@ function SCR_GET_SKL_COOLDOWN_WIZARD(skill)
 
 end
 
+function SCR_GET_SKL_COOLDOWN_Bloodletting(skill)
+
+	local pc = GetSkillOwner(skill);
+	local basicCoolDown = skill.BasicCoolDown;
+	local abilAddCoolDown = GetAbilityAddSpendValue(pc, skill.ClassName, "CoolDown");
+	
+	basicCoolDown = basicCoolDown + abilAddCoolDown;
+		
+	if IsBuffApplied(pc, 'CarveLaima_Buff') == 'YES' then
+		basicCoolDown = basicCoolDown * 0.8;
+	elseif IsBuffApplied(pc, 'CarveLaima_Debuff') == 'YES' then
+	    basicCoolDown = basicCoolDown * 1.2;
+	end
+	
+	if IsBuffApplied(pc, 'GM_Cooldown_Buff') == 'YES' then
+	    basicCoolDown = basicCoolDown * 0.9;
+	end
+	
+	if IsBuffApplied(pc, 'SpeForceFom_Buff') == 'YES' then
+		if skill.ClassName ~= "Centurion_SpecialForceFormation" then
+			basicCoolDown =	basicCoolDown * 0.5;
+		end
+	end
+	
+	if IsPVPServer(pc) == 1 then
+	    basicCoolDown = basicCoolDown + 20000;
+	end
+
+	return math.floor(basicCoolDown);
+
+end
+
+function SCR_GET_SKL_COOLDOWN_HealingFactor(skill)
+	
+	local pc = GetSkillOwner(skill);
+	local basicCoolDown = skill.BasicCoolDown;
+	local abilAddCoolDown = GetAbilityAddSpendValue(pc, skill.ClassName, "CoolDown");
+	
+	basicCoolDown = basicCoolDown + abilAddCoolDown;
+		
+	if IsBuffApplied(pc, 'CarveLaima_Buff') == 'YES' then
+		basicCoolDown = basicCoolDown * 0.8;
+	elseif IsBuffApplied(pc, 'CarveLaima_Debuff') == 'YES' then
+	    basicCoolDown = basicCoolDown * 1.2;
+	end
+	
+	if IsBuffApplied(pc, 'GM_Cooldown_Buff') == 'YES' then
+	    basicCoolDown = basicCoolDown * 0.9;
+	end
+	
+	if IsBuffApplied(pc, 'SpeForceFom_Buff') == 'YES' then
+		if skill.ClassName ~= "Centurion_SpecialForceFormation" then
+			basicCoolDown =	basicCoolDown * 0.5;
+		end
+	end
+	
+	if IsPVPServer(pc) == 1 then
+	    basicCoolDown = basicCoolDown + 20000;
+	end	
+
+	return math.floor(basicCoolDown);
+	
+end
 
 function SCR_Get_WaveLength(skill)
 
@@ -5740,9 +5803,9 @@ function SCR_GET_BloodBath_Ratio(skill)
 end
 
 function SCR_GET_BloodBath_Ratio2(skill)
-
-	local value = 20 + skill.Level * 10
-	return value;
+    local AddValue = skill.SkillAtkAdd * 0.3
+	local value = AddValue
+	return math.floor(value);
 
 end
 
@@ -10546,6 +10609,14 @@ function SCR_Get_SwellBrain_Ratio(skill)
     if abil ~= nil then
         value = value + abil.Level * 2
     end
+    
+    return math.floor(value)
+
+end
+
+function SCR_Get_SwellBrain_Ratio2(skill)
+
+    local value = 12.5 + (skill.Level - 1) * 2.5
     
     return math.floor(value)
 

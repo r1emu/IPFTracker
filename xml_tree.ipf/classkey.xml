@@ -5338,6 +5338,36 @@
         <Key Name="ROKAS31_RP_1_R" Value="12745"/>
         <Key Name="CASTLE653_RP_1_R" Value="12746"/>
         <Key Name="CASTLE653_RP_2_R" Value="12747"/>
+        <Key Name="FARM473_RP_1" Value="12756"/>
+        <Key Name="FARM473_RP_1_R" Value="12757"/>
+        <Key Name="FARM471_RP_1" Value="12758"/>
+        <Key Name="REMAINS39_RP_1_R" Value="12759"/>
+        <Key Name="FARM471_RP_1_R" Value="12760"/>
+        <Key Name="REMAINS38_RP_1" Value="12761"/>
+        <Key Name="ORCHARD323_RP_1" Value="12762"/>
+        <Key Name="ORCHARD324_RP_1" Value="12763"/>
+        <Key Name="PILGRIM48_RP_1" Value="12764"/>
+        <Key Name="PILGRIM49_RP_1" Value="12765"/>
+        <Key Name="REMAINS38_RP_1_R" Value="12766"/>
+        <Key Name="ORCHARD323_RP_1_R" Value="12767"/>
+        <Key Name="REMAINS40_RP_1" Value="12768"/>
+        <Key Name="REMAINS40_RP_1_R" Value="12769"/>
+        <Key Name="PILGRIM362_RP_1_R" Value="12770"/>
+        <Key Name="PILGRIM362_RP_1" Value="12771"/>
+        <Key Name="ORCHARD324_RP_1_R" Value="12772"/>
+        <Key Name="REMAINS39_RP_1" Value="12773"/>
+        <Key Name="PILGRIM48_RP_1_R" Value="12774"/>
+        <Key Name="PILGRIM49_RP_1_R" Value="12775"/>
+        <Key Name="PLAYTIMEEVENT_NEED8" Value="12776"/>
+        <Key Name="PLAYTIMEEVENT_NEED9" Value="12777"/>
+        <Key Name="PLAYTIMEEVENT_NEED12" Value="12778"/>
+        <Key Name="PlayTimeEventPlayMin" Value="12779"/>
+        <Key Name="PlayTimeEventLastReward" Value="12780"/>
+        <Key Name="PLAYTIMEEVENT_NEED10" Value="12781"/>
+        <Key Name="PlayTimeEventACCCount" Value="12782"/>
+        <Key Name="PLAYTIMEEVENT_NEED11" Value="12783"/>
+        <Key Name="PlayTimeEventACCIndex" Value="12784"/>
+        <Key Name="PlayTimeEventRewardCount" Value="12785"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PCEtc">
         <Key Name="FromMission" Value="3907"/>
@@ -10030,6 +10060,9 @@
         <Key Name="Reward_Nuo" Value="12751"/>
         <Key Name="Reward_FD_Infrogalas_bow" Value="12752"/>
         <Key Name="Reward_Cronewt_bow_brown" Value="12753"/>
+        <Key Name="CollectionRead_255" Value="12786"/>
+        <Key Name="CollectionRead_256" Value="12787"/>
+        <Key Name="CollectionRead_257" Value="12788"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Account">
         <Key Name="MaxPVPGrade" Value="6299"/>
@@ -11395,6 +11428,7 @@
         <Key Name="ReinforceRatio" Value="12640"/>
         <Key Name="ItemLifeTimeOver" Value="12667"/>
         <Key Name="ItemLifeTime" Value="12668"/>
+        <Key Name="HatVisible" Value="12755"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Guild">
         <Key Name="MaxCount" Value="7691"/>
@@ -11447,6 +11481,7 @@
         <Key Name="RewardBidItemCountList" Value="10086"/>
         <Key Name="GuildEventJoinCount" Value="11390"/>
         <Key Name="GuildEventBroadCastTime" Value="11624"/>
+        <Key Name="GuildLevelReload" Value="12754"/>
     </KeyIDSpc>
     <KeyIDSpc Name="GuildMember">
         <Key Name="Name" Value="9011"/>

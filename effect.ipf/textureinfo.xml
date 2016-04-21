@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes"?>
 <!-- edited with XMLSpy v2006 U (http://www.altova.com) by Administrator (EMBRACE) -->
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by mayo (IMCGames Co., Ltd) -->
 <TextureInfo>
 	<Texture Name="pattern021" File="pattern021.dds" Size="256 256"/>
 	<Texture Name="pattern020" File="pattern020.dds" Size="256 256"/>
@@ -202,6 +202,7 @@
 	<Texture Name="arrow_003" File="arrow_003.dds" Size="256 256"/>
 	<Texture Name="arrow_004" File="arrow_004.dds" Size="256 256"/>
 	<Texture Name="arrow_005" File="arrow_005.dds" Size="256 256"/>
+	<Texture Name="blood002_yellow" File="blood002_yellow.dds" Size="36 36"/>
 	<Texture Name="blood002_green" File="blood002_green.DDS" Size="36 36"/>
 	<Texture Name="pattern002" File="pattern002.DDS" Size="32 32"/>
 	<Texture Name="sprit003" File="sprit003.DDS" Size="512 384"/>

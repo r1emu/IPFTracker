@@ -14,7 +14,9 @@ function REINFORCE_ABLE_131014(item)
 end
 
 function GET_REINFORCE_131014_PRICE(fromItem, moruItem)
-	
+	if moruItem.ClassName == "Moru_Potential" or moruItem.ClassName == "Moru_Potential14d" then
+		return 0;
+	end
 	local reinforcecount = fromItem.Reinforce_2;
 	local slot = fromItem.DefaultEqpSlot;
 	local grade = fromItem.ItemGrade;
@@ -64,6 +66,9 @@ function GET_REINFORCE_131014_PRICE(fromItem, moruItem)
     if moruItem.ClassName == "Moru_Silver_test" then
 		value = 0;
 	end
+    if moruItem.ClassName == "Moru_Potential" or moruItem.ClassName == "Moru_Potential14d" then
+		value = 0;
+	end
 	
     value = math.floor(value)
 	return math.floor(value);
@@ -81,7 +86,7 @@ function GET_REINFORCE_131014_HITCOUNT(fromItem, moru)
 	--local cls = GetClassByType("itemevolution", prop.evolutionType);
 
 	return 3;
-	---- 모루?� ?�이?�의 컬럼???�용?�서 몇번 모루�??�려???�는지 계산?�다.
+	---- 모루?� ?�이?�의 컬럼???�용?�서 몇번 모루�??�려???�는지 계산?�다.
 	--return cls.HitCount;
 
 end

@@ -135,7 +135,6 @@ function INSERT_ITEM_TO_TREE(frame, tree, invItem, itemCls, baseidcls)
 							
 							slot:ShowWindow(1)							
 							UPDATE_INVENTORY_SLOT(slot, invItem, itemCls);
-							
 							INV_ICON_SETINFO(frame, slot, invItem, customFunc, scriptArg, remainInvItemCount);
 							SET_SLOTSETTITLE_COUNT(tree, baseidcls, 1)
 											
@@ -372,7 +371,6 @@ function TEMP_INV_ADD(frame,invIndex)
 
 	local beforeSlotSetCount = #SLOTSET_NAMELIST;
 	local beforeGroupCount = #GROUP_NAMELIST;
-
 	INSERT_ITEM_TO_TREE(frame, tree, invItem, itemCls, baseidcls);
 		
 	--아이템 없는 빈 슬롯은 숨겨라
@@ -489,7 +487,7 @@ function TEMP_INV_REMOVE(frame, itemGuid)
 	if slot == nil then
 		return;
 	end
-
+	slot:SetText('{s18}{ol}{b}', 'count', 'right', 'bottom', -2, 1);
 	local slotIndex = slot:GetSlotIndex();
 	slotset:ClearSlotAndPullNextSlots(slotIndex, "ONUPDATE_SLOT_INVINDEX");
 	
@@ -1815,7 +1813,6 @@ function INV_ICON_SETINFO(frame, slot, invItem, customFunc, scriptArg, count)
 			icon:SetColorTone("FFFF0000");
 		end
 	end
-
 	SET_SLOT_ITEM_TEXT_USE_INVCOUNT(slot, invItem, itemobj, count);
 
 	--아이템이 선택되었을 때의 스크립트를 선택한다

@@ -1,3 +1,9 @@
+癤풮LAYTIMEEVENT_REFLASH_HOUR = 6
+PLAYTIMEEVENT_REWARD_TIME = {0, 30, 60}
+PLAYTIMEEVENT_REWARD_BASIC = {{{'Event_160421',2}}, {{'Event_160421',4}}, {{'Event_160421',10}}}
+PLAYTIMEEVENT_REWARD_PREMIUM = {{{'Event_160421',4}}, {{'Event_160421',6}}, {{'Event_160421',14}}}
+PLAYTIMEEVENT_REWARD_ACC_TIME = {80, 110, 130, 192}
+PLAYTIMEEVENT_REWARD_ACC = {{{'Hat_628132',1}},{{'Premium_awakeningStone14',2}},{{'Premium_StatReset14', 1}},{{'Hat_628133',1}}}
 
 WORLD_SIZE = 10240;
 MINIMAP_LOC_MULTI = 4;
@@ -189,7 +195,6 @@ function G_TOTAL_MON_CNT(cls)
 	return cnt;
 end
 
--- 에러가 떠서 더미용으로 넣은 함수
 function SSN_DIALOGCOUNT_ENTER_C()
 end
 function SSN_DIALOGCOUNT_LEAVE_C()
