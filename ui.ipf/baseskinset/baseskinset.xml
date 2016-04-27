@@ -4158,7 +4158,10 @@
 		<image name="test_companion_07_clicked" file="\icon\companion.tga" imgrect="101 246 100 122"/>
 		<image name="test_companion_08" file="\icon\companion.tga" imgrect="0 369 100 122" CMM_Caption="기니피그_탭버튼"/>
 		<image name="test_companion_08_cursoron" file="\icon\companion.tga" imgrect="101 369 100 122"/>
-		<image name="test_companion_08_clicked" file="\icon\companion.tga" imgrect="101 369 100 122"/>
+		<image name="test_companion_08_clicked" file="\icon\companion.tga" imgrect="0 369 100 122"/>
+		<image name="test_companion_09" file="\icon\companion.tga" imgrect="404 246 100 122" CMM_Caption="펭귄_탭버튼"/>
+		<image name="test_companion_09_cursoron" file="\icon\companion.tga" imgrect="404 369 100 122"/>
+		<image name="test_companion_09_clicked" file="\icon\companion.tga" imgrect="404 369 100 122"/>
 		<image name="test_com_ability" file="\skin\pip_test.tga" imgrect="1832 851 54 35" CMM_Caption="컴패니언_특성플러스"/>
 		<image name="test_com_ability_cursoron" file="\skin\pip_test.tga" imgrect="1832 887 54 35"/>
 		<image name="test_com_ability_clicked" file="\skin\pip_test.tga" imgrect="1832 923 54 35"/>
@@ -4363,6 +4366,7 @@
 		<image name="companion_lesserpanda" file="\icon\companion_Velhider.tga" imgrect="0 160 80 80"/>
 		<image name="companion_Guineapig" file="\icon\companion_Velhider.tga" imgrect="80 160 80 80"/>
 		<image name="companion_barn_owl" file="\icon\companion_Velhider.tga" imgrect="160 160 80 80"/>
+		<image name="companion_penguin" file="\icon\companion_Velhider.tga" imgrect="160 0 80 80"/>
 		<image name="bg_w" file="\skin\button.tga" imgrect="252 974 50 50"/>
 		<image name="barrack_signboard" file="\skin\barrack.tga" imgrect="356 0 257 192"/>
 		<image name="barrack_attack_icon" file="\skin\barrack.tga" imgrect="59 720 55 61"/>

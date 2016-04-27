@@ -5368,6 +5368,62 @@
         <Key Name="PLAYTIMEEVENT_NEED11" Value="12783"/>
         <Key Name="PlayTimeEventACCIndex" Value="12784"/>
         <Key Name="PlayTimeEventRewardCount" Value="12785"/>
+        <Key Name="CORAL_32_2_SQ_10" Value="12791"/>
+        <Key Name="CORAL_32_2_SQ_4" Value="12792"/>
+        <Key Name="CORAL_32_2_SQ_6" Value="12793"/>
+        <Key Name="MG_Last_CORAL_32_2_SQ_1_MINI" Value="12794"/>
+        <Key Name="CORAL_32_2_SQ_7" Value="12795"/>
+        <Key Name="CORAL_32_2_SQ_9" Value="12796"/>
+        <Key Name="CORAL_32_2_SQ_13" Value="12797"/>
+        <Key Name="CORAL_32_2_SQ_2" Value="12798"/>
+        <Key Name="CORAL_32_2_SQ_11" Value="12799"/>
+        <Key Name="CORAL_32_2_SQ_12" Value="12800"/>
+        <Key Name="CORAL_32_2_SQ_3" Value="12801"/>
+        <Key Name="CORAL_32_2_SQ_8" Value="12802"/>
+        <Key Name="CORAL_32_2_SQ_1" Value="12803"/>
+        <Key Name="CORAL_32_2_SQ_5" Value="12804"/>
+        <Key Name="MG_Last_KATYN_45_3_SQ_7_MINI" Value="12823"/>
+        <Key Name="MG_Last_KATYN_45_1_SQ_3_MINI" Value="12824"/>
+        <Key Name="KATYN_45_2_SQ_5" Value="12825"/>
+        <Key Name="KATYN_45_2_SQ_9" Value="12826"/>
+        <Key Name="KATYN_45_1_SQ_6" Value="12827"/>
+        <Key Name="KATYN_45_1_SQ_9" Value="12828"/>
+        <Key Name="KATYN_45_1_SQ_1" Value="12829"/>
+        <Key Name="KATYN_45_1_SQ_2" Value="12830"/>
+        <Key Name="KATYN_45_1_SQ_4" Value="12831"/>
+        <Key Name="KATYN_45_1_SQ_5" Value="12832"/>
+        <Key Name="KATYN_45_2_SQ_12" Value="12833"/>
+        <Key Name="KATYN_45_1_SQ_7" Value="12834"/>
+        <Key Name="KATYN_45_2_SQ_1" Value="12835"/>
+        <Key Name="KATYN_45_3_SQ_10" Value="12836"/>
+        <Key Name="KATYN_45_2_SQ_2" Value="12837"/>
+        <Key Name="KATYN_45_3_SQ_15" Value="12838"/>
+        <Key Name="KATYN_45_2_SQ_4" Value="12839"/>
+        <Key Name="KATYN_45_3_SQ_12" Value="12840"/>
+        <Key Name="KATYN_45_2_SQ_6" Value="12841"/>
+        <Key Name="KATYN_45_2_SQ_8" Value="12842"/>
+        <Key Name="KATYN_45_3_SQ_14" Value="12843"/>
+        <Key Name="KATYN_45_3_SQ_1" Value="12844"/>
+        <Key Name="MG_Last_KATYN_45_2_SQ_10_MINI" Value="12845"/>
+        <Key Name="KATYN_45_3_SQ_3" Value="12846"/>
+        <Key Name="KATYN_45_1_SQ_11" Value="12847"/>
+        <Key Name="KATYN_45_3_SQ_4" Value="12848"/>
+        <Key Name="KATYN_45_3_SQ_5" Value="12849"/>
+        <Key Name="KATYN_45_3_SQ_7" Value="12850"/>
+        <Key Name="KATYN_45_1_SQ_8" Value="12851"/>
+        <Key Name="KATYN_45_1_SQ_3" Value="12852"/>
+        <Key Name="KATYN_45_2_SQ_10" Value="12853"/>
+        <Key Name="KATYN_45_1_SQ_10" Value="12854"/>
+        <Key Name="KATYN_45_3_SQ_9" Value="12855"/>
+        <Key Name="KATYN_45_2_SQ_11" Value="12856"/>
+        <Key Name="KATYN_45_2_SQ_3" Value="12857"/>
+        <Key Name="KATYN_45_2_SQ_13" Value="12858"/>
+        <Key Name="KATYN_45_2_SQ_7" Value="12859"/>
+        <Key Name="KATYN_45_3_SQ_6" Value="12860"/>
+        <Key Name="KATYN_45_3_SQ_11" Value="12861"/>
+        <Key Name="KATYN_45_3_SQ_13" Value="12862"/>
+        <Key Name="KATYN_45_3_SQ_2" Value="12863"/>
+        <Key Name="KATYN_45_3_SQ_8" Value="12864"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PCEtc">
         <Key Name="FromMission" Value="3907"/>
@@ -10065,6 +10121,55 @@
         <Key Name="CollectionRead_257" Value="12788"/>
         <Key Name="Hide_2012" Value="12789"/>
         <Key Name="Hide_2013" Value="12790"/>
+        <Key Name="CORAL_32_2_SQ_6_TRACK" Value="12805"/>
+        <Key Name="Hide_1863" Value="12806"/>
+        <Key Name="Reward_pappus_kepa" Value="12807"/>
+        <Key Name="Hide_1866" Value="12808"/>
+        <Key Name="Reward_FD_bubbe_chaser_hidden" Value="12809"/>
+        <Key Name="Hide_1861" Value="12810"/>
+        <Key Name="Reward_Sec_maggot_green" Value="12811"/>
+        <Key Name="CORAL_32_2_SQ_1_TRACK" Value="12812"/>
+        <Key Name="Hide_1862" Value="12813"/>
+        <Key Name="Hide_1864" Value="12814"/>
+        <Key Name="CORAL_32_2_SQ_9_TRACK" Value="12815"/>
+        <Key Name="Hide_1865" Value="12816"/>
+        <Key Name="Hide_1867" Value="12817"/>
+        <Key Name="Reward_Whip_vine_Ra" Value="12818"/>
+        <Key Name="Hide_1868" Value="12819"/>
+        <Key Name="Hide_1869" Value="12820"/>
+        <Key Name="Hide_1870" Value="12821"/>
+        <Key Name="Hide_1871" Value="12822"/>
+        <Key Name="KATYN_45_1_SQ_3_TRACK" Value="12865"/>
+        <Key Name="KATYN_45_3_SQ_2_TRACK" Value="12866"/>
+        <Key Name="KATYN_45_3_SQ_7_TRACK" Value="12867"/>
+        <Key Name="Hide_1759" Value="12868"/>
+        <Key Name="KATYN_45_2_SQ_13_TRACK" Value="12869"/>
+        <Key Name="Hide_1796" Value="12870"/>
+        <Key Name="Hide_1760" Value="12871"/>
+        <Key Name="Hide_1797" Value="12872"/>
+        <Key Name="Hide_1761" Value="12873"/>
+        <Key Name="Hide_1798" Value="12874"/>
+        <Key Name="Hide_1762" Value="12875"/>
+        <Key Name="KATYN_45_3_SQ_3_TRACK" Value="12876"/>
+        <Key Name="Hide_1799" Value="12877"/>
+        <Key Name="Hide_1763" Value="12878"/>
+        <Key Name="Hide_1768" Value="12879"/>
+        <Key Name="Hide_1802" Value="12880"/>
+        <Key Name="Hide_1800" Value="12881"/>
+        <Key Name="Hide_1766" Value="12882"/>
+        <Key Name="Hide_1783" Value="12883"/>
+        <Key Name="Hide_1803" Value="12884"/>
+        <Key Name="Kill_boss_Sequoia_TRACK" Value="12885"/>
+        <Key Name="Hide_1801" Value="12886"/>
+        <Key Name="Hide_1767" Value="12887"/>
+        <Key Name="Hide_1784" Value="12888"/>
+        <Key Name="Hide_1804" Value="12889"/>
+        <Key Name="KATYN_45_2_SQ_10_TRACK" Value="12890"/>
+        <Key Name="KATYN_45_3_SQ_11_TRACK" Value="12891"/>
+        <Key Name="Hide_1785" Value="12892"/>
+        <Key Name="Hide_1805" Value="12893"/>
+        <Key Name="Hide_1795" Value="12894"/>
+        <Key Name="Hide_1836" Value="12895"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Account">
         <Key Name="MaxPVPGrade" Value="6299"/>

@@ -34,18 +34,47 @@ function LOADINGBG_ON_INIT(addon, frame)
 
 	local clsList, cnt  = GetClassList('LoadingText');
 	local tipClass  = nil;
-
-	for i = 1, cnt*5 do -- 그냥 무한루프�?막기 ?�함. 조건??맞는 ?�이 ?�올?�까지 골라본다.
+	local tipList = {}
+	local rateMax = 0
 	
-		tipClass = GetClassByIndexFromList(clsList, OSRandom(0, cnt  - 1));
-		if tipClass.MinLv <= nowlevel and tipClass.MaxLv >= nowlevel then
-			if tipClass.Job == 'All' or tipClass.Job == nowjobtype then
-				break;
+	for i = 0, cnt - 1 do
+	    local tipIES = GetClassByIndexFromList(clsList, i);
+		if tipIES.MinLv <= nowlevel and tipIES.MaxLv >= nowlevel then
+			if tipIES.Job == 'All' or tipIES.Job == nowjobtype then
+				tipList[#tipList + 1] = tipIES
+				rateMax = rateMax + tipIES.Rate
 			end
 		end
-
 	end
-
+	
+	if #tipList <= 0 then
+	    return
+	end
+	
+	local randRate = OSRandom(1, rateMax)
+	local tempRate = 0
+	for i = 1, #tipList do
+	    tempRate = tempRate + tipList[i].Rate
+	    if tempRate >= randRate then
+	        tipClass = tipList[i]
+	        break
+	    end
+	end
+	
+	if tipClass == nil then
+	    return
+	end
+	
+--	for i = 1, cnt*5 do -- 그냥 무한루프�?막기 ?�함. 조건??맞는 ?�이 ?�올?�까지 골라본다.
+--	
+--		tipClass = GetClassByIndexFromList(clsList, OSRandom(0, cnt  - 1));
+--		if tipClass.MinLv <= nowlevel and tipClass.MaxLv >= nowlevel then
+--			if tipClass.Job == 'All' or tipClass.Job == nowjobtype then
+--				break;
+--			end
+--		end
+--
+--	end
 	local txt = '{#f0dcaa}{s20}{ol}{gr gradation2}'..ScpArgMsg("Todays_Tip") ..tipClass.Text;
 	tipCtl:SetText(txt);
 	tipGroupbox:Resize(tipCtl:GetWidth()+40, tipGroupbox:GetHeight());

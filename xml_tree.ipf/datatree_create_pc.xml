@@ -141,6 +141,15 @@
 				<Node2 ClassID="134" ClassName="Hair16_green" Face="head16" Hair="hair16"/>
 				<Node2 ClassID="135" ClassName="Hair16_gray" Face="head16" Hair="hair16"/>
 				<Node2 ClassID="136" ClassName="Hair16_blond" Face="head16" Hair="hair16"/>
+			<Node2 ClassID="137" ClassName="Hair17" Face="head17" Hair="hair17"/>
+				<Node2 ClassID="138" ClassName="Hair17_black" Face="head17" Hair="hair17_black"/>
+				<Node2 ClassID="139" ClassName="Hair17_blue" Face="head17" Hair="hair17_blue"/>
+				<Node2 ClassID="140" ClassName="Hair17_peach" Face="head17" Hair="hair17_peach"/>
+				<Node2 ClassID="141" ClassName="Hair17_white" Face="head17" Hair="hair17_white"/>
+				<Node2 ClassID="142" ClassName="Hair17_blond" Face="head17" Hair="hair17_blond"/>
+				<Node2 ClassID="143" ClassName="Hair17_red" Face="head17" Hair="hair17_red"/>
+				<Node2 ClassID="144" ClassName="Hair17_green" Face="head17" Hair="hair17_green"/>
+				<Node2 ClassID="145" ClassName="Hair17_gray" Face="head17" Hair="hair17_gray"/>
 			</Node1>
 			<Node1 ClassID="2" ClassName="FEMALE">
 				<Node2 ClassID="1" ClassName="Hair01" Face="head" Hair="hair"/>
@@ -298,6 +307,15 @@
 				<Node2 ClassID="153" ClassName="Hair19_green" Face="head19" Hair="hair19"/>
 				<Node2 ClassID="154" ClassName="Hair19_gray" Face="head19" Hair="hair19"/>
 				<Node2 ClassID="155" ClassName="Hair19_blond" Face="head19" Hair="hair19"/>
+			<Node2 ClassID="156" ClassName="Hair20" Face="head20" Hair="hair20"/>
+				<Node2 ClassID="157" ClassName="Hair20_black" Face="head20" Hair="hair20_black"/>
+				<Node2 ClassID="158" ClassName="Hair20_blue" Face="head20" Hair="hair20_blue"/>
+				<Node2 ClassID="159" ClassName="Hair20_peach" Face="head20" Hair="hair20_peach"/>
+				<Node2 ClassID="160" ClassName="Hair20_white" Face="head20" Hair="hair20_white"/>
+				<Node2 ClassID="161" ClassName="Hair20_blond" Face="head20" Hair="hair20_blond"/>
+				<Node2 ClassID="162" ClassName="Hair20_red" Face="head20" Hair="hair20_red"/>
+				<Node2 ClassID="163" ClassName="Hair20_green" Face="head20" Hair="hair20_green"/>
+				<Node2 ClassID="164" ClassName="Hair20_gray" Face="head20" Hair="hair20_gray"/>
 			</Node1>
 		</Class>
 	</Category>

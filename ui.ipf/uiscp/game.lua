@@ -4059,7 +4059,7 @@ function ON_RIDING_VEHICLE(onoff)
 
 		if 1 == onoff then
 			local abil = GetAbility(GetMyPCObject(), "CompanionRide");
-			if nil == abil then
+			if nil == abil and control.IsPremiumCompanion() == false then
 				ui.SysMsg(ClMsg('PetHasNotAbility'));
 				return
 			end

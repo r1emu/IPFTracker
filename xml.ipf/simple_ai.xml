@@ -2150,7 +2150,91 @@ Name="CORAL_32_1_SQ_3_AI" ActiveMessageMapInBattle="1">
             <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
         </StartList>
     </AI>
-<AI Name="CORAL_35_2_CRYSTAL_MARINE_AI" ActiveMessageMapInBattle="1">
+    <AI Name="CORAL_32_2_SQ_1_AI" UpdateMS="2000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
+                <Num Num="300"/>
+            </ToolScp>
+        </List>
+        <StartList>
+            <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+            <ToolScp Scp="S_AI_SET_TENDENCY" Client="NO" UseSleep="NO">
+                <Str Str="Attack"/>
+            </ToolScp>
+        </StartList>
+    </AI>
+    <AI Name="CORAL_32_2_SQ_5_AI" UpdateMS="8000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="CORAL_32_2_SQ_5_HATE"/>
+            </ToolScp>
+        </List>
+        <StartList>
+            <ToolScp Scp="S_AI_EFFECT_ATTACH" Client="NO" UseSleep="NO" CondFunc="">
+                <Num Num="0"/>
+                <Str_Arg Str="I_smoke053_mint_loop" Arg="1.5"/>
+                <Str Str="MID"/>
+            </ToolScp>
+        </StartList>
+    </AI>
+    <AI Name="CORAL_32_2_SQ_6_AI1" UpdateMS="1000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="CORAL_32_2_SQ_6_AI1"/>
+            </ToolScp>
+        </List>
+        <HitList>
+            <ToolScp Scp="SAI_HIT_DIRECT_RUN" Client="NO" UseSleep="NO">
+                <Str Str="CORAL_32_2_SQ_6_AI_HIT"/>
+            </ToolScp>
+        </HitList>
+        <StartList>
+            <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+        </StartList>
+    </AI>
+    <AI Name="CORAL_32_2_SQ_6_AI2" UpdateMS="1000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="CORAL_32_2_SQ_6_AI2"/>
+            </ToolScp>
+        </List>
+        <HitList>
+            <ToolScp Scp="SAI_HIT_DIRECT_RUN" Client="NO" UseSleep="NO">
+                <Str Str="CORAL_32_2_SQ_6_AI_HIT"/>
+            </ToolScp>
+        </HitList>
+        <StartList>
+            <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+        </StartList>
+    </AI>
+    <AI Name="CORAL_32_2_SQ_8_AI" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
+                <Num Num="100"/>
+            </ToolScp>
+        </List>
+        <HitList>
+            <ToolScp Scp="SAI_HIT_DIRECT_RUN" Client="NO" UseSleep="NO">
+                <Str Str="CORAL_32_2_SQ_8_MON"/>
+            </ToolScp>
+        </HitList>
+        <StartList>
+            <ToolScp Scp="SAI_FUNC_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="CORAL_32_2_SQ_8_MON_HPLCOK"/>
+            </ToolScp>
+            <ToolScp Scp="S_AI_SET_TENDENCY" Client="NO" UseSleep="NO">
+                <Str Str="Attack"/>
+            </ToolScp>
+        </StartList>
+    </AI>
+    <AI Name="CORAL_32_2_SQ_8_AI2" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SetFixAnim" Client="NO" UseSleep="NO">
+                <Str Str="KNOCKDOWN"/>
+            </ToolScp>
+        </List>
+    </AI>
+    <AI Name="CORAL_35_2_CRYSTAL_MARINE_AI" ActiveMessageMapInBattle="1">
         <StartList>
             <ToolScp Scp="S_AI_EFFECT_ATTACH" Client="NO" UseSleep="NO">
                 <Num Num="0"/>
@@ -6344,6 +6428,81 @@ Name="CORAL_32_1_SQ_3_AI" ActiveMessageMapInBattle="1">
             </ToolScp>
             <ToolScp Scp="Kill" Client="NO" UseSleep="NO"/>
         </List>
+    </AI>
+    <AI Name="KATYN_45_1_SQ_3_AI" UpdateMS="1000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="KATYN_45_1_SQ3_NPC_AI"/>
+            </ToolScp>
+        </List>
+        <HitList>
+            <ToolScp Scp="SAI_HIT_DIRECT_RUN" Client="NO" UseSleep="NO">
+                <Str Str="KATYN_45_1_SQ3_NPC_AI_HIT"/>
+            </ToolScp>
+            <ToolScp Scp="SAI_DAMAGE_CHAT" Client="NO" UseSleep="NO">
+                <Str Str="도와주게!"/>
+                <Num Num="3"/>
+            </ToolScp>
+        </HitList>
+    </AI>
+    <AI Name="KATYN_45_2_SQ_10_AI" UpdateMS="1000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1" CondFunc="">
+                <AbsPos X="-32.78196" Y="244.8333" Z="959.37164"/>
+            </ToolScp>
+            <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
+                <Num Num="100"/>
+            </ToolScp>
+        </List>
+        <StartList>
+            <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+        </StartList>
+    </AI>
+    <AI Name="KATYN_45_2_SQ_10_D_AI" UpdateMS="2000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="SCR_KATYN_45_2_LOOK2"/>
+            </ToolScp>
+        </List>
+        <StartList>
+            <ToolScp Scp="S_AI_SET_BTREE" Client="NO" UseSleep="NO">
+                <Num Num="1"/>
+            </ToolScp>
+        </StartList>
+    </AI>
+    <AI Name="KATYN_45_2_SQ_11_AI" UpdateMS="1000" ActiveMessageMapInBattle="1">
+        <DeadList>
+            <ToolScp Scp="SAI_DEAD_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="SCR_KATYN_45_2_SQ_11_RUN"/>
+            </ToolScp>
+        </DeadList>
+    </AI>
+    <AI Name="KATYN_45_3_SQ_14_AI" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="KATYN_45_3_SQ_14_SOUL_RUN_AI2"/>
+            </ToolScp>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="KATYN_45_3_SQ_14_SOUL_RUN_AI1"/>
+            </ToolScp>
+        </List>
+    </AI>
+    <AI Name="KATYN_45_3_SQ_3_AI" UpdateMS="1000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="KATYN_45_3_SQ_3_NPC_AI"/>
+            </ToolScp>
+        </List>
+    </AI>
+    <AI Name="KATYN_45_3_SQ_7_AI" UpdateMS="2000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="KATYN_45_3_SQ_7_NPC_AI"/>
+            </ToolScp>
+        </List>
+        <StartList>
+            <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+        </StartList>
     </AI>
     <AI Name="KATYN_OWL_FIRE" ActiveMessageMapInBattle="1">
         <List>
@@ -12372,6 +12531,13 @@ if self.HP == 0 then return 1; else return 0; end;">
         </LeaveList>
     </AI>
     <AI Name="companion_Guineapig" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT_SLEEP" Client="NO" UseSleep="YES">
+                <Str Str="PET_LOOP_AI"/>
+            </ToolScp>
+        </List>
+    </AI>
+    <AI Name="companion_penguin" ActiveMessageMapInBattle="1">
         <List>
             <ToolScp Scp="SAI_FUNC2_DIRECT_SLEEP" Client="NO" UseSleep="YES">
                 <Str Str="PET_LOOP_AI"/>

@@ -38,10 +38,8 @@ function BOOKITEM_UI_CLOSE()
 end
 
 function ON_READ_BOOK_ITEM(frame, msg, argStr, argNum)
-
-	BOOKITEM_UI_INIT();
+	BOOKITEM_UI_CLOSE()
 	g_bookClassName = argStr;
-
 	control.EnableControl(0,1);
 	VIEW_BOOKITEM_PAGE(frame, g_bookPage);
 	frame:ShowWindow(1);

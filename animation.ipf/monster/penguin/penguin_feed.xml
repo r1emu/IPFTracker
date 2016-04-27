@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <ActionDesc>
 	<CreateMonster frame="0" MonName="sardina" Key="sardina" Angle="0" Dist="0" MonAngle="0"/>
 	<CreateMonsterAnim frame="0" Key="sardina" Anim="feed" Freeze="0"/>
-	<DeleteMonster frame="23" Key="sardina"/>
-	<Sound frame="0.00" soundFile="mon_voice7_s_2"/>
-	<Sound frame="0.00" soundFile="mon_move_s"/>
+	<Sound frame="0.00" soundFile="skl_eff_move_s_1"/>
+	<Sound frame="10.00" soundFile="skl_eff_move_s_1"/>
+	<Sound frame="0.00" soundFile="mon_voice_pet_penguin_feed_cast"/>
+	<Sound frame="11.00" soundFile="mon_voice_pet_penguin_feed_shot"/>
+	<Sound frame="20.00" soundFile="skl_eff_bite_s_1"/>
+	<Sound frame="25.00" soundFile="skl_eff_move_s_1"/>
 </ActionDesc>

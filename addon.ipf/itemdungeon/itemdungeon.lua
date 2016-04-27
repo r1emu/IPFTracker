@@ -399,8 +399,8 @@ function ITEMDUNGEON_DROP_WEALTH_ITEM(parent, ctrl)
 		return;
 	end
 
-	if invItem.isLockState then 
-		ui.SysMsg(ClMsg("MaterialItemIsLock"));
+	if itemObj.ItemLifeTimeOver > 0 then
+		ui.SysMsg(ScpArgMsg('LessThanItemLifeTime'));
 		return;
 	end
 

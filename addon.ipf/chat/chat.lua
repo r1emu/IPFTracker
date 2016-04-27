@@ -345,6 +345,10 @@ function GET_CHAT_FONT_SIZE()
 			
 end
 
+function CHAT_NOTICE(msg)
+	session.ui.GetChatMsg():AddNoticeMsg(ScpArgMsg("NoticeFrameName"), msg, true); 
+end
+
 function CHAT_SYSTEM(msg)
 	session.ui.GetChatMsg():AddSystemMsg(msg, true); 
 end

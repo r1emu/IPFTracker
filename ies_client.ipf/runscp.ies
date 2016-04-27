@@ -37,6 +37,7 @@ ClassID,ClassName,Script,Name,Factor1,Factor2,Factor3,Factor4
 37,TEST_EFFECT,TEST_EFFECT,이펙트 테스트,이펙트 이름,,,
 38,RESET_STAT,SCR_TX_RESET_STAT,스탯 초기화,,,,
 39,TRACK_PARTY_TEST,TRACK_PARTY_TEST,파티 트랙 테스트(강제),퀘스트명,,,
-40,QuestStateModifyByGM,GM_QUEST_MODIFY,주변 PC 퀘스트 진행상태 변경,퀘스트 검색어,,,
+40,QuestStateModifyByGM,GM_QUEST_MODIFY,운영자 : 주변 PC 퀘스트 진행상태 변경,퀘스트 검색어,,,
 41,SetAchievePoint,SCR_SET_ACHIEVE_POINT,업적포인트 설정,업적 ClassName,AddPoint,,
 42,ResetLevel,SCR_RESET_LEVEL,레벨 리셋,,,,
+43,GM_NPC_HIDE_UNHIDE,GM_NPC_HIDE_UNHIDE,운영자 : 주변 PC의 NPC Hide/UnHide 변경,NPC 함수명,UnHide:0/Hide:1,,

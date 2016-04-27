@@ -39,6 +39,7 @@ end
 function CANCEL_DELETE_WARNING_BOX()		
 	ui.SetEscapeScp("");	
 	local frame = ui.GetFrame("deleteWarningBox");	
+	CHAR_N_PET_LIST_LOCKMANGED(1);
 	DELETE_WARNING_BOX_RESET(frame);
 end
 

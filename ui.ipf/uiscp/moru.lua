@@ -74,9 +74,9 @@ function CURSOR_CHECK_REINF(slot)
 	local fromItem, fromMoru = REINFORCE_131014_GET_ITEM(upgradeitem_2);
 	local moruObj = GetIES(fromMoru:GetObject());
 	local obj = GetIES(item:GetObject());
-	if moruObj.ClassName == "Moru_Premium" or moruObj.ClassName == "Moru_Gold" then -- Ȳ�ݸ�� ������Ʈ�̸� 
+	if moruObj.ClassName == "Moru_Premium" or moruObj.ClassName == "Moru_Gold" then
 		if 1 == REINFORCE_ABLE_131014(obj) 
-			and obj.PR == 0 then  -- �������� 0�̾��.
+			and obj.PR == 0 then
 			return 1;
 		end
 		return 0;

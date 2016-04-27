@@ -30,7 +30,7 @@ function JOURNALTREE_CLICK(parent, ctrl, str, num)
 	if #sList >= 5 then
 		cateValue = sList[5]; -- ½Ä¹°?¾Ç¸¶?
 	end
-
+	
 	local frame = parent:GetParent(); -- gbox
 	frame = frame:GetParent(); -- ctrlset?
 	frame:SetUserValue("SELECT_CATEGORY", selValue);
@@ -178,35 +178,35 @@ function SET_ITEM_CATEGORY_BY_PROP(tree)
 			iesPropName = cls.ClassName;
 		end
 		if iesPropName ~= "Recipe" then
-		local subCateList = {};
-		if nil ~= cls and cls.SubCategory ~= "None" then
-			subCateList = StringSplit(cls.SubCategory, "/");
-		end
-		local title = ClMsg(iesPropName);
-		local ctrlSet = tree:CreateControlSet("journal_tree", "CTRLSET_" .. i, ui.LEFT, 0, 0, 0, 0, 0);
-		local part = ctrlSet:GetChild("part");
-		part:SetTextByKey("value", title);
+			local subCateList = {};
+			if nil ~= cls and cls.SubCategory ~= "None" then
+				subCateList = StringSplit(cls.SubCategory, "/");
+			end
+			local title = ClMsg(iesPropName);
+			local ctrlSet = tree:CreateControlSet("journal_tree", "CTRLSET_" .. i, ui.LEFT, 0, 0, 0, 0, 0);
+			local part = ctrlSet:GetChild("part");
+			part:SetTextByKey("value", title);
 
-		local data = "Item#GroupName#"..iesPropName.."#ClassType";
+			local data = "Item#GroupName#"..iesPropName.."#ClassType";
 
-		if 0 >= #subCateList then
-			local foldimg = ctrlSet:GetChild("foldimg");
-			foldimg:ShowWindow(0);
-			tree:Add(ctrlSet,  data);
-		else
-			tree:Add(ctrlSet, data);
-			local htreeitem = tree:FindByName(ctrlSet:GetName());
-			tree:SetFoldingScript(htreeitem, "KEYCONFIG_UPDATE_FOLDING");
-			for j = 1 , #subCateList do
-				local cate = subCateList[j]
-		    	if cate ~= 'None' then
-					tree:Add(htreeitem, "{ol}"..ClMsg(cate), data.."#"..cate, "{#FFCC33}{ds}");
-		    	end
+			if 0 >= #subCateList then
+				local foldimg = ctrlSet:GetChild("foldimg");
+				foldimg:ShowWindow(0);
+				tree:Add(ctrlSet,  data);
+			else
+				tree:Add(ctrlSet, data);
+				local htreeitem = tree:FindByName(ctrlSet:GetName());
+				tree:SetFoldingScript(htreeitem, "KEYCONFIG_UPDATE_FOLDING");
+				for j = 1 , #subCateList do
+					local cate = subCateList[j]
+			    	if cate ~= 'None' then
+						tree:Add(htreeitem, "{ol}"..ClMsg(cate), data.."#"..cate, "{#FFCC33}{ds}");
+			    	end
+				end
 			end
 		end
 	end
-	end
-
+	
 	if clMsgHeader == nil then
 		GBOX_AUTO_ALIGN(tree, 10, 10, 0)
 	else
@@ -255,7 +255,7 @@ function SET_CATEGORY_BY_PROP(tree, idSpace, groupName, classType, clMsgHeader, 
 
 			local data = idSpace .."#"..groupName.."#"..iesPropName.."#"..classType;
 			if typeList ~= nil and 0 < typeCnt and i > 0 then
-				tree:Add(ctrlSet);
+				tree:Add(ctrlSet, data);
 				local htreeitem = tree:FindByName(ctrlSet:GetName());
 				tree:SetFoldingScript(htreeitem, "KEYCONFIG_UPDATE_FOLDING");
 				for j = 1 , typeCnt do
@@ -362,10 +362,17 @@ end
 function JOURNAL_CHECK_FILTER(cls, filterName1, filterValue1, filterName2, filterValue2)
 	if filterValue1 ~= "All" then
 		local val = TryGetProp(cls, filterName1);
-		if val ~= filterValue1 then
-			return false;
-		end
+		if filterName1 == 'MonRank' and filterValue1 == 'Normal'then
+		    if val == 'Special' or val == 'Elite' or val == 'Boss' then
+    		    return false;
+    		end
+		else
+    		if val ~= filterValue1 then
+    			return false;
+    		end
+    	end
 	end
+
 
 	if filterValue2 ~= "All" then
 		local val = TryGetProp(cls, filterName2);

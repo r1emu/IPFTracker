@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by IMC (IMCGames Co., Ltd) -->
 <idspace id="HairType">
 	<Category>
 		<Class ClassID="1">
@@ -102,7 +102,7 @@
 			<Node Index="97" Type="댄디 웨이브컬" EngName="DandyWaveCurl" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
 			<Node Index="98" Type="노블 포니테일" EngName="NovlePonyTail" ColorE="blond" Color="애쉬 블론드" UseableBarrack="NO"/>
 			<Node Index="99" Type="노블 포니테일" EngName="NovlePonyTail" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
-		<Node Index="100" Type="숏 컷" EngName="Shortcut" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="100" Type="숏 컷" EngName="Shortcut" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
 			<Node Index="101" Type="숏 컷" EngName="Shortcut" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
 			<Node Index="102" Type="비대칭 숏 컷" EngName="UnbalancedShortcut" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
 			<Node Index="103" Type="비대칭 숏 컷" EngName="UnbalancedShortcut" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
@@ -130,15 +130,24 @@
 			<Node Index="125" Type="댄디 웨이브컬" EngName="DandyWaveCurl" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
 			<Node Index="126" Type="노블 포니테일" EngName="NovlePonyTail" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
 			<Node Index="127" Type="노블 포니테일" EngName="NovlePonyTail" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
-		<Node Index="128" Type="코카트리스 헤드(남)" EngName="CockatriesM" ColorE="default" Color="기본" UseableBarrack="NO"/>
+			<Node Index="128" Type="코카트리스 헤드(남)" EngName="CockatriesM" ColorE="default" Color="기본" UseableBarrack="NO"/>
 			<Node Index="129" Type="코카트리스 헤드(남)" EngName="CockatriesM" ColorE="black" Color="검은색" UseableBarrack="NO"/>
 			<Node Index="130" Type="코카트리스 헤드(남)" EngName="CockatriesM" ColorE="blue" Color="파란색" UseableBarrack="NO"/>
 			<Node Index="131" Type="코카트리스 헤드(남)" EngName="CockatriesM" ColorE="pink" Color="분홍색" UseableBarrack="NO"/>
 			<Node Index="132" Type="코카트리스 헤드(남)" EngName="CockatriesM" ColorE="white" Color="흰색" UseableBarrack="NO"/>
-		<Node Index="133" Type="코카트리스 헤드(남)" EngName="CockatriesM" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
+			<Node Index="133" Type="코카트리스 헤드(남)" EngName="CockatriesM" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
 			<Node Index="134" Type="코카트리스 헤드(남)" EngName="CockatriesM" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
 			<Node Index="135" Type="코카트리스 헤드(남)" EngName="CockatriesM" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
 			<Node Index="136" Type="코카트리스 헤드(남)" EngName="CockatriesM" ColorE="blond" Color="애쉬 블론드" UseableBarrack="NO"/>
+			<Node Index="137" Type="퀴프 컷" EngName="Onmyoji" ColorE="default" Color="기본" UseableBarrack="NO"/>
+			<Node Index="138" Type="퀴프 컷" EngName="Onmyoji" ColorE="black" Color="검은색" UseableBarrack="NO"/>
+			<Node Index="139" Type="퀴프 컷" EngName="Onmyoji" ColorE="blue" Color="파란색" UseableBarrack="NO"/>
+			<Node Index="140" Type="퀴프 컷" EngName="Onmyoji" ColorE="pink" Color="분홍색" UseableBarrack="NO"/>
+			<Node Index="141" Type="퀴프 컷" EngName="Onmyoji" ColorE="white" Color="흰색" UseableBarrack="NO"/>
+			<Node Index="142" Type="퀴프 컷" EngName="Onmyoji" ColorE="blond" Color="애쉬 블론드" UseableBarrack="NO"/>
+			<Node Index="143" Type="퀴프 컷" EngName="Onmyoji" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
+			<Node Index="144" Type="퀴프 컷" EngName="Onmyoji" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="145" Type="퀴프 컷" EngName="Onmyoji" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
 		</Class>
 		<Class ClassID="2">
 			<Node Index="1" Type="숏 컷" EngName="Shortcut" ColorE="default" Color="기본" UseableBarrack="YES"/>
@@ -255,7 +264,7 @@
 			<Node Index="112" Type="노블 롱" EngName="NovleLong" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
 			<Node Index="113" Type="숏 컷 펌" EngName="ShortCutPerm" ColorE="blond" Color="애쉬 블론드" UseableBarrack="NO"/>
 			<Node Index="114" Type="숏 컷 펌" EngName="ShortCutPerm" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
-		<Node Index="115" Type="숏 컷" EngName="Shortcut" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="115" Type="숏 컷" EngName="Shortcut" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
 			<Node Index="116" Type="숏 컷" EngName="Shortcut" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
 			<Node Index="117" Type="롱 샤기" EngName="LongShaggy" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
 			<Node Index="118" Type="롱 샤기" EngName="LongShaggy" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
@@ -287,15 +296,24 @@
 			<Node Index="144" Type="노블 롱" EngName="NovleLong" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
 			<Node Index="145" Type="숏 컷 펌" EngName="ShortCutPerm" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
 			<Node Index="146" Type="숏 컷 펌" EngName="ShortCutPerm" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
-		<Node Index="147" Type="코카트리스 헤드(여)" EngName="CockatriesF" ColorE="default" Color="기본" UseableBarrack="NO"/>
+			<Node Index="147" Type="코카트리스 헤드(여)" EngName="CockatriesF" ColorE="default" Color="기본" UseableBarrack="NO"/>
 			<Node Index="148" Type="코카트리스 헤드(여)" EngName="CockatriesF" ColorE="black" Color="검은색" UseableBarrack="NO"/>
 			<Node Index="149" Type="코카트리스 헤드(여)" EngName="CockatriesF" ColorE="blue" Color="파란색" UseableBarrack="NO"/>
 			<Node Index="150" Type="코카트리스 헤드(여)" EngName="CockatriesF" ColorE="pink" Color="분홍색" UseableBarrack="NO"/>
 			<Node Index="151" Type="코카트리스 헤드(여)" EngName="CockatriesF" ColorE="white" Color="흰색" UseableBarrack="NO"/>
-		<Node Index="152" Type="코카트리스 헤드(여)" EngName="CockatriesF" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
+			<Node Index="152" Type="코카트리스 헤드(여)" EngName="CockatriesF" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
 			<Node Index="153" Type="코카트리스 헤드(여)" EngName="CockatriesF" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
 			<Node Index="154" Type="코카트리스 헤드(여)" EngName="CockatriesF" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
 			<Node Index="155" Type="코카트리스 헤드(여)" EngName="CockatriesF" ColorE="blond" Color="애쉬 블론드" UseableBarrack="NO"/>
+			<Node Index="156" Type="롱 웨이브 펌" EngName="Jullahair" ColorE="default" Color="기본" UseableBarrack="NO"/>
+			<Node Index="157" Type="롱 웨이브 펌" EngName="Jullahair" ColorE="black" Color="검은색" UseableBarrack="NO"/>
+			<Node Index="158" Type="롱 웨이브 펌" EngName="Jullahair" ColorE="blue" Color="파란색" UseableBarrack="NO"/>
+			<Node Index="159" Type="롱 웨이브 펌" EngName="Jullahair" ColorE="pink" Color="분홍색" UseableBarrack="NO"/>
+			<Node Index="160" Type="롱 웨이브 펌" EngName="Jullahair" ColorE="white" Color="흰색" UseableBarrack="NO"/>
+			<Node Index="161" Type="롱 웨이브 펌" EngName="Jullahair" ColorE="blond" Color="애쉬 블론드" UseableBarrack="NO"/>
+			<Node Index="162" Type="롱 웨이브 펌" EngName="Jullahair" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
+			<Node Index="163" Type="롱 웨이브 펌" EngName="Jullahair" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="164" Type="롱 웨이브 펌" EngName="Jullahair" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
 		</Class>
 	</Category>
 </idspace>

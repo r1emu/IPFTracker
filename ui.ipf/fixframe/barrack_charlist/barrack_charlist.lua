@@ -65,6 +65,7 @@ function INIT_BARRACK_NAME(frame)
 	richtext:SetTextByKey("value", accountObj.GiftMedal);
 	richtext = frame:GetChild("tp");
 	richtext:SetTextByKey("value", accountObj.PremiumMedal);
+	CHAR_N_PET_LIST_LOCKMANGED(1);
 end
 
 function SET_CHILD_USER_VALUE(frame, childName, name, value)
@@ -884,10 +885,16 @@ function REQUEST_DELETE_PET(parent, ctrl)
 	local mainBox = parent:GetParent();
 	local petGuid = mainBox:GetUserValue("PET_ID");
 	DELETE_WARNING_BOX_ON_INIT(11, petGuid);
+	CHAR_N_PET_LIST_LOCKMANGED(0);
 end
 
 function _EXEC_DELETE_PET(petGuid, charCID)
 	barrack.RequestDeletePet(petGuid, charCID);
 end
 
-
+function CHAR_N_PET_LIST_LOCKMANGED(unlock)
+	local charFrame = ui.GetFrame("barrack_charlist");
+	local petFrame = ui.GetFrame("barrack_petlist");
+	charFrame:SetEnable(unlock);
+	petFrame:SetEnable(unlock);
+en

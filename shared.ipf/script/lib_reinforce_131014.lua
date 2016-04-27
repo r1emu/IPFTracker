@@ -86,7 +86,6 @@ function GET_REINFORCE_131014_HITCOUNT(fromItem, moru)
 	--local cls = GetClassByType("itemevolution", prop.evolutionType);
 
 	return 3;
-	---- 모루?� ?�이?�의 컬럼???�용?�서 몇번 모루�??�려???�는지 계산?�다.
 	--return cls.HitCount;
 
 end

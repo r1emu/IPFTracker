@@ -10,7 +10,6 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 21,501,0,50,9999,25000,27,0,0,0,0,0,Goblin_Miners,부베 광부,,,,,,,,,,NO,YES,NO,Monster,,,,Attack
 25,505,0,50,30,20000,7,0,0,0,0,0,Goblin_Miners,부베 광부,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,Attack
 33,513,0,30,30,20000,8,0,0,0,0,0,Bat,,,,,,,,,,,NO,YES,NO,Monster,SmartGen,,,Attack
-300,300,1,80,1,60000,1,0,0,0,0,0,HiddenTrigger2,별의 렌즈 [쿼렐슈터 전직],,,,MON_DUMMY,,,,JOB_QUARRELSHOOTER1_TRIGGER,,No,YES,NO,Neutral,,,,
 302,515,0,30,500,15000,20,0,0,0,0,0,StonOrca,스톤오르카,,,,,,,,,,NO,YES,NO,Monster,,,,Attack
 305,518,0,1,20,180000,30,0,0,0,0,0,Whip_vine_Ra,,,,,,,,,,,NO,YES,NO,Monster,,,,Attack
 306,519,0,1,20,180000,30,0,0,0,0,0,Whip_vine_Ra,,,,,,,,,,,NO,YES,NO,Monster,,,,Attack

@@ -1,0 +1,16 @@
+ClassID,Sleep,ClassName,PCAnim,ComAnim
+1,3000,GameStudio_None,FEED2,FEED
+2,3000,Mon_alpaka,FEED2,FEED
+3,3500,Velhider,FEED2,FEED
+4,3500,hoglan_Pet,FEED2,FEED
+5,3000,pet_hawk,FEED2,FEED
+6,3000,Piggy,FEED2,FEED
+7,3000,Lesser_panda,FEED2,FEED
+8,3000,Toucan,FEED2,FEED
+9,3000,Guineapig,FEED_SIT,FEED
+10,3000,barn_owl,FEED2,FEED
+11,3000,Piggy_baby,FEED2,FEED
+12,3000,Lesser_panda_baby,FEED2,FEED
+13,3000,guineapig_baby,FEED2,FEED
+14,1500,penguin,FEED2,FEED
+15,3000,Guineapigtest,FEED2,FEED

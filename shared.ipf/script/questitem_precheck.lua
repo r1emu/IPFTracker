@@ -5132,3 +5132,40 @@ function SCR_PRE_CORAL_35_2_SQ_14_FINDER(self, argstring, argnum1, argnum2)
     end
     return 0;
 end
+
+--CORAL_32_2_SQ_5_ITEM
+function SCR_PRE_CORAL_32_2_SQ_5_ITEM(self, argObj, BuffName, arg1, arg2)
+    if GetZoneName(self) == 'f_coral_32_2' then
+        if GetLayer(self) == 0 then
+            local x, y, z = GetPos(self)
+            local dist1 = SCR_POINT_DISTANCE(x, z, -698, 785)
+            local dist2 = SCR_POINT_DISTANCE(x, z, 4, 39)
+            if dist1 <= 40 then
+                return 1;
+            elseif dist2 <= 40 then
+                return 1;
+            end
+        end
+    end
+    return 0;
+end
+
+--CORAL_32_2_SQ_12_ITEM2
+function SCR_PRE_CORAL_32_2_SQ_12_ITEM2(self, argObj, BuffName, arg1, arg2)
+    if GetZoneName(self) == 'f_coral_32_2' then
+        if GetLayer(self) == 0 then
+            local list, cnt = SelectObject(self, 40, 'ALL', 1)
+            local i
+            if cnt > 0 then
+                for i = 1, cnt do
+                    if list[i].ClassName ~= 'PC' then
+                        if list[i].ClassName == 'Stone04' then
+                            return GetHandle(list[i])
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return 0;
+en

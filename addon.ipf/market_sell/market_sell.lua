@@ -84,6 +84,10 @@ function ON_MARKET_SELL_LIST(frame, msg, argStr, argNum)
 
 		local cashValue = GetCashValue(marketItem.premuimState, "marketSellCom") * 0.01;
 		local stralue = GetCashValue(marketItem.premuimState, "marketSellCom");
+		if itemObj.ClassID == 490000 then
+			 cashValue = 0;
+			 stralue = 0;
+		end
 		priceStr = string.format("{img icon_item_silver %d %d}%d[%d%%]", 20, 20, marketItem.sellPrice * marketItem.count * cashValue, stralue) 
 		local silverFee = ctrlSet:GetChild("silverFee");
 		silverFee:SetTextByKey("value", priceStr);

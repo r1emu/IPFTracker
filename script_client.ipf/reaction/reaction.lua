@@ -284,7 +284,9 @@ function C_SET_CAM_FIXHEIGHT(actor, obj, height)
 end
 
 function C_FIX_CAM_POSY(actor, obj, holdTime)
+	if GetMyActor() == actor then
 	view.SetLockCamPosY(holdTime);
+end
 end
 
 function C_CAM_NOWAT_TIMERATIO(actor, obj, ratio)
