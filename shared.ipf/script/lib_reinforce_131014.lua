@@ -83,9 +83,6 @@ function GET_REINFORCE_131014_HITCOUNT(fromItem, moru)
 	local ItemStar = fromItem.ItemStar;
 	
 	local prop = geItemTable.GetProp(fromItem.ClassID);
-	--local cls = GetClassByType("itemevolution", prop.evolutionType);
-
 	return 3;
-	--return cls.HitCount;
 
 end

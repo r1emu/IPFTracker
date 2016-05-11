@@ -268,6 +268,12 @@ function SET_CATEGORY_BY_PROP(tree, idSpace, groupName, classType, clMsgHeader, 
 						propName = typeList[j];
 					end
 
+					if "Monster" == idSpace then
+						if ("Item" == propName) or ("Cloth" == propName) then
+							propName = 'None';
+						end;	
+					end;
+
 					if propName ~= 'None' then
 						tree:Add(htreeitem, "{ol}"..ClMsg(propName), data.."#"..propName, "{#FFCC33}{ds}");
 					end
@@ -362,16 +368,15 @@ end
 function JOURNAL_CHECK_FILTER(cls, filterName1, filterValue1, filterName2, filterValue2)
 	if filterValue1 ~= "All" then
 		local val = TryGetProp(cls, filterName1);
-		if filterName1 == 'MonRank' and filterValue1 == 'Normal'then
-		    if val == 'Special' or val == 'Elite' or val == 'Boss' then
+		if val ~= filterValue1 then
     		    return false;
     		end
-		else
-    		if val ~= filterValue1 then
+	else
+		local val = TryGetProp(cls, filterName1);
+		if val == 'Material' then
     			return false;
     		end
     	end
-	end
 
 
 	if filterValue2 ~= "All" then

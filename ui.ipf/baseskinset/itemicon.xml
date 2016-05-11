@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by aasdasd (IMCGames Co., Ltd) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <skinset name="Base">
 	<imagelist category="item_tooltip_icon">
 		<image name="item_angle_icon" file="\skin\mainframe_A.tga" imgrect="818 710 30 20" CMM_Caption="S 랭크 아이템 아이콘"/>
@@ -513,6 +513,8 @@
 		<image name="icon_item_warrior_orsha_soldier_m" file="\icon\equip\warrior_m_orsha_soldier.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_mage_yuurs_m" file="\icon\equip\mage_m_yuurs.png" imgrect="0 0 256 256" CMM_Caption="3랭크코스튬"/>
 		<image name="icon_item_mage_grita_f" file="\icon\equip\mage_f_grita.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_archer_quarreelshooter01_3_m" file="\icon\equip\archer_m_quarreelshooter01_3.png" imgrect="0 0 256 256" CMM_Caption="3랭크코스튬_쿼렐"/>
+		<image name="icon_item_archer_quarreelshooter01_3_f" file="\icon\equip\archer_f_quarreelshooter01_3.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="256_weapone_icons">
 		<image name="icon_item_artefact_210011" file="\icon\weapon\icon_item_artefact_210011.png" imgrect="0 0 256 256" CMM_Caption="요령"/>
@@ -3431,8 +3433,9 @@
 		<image name="icon_item_sardine_modum" file="\icon\item\icon_item_sardine_modum.png" imgrect="0 0 128 128" CMM_Caption="정어리모둠"/>
 		<image name="icon_item_sardine" file="\icon\item\icon_item_sardine.png" imgrect="0 0 128 128" CMM_Caption="정어리"/>
 		<image name="icon_item_egg_penguin" file="\icon\item\icon_item_egg_penguin.png" imgrect="0 0 128 128" CMM_Caption="펭귄알"/>
-	<image name="icon_item_bluenecklace" file="\icon\item\icon_item_bluenecklace.png" imgrect="0 0 128 128" CMM_Caption="종유동굴 검은목걸이"/>
+		<image name="icon_item_bluenecklace" file="\icon\item\icon_item_bluenecklace.png" imgrect="0 0 128 128" CMM_Caption="종유동굴 검은목걸이"/>
 		<image name="icon_item_blacknecklace" file="\icon\item\icon_item_blacknecklace.png" imgrect="0 0 128 128" CMM_Caption="종유동굴 푸른목걸이"/>
+		<image name="icon_item_Anchovy" file="\icon\item\icon_item_Anchovy.png" imgrect="0 0 128 128" CMM_Caption="멸치"/>
 	</imagelist>
 	<imagelist category="payment">
 		<image name="icon_item_hpPotionPremium" file="\icon\payment\icon_item_hpPotionPremium.png" imgrect="0 0 256 256" CMM_Caption="HP포션"/>
@@ -3539,6 +3542,14 @@
 		<image name="icon_item_mage_springflower_f" file="\icon\payment\mage_f_springflower.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_archer_springflower_m" file="\icon\payment\archer_m_springflower.png" imgrect="0 0 256 256" CMM_Caption="봄코스튬_아쳐"/>
 		<image name="icon_item_archer_springflower_f" file="\icon\payment\archer_f_springflower.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_archer_fedimian_mercenary2_2_m" file="\icon\payment\archer_m_fedimian_mercenary2_2.png" imgrect="0 0 256 256" CMM_Caption="실버코스튬"/>
+		<image name="icon_item_cleric_julla_f" file="\icon\payment\cleric_f_julla.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_cleric_alf_m" file="\icon\payment\cleric_m_alf.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_mage_wizard_master_f" file="\icon\payment\mage_f_wizard_master.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_mage_castle_lord_m" file="\icon\payment\mage_m_castle_lord.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_warrior_intermediate_officer_f" file="\icon\payment\warrior_f_intermediate_officer.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_archer_warehouse_keeper_f" file="\icon\payment\archer_f_warehouse_keeper.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_warrior_knight_m" file="\icon\payment\warrior_m_knight.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_lens_yellow" file="\icon\payment\lens_yellow.png" imgrect="0 0 256 256" CMM_Caption="렌즈"/>
 		<image name="icon_item_lens_perple" file="\icon\payment\lens_perple.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_package_penguin" file="\icon\payment\icon_item_package_penguin.png" imgrect="0 0 256 256" CMM_Caption="펭귄패키지"/>

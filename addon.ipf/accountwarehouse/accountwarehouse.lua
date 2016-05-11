@@ -139,6 +139,10 @@ function EXEC_PUT_ITEM_TO_ACCOUNT_WAREHOUSE(frame, count, inputframe)
 	item.PutItemToWarehouse(IT_ACCOUNT_WAREHOUSE, iesid, tonumber(count), frame:GetUserIValue("HANDLE"));
 end
 
+function ACCOUNT_WAREHOUSE_SLOT_RESET(frame, slot)
+	slot:Select(0, 1);
+end
+
 function ON_ACCOUNT_WAREHOUSE_ITEM_LIST(frame)
 
 	if frame:IsVisible() == 0 then

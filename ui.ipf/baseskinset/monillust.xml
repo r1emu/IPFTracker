@@ -1007,5 +1007,11 @@
 	<image name="mon_Colifly_black" file="\icon\monster\mon\mon_Colifly_black.png" imgrect="0 0 80 80"/>
 		<image name="mon_pyran_green" file="\icon\monster\mon\mon_pyran_green.png" imgrect="0 0 80 80"/>
 		<image name="mon_velffigy_green" file="\icon\monster\mon\mon_velffigy_green.png" imgrect="0 0 80 80"/>
+	<image name="mon_yognome_yellow" file="\icon\monster\mon\mon_yognome_yellow.png" imgrect="0 0 80 80"/>
+		<image name="mon_Egnome_yellow" file="\icon\monster\mon\mon_Egnome_yellow.png" imgrect="0 0 80 80"/>
+	</imagelist>
+	<imagelist category="Monster_icon_nor_08">
+		<image name="mon_Gazing_Golem_yellow" file="\icon\monster\mon\mon_Gazing_Golem_yellow.png" imgrect="0 0 80 80"/>
+		<image name="mon_Moya_yellow" file="\icon\monster\mon\mon_Moya_yellow.png" imgrect="0 0 80 80"/>
 	</imagelist>
 </skinset>

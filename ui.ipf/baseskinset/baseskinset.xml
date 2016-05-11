@@ -2769,6 +2769,28 @@
 			<img name="bottomcore" imgrect="1430 904 20 29"/>
 			<img name="bottomright" imgrect="1451 904 20 29"/>
 		</skin>
+	<skin name="dropbox_skin" texture="\skin\MCC_skin.tga">
+			<img name="topleft" imgrect="209 151 20 20"/>
+			<img name="topcore" imgrect="230 151 20 20"/>
+			<img name="topright" imgrect="251 151 20 20"/>
+			<img name="bodyleft" imgrect="209 172 20 20"/>
+			<img name="bodycore" imgrect="230 172 20 20"/>
+			<img name="bodyright" imgrect="251 172 20 20"/>
+			<img name="bottomleft" imgrect="209 193 20 20"/>
+			<img name="bottomcore" imgrect="230 193 20 20"/>
+			<img name="bottomright" imgrect="251 193 20 20"/>
+		</skin>
+		<skin name="dropbox_check_skin" texture="\skin\MCC_skin.tga">
+			<img name="topleft" imgrect="272 151 20 20"/>
+			<img name="topcore" imgrect="293 151 20 20"/>
+			<img name="topright" imgrect="314 151 20 20"/>
+			<img name="bodyleft" imgrect="272 172 20 20"/>
+			<img name="bodycore" imgrect="293 172 20 20"/>
+			<img name="bodyright" imgrect="314 172 20 20"/>
+			<img name="bottomleft" imgrect="272 193 20 20"/>
+			<img name="bottomcore" imgrect="293 193 20 20"/>
+			<img name="bottomright" imgrect="314 193 20 20"/>
+		</skin>
 	</skinlist>
 	<skinlist category="buttons">
 		<skin name="button_companion" texture="\skin\barrack.tga">
@@ -4329,6 +4351,29 @@
 	<image name="transcendence_bg2" file="\skin\transcendence_skin2.tga" imgrect="0 0 415 707" CMM_Caption="분해배경"/>
 		<image name="transcendence_bg3" file="\skin\transcendence_skin copy3.tga" imgrect="0 0 415 707" CMM_Caption="제거배경"/>
 	</imagelist>
+	<imagelist category="MCC_image">
+		<image name="MCC_one" file="\skin\MCC_skin.tga" imgrect="237 0 50 50"/>
+		<image name="MCC_two" file="\skin\MCC_skin.tga" imgrect="288 0 50 50"/>
+		<image name="MCC_three" file="\skin\MCC_skin.tga" imgrect="339 0 50 50"/>
+		<image name="MCC_checkbox" file="\skin\MCC_skin.tga" imgrect="390 0 15 16"/>
+		<image name="MCC_check" file="\skin\MCC_skin.tga" imgrect="407 0 25 20"/>
+		<image name="MCC_changebg" file="\skin\MCC_skin.tga" imgrect="153 151 55 55"/>
+		<image name="MCC_autobg" file="\skin\MCC_skin.tga" imgrect="0 0 80 60"/>
+		<image name="MCC_down" file="\skin\MCC_skin.tga" imgrect="390 17 16 16"/>
+		<image name="MCC_up" file="\skin\MCC_skin.tga" imgrect="390 34 16 16"/>
+		<image name="MCC_changebtn" file="\skin\MCC_skin.tga" imgrect="0 151 80 80" CMM_Caption="체인지버튼"/>
+		<image name="MCC_changebtn_cursoron" file="\skin\MCC_skin.tga" imgrect="51 151 80 80"/>
+		<image name="MCC_changebtn_clicked" file="\skin\MCC_skin.tga" imgrect="101 151 80 80"/>
+		<image name="MCC_autobtn" file="\skin\MCC_skin.tga" imgrect="81 0 51 24" CMM_Caption="auto버튼"/>
+		<image name="MCC_autobtn_cursoron" file="\skin\MCC_skin.tga" imgrect="133 0 51 24"/>
+		<image name="MCC_autobtn_clicked" file="\skin\MCC_skin.tga" imgrect="185 0 51 24"/>
+		<image name="MCC_optionbtn" file="\skin\MCC_skin.tga" imgrect="81 25 51 24" CMM_Caption="설정버튼"/>
+		<image name="MCC_optionbtn_cursoron" file="\skin\MCC_skin.tga" imgrect="133 25 51 24"/>
+		<image name="MCC_optionbtn_clicked" file="\skin\MCC_skin.tga" imgrect="185 25 51 24"/>
+		<image name="MCC_resetbtn" file="\skin\MCC_skin.tga" imgrect="465 0 47 36" CMM_Caption="리셋버튼"/>
+		<image name="MCC_resetbtn_cursoron" file="\skin\MCC_skin.tga" imgrect="465 37 47 36"/>
+		<image name="MCC_resetbtn_clicked" file="\skin\MCC_skin.tga" imgrect="465 74 47 36"/>
+	</imagelist>
 	<imagelist category="tutorial_img">
 		<image name="tutr_img_btn_left" file="\skin\mainframe_04.tga" imgrect="371 448 44 44"/>
 		<image name="tutr_img_btn_down" file="\skin\mainframe_04.tga" imgrect="425 448 44 44"/>
@@ -4840,6 +4885,7 @@
 	</imagelist>
 	<imagelist category="party">
 		<image name="None_Mark" file="\skin\mainframe_A.tga" imgrect="147 851 1 1"/>
+		<image name="battle_mark" file="\skin\mainframe_A.tga" imgrect="115 731 32 20"/>
 		<image name="guild_master_mark" file="\skin\mainframe_A.tga" imgrect="115 776 32 20"/>
 		<image name="party_corsair_mark" file="\skin\mainframe_A.tga" imgrect="147 830 32 20"/>
 		<image name="party_leader_mark" file="\skin\mainframe_A.tga" imgrect="147 851 32 20"/>
@@ -5626,6 +5672,9 @@
 		<image name="button_chat_Emo" file="\skin\HUD.tga" imgrect="866 345 34 34" CMM_Caption="chat_Emoticons"/>
 		<image name="button_chat_Emo_cursoron" file="\skin\HUD.tga" imgrect="901 345 34 34"/>
 		<image name="button_chat_Emo_clicked" file="\skin\HUD.tga" imgrect="936 345 34 34"/>
+		<image name="button_chat_kind" file="\skin\HUD.tga" imgrect="1318 916 56 34" CMM_Caption="채팅분류"/>
+		<image name="button_chat_kind_cursoron" file="\skin\HUD.tga" imgrect="1375 916 56 34"/>
+		<image name="button_chat_kind_clicked" file="\skin\HUD.tga" imgrect="1432 916 56 34"/>
 		<image name="button_chat_option" file="\skin\HUD.tga" imgrect="866 381 34 34" CMM_Caption="채팅옵션"/>
 		<image name="button_chat_option_cursoron" file="\skin\HUD.tga" imgrect="901 381 34 34"/>
 		<image name="button_chat_option_clicked" file="\skin\HUD.tga" imgrect="936 381 34 34"/>
@@ -5974,6 +6023,7 @@
 		<image name="icon_nexonpc" file="\icon\buff_icon.tga" imgrect="640 1152 128 128" CMM_Caption="넥슨피시방"/>
 		<image name="icon_expup" file="\icon\buff_icon.tga" imgrect="768 1152 128 128" CMM_Caption="경험의서버프"/>
 		<image name="icon_teamexpup" file="\icon\buff_icon.tga" imgrect="896 1152 128 128" CMM_Caption="팀경험치"/>
+	<image name="icon_fieldboss" file="\icon\buff_icon.tga" imgrect="0 1280 128 128" CMM_Caption="필드보스패널티"/>
 	</imagelist>
 	<imagelist category="for frame"/>
 	<imagelist category="roadmap"/>
@@ -6285,6 +6335,9 @@
 		<image name="130_boss_Kubas" file="\skin\bosscard\130_boss_Kubas.tga" imgrect="0 0 330 440"/>
 		<image name="131_boss_capria" file="\skin\bosscard\131_boss_capria.tga" imgrect="0 0 330 440"/>
 		<image name="132_boss_Flammidus" file="\skin\bosscard\132_boss_Flammidus.png" imgrect="0 0 330 440"/>
+	<image name="133_boss_simorph" file="\skin\bosscard\133_boss_simorph.png" imgrect="0 0 330 440"/>
+		<image name="134_boss_graygolem" file="\skin\bosscard\134_boss_graygolem.png" imgrect="0 0 330 440"/>
+		<image name="135_boss_nepenthes" file="\skin\bosscard\135_boss_nepenthes.png" imgrect="0 0 330 440"/>
 	</imagelist>
 	<effectimagelist category="effectlist">
 		<image name="blue_orb" file="\icon\blue_orb.tga" imgrect="0 0 256 256"/>

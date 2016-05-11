@@ -56,7 +56,7 @@ ClassID,Price,JobGrade,LimitCount,ClassName,Category,SubCategory,ItemClassName,J
 55,49,0,0,ClassName55,TP_Costume,TP_Costume_Color,Premium_hairColor_01,
 56,49,0,0,ClassName56,TP_Costume,TP_Costume_Color,Premium_hairColor_02,
 57,49,0,0,ClassName57,TP_Costume,TP_Costume_Color,Premium_hairColor_03,
-58,49,0,1,ClassName58,TP_Costume,TP_Costume_Color,Premium_hairColor_04,
+58,49,0,0,ClassName58,TP_Costume,TP_Costume_Color,Premium_hairColor_04,
 59,129,3,0,ClassName59,TP_Costume,TP_Costume_M,costume_wiz_m_003,Char2_1
 60,129,3,0,ClassName60,TP_Costume,TP_Costume_F,costume_wiz_f_003,Char2_1
 61,129,0,0,ClassName61,TP_Costume,TP_Costume_M,costume_Com_4,
@@ -78,3 +78,15 @@ ClassID,Price,JobGrade,LimitCount,ClassName,Category,SubCategory,ItemClassName,J
 78,129,1,0,ClassName78,TP_Costume,TP_Costume_F,costume_wiz_f_004,Char2_1
 79,129,1,0,ClassName79,TP_Costume,TP_Costume_M,costume_clr_m_004,Char4_1
 80,3,0,0,ClassName80,TP_Consume,,food_penguin,
+81,49,0,0,ClassName81,TP_Costume,TP_Costume_Lens,LENS01_001,
+82,49,0,0,ClassName82,TP_Costume,TP_Costume_Lens,LENS01_002,
+83,129,3,0,ClassName83,TP_Costume,TP_Costume_M,costume_arc_m_006,Char3_3
+84,129,3,0,ClassName84,TP_Costume,TP_Costume_F,costume_arc_f_006,Char3_3
+85,59,1,0,ClassName85,TP_Costume,TP_Costume_M,costume_war_m_006,Char1_1
+86,59,1,0,ClassName86,TP_Costume,TP_Costume_F,costume_war_f_006,Char1_1
+87,59,1,0,ClassName87,TP_Costume,TP_Costume_M,costume_wiz_m_006,Char2_1
+88,59,1,0,ClassName88,TP_Costume,TP_Costume_F,costume_wiz_f_006,Char2_1
+89,59,1,0,ClassName89,TP_Costume,TP_Costume_M,costume_arc_m_007,Char3_1
+90,59,1,0,ClassName90,TP_Costume,TP_Costume_F,costume_arc_f_007,Char3_1
+91,59,1,0,ClassName91,TP_Costume,TP_Costume_M,costume_clr_m_006,Char4_1
+92,59,1,0,ClassName92,TP_Costume,TP_Costume_F,costume_clr_f_006,Char4_1

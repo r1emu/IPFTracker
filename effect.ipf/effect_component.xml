@@ -142,8 +142,13 @@
 	<Particle name="emo_blindeffect" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="401" texel_y="0" texel_width="100" texel_height="100"/>
 	<Particle name="emo_ppuing" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="101" texel_y="401" texel_width="100" texel_height="100"/>
 	<Particle name="emo_merong" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="401" texel_width="100" texel_height="100"/>
-	<Particle name="damagerank5" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="401" texel_y="201" texel_width="100" texel_height="100"/>
-	<Particle name="damagerank4" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="301" texel_y="201" texel_width="100" texel_height="100"/>
+	<Particle name="damagerank10" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="401" texel_y="501" texel_width="100" texel_height="100"/>
+	<Particle name="damagerank9" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="301" texel_y="501" texel_width="100" texel_height="100"/>
+	<Particle name="damagerank8" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="201" texel_y="501" texel_width="100" texel_height="100"/>
+	<Particle name="damagerank7" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="101" texel_y="501" texel_width="100" texel_height="100"/>
+	<Particle name="damagerank6" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="501" texel_width="100" texel_height="100"/>
+	<Particle name="damagerank5" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="401" texel_y="301" texel_width="100" texel_height="100"/>
+	<Particle name="damagerank4" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="301" texel_y="301" texel_width="100" texel_height="100"/>
 	<Particle name="damagerank3_crown" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="201" texel_y="301" texel_width="100" texel_height="100"/>
 	<Particle name="damagerank2_crown" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="101" texel_y="301" texel_width="100" texel_height="100"/>
 	<Particle name="damagerank1_crown" texture="noticeeffect2" width="10.00" height="9.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="301" texel_width="100" texel_height="100"/>

@@ -447,6 +447,32 @@ function SCR_GET_SKL_COOLDOWN_HealingFactor(skill)
 	
 end
 
+function SCR_GET_SKL_COOLDOWN_GravityPole(skill)
+	
+	local pc = GetSkillOwner(skill);
+	local basicCoolDown = skill.BasicCoolDown;
+	local abilAddCoolDown = GetAbilityAddSpendValue(pc, skill.ClassName, "CoolDown");
+	
+	basicCoolDown = basicCoolDown + abilAddCoolDown;
+		
+	if IsBuffApplied(pc, 'CarveLaima_Buff') == 'YES' then
+		basicCoolDown = basicCoolDown * 0.8;
+	elseif IsBuffApplied(pc, 'CarveLaima_Debuff') == 'YES' then
+	    basicCoolDown = basicCoolDown * 1.2;
+	end
+	
+	if IsBuffApplied(pc, 'GM_Cooldown_Buff') == 'YES' then
+	    basicCoolDown = basicCoolDown * 0.9;
+	end
+	
+	if IsPVPServer(pc) == 1 then
+	    basicCoolDown = basicCoolDown + 15000;
+	end	
+
+	return math.floor(basicCoolDown);
+	
+end
+
 function SCR_Get_WaveLength(skill)
 
 	local pc = GetSkillOwner(skill);
@@ -5884,6 +5910,12 @@ end
 function SCR_GET_HealingFactor_Time(skill)
 
   local value = 15 + skill.Level * 5
+  
+  local pc = GetSkillOwner(skill);
+  if IsPVPServer(pc) == 1 then
+    value = math.min(27, value);
+  end
+  
   return value;
   
 end
@@ -5898,6 +5930,12 @@ end
 function SCR_GET_Bloodletting_Time(skill)
 
   local value = 30 + skill.Level * 5
+  
+  local pc = GetSkillOwner(skill);
+  if IsPVPServer(pc) == 1 then
+    value = 15 + skill.Level * 2;
+  end
+   
   return value;
   
 end
@@ -6183,6 +6221,19 @@ function SCR_GET_Heal_Ratio3(skill)
 	if abil ~= nil then 
         return value + abil.Level
     end
+
+end
+
+function SCR_GET_Heal_Time(skill)
+
+	local pc = GetSkillOwner(skill);
+	local value = 40;
+	
+	if IsPVPServer(pc) == 1 then
+	    value = 10;
+	end
+	
+	return value
 
 end
 
@@ -8105,8 +8156,15 @@ end
 
 function SCR_GET_StoneSkin_Ratio(skill)
     local pc = GetSkillOwner(skill);
-    local value = (80 * skill.Level * 1) + pc.MNA * 4
-    return value
+    local value = 80 * skill.Level * 1
+    
+	if IsPVPServer(pc) == 1 then
+	    value = value + pc.MNA * 0.5
+	else
+	    value = value + pc.MNA * 4
+	end
+	
+    return math.floor(value)
 end
 
 

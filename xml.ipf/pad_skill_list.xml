@@ -2435,7 +2435,11 @@ return 10000 + obj.Level * 2000"/>
                 <Str_Arg Str="F_cleric_heal_active_ground" Arg="1"/>
             </ToolScp>
             <ToolScp Scp="PAD_ADD_LIFE" Client="NO" UseSleep="NO">
-                <Num Num="40000"/>
+                <Num Num="40000" UseFunc="1" FuncTxt="if IsPVPServer(self) == 1 then
+return 10000;
+else
+return 40000;
+end"/>
                 <Num Num="1"/>
             </ToolScp>
             <ToolScp Scp="PAD_IS_PC_FULL_HP" Client="NO" UseSleep="NO"/>

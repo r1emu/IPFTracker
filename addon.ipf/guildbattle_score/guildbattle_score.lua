@@ -88,8 +88,14 @@ function GUILDBATTLE_SCORE_FIRST_OPEN(frame)
 
 	local txt_guildname_1 = frame:GetChild("txt_guildname_1");
 	local txt_guildname_2 = frame:GetChild("txt_guildname_2");
-	txt_guildname_1:SetTextByKey("value", "["..GetServerNameByGroupID(myGroupID).."]"..myName);
-	txt_guildname_2:SetTextByKey("value", "["..GetServerNameByGroupID(targetGroupID).."]"..targetName);
+	txt_guildname_1:SetTextByKey("value", myName);
+	txt_guildname_2:SetTextByKey("value", targetName);
+
+	local txt_guildserver_1 = frame:GetChild("txt_guildserver_1");
+	local txt_guildserver_2 = frame:GetChild("txt_guildserver_2");
+	txt_guildserver_1:SetTextByKey("value", "["..GetServerNameByGroupID(myGroupID).."]");
+	txt_guildserver_2:SetTextByKey("value", "["..GetServerNameByGroupID(targetGroupID).."]");
+
 	
 	
 

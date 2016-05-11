@@ -237,6 +237,7 @@
 		<Class ClassID="4101" ClassName="LessThanItemLifeTime" Data="사용기한이 지난 아이템 입니다."/>
 		<Class ClassID="4102" ClassName="IsItemLifeTime" Data="사용기한이 있는 아이템 입니다."/>
 		<Class ClassID="4103" ClassName="OverTimeItemNotEquip" Data="사용기간이 지난 아이템은 착용이 불가능합니다."/>
+	<Class ClassID="4104" ClassName="Event" Data="이벤트"/>
 	</Category>
 	<Category Name="ItemTooltip">
 		<Class ClassID="5001" ClassName="CoolDown : {Sec} Sec" Data="재사용 대기 시간 : {Sec}초"/>
@@ -693,7 +694,7 @@
 		<Class ClassID="10430" ClassName="CantWarpBczThereIsInstZone" Data="인스턴스 던전으로는 이동할 수 없습니다."/>
 		<Class ClassID="10431" ClassName="TeamLevel" Data="팀 레벨"/>
 		<Class ClassID="10432" ClassName="ExpGetAmount" Data="경험치 획득량"/>
-		<Class ClassID="10433" ClassName="RefusedInviteRequest_Public" Data="공개 파티 가입이 거절되었습니다."/>
+		<Class ClassID="10436" ClassName="RefusedInviteRequest_Public" Data="공개 파티 가입이 거절되었습니다."/>
 	</Category>
 	<Category Name="FoodTable">
 		<Class ClassID="20001" ClassName="IncreaseHP{Value}For{Time}Minute" Data="{Time}분 동안 HP가 {Value}% 증가합니다."/>
@@ -864,6 +865,7 @@
 		<Class ClassID="21160" ClassName="CLASS_TYPE_Companion" Data="컴패니언"/>
 		<Class ClassID="21161" ClassName="Excnaged_Count_Remind" Data="번 교환 가능 합니다."/>
 		<Class ClassID="21162" ClassName="Excnaged_No_Enough" Data="교환 횟수를 모두 소진하였습니다."/>
+	<Class ClassID="20166" ClassName="TP_Costume_Lens" Data="[프리미엄]컬러 렌즈"/>
 	</Category>
 	<Category Name="ChatText">
 		<Class ClassID="22001" ClassName="Guard" Data="방어"/>
@@ -3298,6 +3300,33 @@
 		<Class ClassID="26567" ClassName="CORAL_32_1_SQ_2_2" Data="누군가 이쪽으로 오고있습니다"/>
 		<Class ClassID="26568" ClassName="CORAL_32_1_SQ_6_2" Data="촌장 프레제"/>
 		<Class ClassID="26569" ClassName="CORAL_32_1_SQ_6_3" Data="파견병 바질리우스"/>
+		<Class ClassID="26570" ClassName="TABLE70_SOLDIER_NAME1" Data="보급병 해른타스"/>
+		<Class ClassID="26571" ClassName="TABLE70_SOLDIER_NAME2" Data="병사 가일렌스"/>
+		<Class ClassID="26572" ClassName="TABLE70_SOLDIER_NAME3" Data="부대장 탈른"/>
+		<Class ClassID="26573" ClassName="TABLE70_SOLDIER_NAME4" Data="병사 칼란스"/>
+		<Class ClassID="26574" ClassName="TABLE70_SOLDIER_NAME5" Data="병사 하이란스"/>
+		<Class ClassID="26575" ClassName="TABLE70_SOLDIER_NAME6" Data="병사 카일른"/>
+		<Class ClassID="26576" ClassName="TABLE70_SOLDIER_NAME7" Data="병사 하일른"/>
+		<Class ClassID="26577" ClassName="TABLE70_SOLDIER_CHAT1" Data="마족들이야!"/>
+		<Class ClassID="26578" ClassName="TABLE70_SOLDIER_CHAT2" Data="우린 이제 끝났어!"/>
+		<Class ClassID="26579" ClassName="TABLE70_SOLDIER_CHAT3" Data="마족들이 우리 모두를 해칠거야!"/>
+		<Class ClassID="26580" ClassName="TABLE71_SUBQ3_CHAT1" Data="이게 다 몬스터 때문에.."/>
+		<Class ClassID="26581" ClassName="TABLE71_SUBQ3_CHAT2" Data="한결 나아졌어요!"/>
+		<Class ClassID="26582" ClassName="TABLE71_SUBQ3_CHAT3" Data="좀 쉬어야 할거 같아요.."/>
+		<Class ClassID="26583" ClassName="TABLE71_SUBQ3_ANI" Data="의료 상자 사용 중"/>
+		<Class ClassID="26584" ClassName="TABLE71_SUBQ7_RESULT1" Data="광석이 있는 곳을 찾았습니다"/>
+		<Class ClassID="26585" ClassName="TABLE71_SUBQ7_RESULT2" Data="이미 찾은 곳입니다"/>
+		<Class ClassID="26586" ClassName="TABLELAND_71_SQ7_SCROLL" Data="스크롤 사용 중"/>
+		<Class ClassID="26587" ClassName="TABLELAND_71_SQ7_SUCC" Data="푸른 호헨 리터의 정수가 변환되기 시작합니다"/>
+		<Class ClassID="26588" ClassName="TABLELAND_72_SQ6_MSG1" Data="신성력을 탐지했습니다"/>
+		<Class ClassID="26589" ClassName="TABLELAND_72_SQ6_MSG2" Data="신성력이 느껴지지 않습니다"/>
+		<Class ClassID="26590" ClassName="TABLELAND_72_SQ6_ANI" Data="탐색 구슬 사용 중"/>
+		<Class ClassID="26591" ClassName="TABLELAND_72_SQ6_ANI2" Data="흡수의 보주 사용 중"/>
+		<Class ClassID="26592" ClassName="TABLELAND_72_SQ6_MSG3" Data="신성력을 흡수했습니다"/>
+		<Class ClassID="26593" ClassName="TABLE72_SUBQ1_CHAT1" Data="마족을 처치한 사람이 저 사람입니다"/>
+		<Class ClassID="26594" ClassName="TABLELAND_72_SQ6_MSG4" Data="탐지 구슬로 신성력을 탐지하세요"/>
+		<Class ClassID="26595" ClassName="TABLE72_NPC_AI_NAME" Data="마을 사제 아른타스"/>
+		<Class ClassID="26596" ClassName="TABLELAND_72_SQ6_MSG5" Data="흡수의 보주가 없어 신성력을 채울 수가 없습니다"/>
 		<Class ClassID="26597" ClassName="KATYN_45_1_DARK" Data="사악한 기운에 이끌린 몬스터들이 몰려듭니다"/>
 		<Class ClassID="26598" ClassName="KATYN_45_1_SQ_3_MSG_NPC" Data="아젤이 무사히 도착했습니다"/>
 		<Class ClassID="26599" ClassName="SCR_KATYN_45_1_SQ_3_NAME" Data="딥디르비 아젤"/>
@@ -3317,7 +3346,51 @@
 		<Class ClassID="26613" ClassName="KATYN_45_1_SQ_10_SUCC1" Data="이미 부적을 모두 설치하였습니다"/>
 		<Class ClassID="26614" ClassName="KATYN_45_1_SQ_3_FAIL" Data="아젤을 잘리아빈 계곡까지 대려가는 것에 실패하였습니다"/>
 		<Class ClassID="26615" ClassName="KATYN_45_3_SQ_7_FAIL" Data="정화 의식을 실패하였습니다"/>
+		<Class ClassID="26616" ClassName="TABLE70_SOLDIER_SUBQ_CHAT1" Data="우린 이제 죽은 목숨이야"/>
+		<Class ClassID="26617" ClassName="TABLE70_SOLDIER_SUBQ_CHAT2" Data="작전이고 뭐고 도망쳤어야 했어"/>
+		<Class ClassID="26618" ClassName="TABLE70_SOLDIER_SUBQ_CHAT3" Data="마족이 우릴 가만 두지 않을거야"/>
+		<Class ClassID="26619" ClassName="TABLE70_SOLDIER_DLG" Data="부대장 탈른의 명령 전달하는 중"/>
+		<Class ClassID="26620" ClassName="TABLE70_SOLDIER_SUBQ_CHAT4" Data="부대장님이 찾으시면 가야죠"/>
+		<Class ClassID="26621" ClassName="TABLE70_BOMB_SEARCH" Data="목책 찾는 중"/>
+		<Class ClassID="26622" ClassName="TABLE70_BOMB_GET" Data="목재료를 획득했습니다"/>
+		<Class ClassID="26623" ClassName="TABLE70_SUBQ6_SETUP" Data="목책 설치 중"/>
+		<Class ClassID="26624" ClassName="TABLE70_SUBQ6_NO_ITEM" Data="가지고 있는 목책이 없습니다"/>
+		<Class ClassID="26625" ClassName="TABLE74_SUBQ5_COMPLETE_NPC_NAME" Data="정찰병 보아스"/>
+		<Class ClassID="26626" ClassName="TABLE74_SUBQ5_ANIM" Data="폭탄 부착 중"/>
+		<Class ClassID="26627" ClassName="TABLE74_SUBQ5_MSG1" Data="수정을 파괴했습니다"/>
+		<Class ClassID="26628" ClassName="TABLE74_SUBQ5_MSG2" Data="폭탄이 없습니다"/>
+		<Class ClassID="26629" ClassName="TABLE74_SUBQ6_NPC_AI_NAME" Data="부대장 빌라스"/>
+		<Class ClassID="26630" ClassName="TABLELAND_73_SUBQ1_ANIM" Data="신성력 채우는 중"/>
+		<Class ClassID="26631" ClassName="TABLELAND_73_SUBQ1_MSG" Data="신성력이 미약합니다"/>
+		<Class ClassID="26632" ClassName="TABLELAND_73_SUBQ3_MSG1" Data="장치를 건드릴 수 없습니다"/>
+		<Class ClassID="26633" ClassName="TABLELAND_73_SUBQ3_MSG2" Data="모든 장치들이 꺼졌습니다"/>
+		<Class ClassID="26634" ClassName="TABLELAND_73_SUBQ3_MSG3" Data="장치들이 처음 상태로 되돌아갔습니다."/>
+		<Class ClassID="26635" ClassName="TABLELAND_73_SUBQ4_MSG1" Data="보호막이 점점 약해지는 것 같다"/>
+		<Class ClassID="26636" ClassName="TABLE73_SUBQ8_MSG1" Data="신성한 보구 놓는 중"/>
+		<Class ClassID="26637" ClassName="TABLE73_SUBQ8_MSG2" Data="사악한 기운 덩어리가 제거됐습니다"/>
+		<Class ClassID="26638" ClassName="TABLE73_SUBQ8_MSG3" Data="신성력이 깃든 물건만이{nl}사악한 기운 덩어리를 제거할 수 있습니다"/>
+		<Class ClassID="26639" ClassName="TABLE73_SUBQ5_MSG1" Data="장작을 태워 몸을 녹이세요"/>
+		<Class ClassID="26640" ClassName="TABLE73_SUBQ5_MSG2" Data="장작 줍는 중"/>
+		<Class ClassID="26641" ClassName="TABLE73_SUBQ5_MSG3" Data="장작을 주웠습니다"/>
+		<Class ClassID="26642" ClassName="TABLE73_SUBQ5_MSG4" Data="장작이 충분히 있습니다"/>
+		<Class ClassID="26643" ClassName="TABLE73_SUBQ5_MSG5" Data="모닥불 피우는 중"/>
+		<Class ClassID="26644" ClassName="TABLE73_SUBQ5_MSG6" Data="모닥불을 피웠습니다{nl}앉아서 몸을 따뜻하게 하세요"/>
+		<Class ClassID="26645" ClassName="TABLE73_SUBQ6_MSG1" Data="모닥불을 피우기엔{nl}장작의 양이 적습니다"/>
+		<Class ClassID="26646" ClassName="TABLE73_SUBQ6_MSG2" Data="모닥불을 피울 만큼의 장작을 모았습니다"/>
+		<Class ClassID="26647" ClassName="TABLE73_SUBQ6_MSG3" Data="냉기가 너무 강해 정화의 구를{nl}제대로 사용할 수 없습니다"/>
+		<Class ClassID="26648" ClassName="TABLE73_SUBQ6_MSG4" Data="정화의 구 사용 중"/>
+		<Class ClassID="26649" ClassName="TABLE73_SUBQ6_MSG5" Data="몸이 따뜻해집니다.{nl}몸이 따뜻해져있을 때 정화의 구를 사용하세요"/>
+		<Class ClassID="26650" ClassName="TABLE71_SUBQ4_MSG1" Data="탐지기 사용 중"/>
+		<Class ClassID="26651" ClassName="TABLE71_SUBQ4_MSG2" Data="표시 중"/>
+		<Class ClassID="26652" ClassName="TABLE71_SUBQ4_MSG3" Data="광석이 있는 곳을 표시했습니다"/>
+		<Class ClassID="26653" ClassName="TABLE71_SUBQ8_MSG1" Data="폭탄 설치 중"/>
+		<Class ClassID="26654" ClassName="TABLE70_SOLDIER_CHAT4" Data="부대장님에게 가보겠습니다"/>
+		<Class ClassID="26655" ClassName="TABLE71_SUBQ3_CHAT4" Data="너무 아파요.."/>
+		<Class ClassID="26656" ClassName="TABLE71_SUBQ3_CHAT5" Data="상처가 계속 벌어지고 있어요.."/>
 		<Class ClassID="26657" ClassName="QuestDoNOTTransform" Data="해당 지역에서 퀘스트 도중에는 변신을 풀 수 없습니다."/>
+		<Class ClassID="26795" ClassName="TABLE70_SOLDIER_NAME8" Data="보급병 델린"/>
+		<Class ClassID="26796" ClassName="TABLE74_SUBQ8_MONSTER" Data="주변에 마족과 몬스터가 많아 폭탄 설치가 힘듭니다{nl}주변을 정리한 후 폭탄을 설치하세요"/>
+		<Class ClassID="26797" ClassName="TABLE74_SUBQ8_MSG1" Data="폭탄 설치 중"/>
 		<Class ClassID="26798" ClassName="CORAL_32_2_DARUL1_SQ_MSG1" Data="전승자에 대하여"/>
 		<Class ClassID="26799" ClassName="CORAL_32_2_DARUL1_SQ_MSG2" Data="유라테 여신에 대하여"/>
 		<Class ClassID="26800" ClassName="CORAL_32_2_DARUL1_SQ_MSG3" Data="이곳에 온 이유에 대하여"/>
@@ -3336,6 +3409,72 @@
 		<Class ClassID="26813" ClassName="CORAL_32_2_SQ_5" Data="향기에 이끌린 몬스터들이 몰려듭니다"/>
 		<Class ClassID="26814" ClassName="CORAL_32_2_SQ_5_2" Data="인근에 몬스터가 없는 것 같습니다"/>
 		<Class ClassID="90001" ClassName="CORAL_32_2_SQ_6_FAIL2" Data="퀘스트를 포기했습니다"/>
+		<Class ClassID="26862" ClassName="TABLE70_SUBQ8_NPC_NAME" Data="병사 칼란스"/>
+		<Class ClassID="26863" ClassName="TABLE74_SUBQ4_NPC_NAME" Data="폭탄"/>
+		<Class ClassID="26864" ClassName="TABLE73_SUBQ3_DONTTOUCH" Data="장치가 꺼지면서 다른 장치가 켜졌습니다{nl}이 장치는 건드릴 수 없게 됐습니다"/>
+		<Class ClassID="26865" ClassName="TABLE70_SUBQ8_CHAT1" Data="먼저 부대로 돌아가보겠습니다"/>
+		<Class ClassID="26866" ClassName="TABLE74_SUBQ8_NAME" Data="폭탄"/>
+		<Class ClassID="26867" ClassName="TABLE73_SUBQ3_DONTTOUCH2" Data="장치가 꺼지고 더 이상 건드릴 수 없게 됐습니다"/>
+		<Class ClassID="26868" ClassName="UNDER30_2_BUFF_MSG" Data="유독가스에 중독됐습니다{nl}유독가스를 정화해줘야 합니다"/>
+		<Class ClassID="26869" ClassName="UNDER30_2_CHECK_MSG" Data="유독가스에 중독되어 큐브를 확인하는데 힘듭니다"/>
+		<Class ClassID="26870" ClassName="UNDER30_3_ANIM_MSG1" Data="구슬 조각을 줍는 중"/>
+		<Class ClassID="26871" ClassName="UNDER302_GHOST_DESTROY" Data="영혼이 사라졌습니다"/>
+		<Class ClassID="26872" ClassName="UNDER302_ANSWER1" Data="알겠다고 한다"/>
+		<Class ClassID="26873" ClassName="UNDER302_ANSWER2" Data="싫다고 한다"/>
+		<Class ClassID="26874" ClassName="UNDER301_NPC_NAME1" Data="장교 영혼"/>
+		<Class ClassID="26875" ClassName="UNDER301_NPC_NAME2" Data="병사 영혼"/>
+		<Class ClassID="26876" ClassName="UNDER301_NPC_CHAT1" Data="감사합니다"/>
+		<Class ClassID="26877" ClassName="UNDER301_NPC_CHAT2" Data="부대에 합류하게 됐어"/>
+		<Class ClassID="26878" ClassName="UNDER301_NPC_CHAT3" Data="다시는 동료를 보지 못할 거라 생각했었는데"/>
+		<Class ClassID="26879" ClassName="UNDER303_ITEM_GET" Data="폭탄을 얻었습니다"/>
+		<Class ClassID="26880" ClassName="UNDER303_ITEM_GET2" Data="이미 폭탄을 가지고 있습니다"/>
+		<Class ClassID="26881" ClassName="UNDER303_ITEM_USE" Data="폭탄 설치 중"/>
+		<Class ClassID="26882" ClassName="UNDER303_ITEM_NAME" Data="폭탄"/>
+		<Class ClassID="26883" ClassName="UNDER303_HIT_EFFECT" Data="구슬에게 보호를 받고 있습니다"/>
+		<Class ClassID="26884" ClassName="UNDER301_EVENT1_ITEM" Data="장교 영혼에게서 증표를 얻었습니다"/>
+		<Class ClassID="26885" ClassName="UNDER301_EVENT1_SOLDIER_MSG1" Data="병사 영혼을 장교 영혼이 있는 곳으로 데려다주세요"/>
+		<Class ClassID="26886" ClassName="UNDER301_EVENT1_SOLDIER_MSG2" Data="따르는 병사 영혼이 있습니다"/>
+		<Class ClassID="26887" ClassName="UNDER301_EVENT1_SOLDIER_MSG3" Data="증표 없이는 따르지 않으려고 합니다"/>
+		<Class ClassID="26888" ClassName="UNDER301_EVENT1_MSG1" Data="장교 영혼이 있는 곳으로 가자고 한다"/>
+		<Class ClassID="26889" ClassName="UNDER301_EVENT1_SOLDIER_CHAT1" Data="장교님이 계신 곳까지 당신을 따르겠습니다"/>
+		<Class ClassID="26890" ClassName="UNDER301_EVENT1_MSG2" Data="병사 영혼을 장교 영혼이 있는데까지 인도했습니다"/>
+		<Class ClassID="26891" ClassName="UNDER301_EVENT1_MSG3" Data="몬스터 영혼이 장교 영혼을 공격하려고 합니다.{nl}장교 영혼을 지키세요"/>
+		<Class ClassID="26892" ClassName="UNDER303_EVENT2_MSG1" Data="모든 장치를 파괴하는데 실패했습니다"/>
+		<Class ClassID="26893" ClassName="UNDER303_EVENT2_MSG2" Data="장치들을 파괴하세요"/>
+		<Class ClassID="26894" ClassName="UNDER303_EVENT2_MSG3" Data="장치들을 모두 파괴하는데 성공했습니다{nl}힘의 기운 버프를 보상으로 받았습니다"/>
+		<Class ClassID="26895" ClassName="UNDER303_EVENT1_MSG1" Data="장치를 살펴보는 중"/>
+		<Class ClassID="26896" ClassName="UNDER303_EVENT1_MSG2" Data="구슬 조각을 넣는 중"/>
+		<Class ClassID="26897" ClassName="UNDER303_EVENT1_MSG3" Data="빛의 축복을 받는 동안에만 상자의 주인이 될 수 있습니다!"/>
+		<Class ClassID="26898" ClassName="UNDER301_EVENT1_REWARD_TAKE" Data="이미 보상을 받았습니다"/>
+		<Class ClassID="26899" ClassName="UNDER301_EVENT1_POINT_CHECK1" Data="총 {POINT}점 획득했습니다{nl}앞으로 {GETPOINT}점 더 획득해야 1단계 보상을 받을 수 있는 기회가 생깁니다"/>
+		<Class ClassID="26900" ClassName="UNDER301_EVENT1_POINT_CHECK2" Data="총 {POINT}점 획득했습니다{nl}1단계 보상을 받을 수 있는 기회가 생겼습니다"/>
+		<Class ClassID="26901" ClassName="UNDER301_EVENT1_POINT_CHECK3" Data="총 {POINT}점 획득했습니다{nl}2단계 보상을 받을 수 있는 기회가 생겼습니다"/>
+		<Class ClassID="26902" ClassName="UNDER301_EVENT1_POINT_CHECK4" Data="총 {POINT}점 획득했습니다{nl}3단계 보상을 받을 수 있는 기회가 생겼습니다"/>
+		<Class ClassID="26903" ClassName="UNDER301_EVENT1_CHAT1" Data="고맙다. 그대 덕분에 부하들이 무사히 돌아왔다."/>
+		<Class ClassID="26904" ClassName="UNDER301_EVENT1_AGREE" Data="돕겠다고 한다"/>
+		<Class ClassID="26905" ClassName="UNDER301_EVENT1_NO" Data="바쁘다고 한다"/>
+		<Class ClassID="26906" ClassName="UNDER301_EVENT1_REWARD_NO_TAKE" Data="점수가 낮아 보상을 받을 수 없습니다"/>
+		<Class ClassID="26907" ClassName="UNDER301_EVENT1_MON_NAME" Data="몬스터 영혼"/>
+		<Class ClassID="26908" ClassName="TABLE70_BOMB_MSG" Data="이미 목책을 가지고 있습니다"/>
+		<Class ClassID="26909" ClassName="UNDER302_EVENT1_REMOVE" Data="유독가스가 정화됐습니다"/>
+		<Class ClassID="26910" ClassName="UNDER302_EVENT1_RE" Data="유독가스가 다시 생성됐습니다"/>
+		<Class ClassID="26911" ClassName="UNDER30_3_EVENT2_ANIM" Data="상자 확인 중"/>
+		<Class ClassID="26912" ClassName="UNDER30_3_EVENT2_BUFF_REMOVE" Data="보호막이 사라져 장치를 공격할 수 있게 됐습니다"/>
+		<Class ClassID="26913" ClassName="UNDER30_3_EVENT2_BOBM" Data="피난 거주구에서만 사용할 수 있습니다"/>
+		<Class ClassID="26914" ClassName="UNDER30_2_EVENT1_MSG1" Data="유독가스가 정화됐습니다"/>
+		<Class ClassID="26915" ClassName="UNDER301_EVENT1_POINT_REWARD_CHECK1" Data="총 {POINT}점 획득해 1단계 보상을 받았습니다"/>
+		<Class ClassID="26916" ClassName="UNDER301_EVENT1_POINT_REWARD_CHECK2" Data="총 {POINT}점 획득해 2단계 보상을 받았습니다"/>
+		<Class ClassID="26917" ClassName="UNDER301_EVENT1_POINT_REWARD_CHECK3" Data="총 {POINT}점 획득해 3단계 보상을 받았습니다"/>
+		<Class ClassID="26918" ClassName="UNDER301_EVENT1_WARNING1" Data="장교 영혼의 체력이 15% 남았습니다{nl}장교 영혼이 죽으면 보상을 받지 못합니다"/>
+		<Class ClassID="26919" ClassName="UNDER301_EVENT1_WARNING2" Data="장교 영혼의 체력이 50% 남았습니다{nl}장교 영혼이 죽으면 보상을 받지 못합니다"/>
+		<Class ClassID="26920" ClassName="UNDER301_EVENT1_WARNING3" Data="장교 영혼의 체력이 70% 남았습니다{nl}장교 영혼이 죽으면 보상을 받지 못합니다"/>
+		<Class ClassID="26921" ClassName="UNDER301_EVENT1_FAIL" Data="장교 영혼이 죽었습니다"/>
+		<Class ClassID="26922" ClassName="VELNIASP54_1_MONNAME" Data="열쇠 도둑"/>
+		<Class ClassID="50001" ClassName="UNDER30_2_CHECK_MSG2" Data="유독가스에 중독되어 비석을 확인하는데 힘듭니다"/>
+		<Class ClassID="70001" ClassName="FARM49_2_MQ06_DRAW" Data="우물 물을 긷는 중"/>
+		<Class ClassID="70002" ClassName="FARM49_2_MQ06_SUCCESS" Data="우물 물을 길었습니다.{nl}옆 물통에서 물을 뜨세요."/>
+		<Class ClassID="70003" ClassName="FARM49_2_MQ06_ALREADY" Data="이미 우물 물을 길었습니다.{nl}옆 물통에서 물을 뜨세요."/>
+		<Class ClassID="50002" ClassName="UNDER301_MONSTER_PAIR_ERROR_1" Data="오늘 진행가능한 {DAYMAXCOUNT}회 중 {DAYPLAYCOUNT} 회를 모두 진행하셨습니다."/>
 	</Category>
 	<Category Name="BattleText">
 		<Class ClassID="100001" ClassName="ADD_DAMAGE_{Auto_1}!" Data="추가 데미지 {Auto_1}!"/>
@@ -3648,6 +3787,16 @@
 		<Class ClassID="102121" ClassName="GuildEnemyCountMAX" Data="전쟁 선포는 최대 3개의 길드까지만 가능합니다."/>
 		<Class ClassID="102122" ClassName="NeedGuildTower" Data="길드 타워가 없으면 전쟁 선포를 할 수 없습니다."/>
 		<Class ClassID="102123" ClassName="NoTaltinTheSlot" Data="사용할 탈트를 먼저 올려놓아야 합니다."/>
+		<Class ClassID="102124" ClassName="MasterStartGuildBattle" Data="길드 마스터가{nl}길드 대전에 입장하였습니다."/>
+		<Class ClassID="102125" ClassName="GiveMasterOnlyGuildAgit" Data="길드 마스터 양도는 길드 아지트 내에서만 가능합니다."/>
+		<Class ClassID="102126" ClassName="DoNotExsitMemberGuildAgit" Data="대상이 길드 아지트에 있지 않습니다."/>
+		<Class ClassID="102127" ClassName="TgtDonHaveTmpler" Data="대상이 템플러 직업을 가지고 있지 않습니다."/>
+		<Class ClassID="102128" ClassName="DoYouWantGuildLeadr{N1}{N2}" Data="{N1}님께서 {N2}길드 마스터 직위를 양도하려합니다. 수락하시겠습니까?"/>
+		<Class ClassID="102129" ClassName="CannotDoGiveMaster{TIME}" Data="아직 양도 가능한 기간이 아닙니다.{nl}{TIME} 이후에 가능합니다."/>
+		<Class ClassID="102130" ClassName="MasterChange{Name}" Data="{Name}이 길드 마스터가 되었습니다."/>
+		<Class ClassID="102131" ClassName="DisAgreeChangeGuildMaster" Data="상대방이 길드 마스터 직위 양도를 거부하셨습니다."/>
+		<Class ClassID="102132" ClassName="GuildTakeDamageArt{NAME}" Data="{NAME} 타워가 공격받고 있습니다."/>
+		<Class ClassID="102133" ClassName="GiveGuildLeaderPermission" Data="길드 마스터 양도하기"/>
 	</Category>
 	<Category Name="EqupClasses">
 		<Class ClassID="103001" ClassName="THSword" Data="양손검"/>
@@ -7220,7 +7369,7 @@
 		<Class ClassID="300073" ClassName="Premium_indunReset_14d" Data="인던 입장 횟수 초기화권:14일"/>
 		<Class ClassID="300074" ClassName="Premium_StatReset14" Data="스탯 초기화"/>
 		<Class ClassID="300075" ClassName="abilityMax_ForPC{COUNT}" Data="특성 동시 수련 가능 개수 증가"/>
-    <Class ClassID="300076" ClassName="Premium_StatReset" Data="스탯 초기화 포션"/>
+		<Class ClassID="300076" ClassName="Premium_StatReset" Data="스탯 초기화 포션"/>
 	</Category>
 	<Category Name="TPHistory">
 		<Class ClassID="301001" ClassName="RemainLogoutPC" Data="로그아웃 PC 만들기"/>

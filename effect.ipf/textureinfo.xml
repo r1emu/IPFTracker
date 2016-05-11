@@ -435,7 +435,7 @@
 	<Texture Name="noticeeffect3_1" File="status_icon3_1.tga" Size="100 100"/>
 	<Texture Name="noticeeffect3" File="status_icon3.tga" Size="100 100"/>
 	<Texture Name="noticeeffect_base" File="status_icon_base.tga" Size="100 100"/>
-	<Texture Name="noticeeffect2" File="status_icons2.tga" Size="512 512"/>
+	<Texture Name="noticeeffect2" File="status_icons2.tga" Size="500 600"/>
 	<Texture Name="digit_expup" File="digit_extra_exp.tga" Size="48 720"/>
 	<Texture Name="digit_expup_bg" File="digit_extra_exp_bg.tga" Size="48 60"/>
 	<Texture Name="digit_expup_text" File="digit_extra_exp_mark.tga" Size="64 40"/>

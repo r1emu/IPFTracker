@@ -42,6 +42,13 @@
                     <Obj Type="Monster" MonType="11120" Pos="115.69#0.00#83.86" genTime="20000" autoGen="0" objectKey="Tower_2"/>
                 </ObjList>
                 <StageEvents>
+                  <Event execMS="5000" eventName="UpdateZonePCCount">
+                    <execList>
+                      <ToolScp Scp="MGAME_EVT_SCRIPT" Client="NO" UseSleep="NO">
+                        <Str Str="GUILDBATTLE_UPDATE_ZONEPC"/>
+                      </ToolScp>
+                    </execList>
+                  </Event>
                     <Event execCount="1" eventName="Set_Faction">
                         <execList>
                             <ToolScp Scp="MGAME_EVT_SCRIPT" Client="NO" UseSleep="NO">

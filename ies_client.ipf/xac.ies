@@ -1559,7 +1559,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 9136,warrior_m_head9_eye01,,,,char_hi\pc\faces\warrior_m\musketeer_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 9137,warrior_m_head10_eye01,,,,char_hi\pc\faces\warrior_m\pantherhair_Warrior_m_head_std,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 9138,warrior_m_head11_eye01,,,,char_hi\pc\faces\warrior_m\lancermale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
-9139,warrior_m_head12_eye01,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
+9139,warrior_m_head12_eye01,,,,char_hi\pc\faces\warrior_m\sage_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 9140,warrior_m_head13_eye01,,,,char_hi\pc\faces\warrior_m\puppeteer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 9141,warrior_m_head14_eye01,,,,char_hi\pc\faces\warrior_m\falconer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 9142,warrior_m_head15_eye01,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
@@ -1596,6 +1596,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 9173,warrior_m_hair15_red,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_hair_std.xac,char_texture\pc\face\hair_m_red\,bg_hi\ErrorBox.mtl,,,NO
 9174,warrior_m_cockatries01,,,,char_hi\pc\warrior_m\warrior_m_cockatries01.xac,char_texture\pc\body\Warrior_m_cockatries01\,bg_hi\ErrorBox.mtl,S;Dummy_LF_armband,,NO
 9175,warrior_m_SpringFlower01,,,,char_hi\pc\warrior_m\Warrior_m_springflower01.xac,char_texture\pc\body\Warrior_m_springflower01\,bg_hi\ErrorBox.mtl,S;Dummy_LF_armband,,NO
+9176,warrior_m_Knight01,,,,char_hi\pc\warrior_m\Warrior_m_knight01.xac,char_texture\pc\body\Warrior_m_knight01\,bg_hi\ErrorBox.mtl,S;Dummy_LU_armband,,NO
 9201,Mage_f_costume01,,,,char_hi\pc\mage_f\Mage_f_costume01.xac,char_texture\pc\body\Mage_f_costume01\,bg_hi\ErrorBox.mtl,S;Dummy_LU_armband,,YES
 9202,Mage_f_costume02,,,,char_hi\pc\mage_f\Mage_f_costume02.xac,char_texture\pc\body\Mage_f_costume02\,bg_hi\ErrorBox.mtl,S;Dummy_LU_armband,,NO
 9203,Mage_f_costume03,,,,char_hi\pc\mage_f\Mage_f_costume03.xac,char_texture\pc\body\Mage_f_costume03\,bg_hi\ErrorBox.mtl,S;Dummy_LU_armband,,NO
@@ -1617,6 +1618,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 9220,Mage_f_Mage01_3,,,,char_hi\pc\mage_f\Mage_f_costume01_3.xac,char_texture\pc\body\Mage_f_costume01_3\,bg_hi\ErrorBox.mtl,S;Dummy_LU_armband,,NO
 9221,Mage_f_cockatries01,,,,char_hi\pc\Mage_f\Mage_f_cockatries01.xac,char_texture\pc\body\Mage_f_cockatries01\,bg_hi\ErrorBox.mtl,S;Dummy_LF_armband,,NO
 9222,Mage_f_SpringFlower01,,,,char_hi\pc\Mage_f\Mage_f_SpringFlower01.xac,char_texture\pc\body\Mage_f_springflower01\,bg_hi\ErrorBox.mtl,M;Dummy_LU_armband,,NO
+9223,Mage_f_wizard_master01,,,,char_hi\pc\Mage_f\Mage_f_wizard_master01.xac,char_texture\pc\body\Mage_f_wizard_master01\,bg_hi\ErrorBox.mtl,M;Dummy_LU_armband,,NO
 10104,Mage_f_head,,,,char_hi\pc\faces\mage_f\shorthair\shorthair_Mage_f_head_std,char_texture\pc\face\hair_f\,bg_hi\ErrorBox.mtl,,,NO
 10105,Mage_f_skirt1,,,,char_hi\pc\mage_f\mage_f_pants_skirt.xac,char_texture\pc\body\,bg_hi\ErrorBox.mtl,,,NO
 10106,Mage_f_hair,,,,char_hi\pc\faces\mage_f\shorthair\shorthair_Mage_f_hair_std,char_texture\pc\face\hair_f\,bg_hi\ErrorBox.mtl,,,NO
@@ -2266,6 +2268,9 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 16112,artefact_metaldetector_quest,,,,item_hi\pc_item\weapon\metaldetector_quest.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 16113,artefact_balloon_pipe,,,,item_hi\pc_item\weapon\balloon_pipe.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 16114,artefact_chapelet01,,,,item_hi\pc_item\weapon\chapelet01.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
+16115,artefact_ham_set,,,,item_hi\pc_item\weapon\artefact_ham_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
+16116,artefact_alfalfa_set,,,,item_hi\pc_item\weapon\artefact_alfalfa_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
+16117,artefact_sardina_set,,,,item_hi\pc_item\weapon\artefact_sardina_set.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 17002,cleric_f_mace_thornhammer,,,,item_hi\pc_item\weapon\it_monk_thornhammer.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 17003,cleric_f_mace_Baptism,,,,char_hi\monster\Baptism_obj_set.xac,char_texture\monster\Baptism_obj\,bg_hi\ErrorBox.mtl,,,NO
 17004,cleric_f_mace_blacksmith,,,,item_hi\pc_item\weapon\cleric_f_mace_blacksmith.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
@@ -2426,7 +2431,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 18206,cleric_m_head9_eye01,,,,char_hi\pc\faces\warrior_m\musketeer_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 18207,cleric_m_head10_eye01,,,,char_hi\pc\faces\warrior_m\pantherhair_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 18208,cleric_m_head11_eye01,,,,char_hi\pc\faces\warrior_m\lancermale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
-18209,cleric_m_head12_eye01,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
+18209,cleric_m_head12_eye01,,,,char_hi\pc\faces\warrior_m\sage_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 18210,cleric_m_head13_eye01,,,,char_hi\pc\faces\warrior_m\puppeteer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 18211,cleric_m_head14_eye01,,,,char_hi\pc\faces\warrior_m\falconer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 18212,cleric_m_head15_eye01,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
@@ -2467,6 +2472,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 18247,cleric_m_fedimian_merchant01,,,,char_hi\pc\Cleric_m\Cleric_m_fedimian_merchant01.xac,char_texture\pc\body\Cleric_m_fedimian_merchant\,bg_hi\ErrorBox.mtl,M;Dummy_RU_armband,,NO
 18248,cleric_m_cockatries01,,,,char_hi\pc\cleric_m\cleric_m_cockatries01.xac,char_texture\pc\body\cleric_m_cockatries01\,bg_hi\ErrorBox.mtl,S;Dummy_LF_armband,,NO
 18249,cleric_m_SpringFlower01,,,,char_hi\pc\Cleric_m\Cleric_m_springflower01.xac,char_texture\pc\body\Cleric_m_springflower01\,bg_hi\ErrorBox.mtl,M;Dummy_LU_armband,,NO
+18250,cleric_m_alf01,,,,char_hi\pc\Cleric_m\Cleric_m_alf01.xac,char_texture\pc\body\Cleric_m_alf01\,bg_hi\ErrorBox.mtl,M;Dummy_LU_armband,,NO
 19001,archer_m_head,,,,char_hi\pc\faces\warrior_m\messy_m_head_std.xac,char_texture\pc\face\hair_m\,bg_hi\ErrorBox.mtl,,,NO
 19002,archer_m_bodybase,,,,char_hi\pc\archer_m\archer_m_bodybase.xac,char_texture\pc\body\,bg_hi\ErrorBox.mtl,,,NO
 19003,archer_m_hair,,,,char_hi\pc\faces\warrior_m\messy_m_hair_std.xac,char_texture\pc\face\hair_m\,bg_hi\ErrorBox.mtl,,,NO
@@ -2571,7 +2577,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 19102,archer_m_head9_eye01,,,,char_hi\pc\faces\warrior_m\musketeer_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 19103,archer_m_head10_eye01,,,,char_hi\pc\faces\warrior_m\pantherhair_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 19104,archer_m_head11_eye01,,,,char_hi\pc\faces\warrior_m\lancermale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
-19105,archer_m_head12_eye01,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
+19105,archer_m_head12_eye01,,,,char_hi\pc\faces\warrior_m\sage_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 19106,archer_m_head13_eye01,,,,char_hi\pc\faces\warrior_m\puppeteer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 19107,archer_m_head14_eye01,,,,char_hi\pc\faces\warrior_m\falconer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 19108,archer_m_head15_eye01,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
@@ -2608,6 +2614,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 19139,archer_m_pilgrim01,,,,char_hi\pc\archer_m\archer_m_pilgrim01.xac,char_texture\pc\body\Archer_m_pilgrim01\,bg_hi\ErrorBox.mtl,S;Dummy_LU_armband,,NO
 19140,archer_m_cockatries01,,,,char_hi\pc\archer_m\archer_m_cockatries01.xac,char_texture\pc\body\archer_m_cockatries01\,bg_hi\ErrorBox.mtl,S;Dummy_LF_armband,,NO
 19141,archer_m_SpringFlower01,,,,char_hi\pc\archer_m\archer_m_SpringFlower01.xac,char_texture\pc\body\Archer_m_SpringFlower01\,bg_hi\ErrorBox.mtl,M;Dummy_LU_armband,,NO
+19142,archer_m_fedimian_mercenary01,,,,char_hi\pc\archer_m\archer_m_fedimian_mercenary01.xac,char_texture\pc\body\archer_m_fedimian_mercenary01\,bg_hi\ErrorBox.mtl,M;Dummy_LU_armband,,NO
 20022,Stone01,,,,char_hi\npc\npc_siaul_stone01_set.xac,char_texture\npc\Stone01\,bg_hi\ErrorBox.mtl,,,NO
 20023,Stone02,,,,char_hi\npc\npc_siaul_stone02_set.xac,char_texture\npc\Stone01\,bg_hi\ErrorBox.mtl,,,NO
 20024,Stone03,,,,char_hi\npc\npc_siaul_stone03_set.xac,char_texture\npc\Stone03\,bg_hi\ErrorBox.mtl,,,NO
@@ -2641,6 +2648,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 27027,cleric_f_hair10,,,,char_hi\pc\faces\cleric_f\shortround\shortround_cleric_f_hair_std.xac,char_texture\pc\face\hair_f\,bg_hi\ErrorBox.mtl,,,NO
 27028,cleric_f_prist01_3,,,,char_hi\pc\Cleric_f\Cleric_f_prist01_3.xac,char_texture\pc\body\Cleric_f_prist01_3\,bg_hi\ErrorBox.mtl,S;Dummy_LF_armband,,NO
 27029,cleric_f_SpringFlower01,,,,char_hi\pc\cleric_f\Cleric_f_springflower01.xac,char_texture\pc\body\Cleric_f_springflower01\,bg_hi\ErrorBox.mtl,S;Dummy_LF_armband,,NO
+27030,cleric_f_julla01,,,,char_hi\pc\cleric_f\Cleric_f_julla01.xac,char_texture\pc\body\Cleric_f_julla01\,bg_hi\ErrorBox.mtl,M;Dummy_LU_armband,,NO
 28001,cleric_f_dievdirbys01,,,,char_hi\pc\Cleric_f\Cleric_f_dievdirbys01.xac,char_texture\pc\body\Cleric_f_dievdirbys01\,bg_hi\ErrorBox.mtl,M;Dummy_LU_armband,,NO
 28002,cleric_f_paladin01,,,,char_hi\pc\Cleric_f\Cleric_f_paladin01.xac,char_texture\pc\body\Cleric_f_paladin01\,bg_hi\ErrorBox.mtl,M;Dummy_LF_armband,,NO
 28003,cleric_f_pardoner01,,,,char_hi\pc\Cleric_f\cleric_f_pardoner01.xac,char_texture\pc\body\cleric_f_pardoner01\,bg_hi\ErrorBox.mtl,M;Dummy_LU_armband,,NO
@@ -3287,6 +3295,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 60030,warrior_f_cockatries01,,,,char_hi\pc\warrior_f\Warrior_f_cockatries01.xac,char_texture\pc\body\Warrior_f_cockatries01\,bg_hi\ErrorBox.mtl,S;Dummy_LF_armband,,NO
 60031,warrior_f_Highlander01_3,,,,char_hi\pc\warrior_f\Warrior_f_highlander01_3.xac,char_texture\pc\body\Warrior_f_highlander01_3\,bg_hi\ErrorBox.mtl,S;Dummy_LU_armband,,NO
 60032,warrior_f_SpringFlower01,,,,char_hi\pc\warrior_f\Warrior_f_springflower01.xac,char_texture\pc\body\Warrior_f_springflower01\,bg_hi\ErrorBox.mtl,S;Dummy_LF_armband,,NO
+60033,warrior_f_intermediate_officier01,,,,char_hi\pc\warrior_f\Warrior_f_intermediate_officier01.xac,char_texture\pc\body\Warrior_f_intermediate_officier01\,bg_hi\ErrorBox.mtl,S;Dummy_LU_armband,,NO
 61000,Mage_f_bodybase,,,,char_hi\pc\mage_f\Mage_f_bodybase.xac,char_texture\pc\body\,bg_hi\ErrorBox.mtl,,,NO
 61001,Mage_f_cape1,,,,char_hi\pc\mage_f\Mage_f_outer_binch_red.xac,char_texture\pc\body\Mage_f_outer_binch_red\,bg_hi\ErrorBox.mtl,,,NO
 61002,Mage_f_cape1_2,,,,char_hi\pc\mage_f\Mage_f_outer_binch_red.xac,char_texture\pc\body\Mage_f_outer_binch_black\,bg_hi\ErrorBox.mtl,,,NO
@@ -3471,6 +3480,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 63023,Mage_m_Mage01_3,,,,char_hi\pc\mage_m\Mage_m_costume02_3.xac,char_texture\pc\body\Mage_m_costume02_3\,bg_hi\ErrorBox.mtl,S;Dummy_LU_armband,,NO
 63024,Mage_m_cockatries01,,,,char_hi\pc\Mage_m\Mage_m_cockatries01.xac,char_texture\pc\body\Mage_m_cockatries01\,bg_hi\ErrorBox.mtl,S;Dummy_LF_armband,,NO
 63025,Mage_m_SpringFlower01,,,,char_hi\pc\Mage_m\Mage_m_springflower01.xac,char_texture\pc\body\Mage_m_springflower01\,bg_hi\ErrorBox.mtl,S;Dummy_LF_armband,,NO
+63026,Mage_m_orsha_castle_lord01,,,,char_hi\pc\Mage_m\Mage_m_orsha_castle_lord01.xac,char_texture\pc\body\Mage_m_orsha_castle_lord01\,bg_hi\ErrorBox.mtl,S;Dummy_LU_armband,,NO
 63198,Mage_m_head_eye01,,,,char_hi\pc\faces\warrior_m\messy_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 63199,Mage_m_head2_eye01,,,,char_hi\pc\faces\warrior_m\thaumaturge2_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 63200,Mage_m_head3_eye01,,,,char_hi\pc\faces\warrior_m\dratail\draTail_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
@@ -3482,7 +3492,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 63206,Mage_m_head9_eye01,,,,char_hi\pc\faces\warrior_m\musketeer_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 63207,Mage_m_head10_eye01,,,,char_hi\pc\faces\warrior_m\pantherhair_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 63208,Mage_m_head11_eye01,,,,char_hi\pc\faces\warrior_m\lancermale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
-63209,Mage_m_head12_eye01,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
+63209,Mage_m_head12_eye01,,,,char_hi\pc\faces\warrior_m\sage_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 63210,Mage_m_head13_eye01,,,,char_hi\pc\faces\warrior_m\puppeteer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 63211,Mage_m_head14_eye01,,,,char_hi\pc\faces\warrior_m\falconer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
 63212,Mage_m_head15_eye01,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01\,bg_hi\ErrorBox.mtl,,,NO
@@ -3667,6 +3677,9 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 70150,archer_f_pilgrim01,,,,char_hi\pc\archer_f\archer_f_pilgrim01.xac,char_texture\pc\body\Archer_f_pilgrim01\,bg_hi\ErrorBox.mtl,S;Dummy_LU_armband,,NO
 70151,archer_f_cockatries01,,,,char_hi\pc\archer_f\archer_f_cockatries01.xac,char_texture\pc\body\archer_f_cockatries01\,bg_hi\ErrorBox.mtl,S;Dummy_LF_armband,,NO
 70152,archer_f_SpringFlower01,,,,char_hi\pc\archer_f\archer_f_SpringFlower01.xac,char_texture\pc\body\archer_f_SpringFlower01\,bg_hi\ErrorBox.mtl,M;Dummy_LU_armband,,NO
+70153,archer_m_quarreelshooter01_3,,,,char_hi\pc\archer_m\archer_m_quarreelshooter01_3.xac,char_texture\pc\body\Archer_m_quarreelshooter01_3\,bg_hi\ErrorBox.mtl,L;Dummy_LU_armband,,NO
+70154,archer_f_quarreelshooter01_3,,,,char_hi\pc\archer_f\archer_f_quarreelshooter01_3.xac,char_texture\pc\body\Archer_f_quarreelshooter01_3\,bg_hi\ErrorBox.mtl,L;Dummy_LU_armband,,NO
+70155,archer_f_warehouse_keeper01,,,,char_hi\pc\archer_f\archer_f_warehouse_keeper01.xac,char_texture\pc\body\Archer_f_warehouse_keeper\,bg_hi\ErrorBox.mtl,M;Dummy_LU_armband,,NO
 80001,warrior_f_wand_wand,,,,item_hi\pc_item\weapon\wiz_f_wand_wand.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 80002,warrior_f_wand_wand_up,,,,item_hi\pc_item\weapon\wiz_f_wand_wand_up.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
 80003,warrior_f_wand_shaman_wand,,,,item_hi\pc_item\weapon\wiz_f_wand_shaman_wand.xac,item_texture\,bg_hi\ErrorBox.mtl,,,NO
@@ -4176,7 +4189,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 301009,warrior_m_head9_eye01_yellow,,,,char_hi\pc\faces\warrior_m\musketeer_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 301010,warrior_m_head10_eye01_yellow,,,,char_hi\pc\faces\warrior_m\pantherhair_Warrior_m_head_std,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 301011,warrior_m_head11_eye01_yellow,,,,char_hi\pc\faces\warrior_m\lancermale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
-301012,warrior_m_head12_eye01_yellow,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
+301012,warrior_m_head12_eye01_yellow,,,,char_hi\pc\faces\warrior_m\sage_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 301013,warrior_m_head13_eye01_yellow,,,,char_hi\pc\faces\warrior_m\puppeteer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 301014,warrior_m_head14_eye01_yellow,,,,char_hi\pc\faces\warrior_m\falconer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 301015,warrior_m_head15_eye01_yellow,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
@@ -4193,7 +4206,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 301026,warrior_m_head9_eye01_purple,,,,char_hi\pc\faces\warrior_m\musketeer_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 301027,warrior_m_head10_eye01_purple,,,,char_hi\pc\faces\warrior_m\pantherhair_Warrior_m_head_std,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 301028,warrior_m_head11_eye01_purple,,,,char_hi\pc\faces\warrior_m\lancermale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
-301029,warrior_m_head12_eye01_purple,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
+301029,warrior_m_head12_eye01_purple,,,,char_hi\pc\faces\warrior_m\sage_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 301030,warrior_m_head13_eye01_purple,,,,char_hi\pc\faces\warrior_m\puppeteer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 301031,warrior_m_head14_eye01_purple,,,,char_hi\pc\faces\warrior_m\falconer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 301032,warrior_m_head15_eye01_purple,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
@@ -4250,12 +4263,12 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 303009,Mage_m_head9_eye01_yellow,,,,char_hi\pc\faces\warrior_m\musketeer_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 303010,Mage_m_head10_eye01_yellow,,,,char_hi\pc\faces\warrior_m\pantherhair_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 303011,Mage_m_head11_eye01_yellow,,,,char_hi\pc\faces\warrior_m\lancermale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
-303012,Mage_m_head12_eye01_yellow,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
+303012,Mage_m_head12_eye01_yellow,,,,char_hi\pc\faces\warrior_m\sage_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 303013,Mage_m_head13_eye01_yellow,,,,char_hi\pc\faces\warrior_m\puppeteer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 303014,Mage_m_head14_eye01_yellow,,,,char_hi\pc\faces\warrior_m\falconer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 303015,Mage_m_head15_eye01_yellow,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 303016,Mage_m_head16_eye01_yellow,,,,char_hi\pc\faces\warrior_m\cockatriesmale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
-303017,Mage_m_head17_eye01_yellow,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
+303017,Mage_m_head17_eye01_yellow,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 303018,Mage_m_head_eye01_purple,,,,char_hi\pc\faces\warrior_m\messy_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 303019,Mage_m_head2_eye01_purple,,,,char_hi\pc\faces\warrior_m\thaumaturge2_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 303020,Mage_m_head3_eye01_purple,,,,char_hi\pc\faces\warrior_m\dratail\draTail_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
@@ -4267,7 +4280,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 303026,Mage_m_head9_eye01_purple,,,,char_hi\pc\faces\warrior_m\musketeer_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 303027,Mage_m_head10_eye01_purple,,,,char_hi\pc\faces\warrior_m\pantherhair_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 303028,Mage_m_head11_eye01_purple,,,,char_hi\pc\faces\warrior_m\lancermale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
-303029,Mage_m_head12_eye01_purple,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
+303029,Mage_m_head12_eye01_purple,,,,char_hi\pc\faces\warrior_m\sage_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 303030,Mage_m_head13_eye01_purple,,,,char_hi\pc\faces\warrior_m\puppeteer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 303031,Mage_m_head14_eye01_purple,,,,char_hi\pc\faces\warrior_m\falconer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 303032,Mage_m_head15_eye01_purple,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
@@ -4324,7 +4337,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 305009,archer_m_head9_eye01_yellow,,,,char_hi\pc\faces\warrior_m\musketeer_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 305010,archer_m_head10_eye01_yellow,,,,char_hi\pc\faces\warrior_m\pantherhair_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 305011,archer_m_head11_eye01_yellow,,,,char_hi\pc\faces\warrior_m\lancermale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
-305012,archer_m_head12_eye01_yellow,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
+305012,archer_m_head12_eye01_yellow,,,,char_hi\pc\faces\warrior_m\sage_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 305013,archer_m_head13_eye01_yellow,,,,char_hi\pc\faces\warrior_m\puppeteer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 305014,archer_m_head14_eye01_yellow,,,,char_hi\pc\faces\warrior_m\falconer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 305015,archer_m_head15_eye01_yellow,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
@@ -4341,7 +4354,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 305026,archer_m_head9_eye01_purple,,,,char_hi\pc\faces\warrior_m\musketeer_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 305027,archer_m_head10_eye01_purple,,,,char_hi\pc\faces\warrior_m\pantherhair_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 305028,archer_m_head11_eye01_purple,,,,char_hi\pc\faces\warrior_m\lancermale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
-305029,archer_m_head12_eye01_purple,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
+305029,archer_m_head12_eye01_purple,,,,char_hi\pc\faces\warrior_m\sage_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 305030,archer_m_head13_eye01_purple,,,,char_hi\pc\faces\warrior_m\puppeteer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 305031,archer_m_head14_eye01_purple,,,,char_hi\pc\faces\warrior_m\falconer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 305032,archer_m_head15_eye01_purple,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
@@ -4398,7 +4411,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 307009,cleric_m_head9_eye01_yellow,,,,char_hi\pc\faces\warrior_m\musketeer_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 307010,cleric_m_head10_eye01_yellow,,,,char_hi\pc\faces\warrior_m\pantherhair_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 307011,cleric_m_head11_eye01_yellow,,,,char_hi\pc\faces\warrior_m\lancermale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
-307012,cleric_m_head12_eye01_yellow,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
+307012,cleric_m_head12_eye01_yellow,,,,char_hi\pc\faces\warrior_m\sage_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 307013,cleric_m_head13_eye01_yellow,,,,char_hi\pc\faces\warrior_m\puppeteer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 307014,cleric_m_head14_eye01_yellow,,,,char_hi\pc\faces\warrior_m\falconer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
 307015,cleric_m_head15_eye01_yellow,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_yellow\,bg_hi\ErrorBox.mtl,,,NO
@@ -4415,7 +4428,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 307026,cleric_m_head9_eye01_purple,,,,char_hi\pc\faces\warrior_m\musketeer_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 307027,cleric_m_head10_eye01_purple,,,,char_hi\pc\faces\warrior_m\pantherhair_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 307028,cleric_m_head11_eye01_purple,,,,char_hi\pc\faces\warrior_m\lancermale_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
-307029,cleric_m_head12_eye01_purple,,,,char_hi\pc\faces\warrior_m\onmyoji_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
+307029,cleric_m_head12_eye01_purple,,,,char_hi\pc\faces\warrior_m\sage_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 307030,cleric_m_head13_eye01_purple,,,,char_hi\pc\faces\warrior_m\puppeteer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 307031,cleric_m_head14_eye01_purple,,,,char_hi\pc\faces\warrior_m\falconer_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO
 307032,cleric_m_head15_eye01_purple,,,,char_hi\pc\faces\warrior_m\shepherd_Warrior_m_head_std.xac,char_texture\pc\face\face_m_eye01_purple\,bg_hi\ErrorBox.mtl,,,NO

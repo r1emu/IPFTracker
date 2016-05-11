@@ -2,8 +2,13 @@
 
 function GUILDBATTLE_RANKING_ON_INIT(addon, frame)
 
-	addon:RegisterMsg("FIRST_GUILD_RANK_INFO", "UPDATE_FIRST_RANKING_GUILD");
+	addon:RegisterMsg("FIRST_GUILD_RANK_INFO", "ON_UPDATE_FIRST_GUILD_RANK_INFO");
 
+end
+
+function ON_UPDATE_FIRST_GUILD_RANK_INFO(frame)
+	UPDATE_FIRST_RANKING_GUILD(frame);
+	UPDATE_GET_REWARD_BUTTON(frame);
 end
 
 function UPDATE_FIRST_RANKING_GUILD(frame)
@@ -35,6 +40,37 @@ function UPDATE_FIRST_RANKING_GUILD(frame)
 	
 end
 
+function UPDATE_GET_REWARD_BUTTON(frame)
+
+	local btn = frame:GetChild("btn_get_reward");
+	btn:ShowWindow(0);
+	local prevSeason = session.worldPVP.GetCurrentSeason() - 1;
+	local prevSeasonMyRank = session.worldPVP.GetPrevSeasonMyGuildRank();
+	if prevSeasonMyRank > 0 then
+		local isLeader = AM_I_LEADER(PARTY_GUILD);
+		if isLeader == 1 then
+			local pcparty = session.party.GetPartyInfo(PARTY_GUILD);
+			if pcparty ~= nil then
+				local partyObj = GetIES(pcparty:GetObject());
+				local lastPVPRewardSeason = partyObj.LastPVPRewardSeason;
+				
+				if lastPVPRewardSeason ~= prevSeason then
+					btn:ShowWindow(1);				
+				end
+			end	
+			
+		end
+	end
+
+end
+
+function REQ_GET_GUILD_BATTLE_REWARD(frame)
+
+	local type = session.worldPVP.GetRankProp("Type");
+	worldPVP.RequestGetWorldPVPReward(type);
+
+end
+
 function GUILDBATTLE_RANKING_TAB_CHANGE(frame)
 
 	GUILDBATTLE_RANKING_REQUEST_RANK(frame, 1, 0);
@@ -47,7 +83,8 @@ function OPEN_GUILDBATTLE_RANKING(frame)
 	worldPVP.RequestGuildBattlePrevSeasonTop(type);
 	UPDATE_FIRST_RANKING_GUILD(frame);
 	UPDATE_GUILD_REWARD_TEXTS(frame);
-
+	UPDATE_GET_REWARD_BUTTON(frame);
+	UPDATE_GUILDBATTLE_RANK_MYRANK(frame);
 end
 
 function GET_GUILD_BATTLE_REWARD_BY_CLS(cls)
@@ -83,6 +120,10 @@ function UPDATE_GUILD_REWARD_TEXTS(frame)
 	GBOX_AUTO_ALIGN(gbox_guild_rewards, 0, 0, 0, true, false);
 
 
+end
+
+function GUILDBATTLE_RANKING_SELECT(frame, ctrl)
+	GUILDBATTLE_RANKING_REQUEST_RANK(frame, 1, 0);
 end
 
 function GUILDBATTLE_RANKING_REQUEST_RANK(frame, page, findMyRanking)
@@ -138,7 +179,7 @@ function UPDATE_GUILDBATTLE_RANK_MYRANK(frame)
 		if rank > 0 then
 			txt_title_myrank:ShowWindow(1);
 			txt_myrank:ShowWindow(1);
-			txt_myrank:SetTexxtByKey("value", rank);
+			txt_myrank:SetTextByKey("value", rank);
 		end
 	end
 	

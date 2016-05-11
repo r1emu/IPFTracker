@@ -52,7 +52,12 @@ function OPEN_WORLDPVP(frame)
 
 	local title = frame:GetChild("title");
 	title:SetTextByKey("value", ScpArgMsg("TeamBattleLeague"));
-    
+
+	local tab = GET_CHILD(frame, "tab");
+	if tab ~= nil then
+		tab:SelectTab(0);
+	end
+
 	WORLDPVP_SET_UI_MODE(frame, "");
 	local ret = worldPVP.RequestPVPInfo();
 	if ret == false then
@@ -274,21 +279,16 @@ function JOIN_WORLDPVP_BY_TYPE(frame, pvpType)
 	elseif state == PVP_STATE_PLAYING then
 	
 		if cls.MatchType == "Guild" then
-			local isLeader = AM_I_LEADER(PARTY_GUILD);
-			if isLeader == 1 then
 				local pvpGuid = frame:GetUserIValue("GUILD_PVP_GUID_" .. pvpType);
 				if pvpGuid > 0 then
-					print(pvpGuid);
 					worldPVP.ReqJoinGuildPVP(pvpType, pvpGuid);
 				end
 			end
 	end
-end
 
 end
 
 function ON_PVP_STATE_CHANGE(frame, msg, pvpType)
-
 	local bg = frame:GetChild("bg");
 	local charinfo = bg:GetChild("charinfo");
 	local state = session.worldPVP.GetState();
@@ -314,6 +314,16 @@ function ON_PVP_STATE_CHANGE(frame, msg, pvpType)
 			droplist:SelectItemByKey(pvpType);
 			UPDATE_WORLDPVP(frame);
 		end
+	elseif state == PVP_STATE_READY then
+		local cls = GetClassByType("WorldPVPType", pvpType);
+		if cls.MatchType ~= "Guild" then
+			return;
+		end
+		local isLeader = AM_I_LEADER(PARTY_GUILD);
+		if 1 ~= isLeader then
+			return;
+		end
+		ui.Chat("/sendMasterEnter");
 	end
 
 	if 1 == ui.IsFrameVisible("worldpvp_ready") then
