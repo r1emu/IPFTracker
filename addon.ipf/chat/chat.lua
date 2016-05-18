@@ -2,7 +2,28 @@ CHAT_LINE_HEIGHT = 100;
 
 function CHAT_ON_INIT(addon, frame)	
 
+	-- 마우스 호버링을 위한 마우스 업할때 닫기 이벤트 설정 부분.
+	--{	
+	local btn_emo = GET_CHILD(frame, "button_emo");
+	btn_emo:SetEventScript(ui.MOUSEMOVE, "CHAT_OPEN_EMOTICON");
+
+	local btn_type = GET_CHILD(frame, "button_type");
+	btn_type:SetEventScript(ui.MOUSEMOVE, "CHAT_OPEN_TYPE");	
+	--}
+
+	--초기 채팅 타입 설정은 '일반으로
+	config.SetConfig("ChatTypeNumber", 1);
 end
+
+--채팅바를 Open할때마다 불러오기로.
+function CHAT_OPEN_INIT()
+	--'채팅 타입'에 따른 채팅바의 '채팅타입 버튼 목록'이 결정된다.
+	CHAT_TYPE_LISTSET(config.GetConfigInt("ChatTypeNumber"));
+end;
+
+function CHAT_CLOSE_SCP()
+	CHAT_CLICK_CHECK();
+end;
 
 function CHAT_ROOM_UPDATE(roomID) -- 그룹 채팅 리스트 업데이트. 귓말 목록 그거임
 
@@ -57,7 +78,6 @@ end
 
 
 function CHAT_GROUP_REMOVE(roomID) 
-
 	local frame = ui.GetFrame('chatframe');
 	local child = frame:GetChild('chatgbox_'..roomID);
 	if child == nil then
@@ -115,7 +135,6 @@ function MAKE_POPUP_CHAT_BY_XML(roomid, titleText, width, height, x, y)
 end
 
 function MAKE_POPUP_CHAT(parent, ctrl, roomid)
-
 	local info = session.chat.GetByStringID(roomid);
 	if info == nil then
 		return;
@@ -354,24 +373,22 @@ function CHAT_SYSTEM(msg)
 end
 
 
-
+--채팅타입에 따라 '채팅바의 입력기' 위치와 크기 설정. 
 function CHAT_SET_TO_TITLENAME(chatType, targetName, count)
 	local frame = ui.GetFrame('chat');
 	local chatEditCtrl = frame:GetChild('mainchat');
 	local titleCtrl = GET_CHILD(frame,'edit_to_bg');
 	local editbg = GET_CHILD(frame,'edit_bg');
+	local name  = GET_CHILD(titleCtrl,'title_to');		
+	local btn_ChatType = GET_CHILD(frame,'button_type');
 
-	local titleText = ''
+	local offsetX = btn_ChatType:GetWidth() - 18;
+	local titleText = '';
+	local isVisible = 0;
 	
-	if chatType == 'generalchat' then
-		titleText = ScpArgMsg('NormalChat');
-	elseif chatType == 'partychat' then
-		titleText = ScpArgMsg('PartyChat');
-	elseif chatType == 'guildchat' then
-		titleText = ScpArgMsg('guild');
-	elseif chatType == 'shoutchat' then
-		titleText = ScpArgMsg('Auto_oeChiKi');
-	elseif chatType == 'whisperchat' or chatType == 'whisperFromchat' or chatType == 'whisperTochat' then
+	-- 귓말과 그룹채팅에 따른 상대를 표시해야 할 경우 
+	if chatType == 'whisperchat' or chatType == 'whisperFromchat' or chatType == 'whisperTochat' then
+		isVisible = 1;
 		titleText = ScpArgMsg('WhisperChat','Who',targetName);
 	elseif chatType == 'groupchat' then
 		if count > 1 then
@@ -379,27 +396,70 @@ function CHAT_SET_TO_TITLENAME(chatType, targetName, count)
 		else
 			titleText = ScpArgMsg('WhisperChat','Who',targetName);
 		end
+		isVisible = 1;
 	end
 
-	local name  = GET_CHILD(titleCtrl,'title_to');
-
+	-- 이름을 먼저 설정해줘야 크기와 위치 설정이 이루어진다.
 	name:SetText(titleText);
-	
 	titleCtrl:Resize(name:GetWidth() + 20,titleCtrl:GetOriginalHeight())
-	chatEditCtrl:Resize(chatEditCtrl:GetOriginalWidth() - titleCtrl:GetWidth(), chatEditCtrl:GetOriginalHeight())
-	chatEditCtrl:SetOffset(chatEditCtrl:GetOriginalX() + titleCtrl:GetWidth(), chatEditCtrl:GetOriginalY())
+	
+	if isVisible == 1 then
+		titleCtrl:SetVisible(1);
+		offsetX = offsetX + 30;
+	else
+		titleCtrl:SetVisible(0);
+	end;
 
+	chatEditCtrl:Resize(chatEditCtrl:GetOriginalWidth() - titleCtrl:GetWidth() - offsetX + 10, chatEditCtrl:GetOriginalHeight())
+	chatEditCtrl:SetOffset(titleCtrl:GetWidth() + offsetX, chatEditCtrl:GetOriginalY());
 end
 
 
-
+-- 채팅창의 이모티콘선택창과 옵션창의 Open 스크립트
+--{
 function CHAT_OPEN_OPTION(frame)
-	ui.ToggleFrame("chat_option");
+	CHAT_SET_OPEN(frame, 1);
 end
 
 function CHAT_OPEN_EMOTICON(frame)
-	ui.ToggleFrame("chat_emoticon");
+	CHAT_SET_OPEN(frame, 0);
 end
+--}
+
+-- 채팅창의 이모티콘선택창과 옵션창이 열려있을 경우에 다른 곳 클릭시 해당 창들을 Close
+function CHAT_CLICK_CHECK(frame)
+	local type_frame = ui.GetFrame('chattypelist');
+	local emo_frame = ui.GetFrame('chat_emoticon');
+	local opt_frame = ui.GetFrame('chat_option');
+	emo_frame:ShowWindow(0);
+	opt_frame:ShowWindow(0);
+	type_frame:ShowWindow(0);
+end;
+
+--이모티콘선택창과 옵션창의 위치를 채팅바에 따라 교정하고 Open 관리
+function CHAT_SET_OPEN(frame, numFrame)
+	local opt_frame = ui.GetFrame('chat_option');
+	opt_frame:SetPos(frame:GetX() + frame:GetWidth() - 35, frame:GetY() - opt_frame:GetHeight());
+
+	local emo_frame = ui.GetFrame('chat_emoticon');
+	emo_frame:SetPos(frame:GetX() + 35, frame:GetY() - emo_frame:GetHeight());
+
+	if numFrame == 0 then	
+		opt_frame:ShowWindow(0);
+		emo_frame:ShowWindow(1);
+	elseif numFrame == 1 then
+		opt_frame:ShowWindow(1);
+		emo_frame:ShowWindow(0);
+	end;
+end;
+
+-- 채팅창의 '타입 목록 열기 버튼'을 클릭시 '타입 목록'의 위치를 채팅바에 따라 교정하고 Open
+function CHAT_OPEN_TYPE()
+	local chatFrame = ui.GetFrame('chat');
+	local frame = ui.GetFrame('chattypelist');
+	frame:SetPos(chatFrame:GetX() + 3, chatFrame:GetY() - frame:GetHeight());	
+	frame:ShowWindow(1);	
+end;
 
 
 
@@ -434,11 +494,3 @@ end
 
 
 
-
-
-
-
-
-
-
-

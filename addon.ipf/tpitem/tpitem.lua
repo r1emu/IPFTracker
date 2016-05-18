@@ -368,7 +368,9 @@ function TPITEM_DRAW_ITEM(frame, category, subcategory)
 				previewbtn:SetEventScriptArgNumber(ui.LBUTTONUP, itemobj.ClassID);
 				previewbtn:SetEventScriptArgString(ui.LBUTTONUP, obj.ClassName);
 			end
-
+			if obj.SubCategory == 'TP_Costume_Hairacc' then
+				previewbtn:ShowWindow(0)
+			end
 			local buyBtn = GET_CHILD_RECURSIVELY(itemcset, "buyBtn");
 			buyBtn:SetEventScriptArgNumber(ui.LBUTTONUP, itemobj.ClassID);
 			buyBtn:SetEventScriptArgString(ui.LBUTTONUP, obj.ClassName);
@@ -684,6 +686,35 @@ function TPSHOP_ITEM_TO_BASKET(parent, control, tpitemname, classid)
 		end
 	end
 
+	local tpitem = GetClass("TPitem", tpitemname);
+	if tpitem == nil then
+		ui.MsgBox(ScpArgMsg("DataError"))
+		return
+	end
+
+	if tpitem.SubCategory == "TP_Costume_Color" then
+		local etc = GetMyEtcObject();
+		if nil == etc then
+			ui.MsgBox(ScpArgMsg("DataError"))
+			return;
+		end
+
+		local nowAllowedColor = etc['AllowedHairColor']
+		if string.find(nowAllowedColor, item.StringArg) ~= nil then
+			ui.MsgBox(ScpArgMsg("AlearyEquipColor"))
+			return;
+		end
+
+		if session.GetInvItemByType(classid) ~= nil then
+			ui.MsgBox(ScpArgMsg("CanNotBuyDuplicateItem"))
+			return;
+		end
+		if session.GetWarehouseItemByType(classid) ~= nil then
+			ui.MsgBox(ScpArgMsg("CanNotBuyDuplicateItem"))
+			return;
+		end
+	end
+
 	if IS_EQUIP(item) == true then
 		local lv = GETMYPCLEVEL();
 		local job = GETMYPCJOB();
@@ -695,13 +726,6 @@ function TPSHOP_ITEM_TO_BASKET(parent, control, tpitemname, classid)
 			ui.MsgBox(ScpArgMsg("CanNotEquip"))
 			return;
 		end
-
-		local tpitem = GetClass("TPitem", tpitemname);
-		
-		if tpitem == nil then
-			return
-		end
-
 		local pc = GetMyPCObject();
 		if pc == nil then
 			return;
@@ -757,6 +781,11 @@ function TPSHOP_ITEM_TO_BASKET(parent, control, tpitemname, classid)
 				local item = GetClass("Item", alreadyItem.ItemClassName)
 				local allowDup = TryGetProp(item,'AllowDuplicate')
 				
+				if tpitem.SubCategory == "TP_Costume_Color" and  tpitemname == classname then
+					ui.MsgBox(ScpArgMsg("CanNotBuyDuplicateItem"))
+					return;
+				end
+
 				if allowDup == "NO" then
 		
 					if nodupliItems[classname] == nil then
@@ -765,7 +794,6 @@ function TPSHOP_ITEM_TO_BASKET(parent, control, tpitemname, classid)
 						ui.MsgBox(ScpArgMsg("CanNotBuyDuplicateItem"))
 						return;
 					end
-
 				end
 			
 			end
@@ -857,4 +885,4 @@ function UPDATE_BASKET_MONEY(frame)
 
 	frame:Invalidate();
 
-en
+end

@@ -166,9 +166,14 @@ function SKILLITEMMAKE_EXEC(frame)
 	local visCls = GetClass("Item", "Vis");
 	local myVis = session.GetInvItemCountByType(visCls.ClassID);
 	local myBottle = session.GetInvItemByName(bottleCls.ClassName);
-	if myVis < totalVis or myBottle == nil then
+	if myVis < totalVis then
 		ui.SysMsg(ClMsg("NotEnoughMoney"));
 		return;
+	end
+	
+	if myBottle == nil then
+	    ui.SysMsg(ClMsg("NotEnoughMaterial"));
+	    return;
 	end
 
 	if true == myBottle.isLockState then
@@ -244,4 +249,4 @@ function UPDATE_SKILLITEMMAKE_PRICE(frame, sklObj, levelSkill)
 	progtime:SetTextByKey("value", makeSec);
 	local gauge = GET_CHILD(frame, "gauge", "ui::CGauge");
     gauge:SetPoint(0, 100);
-end
+end

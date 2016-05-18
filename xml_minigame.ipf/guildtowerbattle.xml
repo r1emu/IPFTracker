@@ -62,10 +62,7 @@
                             <ToolScp Scp="MGAME_SET_TIMER" Client="NO" UseSleep="NO">
                                 <Str Str="ToEndBattle"/>
                                 <Num Num="1800"/>
-                                <Str Str="None"/>
-                            </ToolScp>
-                            <ToolScp Scp="MGAME_EVT_SCRIPT_CLIENT" Client="YES" UseSleep="NO">
-                                <Str Str="GUILDBATTLE_BATTLE_START_C"/>
+                                <Str Str="MGAME_OPEN_GUILDBATTLE_TIMER_UI"/>
                             </ToolScp>
                         </execList>
                     </Event>
@@ -202,4 +199,4 @@
             <ToolScp Scp="MGAME_ENABLE_INSTANT_PARTY" Client="NO" UseSleep="NO"/>
         </WorldInitList>
     </Game>
-</GameList>
+</GameList>

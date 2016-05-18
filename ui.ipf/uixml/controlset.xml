@@ -539,8 +539,8 @@
 			<button name="complete" layout_gravity="left top" margin="3 3 0 0" rect="0 0 74 80" hittest="false" skin="journal_complete_skin"/>
 			<page name="drop" rect="0 0 270 30" margin="80 30 0 0" layout_gravity="left top" slotsize="30 30" slotscp="10 0" skin="" hittestpage="false"/>
 			<richtext name="name" rect="0 0 300 20" margin="80 8 0 0" hittest="false" layout_gravity="left top" textalign="left center" resizebytext="false" fixwidth="true" format="{@st42}%s{/}" param1="value" param1_def=""/>
-			<richtext name="point" rect="0 0 60 20" margin="0 8 15 0" hittest="false" layout_gravity="right top" textalign="right center" resizebytext="false" fixwidth="true" format="{@st65}%s점{/}" param1="value" param1_def="123"/>
-			<richtext name="itemcount" rect="0 0 60 30" margin="0 30 15 0" hittest="false" layout_gravity="right top" textalign="right center" resizebytext="false" fixwidth="true" format="{@st65}%s개{/}" param1="value" param1_def="123"/>
+			<richtext name="point" rect="0 0 60 20" margin="0 30 15 0" hittest="false" layout_gravity="right top" textalign="right center" resizebytext="false" fixwidth="true" format="{@st65}%s점{/}" param1="value" param1_def="123"/>
+			<richtext name="itemcount" rect="0 0 60 30" margin="0 45 15 0" hittest="false" layout_gravity="right top" textalign="right center" resizebytext="false" fixwidth="true" format="{@st65}%s개{/}" param1="value" param1_def="123"/>
 			<richtext name="skillValue" rect="0 0 185 20" margin="0 78 15 0" hittest="false" layout_gravity="right top" textalign="right center" resizebytext="false" fixwidth="true" format="{@st65}피해량 %s{/}" param1="value" param1_def="Damage 123"/>
 			<richtext name="skillName" rect="0 0 185 20" margin="120 78 0 0" hittest="false" layout_gravity="left top" textalign="left center" resizebytext="false" fixwidth="true" format="{@st65}%s{/}" param1="value" param1_def="Skill_Name"/>
 			<richtext name="t_date" rect="0 0 70 35" margin="3 74 0 0" layout_gravity="left top" textalign="center center" resizebytext="false" fixwidth="true" format="{@st65}{s12}%s{/}" param1="value" param1_def="oneyear"/>
@@ -784,23 +784,23 @@
 	</controlset>
 	<controlset name="chatu" toggle="false" hittest="true" width="400" height="100" skin="">
 		<controls>
-			<labelbox name="bg" layout_gravity="left top" visible="true" rect="0 0 380 40" skin="textballoon_reflect" margin="40 18 0 0"/>
-			<richtext name="name" layout_gravity="left top" useorifacerect="true" visible="true" rect="0 0 319 22" margin="50 0 0 0" resizebytext="true" maxwidth="200" fixwidth="false" fixheight="true" textalign="left top" format="{@st42b}%s" param1="name" param1_def="AAAAAAABBBBBBBCCCCCC"/>
+			<labelbox name="bg" layout_gravity="left top" visible="true" rect="0 0 380 40" skin="textballoon_reflect" margin="0 18 0 0"/>
+			<richtext name="name" layout_gravity="left top" useorifacerect="true" visible="true" rect="0 0 319 22" margin="0 0 0 0" resizebytext="true" maxwidth="200" fixwidth="false" fixheight="true" textalign="left top" format="{@st42b}%s" param1="name" param1_def="AAAAAAABBBBBBBCCCCCC"/>
 			<richtext name="text" layout_gravity="center center" useorifacerect="true" visible="true" rect="0 0 350 20" margin="0 0 0 0" resizebytext="true" maxwidth="330" fixwidth="false" textalign="left top" splitbyspace="false" format="%s{s%s}%s" param1="font" param1_def="{#050505}{b}" param2="size" param2_def="16" param3="text" param3_def="AAA" parent="bg"/>
-			<richtext name="notread" layout_gravity="right center" useorifacerect="true" visible="true" rect="0 0 200 20" margin="44 -13 10 0" resizebytext="true" maxwidth="320" fixwidth="false" textalign="left top" splitbyspace="false" format="{@st42_red}%s" param1="count" param1_def="3" parent="bg"/>
-			<groupbox name="timebox" margin="50 25 0 0" rect="0 0 70 18" hittestbox="false" skin="chat_time_bg2" layout_gravity="left top" scroll="false"/>
-			<richtext name="time" layout_gravity="center center" useorifacerect="true" rect="0 0 70 18" margin="0 0 0 0" resizebytext="true" maxwidth="0" fixwidth="false" textalign="center center" param1="time" param1_def="PM 16:16" spacey="0" fontname="white_14_ol" updateparent="false" drawbackground="false" slideshow="false" parent="timebox"/>
 			<picture name="iconPicture" margin="5 7 0 0" rect="0 0 48 48" hittest="false" image="mainpc_crown" stretch="true" changecursor="false" layout_gravity="left top"/>
+		</controls>
+	</controlset>
+	<controlset name="chatTextVer" toggle="false" hittest="true" width="450" height="20" skin="">
+		<controls>
+			<labelbox name="bg" layout_gravity="left top" rect="0 0 420 20" skin="skin_white" margin="0 0 0 0"/>
+			<richtext name="text" layout_gravity="left top" useorifacerect="true" visible="true" rect="0 0 440 20" margin="0 0 0 0" resizebytext="true" maxwidth="440" fixwidth="false" textalign="left top" splitbyspace="false" format="{/}%s{s%s}%s{/}" param1="font" param1_def="{#FFFFFF}{b}" param2="size" param2_def="16" param3="text" param3_def="AAA"/>
 		</controls>
 	</controlset>
 	<controlset name="chati" toggle="false" hittest="true" width="400" height="100" skin="">
 		<controls>
 			<labelbox name="bg" layout_gravity="right top" visible="true" rect="0 0 380 40" skin="textballoon" margin="0 0 2 0"/>
 			<richtext name="text" layout_gravity="center center" visible="true" rect="0 0 360 20" margin="0 0 0 0" maxwidth="320" fixwidth="false" textalign="left top" splitbyspace="false" format="%s{s%s}%s" useorifacerect="true" resizebytext="true" param1="font" param1_def="{#050505}{b}" param2="size" param2_def="16" param3="text" param3_def="AAA" parent="bg"/>
-			<richtext name="notread" layout_gravity="left center" visible="true" rect="0 0 320 20" margin="8 -3 10 0" maxwidth="320" fixwidth="false" textalign="left top" splitbyspace="false" format="{@st42_red_small}%s" useorifacerect="true" resizebytext="true" param1="count" param1_def="3" parent="bg"/>
-			<groupbox name="timebox" margin="0 7 0 0" rect="0 0 70 18" hittestbox="false" skin="chat_time_bg2" layout_gravity="left top" scroll="false"/>
-			<richtext name="time" layout_gravity="center center" rect="0 0 70 18" margin="0 0 0 0" maxwidth="0" fixwidth="false" textalign="center center" useorifacerect="true" resizebytext="true" param1="time" param1_def="PM 16:16" spacey="0" fontname="white_14_ol" updateparent="false" drawbackground="false" slideshow="false" parent="timebox"/>
-		</controls>
+			</controls>
 	</controlset>
 	<controlset name="chatlist" toggle="false" hittest="true" width="455" height="40" skin="chat_Whisper_talkskin" stateskin="false">
 		<controls>
@@ -2447,9 +2447,12 @@
 	<controlset name="pvp_observe_ctrlset" hittest="true" width="480" height="400" hittestset="false" draw="false" skin="none">
 		<controls>
 			<groupbox name="gbox_whole" margin="0 0 0 0" rect="0 0 480 300" hittestbox="false" skin="test_skin_01" layout_gravity="left top" scrollbar="false"/>
-			<groupbox name="gbox" margin="10 10 0 0" rect="0 0 460 104" hittestbox="false" skin="pvp_team_skin" layout_gravity="left top" scrollbar="false"/>
-			<groupbox name="gbox_1" margin="10 10 0 0" rect="0 0 230 104" hittestbox="false" skin="none" layout_gravity="left top" scrollbar="false"/>
-			<groupbox name="gbox_2" margin="240 10 0 0" rect="0 0 230 104" hittestbox="false" skin="none" layout_gravity="left top" scrollbar="false"/>
+            <groupbox name="gbox" margin="10 40 0 0" rect="0 0 460 104" hittestbox="false" skin="pvp_team_skin" layout_gravity="left top" scrollbar="false"/>
+            <groupbox name="gbox_1" margin="10 40 0 0" rect="0 0 230 104" hittestbox="false" skin="none" layout_gravity="left top" scrollbar="false"/>
+            <groupbox name="gbox_2" margin="240 40 0 0" rect="0 0 230 104" hittestbox="false" skin="none" layout_gravity="left top" scrollbar="false"/>
+            <richtext name="team_name_1" margin="10 10 0 0" rect="0 0 230 27" format="{@stc2}%s{/}" param1="name" textalign="left center" resizebytext="true" spacey="0" maxwidth="0" fixwidth="true" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
+            <richtext name="team_name_2" margin="10 10 9 0" rect="0 0 230 27" format="{@stc2}%s{/}" param1="name" textalign="right center" resizebytext="true" spacey="0" maxwidth="0" fixwidth="true" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="right top"/>
+            <richtext name="vx_text" margin="0 10 0 0" rect="0 0 50 27" format="{@st45tw}{s20}%s{/}" param1="vs" param1_def="x" textalign="center center" resizebytext="false" spacey="0" maxwidth="0" fixwidth="true" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="center top"/>
 			<button name="btn" margin="0 113 0 5" rect="0 0 261 43" layout_gravity="center bottom" skin="test_red_button" LBtnUpScp="MSG_OBSERVE_GAME" format="{ol}{s20}%s" param1="value" param1_def="관전하기"/>
 		</controls>
 	</controlset>
@@ -2655,6 +2658,7 @@
 			<richtext name="txt_guildtowercount" margin="137 480 0 0" rect="0 0 120 24" format="{#000000}%s{/}" param1="value" param1_def="GuildTower" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="white_16" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
 			<richtext name="txt_guildtowerposition" margin="136 505 0 0" rect="0 0 175 50" format="{#000000}%s {#000000}(%s){/}" param1="value" param1_def="GuildTower" param2="remaintime" param2_def="aaa" paramtextalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="white_16" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
 			<button name="guildwarehouse" parent="gBox" rect="0 0 120 40" margin="0 800 12 0" layout_gravity="right top" LBtnUpScp="TOGGLE_GUILD_WAREHOUSE" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" format="{@st66b}%s{/}" param1="value" param1_def="보관함" clicksound="button_click" oversound="button_over" skin="test_pvp_btn" textalign="center center"/>
+            <button name="guildbattleranking" parent="gBox" rect="0 0 120 40" margin="0 800 132 0" layout_gravity="right top" LBtnUpScp="OPEN_GUILDBATTLE_RANKING_FRAME" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" format="{@st66b}%s{/}" param1="value" param1_def="통합 길드 배틀 순위" clicksound="button_click" oversound="button_over" skin="journal_guild_icon" textalign="center center"/>
 			<checkbox name="neutrality" margin="458 180 0 0" rect="0 0 120 24" fontname="black_16_b" caption="중립 선언" clicksound="button_click_big" oversound="button_over" layout_gravity="left top" LBtnUpScp="ON_GUILD_SET_NEUTRALITY"/>
 			<richtext name="neutralityTime" margin="130 180 0 0" rect="0 0 120 50" format="%s" param1="value" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="black_16_b" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
 		</controls>
@@ -2811,4 +2815,4 @@
 			<groupbox name="lvbox" margin="32 0 0 0" rect="0 0 46 30" hittestbox="false" skin="false" layout_gravity="left top" scrollbar="false"/>
 		</controls>
 	</controlset>
-</controlsetlist>
+</controlsetlist>

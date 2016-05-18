@@ -7678,7 +7678,12 @@ end
 function SCR_Get_StoneShot_Bufftime(skill)
     
     local value = 4 + skill.Level * 0.4
-    return math.floor(value);
+    
+    if IsPVPServer(pc) == 1 then
+        value = value / 2
+    end
+    
+    return value;
 
 end
 
@@ -7962,7 +7967,7 @@ end
 function SCR_GET_HellBreath_Ratio(skill)
 
 	local pc = GetSkillOwner(skill);
-    local value = 3
+    local value = 2
     return value
 end
 
@@ -8122,7 +8127,7 @@ function SCR_GET_Revive_Bufftime(skill)
 	local value = 90
 	
 	local Priest21_abil = GetAbility(pc, 'Priest21')
-	if Priest21_abil ~= nil and 1 == Priest21_abil.ActiveState then
+	if Priest21_abil ~= nil and 1 == Priest21_abil.ActiveState and IsPVPServer(pc) == 0 then
 	    value = value + Priest21_abil.Level * 7
 	end
 	
@@ -11223,4 +11228,4 @@ end
 function SCR_GET_Dig_Ratio(skill)
 	local value = skill.Level;
 	return value;
-en
+end

@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="yes"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by mayo (IMCGames Co., Ltd) -->
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <ComponentList>
 	<Particle name="square008" texture="background002" width="5.00" height="5.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64"/>
 	<Particle name="pattern018_2" texture="pattern018_2" width="5.00" height="5.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64"/>
@@ -1134,6 +1134,7 @@
 	<Model name="boss_kurmis_dead" model="boss_kurmis_dead.xac" motion="boss_kurmis_dead_ani.xsm" texturepath="char_texture\monster\kurmis\" overlap="false"/>
 	<Model name="stake_stockades_01_dead" model="stake_stockades_01_dead.xac" motion="stake_stockades_01_dead_ani.xsm" texturepath="char_texture\monster\stake_stockades\" overlap="false"/>
 	<Model name="pet_egg_dead" model="pet_egg_dead.xac" motion="pet_egg_dead_ani.xsm" texturepath="char_texture\monster\Egg\" overlap="false"/>
+	<Model name="pet_box_dead" model="pet_box_dead.xac" motion="pet_box_dead_ani.xsm" texturepath="char_texture\monster\pet_box\" overlap="false"/>
 	<Text name="Text_damage_self" caption="" fontfilename="ORIGINAL" fontsize="24" bold="0" italic="0" outline="0" dropshadow="0" mindistance="100.00" maxdistance="300.00"/>
 	<Text name="Text_damage_decision" caption="" fontfilename="ORIGINAL" fontsize="20" bold="1" italic="0" outline="1" dropshadow="0" mindistance="50.00" maxdistance="150.00"/>
 	<Text name="Text_destination" caption="" fontfilename="ORIGINAL" fontsize="28" bold="0" italic="0" outline="0" dropshadow="0" mindistance="100.00" maxdistance="300.00"/>
@@ -1223,4 +1224,4 @@
 	<Screen name="hit_main_10" texture="hit_main_10" width="80.00" height="80.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="340" texel_height="128" loop="false" count="0" pitch="1" ticktime="0.00"/>
 	<Screen name="UI_circle007" texture="circle007" width="5" height="5" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64" loop="false" count="0" pitch="1" ticktime="0.00"/>
 	<Screen name="hit_main_10_blue" texture="hit_main_10_blue" width="80.00" height="80.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="340" texel_height="128" loop="false" count="0" pitch="1" ticktime="0.00"/>
-</ComponentList>
+</ComponentList>

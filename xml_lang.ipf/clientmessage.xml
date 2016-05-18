@@ -37,10 +37,11 @@
 		<Class ClassID="33" ClassName="DisconnectNGSProcess" Data="NGS에 의해 접속이 차단되었습니다."/>
 		<Class ClassID="34" ClassName="DisconnectNGSBlock" Data="NGS에 탐지되었습니다. 접속이 차단됩니다."/>
 		<Class ClassID="35" ClassName="TryLater" Data="잠시 후 다시 시도해 주세요."/>
+	<Class ClassID="36" ClassName="PlzInstallTheLatestVersionD3DX" Data="게임에 이상이 있을 수 있습니다. 최신 버전의 DirectX를 설치해 주세요."/>
 	</Category>
 	<Category Name="ChatMsg">
 		<Class ClassID="301" ClassName="CantWhisperToSelf" Data="자기자신에겐 귓속말을 할 수 없습니다."/>
-		<Class ClassID="302" ClassName="ChatMsgLimitedBy{Max}Byte_EmoticonCanTakeLotsOfByte" Data="채팅은 {Max}바이트를 초과할 수 없습니다. 이모티콘은 많은 바이트를 차지할 수 있기 때문에 개수 제한이 있습니다."/>
+		<Class ClassID="302" ClassName="ChatMsgLimitedBy{Max}Byte_EmoticonCanTakeLotsOfByte" Data="채팅은 {Max}바이트를 초과할 수 없습니다. 이모티콘 및 링크는 많은 바이트를 차지할 수 있기 때문에 개수 제한이 있습니다."/>
 		<Class ClassID="303" ClassName="GuildChatting" Data="길드 대화"/>
 		<Class ClassID="304" ClassName="GroupList" Data="대화 목록"/>
 	</Category>
@@ -695,6 +696,8 @@
 		<Class ClassID="10431" ClassName="TeamLevel" Data="팀 레벨"/>
 		<Class ClassID="10432" ClassName="ExpGetAmount" Data="경험치 획득량"/>
 		<Class ClassID="10436" ClassName="RefusedInviteRequest_Public" Data="공개 파티 가입이 거절되었습니다."/>
+	<Class ClassID="10437" ClassName="DruidTransformFailed" Data="해당 몬스터로 변신할 수 없습니다."/>
+    <Class ClassID="10439" ClassName="CantWarpBcz" Data="해당 지역으로는 이동할 수 없습니다."/>
 	</Category>
 	<Category Name="FoodTable">
 		<Class ClassID="20001" ClassName="IncreaseHP{Value}For{Time}Minute" Data="{Time}분 동안 HP가 {Value}% 증가합니다."/>
@@ -866,6 +869,20 @@
 		<Class ClassID="21161" ClassName="Excnaged_Count_Remind" Data="번 교환 가능 합니다."/>
 		<Class ClassID="21162" ClassName="Excnaged_No_Enough" Data="교환 횟수를 모두 소진하였습니다."/>
 	<Class ClassID="20166" ClassName="TP_Costume_Lens" Data="[프리미엄]컬러 렌즈"/>
+	<Class ClassID="20167" ClassName="ChatType_1" Data="일반"/>
+		<Class ClassID="20168" ClassName="ChatType_2" Data="외침"/>
+		<Class ClassID="20169" ClassName="ChatType_3" Data="파티"/>
+		<Class ClassID="20170" ClassName="ChatType_4" Data="길드"/>
+		<Class ClassID="20171" ClassName="ChatType_5" Data="귓말"/>
+		<Class ClassID="20172" ClassName="ChatType_6" Data="공지"/>
+		<Class ClassID="20173" ClassName="ChatType_7" Data="시스템"/>
+		<Class ClassID="20174" ClassName="ChatType_1_ToolTip" Data="/s 할말"/>
+		<Class ClassID="20175" ClassName="ChatType_2_ToolTip" Data="/y 할말"/>
+		<Class ClassID="20176" ClassName="ChatType_3_ToolTip" Data="/p 할말"/>
+		<Class ClassID="20177" ClassName="ChatType_4_ToolTip" Data="/g 할말"/>
+		<Class ClassID="20178" ClassName="ChatType_5_ToolTip" Data="/w 팀명 할말"/>
+		<Class ClassID="20179" ClassName="TeamBattleLeagueText" Data="팀배틀리그"/>
+	<Class ClassID="20180" ClassName="TP_Costume_Hairacc" Data="헤어 악세서리"/>
 	</Category>
 	<Category Name="ChatText">
 		<Class ClassID="22001" ClassName="Guard" Data="방어"/>
@@ -3716,7 +3733,7 @@
 		<Class ClassID="102050" ClassName="GuildLeaderUse{SkillName}Skill_WillYouToAccept?" Data="길드마스터가 {SkillName}을 사용했습니다. 수락하시겠습니까?"/>
 		<Class ClassID="102051" ClassName="GuildMaster" Data="길드마스터"/>
 		<Class ClassID="102052" ClassName="{PC}AlreadyBelongsToGuild" Data="{PC}님은 이미 길드에 속해있습니다"/>
-		<Class ClassID="102053" ClassName="ToMakeGuild,YouMustHaveJob{Name}" Data="길드를 만들기 위해선 {Name}직업으로 전직해야 합니다."/>
+		<Class ClassID="102053" ClassName="ToMakeGuild,YouMustHaveJob{Name}" Data="길드를 만들거나 마스터 양도를 받기 위해선 {Name}직업으로 전직해야 합니다."/>
 		<Class ClassID="102054" ClassName="YouConsume{Price}SilverToMakeGuild" Data="길드를 만들기 위해선 {Price}실버가 소요됩니다."/>
 		<Class ClassID="102055" ClassName="YouCannotDisbandGuildInWarState" Data="전쟁 상태에서는 길드를 해산할 수 없습니다."/>
 		<Class ClassID="102056" ClassName="YouCantMakeObjectOnlyInFarmArea" Data="밭에서만 작물을 심거나 컴패니언을 키울 수 있습니다."/>
@@ -3787,7 +3804,7 @@
 		<Class ClassID="102121" ClassName="GuildEnemyCountMAX" Data="전쟁 선포는 최대 3개의 길드까지만 가능합니다."/>
 		<Class ClassID="102122" ClassName="NeedGuildTower" Data="길드 타워가 없으면 전쟁 선포를 할 수 없습니다."/>
 		<Class ClassID="102123" ClassName="NoTaltinTheSlot" Data="사용할 탈트를 먼저 올려놓아야 합니다."/>
-		<Class ClassID="102124" ClassName="MasterStartGuildBattle" Data="길드 마스터가{nl}길드 대전에 입장하였습니다."/>
+		<Class ClassID="102124" ClassName="MasterStartGuildBattle" Data="길드 마스터가{nl}통합 길드배틀에 입장하였습니다."/>
 		<Class ClassID="102125" ClassName="GiveMasterOnlyGuildAgit" Data="길드 마스터 양도는 길드 아지트 내에서만 가능합니다."/>
 		<Class ClassID="102126" ClassName="DoNotExsitMemberGuildAgit" Data="대상이 길드 아지트에 있지 않습니다."/>
 		<Class ClassID="102127" ClassName="TgtDonHaveTmpler" Data="대상이 템플러 직업을 가지고 있지 않습니다."/>
@@ -3797,6 +3814,7 @@
 		<Class ClassID="102131" ClassName="DisAgreeChangeGuildMaster" Data="상대방이 길드 마스터 직위 양도를 거부하셨습니다."/>
 		<Class ClassID="102132" ClassName="GuildTakeDamageArt{NAME}" Data="{NAME} 타워가 공격받고 있습니다."/>
 		<Class ClassID="102133" ClassName="GiveGuildLeaderPermission" Data="길드 마스터 양도하기"/>
+	<Class ClassID="102134" ClassName="GuildDestroyCanNotLessGuildMember" Data="길드 마스터만 남아있을 때, 길드 해산을 할 수 있습니다."/>
 	</Category>
 	<Category Name="EqupClasses">
 		<Class ClassID="103001" ClassName="THSword" Data="양손검"/>
@@ -4429,6 +4447,13 @@
 		<Class ClassID="131045" ClassName="FirstRankServerReward" Data="1위 서버 보상"/>
 		<Class ClassID="131046" ClassName="ForTheNextRankingRefreshFreeTPPlus{Value}" Data="다음 주간 순위 갱신시까지 무료 TP+{Value}"/>
 		<Class ClassID="131047" ClassName="CantUseThisInIntegrateServer" Data="통합 서버에서는 사용할 수 없는 기능입니다."/>
+		<Class ClassID="131048" ClassName="DonotChangeCharAtGuildPVP" Data="캐릭터를 변경해서 통합 길드 대전에 재 입장하실 수 없습니다."/>
+	<Class ClassID="131049" ClassName="DonotOpenPVP" Data="아직 열리지 않은 대전 입니다."/>
+		<Class ClassID="131050" ClassName="PVPEnter{COUNT}{MAX}" Data="해당 리그 참여 횟수 {COUNT} 회{nl}총 {MAX}회 참여 가능한 대전입니다.{nl}매칭을 신청하시겠습니까?"/>
+		<Class ClassID="131051" ClassName="MAXPVPEnterCount{TIME}" Data="오늘 해당 리그에 참여 가능한 횟수를 초과하셨습니다.{nl}횟수는 매일 {TIME}시에 초기화 됩니다."/>
+		<Class ClassID="131052" ClassName="DonotPlayGuildBattleYet" Data="길드 마스터가 상대를 찾고 있거나 아직 참여 신청을 하지 않았습니다."/>
+		<Class ClassID="131053" ClassName="WorldGuildPVP" Data="통합 길드배틀"/>
+	<Class ClassID="131054" ClassName="GuildBattleLeageHasBegun_JoinByByttonOnTheLeftMinimap" Data="통합 길드배틀이 시작되었습니다. 미니맵 좌측 아이콘을 통해 참여가 가능합니다."/>
 	</Category>
 	<Category Name="MonInfo">
 		<Class ClassID="132001" ClassName="MonInfo_Size" Data="크기"/>
@@ -7370,6 +7395,7 @@
 		<Class ClassID="300074" ClassName="Premium_StatReset14" Data="스탯 초기화"/>
 		<Class ClassID="300075" ClassName="abilityMax_ForPC{COUNT}" Data="특성 동시 수련 가능 개수 증가"/>
 		<Class ClassID="300076" ClassName="Premium_StatReset" Data="스탯 초기화 포션"/>
+	<Class ClassID="300077" ClassName="CarGoPremiumItem" Data="현재 장착중이거나 소지중인 헤어스타일은 추가로 보유할 수 없습니다."/>
 	</Category>
 	<Category Name="TPHistory">
 		<Class ClassID="301001" ClassName="RemainLogoutPC" Data="로그아웃 PC 만들기"/>
@@ -7400,4 +7426,4 @@
 	<Category Name="Notice">
 		<Class ClassID="304001" ClassName="NoticeFrameName" Data="공지사항"/>
 	</Category>
-</idspace>
+</idspace>

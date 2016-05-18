@@ -319,7 +319,8 @@ function PET_ABIL_UP(parent, ctrl)
 		ui.SysMsg(ScpArgMsg('Auto_SilBeoKa_BuJogHapNiDa.'));
 		return;
 	end
-	ui.MsgBox(msg, scriptString, "None");
+
+	ui.MsgBoxNoCap(msg, scriptString, "None", frame:GetName());
 
 end
 
@@ -381,4 +382,4 @@ function ON_PET_EXP_UPDATE(frame)
 	local lv = bg:GetChild("lv");
 	lv:SetTextByKey("value", petLv);
 
-en
+end

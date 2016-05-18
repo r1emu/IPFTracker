@@ -37,6 +37,11 @@ end
 ----- reinforce_131014
 
 function CLIENT_MORU(invItem)
+	if IsPVPServer() == 1 then	
+		ui.SysMsg(ScpArgMsg('CantUseThisInIntegrateServer'));
+		return;
+	end
+
 	local frame = ui.GetFrame("reinforce_131014");
 	local fromMoruSlot = GET_CHILD(frame, "fromMoruSlot", "ui::CSlot");
 
@@ -187,4 +192,4 @@ function _CHECK_MORU_TARGET_ITEM(slot)
 		slot:ReleaseBlink();
 	end
 
-end
+end

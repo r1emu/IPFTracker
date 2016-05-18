@@ -2230,6 +2230,9 @@
 		<image name="accessory_leafhelm" file="\icon\hairacc\accessory_leafhelm.png" imgrect="0 0 256 256"/>
 		<image name="hairacc_hat071" file="\icon\hairacc\hairacc_hat071.png" imgrect="0 0 256 256"/>
 		<image name="hairacc_hat072" file="\icon\hairacc\hairacc_hat072.png" imgrect="0 0 256 256"/>
+		<image name="hairacc_hat073" file="\icon\hairacc\hairacc_hat073.png" imgrect="0 0 256 256"/>
+		<image name="hairacc_hat073_1" file="\icon\hairacc\hairacc_hat073_1.png" imgrect="0 0 256 256"/>
+		<image name="hairacc_hat074" file="\icon\hairacc\hairacc_hat074.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="collection_item">
 		<image name="icon_collitem_collection" file="\icon\colletion\icon_item_collection.tga" imgrect="0 0 673 419" CMM_Caption="월계수"/>
@@ -3436,6 +3439,7 @@
 		<image name="icon_item_bluenecklace" file="\icon\item\icon_item_bluenecklace.png" imgrect="0 0 128 128" CMM_Caption="종유동굴 검은목걸이"/>
 		<image name="icon_item_blacknecklace" file="\icon\item\icon_item_blacknecklace.png" imgrect="0 0 128 128" CMM_Caption="종유동굴 푸른목걸이"/>
 		<image name="icon_item_Anchovy" file="\icon\item\icon_item_Anchovy.png" imgrect="0 0 128 128" CMM_Caption="멸치"/>
+		<image name="icon_item_egg_lessrpanda2" file="\icon\item\icon_item_egg_lessrpanda2.png" imgrect="0 0 128 128" CMM_Caption="렛서팬더상자"/>
 	</imagelist>
 	<imagelist category="payment">
 		<image name="icon_item_hpPotionPremium" file="\icon\payment\icon_item_hpPotionPremium.png" imgrect="0 0 256 256" CMM_Caption="HP포션"/>
@@ -3553,6 +3557,21 @@
 		<image name="icon_item_lens_yellow" file="\icon\payment\lens_yellow.png" imgrect="0 0 256 256" CMM_Caption="렌즈"/>
 		<image name="icon_item_lens_perple" file="\icon\payment\lens_perple.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_package_penguin" file="\icon\payment\icon_item_package_penguin.png" imgrect="0 0 256 256" CMM_Caption="펭귄패키지"/>
+		<image name="icon_item_tospoint500" file="\icon\payment\icon_item_tospoint500.png" imgrect="0 0 256 256" CMM_Caption="TP 500개"/>
+		<image name="icon_item_tospoint900" file="\icon\payment\icon_item_tospoint900.png" imgrect="0 0 256 256" CMM_Caption="TP 900개"/>
+		<image name="icon_item_warrior_trump_m" file="\icon\payment\warrior_m_trump.png" imgrect="0 0 256 256" CMM_Caption="트럼프세트_전사"/>
+		<image name="icon_item_warrior_trump_f" file="\icon\payment\warrior_f_trump.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_archer_trump_m" file="\icon\payment\archer_m_trump.png" imgrect="0 0 256 256" CMM_Caption="트럼프세트_아쳐"/>
+		<image name="icon_item_archer_trump_f" file="\icon\payment\archer_f_trump.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_cleric_trump_m" file="\icon\payment\cleric_m_trump.png" imgrect="0 0 256 256" CMM_Caption="트럼프세트_클레릭"/>
+		<image name="icon_item_cleric_trump_f" file="\icon\payment\cleric_f_trump.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_mage_trump_m" file="\icon\payment\mage_m_trump.png" imgrect="0 0 256 256" CMM_Caption="트럼프세트_위저드"/>
+		<image name="icon_item_mage_trump_f" file="\icon\payment\mage_f_trump.png" imgrect="0 0 256 256"/>
+		<image name="hairacc_Hat_trump_cle" file="\icon\payment\Hat_cle_trump.png" imgrect="0 0 256 256" CMM_Caption="트럼프세트_헤어"/>
+		<image name="hairacc_Hat_trump_arc" file="\icon\payment\Hat_arc_trump.png" imgrect="0 0 256 256"/>
+		<image name="hairacc_Hat_trump_war" file="\icon\payment\Hat_war_trump.png" imgrect="0 0 256 256"/>
+		<image name="hairacc_Hat_trump_wizm" file="\icon\payment\Hat_wiz_trump_m.png" imgrect="0 0 256 256"/>
+		<image name="hairacc_Hat_trump_wizf" file="\icon\payment\Hat_wiz_trump_f.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="seal">
 		<image name="icon_seal_yellow_cc_A1" file="\icon\seal\seal_yellow_cc_A1.tga" imgrect="0 0 80 80"/>
@@ -3711,4 +3730,4 @@
 		<image name="icon_item_bubearrow" file="\icon\item_sloticon.tga" imgrect="396 440 42 42" CMM_Caption="부베 화살"/>
 		<image name="icon_item_bubebowstring" file="\icon\item_sloticon.tga" imgrect="440 440 42 42" CMM_Caption="부베 활시위"/>
 	</imagelist>
-</skinset>
+</skinset>

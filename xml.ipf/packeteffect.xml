@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <packeteffects>
     <Category ID="173">
@@ -134,6 +134,7 @@
         <Effect Name="I_laser016_loop"/>
         <Effect Name="F_dash012_yellow_loop"/>
         <Effect Name="F_dash012_yellow_loop"/>
+        <Effect Name="I_sphere009_green"/>
     </Category>
     <Category ID="72">
         <Effect>F_archer_chargeshot_shot_smoke</Effect>
@@ -376,8 +377,8 @@
         <Effect Name="I_emo_damagerank3"/>
         <Effect Name="I_emo_damagerank4"/>
         <Effect Name="I_emo_damagerank5"/>
-	<Effect Name="I_emo_damagerank6"/>
-	<Effect Name="I_emo_damagerank7"/>
+        <Effect Name="m_boss_scenario2"/>
+        <Effect Name="GuildHunter_Cnt"/>
     </Category>
     <Category ID="42">
         <Effect Name="voice_cleric_m_vashitasiddhi_cast"/>
@@ -982,6 +983,37 @@
         <Effect Name="m_boss_scenario"/>
         <Effect Name="MISSION_REMAIN_02"/>
         <Effect Name="FailCheck"/>
+        <Effect Name="BossGen"/>
+        <Effect Name="Step1"/>
+        <Effect Name="Step2"/>
+        <Effect Name="Step3"/>
+        <Effect Name="Step4"/>
+        <Effect Name="Step5"/>
+        <Effect Name="Step6"/>
+        <Effect Name="Step7"/>
+        <Effect Name="Step8"/>
+        <Effect Name="Step9"/>
+        <Effect Name="Step10"/>
+        <Effect Name="Step11"/>
+        <Effect Name="Step12"/>
+        <Effect Name="Step13"/>
+        <Effect Name="Step14"/>
+        <Effect Name="Step15"/>
+        <Effect Name="Step16"/>
+        <Effect Name="Step17"/>
+        <Effect Name="Step18"/>
+        <Effect Name="Step19"/>
+        <Effect Name="Step20"/>
+        <Effect Name="Step21"/>
+        <Effect Name="Step22"/>
+        <Effect Name="JUMPING"/>
+        <Effect Name="pc_pose_lean01"/>
+        <Effect Name="mission_start_1"/>
+        <Effect Name="mission_notice_1"/>
+        <Effect Name="mission_notice_2"/>
+        <Effect Name="mission_notice_3"/>
+        <Effect Name="mission_success_1"/>
+        <Effect Name="mission_fail_1"/>
     </Category>
     <Category ID="61">
         <Effect Name="F_ground083_smoke"/>
@@ -2422,11 +2454,12 @@
         <Effect Name="F_explosion098_dark_orange##0.7"/>
         <Effect Name="F_explosion098_dark_orange"/>
         <Effect Name="MISSION_UPHILL_DEFFENSE"/>
-    <Effect Name="F_fire003_green"/>
+        <Effect Name="F_fire003_green"/>
         <Effect Name="I_stone_event_parts2_mash"/>
-    <Effect Name="I_sphere009_green#Dummy_skl1_effect"/>
-		<Effect Name="I_sphere009_green#Dummy_skl1_effect#1.5"/>
-	</Category>
+        <Effect Name="I_sphere009_green#Dummy_skl1_effect"/>
+        <Effect Name="I_sphere009_green#Dummy_skl1_effect#1.5"/>
+        <Effect Name="F_explosion001_dark##0.5"/>
+    </Category>
     <Category ID="27">
         <Effect Name="SAPPER_TRAP_Sapper_BroomTrap"/>
         <Effect Name="I_laser005_blue"/>
@@ -8926,4 +8959,4 @@
     <Category ID="300">
         <Effect Name="DefClass123"/>
     </Category>
-</packeteffects>
+</packeteffects>

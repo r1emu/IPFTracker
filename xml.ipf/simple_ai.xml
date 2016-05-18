@@ -5645,8 +5645,9 @@
 				<Str_Arg Str="I_spread_in007_white" Arg="3"/>
 				<Str Str="MID"/>
 			</ToolScp>
-			<ToolScp Scp="S_AI_GTOWER_DM" Client="NO" UseSleep="NO">
-				<Str Str="GT_STAGE_7_PAD"/>
+			<ToolScp Scp="S_AI_GTOWER_D_DM" Client="NO" UseSleep="NO">
+				<Str Str="M_GTOWER_STAGE_7"/>
+                <Str Str="GT_STAGE_7_PAD"/>
 				<Num Num="150"/>
 				<Str Str="진행도"/>
 				<Str Str="scroll"/>
@@ -17238,4 +17239,4 @@ return GET_RATE_MHP(self, damage) * 100"/>
 			</ToolScp>
 		</HitList>
 	</AI>
-</AIList>
+</AIList>

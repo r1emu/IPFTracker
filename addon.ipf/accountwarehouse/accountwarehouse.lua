@@ -261,4 +261,4 @@ function ACCOUNT_WAREHOUSE_INV_RBTN(itemObj, slot)
 	if fromFrame:GetName() == "inventory" then
 		PUT_ACCOUNT_ITEM_TO_WAREHOUSE_BY_INVITEM(frame, invItem, nil, fromFrame)
 	end
-end
+end
