@@ -52,6 +52,7 @@ ClassID,Value,Value2,ClassName,Desc,UseInScript
 100051,10,0,"TRACK_NORMAL_DROP_RATE","연출 퀘스트 일반 몹 드랍 확률 1/10","NO"
 100052,1,0,"ZONE_MEMORY_INFO_MONGO","ENABLE_NEW_DEBUG일 때, 존서버 메모리정보 몽고로그 기록","NO"
 100053,60000,0,"PREMIUM_BUFF_SAVE_TIME","","NO"
+100054,5,0,"GROUP_CHAT_READ_COUNT","챗서버에서 chat내용 read할 때 한번에 가져오는 수","NO"
 110000,3,0,"TEST_VAL_1","테스트용","NO"
 110001,350,0,"TEST_VAL_2","테스트용","NO"
 110002,-1,0,"TEST_VAL_3","테스트용","NO"
