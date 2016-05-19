@@ -28,6 +28,9 @@ end
 function _SHOW_PC_CONTEXT_MENU(handle)
 
 	local context = SHOW_PC_CONTEXT_MENU(handle);
+	if context == nil then
+		return;
+	end
 	context:SetOffset(g_lastContextMenuX, g_lastContextMenuY);
 	
 
@@ -98,10 +101,10 @@ function SHOW_PC_CONTEXT_MENU(handle)
 		local context = ui.CreateContextMenu("PC_CONTEXT_MENU", pcObj:GetPCApc():GetFamilyName(), 0, 0, 170, 100);
 		-- 여기에 캐릭터 정보보기, 로그아웃PC관련 메뉴 추가하면됨
 		local strWhisperScp = string.format("ui.WhisperTo('%s')", pcObj:GetPCApc():GetFamilyName());
-		if true == session.loginInfo.IsPremiumState(ITEM_TOKEN) then
+		--if true == session.loginInfo.IsPremiumState(ITEM_TOKEN) then
 			local strScp = string.format("exchange.RequestChange(%d)", pcObj:GetHandleVal());
 			ui.AddContextMenuItem(context, ClMsg("Exchange"), strScp);
-		end
+		--end
 		
 		local strScp = "";
 		if session.world.IsIntegrateServer() == false then
@@ -140,6 +143,10 @@ function SHOW_PC_CONTEXT_MENU(handle)
 			end
 		end
 
+
+		ui.AddContextMenuItem(context, ScpArgMsg("Report_AutoBot"), string.format("REPORT_AUTOBOT_MSGBOX(\"%s\")", pcObj:GetPCApc():GetFamilyName()));
+
+
 		-- 보호모드, 강제킥
 		if 1 == session.IsGM() then
 			ui.AddContextMenuItem(context, ScpArgMsg("GM_Order_Protected"), string.format("REQUEST_GM_ORDER_PROTECTED(\"%s\")", pcObj:GetPCApc():GetFamilyName()));
@@ -151,8 +158,21 @@ function SHOW_PC_CONTEXT_MENU(handle)
 		ui.OpenContextMenu(context);
 		return  context;
 	end
+end
 
+function REPORT_AUTOBOT_MSGBOX(teamName)
 
+	local msgBoxString = ScpArgMsg("DoYouReportAuto{Name}?", "Name", teamName);
+	local yesScp = string.format("REPORT_AUTOBOT( \"%s\" )", teamName);
+	
+	ui.MsgBox(msgBoxString, yesScp, "None");	
+end
+
+function REPORT_AUTOBOT(teamName)
+
+	packet.ReportAutoBot(teamName);
+	local msgStr = ScpArgMsg("ThxReportAuto{Name}", "Name", teamName);
+	ui.SysMsg(msgStr);
 end
 
 function REQUEST_GM_ORDER_PROTECTED(teamName)

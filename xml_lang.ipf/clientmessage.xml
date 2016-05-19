@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by IMC (IMCGames Co., Ltd) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <idspace id="ClientMessage">
 	<Category Name="ErrorMsg">
 		<Class ClassID="1" Data="DirectX 9.0c 이상의 버전이 설치되어 있어야 합니다"/>
@@ -40,7 +40,7 @@
 	</Category>
 	<Category Name="ChatMsg">
 		<Class ClassID="301" ClassName="CantWhisperToSelf" Data="자기자신에겐 귓속말을 할 수 없습니다."/>
-		<Class ClassID="302" ClassName="ChatMsgLimitedBy{Max}Byte_EmoticonCanTakeLotsOfByte" Data="채팅은 {Max}바이트를 초과할 수 없습니다. 이모티콘은 많은 바이트를 차지할 수 있기 때문에 개수 제한이 있습니다."/>
+		<Class ClassID="302" ClassName="ChatMsgLimitedBy{Max}Byte_EmoticonCanTakeLotsOfByte" Data="채팅은 {Max}바이트를 초과할 수 없습니다. 이모티콘 및 링크는 많은 바이트를 차지할 수 있기 때문에 개수 제한이 있습니다."/>
 		<Class ClassID="303" ClassName="GuildChatting" Data="길드 대화"/>
 		<Class ClassID="304" ClassName="GroupList" Data="대화 목록"/>
 	</Category>
@@ -370,6 +370,9 @@
 		<Class ClassID="10430" ClassName="CantWarpBczThereIsInstZone" Data="인스턴스 던전으로는 이동할 수 없습니다."/>
 		<Class ClassID="10431" ClassName="TeamLevel" Data="팀 레벨"/>
 		<Class ClassID="10432" ClassName="ExpGetAmount" Data="경험치 획득량"/>
+		<Class ClassID="10434" ClassName="NoTOKEN_USER_Trade_Warnning" Data="거래 대상 양측이 모두 토큰을 사용한다면 해당 아이템의 속성에 변경이 없습니다.  계속 하시겠습니까?"/>
+		<Class ClassID="10435" ClassName="NoTOKEN_USER_Trade_Warnning_ItemList" Data="거래 속성이 변경되는 아이템 목록"/>
+		<Class ClassID="10436" ClassName="RefusedInviteRequest_Public" Data="공개 파티 가입이 거절되었습니다."/>
 	</Category>
 	<Category Name="Reinforce">
 		<Class ClassID="210401" ClassName="NotEnoughReinforcePotential" Data="강화에 필요한 포텐셜이 부족합니다"/>
@@ -443,10 +446,10 @@
 		<Class ClassID="10536" ClassName="RecipeGroup_Artefact" Data="아티팩트"/>
 		<Class ClassID="10537" ClassName="RecipeGroup_Rapier" Data="레이피어"/>
 		<Class ClassID="10538" ClassName="CraftUsedtoSit" Data="제작은 앉아서 할 수 있습니다."/>
-	<Class ClassID="10539" ClassName="RecipeGroup_Armband" Data="암밴드"/>
+		<Class ClassID="10539" ClassName="RecipeGroup_Armband" Data="암밴드"/>
 		<Class ClassID="10540" ClassName="RecipeGroup_MagicAmulet" Data="매직어뮬렛"/>
 		<Class ClassID="10541" ClassName="RecipeGroup_Cannon" Data="캐논"/>
-	<Class ClassID="10542" ClassName="RecipeGroup_Dagger" Data="단검"/>
+		<Class ClassID="10542" ClassName="RecipeGroup_Dagger" Data="단검"/>
 		<Class ClassID="10543" ClassName="RecipeGroup_Musket" Data="머스킷"/>
 	</Category>
 	<Category Name="ItemPuzzle">
@@ -851,6 +854,11 @@
 		<Class ClassID="20157" ClassName="ONE_MORE_TIME" Data="한번 더 열기"/>
 		<Class ClassID="20158" ClassName="ITEM_IsEquiped" Data="착용중"/>
 		<Class ClassID="20159" ClassName="ITEM_IsPurchased" Data="구매함"/>
+		<Class ClassID="20160" ClassName="NeedMoreLevel" Data="{Level}이상이어야 사용 가능합니다."/>
+		<Class ClassID="20161" ClassName="AbleAfterTime" Data="{Time} 이후로 사용 가능한 기능입니다."/>
+		<Class ClassID="20162" ClassName="CantTradePC" Data="상대방이 거래 가능한 상태가 아닙니다."/>
+		<Class ClassID="20165" ClassName="Delete_Target" Data="삭제"/>
+		<Class ClassID="20166" ClassName="CLASS_TYPE_Companion" Data="컴페니언"/>
 	</Category>
 	<Category Name="ChatText">
 		<Class ClassID="20501" ClassName="Guard" Data="방어"/>
@@ -2779,7 +2787,7 @@
 		<Class ClassID="190062" ClassName="ORCHARD_324_FLOWER_TAKE" Data="대지의 꽃을 꺾는 중"/>
 		<Class ClassID="190063" ClassName="ORCHARD_324_FLOWER_GET" Data="생명력 가득한 대지의 꽃을 얻었습니다"/>
 		<Class ClassID="190064" ClassName="ORCHARD_342_FAKE_CUT" Data="수상한 자루를 열어보는 중"/>
-		<Class ClassID="190065" ClassName="ORCHARD_342_FAKE_SUMMON" Data="여기에는 소녀가 없는 것 같습니다"/>
+		<Class ClassID="190065" ClassName="ORCHARD_342_FAKE_SUMMON" Data="페릿이 덤벼듭니다."/>
 		<Class ClassID="190066" ClassName="ORCHARD_324_SEED_DEAD" Data="대지의 꽃 씨앗이 파괴됐습니다!"/>
 		<Class ClassID="190067" ClassName="FD_CASTLE671_DARKSOUL_NAME" Data="마족의 검은 영혼"/>
 		<Class ClassID="190068" ClassName="FD_CASTLE671_BURNINGSTONE_FAIL" Data="불타는 결정이 부족합니다"/>
@@ -3532,15 +3540,14 @@
 		<Class ClassID="22406" ClassName="GetFromGuildWareHouse" Data="길드 보관함 수령 아이템"/>
 		<Class ClassID="22407" ClassName="NotEnoughTicketPossibleCount" Data="필요한 티켓의 갯수가 부족합니다."/>
 		<Class ClassID="22408" ClassName="YouCanBuildInGuildAgit" Data="길드 아지트 내에서만 사용할 수 있습니다."/>
-		<Class ClassID="22409" ClassName="TradeCountWillBeConsumedBy{Value}_Continue?" Data="토큰의 거래 가능 횟수가 {Value}만큼 차감됩니다. 계속하시겠습니까?"/>
+		<Class ClassID="22409" ClassName="TradeCountWillBeConsumedBy{Value}_Continue?" Data="창고 아이템을 획득하시겠습니까?"/>
 		<Class ClassID="22410" ClassName="SelectItemByMouseLeftButton" Data="마우스 왼쪽 버튼으로 아이템을 선택해주세요."/>
 		<Class ClassID="22411" ClassName="CantDiscardTowerWhileWarState" Data="전쟁중엔 타워를 철거할 수 없습니다."/>
 		<Class ClassID="22412" ClassName="CantPlantSeedBczNotOurGuild" Data="길드원이 아니면 작물을 심을 수 없습니다."/>
 		<Class ClassID="22413" ClassName="doNotJoinGuildEvent" Data="길드 이벤트에 참여하지 않았습니다."/>
 		<Class ClassID="22414" ClassName="GuildMember{Name}Get{Item}By{Count}FromGuildWareHouse" Data="길드원 {Name}이 길드 보관함으로부터 {Item} {Count}개를 받았습니다."/>
 		<Class ClassID="22415" ClassName="ReceivedItemFromGuildWareHouse_GetItFromBarrack" Data="길드 보관함에 아이템을 수령했습니다. 숙소에서 아이템을 확인하세요."/>
-<Class ClassID="22417" ClassName="YouCanBuildInTheOtherGuildAgit" Data="다른 길드 아지트에서는 사용하실 수 없습니다."/>
-<Class ClassID="22418" ClassName="CannotChangeNeutralityState" Data="아직 중립상태를 변경할 수 없습니다."/>
+		<Class ClassID="22418" ClassName="CannotChangeNeutralityState" Data="아직 중립상태를 변경할 수 없습니다."/>
 		<Class ClassID="22419" ClassName="YouCanBuildInTheOtherGuildAgit" Data="다른 길드 아지트에서는 사용하실 수 없습니다."/>
 		<Class ClassID="22421" ClassName="WantTobeChangedNeutralityState{DAY}" Data="길드 중립 상태로 변경하시길 원합니까?{nl}중립 상태에서는 필드 전쟁이 불가능합니다.{nl}상태는 {DAY}동안 유지됩니다."/>
 		<Class ClassID="22422" ClassName="WantTobeChangedNoneNeutralityState{DAY}" Data="길드 중립 상태로 변경하시길 원합니까?{nl}중립 상태에서는 필드 전쟁이 불가능합니다.{nl}상태는 {DAY}동안 유지됩니다."/>
@@ -4077,6 +4084,9 @@
 		<Class ClassID="29950" ClassName="GM_Order_Protected" Data="보호모드 적용"/>
 		<Class ClassID="29951" ClassName="GM_Order_Kick" Data="강제 킥"/>
 		<Class ClassID="29955" ClassName="GM_Order_Move" Data="이동하기"/>
+		<Class ClassID="29956" ClassName="Report_AutoBot" Data="오토 의심유저 신고하기"/>
+		<Class ClassID="29957" ClassName="DoYouReportAuto{Name}?" Data="{Name}님을 오토 유저로 신고하시겠습니까?"/>
+		<Class ClassID="29958" ClassName="ThxReportAuto{Name}" Data="{Name}님에 대한 오토신고가 접수되었습니다. 감사합니다."/>
 	</Category>
 	<Category Name="BlackMarket">
 		<Class ClassID="30000" ClassName="Deposit" Data="계약금"/>
@@ -4120,7 +4130,7 @@
 		<Class ClassID="31032" ClassName="CanNotLikeIte" Data="해당 캐릭터는 좋아요를 받을 수 있는 상태가 아닙니다."/>
 		<Class ClassID="31033" ClassName="DeathPenaltyGem" Data="현재 지역에서 전투 불능 시, 소지 중인 젬 일부를 유실할 수 있습니다."/>
 		<Class ClassID="31034" ClassName="DeathPenaltyGemSilver" Data="현재 지역에서 전투 불능 시, 소지 중인 젬 일부와 실버를 유실할 수 있습니다."/>
-	<Class ClassID="31035" ClassName="CanNotEquipLow{Job}{Grade}" Data="{Job} {Grade}서클만 구매 가능합니다."/>
+		<Class ClassID="31035" ClassName="CanNotEquipLow{Job}{Grade}" Data="{Job} {Grade}서클만 구매 가능합니다."/>
 	</Category>
 	<Category Name="Quest">
 		<Class ClassID="32001" ClassName="ClickToSharedQuestWithParty" Data="{@st59}버튼을 클릭하면 파티원에게 노출합니다."/>
@@ -4162,18 +4172,18 @@
 		<Class ClassID="33532" ClassName="ReviveSomeTimeLater" Data="잠시 후 부활합니다."/>
 		<Class ClassID="33533" ClassName="{Name}Get{Point}BecauseHave{MonName}LastTime" Data="{MonName}을 마지막에 가지고 있던 {Name}이 {Point}포인트를 획득했습니다."/>
 		<Class ClassID="33534" ClassName="RemainTimeToStartGame" Data="게임시작까지 남은 시간"/>
-    <Class ClassID="33535" ClassName="RemainTimeToEndGame" Data="게임종료까지 남은 시간"/>
+		<Class ClassID="33535" ClassName="RemainTimeToEndGame" Data="게임종료까지 남은 시간"/>
 		<Class ClassID="33536" ClassName="GameAlreadyStarted" Data="게임이 이미 시작되었습니다."/>
 		<Class ClassID="33537" ClassName="JoinCountLimited" Data="입장 인원이 초과되었습니다."/>
 		<Class ClassID="33538" ClassName="Rank{Value}" Data="{Value} 위"/>
-    <Class ClassID="33539" ClassName="Win{Win}Lose{Lose}" Data="{Win}승 {Lose}패"/>
+		<Class ClassID="33539" ClassName="Win{Win}Lose{Lose}" Data="{Win}승 {Lose}패"/>
 		<Class ClassID="33540" ClassName="{Time}WeeklyRankingRefresh" Data="{Time}후 주간 순위 갱신"/>
-    <Class ClassID="33541" ClassName="{Point}Point" Data="{Point}점"/>
-    <Class ClassID="33542" ClassName="{Rank}Rank" Data="{Rank}위"/>
-    <Class ClassID="33543" ClassName="TPChangeTicket" Data="TP 교환권"/>
-    <Class ClassID="33544" ClassName="GuildReward" Data="길드 보상"/>
-    <Class ClassID="33545" ClassName="FirstRankServerReward" Data="1위 서버 보상"/>
-    <Class ClassID="33546" ClassName="ForTheNextRankingRefreshFreeTPPlus{Value}" Data="다음 주간 순위 갱신시까지 무료 TP+{Value}"/>
+		<Class ClassID="33541" ClassName="{Point}Point" Data="{Point}점"/>
+		<Class ClassID="33542" ClassName="{Rank}Rank" Data="{Rank}위"/>
+		<Class ClassID="33543" ClassName="TPChangeTicket" Data="TP 교환권"/>
+		<Class ClassID="33544" ClassName="GuildReward" Data="길드 보상"/>
+		<Class ClassID="33545" ClassName="FirstRankServerReward" Data="1위 서버 보상"/>
+		<Class ClassID="33546" ClassName="ForTheNextRankingRefreshFreeTPPlus{Value}" Data="다음 주간 순위 갱신시까지 무료 TP+{Value}"/>
 
 ClassID="33547" ClassName="CantUseThisInIntegrateServer" Data="통합 서버에서는 사용할 수 없는 기능입니다."/>
 	
@@ -7083,7 +7093,7 @@ ClassID="33547" ClassName="CantUseThisInIntegrateServer" Data="통합 서버에�
 		<Class ClassID="550012" ClassName="tokenItem" Data="토큰"/>
 		<Class ClassID="550013" ClassName="marketSellCom" Data="마켓 판매 수수료 감소"/>
 		<Class ClassID="550014" ClassName="marketUpMax" Data="마켓 물품 등록 개수 증가"/>
-		<Class ClassID="550015" ClassName="abilityMax" Data="특성 동시 수련 가능 개수 증가"/>
+		<Class ClassID="550015" ClassName="abilityMax" Data="특성 즉시 수련 가능"/>
 		<Class ClassID="550016" ClassName="speedUp" Data="이동 속도 증가"/>
 		<Class ClassID="550017" ClassName="NeedPremiunState" Data="토큰 혜택이 적용중이지 않아, 개인 거래가 불가능합니다."/>
 		<Class ClassID="550018" ClassName="{Target}DontHavePremiumState" Data="{Target}님이 거래를 할 수 있는 혜택을 가지고 있지 않습니다."/>
@@ -7091,7 +7101,7 @@ ClassID="33547" ClassName="CantUseThisInIntegrateServer" Data="통합 서버에�
 		<Class ClassID="550020" ClassName="token_expup" Data="몬스터 처치 시 획득 경험치 증가"/>
 		<Class ClassID="550021" ClassName="token_staup" Data="스태미나 회복량 증가"/>
 		<Class ClassID="550022" ClassName="marketUpMax{COUNT}" Data="마켓 물품 등록 개수 {COUNT}개로 증가"/>
-		<Class ClassID="550023" ClassName="abilityMax{COUNT}" Data="특성 동시 수련 가능 개수 {COUNT} 증가"/>
+		<Class ClassID="550023" ClassName="abilityMax{COUNT}" Data="특성 즉시 수련 가능"/>
 		<Class ClassID="550024" ClassName="speedUp{COUNT}" Data="이동 속도 +{COUNT} 증가"/>
 		<Class ClassID="550025" ClassName="IsAppliedToken" Data="이미 토큰 아이템의 혜택을 적용받고 있습니다. 그래도 적용하시겠습니까?{nl}만약 중첩하여 적용 하는 경우{nl}전체 사용 기간과 개인 거래 횟수가{nl}누적하여 추가되며 그외의 혜택은 동일한 수치로 유지됩니다."/>
 		<Class ClassID="550026" ClassName="PremiumToken" Data="토큰"/>
@@ -7137,8 +7147,10 @@ ClassID="33547" ClassName="CantUseThisInIntegrateServer" Data="통합 서버에�
 		<Class ClassID="550064" ClassName="PremiumToken_15d" Data="토큰:15일[증정용]"/>
 		<Class ClassID="550065" ClassName="OnlyTokenUserAbleToUse" Data="토큰 이용자만 이용할 수 있습니다."/>
 		<Class ClassID="550067" ClassName="CanGetMoreBuff" Data="최대 버프 적용 개수 증가"/>
-	<Class ClassID="550068" ClassName="Moreindunmission" Data="인던,미션 1회 추가 입장"/>
-	</Category>
+		<Class ClassID="550068" ClassName="Moreindunmission" Data="인던,미션 1회 추가 입장"/>
+		<Class ClassID="550072" ClassName="abilityMax_ForPC{COUNT}" Data="특성 동시 수련 가능 개수 증가"/>
+	<Class ClassID="550073" ClassName="TokenState" Data="토큰 사용"/>
+		<Class ClassID="550074" ClassName="NoneTokenState" Data="토큰 미사용"/></Category>
 	<Category Name="TPHistory">
 		<Class ClassID="600001" ClassName="RemainLogoutPC" Data="로그아웃 PC 만들기"/>
 		<Class ClassID="600002" ClassName="hirePC" Data="용병 고용"/>
@@ -7156,5 +7168,8 @@ ClassID="33547" ClassName="CantUseThisInIntegrateServer" Data="통합 서버에�
 		<Class ClassID="600014" ClassName="SkillRollBack" Data="스킬 되돌리기"/>
 		<Class ClassID="600015" ClassName="BuySlot" Data="팀 슬롯 구매"/>
 		<Class ClassID="600016" ClassName="IndunCount" Data="인던입장"/>
+	</Category>
+	<Category Name="Account">
+		<Class ClassID="620001" ClassName="MaxAccountWarehouseCount" Data="팀 창고"/>
 	</Category>
 </idspace>
