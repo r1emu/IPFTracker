@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<uiframe name="expviewer" x="0" y="0" width="400" height="120">
+	<frame title="Experience Viewer" snapclient="true" snapframe="true" layout_gravity="center center" margin="0 335 50 0"/>
+    <option visible="false" alwaysVisible="false" closebutton="false" useimageitem="true" piptype="right" autoopen="false" hideable="true"/>
+	<input hittest="true" movable="true" moveintitlebar="false" hittestframe="true"/>
+    <layer layerlevel="31"/>
+	<draw drawnotitlebar="false" drawtitlebar="false" drawframe="true"/>
+	<skin frameskin="test_Item_tooltip_normal"/>
+	<sound opensound="win_open" closesound="win_close"/>
+
+	<controls>
+		<button name="startButton" rect="0 0 100 50" margin="15 50 0 0" layout_gravity="left top" LBtnUpArgNum="" LBtnDownScp="dofile(&apos;..\\expviewer.lua&apos;);" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" caption="{@st66b}Start" clicksound="button_click_big" oversound="button_over" skin="test_pvp_btn" texttooltip="{@st59}Start{/}"/>
+		<button name="resetButton" rect="100 0 100 50" margin="15 50 0 0" layout_gravity="left top" LBtnUpArgNum="" LBtnDownScp="RESET();" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" caption="{@st66b} Reset" clicksound="button_click_big" oversound="button_over" skin="test_pvp_btn" texttooltip="{@st59}Reset{/}"/>
+
+		<!-- currentRequiredExperienceHeader -->
+		<richtext name="header_0" rect="0 0 500 20" margin="15 15 0 0" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="left center"/>
+
+		<!-- currentPercentHeader -->
+		<richtext name="header_1" rect="50 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="left center"/>
+
+		<!-- lastExperienceGainHeader -->
+		<richtext name="header_2" rect="100 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="left center"/>
+
+		<!-- killsTilNextLevelHeader -->
+		<richtext name="header_3" rect="200 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="left center"/>
+
+		<!-- experiencePerHourHeader -->
+		<richtext name="header_4" rect="250 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="left center"/>
+
+		<!-- timeTilNextLevelHeader -->
+		<richtext name="header_5" rect="300 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="left center"/>
+
+
+		<!-- currentRequiredBaseExperience -->
+		<richtext name="base_0" rect="0 0 500 20" margin="15 15 0 0" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="right center"/>
+
+		<!-- currentBasePercent -->
+		<richtext name="base_1" rect="50 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="right center"/>
+
+		<!-- lastBaseExperienceGain -->
+		<richtext name="base_2" rect="100 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="right center"/>
+
+		<!-- baseKillsTilNextLevel -->
+		<richtext name="base_3" rect="200 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="right center"/>
+
+		<!-- baseExperiencePerHour -->
+		<richtext name="base_4" rect="250 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="right center"/>
+
+		<!-- baseTimeTilNextLevel -->
+		<richtext name="base_5" rect="300 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="right center"/>
+
+
+		<!-- currentRequiredClassExperience -->
+		<richtext name="class_0" rect="0 0 500 20" margin="15 15 0 0" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="right center"/>
+
+		<!-- currentClassPercent -->
+		<richtext name="class_1" rect="50 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="right center"/>
+
+		<!-- lastClassExperienceGain -->
+		<richtext name="class_2" rect="100 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="right center"/>
+
+		<!-- classKillsTilNextLevel -->
+		<richtext name="class_3" rect="200 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="right center"/>
+
+		<!-- classExperiencePerHour -->
+		<richtext name="class_4" rect="250 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="right center"/>
+
+		<!-- classTimeTilNextLevel -->
+		<richtext name="class_5" rect="300 20 200 20" layout_gravity="left top" fixheight="true" fixwidth="false" hittest="true" resizebytext="true" textalign="right center"/>
+	</controls>
+</uiframe>

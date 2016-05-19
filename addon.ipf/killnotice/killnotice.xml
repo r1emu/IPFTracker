@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uiframe name="killnotice" x="-200" y="-80" width="280" height="200" create="open">
+    <frame title="Kill Notice" layout_gravity="right bottom"/>
+    <option visible="false"/>
+    <draw drawtitlebar="false" drawframe="false"/>
+    <layer layerlevel="60"/>
+    <input hittest="false"/>
+    <controls>
+        <picture name="backgroundImage" rect="0 0 50 50" layout_gravity="left top" hittest="false" stretch="true"/>
+        <picture name="monsterImage" rect="0 11 50 50" layout_gravity="center top" hittest="false" stretch="true"/>
+        <richtext name="killNoticeText" rect="10 105 300 100" layout_gravity="left top" caption="" fixwidth="true" resizebytext="false" textalign="center center"/>
+    </controls>
+</uiframe>
