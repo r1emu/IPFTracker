@@ -1001,5 +1001,11 @@
 		<image name="mon_bubbe_mage_priest" file="\icon\monster\mon\mon_bubbe_mage_priest.png" imgrect="0 0 80 80"/>
 		<image name="mon_Stoulet_blue" file="\icon\monster\mon\mon_Stoulet_blue.png" imgrect="0 0 80 80"/>
 		<image name="mon_escape_wendigo" file="\icon\monster\mon\mon_escape_wendigo.png" imgrect="0 0 80 80"/>
+		<image name="mon_yognome_yellow" file="\icon\monster\mon\mon_yognome_yellow.png" imgrect="0 0 80 80"/>
+		<image name="mon_Egnome_yellow" file="\icon\monster\mon\mon_Egnome_yellow.png" imgrect="0 0 80 80"/>
 	</imagelist>
+	<imagelist category="Monster_icon_nor_08">
+		<image name="mon_Gazing_Golem_yellow" file="\icon\monster\mon\mon_Gazing_Golem_yellow.png" imgrect="0 0 80 80"/>
+		<image name="mon_Moya_yellow" file="\icon\monster\mon\mon_Moya_yellow.png" imgrect="0 0 80 80"/>
+    </imagelist>
 </skinset>

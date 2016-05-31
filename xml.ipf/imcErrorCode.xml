@@ -183,6 +183,7 @@
 		<Code Code="ERRCODE_DATA_DOSENT_MATCH_SIZE" CallStack="NO" Desc="해당 데이터가 지정된 사이즈와 맞지 않습니다."/>
 		<Code Code="ERRCODE_DATA_INVALID_TRANSLATED_DATA" CallStack="NO" Desc="잘못된 번역 데이터입니다."/>
 		<Code Code="ERRCODE_DATA_INVALID_TRANSLATED_ENCODING" CallStack="NO" Desc=".tsv 파일의 인코딩은 반드시 UTF-8 whitout BOM 이어야 합니다."/>
+    <Code Code="ERRCODE_DATA_STEAM_INVALID_REGION" CallStack="NO" Desc="해당 지역에서 수행 불가능한 요청입니다."/>
 	</Type>
 	<Type Type="SCRIPT">
 		<Code Code="ERRCODE_SCRIPT_IES_CANT_SUSPEND_MAIN_THREAD" CallStack="NO" Desc="메인 쓰레드는 sleep, tx등으로 중단시킬 수 없습니다. 해당 함수 내용을 확인하세요."/>

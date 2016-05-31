@@ -21,6 +21,28 @@ function INIT_MAP_PICTURE_UI(pic, mapName, hitTest)
 
 end
 
+function DISABLE_BUTTON_DOUBLECLICK_WITH_CHILD(framename,childname,buttonname)
+
+	local frame = ui.GetFrame(framename)
+	local child = GET_CHILD_RECURSIVELY(frame,childname)
+	local btn = GET_CHILD_RECURSIVELY(child,buttonname)
+
+	local strScp = string.format("ENABLE_BUTTON_DOUBLECLICK_WITH_CHILD(\"%s\",\"%s\", \"%s\")", framename, childname, buttonname);
+
+	ReserveScript(strScp, 5);
+	btn:SetEnable(0)
+end
+
+function ENABLE_BUTTON_DOUBLECLICK_WITH_CHILD(framename,childname,buttonname)
+
+	local frame = ui.GetFrame(framename)
+	local child = GET_CHILD_RECURSIVELY(frame,childname)
+	local btn = GET_CHILD_RECURSIVELY(child,buttonname)
+	btn:SetEnable(1)
+
+end
+
+
 function DISABLE_BUTTON_DOUBLECLICK(framename,buttonname)
 
 	local frame = ui.GetFrame(framename)
