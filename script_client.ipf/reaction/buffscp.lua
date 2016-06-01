@@ -298,10 +298,7 @@ function Proliferation_ENTER(actor, obj, buff)
 	end
 
 	actor:SetNodeScale("Bip01 L Hand", 2.0)
-	actor:SetNodeScale("Dummy_L_HAND", 1.0)
-	-- imcSound.PlaySoundItem(cls.Sound);
-	-- actor:PlaySound("SOUNDNAME");
-	
+	actor:SetNodeScale("Dummy_L_HAND", 1.25)
 end
 
 function Proliferation_LEAVE(actor, obj, buff)
@@ -318,17 +315,20 @@ function ProliferationRH_ENTER(actor, obj, buff)
 	end
 		
 	actor:SetNodeScale("Bip01 R Hand", 2.0)
-	actor:SetNodeScale("Dummy_R_HAND", 1.0)
-	-- imcSound.PlaySoundItem(cls.Sound);
-	-- actor:PlaySound("SOUNDNAME");
-	
+	actor:SetNodeScale("Dummy_R_HAND", 1.25)
+	actor:SetNodeScale("Dummy_R_dagger", 1.25)
+	actor:SetNodeScale("Dummy_R_allebell", 1.25)
+	actor:SetNodeScale("Dummy_R_umbrella", 1.25)
+	actor:SetNodeScale("Dummy_Shield", 1.25)	
 end
 
 function ProliferationRH_LEAVE(actor, obj, buff)
-
 	actor:SetNodeScale("Bip01 R Hand", 1.0)
 	actor:SetNodeScale("Dummy_R_HAND", 1.0)
-
+	actor:SetNodeScale("Dummy_R_dagger", 1.0)
+	actor:SetNodeScale("Dummy_R_allebell", 1.0)
+	actor:SetNodeScale("Dummy_R_umbrella", 1.0)
+	actor:SetNodeScale("Dummy_Shield", 1.0)
 end
 
 
@@ -771,4 +771,4 @@ end
 
 function DashRunBlend_LEAVE(actor, obj, buff)
 
-en
+end

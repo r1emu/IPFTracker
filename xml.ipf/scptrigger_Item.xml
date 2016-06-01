@@ -375,13 +375,16 @@
 						<Str Str="None"/>
 						<Str Str="NotCheck"/>
 					</ToolScp>
+				<ToolScp Scp="SPCI_CHECK_SKL_ATTRIBUTE" Client="NO" UseSleep="NO">
+						<Str Str="Melee"/>
+					</ToolScp>
 				</CondList>
 				<TgtExecList>
-					<ToolScp Scp="SPCI_BUFF_ITEM" Client="NO" UseSleep="NO">
+					<ToolScp Scp="SPCI_BUFF" Client="NO" UseSleep="NO">
 						<Str Str="item_toyhammer_debuff"/>
 						<Num Num="1"/>
 						<Num Num="0"/>
-						<Num Num="2000"/>
+						<Num Num="10000"/>
 						<Num Num="1"/>
 						<Num Num="100"/>
 						<Num Num="-1"/>
@@ -2456,4 +2459,4 @@ return self.RSP;"/>
 			</Trigger>
 		</TriggerList>
 	</SpcItem>
-</SpcItemList>
+</SpcItemList>

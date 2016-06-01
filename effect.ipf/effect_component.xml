@@ -1,6 +1,7 @@
 <?xml version="1.0" standalone="yes"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by mayo (IMCGames Co., Ltd) -->
 <ComponentList>
+	<Particle name="pattern022" texture="pattern022" width="5.00" height="5.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64"/>
 	<Particle name="square008" texture="background002" width="5.00" height="5.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64"/>
 	<Particle name="pattern018_2" texture="pattern018_2" width="5.00" height="5.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64"/>
 	<Particle name="pattern018_1" texture="pattern018_1" width="5.00" height="5.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64"/>
@@ -295,6 +296,7 @@
 	<Particle name="circle018" texture="circle018" width="5.00" height="5.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="128" texel_height="128"/>
 	<Particle name="circle017" texture="circle017" width="4.00" height="4.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="160" texel_height="160"/>
 	<Particle name="line001" texture="line001" width="10.00" height="10.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64"/>
+	<Texture name="texture_pattern022" texture="pattern022" width="2.00" height="2.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="64" texel_height="64"/>
 	<Texture name="texture_pattern021" texture="pattern021" width="2.00" height="2.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="256" texel_height="256"/>
 	<Texture name="texture_pattern020" texture="pattern020" width="2.00" height="2.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="256" texel_height="256"/>
 	<Texture name="texture_pattern019" texture="pattern019" width="2.00" height="2.00" pivot_x="0.50" pivot_y="0.50" texel_x="0" texel_y="0" texel_width="256" texel_height="256"/>
@@ -368,6 +370,9 @@
 	<Trail name="dash004" texture="dash004" height="4.00" texel_x="128" texel_y="128" texel_width="64" texel_height="64"/>
 	<Trail name="dash001" texture="dash001" height="5.00" texel_x="0" texel_y="0" texel_width="1040" texel_height="640"/>
 	<Trail name="smoke002" texture="smoke002" height="10.00" texel_x="512" texel_y="512" texel_width="64" texel_height="64"/>
+	<Model name="headfish_dead" model="headfish_dead.xac" motion="headfish_dead_ani.xsm" texturepath="char_texture\npc\NPC_Cart1\" overlap="false"/>
+	<Model name="honeyspider_dead" model="honeyspider_dead.xac" motion="honeyspider_dead_ani.xsm" texturepath="char_texture\monster\honeyspider\" overlap="false"/>
+	<Model name="sphere001" model="sphere001.xac" motion="None" texturepath="effect\high\modeltexture\" overlap="true"/>
 	<Model name="austeja_alter" model="austeja_alter.xac" motion="None" texturepath="effect\high\modeltexture\" overlap="false"/>
 	<Model name="ChiefGuard_Dead" model="ChiefGuard_Dead.xac" motion="ChiefGuard_Dead.xsm" texturepath="char_texture\monster\ChiefGuard\" overlap="false"/>
 	<Model name="snow_dead" model="snow_dead.xac" motion="snow_dead_ani.xsm" texturepath="char_texture\monster\snow\" overlap="false"/>

@@ -2,6 +2,7 @@
 <!-- edited with XMLSpy v2006 U (http://www.altova.com) by Administrator (EMBRACE) -->
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by mayo (IMCGames Co., Ltd) -->
 <TextureInfo>
+	<Texture Name="pattern022" File="pattern022.dds" Size="64 64"/>
 	<Texture Name="pattern021" File="pattern021.dds" Size="256 256"/>
 	<Texture Name="pattern020" File="pattern020.dds" Size="256 256"/>
 	<Texture Name="pattern019" File="pattern019.dds" Size="256 256"/>
@@ -445,4 +446,4 @@
 	<Texture Name="fx_trail01" File="fx_trail001.dds" Size="128 128"/>
 	<Texture Name="fx_trail02" File="fx_trail002.dds" Size="64 64"/>
 	<Texture Name="fx_trail_giantaxe" File="fx_trail_giantaxe.dds" Size="256 256"/>
-</TextureInfo>
+</TextureInfo>
