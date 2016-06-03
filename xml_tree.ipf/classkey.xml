@@ -9970,6 +9970,7 @@
         <Key Name="MaxAccountWarehouseCount" Value="11583"/>
         <Key Name="AccountWareHouseExtend" Value="11584"/>
         <Key Name="AccumulatedRepotedPoint" Value="31584"/>
+        <Key Name="NextBuyTokenTime" Value="31593"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Monster">
         <Key Name="MonDmgRate" Value="6305"/>

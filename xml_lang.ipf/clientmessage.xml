@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <idspace id="ClientMessage">
 	<Category Name="ErrorMsg">
@@ -7153,8 +7153,10 @@ ClassID="33547" ClassName="CantUseThisInIntegrateServer" Data="통합 서버에�
 		<Class ClassID="550067" ClassName="CanGetMoreBuff" Data="최대 버프 적용 개수 증가"/>
 		<Class ClassID="550068" ClassName="Moreindunmission" Data="인던,미션 1회 추가 입장"/>
 		<Class ClassID="550072" ClassName="abilityMax_ForPC{COUNT}" Data="특성 동시 수련 가능 개수 증가"/>
-	<Class ClassID="550073" ClassName="TokenState" Data="토큰 사용"/>
-		<Class ClassID="550074" ClassName="NoneTokenState" Data="토큰 미사용"/></Category>
+  	<Class ClassID="550073" ClassName="TokenState" Data="토큰 사용"/>
+		<Class ClassID="550074" ClassName="NoneTokenState" Data="토큰 미사용"/>
+    <Class ClassID="550075" ClassName="NextTokenBuyableTime" Data="You will be able to purchase another Token at {Time}."/>
+  </Category>
 	<Category Name="TPHistory">
 		<Class ClassID="600001" ClassName="RemainLogoutPC" Data="로그아웃 PC 만들기"/>
 		<Class ClassID="600002" ClassName="hirePC" Data="용병 고용"/>
