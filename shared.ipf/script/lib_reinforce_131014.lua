@@ -1,4 +1,4 @@
----- lib_reinforce_131014.lua
+﻿---- lib_reinforce_131014.lua
 
 function REINFORCE_ABLE_131014(item)
 	
@@ -59,11 +59,11 @@ function GET_REINFORCE_131014_PRICE(fromItem, moruItem)
 		value = value / 2;
 	end
 	
-    if moruItem.ClassName == "Moru_Silver" then
+    if moruItem.ClassName == "Moru_Silver" or moruItem.ClassName == "Moru_Silver_test" then 
 		value = 0;
 	end
 	
-    if moruItem.ClassName == "Moru_Silver_test" then
+    if moruItem.ClassName == "Moru_Event160609" then
 		value = 0;
 	end
     if moruItem.ClassName == "Moru_Potential" or moruItem.ClassName == "Moru_Potential14d" then
@@ -85,4 +85,4 @@ function GET_REINFORCE_131014_HITCOUNT(fromItem, moru)
 	local prop = geItemTable.GetProp(fromItem.ClassID);
 	return 3;
 
-end
+end

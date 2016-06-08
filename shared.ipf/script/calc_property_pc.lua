@@ -236,6 +236,8 @@ function SCR_Get_MHP(self)
 	local con = self.CON;	
 	local lv = self.Lv;
 
+	local byItemRatio = (1.0 + GetSumOfEquipItem(self, 'MHPRatio') * 0.01);
+
 	local byItem = GetSumOfEquipItem(self, 'MHP');
 	local byBuff = self.MHP_BM;
 	local byLevel = math.floor((lv -1) * 8.5 * 2);
@@ -243,7 +245,7 @@ function SCR_Get_MHP(self)
 
 	local rewardProperty = GET_REWARD_PROPERTY(self, "MHP")
 
-	local value = (jobObj.JobRate_HP * byLevel) + byItem + byStat + self.MHP_Bonus + byBuff + rewardProperty;
+	local value = ((jobObj.JobRate_HP * byLevel) + byStat) * byItemRatio + byItem + self.MHP_Bonus + byBuff + rewardProperty;
 	
 	if value < 1 then
 	    value = 1;
@@ -293,6 +295,11 @@ function SCR_Get_MINPATK(self)
 	local byItem3 = GetSumOfEquipItem(self, 'ADD_MINATK');
 	local leftMinAtk = 0;
 	
+	if jobObj.CtrlType == 'Warrior' then
+        	str = str * 1.3;
+	end
+	
+	
 	if GetEquipItemForPropCalc(self, 'LH') ~= nil then
     	leftHand = GetEquipItemForPropCalc(self, 'LH');
     	leftMinAtk = leftHand.MINATK;
@@ -320,6 +327,12 @@ function SCR_Get_MAXPATK(self)
 	local byItem2 = GetSumOfEquipItem(self, 'PATK');
 	local byItem3 = GetSumOfEquipItem(self, 'ADD_MAXATK');
     local leftMaxAtk = 0;
+	
+    
+	if jobObj.CtrlType == 'Warrior' then
+        	str = str * 1.3;
+	end
+	
 	
 	if GetEquipItemForPropCalc(self, 'LH') ~= nil then
     	leftHand = GetEquipItemForPropCalc(self, 'LH');
@@ -353,6 +366,10 @@ function SCR_Get_MINPATK_SUB(self)
     	rightMinAtk = rightHand.MINATK;
     end
 	
+	if jobObj.CtrlType == 'Warrior' then
+        	str = str * 1.3;
+	end
+	
 	local value = lv + str + byItem + byItem2 + byItem3 + buff - rightMinAtk;
 	
 	return math.floor(value);
@@ -374,6 +391,10 @@ function SCR_Get_MAXPATK_SUB(self)
     	rightMaxAtk = rightHand.MAXATK;
     end
 	
+	if jobObj.CtrlType == 'Warrior' then
+        	str = str * 1.3;
+	end
+
 	local value = lv + str + byItem + byItem2 + byItem3 + buff - rightMaxAtk;
 	
 	return math.floor(value);
@@ -1765,4 +1786,4 @@ function GET_REWARD_PROPERTY(self, propertyName)
 	end
 
 	return rewardProperty
-en
+end

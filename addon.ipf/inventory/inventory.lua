@@ -2276,6 +2276,10 @@ function LOCK_ITEM_INVENTORY(frame)
 		return;
 	end
 
+	if true == IS_TRANSCENDING_STATE() then
+		return;
+	end
+
 	session.inventory.SetInventoryLock();
 	if false == session.inventory.GetInventoryLock() then
 		_CANCEL_INV_ITEM_LOCK(1)
@@ -2507,4 +2511,4 @@ function IS_LIFETIME_OVER(itemobj)
 		]]
 	end;
 	return 0;
-end;
+end;

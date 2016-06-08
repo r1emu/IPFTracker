@@ -172,6 +172,6 @@
 	<ReadXml Name="reward_property"/>
 	<ReadXml Name="Journal_monkill_reward"/>
 	<ReadXml Name="xp_teamlevel"/>
-<ReadXml Name="guildbattle_reward"/>
-<ReadXml Name="CompanionFeedAnim"/>
-</Category>
+<ReadXml Name="item_transcend"/>
+	<ReadXml Name="CompanionFeedAnim"/>
+</Category>

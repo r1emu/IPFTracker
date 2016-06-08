@@ -5491,6 +5491,21 @@
         <Key Name="UNDER301_TIME_BASEBALL" Value="13127"/>
         <Key Name="UNDER30_3_COUNT_CHARGES" Value="13128"/>
         <Key Name="UNDER301_COUNT_BASEBALL" Value="13129"/>
+        <Key Name="CITYATTACK_BOSS_GENINDEX" Value="13165"/>
+        <Key Name="CITYATTACK_BOSS_ATTACKCOUNT" Value="13166"/>
+        <Key Name="CITYATTACK_BOSS_BOXOPENCOUNT" Value="13167"/>
+        <Key Name="CITYATTACK_BOSS_REWARD_GENINDEX" Value="13168"/>
+        <Key Name="GOLDKEY_EVENT_BOX1" Value="13199"/>
+        <Key Name="GOLDKEY_EVENT_BOX2" Value="13200"/>
+        <Key Name="GOLDKEY_EVENT_BOX3" Value="13201"/>
+        <Key Name="GOLDKEY_EVENT_BOX4" Value="13202"/>
+        <Key Name="GOLDKEY_EVENT_BOX5" Value="13203"/>
+        <Key Name="GOLDKEY_EVENT_BOX6" Value="13204"/>
+        <Key Name="GOLDKEY_EVENT_REWARDCOUNT" Value="13205"/>
+        <Key Name="GOLDKEY_EVENT_PLAYMIN" Value="13206"/>
+        <Key Name="GOLDKEY_EVENT_LASTREWARD" Value="13207"/>
+        <Key Name="GOLDKEY_EVENT_ACCCOUNT" Value="13208"/>
+        <Key Name="GOLDKEY_EVENT_ACCINDEX" Value="13209"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PCEtc">
         <Key Name="FromMission" Value="3907"/>
@@ -10378,6 +10393,36 @@
         <Key Name="Kill_pc_summon_boss_chafer" Value="13162"/>
         <Key Name="Kill_pc_summon_boss_BiteRegina" Value="13163"/>
         <Key Name="Kill_pc_summon_boss_Fallen_Statue" Value="13164"/>
+        <Key Name="Kill_boss_honeyspider" Value="13169"/>
+        <Key Name="Reward_f_katyn_18" Value="13170"/>
+        <Key Name="Reward_f_dcapital_103" Value="13171"/>
+        <Key Name="Reward_f_whitetrees_23_1" Value="13172"/>
+        <Key Name="Reward_f_maple_23_2" Value="13173"/>
+        <Key Name="Reward_f_whitetrees_23_3" Value="13174"/>
+        <Key Name="Reward_f_castle_20_1" Value="13175"/>
+        <Key Name="Reward_f_castle_20_2" Value="13176"/>
+        <Key Name="Reward_f_castle_20_3" Value="13177"/>
+        <Key Name="Reward_f_castle_20_4" Value="13178"/>
+        <Key Name="Reward_f_dcapital_20_5" Value="13179"/>
+        <Key Name="Reward_f_dcapital_20_6" Value="13180"/>
+        <Key Name="Reward_f_whitetrees_21_1" Value="13181"/>
+        <Key Name="Reward_f_whitetrees_21_2" Value="13182"/>
+        <Key Name="Reward_f_maple_25_1" Value="13183"/>
+        <Key Name="Reward_f_maple_25_2" Value="13184"/>
+        <Key Name="Reward_f_whitetrees_56_1" Value="13185"/>
+        <Key Name="Reward_d_limestonecave_52_1" Value="13186"/>
+        <Key Name="Reward_d_limestonecave_52_2" Value="13187"/>
+        <Key Name="Reward_d_limestonecave_52_3" Value="13188"/>
+        <Key Name="Reward_d_limestonecave_52_4" Value="13189"/>
+        <Key Name="Reward_d_limestonecave_52_5" Value="13190"/>
+        <Key Name="Reward_d_limestonecave_55_1" Value="13191"/>
+        <Key Name="Reward_f_bracken_42_1" Value="13192"/>
+        <Key Name="Reward_f_bracken_42_2" Value="13193"/>
+        <Key Name="Reward_f_bracken_43_1" Value="13194"/>
+        <Key Name="Reward_f_bracken_43_2" Value="13195"/>
+        <Key Name="Reward_f_bracken_43_3" Value="13196"/>
+        <Key Name="Reward_f_bracken_43_4" Value="13197"/>
+        <Key Name="Kill_GBT_boss_yonazolem" Value="13198"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Account">
         <Key Name="MaxPVPGrade" Value="6299"/>
@@ -11745,6 +11790,9 @@
         <Key Name="ItemLifeTimeOver" Value="12667"/>
         <Key Name="ItemLifeTime" Value="12668"/>
         <Key Name="HatVisible" Value="12755"/>
+        <Key Name="Transcend_MatCount" Value="13210"/>
+        <Key Name="MHPRatio" Value="13211"/>
+        <Key Name="Transcend" Value="13212"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Guild">
         <Key Name="MaxCount" Value="7691"/>
@@ -11858,9 +11906,10 @@
         <Key Name="GuildEventAceeptedAID_30" Value="13111"/>
         <Key Name="GuildEventAceeptedAID_15" Value="13112"/>
         <Key Name="GuildEventRefusedAID_16" Value="13113"/>
+        <Key Name="LastPVPRewardSeason" Value="13213"/>
     </KeyIDSpc>
     <KeyIDSpc Name="GuildMember">
         <Key Name="Name" Value="9011"/>
         <Key Name="Contribution" Value="9012"/>
     </KeyIDSpc>
-</ClassKey>
+</ClassKey>
