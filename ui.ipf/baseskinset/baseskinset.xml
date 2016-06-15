@@ -6081,6 +6081,8 @@
 		<image name="Dlg_port_Dalia" file="\npcimg\Dalia.png" imgrect="0 0 900 1000" CMM_Caption="딜라아"/>
 		<image name="Dlg_port_Vincentas" file="\npcimg\Vincentas.png" imgrect="0 0 850 1000" CMM_Caption="빈센타스"/>
 	<image name="Dlg_port_AgaillaFlurry" file="\npcimg\AgaillaFlurry.png" imgrect="0 0 800 900" CMM_Caption="아가일라플러리"/>
+	<image name="Dlg_port_Diena" file="\npcimg\Diena.png" imgrect="0 0 700 1000" CMM_Caption="디에나"/>
+		<image name="Dlg_port_Diena_dark" file="\npcimg\Diena_dark.png" imgrect="0 0 700 1000" CMM_Caption="디에나_다크"/>
 	</imagelist>
 	<imagelist category="bufficon">
 		<image name="icon_Str_up" file="\icon\buff_icon.tga" imgrect="256 384 128 128" CMM_Caption="힘+"/>

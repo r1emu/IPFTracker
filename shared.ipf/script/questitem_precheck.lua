@@ -5314,6 +5314,77 @@ function SCR_PRE_CORAL_32_2_SQ_12_ITEM2(self, argObj, BuffName, arg1, arg2)
     return 0;
 end
 
+--PILGRIM41_2_SQ05_ITEM
+function SCR_PRE_PILGRIM41_2_SQ05_ITEM(self, argstring, argnum1, argnum2)
+    local result = SCR_QUEST_CHECK(self, 'PILGRIM41_2_SQ05')
+    local quest_ssn = GetSessionObject(self, 'SSN_PILGRIM41_2_SQ05')
+    if result == "PROGRESS" then
+        if quest_ssn.QuestInfoValue1 < quest_ssn.QuestInfoMaxCount1 then
+            if GetZoneName(self) == 'f_pilgrimroad_41_2' then
+                if GetLayer(self) == 0 then
+                    local list, cnt = SelectObjectByFaction(self, 50, 'Monster', 1)
+                    local i
+                    for i = 1, cnt do
+                        if IsBuffApplied(list[i], 'PILGRIM41_2_DARKAURA') == 'YES' then
+                            return GetHandle(list[i])
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return 0
+end
+
+--PILGRIM41_4_SQ05_ITEM
+function SCR_PRE_PILGRIM41_4_SQ05_ITEM(self, argstring, argnum1, argnum2)
+    local result = SCR_QUEST_CHECK(self, 'PILGRIM41_4_SQ06')
+    if result == "PROGRESS" then
+        if GetZoneName(self) == 'f_pilgrimroad_41_4' then
+            if GetLayer(self) == 0 then
+                local list, cnt = SelectObjectByFaction(self, 50, 'Monster', 1)
+                local i
+                for i = 1, cnt do
+                    if list[i].RaceType == 'Velnias' then
+                        if IsBuffApplied(list[i], 'PILGRIM41_4_MONWEAK') == 'NO' then
+                            return GetHandle(list[i])
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return 0
+end
+
+--PILGRIM41_5_SQ02_1_ITEM
+function SCR_PRE_PILGRIM41_5_SQ02_1_ITEM(self, argstring, argnum1, argnum2)
+    local result = SCR_QUEST_CHECK(self, 'PILGRIM41_5_SQ02')
+    local result1 = SCR_QUEST_CHECK(self, 'PILGRIM41_5_SQ03')
+    local result2 = SCR_QUEST_CHECK(self, 'PILGRIM41_5_SQ06')
+    if result == "PROGRESS" or result1 == "PROGRESS" or result2 == "PROGRESS" then
+        local item_cnt = GetInvItemCount(self, 'PILGRIM41_5_SQ02_2_ITEM')
+        if item_cnt == 0 then
+            if GetLayer(self) == 0 then
+                local list, cnt = SelectObjectByFaction(self, 50, 'Neutral', 1)
+                local i
+                for i = 1, cnt do
+                    if IsServerSection(self) == 1 then
+                        if list[i].Dialog == 'PILGRIM415_TREE' then
+                            return GetHandle(list[i])
+                        end
+                    else
+                        if GetDialogByObject(list[i]) == 'PILGRIM415_TREE' then
+                            return GetHandle(list[i])
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return 0
+end
+
 --UNDER30_3_EVENT2_BOMB
 function SCR_PRE_UNDER30_3_EVENT2_BOMB(self, argstring, argnum1, argnum2)
     if GetZoneName(self) == 'd_underfortress_30_3' then

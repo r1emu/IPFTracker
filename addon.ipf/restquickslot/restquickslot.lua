@@ -184,6 +184,8 @@ function OPEN_ARROW_CRAFT()
 	if abil ~= nil then
 		local obj = GetIES(abil:GetObject());
 		local frame = ui.GetFrame("itemcraft_fletching");
+		local title = frame:GetChild("title");
+		title:SetTextByKey("value",  obj.Name);
 		SET_ITEM_CRAFT_UINAME("itemcraft_fletching");
 		SET_CRAFT_IDSPACE(frame, "Recipe_ItemCraft", obj.ClassName, obj.Level);
 		CREATE_CRAFT_ARTICLE(frame);
@@ -192,15 +194,17 @@ function OPEN_ARROW_CRAFT()
 
 end
 
-function OPEN_DIPELLER_CRAFT()
+function OPEN_DISPELLER_CRAFT()
 	local abil = session.GetAbilityByName("Pardoner_Dispeller")
 	if abil ~= nil then
 		local obj = GetIES(abil:GetObject());
-		local frame = ui.GetFrame("itemcraft_alchemist");
-		SET_ITEM_CRAFT_UINAME(frame, "itemcraft_alchemist");
-		SET_CRAFT_IDSPACE("Recipe_ItemCraft", obj.ClassName, obj.Level);
+		local frame = ui.GetFrame("itemcraft_fletching");
+		local title = frame:GetChild("title");
+		title:SetTextByKey("value",  obj.Name);
+		SET_ITEM_CRAFT_UINAME("itemcraft_alchemist");
+		SET_CRAFT_IDSPACE(frame, "Recipe_ItemCraft", obj.ClassName, obj.Level);
 		CREATE_CRAFT_ARTICLE(frame);
-		ui.ToggleFrame("itemcraft_alchemist");
+		ui.ToggleFrame("itemcraft_fletching");
 		
 	end
 
@@ -255,17 +259,3 @@ function QSLOT_ENABLE_DISPELLER_CRAFT()
 
 	return 0;
 end
-
-function OPEN_DISPELLER_CRAFT()
-	local abil = session.GetAbilityByName("Pardoner_Dispeller")
-	if abil ~= nil then
-		local obj = GetIES(abil:GetObject());
-		local frame = ui.GetFrame("itemcraft_alchemist");
-		SET_ITEM_CRAFT_UINAME("itemcraft_alchemist");
-		SET_CRAFT_IDSPACE(frame, "Recipe_ItemCraft", obj.ClassName, obj.Level);
-		CREATE_CRAFT_ARTICLE(frame);
-		ui.ToggleFrame("itemcraft_alchemist");
-		
-	end
-
-end

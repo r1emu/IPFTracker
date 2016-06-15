@@ -2550,6 +2550,23 @@
 		<Class ClassID="25591" ClassName="HIDDEN_RUNECASTER_npc5_msg3" Data="뽑아내는 중"/>
 		<Class ClassID="25592" ClassName="HIDDEN_RUNECASTER_master_msg1" Data="주겠다고 한다"/>
 		<Class ClassID="25593" ClassName="HIDDEN_RUNECASTER_master_msg2" Data="싫다고 한다"/>
+		<Class ClassID="25720" ClassName="ORCHARD_34_3_SQ_3_MSG_list1" Data="바르하의 허브"/>
+		<Class ClassID="25721" ClassName="ORCHARD_34_3_SQ_3_MSG_list2" Data="그리바의 미끈한 즙"/>
+		<Class ClassID="25722" ClassName="ORCHARD_34_3_SQ_3_MSG1" Data="재료 가공 중"/>
+		<Class ClassID="25723" ClassName="ORCHARD_34_3_SQ_3_MSG2" Data="재료가 제대로 가공되지 않아 해독제를 제작할 수 없습니다"/>
+		<Class ClassID="25724" ClassName="ORCHARD_34_3_SQ_5_MSG1" Data="조합식을 찾는 중"/>
+		<Class ClassID="25725" ClassName="ORCHARD_34_3_SQ_OBJ_4_DUMMY_MSG1" Data="조합식을 발견하지 못했습니다{nl}다른 곳을 찾아보세요"/>
+		<Class ClassID="25726" ClassName="ORCHARD_34_3_SQ_6_MSG1" Data="마력 주입 중"/>
+		<Class ClassID="25727" ClassName="ORCHARD_34_3_SQ_6_MSG2" Data="이미 주변에 마법진의 빛이 생성되어 있습니다{nl}빠르게 깜빡이는 순서대로 빛을 활성화하세요"/>
+		<Class ClassID="25728" ClassName="ORCHARD_34_3_SQ_OBJ_6_SUB_MSG1" Data="마법진의 빛 활성화 중"/>
+		<Class ClassID="25729" ClassName="ORCHARD_34_3_SQ_OBJ_6_SUB_MSG2" Data="이미 활성화된 빛입니다"/>
+		<Class ClassID="25730" ClassName="ORCHARD_34_3_SQ_OBJ_6_SUB_MSG3" Data="모든 빛을 활성화했습니다{nl}시약 조합 마법진을 사용해서 과성장 용액의 중화제를 만드세요"/>
+		<Class ClassID="25731" ClassName="ORCHARD_34_3_SQ_8_MSG1" Data="연구자료 조사 중"/>
+		<Class ClassID="25732" ClassName="ORCHARD_34_3_SQ_OBJ_8_DUMMY_MSG1" Data="쓸만한 정보는 발견하지 못했습니다{nl}다른 자료를 찾아보세요"/>
+		<Class ClassID="25733" ClassName="ORCHARD_34_3_SQ_10_MSG1" Data="독지대 제거 중"/>
+		<Class ClassID="25734" ClassName="ORCHARD_34_3_SQ_OBJ_10_MSG1" Data="독지대가 너무 오염되어 다가갈 수 없습니다"/>
+		<Class ClassID="25735" ClassName="ORCHARD_34_3_SQ_14_MSG1" Data="사르마의 설비 파괴 중"/>
+		<Class ClassID="25736" ClassName="PRISON_78_MQ_3_MSG3" Data="은은한 녹색 마석을 획득했습니다"/>
 		<Class ClassID="25737" ClassName="SEARCH_DONE" Data="더 이상 나크티스와 관련된 내용은 없어보입니다"/>
 		<Class ClassID="25738" ClassName="BOOK_GET" Data="사제의 책 회수 중"/>
 		<Class ClassID="25739" ClassName="CHATHEDRAL56_MQ04_KEY_GET" Data="메이번의 열쇠 회수 중"/>
@@ -3459,6 +3476,87 @@
 		<Class ClassID="26655" ClassName="TABLE71_SUBQ3_CHAT4" Data="너무 아파요.."/>
 		<Class ClassID="26656" ClassName="TABLE71_SUBQ3_CHAT5" Data="상처가 계속 벌어지고 있어요.."/>
 		<Class ClassID="26657" ClassName="QuestDoNOTTransform" Data="해당 지역에서 퀘스트 도중에는 변신을 풀 수 없습니다."/>
+		<Class ClassID="26658" ClassName="PILGRIM41_1_SQ02_SEARCH" Data="약초를 뜯는 중"/>
+		<Class ClassID="26659" ClassName="PILGRIM41_1_SQ02_FAIL" Data="약초가 엉망이 되었습니다"/>
+		<Class ClassID="26660" ClassName="PILGRIM41_1_SQ04_SEARCH" Data="나뭇가지를 살펴보는 중"/>
+		<Class ClassID="26661" ClassName="PILGRIM41_1_SQ04_FAIL" Data="이 나뭇가지는 약해 보입니다"/>
+		<Class ClassID="26662" ClassName="PILGRIM41_1_SQ05_P" Data="순례자 제이콥"/>
+		<Class ClassID="26663" ClassName="PILGRIM41_1_SQ05_FAIL" Data="제이콥을 지키지 못했습니다"/>
+		<Class ClassID="26664" ClassName="PILGRIM41_1_SQ05_SUCCESS" Data="음? 왠 사람이 모여있지? 가봅시다."/>
+		<Class ClassID="26665" ClassName="PILGRIM41_1_SQ07_P" Data="순례자 브래드"/>
+		<Class ClassID="26666" ClassName="PILGRIM41_1_SQ07_WATER" Data="잠시만 기다려 주세요."/>
+		<Class ClassID="26667" ClassName="PILGRIM41_1_SQ07_BACK" Data="이제 돌아갑시다."/>
+		<Class ClassID="26668" ClassName="PILGRIM41_1_SQ07_RETURN" Data="물을 떠 왔소."/>
+		<Class ClassID="26669" ClassName="PILGRIM41_1_SQ07_FAIL1" Data="브래드를 지키지 못했습니다"/>
+		<Class ClassID="26670" ClassName="PILGRIM41_1_SQ07_FAIL2" Data="브래드와 너무 떨어졌습니다"/>
+		<Class ClassID="26671" ClassName="PILGRIM41_1_SQ08_SEARCH" Data="장작을 수집하는 중"/>
+		<Class ClassID="26672" ClassName="PILGRIM41_1_SQ09_FRIAR" Data="으윽.."/>
+		<Class ClassID="26673" ClassName="PILGRIM41_2_SQ02_SEARCH" Data="열매를 찾는 중"/>
+		<Class ClassID="26674" ClassName="PILGRIM41_2_SQ04_P" Data="신도 클라크"/>
+		<Class ClassID="26675" ClassName="PILGRIM41_2_SQ04_FIND" Data="저기 한 명 있군요!"/>
+		<Class ClassID="26676" ClassName="PILGRIM41_2_SQ04_CURE" Data="안색이 편해진 것 같습니다."/>
+		<Class ClassID="26677" ClassName="PILGRIM41_2_SQ04_1_P" Data="순례자 요단"/>
+		<Class ClassID="26678" ClassName="PILGRIM41_2_SQ04_2_P" Data="순례자 다이앤"/>
+		<Class ClassID="26679" ClassName="PILGRIM41_2_SQ04_3_P" Data="순례자 배리"/>
+		<Class ClassID="26680" ClassName="PILGRIM41_2_SQ04_THANKS1" Data="한결 나아졌습니다. 감사합니다."/>
+		<Class ClassID="26681" ClassName="PILGRIM41_2_SQ04_THANKS2" Data="이제 좀 살 것 같아요."/>
+		<Class ClassID="26682" ClassName="PILGRIM41_2_SQ04_THANKS3" Data="두려움이 가셨습니다. 고맙습니다."/>
+		<Class ClassID="26683" ClassName="PILGRIM41_2_SQ04_RETURN" Data="브루투스 신도님이 안계시는군요. 일단 다들 따라 오세요."/>
+		<Class ClassID="26684" ClassName="PILGRIM41_2_SQ05_POTION" Data="몬스터에게 비약을 시험하는 중"/>
+		<Class ClassID="26685" ClassName="PILGRIM41_2_SQ05_SUCC" Data="비약의 효과로 검은 기운이 사라졌습니다"/>
+		<Class ClassID="26686" ClassName="PILGRIM41_2_SQ06_P" Data="신도 브루투스"/>
+		<Class ClassID="26687" ClassName="PILGRIM41_2_SQ08" Data="그가 뭘 하고 있었는지, 제단을 살펴보겠습니다."/>
+		<Class ClassID="26688" ClassName="PILGRIM41_2_SQ09_SEARCH" Data="잘 타는 나뭇잎을 찾는 중"/>
+		<Class ClassID="26689" ClassName="PILGRIM41_2_SQ09_NOTYET" Data="아직 나뭇잎이 쌓이지 않았습니다"/>
+		<Class ClassID="26690" ClassName="PILGRIM41_4_SQ03_SEARCH" Data="의심가는 곳을 파보는 중"/>
+		<Class ClassID="26691" ClassName="PILGRIM41_4_SQ03_FAIL" Data="여기에 묵주는 없는 것 같습니다"/>
+		<Class ClassID="26692" ClassName="PILGRIM41_4_SQ03_SUCCESS" Data="묵주를 발견했습니다"/>
+		<Class ClassID="26693" ClassName="PILGRIM41_4_SQ05_SEARCH" Data="성수를 찾아보는 중"/>
+		<Class ClassID="26694" ClassName="PILGRIM41_4_SQ05_ALREADY" Data="이미 성수를 가지고 있습니다"/>
+		<Class ClassID="26695" ClassName="PILGRIM41_4_SQ06_HOLY" Data="마족에게 성수를 뿌리는 중"/>
+		<Class ClassID="26696" ClassName="PILGRIM41_4_SQ06_WEAK" Data="마족이 약해진 듯 보입니다"/>
+		<Class ClassID="26697" ClassName="PILGRIM41_4_SQ09_SEARCH" Data="못먹는 구근 수집 중"/>
+		<Class ClassID="26698" ClassName="PILGRIM41_4_SQ11_P" Data="수도사 도르마"/>
+		<Class ClassID="26699" ClassName="PILGRIM41_4_SQ11_FAIL" Data="수도사 도르마가 쓰러졌습니다"/>
+		<Class ClassID="26700" ClassName="PILGRIM41_3_SQ03_SEARCH" Data="묘비를 살펴 보는 중"/>
+		<Class ClassID="26701" ClassName="PILGRIM41_3_SQ03_MIRROR" Data="깨진 보주와 멀쩡한 거울을 발견했습니다"/>
+		<Class ClassID="26702" ClassName="PILGRIM41_3_SQ03_FAIL" Data="여기는 알려준 무덤이 아닌 것 같습니다"/>
+		<Class ClassID="26703" ClassName="PILGRIM41_3_SQ04_SUCCESS" Data="거울에 영롱한 빛이 비치기 시작했습니다"/>
+		<Class ClassID="26704" ClassName="PILGRIM41_3_SQ05_P" Data="수도사 스텔라"/>
+		<Class ClassID="26705" ClassName="PILGRIM41_3_SQ05_SUCCESS" Data="여기가 순례자들이 모인 곳입니다."/>
+		<Class ClassID="26706" ClassName="PILGRIM41_3_SQ05_FAIL" Data="수도사 스텔라가 쓰러지고 말았습니다"/>
+		<Class ClassID="26707" ClassName="PILGRIM41_3_SQ08_SUCCESS" Data="대단하시네요. 혹시 다치진 않으셨나요?"/>
+		<Class ClassID="26708" ClassName="PILGRIM41_5_SQ01_FIND" Data="수상한 장치를 발견했습니다"/>
+		<Class ClassID="26709" ClassName="PILGRIM41_5_SQ02_HOLY" Data="수액을 채집하는 중"/>
+		<Class ClassID="26710" ClassName="PILGRIM41_5_SQ02_BREAK" Data="장치에 수액을 뿌리는 중"/>
+		<Class ClassID="26711" ClassName="PILGRIM41_5_SQ02_SUCCESS" Data="신성력 억제장치가 부서졌습니다"/>
+		<Class ClassID="26712" ClassName="PILGRIM41_5_SQ02_NO" Data="오아쓰 나무의 수액이 필요합니다"/>
+		<Class ClassID="26713" ClassName="PILGRIM41_5_SQ04_P" Data="수도사 마타스"/>
+		<Class ClassID="26714" ClassName="PILGRIM41_5_SQ04_GO" Data="어디 한번 가봅시다."/>
+		<Class ClassID="26715" ClassName="PILGRIM41_5_SQ05_SUCCESS" Data="억제 장치가 부서졌습니다"/>
+		<Class ClassID="26716" ClassName="PILGRIM41_5_SQ08_P" Data="간부 메데야"/>
+		<Class ClassID="26717" ClassName="PILGRIM41_5_SQ08_START" Data="다리가 아프네요. 천천히 갈게요."/>
+		<Class ClassID="26718" ClassName="PILGRIM41_5_SQ08_WARNING" Data="메데야와 거리가 벌어졌습니다"/>
+		<Class ClassID="26719" ClassName="PILGRIM41_5_SQ08_EASY" Data="도망치지 않을테니 걱정마요."/>
+		<Class ClassID="26720" ClassName="PILGRIM41_5_SQ08_FAIL" Data="메데야가 도망쳤습니다!"/>
+		<Class ClassID="26721" ClassName="PILGRIM41_5_SQ08_SUCCESS1" Data="메데야..!"/>
+		<Class ClassID="26722" ClassName="PILGRIM41_5_SQ08_SUCCESS2" Data="어머, 누군가 했더니 배신자 수도사님이 절 팔았나요?"/>
+		<Class ClassID="26723" ClassName="PILGRIM41_5_SQ09_HELP" Data="계시자님..!"/>
+		<Class ClassID="26724" ClassName="PILGRIM41_5_SQ10_SEARCH" Data="조각을 찾는 중"/>
+		<Class ClassID="26725" ClassName="PILGRIM41_5_SQ10_FAIL" Data="조각이 너무 작아 못 쓸 것 같습니다"/>
+		<Class ClassID="26726" ClassName="PILGRIM41_5_SQ10_ALREADY" Data="이곳의 조각은 이미 충분합니다"/>
+		<Class ClassID="26727" ClassName="ABBEY41_6_SQ01_EMPTY" Data="더 이상 처치할 몬스터가 없습니다."/>
+		<Class ClassID="26728" ClassName="ABBEY41_6_SQ03_CHAT1" Data="정말 결계로 막혀 있군요."/>
+		<Class ClassID="26729" ClassName="ABBEY41_6_SQ03_CHAT2" Data="결계를 없앨 방법을 찾아야겠습니다."/>
+		<Class ClassID="26730" ClassName="ABBEY41_6_SQ04_SUCCESS" Data="맞아요. 바로 이 책이에요!"/>
+		<Class ClassID="26731" ClassName="ABBEY41_6_SQ04_FAIL" Data="이 책은 아니네요."/>
+		<Class ClassID="26732" ClassName="ABBEY41_6_SQ04_RETURN" Data="결계 앞으로 되돌아가세요"/>
+		<Class ClassID="26733" ClassName="ABBEY41_6_SQ05_HIT" Data="꺄악!"/>
+		<Class ClassID="26734" ClassName="ABBEY41_6_SQ06_SEARCH" Data="보주를 찾는 중"/>
+		<Class ClassID="26735" ClassName="ABBEY41_6_SQ09_SEARCH" Data="멀쩡한 음식을 찾는 중"/>
+		<Class ClassID="26736" ClassName="ABBEY41_6_SQ09_SUCCESS" Data="괜찮은 식재료를 발견했습니다"/>
+		<Class ClassID="26737" ClassName="ABBEY41_6_SQ10_SEARCH" Data="약초를 찾는 중"/>
+		<Class ClassID="26738" ClassName="ABBEY41_6_SQ10_FAIL" Data="약초는 들어 있지 않았습니다"/>
 		<Class ClassID="26795" ClassName="TABLE70_SOLDIER_NAME8" Data="보급병 델린"/>
 		<Class ClassID="26796" ClassName="TABLE74_SUBQ8_MONSTER" Data="주변에 마족과 몬스터가 많아 폭탄 설치가 힘듭니다{nl}주변을 정리한 후 폭탄을 설치하세요"/>
 		<Class ClassID="26797" ClassName="TABLE74_SUBQ8_MSG1" Data="폭탄 설치 중"/>
@@ -3597,7 +3695,8 @@
 		<Class ClassID="26977" ClassName="GOLDKEY_EVENT_EXCHANGE_5" Data="젬 아이템 상자 교환 필요 열쇠 : {KEYCOUNT}개 {TEXT}"/>
 		<Class ClassID="26978" ClassName="GOLDKEY_EVENT_EXCHANGE_6" Data="파워업 아이템 상자 교환 필요 열쇠 : {KEYCOUNT}개 {TEXT}"/>
 	    <Class ClassID="26979" ClassName="GOLDKEY_EVENT_NOTICE1" Data="{TEXT} 황금 열쇠를 획득하셨습니다!"/>
-		<Class ClassID="50001" ClassName="UNDER30_2_CHECK_MSG2" Data="유독가스에 중독되어 비석을 확인하는데 힘듭니다"/>
+		<Class ClassID="30141" ClassName="ORCHARD_34_3_SQ_OBJ_6_SUB_MSG4" Data="잘못된 순서로 빛을 활성화했습니다{nl}빛이 빠르게 깜빡이는 순서대로 활성화하세요"/>
+<Class ClassID="50001" ClassName="UNDER30_2_CHECK_MSG2" Data="유독가스에 중독되어 비석을 확인하는데 힘듭니다"/>
 		<Class ClassID="50002" ClassName="UNDER301_MONSTER_PAIR_ERROR_1" Data="오늘 진행가능한 {DAYMAXCOUNT}회 중 {DAYPLAYCOUNT} 회를 모두 진행하셨습니다."/>
 		<Class ClassID="50025" ClassName="UNDER302_LEVEL_CHECK" Data="레벨이 부족하여 이 장치를 사용할 수 없습니다"/>
 		<Class ClassID="70001" ClassName="FARM49_2_MQ06_DRAW" Data="우물 물을 긷는 중"/>
@@ -4572,6 +4671,8 @@
 		<Class ClassID="131059" ClassName="{GN}Acquire{Obj}Option" Data="{GN}팀이 {Obj}을 활성화했습니다."/>
 		<Class ClassID="131060" ClassName="{GN}GuardionDead" Data="{GN}팀의 가디언이 자연으로 돌아갔습니다."/>
 		<Class ClassID="131061" ClassName="GuildGuardionObjRevive" Data="가디언을 소환시킬 수 있는 가디언 오브가 생성되었습니다."/>
+	<Class ClassID="131062" ClassName="PleaseJoinGuild" Data="소속된 길드가 없으면 참여할 수 없습니다."/>
+	<Class ClassID="131063" ClassName="ExistsPlayingPVP" Data="진행중인 대전에 입장하시겠습니까?"/>
 	</Category>
 	<Category Name="MonInfo">
 		<Class ClassID="132001" ClassName="MonInfo_Size" Data="크기"/>
@@ -7049,6 +7150,7 @@
 		<Class ClassID="200012" ClassName="CannotRideState" Data="해당 스킬 중엔 탑승을 시도할 수 없습니다."/>
 		<Class ClassID="200013" ClassName="CannotTryEquipAndUnEquip" Data="해당 스킬 중엔 장비 장착 및 해제를 할 수 없습니다."/>
 		<Class ClassID="200014" ClassName="DontUseItemThisArea" Data="해당 지역에서 사용하실 수 없는 아이템 입니다."/>
+<Class ClassID="200019" ClassName="SkillSamsaraFail" Data="환생마법이 실패하였습니다.{nl}해당 몬스터는 더 이상 환생 효과가 적용되지 않습니다."/>
 	</Category>
 	<Category Name="HotKey">
 		<Class ClassID="201001" ClassName="Minimap_-" Data="미니맵 -"/>
