@@ -612,7 +612,7 @@
                             </ToolScp>
                         </execList>
                     </Event>
-                    <Event eventName="normalGen0">
+                    <Event execCount="15" eventName="normalGen0">
                         <condList>
                             <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
                                 <Num Num="13"/>
@@ -634,7 +634,7 @@
                             </ToolScp>
                         </execList>
                     </Event>
-                    <Event eventName="normalGen1">
+                    <Event execCount="15" eventName="normalGen1">
                         <condList>
                             <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
                                 <Num Num="15"/>
@@ -656,7 +656,7 @@
                             </ToolScp>
                         </execList>
                     </Event>
-                    <Event eventName="normalGen2">
+                    <Event execCount="15" eventName="normalGen2">
                         <condList>
                             <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
                                 <Num Num="20"/>
@@ -678,7 +678,7 @@
                             </ToolScp>
                         </execList>
                     </Event>
-                    <Event eventName="normalGen3">
+                    <Event execCount="15" eventName="normalGen3">
                         <condList>
                             <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
                                 <Num Num="23"/>
@@ -705,10 +705,10 @@
             <Stage Name="Fail" AutoStart="0">
                 <StartScpList>
                     <ToolScp Scp="MGAME_SET_QUEST_NAME" Client="NO" UseSleep="NO">
-                        <Str Str="미션 실패 : 3초 후 원래 존으로 돌아갑니다"/>
+                        <Str Str="미션 실패 : 30초 후 원래 존으로 돌아갑니다"/>
                     </ToolScp>
                     <ToolScp Scp="MGAME_SET_DM_ICON" Client="NO" UseSleep="NO">
-                        <Str Str="미션 실패 : 3초 후 원래 존으로 돌아갑니다"/>
+                        <Str Str="미션 실패 : 30초 후 원래 존으로 돌아갑니다"/>
                         <Str Str="scroll"/>
                         <Num Num="10"/>
                     </ToolScp>
@@ -718,7 +718,7 @@
                     <Event execCount="1" eventName="failsec30">
                         <condList>
                             <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
-                                <Num Num="3"/>
+                                <Num Num="30"/>
                             </ToolScp>
                         </condList>
                         <execList>
@@ -917,7 +917,7 @@
                             </ToolScp>
                         </execList>
                     </Event>
-                    <Event eventName="normalGen0">
+                    <Event execCount="10" eventName="normalGen0">
                         <condList>
                             <ToolScp Scp="MGAME_EVT_COND_MONCNT_OVER" Client="NO" UseSleep="NO">
                                 <MGameObj List="Stage2/0"/>
@@ -939,7 +939,7 @@
                             </ToolScp>
                         </execList>
                     </Event>
-                    <Event eventName="normalGen1">
+                    <Event execCount="10" eventName="normalGen1">
                         <condList>
                             <ToolScp Scp="MGAME_EVT_COND_MONCNT_OVER" Client="NO" UseSleep="NO">
                                 <MGameObj List="Stage2/1"/>
@@ -961,7 +961,7 @@
                             </ToolScp>
                         </execList>
                     </Event>
-                    <Event eventName="normalGen2">
+                    <Event execCount="10" eventName="normalGen2">
                         <condList>
                             <ToolScp Scp="MGAME_EVT_COND_MONCNT_OVER" Client="NO" UseSleep="NO">
                                 <MGameObj List="Stage2/2"/>
@@ -1191,7 +1191,7 @@
                             </ToolScp>
                         </execList>
                     </Event>
-                    <Event eventName="normalGen1">
+                    <Event execCount="10" eventName="normalGen1">
                         <condList>
                             <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
                                 <Num Num="15"/>
@@ -1213,7 +1213,7 @@
                             </ToolScp>
                         </execList>
                     </Event>
-                    <Event eventName="normalGen2">
+                    <Event execCount="10" eventName="normalGen2">
                         <condList>
                             <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
                                 <Num Num="15"/>
@@ -1260,4 +1260,4 @@
             </ToolScp>
         </EnterList>
     </Game>
-</GameList>
+</GameList>

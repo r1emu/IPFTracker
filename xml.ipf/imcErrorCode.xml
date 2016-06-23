@@ -183,6 +183,8 @@
 		<Code Code="ERRCODE_DATA_REMOVE_FAIL" CallStack="NO" Desc="해당 데이터의 삭제를 실패했습니다."/>
 		<Code Code="ERRCODE_DATA_COMPRESS_FAIL" CallStack="NO" Desc="해당 데이터의 압축에 실패했습니다."/>
 		<Code Code="ERRCODE_DATA_DOSENT_MATCH_SIZE" CallStack="NO" Desc="해당 데이터가 지정된 사이즈와 맞지 않습니다."/>
+	<Code Code="ERRCODE_DATA_ABILITY_MAX_LEVEL_GREATER_ZERO" CallStack="NO" Desc="어빌리티의 최대 레벨은 0보다 커야합니다."/>
+		<Code Code="ERRCODE_EQUIP_CARD_SYSTEM_DATA" CallStack="NO" Desc="카드 데이터에 문제가 있습니다. 확인해주세요."/>
 	</Type>
 	<Type Type="SCRIPT">
 		<Code Code="ERRCODE_SCRIPT_IES_CANT_SUSPEND_MAIN_THREAD" CallStack="NO" Desc="메인 쓰레드는 sleep, tx등으로 중단시킬 수 없습니다. 해당 함수 내용을 확인하세요."/>
@@ -306,4 +308,4 @@
 		<Code Code="ERRCODE_INFO_TIMEOUT" CallStack="NO" Desc="처리 시간 초과 로그"/>
 		<Code Code="ERRCODE_INFO_OLDMSG" CallStack="NO" Desc="다국어화 어순 이슈로 clientmessage.xml에서 %s 를 이용한 포맷은 쓰지 않기로 했습니다. "/>
 	</Type>
-</imcErrorCode>
+</imcErrorCode>

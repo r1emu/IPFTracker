@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by IMC (IMCGames Co., Ltd) -->
 <GameList>
-	<Game Name="ID_CATACOM_MINI_02" minLv="0" maxLv="0" mapName="id_catacom2" startWaitSec="104105904">
+	<Game Name="ID_CATACOM_MINI_02" minLv="0" maxLv="0" mapName="id_catacomb2" startWaitSec="104105904">
 		<StageList>
 			<Stage Name="Ready">
 				<ObjList>
@@ -79,32 +79,6 @@
 					<Obj Type="Monster" MonType="58026" Pos="1063.01#4.90#488.93" angle="-51" genCount="1" genTime="20000" objectKey="0" propList="&apos;UseAiOutOfPC&apos; &apos;1&apos; " tendency="1"/>
 				</ObjList>
 			</Stage>
-			<Stage Name="FAIL" AutoStart="0">
-				<StartScpList>
-					<ToolScp Scp="MGAME_SET_QUEST_NAME" Client="NO" UseSleep="NO">
-						<Str Str="실패 : 3초 후 원래 존으로 돌아갑니다"/>
-					</ToolScp>
-					<ToolScp Scp="MGAME_SET_TIMEOUT" Client="NO" UseSleep="NO">
-						<Num Num="3"/>
-					</ToolScp>
-				</StartScpList>
-				<ObjList/>
-				<StageEvents>
-					<Event eventName="MOVE_ZONE">
-						<condList>
-							<ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
-								<Num Num="3"/>
-							</ToolScp>
-						</condList>
-						<execList>
-							<ToolScp Scp="MGAME_RETURN" Client="NO" UseSleep="NO"/>
-							<ToolScp Scp="MGAME_END" Client="NO" UseSleep="NO">
-								<Num Num="1"/>
-							</ToolScp>
-						</execList>
-					</Event>
-				</StageEvents>
-			</Stage>
 		</StageList>
 	</Game>
-</GameList>
+</GameList>

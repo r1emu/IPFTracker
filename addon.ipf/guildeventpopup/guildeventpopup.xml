@@ -4,7 +4,7 @@
 	<frame layout_gravity="right bottom" margin="0 -7 45 91"/>
 	<draw drawtitlebar="false" drawframe="true" margin="0 -3 0 0"/>
 	<option closebutton="false" hideable="true" margin="0 -3 0 0"/>
-	<script margin="0 -3 0 0"/>
+	<script OpenScp="OPEN_GUILDEVENTPOPUP" margin="0 -3 0 0"/>
 	<userconfig REFUSE_MEMBER_FACE_COLORTONE="FF555533" AGREE_MEMBER_FACE_COLORTONE="FFFFFFFF" REFUSE_MEMBER_NAME_FONT_COLORTAG="{@st66d}" AGREE_MEMBER_NAME_FONT_COLORTAG="{@st66d}"/>
 	<skin frameskin="test_win_system"/>
 	<controls>
@@ -26,4 +26,4 @@
 		<richtext name="goal" rect="0 0 100 40" margin="0 0 0 0" layout_gravity="left top" drawbackground="false" fixwidth="true" fontname="white_16" format="{@st63_yellow}목표 :{/}" maxwidth="0" param1="value" param1_def="" resizebytext="false" slideshow="false" spacey="0" textalign="center center" updateparent="false" parent="groupbox_1"/>
 		<richtext name="goalInfo" rect="0 0 250 40" margin="0 0 0 0" layout_gravity="left top" drawbackground="false" fixwidth="true" fontname="white_16" format="{@st66d}%s{/}" maxwidth="0" param1="value" param1_def="포아타 처치" resizebytext="false" slideshow="false" spacey="0" textalign="left center" updateparent="false" parent="groupbox_1"/>
 	</controls>
-</uiframe>
+</uiframe>

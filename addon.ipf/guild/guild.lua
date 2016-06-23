@@ -520,6 +520,7 @@ function EXEC_GUILD_CHANGE_DUTY(frame, ctrl)
 	local memberInfo = session.party.GetPartyMemberInfoByName(PARTY_GUILD, name);
 		
 	party.ReqPartyNameChange(PARTY_GUILD, PARTY_STRING_DUTY, duty, memberInfo:GetAID());
+	print(PARTY_GUILD, PARTY_STRING_DUTY, duty, memberInfo:GetAID())
 	frame:ShowWindow(0);
 
 end
@@ -620,7 +621,7 @@ end
 
 
 function UPDATE_GUILD_EVENT_INFO(frame, pcparty, partyObj)
-	local pcEtc = GetMyEtcObject();
+	local pcAcc = GetMyAccountObj();
 
 	if partyObj["GuildBossSummonFlag"] ~= 1 then
 		session.minimap.RemoveIconInfo("GuildBossSummon");
@@ -629,7 +630,7 @@ function UPDATE_GUILD_EVENT_INFO(frame, pcparty, partyObj)
 		session.minimap.RemoveIconInfo("GuildIndun");
 	end
 
-	if partyObj["GuildBossSummonFlag"] == 1 and pcEtc.GuildEventSeq == partyObj.GuildEventSeq then
+	if partyObj["GuildBossSummonFlag"] == 1 and pcAcc.GuildEventSeq == partyObj.GuildEventSeq then
 		local locInfo = geClientGuildEvent.GetGuildEventLocaionInfo(pcparty, "GuildBossSummonLocInfo");
 		if locInfo ~= nil then
 			local mapCls = GetClassByType("Map", locInfo.mapID);
@@ -713,4 +714,4 @@ function FIELD_BOSS_TEST()
 	--ui.SysMsg(ScpArgMsg(msg));
 	--ui.OpenFrame("indun");
 end
-]]--
+]]--
