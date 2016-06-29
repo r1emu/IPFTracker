@@ -21,6 +21,8 @@ function INDUN_VIEW(frame, curtabIndex)
 		OPEN_ABBEY(frame);
 	elseif curtabIndex == 3 then
 		OPEN_EARTH(frame);
+	elseif curtabIndex == 4 then
+		OPEN_UPHILL(frame);
 	end
 
 end
@@ -54,13 +56,15 @@ function DRAW_INDUN_UI(frame, type)
 
 	local pCls = nil;
 	if 100 == type then
-		pCls = GetClass("Indun", "Indun_startower"); -- ÀÎ´ø
+		pCls = GetClass("Indun", "Indun_startower"); -- ï¿½Î´ï¿½
 	elseif 200 == type then
-		pCls = GetClass("Indun", "Request_Mission1"); -- ÀÇ·Ú¼Ò
+		pCls = GetClass("Indun", "Request_Mission1"); -- ï¿½Ç·Ú¼ï¿½
 	elseif 300 == type then
-		pCls = GetClass("Indun", "Request_Mission7"); -- »ì¶ó½º ¼öµµ¿ø
+		pCls = GetClass("Indun", "Request_Mission7"); -- ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	elseif 400 == type then
-		pCls = GetClass("Indun", "M_GTOWER_1"); -- ´ëÁöÀÇ Å¾
+		pCls = GetClass("Indun", "M_GTOWER_1"); -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¾
+	elseif 500 == type then
+		pCls = GetClass("Indun", "Request_Mission10"); -- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½æ½º ï¿½Ì¼ï¿½
 	end
 
 	if nil == pCls then
@@ -120,9 +124,9 @@ function DRAW_INDUN_UI(frame, type)
 			name:SetTextByKey("value", pCls.Name);
 			lv:SetTextByKey("value", pCls.Level);
 			
-			if tonumber(pCls.Level) < mylevel then -- ¿¬µÎ¶óÀÎ
+			if tonumber(pCls.Level) < mylevel then -- ï¿½ï¿½ï¿½Î¶ï¿½ï¿½ï¿½
 				button:SetColorTone("FFC4DFB8");	
-			elseif tonumber(pCls.Level) > mylevel then -- »¡°£¶óÀÎ
+			elseif tonumber(pCls.Level) > mylevel then -- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				button:SetColorTone("FFFFCA91");
 			else
 				button:SetColorTone("FFFFFFFF");	
@@ -148,6 +152,9 @@ end
 function OPEN_EARTH(frame, ctrl)
 	DRAW_INDUN_UI(frame, 400);
 end
+function OPEN_UPHILL(frame, ctrl)
+	DRAW_INDUN_UI(frame, 500);
+end
 
 function INDUN_CANNOT_YET(msg)
 	ui.SysMsg(ScpArgMsg(msg));
@@ -164,4 +171,4 @@ end
 
 function GID_CANTFIND_MGAME(msg)
 	ui.SysMsg(ScpArgMsg(msg));
-en
+end

@@ -269,6 +269,8 @@
 		<Class ClassID="4106" ClassName="HaveItemReallyUse" Data="보유하고 있는 아이템이 있습니다.{nl}그래도 사용하시겠습니까?{nl}보유하고 있는 아이템"/>
 		<Class ClassID="4107" ClassName="CantUseEnchantBomb" Data="주변에 대상이 없습니다."/>
 		<Class ClassID="4108" ClassName="AreYouSureEquipCard" Data="선택하신 몬스터 카드를 장착하시겠습니까?{nl}장착해제시 카드 레벨이 하락합니다."/>
+		<Class ClassID="4109" ClassName="NoHaveZombiefySkill" Data="좀비만들기 스킬이 없어 좀비를 생성할 수 없습니다."/>
+		<Class ClassID="4110" ClassName="IsMaxCountZombie" Data="좀비 최대 생성수에 도달하여 좀비를 생성할 수 없습니다."/>
 	</Category>
 	<Category Name="ItemTooltip">
 		<Class ClassID="5001" ClassName="CoolDown : {Sec} Sec" Data="재사용 대기 시간 : {Sec}초"/>
@@ -740,6 +742,7 @@
 		<Class ClassID="10436" ClassName="RefusedInviteRequest_Public" Data="공개 파티 가입이 거절되었습니다."/>
 	<Class ClassID="10437" ClassName="DruidTransformFailed" Data="해당 몬스터로 변신할 수 없습니다."/>
     <Class ClassID="10439" ClassName="CantWarpBcz" Data="해당 지역으로는 이동할 수 없습니다."/>
+    <Class ClassID="10442" ClassName="CantUseSkill_NeedRidingAbil" Data="컴패니언 탑승 특성이 필요한 스킬입니다."/>
 	</Category>
 	<Category Name="FoodTable">
 		<Class ClassID="20001" ClassName="IncreaseHP{Value}For{Time}Minute" Data="{Time}분 동안 HP가 {Value}% 증가합니다."/>
@@ -910,7 +913,7 @@
 		<Class ClassID="21160" ClassName="CLASS_TYPE_Companion" Data="컴패니언"/>
 		<Class ClassID="21161" ClassName="Excnaged_Count_Remind" Data="번 교환 가능 합니다."/>
 		<Class ClassID="21162" ClassName="Excnaged_No_Enough" Data="교환 횟수를 모두 소진하였습니다."/>
-	<Class ClassID="20166" ClassName="TP_Costume_Lens" Data="[프리미엄]컬러 렌즈"/>
+	<Class ClassID="21166" ClassName="TP_Costume_Lens" Data="[프리미엄]컬러 렌즈"/>
 	<Class ClassID="21167" ClassName="ChatType_1" Data="일반"/>
 		<Class ClassID="21168" ClassName="ChatType_2" Data="외침"/>
 		<Class ClassID="21169" ClassName="ChatType_3" Data="파티"/>
@@ -3807,6 +3810,7 @@
 		<Class ClassID="26958" ClassName="FLASHMOB_EVENT_STEP_SUCCESS" Data="{STEP}단계 {nl}제스쳐 : '{POSE}' 성공!!"/>
 		<Class ClassID="26959" ClassName="FLASHMOB_EVENT_STEP_MSG1" Data="이번 단계는 이미 성공하셨습니다!"/>
 		<Class ClassID="26960" ClassName="FLASHMOB_EVENT_STEP_MSG2" Data="순서에 맞는 모든 제스쳐를 취하셔야합니다{nl}이벤트에 실패 했습니다!"/>
+		<Class ClassID="26961" ClassName="FLASHMOB_EVENT_STEP_MSG3" Data="이벤트 도우미 근처에서 제스쳐를 사용하셔야합니다!"/>
 		<Class ClassID="26962" ClassName="FLASHMOB_EVENT_STEP_ALL_SUCCESS" Data="제스쳐를 모두 성공하셨습니다!{nl}잠시 뒤 이벤트 도우미에게 보상을 받으세요!"/>
 		<Class ClassID="26963" ClassName="FLASHMOB_EVENT_STEP_CURR_POSE" Data="이번 단계의 제스쳐는 '{POSE}' 입니다."/>
 		<Class ClassID="26964" ClassName="FLASHMOB_EVENT_SET_ERROR1" Data="설정하시는 보상 Type이 없습니다!"/>
@@ -3825,6 +3829,19 @@
 		<Class ClassID="26977" ClassName="GOLDKEY_EVENT_EXCHANGE_5" Data="젬 아이템 상자 교환 필요 열쇠 : {KEYCOUNT}개 {TEXT}"/>
 		<Class ClassID="26978" ClassName="GOLDKEY_EVENT_EXCHANGE_6" Data="파워업 아이템 상자 교환 필요 열쇠 : {KEYCOUNT}개 {TEXT}"/>
 	    <Class ClassID="26979" ClassName="GOLDKEY_EVENT_NOTICE1" Data="{TEXT} 황금 열쇠를 획득하셨습니다!"/>
+		<Class ClassID="26980" ClassName="MISSION_ABBEY_01_ORB_MSG1" Data="오브를 큐브에 넣으세요!"/>
+		<Class ClassID="26981" ClassName="MISSION_ABBEY_01_START_1_1" Data="움직이는 수정을 파괴하세요!"/>
+		<Class ClassID="26982" ClassName="MISSION_ABBEY_01_START_1_2" Data="붉은 구슬을 큐브에 넣으세요!{nl}공격 받으면 구슬이 바닥에 떨어집니다"/>
+		<Class ClassID="26983" ClassName="MISSION_ABBEY_01_START_2_1" Data="똑 같이 생긴 몬스터 속에 숨어있는 키 몬스터를 처치하세요!"/>
+		<Class ClassID="26984" ClassName="MISSION_ABBEY_01_START_2_2" Data="30초 동안 제단에 몬스터가 접근하지 못하게 하세요!{nl}제단이 몬스터 힘을 흡수하는 걸 방해해야합니다"/>
+		<Class ClassID="26985" ClassName="MISSION_ABBEY_01_START_3" Data="보스 XXX를 처치하세요!"/>
+		<Class ClassID="26986" ClassName="MISSION_UPHILL_PVPPOINT" Data="{STEP}단계 통과{nl} PVP포인트 : {POINT} 획득!"/>
+		<Class ClassID="26987" ClassName="MISSION_UPHILL_STEP_REWARD_NAME" Data="{STEP}단계 보물상자"/>
+		<Class ClassID="26988" ClassName="MISSION_UPHILL_STEP_REWARD_ITEMLIST" Data="{STEP}단계 보물상자 보상{nl}{TEXT}"/>
+		<Class ClassID="26989" ClassName="MISSION_UPHILL_MSG11" Data="{COUNT}개"/>
+		<Class ClassID="26990" ClassName="MISSION_UPHILL_MSG12" Data="현재 화염 결정 : {COUNT}개"/>
+		<Class ClassID="26991" ClassName="FLASHMOB_EVENT_PROGRESS_MSG1" Data="이벤트에 참여하셨습니다!"/>
+		<Class ClassID="27000" ClassName="GM_MON_SUMMON_MSG1" Data="이벤트 몬스터 {COUNT}마리 생성 완료!"/>
 		<Class ClassID="30141" ClassName="ORCHARD_34_3_SQ_OBJ_6_SUB_MSG4" Data="잘못된 순서로 빛을 활성화했습니다{nl}빛이 빠르게 깜빡이는 순서대로 활성화하세요"/>
 <Class ClassID="50001" ClassName="UNDER30_2_CHECK_MSG2" Data="유독가스에 중독되어 비석을 확인하는데 힘듭니다"/>
 		<Class ClassID="50002" ClassName="UNDER301_MONSTER_PAIR_ERROR_1" Data="오늘 진행가능한 {DAYMAXCOUNT}회 중 {DAYPLAYCOUNT} 회를 모두 진행하셨습니다."/>
@@ -4241,6 +4258,11 @@
 		<Class ClassID="106038" ClassName="WANNING_DecreasePotaionWhenPutItToAccountWareHouse_Continue?" Data="{#FF0000}남은 거래 횟수 : {COUNT}{nl}{#0f0f0f}해당 아이템을 팀 창고에 넣으면{nl}포텐셜이 감소합니다.{nl}하지만 팀 창고에서 꺼낼땐 포텐셜이 감소하지 않습니다.{nl}그래도 넣으시겠습니까?"/>
 		<Class ClassID="106039" ClassName="WANNING_IfPutItemToWareHouse_TradePossibleItemWillBePut_Continue?" Data="{#FF0000}남은 거래 횟수 : {COUNT}{nl}{#0f0f0f}해당 아이템을 팀 창고에 넣으면{nl}거래 가능한 아이템의 수량만큼 차감됩니다.{nl}그래도 넣으시겠습니까?"/>
 		<Class ClassID="106040" ClassName="Get{Item}ToCabinetBy{Count}" Data="캐비넷으로 {Item} {Count}개를 획득했습니다."/>
+		<Class ClassID="106041" ClassName="ReallyReport" Data="정말 신고하시겠습니까?"/>
+		<Class ClassID="106042" ClassName="MarketReportOK" Data="해당 거래를 신고하였습니다."/>
+		<Class ClassID="106043" ClassName="AlreadyMarketReport" Data="이미 신고한 거래입니다."/>
+		<Class ClassID="106044" ClassName="CanNotBuyThisItem" Data="구매 불가능한 상품입니다."/>
+		<Class ClassID="106045" ClassName="ReportedItem" Data="거래 중지 된 아이템입니다."/>
 	</Category>
 	<Category Name="AutoSeller">
 		<Class ClassID="107001" ClassName="InputPriceMoreThanOne" Data="가격을 1이상 입력해주세요."/>
@@ -4804,6 +4826,7 @@
 		<Class ClassID="131061" ClassName="GuildGuardionObjRevive" Data="가디언을 소환시킬 수 있는 가디언 오브가 생성되었습니다."/>
 	<Class ClassID="131062" ClassName="PleaseJoinGuild" Data="소속된 길드가 없으면 참여할 수 없습니다."/>
 	<Class ClassID="131063" ClassName="ExistsPlayingPVP" Data="진행중인 대전에 입장하시겠습니까?"/>
+		<Class ClassID="131064" ClassName="GuildPVPReward{TP}{CNT}" Data="{TP}TP 교환권 {CNT}장"/>
 	</Category>
 	<Category Name="MonInfo">
 		<Class ClassID="132001" ClassName="MonInfo_Size" Data="크기"/>
@@ -7739,14 +7762,16 @@
 		<Class ClassID="300067" ClassName="Moreindunmission" Data="인던,미션 1회 추가 입장"/>
 		<Class ClassID="300068" ClassName="BuyLimitPerMonth_{Cur}_{Max}" Data="월별구매제한:{Cur}/{Max}"/>
 		<Class ClassID="300069" ClassName="CantBuyMoreThisMonth" Data="이번달은 더 이상 구매할 수 없습니다."/>
-		<Class ClassID="300070" ClassName="TokenState" Data="토큰 사용"/>
-		<Class ClassID="300071" ClassName="NoneTokenState" Data="토큰 미사용"/>
+		<Class ClassID="300070" ClassName="TokenState" Data="토큰 일치"/>
+		<Class ClassID="300071" ClassName="NoneTokenState" Data="토큰 불일치"/>
 		<Class ClassID="300072" ClassName="Premium_boostToken_14d" Data="경험의 서:14일"/>
 		<Class ClassID="300073" ClassName="Premium_indunReset_14d" Data="인던 입장 횟수 초기화권:14일"/>
 		<Class ClassID="300074" ClassName="Premium_StatReset14" Data="스탯 초기화"/>
 		<Class ClassID="300075" ClassName="abilityMax_ForPC{COUNT}" Data="특성 동시 수련 가능 개수 증가"/>
 		<Class ClassID="300076" ClassName="Premium_StatReset" Data="스탯 초기화 포션"/>
 	<Class ClassID="300077" ClassName="CarGoPremiumItem" Data="현재 장착중이거나 소지중인 헤어스타일은 추가로 보유할 수 없습니다."/>
+	<Class ClassID="300078" ClassName="TokenAppliedAtExchange" Data="토큰 사용"/>
+		<Class ClassID="300079" ClassName="TokenNoneAppliedAtExchange" Data="토큰 미사용"/>
 	</Category>
 	<Category Name="TPHistory">
 		<Class ClassID="301001" ClassName="RemainLogoutPC" Data="로그아웃 PC 만들기"/>

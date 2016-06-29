@@ -5652,6 +5652,7 @@
         <Key Name="PRISON_79_MQ_2" Value="13495"/>
         <Key Name="PRISON_80_MQ_4" Value="13496"/>
         <Key Name="PRISON_79_MQ_3" Value="13497"/>
+        <Key Name="MG_Last_MISSION_UPHILL_DEFFENSE" Value="32206"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PCEtc">
         <Key Name="FromMission" Value="3907"/>
@@ -10729,6 +10730,9 @@
         <Key Name="EquipCardID_Slot7" Value="13523"/>
         <Key Name="EquipCardLv_Slot7" Value="13524"/>
         <Key Name="Reward_TerraNymph_brown" Value="13525"/>
+        <Key Name="InDunCountType_500" Value="32207"/>
+        <Key Name="HadVisited_4260" Value="32208"/>
+        <Key Name="HairColor_lightsalmon" Value="32209"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Account">
         <Key Name="MaxPVPGrade" Value="6299"/>
@@ -10775,6 +10779,8 @@
         <Key Name="GuildEventSelectTime" Value="13499"/>
         <Key Name="GuildEventJoinSelectTime" Value="13500"/>
         <Key Name="GuildEventStartTimeSave" Value="13501"/>
+        <Key Name="MarketReportBlack" Value="32205"/>
+        <Key Name="MarketReportWhite" Value="32165"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Monster">
         <Key Name="MonDmgRate" Value="6305"/>
@@ -12227,6 +12233,7 @@
         <Key Name="GuildEventAceeptedAID_15" Value="13112"/>
         <Key Name="GuildEventRefusedAID_16" Value="13113"/>
         <Key Name="LastPVPRewardSeason" Value="13213"/>
+        <Key Name="GuildEventEntered" Value="32210"/>
     </KeyIDSpc>
     <KeyIDSpc Name="GuildMember">
         <Key Name="Name" Value="9011"/>

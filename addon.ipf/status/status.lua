@@ -1563,6 +1563,9 @@ function GET_HAIRCOLOR_IMGNAME_BY_ENGNAME(engname)
 		return "gray_color"
 	end
 
+	if engname == 'lightsalmon' then
+		return "lightsalmon_color"
+	end
 	return "basic_color"
 
 end
@@ -1606,4 +1609,4 @@ function STATUS_JOB_CHANGE(frame)
 	]]
 	
 end
-
+

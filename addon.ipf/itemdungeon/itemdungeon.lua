@@ -21,7 +21,7 @@ function ITEM_DUNGEON_FOR_PARTY_ON_MSG(frame, msg, argStr, argNum)
 		local agrBtn = frame:GetChild("btn_excute");
 		agrBtn:SetEnable(1);
 	elseif msg == "REQ_ITEM_DUNGEON" then
-		-- ¾ËÄÉ¹Ì½ºÆ®°¡ ¿äÃ»À» ¹ÞÀ½
+		-- ï¿½ï¿½ï¿½É¹Ì½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		if 0 == argNum then
 			local str = ScpArgMsg("DoYouOpenItemDungeon{Name}", "Name", argStr);
 			local okScript = string.format("AGREE_OPEN_ITEM_DUNGEON_UI('%s', 1)", argStr);
@@ -223,12 +223,12 @@ function UPDATEA_ITEMDUNGEON_STONE_ITEM(frame, msg, argStr, agrNum)
 	SET_SLOT_ITEM_CLS(stoneSlot, itemCls);
 end
 
-function SCR_ITEMDUNGEN_UI_CLOASE()
+function SCR_ITEMDUNGEN_UI_CLOSE()
 	local frame = ui.GetFrame("itemdungeon");
-	ITEMDUNGEN_UI_CLOASE(frame);
+	ITEMDUNGEN_UI_CLOSE(frame);
 end
 
-function ITEMDUNGEN_UI_CLOASE(frame)
+function ITEMDUNGEN_UI_CLOSE(frame)
 	local name = frame:GetUserValue("Name");
 	local open = frame:GetUserIValue("OPEN_UI");
 	if "None" ~= name  then
@@ -275,9 +275,9 @@ function ITEMDUNGEON_CLEARUI(frame)
 	local partySlot = GET_CHILD(bodyGbox, "partySlot"); 
 	partySlot:RemoveAllChild();
 	
-	local count = session.party.GetAlivePartyMemberList() -- ÆÄÆ¼¿øÀÌ ¾øÀ¸¸é 0À»Ä«¿îÆ®, ¿ëº´ Æ÷ÇÔ
+	local count = session.party.GetAlivePartyMemberList() -- ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½Ä«ï¿½ï¿½Æ®, ï¿½ëº´ ï¿½ï¿½ï¿½ï¿½
 	local number = math.min(ItemAwakening.Level,count); 
-	if count == 0 then-- ±âº»ÀûÀ¸·Î ³ª´Â Ãß°¡ÇØÁÖÀÚ
+	if count == 0 then-- ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		number = 1;
 	end
 	local maxCount = 4;
@@ -289,7 +289,7 @@ function ITEMDUNGEON_CLEARUI(frame)
 		pic:SetEnableStretch(1);
 		pic:SetImage("house_change_man");
 
-		-- ¸¸¾à »ç¶÷ÀÌ ÀÖ³Ä, ÀÌ°Ç Å×½ºÆ®¿ë
+		-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö³ï¿½, ï¿½Ì°ï¿½ ï¿½×½ï¿½Æ®ï¿½ï¿½
 		if number > 0 then
 			pic:SetColorTone("00000000"); 
 			number = number - 1;
@@ -456,9 +456,16 @@ function EXEC_ITEM_DUNGEON(parent, ctrl)
 		ui.SysMsg(ClMsg("NotEnoughRecipe"));
 		return;
 	end
-	else
 	end
+
 	if true == invItem.isLockState then
+		ui.SysMsg(ClMsg("MaterialItemIsLock"));
+		return;
+	end
+
+	local stoneSlot = GET_CHILD(frame, "stoneSlot");
+	local stonItem = GET_SLOT_ITEM(stoneSlot);
+	if stonItem ~= nil and true == stonItem.isLockState then
 		ui.SysMsg(ClMsg("MaterialItemIsLock"));
 		return;
 	end
@@ -541,4 +548,4 @@ function _EXEC_ITEM_DUNGEON()
 	session.hardSkill.CloseItemDungeon();
 	frame:ShowWindow(0);
 end
-
+
