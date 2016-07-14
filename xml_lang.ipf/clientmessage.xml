@@ -3845,6 +3845,8 @@
 		<Class ClassID="27000" ClassName="GM_MON_SUMMON_MSG1" Data="이벤트 몬스터 {COUNT}마리 생성 완료!"/>
 		<Class ClassID="27010" ClassName="GM_BUFF_MSG1" Data="[{BUFF}]버프를 선물 받으셨습니다!"/>
 		<Class ClassID="27011" ClassName="GM_BUFF_MSG2" Data="착용 중인 모든 장비의 내구도가 5씩 회복됩니다!"/>
+		<Class ClassID="27020" ClassName="DAYCHECK_EVENT_GETITEM" Data="출석 이벤트{nl}시즌 : {SEASON}{nl}{COUNT}일차 달성{nl}보상 : {ITEMNAME} {ITEMCOUNT}개"/>
+		<Class ClassID="27021" ClassName="DAYCHECK_EVENT_PCDATA" Data="출석 이벤트{nl}시즌 : {SEASON}{nl}{COUNT}일차 달성"/>
 		<Class ClassID="30141" ClassName="ORCHARD_34_3_SQ_OBJ_6_SUB_MSG4" Data="잘못된 순서로 빛을 활성화했습니다{nl}빛이 빠르게 깜빡이는 순서대로 활성화하세요"/>
 <Class 
 ClassID="30151" 

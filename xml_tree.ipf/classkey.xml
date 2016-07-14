@@ -10788,6 +10788,12 @@
         <Key Name="LastGuildOutDay" Value="32213"/>
         <Key Name="LastGuildOutGIDX" Value="32214"/>
         <Key Name="GuildBattleJoinableDay" Value="32215"/>
+        <Key Name="DAYCHECK_EVENT_PLAYMIN" Value="32218"/>
+        <Key Name="DAYCHECK_EVENT_LAST_DATE" Value="32219"/>
+        <Key Name="DAYCHECK_EVENT_REWARD_DATE" Value="32220"/>
+        <Key Name="DAYCHECK_EVENT_REWARD_COUNT1" Value="32221"/>
+        <Key Name="DAYCHECK_EVENT_REWARD_COUNT2" Value="32222"/>
+        <Key Name="DAYCHECK_EVENT_REWARD_COUNT3" Value="32223"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Monster">
         <Key Name="MonDmgRate" Value="6305"/>
