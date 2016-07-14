@@ -367,7 +367,7 @@
 		<image name="icon_item_pants_nobleLeather_yellow" file="\icon\equip\pants_nobleLeather_yellow.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_gloves_nobleLeather_yellow" file="\icon\equip\gloves_nobleLeather_yellow.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_boots_nobleLeather_yellow" file="\icon\equip\boots_nobleLeather_yellow.png" imgrect="0 0 256 256"/>
-	<image name="icon_item_gloves_intathurta" file="\icon\equip\gloves_intathurta.png" imgrect="0 0 256 256" CMM_Caption="블러드배쓰장갑"/>
+		<image name="icon_item_gloves_intathurta" file="\icon\equip\gloves_intathurta.png" imgrect="0 0 256 256" CMM_Caption="블러드배쓰장갑"/>
 	</imagelist>
 	<imagelist category="256_costume_icons">
 		<image name="icon_item_Alchemist_f" file="\icon\equip\Alchemist_f_icon.png" imgrect="0 0 256 256" CMM_Caption="알케미스트"/>
@@ -3462,7 +3462,7 @@
 		<image name="icon_item_eventbox_potion" file="\icon\item\icon_item_eventbox_potion.png" imgrect="0 0 128 128" CMM_Caption="포션박스"/>
 		<image name="icon_item_ironhammer" file="\icon\item\icon_item_ironhammer.png" imgrect="0 0 128 128" CMM_Caption="해머"/>
 		<image name="icon_item_ironbundle" file="\icon\item\icon_item_ironbundle.png" imgrect="0 0 128 128" CMM_Caption="해머윗부분"/>
-<image name="icon_item_gohei_blue" file="\icon\item\icon_item_gohei_blue.png" imgrect="0 0 128 128" CMM_Caption="고헤이_각성"/>
+		<image name="icon_item_gohei_blue" file="\icon\item\icon_item_gohei_blue.png" imgrect="0 0 128 128" CMM_Caption="고헤이_각성"/>
 		<image name="icon_item_gohei" file="\icon\item\icon_item_gohei.png" imgrect="0 0 128 128" CMM_Caption="고헤이"/>
 	</imagelist>
 	<imagelist category="payment">
@@ -3612,16 +3612,22 @@
 		<image name="icon_item_cleric_school_m" file="\icon\payment\cleric_school_m.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_cleric_school_f" file="\icon\payment\cleric_school_f.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_mage_bunny_m" file="\icon\payment\mage_bunny_m.png" imgrect="0 0 256 256" CMM_Caption="바니걸_코스튬"/>
-		<image name="icon_item_mage_bunny_f" file="\icon\payment\mage_bunny_f.png" imgrect="0 0 256 256" />
+		<image name="icon_item_mage_bunny_f" file="\icon\payment\mage_bunny_f.png" imgrect="0 0 256 256"/>
 		<image name="hairacc_hat_whitebunny" file="\icon\payment\hairacc_hat_whitebunny.png" imgrect="0 0 256 256" CMM_Caption="바니걸_헤어"/>
 		<image name="icon_item_cleric_maid_m" file="\icon\payment\cleric_maid_m.png" imgrect="0 0 256 256" CMM_Caption="메이드코스튬"/>
 		<image name="icon_item_cleric_maid_f" file="\icon\payment\cleric_maid_f.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_lens_gray" file="\icon\payment\lens_gray.png" imgrect="0 0 256 256" CMM_Caption="렌즈아이콘_그레이"/>
 		<image name="hair_featherfootA" file="\icon\payment\hair_featherfootA.png" imgrect="0 0 256 256" CMM_Caption="페더풋헤어"/>
 		<image name="hair_silvia" file="\icon\payment\hair_silvia.png" imgrect="0 0 256 256" CMM_Caption="실비아헤어"/>
-	<image name="icon_item_warrior_swordman01_3_m" file="\icon\payment\warrior_swordman01_3_m.png" imgrect="0 0 256 256" CMM_Caption="소드맨3랭크코스튬"/>
+		<image name="icon_item_warrior_swordman01_3_m" file="\icon\payment\warrior_swordman01_3_m.png" imgrect="0 0 256 256" CMM_Caption="소드맨3랭크코스튬"/>
 		<image name="icon_item_warrior_swordman01_3_f" file="\icon\payment\warrior_swordman01_3_f.png" imgrect="0 0 256 256"/>
-	<image name="icon_item_archer_racoon_f" file="\icon\payment\archer_racoon_f.png" imgrect="0 0 256 256" CMM_Caption="너구리여자코스튬"/>
+		<image name="icon_item_archer_racoon_f" file="\icon\payment\archer_racoon_f.png" imgrect="0 0 256 256" CMM_Caption="너구리여자코스튬"/>
+		<image name="icon_item_ChangeGuildName" file="\icon\payment\icon_item_ChangeGuildName.png" imgrect="0 0 256 256" CMM_Caption="체인지길드이름"/>
+		<image name="icon_item_ChangeTeamName" file="\icon\payment\icon_item_ChangeTeamName.png" imgrect="0 0 256 256" CMM_Caption="체인지팀이름"/>
+		<image name="icon_item_ChangeName" file="\icon\payment\icon_item_ChangeName.png" imgrect="0 0 256 256" CMM_Caption="체인지이름"/>
+		<image name="icon_item_silverbox1" file="\icon\payment\icon_item_silverbox1.png" imgrect="0 0 256 256" CMM_Caption="실버박스"/>
+		<image name="icon_item_expbookx4" file="\icon\payment\icon_item_expbookx4.png" imgrect="0 0 256 256" CMM_Caption="경험의서x4"/>
+		<image name="icon_item_expbookx8" file="\icon\payment\icon_item_expbookx8.png" imgrect="0 0 256 256" CMM_Caption="경험의서x8"/>
 	</imagelist>
 	<imagelist category="seal">
 		<image name="icon_seal_yellow_cc_A1" file="\icon\seal\seal_yellow_cc_A1.tga" imgrect="0 0 80 80"/>

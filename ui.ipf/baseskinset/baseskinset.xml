@@ -4470,6 +4470,11 @@
 		<image name="paid_immed_image" file="\skin\paid_skin.tga" imgrect="475 968 55 45" CMM_Caption="즉시습득"/>
 		<image name="20percent_image" file="\skin\paid_skin.tga" imgrect="922 92 55 45" CMM_Caption="20%"/>
 		<image name="2plus_image" file="\skin\paid_skin.tga" imgrect="681 590 55 45" CMM_Caption="+2"/>
+		<image name="9multiply_image" file="\skin\paid_skin.tga" imgrect="699 968 55 45" CMM_Caption="x9"/>
+		<image name="50percent_image_1" file="\skin\paid_skin.tga" imgrect="755 968 55 45" CMM_Caption="50%"/>
+		<image name="120percent_image" file="\skin\paid_skin.tga" imgrect="587 968 55 45" CMM_Caption="120%"/>
+		<image name="240percent_image" file="\skin\paid_skin.tga" imgrect="531 968 55 45" CMM_Caption="240%"/>
+		<image name="5multiply_image" file="\skin\paid_skin.tga" imgrect="643 968 55 45" CMM_Caption="x5"/>
 		<image name="67percent_image2" file="\skin\paid_skin.tga" imgrect="187 0 100 45"/>
 		<image name="50percent_image2" file="\skin\paid_skin.tga" imgrect="187 46 100 45"/>
 		<image name="4plus_image2" file="\skin\paid_skin.tga" imgrect="187 92 100 45"/>
@@ -4481,6 +4486,10 @@
 		<image name="20percent_image2" file="\skin\paid_skin.tga" imgrect="922 46 100 45"/>
 		<image name="dealok30_image2" file="\skin\paid_skin.tga" imgrect="904 166 100 45"/>
 		<image name="9plus_image2" file="\skin\paid_skin.tga" imgrect="904 212 100 45"/>
+		<image name="9multiply_image2" file="\skin\paid_skin.tga" imgrect="736 664 100 45"/>
+		<image name="50percent_image3" file="\skin\paid_skin.tga" imgrect="837 756 100 45"/>
+		<image name="120percent_image2" file="\skin\paid_skin.tga" imgrect="736 710 100 45"/>
+		<image name="240percent_image2" file="\skin\paid_skin.tga" imgrect="736 756 100 45"/>
 		<image name="arrow_red_image" file="\skin\paid_skin.tga" imgrect="131 230 55 15" CMM_Caption="빨간화살표"/>
 		<image name="token_middle" file="\skin\paid_skin.tga" imgrect="288 0 316 165" CMM_Caption="토큰중간이미지"/>
 		<image name="expup_middle" file="\skin\paid_skin.tga" imgrect="605 0 316 165" CMM_Caption="경험의서이미지"/>
@@ -4524,7 +4533,7 @@
 		<image name="deal_righthave" file="\skin\deal_skin.tga" imgrect="0 130 561 64" CMM_Caption="오른쪽토큰가지고있음"/>
 		<image name="deal_wehave" file="\skin\deal_skin.tga" imgrect="0 195 561 64" CMM_Caption="모두토큰가지고있음"/>
 		<image name="deal_changearrow" file="\skin\deal_skin.tga" imgrect="0 260 45 63" CMM_Caption="화살표"/>
-	<image name="in_arrow" file="\skin\pip_test.tga" imgrect="439 625 14 14" CMM_Caption="입금화살표"/>
+		<image name="in_arrow" file="\skin\pip_test.tga" imgrect="439 625 14 14" CMM_Caption="입금화살표"/>
 		<image name="chul_arrow" file="\skin\pip_test.tga" imgrect="439 640 14 14" CMM_Caption="출금화살표"/>
 	</imagelist>
 	<imagelist category="MCC_image">
@@ -5915,7 +5924,7 @@
 		<image name="journal_guild_icon" file="\skin\HUD.tga" imgrect="616 896 66 66" CMM_Caption="모험일지_길드랭킹"/>
 		<image name="journal_guild_icon_cursoron" file="\skin\HUD.tga" imgrect="683 896 66 66"/>
 		<image name="journal_guild_icon_clicked" file="\skin\HUD.tga" imgrect="683 896 66 66"/>
-	<image name="steam_shop_btn" file="\skin\HUD.tga" imgrect="1489 916 66 66" CMM_Caption="Tp상점버튼_스팀"/>
+		<image name="steam_shop_btn" file="\skin\HUD.tga" imgrect="1489 916 66 66" CMM_Caption="Tp상점버튼_스팀"/>
 		<image name="steam_shop_btn_cursoron" file="\skin\HUD.tga" imgrect="1427 615 66 66"/>
 		<image name="steam_shop_btn_clicked" file="\skin\HUD.tga" imgrect="1427 615 66 66"/>
 	</imagelist>

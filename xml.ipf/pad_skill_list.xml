@@ -4344,6 +4344,9 @@ end"/>
                 <Num Num="10000"/>
                 <Num Num="1"/>
             </ToolScp>
+        <ToolScp Scp="PAD_CONCURRENT_USE_COUNT" Client="NO" UseSleep="NO" OverrideType="ADD">
+                <Num Num="1" UseFunc="1" FuncTxt="return 10 + obj.Level;"/>
+            </ToolScp>
         </createEvent>
         <updateEvent>
             <ToolScp Scp="PAD_ADD_LIFE" Client="NO" UseSleep="NO">
