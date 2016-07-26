@@ -411,13 +411,6 @@ function UPDATE_CHANGEJOB(frame)
 			ChangeJobQuestCircleText = ChangeJobQuestCircleText.."_1"	
 		elseif sObj.QSTARTZONETYPE == "StartLine2" then
 			ChangeJobQuestCircleText = ChangeJobQuestCircleText.."_2"
-		else
-			local infostr = "QSTARTZONETYPE is nil"
-			if sObj.QSTARTZONETYPE ~= nil then
-				infostr = "QSTARTZONETYPE is ".. sObj.QSTARTZONETYPE
-			end
-
-			IMC_NORMAL_INFO(infostr)
 		end
 		
 		local nowjobID = GetClassByType("Job", cls.ClassID);

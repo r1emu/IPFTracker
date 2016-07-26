@@ -75,5 +75,6 @@ end
 
 function UI_CHECK_SIMPLEINGAMESHOP_UI_OPEN() -- 오버라이드로 사용해라
 	
+	print("qweqwe")
 	return 1
 end
