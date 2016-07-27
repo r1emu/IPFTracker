@@ -190,7 +190,6 @@ function GET_GUILD_EXPUP_ITEM_INFO()
 end
 
 function GET_GUILD_LEVEL_BY_EXP(exp)
-
 	local lv = 1;
 	local clsList, cnt = GetClassList("GuildExp");
 	for i = 0 , cnt - 1 do
@@ -199,7 +198,6 @@ function GET_GUILD_LEVEL_BY_EXP(exp)
 			lv = cls.ClassID;
 		end
 	end
-
 	return lv;
 
 end
@@ -216,6 +214,11 @@ end
 
 function GET_GUILD_MAKE_PRICE()
 
+	local isSeasonServer = IS_SEASON_SERVER(nil);
+	if isSeasonServer == "YES" then
+		return 1000000 - (1000000 * 0.9)
+	end
+
 	return 1000000;
 
 end
@@ -226,4 +229,4 @@ function GET_REMAIN_TICKET_COUNT(guildObj)
 end
 
 
-
+

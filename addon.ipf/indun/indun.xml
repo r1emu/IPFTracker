@@ -30,5 +30,7 @@
         <richtext name="richtext_2" margin="16 7 0 0" rect="0 0 120 24" caption="{@st45tw2}이름{/}" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="white_16_ol" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top" parent="groupbox_1"/>
         <richtext name="richtext_2_1" margin="0 7 20 0" rect="0 0 120 24" caption="{@st45tw2}입장레벨{/}" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="white_16_ol" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="right top" parent="groupbox_1"/>
         <groupbox name="groupbox_2" margin="-10 37 0 0" rect="0 0 590 710" hittestbox="false" layout_gravity="left top" parent="gbox" draw="false"/>
-    </controls>
+		<checkbox name="levelUp" margin="0 220 150 0" rect="0 0 150 24" caption="레벨 오름차순{/}" LBtnDownScp="INDUN_SORT_OPTIN_CHECK" fontname="black_16_b" clicksound="button_click_big" oversound="button_over" layout_gravity="right top"/>
+		<checkbox name="levelDown" margin="0 220 0 0" rect="0 0 150 24" caption="레벨 내림차순{/}" LBtnDownScp="INDUN_SORT_OPTIN_CHECK" fontname="black_16_b" clicksound="button_click_big" oversound="button_over" layout_gravity="right top"/>
+	</controls>
 </uiframe>

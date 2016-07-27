@@ -56,19 +56,35 @@ function DRAW_INDUN_UI(frame, type)
 
 	local pCls = nil;
 	if 100 == type then
-		pCls = GetClass("Indun", "Indun_startower"); -- �δ�
+		pCls = GetClass("Indun", "Indun_startower"); -- 인던
 	elseif 200 == type then
-		pCls = GetClass("Indun", "Request_Mission1"); -- �Ƿڼ�
+		pCls = GetClass("Indun", "Request_Mission1"); -- 의뢰소
 	elseif 300 == type then
-		pCls = GetClass("Indun", "Request_Mission7"); -- ��� ������
+		pCls = GetClass("Indun", "Request_Mission7"); -- 살라스 수도원
 	elseif 400 == type then
-		pCls = GetClass("Indun", "M_GTOWER_1"); -- ������ ž
+		pCls = GetClass("Indun", "M_GTOWER_1"); -- 대지의 탑
 	elseif 500 == type then
-		pCls = GetClass("Indun", "Request_Mission10"); -- ���� ���潺 �̼�
+		pCls = GetClass("Indun", "Request_Mission10"); -- 업힐 디펜스 미션
 	end
 
 	if nil == pCls then
 		return;
+	end
+
+	local lvUpCheckBox = GET_CHILD(frame, "levelUp", "ui::CCheckBox");
+	local lvDownCheckBox = GET_CHILD(frame, "levelDown", "ui::CCheckBox");
+
+	-- 인던 탭에서만 레벨순 정렬기능 제공
+	if type == 100 then
+		lvUpCheckBox:ShowWindow(1)
+		lvDownCheckBox:ShowWindow(1)
+	else
+		lvUpCheckBox:ShowWindow(0)
+		lvDownCheckBox:ShowWindow(0)
+	end
+
+	if lvUpCheckBox:IsChecked() == 0 and lvDownCheckBox:IsChecked() == 0 then		
+		lvUpCheckBox:SetCheck(1) -- default option
 	end
 
 	local text = "";
@@ -113,8 +129,21 @@ function DRAW_INDUN_UI(frame, type)
 	local etcObj = GetMyEtcObject();
 	local clslist, cnt  = GetClassList("Indun");
 	local mylevel = info.GetLevel(session.GetMyHandle());
-	for i = 0 , cnt - 1 do
-		local pCls = GetClassByIndexFromList(clslist, i);
+
+	-- sort by level
+	local indunTable = {}
+	for i = 0, cnt - 1 do
+		indunTable[i + 1] = GetClassByIndexFromList(clslist, i);
+	end
+
+	if lvUpCheckBox:IsChecked() == 1 then
+		table.sort(indunTable, SORT_BY_LEVEL);
+	else
+		table.sort(indunTable, SORT_BY_LEVEL_REVERSE);
+	end
+
+	for i = 1 , cnt do
+		local pCls = indunTable[i]
 		if tonumber(pCls.PlayPerResetType) == type then
 			local name = pCls.Name;
 			local ctrlSet = gbox:CreateControlSet("indun_ctrlset", "CTRLSET_" .. i, ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
@@ -124,9 +153,9 @@ function DRAW_INDUN_UI(frame, type)
 			name:SetTextByKey("value", pCls.Name);
 			lv:SetTextByKey("value", pCls.Level);
 			
-			if tonumber(pCls.Level) < mylevel then -- ���ζ���
+			if tonumber(pCls.Level) < mylevel then -- 연두라인
 				button:SetColorTone("FFC4DFB8");	
-			elseif tonumber(pCls.Level) > mylevel then -- ��������
+			elseif tonumber(pCls.Level) > mylevel then -- 빨간라인
 				button:SetColorTone("FFFFCA91");
 			else
 				button:SetColorTone("FFFFFFFF");	
@@ -135,6 +164,20 @@ function DRAW_INDUN_UI(frame, type)
 	end
 
 	GBOX_AUTO_ALIGN(gbox, 0, -6, 0, true, false);
+end
+
+function SORT_BY_LEVEL(a, b)	
+	if TryGetProp(a, "Level") == nil or TryGetProp(b, "Level") == nil then
+		return false
+	end
+	return tonumber(a.Level) < tonumber(b.Level)
+end
+
+function SORT_BY_LEVEL_REVERSE(a, b)	
+	if TryGetProp(a, "Level") == nil or TryGetProp(b, "Level") == nil then
+		return false
+	end
+	return tonumber(a.Level) > tonumber(b.Level)
 end
 
 function OPEN_DUNGEON(frame, ctrl)
@@ -171,4 +214,18 @@ end
 
 function GID_CANTFIND_MGAME(msg)
 	ui.SysMsg(ScpArgMsg(msg));
+end
+function INDUN_SORT_OPTIN_CHECK(frame, ctrl)
+	local lvUpCheckBox = GET_CHILD(frame, "levelUp", "ui::CCheckBox");
+	local lvDownCheckBox = GET_CHILD(frame, "levelDown", "ui::CCheckBox");
+
+	if lvUpCheckBox:GetName() == ctrl:GetName() then
+		lvUpCheckBox:SetCheck(1)
+		lvDownCheckBox:SetCheck(0)
+	else
+		lvUpCheckBox:SetCheck(0)
+		lvDownCheckBox:SetCheck(1)
+	end
+
+	INDUN_TAB_CHANGE(frame)
 end

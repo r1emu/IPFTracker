@@ -60,8 +60,17 @@ function MONSTER_QUICKSLOT(isOn, monName, buffType, ableToUseSkill)
 						hotKey = hotKeyTable.GetHotKeyString(slotString, 1);	
 					end
 
+					-- monster quick slotì— cooltime ì¶”ê°€
+					QUICKSLOT_MAKE_GAUGE(slot)
+					QUICKSLOT_SET_GAUGE_VISIBLE(slot, 1)
+					icon:SetOnCoolTimeUpdateScp('ICON_UPDATE_SKILL_COOLDOWN');
+					icon:SetEnableUpdateScp('MONSTER_ICON_UPDATE_SKILL_ENABLE');
+					icon:SetColorTone("FFFFFFFF");
+					icon:ClearText();
+					quickSlot.OnSetSkillIcon(slot, type);
+
 					
-					-- ÀÌ ¶«»§À» ¾îÂîÇØ¾Æ ÇÏ³ª? Á¦ÀÏ ÁÁÀº°Ç hotkey_joystic.xmlÀÇ Key, PressedKey¸¦ ¿¹»Ú°Ô Á¤¸®ÇÏ´Â °ÍÀÌ´Ù.
+					-- ì´ ë•œë¹µì„ ì–´ì°Œí•´ì•„ í•˜ë‚˜? ì œì¼ ì¢‹ì€ê±´ hotkey_joystic.xmlì˜ Key, PressedKeyë¥¼ ì˜ˆì˜ê²Œ ì •ë¦¬í•˜ëŠ” ê²ƒì´ë‹¤.
 					hotKey = string.gsub(hotKey, "JOY_BTN_1", "X");
 					hotKey = string.gsub(hotKey, "JOY_BTN_2", "A");
 					hotKey = string.gsub(hotKey, "JOY_BTN_3", "Y");
