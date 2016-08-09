@@ -1,6 +1,5 @@
 ClassID,ClassName,LoadingType,FileName,FAQ_Hide,Tooltip_Hide
-1,"img28","LoadingFirst","28.jpg","",""
-2,"img25","LoadingFirst","25.jpg","",""
+1,"img25","LoadingFirst","25.jpg","",""
 1001,"img1","LoadingDefault","1.jpg","YES","YES"
 1002,"img2","LoadingDefault","2.jpg","YES","YES"
 1003,"img3","LoadingDefault","3.jpg","YES","YES"

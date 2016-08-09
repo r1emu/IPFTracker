@@ -1,6 +1,8 @@
 ClassID,Price,JobGrade,LimitCount,ClassName,Category,SubCategory,ItemClassName,Job,LimitDuration
 1,99,0,5,"ClassName1","TP_Premium","TP_Useable","PremiumToken","","Month"
 2,9,0,0,"ClassName2","TP_Premium","TP_Useable","Premium_boostToken","",""
+5,248,0,0,"ClassName5","TP_Premium","TP_Useable","Penguin_Pack_2016","","Month"
+6,70,0,0,"ClassName6","TP_Premium","TP_Useable","Adventurer_Pack_2016","","Month"
 101,8,0,0,"ClassName101","TP_Premium","TP_Consume","Mic_bundle10","",""
 102,1,0,0,"ClassName102","TP_Premium","TP_Consume","Mic","",""
 103,32,0,0,"ClassName103","TP_Premium","TP_Consume","RestartCristal_bundle10","",""
