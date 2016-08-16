@@ -18,8 +18,6 @@ ClassID,Price,JobGrade,LimitCount,ClassName,Category,SubCategory,ItemClassName,J
 501,298,0,0,"ClassName501","TP_Premium","TP_Petitem","egg_006","",""
 502,10,0,0,"ClassName502","TP_Premium","TP_Petitem","Premium_Penguin_Food","",""
 503,3,0,0,"ClassName503","TP_Premium","TP_Petitem","food_penguin","",""
-504,298,0,0,"ClassName504","TP_Premium","TP_Petitem","egg_009","",""
-505,3,0,0,"ClassName505","TP_Premium","TP_Petitem","food_cereal","",""
 1001,129,0,0,"ClassName1001","TP_Costume_M","War_costume_M","costume_war_m_001","",""
 1002,129,3,0,"ClassName1002","TP_Costume_M","War_costume_M","costume_war_m_002","Char1_2",""
 1003,129,1,0,"ClassName1003","TP_Costume_M","War_costume_M","costume_war_m_004","Char1_1",""
