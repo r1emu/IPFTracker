@@ -381,7 +381,6 @@ function _PUB_EXEC_CREATECHAR(viewOpening)
 	local actor = GetBarrackPub():GetSelectedActor();
 	barrack.RequestCreateCharacter(text, actor, selectMap);
 	GetBarrackPub():EnablePlayOpening(viewOpening, selectMap);
-	selectMap = 0;
 
 end
 
@@ -409,4 +408,4 @@ function SELECT_START_MAP_ORSHA(parent, ctrl)
 	local klaipeBtn = parent:GetChild("KlaipeBtn");
 	klaipeBtn:SetEnable(1);
 	selectMap = 2;
-en
+end

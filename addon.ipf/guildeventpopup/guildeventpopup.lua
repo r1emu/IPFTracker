@@ -57,17 +57,17 @@ function ON_UPDATE_GUILDEVENT_POPUP(frame, msg, arg)
 		guildEventCls = GetClassByType("GuildEvent", partyObj.GuildRaidSelectInfo);
 		LocInfo = guildEventCls.StageLoc_1;
 	end
-	
+
 	frame:SetUserValue("CLSSID", guildEventCls.ClassID);
 	frame:SetUserValue("STARTWAITSEC", guildEventCls.StartWaitSec);
-
+	
 	local sysTime = geTime.GetServerSystemTime();
 	local endTime = imcTime.GetSysTimeByStr(partyObj.GuildEventStartTime);
 	local difSec = imcTime.GetDifSec(sysTime, endTime);
 	if difSec >= guildEventCls.StartWaitSec then
 		return;
 	end
-
+	
 	frame:SetUserValue("ELAPSED_SEC", difSec);
 	frame:SetUserValue("START_SEC", imcTime.GetAppTime());
 	if GuildInDunFlag == 1 or GuildBossSummonFlag == 1 then
@@ -89,6 +89,7 @@ function ON_UPDATE_GUILDEVENT_POPUP(frame, msg, arg)
 		end
 		
 		local accObj = GetMyAccountObj();
+		--이벤트 거절
 		if IsLaterOrSameStrByStr(accObj.GuildEventSelectTime, partyObj.GuildEventBroadCastTime) == 1 and accObj.GuildEventSeq ~= partyObj.GuildEventSeq then
 			frame:ShowWindow(0);
 		else
@@ -126,6 +127,7 @@ function ON_UPDATE_GUILDEVENT_POPUP(frame, msg, arg)
 		local posZ = tonumber(sList[4]);
 
 		local accObj = GetMyAccountObj();
+		--이벤트 거절
 		if IsLaterOrSameStrByStr(accObj.GuildEventSelectTime, partyObj.GuildEventBroadCastTime) == 1 and accObj.GuildEventSeq ~= partyObj.GuildEventSeq then
 			frame:ShowWindow(0);
 			return;
@@ -197,7 +199,7 @@ function REQ_ClOSE_GUILDEVENT(parent, ctrl)
 end
 
 function GUILDEVENTPOPUP_UPDATE_STARTWAITSEC(frame)
-
+	
 	local startWaitSec = frame:GetUserIValue("STARTWAITSEC");
 	local elapsedSec = frame:GetUserIValue("ELAPSED_SEC");
 	local startSec = frame:GetUserIValue("START_SEC");
@@ -271,7 +273,7 @@ function GUILDEVENTPOPUP_SET_UIITEM(frame, arg, partyObj, guildEventCls)
 	local bgRefuse = GET_CHILD(backG, "bgRefuse");
 	local nHeight = txt_joined_member:GetY();
 
-	local strMember = partyObj.GuildEventJoinCount .. "/" .. playerCnt .. "{/}";	
+	local strMember = string.format("%s/%s{/}", partyObj.GuildEventJoinCount, playerCnt);	
 	txt_joined_member:SetTextByKey("value", strMember);
 	nHeight = nHeight + txt_joined_member:GetHeight();
 	bgAccept:SetPos(bgAccept:GetX(), nHeight);	
@@ -312,9 +314,8 @@ function GUILDEVENTPOPUP_SET_UICONTROLSET(partyObj, list, propName, MEMBER_FACE_
 					local partyMemberName = partyMemberInfo:GetName();		
 					local ctrlSet = memberBox:CreateControlSet("guildEvent_popup_listItem", partyMemberInfo:GetAID(), ui.LEFT, ui.TOP, 0, aBoxItemHeight, 0, 0);
 			
-					local jobIcon = GET_CHILD(ctrlSet, "jobportrait", "ui::CPicture");
+					local jobIcon = GET_CHILD(ctrlSet, "jobportrait");
 					local nameObj = ctrlSet:GetChild('name_text');
-					local nameRichText = tolua.cast(nameObj, "ui::CRichText");	
 					
 					local iconinfo = partyMemberInfo:GetIconInfo();
 					local jobCls  = GetClassByType("Job", iconinfo.job);
@@ -323,16 +324,16 @@ function GUILDEVENTPOPUP_SET_UICONTROLSET(partyObj, list, propName, MEMBER_FACE_
 						jobIcon:SetTextTooltip(jobCls.Name);
 					end											
 					jobIcon:SetColorTone(MEMBER_FACE_COLORTONE)
-					partyMemberName = MEMBER_NAME_FONT_TAG..partyMemberName;
-					nameRichText:SetTextByKey("name", partyMemberName);		
-					print(partyMemberName);			
+					local nameText = string.format("%s%s", MEMBER_NAME_FONT_TAG, partyMemberName);
+					partyMemberName = nameText;
+					nameObj:SetTextByKey("name", partyMemberName);		
 
 					-- 파티원 레벨 표시 -- 
 					local levelRichText = ctrlSet:GetChild('level_text');
 					local level = partyMemberInfo:GetLevel();	
-					local lvText = MEMBER_NAME_FONT_TAG..ScpArgMsg("Level") .. string.format(" %d", level); 
+					local lvText = string.format("%s%s %d",MEMBER_NAME_FONT_TAG, ScpArgMsg("Level"), level); 
 					levelRichText:SetTextByKey("lv",  lvText);
-					aBoxItemHeight = aBoxItemHeight + nameRichText:GetHeight() + 5;
+					aBoxItemHeight = aBoxItemHeight + nameObj:GetHeight() + 5;
 					memberBox:Resize(memberBox:GetWidth(), aBoxItemHeight);						
 				end;		
 			end;				

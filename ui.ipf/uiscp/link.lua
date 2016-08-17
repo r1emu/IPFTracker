@@ -1,6 +1,6 @@
 --- link.lua
 
-
+pretframe = nil
 function GET_ITEM_FULLNAME_BY_TAG_INFO(props, clsID)
 
 	local newobj = CreateIESByID("Item", clsID);
@@ -15,6 +15,10 @@ function GET_ITEM_FULLNAME_BY_TAG_INFO(props, clsID)
 end
 
 function SLI(props, clsID)
+
+	if pretframe ~= nil then
+		CLOSE_LINK_TOOLTIP(pretframe, slot)
+	end
 
 	local tooltipType = GET_ITEM_TOOLTIP_TYPE(clsID);
 
@@ -36,11 +40,13 @@ function SLI(props, clsID)
 		tframe:SetTooltipType('skill');
 		tframe:SetTooltipArg("Level", skillType, level);
 	end
+
+	pretframe = tframe
+
 	tframe:RefreshTooltip();
 	tframe:ShowWindow(1);
 
 	ui.ToCenter(tframe);
-
 end
 
 function SLM(infoString)
@@ -162,4 +168,4 @@ function SLP(partyID)
 end
 
 
-
+

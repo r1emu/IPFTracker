@@ -56,6 +56,7 @@ function MY_AUTOSELL_LIST(groupName, sellType)
 	local titleName = session.autoSeller.GetTitle(groupName);
 	local gBox = frame:GetChild("bodyGbox");
 	local shopname = gBox:GetChild("shopname");
+
 	shopname:SetTextByKey("value", titleName);
 
 	local selllist = gBox:GetChild("selllist");
@@ -116,6 +117,11 @@ function MY_AUTOSELL_HISTORY(groupName, sellType)
 		local buffFrame = ui.GetFrame("itembuffgemroasting");
 		GEMROASTING_UPDATE_HISTORY(buffFrame);
 		return;
+
+	elseif sellType == AUTO_SELL_ENCHANTERARMOR then
+		local enchantarmoropen = ui.GetFrame("enchantarmoropen");
+		ENCHANTARMOROPEN_UPDATE_HISTORY(enchantarmoropen);
+		return;
 	end
 
 	local frame = ui.GetFrame("buffseller_my");
@@ -141,4 +147,4 @@ function BUFFSELLER_MY_CLOSE(frame)
 	-- frame:ShowWindow(0);
 end
 
-
+

@@ -20,12 +20,14 @@ function DIALOGILLUST_TEXTVIEW(frame, msg, argStr, argNum)
 		end
 	end
 	
-	if DialogTable ~= nil then
-		local imgObject = frame:GetChild('dialogimage');
+	local imgObject = frame:GetChild('dialogimage');
+	if nil ~= imgObject then
 		tolua.cast(imgObject, 'ui::CPicture');
-		imgObject:SetImage(DialogTable.ImgName);	
-	else
-		imgObject:SetImage("");
+		if DialogTable ~= nil then
+			imgObject:SetImage(DialogTable.ImgName);	
+		else
+			imgObject:SetImage("");
+		end
 	end
 
 	frame:ShowWindow(1);
@@ -51,4 +53,4 @@ function DIALOGILLUST_ON_MSG(frame, msg, argStr, argNum)
 		ui.CloseFrame(frame:GetName());
 		dialogelapsedTime = 0;
 	end
-end
+end

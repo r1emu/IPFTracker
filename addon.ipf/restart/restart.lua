@@ -84,7 +84,7 @@ function AUTORESIZE_RESTART(frame)
 		return;
 	end
 	campGroup:RemoveAllChild();
-	-- ÆÄÆ¼¿øÀÌ Á¸Àç ÇÒ ¶§
+	-- ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 	if 0 < count then
 		local y = 0;
 		for i = 0 , count - 1 do
@@ -149,6 +149,12 @@ end
 
 function RESTART_ON_MSG(frame, msg, argStr, argNum)
 
+	local minigameover = ui.GetFrame('minigameover');	
+	if minigameover:IsVisible() == 1 then
+		return;
+	end;
+
+
 	if msg == 'RESTART_HERE' then
 		for i = 1 , 5 do
 			local btnName = "restart" .. i .. "btn";
@@ -189,4 +195,4 @@ function RESTARTSELECT_ITEM_SELECT(frame)
 
 	mouse.SetPos(x,y);
 	mouse.SetHidable(0);
-end
+end

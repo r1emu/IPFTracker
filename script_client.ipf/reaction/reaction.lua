@@ -222,6 +222,9 @@ function MONSKL_C_RESERVE_ANIM(actor, skill, animName, spd, freezeAnim)
 	actor:GetAnimation():ReserveAnim(animName, spd, freezeAnim);
 end
 
+function C_NEXT_SKILL_RESERVE_RESETANIM(actor)
+	actor:GetAnimation():SetNextSkillReserveResetAnim(true);
+end
 
 function MONSKL_C_RESERVE_ANIM_OOBE(actor, skill, animName, spd, freezeAnim)
 	local oobeActor = actor:GetOOBEActor();
@@ -522,4 +525,4 @@ end
 
 function SKL_C_RESERVE_LANDANIM(actor, skill, animName, spd, freezeAnim, playAnimHeight)
 	actor:GetAnimation():ReserveLandAnim(animName, spd, freezeAnim, playAnimHeight);
-en
+end

@@ -19,9 +19,9 @@ function StatueCaption_PVPStatue(handle, funcArg, familyName, pcName)
 		title:SetTextByKey("title", ScpArgMsg("TeamBattleLeagueChampion"));
 		aniName = "winner1";
 	else
-		title:SetTextByKey("title", ScpArgMsg("TeamBattleLeagueRank{Rank}", "Rank", ranking));
+		title:SetTextByKey("title", ScpArgMsg("TeamBattleLeagueRank{Rank}", "Rank", ranking));		
 	end
-		
+
 	local nameText = string.format("%s (%s)", familyName, pcName);
 	title:SetTextByKey("name", nameText);
 
@@ -53,4 +53,4 @@ function StatueCaption_JournalStatue(handle, funcArg, familyName, pcName)
 	local result = 1.8 - ranking * 0.1;
 	return aniName, result;
 
-end
+end

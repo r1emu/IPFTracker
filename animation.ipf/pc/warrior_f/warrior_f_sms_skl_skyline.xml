@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="EUC-KR"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by mayo (IMCGames Co., Ltd) -->
 <ActionDesc>
 	<Sound frame="0.00" soundFile="skl_fgt_tackle_cast"/>
 	<Sound frame="0.00" soundFile="skl_fgt_tackle_shot"/>
@@ -17,4 +17,4 @@
 	<BlendOn frame="11" R="100" G="100" B="130" A="50"/>
 	<BlendOn frame="12" R="50" G="50" B="80" A="50"/>
 	<BlendOff frame="14" R="0" G="0" B="0" A="0"/>
-</ActionDesc>
+</ActionDesc>
