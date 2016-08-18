@@ -7479,7 +7479,7 @@ end
 
 function SCR_GET_EnchantLightning_Bufftime(skill)
 
-    local value = skill.Level;
+    local value = skill.Level * 10 + 60
     return value
     
 end
@@ -7620,13 +7620,6 @@ end
 function SCR_GET_MissileHole_Bufftime(skill)
 
     local value = 50 + skill.Level * 10;
-    return value
-
-end
-
-function SCR_GET_Empowering_Bufftime(skill)
-
-    local value = skill.Level;
     return value
 
 end
