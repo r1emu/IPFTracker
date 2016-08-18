@@ -849,7 +849,7 @@ function BARRACK_TO_GAME()
 	if nil == myaccount then
 		return;
 	end
-	local myCharCount = myaccount:GetPCCount() + myaccount:GetPetCount();
+	local myCharCount = myaccount:GetTotalSlotCount();
 	
 	local buySlot = session.loginInfo.GetBuySlotCount();
 	local barrackCls = GetClass("BarrackMap", myaccount:GetThemaName());
