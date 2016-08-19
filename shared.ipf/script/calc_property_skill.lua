@@ -7493,7 +7493,7 @@ end
 
 function SCR_GET_Empowering_Bufftime(skill)
 
-    local value = skill.Level * 10 + 60
+    local value = skill.Level * 10 + 20
     return value
     
 end
