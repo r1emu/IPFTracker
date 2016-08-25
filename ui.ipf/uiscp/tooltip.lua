@@ -814,8 +814,8 @@ function SKILL_LV_DESC_TOOLTIP(frame, obj, totalLevel, lv, desc, ypos, dicidtext
 		descFont = DESC_NEXTLV_FONTNAME
 	end
 	
-	if TryGetProp(obj, 'SpendSP') ~= nil and TryGetProp(obj, 'LvUpSpendSp') ~= nil and TryGetProp(obj, 'Level') ~= nil then
-		sp = obj.SpendSP + math.floor(obj.LvUpSpendSp * (lv - obj.Level))
+	if TryGetProp(obj, 'BasicSP') ~= nil and TryGetProp(obj, 'LvUpSpendSp') ~= nil then
+		sp = obj.BasicSP + obj.LvUpSpendSp * (lv - 1)
 	end
 	if TryGetProp(obj, 'CoolDown') ~= nil then
 		coolTime = obj.BasicCoolDown * 0.001
