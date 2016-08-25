@@ -681,8 +681,7 @@ function MAKE_SKILLTREE_ICON(frame, jobName, treelist, listindex, topSkillName1,
 		if session.GetUserConfig("SKLUP_" .. cls.SkillName) == 0 then
 			sp:SetText("{@st66b}{s18}"..obj["SpendSP"].."{/}");
 		else
-			local spendSP = obj["BasicSP"] + ((lv-1) + session.GetUserConfig("SKLUP_" .. cls.SkillName)) * obj.LvUpSpendSp;
-			spendSP = math.floor(spendSP)
+			local spendSP = obj["SpendSP"] + (math.floor(session.GetUserConfig("SKLUP_" .. cls.SkillName) * obj.LvUpSpendSp))
 			sp:SetText("{@st66b}{s18}"..spendSP.."{/}");
 		end
 		sptxt:SetText("{@st66b}".."SP.".."{/}");
@@ -704,11 +703,10 @@ function MAKE_SKILLTREE_ICON(frame, jobName, treelist, listindex, topSkillName1,
 		
 		local spendSP = 0;
 		if session.GetUserConfig("SKLUP_" .. cls.SkillName) >= 1 then
-			spendSP = dummyObj["BasicSP"] + (session.GetUserConfig("SKLUP_" .. cls.SkillName) - 1) * dummyObj.LvUpSpendSp
+			spendSP = math.floor(dummyObj["BasicSP"] + ((session.GetUserConfig("SKLUP_" .. cls.SkillName) - 1) * dummyObj.LvUpSpendSp))
 		else
-			spendSP =dummyObj["BasicSP"] +  session.GetUserConfig("SKLUP_" .. cls.SkillName) * dummyObj.LvUpSpendSp
+			spendSP = math.floor(dummyObj["BasicSP"] + ((session.GetUserConfig("SKLUP_" .. cls.SkillName)) * dummyObj.LvUpSpendSp))
 		end
-		spendSP = math.floor(spendSP)
 		sp:SetText("{@st66b}{s18}"..spendSP.."{/}");
 		sptxt:SetText("{@st66b}".."SP.".."{/}");
 
