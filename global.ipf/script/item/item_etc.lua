@@ -111,3 +111,10 @@ function DLC_BOX8(pc)
     TxGiveItem(tx, 'Drug_Haste2_DLC', 30, 'DLC_BOX8');
     local ret = TxCommit(tx);
 end
+
+function SCR_USE_SET01_COMPANION_STEAM(pc)
+    local tx = TxBegin(pc);
+    TxGiveItem(tx, 'egg_009', 1, 'EGG009_PACK');
+    TxGiveItem(tx, 'food_cereal', 50, 'EGG009_PACK');
+    local ret = TxCommit(tx);
+end
