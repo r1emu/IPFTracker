@@ -15,4 +15,7 @@ function ENTER_SERVER_WAIT_QUEUE(count)
 end
 
 
-
+
+function CANCEL_SERVER_WAIT_QUEUE()
+	barrack.CancelWaitQueue();
+end

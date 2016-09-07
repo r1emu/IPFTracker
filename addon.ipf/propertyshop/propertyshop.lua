@@ -120,7 +120,7 @@ function OPEN_PROPERTY_SHOP(shopName)
 		end
 
 		name:SetTextByKey("value", nameText);
-		name:SetTextTooltip("{b}{s22}" .. nameText);
+		name:SetTextTooltip("{s18}" .. nameText);
 
 		local priceTxt = GetCommaedText(itemInfo.price);
 		INSERT_TEXT_DETAIL_LIST(itemlist, i, 1, itemBoxFont .. priceTxt, nil, nil, priceTxt);
@@ -222,4 +222,4 @@ function GET_PROPERTY_SHOP_MY_POINT(frame)
 	local clientScp = _G[shopInfo:GetPointScript() .. "_C"];
 	return clientScp();
 end
-
+

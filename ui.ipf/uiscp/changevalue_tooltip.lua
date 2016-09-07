@@ -36,7 +36,7 @@ function UPDATE_ITEM_CHANGEVALUE_TOOLTIP(tooltipframe, strarg, numarg1, numarg2)
 				local equipItemObj = nil;
 				
 				if itemObj.EqpType == 'SH' then
-					if itemObj.DefaultEqpSlot == 'RH' then
+					if itemObj.DefaultEqpSlot == 'RH' or itemObj.DefaultEqpSlot == 'RH LH' then
 						equipItem = session.GetEquipItemBySpot(item.GetEquipSpotNum("RH"));
 						equipItemObj = GetIES(equipItem:GetObject());
 					elseif itemObj.DefaultEqpSlot == 'LH' then
@@ -385,4 +385,4 @@ function DRAW_UNEQUIP_CHANGE_ARMOR_TOOLTIP(tooltipframe, invitem, ypos)
 	local list = GET_DEF_PROP_CHANGEVALUETOOLTIP_LIST();
 	return COMPARISON_BY_PROPLIST(list, invitem, nil, tooltipframe, equipchange, ispickitem);
 
-en
+end

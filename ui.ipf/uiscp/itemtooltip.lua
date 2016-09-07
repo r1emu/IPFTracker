@@ -93,7 +93,7 @@ function UPDATE_ITEM_TOOLTIP(tooltipframe, strarg, numarg1, numarg2, userdata, t
 		
 		if itemObj.EqpType == 'SH' then
 		
-			if itemObj.DefaultEqpSlot == 'RH' then
+			if itemObj.DefaultEqpSlot == 'RH' or itemObj.DefaultEqpSlot == 'RH LH' then
 				
 				local item = session.GetEquipItemBySpot( item.GetEquipSpotNum("RH") );
 				if nil ~= item then
@@ -287,8 +287,9 @@ function DRAW_SELL_PRICE(tooltipframe, invitem, yPos, mainframename)
 	local BOTTOM_MARGIN = tooltipframe:GetUserConfig("BOTTOM_MARGIN"); -- 맨 아랫쪽 여백
 	tooltip_sellinfo_CSet:Resize(tooltip_sellinfo_CSet:GetWidth(),tooltip_sellinfo_CSet:GetHeight() + BOTTOM_MARGIN);
 
-	gBox:Resize(gBox:GetWidth(),gBox:GetHeight() + tooltip_sellinfo_CSet:GetHeight())
-	
+	local height = gBox:GetHeight() + tooltip_sellinfo_CSet:GetHeight();
+	gBox:Resize(gBox:GetWidth(), height);
+	return height;
 end
 
 function DRAW_REMAIN_LIFE_TIME(tooltipframe, invitem, yPos, mainframename)
@@ -321,8 +322,9 @@ function DRAW_REMAIN_LIFE_TIME(tooltipframe, invitem, yPos, mainframename)
 	local BOTTOM_MARGIN = tooltipframe:GetUserConfig("BOTTOM_MARGIN"); -- 맨 아랫쪽 여백
 	tooltip_lifeTimeinfo_CSet:Resize(tooltip_lifeTimeinfo_CSet:GetWidth(),tooltip_lifeTimeinfo_CSet:GetHeight() + BOTTOM_MARGIN);
 	
-	gBox:Resize(gBox:GetWidth(),gBox:GetHeight() + tooltip_lifeTimeinfo_CSet:GetHeight());
-
+	local height = gBox:GetHeight() + tooltip_lifeTimeinfo_CSet:GetHeight();
+	gBox:Resize(gBox:GetWidth(), height);
+	return height;
 end;
 
 function SHOW_REMAIN_LIFE_TIME(ctrl)
@@ -539,4 +541,4 @@ function ICON_SET_EQUIPITEM_TOOLTIP(icon, equipitem)
 	SET_ITEM_TOOLTIP_TYPE(icon, equipitem.type);
 	icon:SetTooltipArg('equip', equipitem.type, equipitem:GetIESID());
 
-en
+end

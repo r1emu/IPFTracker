@@ -20,7 +20,7 @@
 		
 		if itemObj.EqpType == 'SH' then
 		
-			if itemObj.DefaultEqpSlot == 'RH' then
+			if itemObj.DefaultEqpSlot == 'RH' or itemObj.DefaultEqpSlot == 'RH LH' then
 				
 				local item = session.GetEquipItemBySpot( item.GetEquipSpotNum("RH") );
 				local equipItem = GetIES(item:GetObject());
@@ -185,4 +185,4 @@ function ITEM_TOOLTIP_ARMOR_COMPARISON(frame, invitem, equipItem, strarg)
 		frame:ShowWindow(0);
 	end
 end
-]
+]]

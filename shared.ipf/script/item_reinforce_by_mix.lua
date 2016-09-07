@@ -1,4 +1,4 @@
---- item_reinforce_by_mix.lua
+﻿--- item_reinforce_by_mix.lua
 
 function SCR_CHECK_CARD_MATERIAL(reinfItem, matItem)
 
@@ -20,6 +20,11 @@ function SCR_CHECK_GEM_MATERIAL(reinfItem, matItem)
 		return 1;
 	end
 
+	-- 카드합성 재료는 젬에 못쓰게
+	if TryGetProp(matItem, "Reinforce_Type") == "Card" then
+		return 0
+	end
+
 	if GET_MIX_MATERIAL_EXP(matItem) == 0 then
 		return 0;
 	end
@@ -34,4 +39,4 @@ function SCR_CHECK_GEM_MATERIAL(reinfItem, matItem)
 
 	return 1;
 
-end
+end
