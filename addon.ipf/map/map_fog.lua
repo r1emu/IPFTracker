@@ -141,4 +141,4 @@ function UPDATE_CHECK_REVEAL(frame)
 	frame:SetUserValue("BEFORE_X", mx);
 	frame:SetUserValue("BEFORE_Y", my);
 	return 1;
-end
+end

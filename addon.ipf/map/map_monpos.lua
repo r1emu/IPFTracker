@@ -219,4 +219,4 @@ function MAP_MON_MINIMAP_START(frame, msg, argStr, type)
 	bossIntro:SetTextByKey("BossIntroMsg", ClMsg("BossMonsterAppearedInField"));
 	
 
-en
+end

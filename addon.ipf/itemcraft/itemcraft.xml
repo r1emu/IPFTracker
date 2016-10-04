@@ -23,4 +23,4 @@
 		<button name="colse" rect="0 0 44 44" margin="0 20 28 0" layout_gravity="right top" LBtnUpArgNum="" LBtnUpScp="ui.CloseFrame(&apos;itemcraft&apos;)" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" caption="" clicksound="button_click_big" image="testclose_button" oversound="button_over" texttooltip="{@st59}아이템 제작을 닫습니다{/}"/>
 		<picture name="question" rect="0 0 44 44" margin="28 20 0 0" layout_gravity="left top" hittesr="true" image="testquesten_button" oversound="button_over" texttooltip="{@st59b}아이템 제작{nl}{@st59s} - 레시피 아이템을 입수하면 해당하는 아이템 제작 가능{nl} - 레시피와 재료를 슬롯에 넣은 후 아이템 제작 실행{nl} - 제작하는 아이템에 이름과 메모 기입 가능{/}"/>
 	</controls>
-</uiframe>
+</uiframe>

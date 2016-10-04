@@ -28,4 +28,4 @@
 		<button name="btn_lastwarp" rect="0 0 44 44" margin="0 380 180 0" layout_gravity="right top" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" image="button_accept_img" clicksound="button_click_big" oversound="button_over" texttooltip="{@st59}마지막 워프 지역을 봅니다{/}" LBtnUpScp="WORLDMAP_LOCATE_LASTWARP"/>
 		<button name="btn_nowpos" rect="0 0 44 44" margin="0 380 130 0" layout_gravity="right top" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" image="button_pos_img" clicksound="button_click_big" oversound="button_over" texttooltip="{@st59}현재 위치를 봅니다{/}" LBtnUpScp="WORLDMAP_LOCATE_NOWPOS"/>
 	</controls>
-</uiframe>
+</uiframe>

@@ -236,4 +236,4 @@ function CHECK_EMPTYSLOT(frame, obj)
 	end
 
 	return 0;
-en
+end
