@@ -254,23 +254,25 @@ function SSN_CLIENT_SMARTGEN(self)
                     end
                 end
             end
-
-        	if around_monster == 0 and myActor:GetMoveState() ~= CMS_STOP then
+        	local myPos = myActor:GetPos();
+			local x = myPos.x;
+			local z = myPos.z;
+        	if (IsAutoState(self) == 1 or SCR_POINT_DISTANCE(sObj.Before_PosX,sObj.Before_PosZ,x,z) >= 25) and  around_monster == 0 then
                 sObj.NormalAccrue = sObj.NormalAccrue + IMCRandom(1,4);
                 sObj.SpecialAccrue = sObj.SpecialAccrue + IMCRandom(1,4);
                 sObj.HideAccrue = sObj.HideAccrue + IMCRandom(1,4);
                 sObj.TreasureAccrue = sObj.TreasureAccrue + IMCRandom(1,4);
                 sObj.QuestMonAccrue = sObj.QuestMonAccrue + IMCRandom(1,4);
+                
+                sObj.Before_PosX = math.floor(x);
+                sObj.Before_PosZ = math.floor(z);
             else
 --                print('around monster');
         	end
 
-        	local myPos = myActor:GetPos();
-			local x = myPos.x;
-			local z = myPos.z;
             local peace_over;
-
-			if SCR_POINT_DISTANCE(sObj.Before_PosX,sObj.Before_PosZ,x,z) >= 25 and sObj.ZoneEnter_Start ~= 0 then                  
+            
+			if sObj.ZoneEnter_Start ~= 0 then                  
 				local mapProp = session.GetCurrentMapProp();
         	    local zonename = mapProp:GetClassName();
                 local mon_summon = 'NO'
@@ -342,15 +344,15 @@ function SSN_CLIENT_SMARTGEN(self)
 --                    print(ScpArgMsg("Auto_anJeonJiDae"),mon_division);
                 end
                 
-                if mon_summon == 'YES' then
-                    local flag
-                    for flag = 1, CON_SMARTGEN_GENFLAG_MAX_INDEX do
-                        if sObj['GenFlag'..flag] == 'None' then
-                            sObj['GenFlag'..flag] = math.floor(x)..'/'..math.floor(z)
-                            break
-                        end
-                    end
-                end
+--                if mon_summon == 'YES' then
+--                    local flag
+--                    for flag = 1, CON_SMARTGEN_GENFLAG_MAX_INDEX do
+--                        if sObj['GenFlag'..flag] == 'None' then
+--                            sObj['GenFlag'..flag] = math.floor(x)..'/'..math.floor(z)
+--                            break
+--                        end
+--                    end
+--                end
             else
                 if sObj.ZoneEnter_Start == 0 then
                     sObj.ZoneEnter_Start = 300;
@@ -358,8 +360,7 @@ function SSN_CLIENT_SMARTGEN(self)
 --                print(ScpArgMsg("Auto_iDong_eopeum"),mon_division);
         	end
 
-           -- sObj.Before_PosX = math.floor(x);
-            --sObj.Before_PosZ = math.floor(z);
+            
         end
     else
 		if sObj.ZoneGenPoint == 0 then
@@ -596,22 +597,22 @@ function SCR_SMARTGEN_MON_CREATE_CLIENT(myActor, sObj, DuplCreatePass_OPT, Accru
             if DuplCreatePass_OPT == 'YES' then
                 DuplCreate_Range = 0
             end
-            
-            if DuplCreate_Range > 0 then
-                
-                for flag = 1, CON_SMARTGEN_GENFLAG_MAX_INDEX do
-                    if sObj['GenFlag'..flag] == 'None' then
-                        break
-                    end
-                    local genflag_x, genflag_z = string.match(sObj['GenFlag'..flag], '(.+)[/](.+)')
-                    if SCR_POINT_DISTANCE(tonumber(genflag_x), tonumber(genflag_z), x, z) <= DuplCreate_Range then
-                        gen_mon = 'YES'
-                    end
-                end
-            end
-            if gen_mon == 'YES' then
-                break
-            end
+--            if DuplCreate_Range > 0 then
+--                
+--                for flag = 1, CON_SMARTGEN_GENFLAG_MAX_INDEX do
+--                    if sObj['GenFlag'..flag] == 'None' then
+--                        
+--                        break
+--                    end
+--                    local genflag_x, genflag_z = string.match(sObj['GenFlag'..flag], '(.+)[/](.+)')
+--                    if SCR_POINT_DISTANCE(tonumber(genflag_x), tonumber(genflag_z), x, z) <= DuplCreate_Range then
+--                        gen_mon = 'YES'
+--                    end
+--                end
+--            end
+--            if gen_mon == 'YES' then
+--                break
+--            end
             
 	        if mon_division == 1 then                               
 	            if smartgen.QuestName ~= 'None' then    
