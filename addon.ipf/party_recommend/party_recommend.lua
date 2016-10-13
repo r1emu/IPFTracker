@@ -106,8 +106,10 @@ function SHOW_PARTY_RECOMMEND(recommendType)
 
 			otherinfoTxt:SetTextByKey('level',eachpartymember:GetLevel())
 
-			local jobcls = GetClassByType("Job", eachpartymember:GetIconInfo().job);
-			otherinfoTxt:SetTextByKey('job',jobcls.Name)
+			local jobType = eachpartymember:GetIconInfo().job;
+			local jobCls = GetClassByType(jobType);
+			local gender = eachpartymember:GetIconInfo().gender;
+			otherinfoTxt:SetTextByKey('job', GET_JOB_NAME(jobCls, gender))
 			otherinfoTxt:ShowWindow(1)
 			nameTxt:SetColorTone("FFFFFFFF")
 		else
@@ -159,4 +161,4 @@ function POPUP_RECOMMEND_PARTY_UI()
 	frame:SetUserValue("IS_OPEN", "true");
 	ui.OpenFrame('party_recommend_popup')
 	ui.CloseFrame('party_recommend')
-en
+end

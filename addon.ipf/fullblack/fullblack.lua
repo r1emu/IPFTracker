@@ -4,13 +4,11 @@ function FULLBLACK_ON_INIT(addon, frame)
 end
 
 function FULLBLACK_FIRST_OPEN(frame)
-	local width, height = FRAME_FULLSCREEN(frame);
-
-	local picture = frame:GetChild('screenmask');
-	if picture ~= nil then
-		picture:Resize(width, height);
-	end
-	
-	frame:Invalidate();
+	FULLBLACK_RESIZE(frame);
 end
-
+
+function FULLBLACK_RESIZE(frame)
+	DIRECTORMODE_SIZE_UPDATE(frame);
+	local picture = frame:GetChild('screenmask');
+	DIRECTORMODE_SIZE_UPDATE(picture);
+end

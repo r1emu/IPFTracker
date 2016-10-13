@@ -38,7 +38,7 @@ function JOBCHANGENOTICE_UPDATE(frame, msg, str, exp, tableinfo)
 
 			local jobStart, jobEnd = string.find(cls.ClassName, findJobClsName);			
 			if jobStart ~= nil and jobCls.ClassName ~= cls.Name then
-				jobName = jobName..cls.Name..', ';
+				jobName = jobName..GET_JOB_NAME(cls)..', ';
 			end
 		end
 
@@ -52,4 +52,4 @@ function JOBCHANGENOTICE_UPDATE(frame, msg, str, exp, tableinfo)
 
 		frame:ShowWindow(1);
 	end
-end
+end
