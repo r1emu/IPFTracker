@@ -1,7 +1,20 @@
 <?xml version="1.0" standalone="yes"?>
 <!-- edited with XMLSpy v2006 U (http://www.altova.com) by Administrator (EMBRACE) -->
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by mayo (IMCGames Co., Ltd) -->
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by gameds (IMCGames Co., Ltd) -->
 <TextureInfo>
+	<Texture Name="halfcircle010" File="halfcircle010.dds" Size="128 64"/>
+	<Texture Name="blood002_alpha" File="blood002_alpha.dds" Size="32 32"/>
+	<Texture Name="leaf001_green" File="leaf001_green.dds" Size="32 32"/>
+	<Texture Name="fire009" File="fire009.dds" Size="128 128"/>
+	<Texture Name="pattern024_5" File="pattern024_5.dds" Size="128 128"/>
+	<Texture Name="pattern024_4" File="pattern024_4.dds" Size="128 128"/>
+	<Texture Name="pattern024_3" File="pattern024_3.dds" Size="128 128"/>
+	<Texture Name="pattern024_2" File="pattern024_2.dds" Size="128 128"/>
+	<Texture Name="pattern024_1" File="pattern024_1.dds" Size="128 128"/>
+	<Texture Name="talisman_TriDisaster" File="talisman_TriDisaster.dds" Size="128 128"/>
+	<Texture Name="talisman_StormCalling" File="talisman_StormCalling.dds" Size="128 128"/>
+	<Texture Name="talisman_DarkSight" File="talisman_DarkSight.dds" Size="128 128"/>
+	<Texture Name="talisman_CreepingDeath" File="talisman_CreepingDeath.dds" Size="128 128"/>
 	<Texture Name="pattern023" File="pattern023.dds" Size="64 64"/>
 	<Texture Name="pattern022" File="pattern022.dds" Size="64 64"/>
 	<Texture Name="pattern021" File="pattern021.dds" Size="256 256"/>
@@ -108,6 +121,7 @@
 	<Texture Name="rize005_blue" File="rize005_blue.dds" Size="128 128"/>
 	<Texture Name="rize002" File="rize002.dds" Size="64 64"/>
 	<Texture Name="particle001_red" File="particle001_red.dds" Size="128 128"/>
+	<Texture Name="particle001_yellow" File="particle001_yellow.dds" Size="128 128"/>
 	<Texture Name="Particle_core_1" File="Particle_core_1.dds" Size="64 64"/>
 	<Texture Name="line002" File="line002.dds" Size="64 64"/>
 	<Texture Name="line001" File="line001.dds" Size="64 64"/>
@@ -125,6 +139,7 @@
 	<Texture Name="fire001_blue" File="fire001_blue.dds" Size="64 64"/>
 	<Texture Name="fire001" File="fire001.dds" Size="64 64"/>
 	<Texture Name="dash003" File="dash003.dds" Size="128 64"/>
+	<Texture Name="dash001_pink" File="dash001_pink.dds" Size="32 16"/>
 	<Texture Name="dash001" File="dash001.dds" Size="32 16"/>
 	<Texture Name="circle024" File="circle024.dds" Size="64 64"/>
 	<Texture Name="circle019" File="circle019.dds" Size="128 128"/>
@@ -414,6 +429,7 @@
 	<Texture Name="sprite_dust" File="high_sprite_dust.dds" Size="256 256"/>
 	<Texture Name="sprite_blood" File="sprite_blood.dds" Size="256 256"/>
 	<Texture Name="sprite_dead_fire" File="high_sprite_fire_01.dds" Size="256 256"/>
+	<Texture Name="sprit001_alpha" File="sprit001_alpha.dds" Size="256 256"/>
 	<Texture Name="sprit001" File="sprit001.dds" Size="256 256"/>
 	<Texture Name="sprite_fire01_gray" File="high_sprite_fire01_gray.dds" Size="256 256"/>
 	<Texture Name="sprite_torch_fire" File="high_sprite_torch_fire.dds" Size="256 256"/>
