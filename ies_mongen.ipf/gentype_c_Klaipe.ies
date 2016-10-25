@@ -32,6 +32,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 134,134,1,20,1,1,1,1,0,0,0,0,0,"Board1","알림판","","","","MON_DUMMY","","","KLAPEDA_SIGN_WELCOME","","","No","YES","NO","Neutral","","","",""
 135,135,1,20,1,1,1,1,0,0,0,0,0,"Board1","표지판","","","","MON_DUMMY","","","KLAPEDA_SIGN35","","","No","YES","NO","Neutral","","","",""
 136,136,1,20,1,1,1,1,0,0,0,0,0,"Board1","여신상 안내","","","","MON_DUMMY","","","KLAPEDA_SIGN36","","","No","YES","NO","Neutral","","","",""
+1000,1000,1,40,1,60000,1,0,0,0,0,0,0,"NPC_GM","마족 소탕 모집원","","","","","","","MISSION_CATACOMB_HALLOWEEN_START","","","NO","YES","NO","Neutral","","","",""
 5000,101,1,40,1,1,1,0,0,0,0,0,0,"HiddenTrigger2","얼음 땡 관리","","","","MON_DUMMY","","","","","","NO","YES","NO","Neutral","","","",""
 5001,10005,1,30,1,1,1,1,0,0,0,0,0,"Board1","휴무 공지","","","","MON_DUMMY","","","KLAPEDA_BOARD_01","","","NO","YES","NO","Neutral","","","",""
 5010,2001,1,0,1,1,1,1,0,1,0,0,0,"npc_village_uncle_4","폐도 피난민","","","","MON_DUMMY","","","KLAPEDA_NPC_14","","","NO","YES","NO","Neutral","Anim/STD4","ChangeDialogRotate/0","",""
@@ -45,4 +46,5 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 5022,10016,1,50,-1,1,1,2,0,0,0,0,0,"npc_warehouse","[창고지기]{nl}     리타","","","","","","","WAREHOUSE","TUTO_STORAGE_NPC","","NO","YES","NO","Neutral","","","",""
 5023,10017,1,100,-1,10,1,2,0,0,1,0,0,"klaipeda_square_statue","여신 아우슈리네의 상","","","","STOUP_CAMP","","","WARP_C_KLAIPE","STOUP_CAMP","STOUP_CAMP","NO","YES","NO","Neutral","","","",""
 5024,10018,1,60,1,60000,1,2,0,0,0,0,0,"npc_letizia","[TP상인]{nl}   레티샤","","","","","","","TP_NPC","TUTO_TPSHOP_NPC","","NO","YES","NO","Neutral","","","",""
+5025,10019,1,40,1,60000,0,0,0,1,1,0,0,"HiddenTrigger6","HIDDEN_MIKO_KLAIPE_TRIGGER","","","","HIDDEN_MIKO_KLAIPE_TAC","","","","","","NO","YES","NO","Neutral","","","",""
 5026,10020,1,40,1,60000,1,2,0,0,0,0,0,"Board3","이벤트 알림판","","","","","","","STEAM_TREASURE_EVENT","","","NO","YES","NO","Neutral","","","",""
