@@ -29,10 +29,18 @@ end
 	
 function INPUT_STRING_EXEC(frame)
 
+	IMC_NORMAL_INFO("-- INPUT_STRING_EXEC: Begin");
+	
 	local scpName = frame:GetSValue();
-	local fromFrameName = frame:GetUserValue("FROM_FR");
+	IMC_NORMAL_INFO("INPUT_STRING_EXEC: scpName("..scpName.. ")");
+
+	local fromFrameName = frame:GetUserValue("FROM_FR");	
+	IMC_NORMAL_INFO("INPUT_STRING_EXEC: fromFrameName("..fromFrameName.. ")");
+
 	local execScp = _G[scpName];
 	local resultString = GET_INPUT_STRING_TXT(frame);
+	IMC_NORMAL_INFO("INPUT_STRING_EXEC: resultString("..resultString.. ")");
+
 	if fromFrameName == "NULL" then
 		execScp(resultString, frame);
 	else
@@ -42,6 +50,7 @@ function INPUT_STRING_EXEC(frame)
 
 	frame:SetUserValue("BeforName", "")
 	frame:ShowWindow(0);
+	IMC_NORMAL_INFO("-- INPUT_STRING_EXEC: End");
 	
 
-end
+end
