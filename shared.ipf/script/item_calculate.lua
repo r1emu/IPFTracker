@@ -176,13 +176,13 @@ function GET_REINFORCE_ADD_VALUE_ATK(item)
 	    value = (minAtk + maxAtk) / 2;
 	elseif item.BasicTooltipProp == "MATK" then
 	    value = GET_BASIC_MATK(item);
-    end
+	end
 --	if value < 10 then
 --	    value = 10;
 --    end
 
 --	value = GET_REINFORCE_ATK(item, value);
-
+	    
 	if item.Reinforce_2 > 5 then
 	    value = (5 + (item.Reinforce_2 - 5) * 2) * (star + 2);
 	else
@@ -276,31 +276,31 @@ function GET_BASIC_ATK(item)
 	if lv == 0 then
 	    itemATK = 0;
 	end
+
+    if item.DBLHand == "YES" then
+    	if item.ClassType == 'THSword' or item.ClassType == 'THSpear' then
+        	itemATK = itemATK * 1.5;
+        elseif item.ClassType == 'THBow' then
+        	itemATK = itemATK * 1.6;
+        else
+        	itemATK = itemATK * 1.4;
+    	end
+    end
+
+    if item.ClassType == 'Bow' then
+    	itemATK = itemATK * 1.3;
+    elseif item.ClassType == 'Pistol' then
+    	itemATK = itemATK * 1.05;
+    end
+
+    if item.DefaultEqpSlot == "LH" then
+    	if item.ClassType == 'Cannon' then
+    		itemATK = itemATK * 1.3;
+    	else
+    		itemATK = itemATK * 0.85;
+    	end
+    end
     
-    	if item.DBLHand == "YES" then
-    	    if item.ClassType == 'THSword' or item.ClassType == 'THSpear' then
-        		itemATK = itemATK * 1.5;
-        	elseif item.ClassType == 'THBow' then
-        		itemATK = itemATK * 1.6;
-        	else
-        	    itemATK = itemATK * 1.4;
-    		end
-    	end
-
-    	if item.ClassType == 'Bow' then
-    	    itemATK = itemATK * 1.3;
-    	elseif item.ClassType == 'Pistol' then
-    	    itemATK = itemATK * 1.05;
-    	end
-
-    	if item.DefaultEqpSlot == "LH" then
-    	    if item.ClassType == 'Cannon' then
-    		    itemATK = itemATK * 1.3;
-    		else
-    		    itemATK = itemATK * 0.85;
-    		end
-    	end
-    	
     local maxAtk = itemATK * item.DamageRange / 100;
     local minAtk = itemATK * (2 - item.DamageRange /100);
 
@@ -322,8 +322,10 @@ function GET_BASIC_MATK(item)
 end
 
 -- refreshing weapon's information
-function SCR_REFRESH_WEAPON(item)
-
+function SCR_REFRESH_WEAPON(item, enchantUpdate)
+	if nil == enchantUpdate then
+		enchantUpdate = 0;
+	end
 	local class = GetClassByType('Item', item.ClassID);
 	INIT_WEAPON_PROP(item, class);
 	item.Level = GET_ITEM_LEVEL(item);
@@ -335,15 +337,20 @@ function SCR_REFRESH_WEAPON(item)
     
     local upgradeRatio = 1 + GET_UPGRADE_ADD_ATK_RATIO(item) / 100;
 	local zero = 0;
+
+	-- 인챈터 효과로 인한 무기 갱신
+	local buffarg = 0;
+	if enchantUpdate == 1 then
+		buffarg = GetExProp(item, "Rewards_BuffValue");
+	end
     if basicProp == 'ATK' then
 		item.MAXATK, item.MINATK = GET_BASIC_ATK(item);
     	item.MATK = 0;
-
+		
 		local rainforceAddValueAtk = GET_REINFORCE_ADD_VALUE_ATK(item);
-		item.MAXATK = (item.MAXATK + rainforceAddValueAtk) * upgradeRatio;
-		item.MINATK = (item.MINATK + rainforceAddValueAtk) * upgradeRatio;
+		item.MAXATK = (item.MAXATK + rainforceAddValueAtk) * upgradeRatio + buffarg;
+		item.MINATK = (item.MINATK + rainforceAddValueAtk) * upgradeRatio + buffarg;
 
-		-- maxatkc_bc媛 0怨?媛숈? ?딆븘.
 		if zero ~= item.MAXATK_AC then
 			item.MAXATK = item.MAXATK + item.MAXATK_AC;
 		end
@@ -352,8 +359,8 @@ function SCR_REFRESH_WEAPON(item)
 		end
     elseif basicProp == 'MATK' then
 		item.MATK = GET_BASIC_MATK(item);
-        
-		item.MATK = (item.MATK + GET_REINFORCE_ADD_VALUE_ATK(item)) * upgradeRatio;
+
+		item.MATK = (item.MATK + GET_REINFORCE_ADD_VALUE_ATK(item)) * upgradeRatio + buffarg;
         item.MAXATK = 0;
         item.MINATK = 0;
 
@@ -366,7 +373,6 @@ function SCR_REFRESH_WEAPON(item)
 	item.MINATK = math.floor(item.MINATK);
 	item.MAXATK = math.floor(item.MAXATK);
 	item.MATK = math.floor(item.MATK);
-	-- 媛뺥솕 諛??뚯폆 ?щ? ?곸슜
 	APPLY_OPTION_SOCKET(item);
 	APPLY_AWAKEN(item);
 	APPLY_ENCHANTCHOP(item);
@@ -379,11 +385,13 @@ function SCR_REFRESH_WEAPON(item)
 	end
 
 	MakeItemOptionByOptionSocket(item);
-
 end
 
 -- refreshing armor's information
-function SCR_REFRESH_ARMOR(item)
+function SCR_REFRESH_ARMOR(item, enchantUpdate)
+	if enchantUpdate == nil then
+		enchantUpdate = 0
+	end
 
 	local class = GetClassByType('Item', item.ClassID);
 	INIT_ARMOR_PROP(item, class);
@@ -402,6 +410,12 @@ function SCR_REFRESH_ARMOR(item)
     
     local basicProp = item.BasicTooltipProp;
     
+	local buffarg = 0;
+	-- 인챈터 효과로 인한 방어구 갱신
+	if enchantUpdate == 1 then
+		buffarg = GetExProp(item, "Rewards_BuffValue");
+	end
+
     if basicProp == 'DEF' then
         def = (lv + 5) * 4 / 11.0;
         def = def * (1 + (star - 1) * 0.033);
@@ -418,11 +432,11 @@ function SCR_REFRESH_ARMOR(item)
         if def < 1 then
             def = 1;
         end
-        def = math.floor(def) + GET_REINFORCE_ADD_VALUE(basicProp, item)
+        def = math.floor(def) + GET_REINFORCE_ADD_VALUE(basicProp, item) + buffarg
     elseif basicProp == 'MDEF' then
         mdef = math.floor(((lv + 5) * 4 / 11.0) * 0.8);
         mdef = mdef * (1 + (star - 1) * 0.033); 
-        mdef = math.floor(mdef) + GET_REINFORCE_ADD_VALUE(basicProp, item);
+        mdef = math.floor(mdef) + GET_REINFORCE_ADD_VALUE(basicProp, item) + buffarg
     elseif basicProp == 'HR' then
         hr = (4 + lv) / 2;
         
@@ -431,7 +445,7 @@ function SCR_REFRESH_ARMOR(item)
                 hr = hr * 0.8;
             end
         end
-        hr = math.floor(hr) + GET_REINFORCE_ADD_VALUE(basicProp, item);
+        hr = math.floor(hr) + GET_REINFORCE_ADD_VALUE(basicProp, item) + buffarg
     elseif basicProp == 'DR' then
         dr = (4 + lv) / 2;
         
@@ -442,12 +456,11 @@ function SCR_REFRESH_ARMOR(item)
                 dr = dr * 0.8;
             end
         end
-        dr = math.floor(dr) + GET_REINFORCE_ADD_VALUE(basicProp, item);
+        dr = math.floor(dr) + GET_REINFORCE_ADD_VALUE(basicProp, item) + buffarg
         
     elseif basicProp == 'MHR' then
-        mhr = math.floor((lv / 4) + GET_REINFORCE_ADD_VALUE(basicProp, item))
+        mhr = math.floor((lv / 4) + GET_REINFORCE_ADD_VALUE(basicProp, item)) + buffarg
     end
-
 	item.HR = hr;
 	item.DR = dr;
 	item.DEF = def;
@@ -455,16 +468,15 @@ function SCR_REFRESH_ARMOR(item)
 	item.MDEF = mdef;
 	item.DefRatio = defRatio;
 	item.MDefRatio = mdefRatio;
-	item.MHPRatio = 0;
-
+	
 	local propNames, propValues = GET_ITEM_TRANSCENDED_PROPERTY(item);
 	for i = 1 , #propNames do
 		local propName = propNames[i];
 		local propValue = propValues[i];
 
 		if propName == "MHP" then
-			item.MHPRatio = propValue;
-		else
+				item.MHPRatio = propValue;
+			else
 			local upgradeRatio = 1 + propValue / 100;
 			item[propName] = math.floor( item[propName] * upgradeRatio );
 		end		
@@ -527,7 +539,7 @@ function SCR_REFRESH_ACC(item)
 		local upgradeRatio = 1 + propValue / 100;
 		item[propName] = math.floor( item[propName] * upgradeRatio );
 	end
-	
+
 	APPLY_AWAKEN(item);
 	APPLY_ENCHANTCHOP(item);
 	APPLY_OPTION_SOCKET(item);
@@ -543,7 +555,7 @@ function SCR_REFRESH_CARD(item)
 	item.Level = GET_ITEM_LEVEL(item);
 end
 
--- ?뚯폆 湲곕뒫 ?곸슜
+-- ??켓 기능 ??용
 function APPLY_OPTION_SOCKET(item)
 
 	local curcnt = GET_SOCKET_CNT(item);
@@ -564,14 +576,14 @@ function APPLY_OPTION_SOCKET(item)
 	end
 	]]
 	
-	-- 猷??듭뀡 ?곸슜(醫낆”蹂?異붾?)
+	-- ????션 ??용(종족??추??)
 	for i=0, curcnt-1 do
 		local runeID = GetIESProp(item, 'Socket_Equip_' .. i);
 		if runeID > 0 then
 			local runeItem = GetClassByType('Item', runeID);
 			if runeItem ~= nil then
 				
-				-- StringArg??猷ъ샃?섏쓣 ?곸슜???ㅽ겕由쏀듃媛 ?곹??덉쑝硫대맖
+				-- StringArg??룬옵??을 ??용????크립트가 ??????으면됨
 				if runeItem.StringArg ~= 'None' and item ~= nil then
 					local func = _G[runeItem.StringArg];
 					if func ~= nil then
@@ -619,9 +631,9 @@ function APPLY_AWAKEN(item)
 		return;
 	end
 
-		local hiddenProp = item.HiddenProp;
-		item[hiddenProp] = item[hiddenProp] + item.HiddenPropValue;
-	end
+	local hiddenProp = item.HiddenProp;
+	item[hiddenProp] = item[hiddenProp] + item.HiddenPropValue;
+end
 
 function SCR_ENTER_AQUA(item, arg1, arg2)
 
@@ -644,7 +656,7 @@ function SCR_ENTER_PERI(item, arg1, arg2)
 end
 
 
--- Upgrade ?듭뀡
+-- Upgrade ??션
 function SCR_OPT_ATK(item, optvalue)
 	item.MINATK = item.MINATK + optvalue;
 	item.MAXATK = item.MAXATK + optvalue;
@@ -663,7 +675,7 @@ function SCR_OPT_RR(item, optvalue)
 end
 
 
--- Enchant ?듭뀡
+-- Enchant ??션
 function SCR_OPT_Aries(item, optvalue)
 	item.Aries = item.Aries + optvalue;
 end
@@ -688,12 +700,12 @@ function SCR_OPT_StrikeDEF(item, optvalue)
 	item.StrikeDEF = item.StrikeDEF + optvalue;
 end
 
--- 移섎챸?
+-- 치명??
 function SCR_OPT_CRTHR(item, optvalue)
 	item.CRTHR = item.CRTHR + optvalue;
 end
 
--- ?ㅽ꽩?뺤쑉
+-- ??턴??율
 function SCR_OPT_StunRate(item, optvalue)
 	item.StunRate = item.StunRate + optvalue;
 end
@@ -910,7 +922,7 @@ function GET_REPAIR_PRICE(item, fillValue)
     local price = GetClassByType("Stat_Weapon", lv);
     local value;
     
-    if item.DefaultEqpSlot == 'RH' then
+    if item.DefaultEqpSlot == 'RH' or item.DefaultEqpSlot == 'RH LH' then
         if item.DBLHand == 'YES' then
             local stat_weapon = GetClassByType("Stat_Weapon", lv)
             value = stat_weapon.RepairPrice_THWeapon;
@@ -1350,12 +1362,7 @@ end
 
 function SCR_GET_MAXPROP_ENCHANT_DEF(item)
     
-    local star = item.ItemStar;
-    local grade = item.ItemGrade;
-    local value = 280;
-    
-    value = value * 0.1 * 0.4;
-    local result = IMCRandom(value * 0.5, value)
+    local result = IMCRandom(41, 110)
     
     if result < 1 then
         result = 1;
@@ -1366,12 +1373,7 @@ end
 
 function SCR_GET_MAXPROP_ENCHANT_DEFATTRIBUTE(item)
     
-    local star = item.ItemStar;
-    local grade = item.ItemGrade;
-    local value = 280;
-    
-    value = value * 0.1;
-    local result = IMCRandom(value * 0.5, value)
+    local result = IMCRandom(40, 84)
     
     if result < 1 then
         result = 1;
@@ -1382,13 +1384,7 @@ end
 
 function SCR_GET_MAXPROP_ENCHANT_ATK(item)
     
-    local star = item.ItemStar;
-    local grade = item.ItemGrade;
-    local value = 280;
-    
-    value = value * 0.15;
-    
-    local result = IMCRandom(value * 0.5, value)
+    local result = IMCRandom(61, 126)
     
     if result < 1 then
         result = 1;
@@ -1399,28 +1395,18 @@ end
 
 function SCR_GET_MAXPROP_ENCHANT_CRTATK(item)
     
-    local star = item.ItemStar;
-    local grade = item.ItemGrade;
-    local value = 280;
-    
-    value = value * 0.225;
-    
-    local result = IMCRandom(value * 0.5, value)
+    local result = IMCRandom(91, 189)
     
     if result < 1 then
         result = 1;
     end
     
     return math.floor(result);
-    end
-    
+end
+
 function SCR_GET_MAXPROP_ENCHANT_ATTRIBUTEATK(item)
-    
-    local value = 280;
-    
-    value = math.floor(value * 0.12);
-    
-    local result = IMCRandom(value * 0.5, value)
+
+    local result = IMCRandom(46, 99)
     
     if result < 1 then
         result = 1;
@@ -1446,11 +1432,8 @@ end
 
 function SCR_GET_MAXPROP_ENCHANT_MHP(item)
     
-    local value = 280;
     
-    value = math.floor(value * 0.08 * 34);
-    
-    local result = IMCRandom(value * 0.5, value)
+    local result = IMCRandom(1138, 2283)
     
     if result < 1 then
         result = 1;
@@ -1461,11 +1444,8 @@ end
 
 function SCR_GET_MAXPROP_ENCHANT_MSP(item)
     
-    local value = 280;
     
-    value = math.floor(value * 0.08 * 6.7);
-    
-    local result = IMCRandom(value * 0.5, value)
+    local result = IMCRandom(223, 450)
     
     if result < 1 then
         result = 1;
@@ -1476,11 +1456,7 @@ end
 
 function SCR_GET_MAXPROP_ENCHANT_RHP(item)
     
-    local value = 280;
-    
-    value = math.floor(value * 0.2);
-    
-    local result = IMCRandom(value * 0.5, value)
+    local result = IMCRandom(28, 56)
     
     if result < 1 then
         result = 1;
@@ -1491,11 +1467,7 @@ end
 
 function SCR_GET_MAXPROP_ENCHANT_RSP(item)
     
-    local value = 280;
-    
-    value = math.floor(value * 0.15);
-    
-    local result = IMCRandom(value * 0.5, value)
+    local result = IMCRandom(21, 42)
     
     if result < 1 then
         result = 1;
@@ -1512,7 +1484,7 @@ function SCR_GET_MAXPROP_ENCHANT_SR(item)
     return 1;
 end
 function SCR_GET_MAXPROP_ENCHANT_SDR(item)
-    return 1;
+    return 4;
 end
 
 function IS_SAME_TYPE_GEM_IN_ITEM(invItem, gemType, sckCnt)

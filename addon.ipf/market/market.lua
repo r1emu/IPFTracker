@@ -93,7 +93,7 @@ function MARGET_FIND_PAGE(frame, page)
 	local rein_min = GET_CHILD_NUMBER_VALUE(gBox, "edit_2");
 	local rein_max = GET_CHILD_NUMBER_VALUE(gBox, "edit_2_1");
 	
-	-- ����Ʈ�� �ֱ�	
+	-- 디폴트로 최근	
 	local sortype = 2;
 	if 1 == chip:IsChecked() then
 		sortype = 0;
@@ -102,7 +102,30 @@ function MARGET_FIND_PAGE(frame, page)
 	end
 
 	local groupName, classType = MARKET_SEARCH_GROUP_AND_CLASSTYPE(frame);
+	local findItem = tostring(find_name:GetText())
+	local minLength = 0
+	local findItemStrLength = findItem.len(findItem);
+	local maxLength = 60
+	if config.GetServiceNation() == "GLOBAL" then
+		minLength = 1
+		maxLength = 20
+	elseif config.GetServiceNation() == "JPN" then
+		maxLength = 60
+	elseif config.GetServiceNation() == "KOR" then
+		maxLength = 60
+	end
+	
+	if findItemStrLength ~= 0 then	-- 있다면 길이 조건 체크
+		if findItemStrLength <= minLength then
+			ui.SysMsg(ClMsg("InvalidFindItemQueryMin"));
+		elseif findItemStrLength > maxLength then
+			ui.SysMsg(ClMsg("InvalidFindItemQueryMax"));
+		else
 	market.ReqMarketList(page, find_name:GetText(), groupName, classType, lv_min, lv_max, rein_min, rein_max, sortype);
+end
+	else  -- 검색어가 없으면 바로 검색...
+		market.ReqMarketList(page, find_name:GetText(), groupName, classType, lv_min, lv_max, rein_min, rein_max, sortype);
+	end	
 end
 
 function SEARCH_ITEM_MARKET()
@@ -283,7 +306,8 @@ function ON_MARKET_ITEM_LIST(frame, msg, argStr, argNum)
 		SET_ITEM_TOOLTIP_ALL_TYPE(ctrlSet, marketItem, itemObj.ClassName, "market", marketItem.itemType, marketItem:GetMarketGuid());
 
 		local pic = GET_CHILD(ctrlSet, "pic", "ui::CPicture");
-		pic:SetImage(itemObj.Icon);
+		local imgName = GET_ITEM_ICON_IMAGE(itemObj);
+		pic:SetImage(imgName);
 
 		local name = ctrlSet:GetChild("name");
 		name:SetTextByKey("value", GET_FULL_NAME(itemObj));
@@ -422,13 +446,8 @@ function BUY_MARKET_ITEM(parent, ctrl)
 	local row = parent:GetUserIValue("DETAIL_ROW");
 	local marketItem = session.market.GetItemByIndex(row);
 	local itemObj = GetIES(marketItem:GetObject());
-	local txt = ScpArgMsg("ReallyBuy?");
-	if itemObj.GroupName == "Premium" then
-		txt = ScpArgMsg("CannotSoldAnyMore")
-	elseif itemObj.ItemType == "Equip" then
-		txt = ScpArgMsg("DecreasePotaion");
-	end
 
+	local txt = ScpArgMsg("ReallyBuy?");
 	ui.MsgBox(txt, string.format("_BUY_MARKET_ITEM(%d)", row+1), "None");
 end
 
