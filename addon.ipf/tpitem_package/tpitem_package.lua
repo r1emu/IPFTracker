@@ -2,6 +2,13 @@
 -- tpitem_package.lua : (tp shop)
 
 function TPITEM_PACKAGE_OPEN(parent, control, ItemClassIDstr, itemid)
+		
+		local listIndex = control:GetUserValue("LISTINDEX");
+		local iteminfo = session.ui.Get_NISMS_ItemInfo(listIndex);
+		if iteminfo == nil then
+			return;
+		end
+		
 		local frame = ui.GetFrame("tpitem");
 		local screenbgTemp = frame:GetChild('screenbgTemp');	
 		screenbgTemp:ShowWindow(1);	
@@ -13,7 +20,8 @@ function TPITEM_PACKAGE_OPEN(parent, control, ItemClassIDstr, itemid)
 		local puchaseBtn = GET_CHILD(stdBox,"puchaseBtn");
 		puchaseBtn:SetEventScriptArgString(ui.LBUTTONUP, ItemClassIDstr);
 		puchaseBtn:SetEventScriptArgNumber(ui.LBUTTONUP, itemid);
-		local price = control:GetUserIValue("itemPrice");
+						
+		local price = iteminfo.price;	--local price = control:GetUserIValue("itemPrice");
 		if price ~= nil then
 			puchaseBtn:SetUserValue("itemPrice", price);
 		end		
@@ -30,6 +38,14 @@ end
 
 function TPSHOP_TRY_BUY_PACKAGE_BY_NEXONCASH(parent, control, ItemClassIDstr, itemid)
 	local frame = ui.GetFrame("tpitem");
+	
+	local nMaxCnt = session.ui.Get_NISMS_CashInven_ItemListSize();
+	if nMaxCnt >= 18 then
+		strMsg = string.format("{@st43d}{s20}%s{/}", ScpArgMsg("MAX_CASHINVAN"));
+		ui.MsgBox_NonNested(strMsg, 0x00000000, frame:GetName(), "None", "None");	
+		return;
+	end
+
 	local screenbgTemp = frame:GetChild('screenbgTemp');	
 	screenbgTemp:ShowWindow(1);	
 
@@ -50,7 +66,29 @@ function TPITEM_PACKAGE_SETUI(frame, clsid)
 		local packageSlot = GET_CHILD(frame,"packageSlot");	
 		SET_SLOT_IMG(packageSlot, cls.Icon);
 		
-		local bgBox = frame:CreateOrGetControl('groupbox', 'bgBox', 30, 370, 440, 220);
+		
+		DESTROY_CHILD_BYNAME(frame, "cautionText_");
+		local bisTradealbe = nil;
+		SWITCH(cls.PackageTradeAble) {					
+		['YES'] = function()	bisTradealbe = 1;	end,			
+		['NO'] = function() 	bisTradealbe = 0;	end,	
+		['None'] = function() end,		
+		default = function() end,
+		}	
+		local cautionIndex = 0;
+		local y = 305;	
+
+		if bisTradealbe ~= nil then
+			y = SETCAUTION_MEMO_TOPURCHASE(frame, y, ScpArgMsg("ITEM_IsPurchased_CAUTION_TRADEABLE_" .. bisTradealbe), cautionIndex);
+			cautionIndex = cautionIndex + 1;
+		end
+
+		if cls.PackageTradeCount == 1 then
+			y = SETCAUTION_MEMO_TOPURCHASE(frame, y, ScpArgMsg("ITEM_IsPurchased_CAUTION_TRADECNT1"), cautionIndex);
+			cautionIndex = cautionIndex + 1;
+		end
+		
+		local bgBox = frame:CreateOrGetControl('groupbox', 'bgBox', 30, y, 440, 220 + (370 - y));
 		bgBox = tolua.cast(bgBox, "ui::CGroupBox");
 		bgBox:DeleteAllControl();
 		bgBox:EnableDrawFrame(1);
@@ -73,4 +111,11 @@ function TPITEM_PACKAGE_SETUI(frame, clsid)
 		contents:SetText(string.format("{@st43d}{s18}%s{/}",cls.Desc));
 
 		innerBox:Resize(innerBox:GetWidth(), contents:GetHeight() + (contents:GetY() * 2));
+end
+
+function SETCAUTION_MEMO_TOPURCHASE(frame, y, text, index)
+	local cautionText = frame:CreateControl("richtext", "cautionText_".. index, 40, y, 200, 10);
+	cautionText:SetFontName("black_16_b");
+	cautionText:SetText(string.format("{@st67}{s18}   %s{/}",text));
+	return y + 28;
 end

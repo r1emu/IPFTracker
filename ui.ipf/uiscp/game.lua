@@ -153,6 +153,7 @@ function TEST_AYASE2(x,y)
 end
 
 	
+
 function MAKE_NPC_LIST_TO_HTML()
 					
 	local file = io.open("mon_image_list.html","w+")
@@ -217,11 +218,7 @@ end
 	
 function TEST_AYASE()
 	
-
-	print("qweqw")
-	control.CustomCommand("CLICK_CHANGEJOB_BUTTON", 1013) -- 서버에서 jobid를 jobChanging에 저장
-		
-
+		ui.ToggleFrame("hair_gacha_start")
 
 end
 
