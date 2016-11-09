@@ -89,7 +89,7 @@ function SCR_Get_SpendSP(skill)
 	
 	local abilAddSP = GetAbilityAddSpendValue(pc, skill.ClassName, "SP");
 	-- lvUpSpendSP??루아?�서??float ?��??��? ?�정?�기?�해 ?�수 5?�리?�서 반올림한??
-	-- ?�렇�?계산?�줘???�라?�언?��? 계산 값이 맞다. ?�마???�수?�의 10?�리쯤이 ?�리�? ?�을�?.
+	-- ?�렇�?계산?�줘???�라?�언?��? 계산 값이 맞다. ?�마???�수?�의 10?�리쯤이 ?�리�? ?�을�?.
 	local lvUpSpendSpRound = math.floor((lvUpSpendSp * 10000) + 0.5)/10000;
 	
 	value = basicsp + (lv - 1) * lvUpSpendSpRound + abilAddSP;
@@ -333,8 +333,9 @@ function SCR_GET_SKL_COOLDOWN(skill)
 			basicCoolDown =	basicCoolDown * 0.5;
 		end
 	end
-	
-	return math.floor(basicCoolDown);
+	local ret = math.floor(basicCoolDown) / 1000
+	ret = math.floor(ret) * 1000;	
+	return math.floor(ret);
 
 end
 
@@ -1126,8 +1127,12 @@ function SCR_GET_CartarStroke_Ratio(skill)
 end
 
 function SCR_GET_CartarStroke_Ratio2(skill)
-
+    local pc = GetSkillOwner(skill);
+    local abil = GetAbility(pc, 'Highlander33')
     local value = 0.2 * skill.Level;
+    if abil ~= nil and abil.ActiveState == 1 then
+        value = value / 2
+    end
     return value
 
 end
@@ -2697,8 +2702,7 @@ end
 
 function SCR_GET_BattleOrders_Ratio2(skill)
 
-	local value = 30 + 5 * skill.Level
-
+	local value = 60
   return value
 
 end
@@ -2733,7 +2737,7 @@ end
 
 function SCR_GET_ShareBuff_Ratio(skill)
 
-    local value = 5 + skill.Level
+    local value = 5 + (skill.Level * 2)
     return value
 
 end
@@ -2810,6 +2814,32 @@ function SCR_GET_Kunai_Ratio(skill)
     end
 
 end
+
+function SCR_GET_DeadlyCombo_Ratio(skill)
+
+	local pc = GetSkillOwner(skill);
+	local abil = GetAbility(pc, "Squire11") 
+	local value = 0
+	if abil ~= nil then 
+        return SCR_ABIL_ADD_SKILLFACTOR_TOOLTIP(abil);
+    end
+    
+end
+
+function SCR_Get_SkillFactor_DeadlyCombo(skill)
+
+	local pc = GetSkillOwner(skill);
+	local value = skill.SklFactor
+
+	local abil = GetAbility(pc, "Squire11")      -- Skill Damage add
+    if abil ~= nil then
+        value = SCR_ABIL_ADD_SKILLFACTOR(abil, value);
+    end
+
+    return math.floor(value)
+
+end
+
 
 function SCR_Get_SkillFactor_Dragontooth(skill)
 
@@ -4058,7 +4088,7 @@ function SCR_GET_BroomTrap_Ratio2(skill)
 
 	local abil = GetAbility(pc, "Sapper34")      -- Skill Damage add 2
         if abil ~= nil and abil.ActiveState == 1 then
-        return math.floor(value + value * 0.5);
+        return math.floor(value + value * 1.0);
     end
 
     return math.floor(value);
@@ -4118,7 +4148,7 @@ function SCR_GET_Claymore_Ratio3(skill)
     
     local abil = GetAbility(pc, "Sapper33")      -- Skill Damage add
     if abil ~= nil and abil.ActiveState == 1 then
-        return math.floor(value + value * 1.5);
+        return math.floor(value + value * 2.5);
     end
     
     return math.floor(value);
@@ -4270,7 +4300,7 @@ function SCR_GET_SpikeShooter_Ratio4(skill)
 
 	local abil = GetAbility(pc, "Sapper35")      -- Skill Damage add
     if abil ~= nil and abil.ActiveState == 1 then
-        return math.floor(value + value * 1.0);
+        return math.floor(value + value * 1.5);
     end
 
     return math.floor(value);
@@ -10559,6 +10589,16 @@ function SCR_GET_SubzeroShield_BuffTime(skill)
 
 end
 
+function SCR_GET_IceWall_Time(skill)
+    local pc = GetSkillOwner(skill);
+    local value = 15
+    local abil = GetAbility(pc, 'Cryomancer22')
+    if abil ~= nil and abil.ActiveState == 1 then
+        value = value + 10
+    end
+    return value
+
+end
 
 function SCR_GET_SR_LV_Gust(skill)
 
@@ -11377,7 +11417,6 @@ function SCR_GET_Repair_Ratio(skill)
     return skill.Level;
 end
 
-
 function SCR_GET_UnlockChest_Ratio(skill)
     
     return skill.Level;
@@ -11453,7 +11492,13 @@ function SCR_GET_DeedsOfValor_Ratio2(skill)
 end
 
 function SCR_GET_PainBarrier_Bufftime(skill)
-    return 14 + skill.Level * 1
+    local pc = GetSkillOwner(skill);
+    local abil = GetAbility(pc, 'Swordman29')
+    local value = 14 + skill.Level * 1
+    if abil ~= nil and abil.ActiveState == 1 then
+        value = value + 5
+    end
+    return value
 end
 
 function SCR_GET_Double_pay_earn_Ratio(skill)
@@ -13132,7 +13177,7 @@ function SCR_GET_SKILLLV_WITH_BM(skill)
 
     local value = skill.LevelByDB + skill.Level_BM;
 	if skill.GemLevel_BM > 0 then
-		value = value + 1;	-- 몬스?�젬 ?�킬보너?�는 중첩?�켜??무조�?+1�??�킨?�고??
+		value = value + 1;	-- 몬스?�젬 ?�킬보너?�는 중첩?�켜??무조�?+1�??�킨?�고??
 	end
 
     if skill.LevelByDB == 0 then

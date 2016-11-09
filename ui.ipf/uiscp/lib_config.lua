@@ -51,10 +51,14 @@ function UPDATE_NATURAL_EFFECT(value)
 	config.EnableNaturalEffect(tonumber(value));
 end
 
+function UPDATE_OTHER_PC_DAMAGE_EFFECT(value)
+	config.EnableOtherPCDamageEffect(tonumber(value));
+end
+
 function UPDATE_DEAD_PARTS(value)
 	config.EnableDeadParts(tonumber(value));
 end
 
 function UPDATE_SILHOUETTE(value)
 	config.EnableCharSilhouette(tonumber(value));
-en
+end

@@ -7,12 +7,16 @@ function TPITEM_ON_INIT(addon, frame)
 	addon:RegisterMsg("TPSHOP_BUY_SUCCESS", "ON_TPSHOP_BUY_SUCCESS");
 	addon:RegisterMsg("TPSHOP_BUY_FAILED", "ON_TPSHOP_BUY_FAILED");
 	addon:RegisterMsg("SHOP_BUY_LIMIT_INFO", "ON_SHOP_BUY_LIMIT_INFO");
+	
+	if (config.GetServiceNation() == "KOR") or (config.GetServiceNation() == "JP") then
 	addon:RegisterMsg("UPDATE_INGAME_SHOP_ITEM_LIST", "TPITEM_DRAW_NC_TP");
 	addon:RegisterMsg("UPDATE_INGAME_SHOP_REMAIN_CASH", "TPSHOP_CHECK_REMAIN_NEXONCASH");
 	addon:RegisterMsg("UPDATE_INGAME_SHOP_CASHINVEN", "TPSHOP_SHOW_CASHINVEN_ITEMLIST");
 	addon:RegisterMsg("UPDATE_INGAME_SHOP_PURCHASE_RESULT", "_TPSHOP_PURCHASE_RESULT");
 	addon:RegisterMsg("UPDATE_INGAME_SHOP_REFUND_RESULT", "_TPSHOP_REFUND_RESULT");
 	addon:RegisterMsg("UPDATE_INGAME_SHOP_PICKUP_RESULT", "_TPSHOP_PICKUP_RESULT");
+	end
+	
 	addon:RegisterMsg("UPDATE_TPITEM_LIST_FOR_TAG", "_TPSHOP_TPITEM_SET_SPECIAL");
 	addon:RegisterMsg("UPDATE_TPSHOP_BANNER", "_TPSHOP_BANNER");
 
@@ -71,12 +75,15 @@ function TPSHOP_TAB_CHANGE(frame, ctrl, argStr, argNum)
 end
 
 function TPITEM_OPEN(frame)
+
+	if (config.GetServiceNation() == "KOR") or (config.GetServiceNation() == "JP") then
 	if 0 == IsMyPcGM_FORNISMS() then
 	local btn1 = GET_CHILD_RECURSIVELY(frame,"ncReflashbtn")
 	local btn2 = GET_CHILD_RECURSIVELY(frame,"ncChargebtn")
 	btn1:SetEnable(0)
 	btn2:SetEnable(0)
 	end
+end
 end
 
 function TPSHOP_TAB_VIEW(frame, curtabIndex)
@@ -92,7 +99,7 @@ function TPSHOP_TAB_VIEW(frame, curtabIndex)
 	local tpSubgbox = GET_CHILD_RECURSIVELY(frame,"tpSubgbox");	
 	local rcycle_basketgbox = GET_CHILD_RECURSIVELY(frame,'rcycle_basketgbox');
 	
-	if 1 == IsMyPcGM_FORNISMS() then
+	if (1 == IsMyPcGM_FORNISMS()) and ((config.GetServiceNation() == "KOR") or (config.GetServiceNation() == "JP")) then		
 	if curtabIndex == 0 then	
 		TPITEM_DRAW_NC_TP();
 		TPSHOP_SHOW_CASHINVEN_ITEMLIST();
@@ -137,16 +144,17 @@ end
 
 function TP_SHOP_DO_OPEN(frame, msg, shopName, argNum)
 	
+	ui.SetUILock(true);
+
 	ui.CloseAllOpenedUI();
 	ui.OpenIngameShopUI();	-- Tpshop을 열었을때에 Tpitem에 대한 정보와 NexonCash 정보 등을 서버에 요청한다.
 
 	frame:ShowWindow(1);
-	
 	local leftgFrame = frame:GetChild("leftgFrame");	
 	local leftgbox = leftgFrame:GetChild("leftgbox");
 	local shopTab = leftgbox:GetChild('shopTab');
 	local itembox_tab		= tolua.cast(shopTab, "ui::CTabControl");
-	if 1 == IsMyPcGM_FORNISMS() then		
+	if (1 == IsMyPcGM_FORNISMS()) and ((config.GetServiceNation() == "KOR") or (config.GetServiceNation() == "JP")) then		
 	local banner = GET_CHILD_RECURSIVELY(frame,"banner");	
 		banner:SetImage("market_event_test");	--market_default
 	banner:SetUserValue("URL_BANNER", "");
@@ -416,10 +424,12 @@ end
 
 function TPITEM_CLOSE(frame)
 	
+	ui.SetUILock(false);
+
 	local tpSubgbox = GET_CHILD_RECURSIVELY(frame,"tpSubgbox");	
 	tpSubgbox:StopUpdateScript("_PROCESS_ROLLING_SPECIALGOODS");
 
-	if 1 == IsMyPcGM_FORNISMS() then
+	if (1 == IsMyPcGM_FORNISMS()) and (config.GetServiceNation() == "KOR") or (config.GetServiceNation() == "JP") then
 	local banner = GET_CHILD_RECURSIVELY(frame,"banner");	
 	banner:SetUserValue("URL_BANNER", "");
 	banner:SetUserValue("NUM_BANNER", 0);
@@ -432,7 +442,7 @@ function TPITEM_CLOSE(frame)
 	ui.OpenAllClosedUI();
 
 	session.ui.Clear_NISMS_CashInven_ItemList();
-	control.EnableControl(1);
+	control.ResetControl();
 
 	ui.CloseFrame("recycleshop_popupmsg")
 end
@@ -2171,6 +2181,10 @@ function _PROCESS_ROLLING_SPECIALGOODS()
 	end
 
 	local package_Btn = tpSubgbox:GetControlSet('button', 'specialProduct_'..num);
+	if package_Btn == nil then
+		tpSubgbox:StopUpdateScript("_PROCESS_ROLLING_SPECIALGOODS");
+		return 0;
+	end
 	TPSHOP_SELECTED_SPECIALGOODS(tpSubgbox, package_Btn, package_Btn:GetEventScriptArgString(ui.LBUTTONUP), package_Btn:GetEventScriptArgNumber(ui.LBUTTONUP));
 
 	tpSubgbox:SetUserValue("NUM_GOODNO", num);
@@ -2644,13 +2658,13 @@ function TPSHOP_CASHINVEN_ITEM_CLICKED(parent, ctrl)
 end
 
 function _TPSHOP_BANNER(parent, control, argStr, argNum)
-	if 1 == IsMyPcGM_FORNISMS() then
 	local size = session.ui.GetSize_TPITEM_Banner_INFOList();
 
 	local frame = ui.GetFrame("tpitem");
 	local banner = GET_CHILD_RECURSIVELY(frame,"banner");	
 	banner = tolua.cast(banner, "ui::CWebPicture");	
-	if size <= 0 then
+
+	if size <= 1 then
 		banner:SetImage("market_event_test");	--market_default
 	else
 		local bannerInfo = session.ui.Getlistitem_TPITEM_Banner_byIndex(0);
@@ -2667,7 +2681,6 @@ function _TPSHOP_BANNER(parent, control, argStr, argNum)
 		banner:RunUpdateScript("_PROCESS_ROLLING_BANNER",  5, 0, 1, 1);
 	end
 	banner:Invalidate();
-end
 end
 
 function _PROCESS_ROLLING_BANNER()
