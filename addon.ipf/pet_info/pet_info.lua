@@ -39,9 +39,13 @@ function ON_PET_PROP_UPDATE(frame, msg, propName)
 		PET_INFO_UPDATE_ACTIVATED(frame);
 		return;
 	end
-	if propName ~= "Stamina" then
+
+	if propName ~= "Stamina" and frame:GetUserValue('IS_OPEN_BY_NPC') == 'YES' then
 		PET_INFO_CANCEL_TRAIN(frame);
+		return;
 	end
+
+	PET_INFO_SHOW(frame:GetUserValue('PET_GUID'));
 end
 
 function PET_INFO_OPEN(frame)
