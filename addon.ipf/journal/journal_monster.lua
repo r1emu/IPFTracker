@@ -46,13 +46,12 @@ function JOURNAL_PAGE_CHANGE_MONSTER(ctrl, ctrlset)
 end
 
 function GET_MON_ILLUST(monCls)
-
 	if monCls == nil then
 		return "unknown_monster";
 	end
 
-	local name = monCls.Journal;
-	if ui.IsImageExist(name) == 1 then
+	local name = monCls.Journal;		
+	if ui.IsImageExist(name) == 1 then	
 		return name;
 	end
 	
@@ -61,7 +60,7 @@ function GET_MON_ILLUST(monCls)
 		return name;
 	end
 
-	--¾ÆÀÌÄÜÀº ÀÌÁ¦ ¾²Áö ¾ÊÀ»²¨¶ó°í ÇØ¼­ ÀÏ´Ü ÁÖ¼®À» ÇÕ½Ã´Ù.
+	--ì•„ì´ì½˜ì€ ì´ì œ ì“°ì§€ ì•Šì„êº¼ë¼ê³  í•´ì„œ ì¼ë‹¨ ì£¼ì„ì„ í•©ì‹œë‹¤.
 	--name = monCls.Icon;
 	--if ui.IsImageExist(name) == 1 then
 	--	return name;
@@ -95,6 +94,8 @@ function UPDATE_JOURNAL_ITEM_SUB(frame, strarg, itemType, arg2, ud, obj, monName
 	frame:ShowWindow(1);
 end
 
+
+
 function ON_MON_RANKINFO_TOOLTIP(frame, msg, monName, num)
 	
 	ui.UpdateWikiMonTooltip(monName);
@@ -118,7 +119,9 @@ function UPDATE_ARTICLE_Monster(ctrlset)
 	titleText:SetTextByKey("value", monstername);
 
 	local score = GET_MON_WIKI_PTS(monCls);	
-	local pointText = GET_CHILD(ctrlset, "point");
+	local infoGbox = GET_CHILD(ctrlset, "infoGbox");
+	infoGbox:SetOffset(infoGbox:GetOffsetX(), titleText:GetY() + titleText:GetHeight());
+	local pointText = GET_CHILD(infoGbox, "point");
 	pointText:SetTextByKey("value", score);
 	
 	local icon = GET_CHILD(ctrlset, "icon", "ui::CPicture");
@@ -154,7 +157,7 @@ function UPDATE_ARTICLE_Monster(ctrlset)
 	end
 	
 	
-	local items = GET_CHILD(ctrlset, "drop", "ui::CPage");
+	local items = GET_CHILD(infoGbox, "drop", "ui::CPage");
 	local index  = 1;
 	local itemTypeCount = 0;
 	while true do
@@ -185,17 +188,17 @@ function UPDATE_ARTICLE_Monster(ctrlset)
 		end
 	end
 	
-	local itemcountText = GET_CHILD(ctrlset, "itemcount");
+	local itemcountText = GET_CHILD(infoGbox, "itemcount");
 	itemcountText:SetTextByKey("value", itemTypeCount);
 
 	local topAtkPropValue, topAtkPropCount = GET_WIKI_MAX_RANKPROP(wiki, "TopAtk_", MAX_WIKI_TOPATTACK);
-	local skillicon = GET_CHILD(ctrlset, "skillicon");
-	local skillValue = GET_CHILD(ctrlset, "skillValue");
-	local skillName = GET_CHILD(ctrlset, "skillName");
+	local skillicon = GET_CHILD(infoGbox, "skillicon");
+	local skillValue = GET_CHILD(infoGbox, "skillValue");
+	local skillName = GET_CHILD(infoGbox, "skillName");
 	if topAtkPropValue > 0 then
 		local sklCls = GetClassByType("Skill", topAtkPropValue);
 		skillName:SetTextByKey("value", sklCls.Name);
-		skillValue:SetTextByKey("value", "ÇÇÇØ·® " .. topAtkPropCount);
+		skillValue:SetTextByKey("value", "í”¼í•´ëŸ‰ " .. topAtkPropCount);
 		skillicon:SetImage("Icon_" .. sklCls.Icon);
 
 		skillValue:ShowWindow(1);
@@ -210,7 +213,17 @@ function UPDATE_ARTICLE_Monster(ctrlset)
 	local dateString = GET_WIKI_ELAPSED_DATE_STRING(wiki);
 	t_date:SetTextByKey("value", string.format("[%s]", dateString));
 
+	ctrlset:Resize(ctrlset:GetWidth(), infoGbox:GetHeight() + infoGbox:GetY() + 8);
 end
+
+function JOURNAL_RESIZE_FOR_LONGNAME_MONSTER(ctrlset)	
+	local titleText = GET_CHILD(ctrlset, "name");
+	local infoGbox = GET_CHILD(ctrlset, "infoGbox");
+	local pointText = GET_CHILD(infoGbox, "point");
+	local items = GET_CHILD(infoGbox, "drop", "ui::CPage");
+	pointText:SetOffset(pointText:GetOffsetX(), pointText:GetY());
+end
+
 
 function JOURNAL_TO_ITEM_PAGE(parent, ctrl)
 	local itemType = ctrl:GetUserIValue("ITEMTYPE");
