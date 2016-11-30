@@ -121,7 +121,10 @@ function GET_TRANSCEND_BREAK_ITEM_COUNT(itemObj)
         if giveCnt <= 0 then
         	giveCnt = 1;
         end
-
+    if itemObj.Transcend == 1 then
+        giveCnt = 0;
+    end
+    
     return giveCnt;
 	end
 

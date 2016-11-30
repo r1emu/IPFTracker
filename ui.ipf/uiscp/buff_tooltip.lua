@@ -153,4 +153,12 @@ function BUFF_TOOLTIP_TeamLevel(buff, cls)
 	return advantageText, ScpArgMsg("TeamLevel") .. " " .. buff.arg1;
 
 end
-
+
+function BUFF_TOOLTIP_Event_CharExpRate(buff, cls)
+	local advantageText = "";
+	if buff ~= nil then
+		advantageText = advantageText .. ScpArgMsg("ExpGetAmount") .. " + " .. math.floor(buff.arg1) .. "%";	
+	end
+	return advantageText, cls.ToolTip;
+end
+

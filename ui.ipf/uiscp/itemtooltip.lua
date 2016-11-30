@@ -206,7 +206,13 @@ function ITEMTOOLTIPFRAME_ARRANGE_CHILDS(tooltipframe)
 	for i = 0 , childCnt - 1 do
 		local chld = tooltipframe:GetChildByIndex(i);
 		if chld:GetName() ~= 'changevalue' then
-			chld:SetOffset(chld:GetX(), chld:GetY() + cvalueGBoxheight)
+			local targetY = chld:GetY() + cvalueGBoxheight;
+			local diff = targetY + chld:GetHeight() - option.GetClientHeight();
+			if diff > 0 then
+				targetY = targetY - diff;
+			end
+
+			chld:SetOffset(chld:GetX(), targetY);
 		end
 	end
 

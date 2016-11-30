@@ -89,7 +89,7 @@ function SCR_Get_SpendSP(skill)
 	
 	local abilAddSP = GetAbilityAddSpendValue(pc, skill.ClassName, "SP");
 	-- lvUpSpendSP??루아?�서??float ?��??��? ?�정?�기?�해 ?�수 5?�리?�서 반올림한??
-	-- ?�렇�?계산?�줘???�라?�언?��? 계산 값이 맞다. ?�마???�수?�의 10?�리쯤이 ?�리�? ?�을�?.
+	-- ?�렇�?계산?�줘???�라?�언?��? 계산 값이 맞다. ?�마???�수?�의 10?�리쯤이 ?�리�? ?�을�?.
 	local lvUpSpendSpRound = math.floor((lvUpSpendSp * 10000) + 0.5)/10000;
 	
 	value = basicsp + (lv - 1) * lvUpSpendSpRound + abilAddSP;
@@ -9888,7 +9888,11 @@ end
 
 
 function SCR_GET_PsychicPressure_Ratio2(skill)
-
+    local pc = GetSkillOwner(skill)
+    local abil = GetAbility(pc, 'Psychokino10')
+    if abil ~= nil and abil.ActiveState == 1 then
+        return 2;
+    end
 	return 1
 end
 
@@ -9898,6 +9902,15 @@ function SCR_GET_GravityPole_Ratio(skill)
     end
 
 	return 5 + skill.Level * 1
+end
+
+function SCR_GET_GravityPole_Ratio3(skill)
+    local pc = GetSkillOwner(skill)
+    local abil = GetAbility(pc, 'Psychokino20')
+    if abil ~= nil and abil.ActiveState == 1 then
+        return 3;
+    end
+    return 2;
 end
 
 
@@ -12276,6 +12289,18 @@ function SCR_Get_Monstrance_Bufftime(skill)
     return math.floor(value);
 end
 
+function SCR_Get_Monstrance_Debufftime(skill)
+	local pc = GetSkillOwner(skill);
+	local value = 30
+	
+	local abil = GetAbility(pc, "Priest22")
+    if abil ~= nil and abil.ActiveState == 1 then
+	    value = value + abil.Level
+	end
+	
+    return math.floor(value);
+end
+
 
 function SCR_Get_Monstrance_Ratio(skill)
 
@@ -13177,7 +13202,7 @@ function SCR_GET_SKILLLV_WITH_BM(skill)
 
     local value = skill.LevelByDB + skill.Level_BM;
 	if skill.GemLevel_BM > 0 then
-		value = value + 1;	-- 몬스?�젬 ?�킬보너?�는 중첩?�켜??무조�?+1�??�킨?�고??
+		value = value + 1;	-- 몬스?�젬 ?�킬보너?�는 중첩?�켜??무조�?+1�??�킨?�고??
 	end
 
     if skill.LevelByDB == 0 then

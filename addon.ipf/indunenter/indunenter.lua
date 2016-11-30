@@ -3,6 +3,7 @@
 	addon:RegisterMsg('UPDATE_PC_COUNT', 'INDUNENTER_UPDATE_PC_COUNT');
 	addon:RegisterMsg('ESCAPE_PRESSED', 'INDUNENTER_ON_ESCAPE_PRESSED');
 	g_indunMultipleItem = "Premium_dungeoncount_01";
+	g_indunMultipleItem2 = "Premium_dungeoncount_Event";
 end
 
 function INDUNENTER_ON_ESCAPE_PRESSED(frame, msg, argStr, argNum)
@@ -219,6 +220,7 @@ function INDUNENTER_MAKE_MULTI_BOX(frame, indunCls)
 	local multiBtn = GET_CHILD_RECURSIVELY(frame, 'multiBtn');
 	local arrow = GET_CHILD_RECURSIVELY(frame, 'arrow');
 	local invItem = session.GetInvItemByName(g_indunMultipleItem);
+	local invItem2 = session.GetInvItemByName(g_indunMultipleItem2);
 	local indunType = TryGetProp(indunCls, "PlayPerResetType");
 	local viewBOX = false;
 	
@@ -228,7 +230,8 @@ function INDUNENTER_MAKE_MULTI_BOX(frame, indunCls)
 	if indunType == 100 or indunType == 200 then
 		viewBOX = true;
 	end
-	if viewBOX == false or invItem == nil then
+
+	if viewBOX == false or (invItem == nil and invItem2 == nil) then
 		multiBtn:SetEnable(0);
 		return;
 	end
@@ -308,6 +311,13 @@ function INDUNENTER_MAKE_PARTY_CONTROLSET(pcCount, memberTable)
 		memberCnt = 0;
 	end
 
+	local prevPcCnt = frame:GetUserIValue('UI_PC_COUNT');
+	frame:SetUserValue('UI_PC_COUNT', pcCount);
+	if prevPcCnt < pcCount then
+		local MEMBER_FINDED_SOUND = frame:GetUserConfig('MEMBER_FINDED_SOUND');
+		imcSound.PlaySoundEvent(MEMBER_FINDED_SOUND);
+	end
+
 	if memberCnt > 1 then 
 		partyLine:Resize(58 * (memberCnt - 1), 15);
 		partyLine:ShowWindow(1);
@@ -371,8 +381,16 @@ function INDUNENTER_MULTI_UP(frame, ctrl)
 	--local maxCnt = topFrame:GetUserIValue('MAX_MULTI_CNT');
 	local maxCnt = INDUN_MULTIPLE_USE_MAX_COUNT;
 	local invItem = session.GetInvItemByName(g_indunMultipleItem);
-	if invItem == nil then
+	local invItem2 = session.GetInvItemByName(g_indunMultipleItem2);
+	if invItem == nil and invItem2 == nil then
 		return;
+	end
+	local itemCount = 0;
+	if invItem ~= nil then
+		itemCount = itemCount + invItem.Count;
+	end
+	if invItem2 ~= nil then
+		itemCount = itemCount + GET_INVENTORY_ITEM_COUNT_BY_NAME(g_indunMultipleItem2);
 	end
 
 	nowCnt = nowCnt + 1;
@@ -400,8 +418,8 @@ function INDUNENTER_MULTI_UP(frame, ctrl)
 		ui.SysMsg(ScpArgMsg('IndunMultipleMAX'));
 		return
 	end
-
-	if nowCnt - 1 >= invItem.count then
+	
+	if nowCnt - 1 >= itemCount then
 		ui.SysMsg(ScpArgMsg('NotEnoughIndunMultipleItem'));
 		return;
 	end
@@ -436,7 +454,7 @@ function INDUNENTER_MULTI_DOWN(frame, ctrl)
 	multiEdit:SetText(tostring(nowCnt));
 end
 
-function INDUNENTER_SMALL(frame, ctrl)
+function INDUNENTER_SMALL(frame, ctrl, forceSmall)
 	if frame == nil then
 		return;
 	end
@@ -444,6 +462,10 @@ function INDUNENTER_SMALL(frame, ctrl)
 	local bigmode = topFrame:GetChild('bigmode');
 	local smallmode = topFrame:GetChild('smallmode');
 	local header = topFrame:GetChild('header');
+
+	if forceSmall == true and topFrame:GetUserValue('FRAME_MODE') == 'SMALL' then
+		return;
+	end
 	
 	if topFrame:GetUserValue('FRAME_MODE') == "BIG" then	-- to small mode
 		if topFrame:GetUserValue('AUTOMATCH_MODE') == 'NO' then
@@ -554,6 +576,7 @@ function INDUNENTER_AUTOMATCH_TYPE(indunType)
 
 	if indunType == 0 then
 		frame:SetUserValue('AUTOMATCH_MODE', 'NO');
+		frame:SetUserValue('EXCEPT_CLOSE_TARGET', 'NO');
 		autoMatchText:ShowWindow(1);
 		autoMatchTime:ShowWindow(0);
 
@@ -565,6 +588,7 @@ function INDUNENTER_AUTOMATCH_TYPE(indunType)
 		end
 	else
 		frame:SetUserValue('AUTOMATCH_MODE', 'YES');
+		frame:SetUserValue('EXCEPT_CLOSE_TARGET', 'YES');
 		autoMatchText:ShowWindow(0);
 		cancelAutoMatch:SetEnable(1);
 
@@ -670,7 +694,8 @@ function INDUNENTER_SET_ENABLE(enter, autoMatch, withParty, multi)
 
 	-- multi btn
 	local invItem = session.GetInvItemByName(g_indunMultipleItem);
-	if invItem == nil then
+	local invItem2 = session.GetInvItemByName(g_indunMultipleItem2);
+	if invItem == nil and invItem2 == nil then
 		INDUNENTER_SET_ENABLE_MULTI(0);
 	end
 end
@@ -756,6 +781,10 @@ function INDUNENTER_AUTOMATCH_FINDED()
 	autoMatchText:SetText(ClMsg('PILGRIM41_1_SQ07_WATER'));
 	autoMatchTime:ShowWindow(0);
 	autoMatchText:ShowWindow(1);
+
+	-- play matching sound
+	local MATCH_FINDED_SOUND = frame:GetUserConfig('MATCH_FINDED_SOUND');
+	imcSound.PlaySoundEvent(MATCH_FINDED_SOUND);
 
 	INDUNENTER_SET_ENABLE(0, 0, 0, 0);
 	INDUNENTER_MAKE_SMALLMODE(frame, true);
@@ -871,8 +900,13 @@ function INDUNENTER_MULTI_EXEC(frame, ctrl)
 	end
 
 	local invItem = session.GetInvItemByName(g_indunMultipleItem);
+	local itemCount = 0;
+	if invItem ~= nil then
+		itemCount = invItem.Count;
+	end
+	itemCount = itemCount + GET_INVENTORY_ITEM_COUNT_BY_NAME(g_indunMultipleItem2);
 
-	if invItem.count < textCount then
+	if itemCount < textCount then
 		ui.SysMsg(ScpArgMsg('NotEnoughIndunMultipleItem'));
 		return;
 	end
@@ -914,4 +948,26 @@ function INDUNENTER_MULTI_CANCEL(frame, ctrl)
 	multiCancelBtn:ShowWindow(0);
 	local multiBtn = GET_CHILD_RECURSIVELY(topFrame, "multiBtn");
 	multiBtn:ShowWindow(1);
+end
+
+function GET_INVENTORY_ITEM_COUNT_BY_NAME(name)
+	if name == nil or name == "" then
+		return 0;
+	end
+
+	local invItemList = session.GetInvItemList();
+	local index = invItemList:Head();
+	local itemCount = session.GetInvItemList():Count();
+	local invITemCount = 0;
+	for i = 0, itemCount - 1 do		
+		local invItem = invItemList:Element(index);
+		local itemobj = GetIES(invItem:GetObject());			
+		if invItem ~= nil then
+			if itemobj.ClassName == name then
+				invITemCount = invITemCount + 1;
+			end
+		end
+		index = invItemList:Next(index);
+	end
+	return invITemCount;
 end

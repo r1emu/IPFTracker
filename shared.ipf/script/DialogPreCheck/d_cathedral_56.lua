@@ -118,4 +118,14 @@ function SCR_CHATHEDRAL56_SQ02_KILL_PRE_DIALOG(pc, dialog, handle)
         return 'YES'
     end
     return 'NO'
-end
+end
+
+function SCR_CHATHEDRAL56_SQ05_OBJ1_PRE_DIALOG(pc, dialog, handle)
+    local result = SCR_QUEST_CHECK(pc, 'CHATHEDRAL56_SQ05')
+    if result == 'PROGRESS' then
+        return 'YES'
+    end
+    return 'NO'
+end
+
+
