@@ -136,6 +136,7 @@
 		<Code Code="ERRCODE_DATA_NOT_EXIST_SPRITE" CallStack="NO" Desc="해당 스프라이트 데이터를 찾을 수 없습니다."/>
 		<Code Code="ERRCODE_DATA_ANI_ACTOR_PART_SET_FAIL" CallStack="NO" Desc="액터 파트를 세팅하는데 실패하였습니다. 정의되지 않은 액션 카운트입니다."/>
 		<Code Code="ERRCODE_DATA_WORLDTABLE_INIT_FAIL" CallStack="NO" Desc="월드테이블 초기화를 실패했습니다."/>
+    <Code Code="ERRCODE_DATA_ITEMTABLE_INIT_FAIL" CallStack="NO" Desc="아이템 데이터가 DB 데이터와 다릅니다."/>
 		<Code Code="ERRCODE_DATA_WORLD_INITOBJECT_FAIL" CallStack="NO" Desc="월드 오브젝트 초기화를 실패했습니다."/>
 		<Code Code="ERRCODE_DATA_MAINSECTOR_INIT_FAIL" CallStack="NO" Desc="메인 섹터매니저 초기화를 실패했습니다."/>
 		<Code Code="ERRCODE_DATA_INVALIDPOS" CallStack="NO" Desc="유효한 좌표가 아닙니다."/>

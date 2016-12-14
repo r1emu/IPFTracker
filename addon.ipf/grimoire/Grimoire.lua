@@ -2,6 +2,9 @@
 function GRIMOIRE_ON_INIT(addon, frame)
 	addon:RegisterOpenOnlyMsg("UPDATE_GRIMOIRE_UI", "GRIMOIRE_MSG");
 	addon:RegisterMsg("DO_OPEN_GRIMOIRE_UI", "GRIMOIRE_MSG");
+	addon:RegisterMsg("SORCERER_OBEY_BUFF", "GRIMOIRE_OBEY_BUFF");
+
+	frame:SetUserValue('OBEY_BUFF_VALUE', 0);
 end
 
 function GRIMOIRE_MSG(frame, msg, argStr, argNum)
@@ -80,45 +83,45 @@ function GRIMOIRE_CARD_UI_RESET(parent, ctrl, bosscardid)
 end
 
 function GRIMOIRE_STATE_TEXT_RESET(descriptGbox)
-	-- Ã¼·Â
+	-- ì²´ë ¥
 	local myHp = GET_CHILD(descriptGbox,'my_hp',"ui::CRichText")
 	myHp:SetTextByKey("value", 0);
 	
-	-- ¹°¸® °ø°İ·Â
+	-- ë¬¼ë¦¬ ê³µê²©ë ¥
 	local richText = GET_CHILD(descriptGbox,'my_attack',"ui::CRichText")
 	richText:SetTextByKey("value", 0);
 
-	-- ¸¶¹ı °ø°İ·Â
+	-- ë§ˆë²• ê³µê²©ë ¥
 	richText = GET_CHILD(descriptGbox,'my_Mattack',"ui::CRichText")
 	richText:SetTextByKey("value", 0);
 
-	-- ¹æ¾î·Â
+	-- ë°©ì–´ë ¥
 	richText = GET_CHILD(descriptGbox,'my_defen',"ui::CRichText")
 	richText:SetTextByKey("value", 0);
 	
 
-	-- ¸¶¹ı ¹æ¾î·Â
+	-- ë§ˆë²• ë°©ì–´ë ¥
 	richText = GET_CHILD(descriptGbox,'my_Mdefen',"ui::CRichText")
 	richText:SetTextByKey("value", 0);
 
-	------- ½ºÅİÁ¤º¸
-	-- Èû
+	------- ìŠ¤í…Ÿì •ë³´
+	-- í˜
 	richText = GET_CHILD(descriptGbox,'my_power',"ui::CRichText")
 	richText:SetTextByKey("value", 0);
 	
-	-- Ã¼·Â
+	-- ì²´ë ¥
 	richText = GET_CHILD(descriptGbox,'my_con',"ui::CRichText")
 	richText:SetTextByKey("value", 0);
 
-	-- Áö´É
+	-- ì§€ëŠ¥
 	richText = GET_CHILD(descriptGbox,'my_int',"ui::CRichText")
 	richText:SetTextByKey("value", 0);
 
-	-- ¹ÎÃ¸
+	-- ë¯¼ì²©
 	richText = GET_CHILD(descriptGbox,'my_dex',"ui::CRichText")
 	richText:SetTextByKey("value", 0)
 
-	-- Á¤½Å
+	-- ì •ì‹ 
 	richText = GET_CHILD(descriptGbox,'my_mna',"ui::CRichText")
 	richText:SetTextByKey("value", 0);
 end
@@ -134,7 +137,7 @@ function GRIMOIRE_STATE_UI_RESET(frame, i)
 		return;
 	end
 
-	if 1 == i then -- ¸ŞÀÎÄ«µå
+	if 1 == i then -- ë©”ì¸ì¹´ë“œ
 		local gbox = GET_CHILD(descriptGbox,'my_card',"ui::CRichText")
 		if nil ~= gbox then
 			gbox:SetTextByKey("actorcard","");
@@ -161,7 +164,7 @@ function SET_CARD_STATE(frame, bosscardcls, i)
 		return;
 	end
 
-	if 1 == i then -- ¸ŞÀÎÄ«µå
+	if 1 == i then -- ë©”ì¸ì¹´ë“œ
 		local gbox = GET_CHILD(descriptGbox,'my_card',"ui::CRichText")
 		if nil ~= gbox then
 			gbox:SetTextByKey("actorcard",bosscardcls.Name);
@@ -188,7 +191,7 @@ function SET_CARD_STATE(frame, bosscardcls, i)
 		return;
 	end
 
-	-- °¡»ó¸÷À» »ı¼ºÇÕ½Ã´Ù.
+	-- ê°€ìƒëª¹ì„ ìƒì„±í•©ì‹œë‹¤.
 	local tempObj = CreateGCIES("Monster", monCls.ClassName);
 	if nil == tempObj then
 		return;
@@ -196,53 +199,55 @@ function SET_CARD_STATE(frame, bosscardcls, i)
 
 	CLIENT_SORCERER_SUMMONING_MON(tempObj, GetMyPCObject(), GetIES(skl:GetObject()), bosscardcls);
 	
-	-- Ã¼·Â
+	-- ì²´ë ¥
 	local myHp = GET_CHILD(descriptGbox,'my_hp',"ui::CRichText")
 	local hp = math.floor(SCR_Get_MON_MHP(tempObj));
 	myHp:SetTextByKey("value", hp);
 	
-	-- ¹°¸® °ø°İ·Â
+	local addValue = frame:GetUserIValue('OBEY_BUFF_VALUE');
+
+	-- ë¬¼ë¦¬ ê³µê²©ë ¥
 	local richText = GET_CHILD(descriptGbox,'my_attack',"ui::CRichText")
-	richText:SetTextByKey("value", math.floor(SCR_Get_MON_MAXPATK(tempObj)));
+	richText:SetTextByKey("value", math.floor(SCR_Get_MON_MAXPATK(tempObj) + addValue));
 
-	-- ¸¶¹ı °ø°İ·Â
+	-- ë§ˆë²• ê³µê²©ë ¥
 	richText = GET_CHILD(descriptGbox,'my_Mattack',"ui::CRichText")
-	richText:SetTextByKey("value", math.floor(SCR_Get_MON_MAXMATK(tempObj)));
+	richText:SetTextByKey("value", math.floor(SCR_Get_MON_MAXMATK(tempObj) + addValue));
 
-	-- ¹æ¾î·Â
+	-- ë°©ì–´ë ¥
 	richText = GET_CHILD(descriptGbox,'my_defen',"ui::CRichText")
 	richText:SetTextByKey("value", math.floor(SCR_Get_MON_DEF(tempObj)));
 	
-	-- ¸¶¹ı ¹æ¾î·Â
+	-- ë§ˆë²• ë°©ì–´ë ¥
 	richText = GET_CHILD(descriptGbox,'my_Mdefen',"ui::CRichText")
 	richText:SetTextByKey("value", math.floor(SCR_Get_MON_MDEF(tempObj)));
 	
-	------- ½ºÅİÁ¤º¸
+	------- ìŠ¤í…Ÿì •ë³´
 
-	-- Èû
+	-- í˜
 	richText = GET_CHILD(descriptGbox,'my_power',"ui::CRichText")
 	richText:SetTextByKey("value", GET_MON_STAT(tempObj, tempObj.Lv, "STR"));
 	
-	-- Ã¼·Â
+	-- ì²´ë ¥
 	richText = GET_CHILD(descriptGbox,'my_con',"ui::CRichText")
-	 -- ±âº»ÀûÀ¸·Î GET_MON_STATÀ» ¾²Áö¸¸ Ã¼·ÂÀº µû·ÎÇØ´Ş¶ó´Â ÆòÁ÷¾¾ÀÇ ¿äÃ»
+	 -- ê¸°ë³¸ì ìœ¼ë¡œ GET_MON_STATì„ ì“°ì§€ë§Œ ì²´ë ¥ì€ ë”°ë¡œí•´ë‹¬ë¼ëŠ” í‰ì§ì”¨ì˜ ìš”ì²­
 	local con = math.floor(GET_MON_STAT_CON(tempObj, tempObj.Lv, "CON"));
 	richText:SetTextByKey("value", con);
 	
 
-	-- Áö´É
+	-- ì§€ëŠ¥
 	richText = GET_CHILD(descriptGbox,'my_int',"ui::CRichText")
 	richText:SetTextByKey("value", GET_MON_STAT(tempObj, tempObj.Lv, "INT"));
 
-	-- ¹ÎÃ¸
+	-- ë¯¼ì²©
 	richText = GET_CHILD(descriptGbox,'my_dex',"ui::CRichText")
 	richText:SetTextByKey("value", GET_MON_STAT(tempObj, tempObj.Lv, "DEX"));
 
-	-- Á¤½Å
+	-- ì •ì‹ 
 	richText = GET_CHILD(descriptGbox,'my_mna',"ui::CRichText")
 	richText:SetTextByKey("value", GET_MON_STAT(tempObj, tempObj.Lv, "MNA"));
 
-	-- »ı¼ºÇÑ °¡»ó¸÷À» Áö¿ö¾ßÁ®
+	-- ìƒì„±í•œ ê°€ìƒëª¹ì„ ì§€ì›Œì•¼ì ¸
 	DestroyIES(tempObj);
 end
 
@@ -327,4 +332,9 @@ function GRIMOIRE_FRAME_OPEN(frame)
 end
 
 function GRIMOIRE_FRAME_CLOSE(frame)
-end
+end
+
+function GRIMOIRE_OBEY_BUFF(frame, msg, argStr, argNum)
+	frame:SetUserValue('OBEY_BUFF_VALUE', argNum);
+	UPDATE_GRIMOIRE_UI(frame);
+end
