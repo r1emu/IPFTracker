@@ -1089,3 +1089,6 @@ ClassID,BlendIn,BlendOut,Priority,OffsetValue,ClassName,Main,Loop,Freeze,Additiv
 1112,0,0,4,0,"SKL_HOUKIBROOM_WLK","YES","YES","NO","NO","YES","NO","NO","","NO","Stand"
 1113,0,0,4,0,"SKL_NEURO_TOXIN_READY","YES","NO","YES","NO","YES","NO","NO","","YES","Attack"
 1114,0,0,4,0,"SKL_NEURO_TOXIN_SHOT","YES","NO","YES","NO","YES","NO","NO","","YES","QuestAnim"
+1139,0,0,4,0,"SKL_DOUBLEPUNCH","NO","NO","YES","NO","YES","NO","NO","","YES","Stand"
+1140,0,0,4,0,"SKL_PALMSTRIKE","NO","NO","YES","NO","YES","NO","NO","","YES","Stand"
+1141,0,0,4,0,"SKL_IRONSKIN_READY","NO","NO","YES","NO","YES","NO","NO","","YES","Stand"
