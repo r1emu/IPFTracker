@@ -222,6 +222,9 @@ function MONSKL_C_RESERVE_ANIM(actor, skill, animName, spd, freezeAnim)
 	actor:GetAnimation():ReserveAnim(animName, spd, freezeAnim);
 end
 
+function C_NEXT_SKILL_RESERVE_RESETANIM(actor)
+	actor:GetAnimation():SetNextSkillReserveResetAnim(true);
+end
 
 function MONSKL_C_RESERVE_ANIM_OOBE(actor, skill, animName, spd, freezeAnim)
 	local oobeActor = actor:GetOOBEActor();
@@ -297,13 +300,6 @@ end
 function C_SKL_SPIN_OBJ(actor, obj, delay, spinCount, spinSec)	
 	actor:Spin(delay, spinCount, spinSec, 0);
 end
-
-function C_SKL_BLINK(actor, obj, x, y, z, angle)	
-	-- 클라 연출용
-	actor:SetPos(x, y, z);
-	actor:SetRotate(angle);
-end
-
 
 function C_COLORBLEND_ACTOR(self, obj, actorType, isUse, color_R, color_G, color_B, colar_A, blendOption)
 

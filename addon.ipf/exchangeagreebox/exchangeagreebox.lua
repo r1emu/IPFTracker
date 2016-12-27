@@ -14,13 +14,19 @@ function OPEN_EXCHANGE_FILNAL_BOX(oppoTokenState)
 	local bg2 = frame:GetChild('bg2');
 	local itemList = bg2:GetChild('itemList');
 
-	if (0 == oppoTokenState) or (false == session.loginInfo.IsPremiumState(ITEM_TOKEN) ) then
+	local myAccount = GetMyAccountObj()
+	local myTradeCnt = TryGetProp(myAccount, "TradeCount")
+	if myTradeCnt == nil then
+		return
+	end
+
+	if (0 == oppoTokenState) or (false == session.loginInfo.IsPremiumState(ITEM_TOKEN)) or (myTradeCnt < 1) then
  		local itemCount = exchange.GetExchangeItemCount(1);	
 		local listStr = "";
 		for i = 0, itemCount-1 do
 			local itemData = exchange.GetExchangeItemInfo(1,i);
 			local class = GetClassByType('Item', itemData.type);
-			if class.ItemType == 'Equip' then
+			if class.ItemType == 'Equip' and class.ClassType ~= "Outer" then -- 코스튬은 비토큰 거래시에도 귀속되지 않도록
 				listStr = listStr .. string.format("%s",class.Name) .. "{nl}";
 			end
 		end
