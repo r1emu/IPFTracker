@@ -10,6 +10,7 @@ function SYSTEMOPTION_CREATE(frame)
 	INIT_LANGUAGE_CONFIG(frame);
 	INIT_GRAPHIC_CONFIG(frame);
 	INIT_CONTROL_CONFIG(frame);
+	SET_SKL_CTRL_CONFIG(frame);
 end
 
 function INIT_LANGUAGE_CONFIG(frame)
@@ -101,25 +102,44 @@ end
 
 function INIT_GRAPHIC_CONFIG(frame)
 	local bloom = GET_CHILD(frame, "check_Bloom", "ui::CCheckBox");
+	if nil ~= bloom then
 	bloom:SetCheck(config.GetUseBloom());
+	end;
 
 	local warfog = GET_CHILD(frame, "check_warfog", "ui::CCheckBox");
+	if nil ~= warfog then
 	warfog:SetCheck(config.GetUseWarfog());
+	end;
 
 	local fxaa = GET_CHILD(frame, "check_fxaa", "ui::CCheckBox");
+	if nil ~= fxaa then
 	fxaa:SetCheck(config.GetUseFXAA());
+	end;
 
 	local glow = GET_CHILD(frame, "check_Glow", "ui::CCheckBox");
+	if nil ~= glow then
 	glow:SetCheck(config.GetUseGlow());
+	end;
 
---	local depth = GET_CHILD(frame, "check_Depth", "ui::CCheckBox");
+	local depth = GET_CHILD(frame, "check_Depth", "ui::CCheckBox");
+	if nil ~= depth then
 	depth:SetCheck(1);
+	end;
 
 	local softParticle = GET_CHILD(frame, "check_SoftParticle", "ui::CCheckBox");
+	if nil ~= softParticle then
 	softParticle:SetCheck(config.GetUseSoftParticle());
+	end;
 
 	local highTexture = GET_CHILD(frame, "check_highTexture", "ui::CCheckBox");
+	if nil ~= highTexture then
 	highTexture:SetCheck(config.GetHighTexture());
+	end;
+
+	local otherPCDamage = GET_CHILD(frame, "check_ShowOtherPCDamageEffect", "ui::CCheckBox");
+	if nil ~= otherPCDamage then
+		otherPCDamage:SetCheck(config.GetOtherPCDamageEffect());
+	end;
 end
 
 function CONFIG_FIRST_OPEN(frame)
@@ -189,12 +209,16 @@ function APPLY_PERFMODE(frame)
 	
 	local parent = frame:GetTopParentFrame();
 	local highTexture = GET_CHILD(parent, "check_highTexture", "ui::CCheckBox");
+	local otherPCDamage = GET_CHILD(parent, "check_ShowOtherPCDamageEffect", "ui::CCheckBox");
 	if 0 == perfType then
 		graphic.EnableHighTexture(0);
+		config.EnableOtherPCDamageEffect(0);
 	else
 		graphic.EnableHighTexture(1);
+		config.EnableOtherPCDamageEffect(1);
 	end
 	highTexture:SetCheck(config.GetHighTexture());
+	otherPCDamage:SetCheck(config.GetOtherPCDamageEffect());
 
 	config.SetAutoAdjustLowLevel(perfType)
 	config.SaveConfig();
@@ -266,6 +290,23 @@ function SET_SLIDE_VAL(frame, ctrlName, txtname, value)
 	rate = math.floor(rate);
 	txt:SetTextByKey("opValue", rate);
 
+end
+
+function SET_SKL_CTRL_CONFIG(frame)
+	local value = config.GetSklCtrlSpd();
+	local slide = GET_CHILD(frame, "sklCtrlSpd", "ui::CSlideBar");
+	slide:SetLevel(value);
+	local txt = GET_CHILD(frame, "sklCtrlSpd_text", "ui::CRichText");
+	local rate = value / 10;
+	rate = math.floor(rate);
+	txt:SetTextByKey("opValue", rate);
+end
+
+function CONFIG_SKL_CTRL_SPD(frame, ctrl, str, num)
+
+	tolua.cast(ctrl, "ui::CSlideBar");
+	config.SetSklCtrlSpd(ctrl:GetLevel());
+	SET_SKL_CTRL_CONFIG(frame);
 end
 
 function CONFIG_SOUNDVOL(frame, ctrl, str, num)
@@ -418,4 +459,4 @@ function UPDATE_TITLE_OPTION(frame)
 	world.UpdateTitleOption();
 
 end
-
+

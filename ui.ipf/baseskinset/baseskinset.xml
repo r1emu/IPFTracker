@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by MintPC (Mi) -->
 <skinset name="Base">
@@ -5696,6 +5696,7 @@
 		<image name="jour_toprank_bg" file="\skin\HUD.tga" imgrect="1632 333 215 82"/>
 		<image name="jour_compen_off" file="\skin\HUD.tga" imgrect="1657 293 44 36"/>
 		<image name="jour_new_item" file="\skin\tooltip_skin_3.tga" imgrect="1458 1596 380 120"/>
+		<image name="jour_new_item1" file="\skin\normal_item_tootip.tga" imgrect="372 0 100 100"/>
 		<image name="jour_new_mapopen" file="\skin\tooltip_skin_3.tga" imgrect="1361 1952  80 80"/>
 	</imagelist>
 	<imagelist category="Chat_Emoticons">
