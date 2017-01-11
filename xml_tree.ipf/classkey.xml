@@ -6159,6 +6159,10 @@
         <Key Name="SIAULIAI_351_HQ1" Value="100256"/>
         <Key Name="REMAINS38_HQ1" Value="100257"/>
         <Key Name="CATACOMB38_2_HQ1" Value="100258"/>
+        <Key Name="KATYN_14_OWL" Value="100360"/>
+        <Key Name="MEILE_NPC" Value="100359"/>
+        <Key Name="REMAIN37_RAYMOND" Value="100357"/>
+        <Key Name="REMAIN38_HUNTER" Value="100358"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Monster">
         <Key Name="MaxHate" Value="6671"/>
@@ -13680,6 +13684,50 @@
         <Key Name="HaveEmoticon_44" Value="100309"/>
         <Key Name="HaveEmoticon_45" Value="100310"/>
         <Key Name="HaveEmoticon_46" Value="100311"/>
+        <Key Name="HadVisited_4730" Value="100313"/>
+        <Key Name="HadVisited_4860" Value="100314"/>
+        <Key Name="HadVisited_4870" Value="100315"/>
+        <Key Name="Hide_2374" Value="100328"/>
+        <Key Name="Hide_2375" Value="100329"/>
+        <Key Name="Hide_2376" Value="100330"/>
+        <Key Name="Hide_2377" Value="100323"/>
+        <Key Name="Hide_2378" Value="100324"/>
+        <Key Name="Hide_2380" Value="100325"/>
+        <Key Name="Hide_2381" Value="100326"/>
+        <Key Name="Hide_2382" Value="100327"/>
+        <Key Name="Reward_ERD_Beetle" Value="100336"/>
+        <Key Name="Reward_ERD_Chafperor" Value="100335"/>
+        <Key Name="Reward_ERD_Corylus" Value="100347"/>
+        <Key Name="Reward_ERD_Echad" Value="100338"/>
+        <Key Name="Reward_ERD_Echad_bow" Value="100341"/>
+        <Key Name="Reward_ERD_Glyquare" Value="100332"/>
+        <Key Name="Reward_ERD_Lemur" Value="100351"/>
+        <Key Name="Reward_ERD_Lizardman" Value="100346"/>
+        <Key Name="Reward_ERD_Moving_trap" Value="100337"/>
+        <Key Name="Reward_ERD_NightMaiden_mage_red" Value="100349"/>
+        <Key Name="Reward_ERD_Sauga_s" Value="100348"/>
+        <Key Name="Reward_ERD_StonOrca" Value="100318"/>
+        <Key Name="Reward_ERD_Tanu" Value="100355"/>
+        <Key Name="Reward_ERD_Tiny_blue" Value="100353"/>
+        <Key Name="Reward_ERD_Tiny_mage_brown" Value="100343"/>
+        <Key Name="Reward_ERD_Upent" Value="100352"/>
+        <Key Name="Reward_ERD_Vesper" Value="100333"/>
+        <Key Name="Reward_ERD_Wolf_statue" Value="100350"/>
+        <Key Name="Reward_ERD_blindlem" Value="100319"/>
+        <Key Name="Reward_ERD_chupacabra_desert" Value="100339"/>
+        <Key Name="Reward_ERD_colimen_brown" Value="100354"/>
+        <Key Name="Reward_ERD_dog_of_king" Value="100320"/>
+        <Key Name="Reward_ERD_groll" Value="100334"/>
+        <Key Name="Reward_ERD_loftlem" Value="100345"/>
+        <Key Name="Reward_ERD_rubblem" Value="100342"/>
+        <Key Name="Reward_ERD_schlesien_claw" Value="100321"/>
+        <Key Name="Reward_ERD_schlesien_darkmage" Value="100344"/>
+        <Key Name="Reward_ERD_schlesien_heavycavarly" Value="100356"/>
+        <Key Name="Reward_ERD_varv" Value="100322"/>
+        <Key Name="Reward_ERD_wolf_statue_mage" Value="100340"/>
+        <Key Name="Reward_d_limestonecave_73_1" Value="100316"/>
+        <Key Name="Reward_d_zachariel_79_1" Value="100331"/>
+        <Key Name="Reward_d_zachariel_79_2" Value="100317"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Account">
         <Key Name="BarrackLayer1_11" Value="32276"/>

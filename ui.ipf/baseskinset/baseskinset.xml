@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by MintPC (Mi) -->
 <skinset name="Base">
@@ -3176,7 +3176,7 @@
 		<skin name="test_keyque_skin" texture="\skin\keynbet.tga">
 			<img name="topleft" imgrect="0 0 110 90"/>
 			<img name="topcore" imgrect="111 0 180 90"/>
-			<img name="topright" imgrect="292 0 114 90"/>
+			<img name="topright" imgrect="292 0 110 90"/>
 			<img name="bodyleft" imgrect="321 466 110 10"/>
 			<img name="bodycore" imgrect="432 466 180 10"/>
 			<img name="bodyright" imgrect="613 466 110 10"/>
@@ -5681,6 +5681,8 @@
 		<image name="chat_party_img" file="\skin\HUD.tga" imgrect="1099 418 40 36"/>
 		<image name="chat_whisper_img" file="\skin\HUD.tga" imgrect="1140 418 40 36"/>
 		<image name="chat_guild_img" file="\skin\HUD.tga" imgrect="935 441 40 36"/>
+	<image name="chat_group_img" file="\skin\HUD.tga" imgrect="1756 792 40 36"/>
+		<image name="chat_system_img" file="\skin\HUD.tga" imgrect="1756 829 40 36"/>
 	</imagelist>
 	<imagelist category="journal_icon">
 		<image name="jour_rank_image" file="\skin\HUD.tga" imgrect="1801 61 86 78"/>
@@ -5796,6 +5798,7 @@
 		<image name="sign_buff" file="\skin\signboard.tga" imgrect="0 380 355 75"/>
 		<image name="sign_gender" file="\skin\signboard.tga" imgrect="0 456 355 75"/>
 		<image name="sign_enchant" file="\skin\signboard.tga" imgrect="0 532 355 75"/>
+		<image name="sign_Appraiser" file="\skin\signboard.tga" imgrect="0 608 355 75"/>
 		<image name="buff_market_title" file="\skin\HUD.tga" imgrect="1745 466 274 76"/>
 		<image name="buff_market_icon" file="\skin\HUD.tga" imgrect="1780 431 34 34"/>
 		<image name="skilltooltip_skill_image_slot" file="\skin\tooltip_skin_3.tga" imgrect="768 1494 150 150"/>
@@ -6511,7 +6514,14 @@
 		<image name="minimap_team" file="\icon\minimap_icon3.tga" imgrect="340 587 80 80"/>
 		<image name="minimap_dungeon" file="\icon\minimap_icon3.tga" imgrect="432 653 80 80"/>
 		<image name="minimap_indun" file="\icon\minimap_icon3.tga" imgrect="432 734 80 80"/>
+		<image name="minimap_1_KEYQUEST" file="\icon\minimap_icon3.tga" imgrect="0 882 84 84"/>
+		<image name="minimap_2_KEYQUEST" file="\icon\minimap_icon3.tga" imgrect="85 882 84 84"/>
+		<image name="minimap_3_KEYQUEST" file="\icon\minimap_icon3.tga" imgrect="170 882 84 84"/>
+		<image name="questinfo_1_KEYQUEST" file="\icon\minimap_icon3.tga" imgrect="219 809 72 72"/>
+		<image name="questinfo_2_KEYQUEST" file="\icon\minimap_icon3.tga" imgrect="293 809 72 72"/>
+		<image name="questinfo_3_KEYQUEST" file="\icon\minimap_icon3.tga" imgrect="255 882 72 72"/>
 		<image name="minimap_Appraisers" file="\icon\minimap_icon3.tga" imgrect="432 815 80 80"/>
+	<image name="minimap_erosion" file="\icon\minimap_icon3.tga" imgrect="432 896 80 80"/>
 	</imagelist>
 	<imagelist category="quest_tags">
 		<image name="quest_tag_1_MAIN" file="\icon\minimap_icon.tga" imgrect="61 31 16 16"/>
