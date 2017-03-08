@@ -21,7 +21,7 @@ function SET_TARGETINFO_TO_PVP_POS()
 	local channel = ui.GetFrame("channel");
 	channel:ShowWindow(0);
 
-	local mapAreaText = ui.GetFrame("mapAreaText");
+	local mapAreaText = ui.GetFrame("mapareatext");
 	mapAreaText:ShowWindow(0);
 
 	local bugreport = ui.GetFrame("bugreport");
@@ -164,4 +164,4 @@ function PVP_BATTLE_START_C(actor)
 
 end
 
-
+
