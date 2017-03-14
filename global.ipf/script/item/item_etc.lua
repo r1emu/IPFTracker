@@ -187,3 +187,51 @@ function DLC_BOX9(pc)
     TxGiveItem(tx, 'steam_Premium_StatReset_1', 1, 'DLC_BOX9');
     local ret = TxCommit(tx);
 end
+
+-- 3
+function SCR_BUFF_ENTER_Premium_Fortunecookie_3(self, buff, arg1, arg2, over)
+	self.MSPD_BM = self.MSPD_BM + 3;
+end
+
+function SCR_BUFF_UPDATE_Premium_Fortunecookie_3(self, buff, arg1, arg2, RemainTime, ret, over)
+    if RemainTime > 1800000 then
+        SetBuffRemainTime(self, buff.ClassName, 1800000)
+    end
+    return 1
+end
+
+function SCR_BUFF_LEAVE_Premium_Fortunecookie_3(self, buff, arg1, arg2, over)
+	self.MSPD_BM = self.MSPD_BM - 3;
+end
+
+-- 4
+function SCR_BUFF_ENTER_Premium_Fortunecookie_4(self, buff, arg1, arg2, over)
+	self.MSPD_BM = self.MSPD_BM + 4;
+end
+
+function SCR_BUFF_UPDATE_Premium_Fortunecookie_4(self, buff, arg1, arg2, RemainTime, ret, over)
+    if RemainTime > 1800000 then
+        SetBuffRemainTime(self, buff.ClassName, 1800000)
+    end
+    return 1
+end
+
+function SCR_BUFF_LEAVE_Premium_Fortunecookie_4(self, buff, arg1, arg2, over)
+	self.MSPD_BM = self.MSPD_BM - 4;
+end
+
+-- 5
+function SCR_BUFF_ENTER_Premium_Fortunecookie_5(self, buff, arg1, arg2, over)
+	self.MSPD_BM = self.MSPD_BM + 5;
+end
+
+function SCR_BUFF_UPDATE_Premium_Fortunecookie_5(self, buff, arg1, arg2, RemainTime, ret, over)
+    if RemainTime > 1800000 then
+        SetBuffRemainTime(self, buff.ClassName, 1800000)
+    end
+    return 1
+end
+
+function SCR_BUFF_LEAVE_Premium_Fortunecookie_5(self, buff, arg1, arg2, over)
+	self.MSPD_BM = self.MSPD_BM - 5;
+end
