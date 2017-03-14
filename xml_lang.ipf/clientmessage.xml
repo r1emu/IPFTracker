@@ -4996,6 +4996,8 @@
 		<Class ClassID="60325" ClassName="PUBLIC_GET_QUESTITEM" Data=" 획득"/>
 		<Class ClassID="60326" ClassName="ORCHARD_34_3_SQ_OBJ_9" Data="독지대를 해독했습니다!"/>
 		<Class ClassID="60327" ClassName="RANDBOX_GIMMICK_SEL_1_CANT" Data="상자를 잘 못 건드려서 상자가 사라집니다.{nl}다른 상자를 찾아보세요"/>
+		<Class ClassID="67243" ClassName="GT_INCOUNT_COMPARE_1" Data="파티 구성원 중, 남은 입장 횟수가 0인 파티원이 있습니다{nl}롤로팬서 구간까지 도전할 수 있습니다"/>
+		<Class ClassID="67244" ClassName="GT_INCOUNT_COMPARE_2" Data="파티 구성원 중, 남은 입장 횟수가 0인 파티원이 있습니다{nl}롤로팬서 구간까지 도전할 수 있습니다"/>
 		<Class ClassID="70001" ClassName="FARM49_2_MQ06_DRAW" Data="우물 물을 긷는 중"/>
 		<Class ClassID="70002" ClassName="FARM49_2_MQ06_SUCCESS" Data="우물 물을 길었습니다.{nl}옆 물통에서 물을 뜨세요."/>
 		<Class ClassID="70003" ClassName="FARM49_2_MQ06_ALREADY" Data="이미 우물 물을 길었습니다.{nl}옆 물통에서 물을 뜨세요."/>
