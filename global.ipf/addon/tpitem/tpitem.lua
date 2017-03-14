@@ -1,4 +1,4 @@
-﻿function TP_SHOP_DO_OPEN(frame, msg, shopName, argNum)
+function TP_SHOP_DO_OPEN(frame, msg, shopName, argNum)
 	
 	ui.CloseAllOpenedUI();
 	ui.OpenIngameShopUI();	-- Tpshop을 열었을때에 Tpitem에 대한 정보와 NexonCash 정보 등을 서버에 요청한다.
@@ -15,6 +15,9 @@
 		banner:SetUserValue("NUM_BANNER", 0);
 		banner:StopUpdateScript("_PROCESS_ROLLING_BANNER");
 	else
+	        local banner = GET_CHILD_RECURSIVELY(frame,"banner");	
+		banner:SetImage("market_event_test");
+		
 		local haveStaticNCbox = GET_CHILD_RECURSIVELY(frame,"haveStaticNCbox");	
 		haveStaticNCbox:ShowWindow(0);
 		
