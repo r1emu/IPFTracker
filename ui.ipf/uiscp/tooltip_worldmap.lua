@@ -28,8 +28,15 @@ function UPDATE_WORLDMAP_TOOLTIP(frame, mapName, numarg)
 		local ctrlSet = frame:CreateControlSet("worldmap_tooltip", "MAP_" .. i, ui.LEFT, ui.TOP, 0, 0, 0, 0);
 		local mapNameFont = MAPNAME_FONT_CHECK(drawCls.QuestLevel)
 
+		local ratestr = ""
+		if 0 ~= MAP_USE_FOG(drawCls.ClassName) and session.GetMapFogRevealRate(drawCls.ClassName) >= 100 then
+			ratestr = " {img minimap_complete 24 24}"
+		end
+
 		local mapnameCtrl = ctrlSet:GetChild("mapname");
-		mapnameCtrl:SetTextByKey("text", mapNameFont..drawCls.Name);
+		mapnameCtrl:SetTextByKey("text", mapNameFont..drawCls.Name..ratestr);
+		
+
 		local drawMapName = drawCls.ClassName;
 		local pic = GET_CHILD(ctrlSet, "map", "ui::CPicture");
 		local mapimage = ui.GetImage(drawMapName .. "_fog");
@@ -111,7 +118,7 @@ function WORLDMAP_TOOLTIP_POSSIBLE_QUESTLIST(frame, mapName, numarg, ctrlSet, dr
     end
     for index = 0, questCnt-1 do
     	local questIES = GetClassByIndexFromList(questClsList, index);
-    	if questIES.StartMap == drawCls.ClassName and questIES.PossibleUI_Notify ~= 'NO' and questIES.QuestMode ~= 'MAIN' and questIES.Level ~= 9999 and questIES.Lvup ~= -9999 and questIES.QuestStartMode ~= 'NPCENTER_HIDE' then
+    	if questIES.StartMap == drawCls.ClassName and questIES.PossibleUI_Notify ~= 'NO' and questIES.QuestMode ~= 'MAIN' and questIES.QuestMode ~= 'KEYITEM' and questIES.Level ~= 9999 and questIES.Lvup ~= -9999 and questIES.QuestStartMode ~= 'NPCENTER_HIDE' then
     		local result = SCR_QUEST_CHECK_C(pc, questIES.ClassName)
     		if result == 'POSSIBLE' then
     		    local picture = ctrlSet:CreateOrGetControl('picture', "questListBoxIcon"..viewCount, subX, subY + (viewCount - 1)*20, 20, 20);

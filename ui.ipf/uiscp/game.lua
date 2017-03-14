@@ -1254,25 +1254,25 @@ function GET_ITEM_TOOLTIP_SKIN(cls)
 	return "Item_tooltip_consumable";
 end
 
-function GET_ITEM_BG_PICTURE_BY_GRADE(rank)
+function GET_ITEM_BG_PICTURE_BY_GRADE(rank, needAppraisal)
 
-	if rank == nil then
-		return "None";
-	end
-
+	local pic = 'None'
 	if rank == 1 then
-		return "one_two_star_item_bg";
+		pic = "one_two_star_item_bg";
 	elseif rank == 2 then
-		return "three_star_item_bg";
+		pic ="three_star_item_bg";
 	elseif rank == 3 then
-		return "four_star_item_bg";
+		pic = "four_star_item_bg";
 	elseif rank == 4 then
-		return "five_item_bg";
+		pic = "five_item_bg";
 	elseif rank == 0 then
 		return "premium_item_bg";
 	end
 
-	return "None";
+	if needAppraisal == 1 then
+		pic = pic..'2';
+	end
+	return pic;
 end
 
 function GET_ITEM_BG_PICTURE_BY_ITEMLEVEL(itemlv) 
@@ -1336,12 +1336,24 @@ function GET_FULL_GRADE_NAME(itemCls, gradeSize)
 	return GET_FULL_NAME(itemCls) .. "{nl}" .. gradeTxt;
 end
 
-function GET_FULL_NAME(item, useNewLine)
-
+function GET_FULL_NAME(item, useNewLine, isEquiped)
+	if isEquiped == nil then
+		isEquiped = 0;
+	end
 	local ownName = GET_NAME_OWNED(item);
-
 	local reinforce_2 = TryGetProp(item, "Reinforce_2");
 	local isHaveLifeTime = TryGetProp(item, "LifeTime");
+	local pc = GetMyPCObject();
+	local bonusReinf = TryGetProp(pc, 'BonusReinforce');
+	local ignoreReinf = TryGetProp(pc, 'IgnoreReinforce');
+	if bonusReinf ~= nil then
+		if TryGetProp(item, 'EquipGroup') == 'SubWeapon' and isEquiped > 0 then
+			reinforce_2 = reinforce_2 + bonusReinf;
+		end
+	end
+	if isEquiped > 0 and ignoreReinf == 1 then
+		reinforce_2 = 0;
+	end	
 	
 	if 0 ~= isHaveLifeTime then
 		ownName = string.format("{img test_cooltime 30 30 }%s", ownName);
@@ -3229,6 +3241,11 @@ function SCR_GEM_ITEM_SELECT(argNum, luminItem, frameName)
 		end
 	end
 
+	if IS_ENABLE_EQUIP_GEM(itemobj, gemClass.ClassID) == false then
+		ui.SysMsg(ScpArgMsg("ValidDupEquipGemBy{VALID_CNT}", "VALID_CNT", VALID_DUP_GEM_CNT));
+		return;
+	end
+
 	local cnt = 0;
 	for i = 0 , socketCnt - 1 do
 		local socketName = "SOCKET_" .. i;
@@ -4123,16 +4140,7 @@ function ON_RIDING_VEHICLE(onoff)
 		end
 
 		local ret = control.RideCompanion(onoff);
-
-		local isSit = control.IsRestSit();
-
-		if onoff == 1 and isSit == true then
-			ui.SysMsg(ClMsg('SitState_Vehicle'));
-			return;
-		end
-
-		if onoff == 1 and ret == false then
-			--ui.SysMsg(ClMsg('DistanceIsTooFar'));
+		if ret == false then
 			return;
 		end
 	else

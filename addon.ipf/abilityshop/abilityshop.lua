@@ -123,7 +123,7 @@ function GET_ABILITY_LEARN_COST(pc, groupClass, abilClass, destLv)
 	if true == session.loginInfo.IsPremiumState(ITEM_TOKEN) then
 		totalTime = 0;
 	end
-
+	
 	return price, totalTime
 end
 
@@ -143,7 +143,7 @@ function SET_ABILITY_TIME_CTRL(timeCtrl, groupClass, totalTime)
 	local hour = math.floor( totalTime / 60 );
 	local min = totalTime % 60;
 	if hour > 0 then
-		timeCtrl:SetText("".. hour ..ScpArgMsg("Auto_SiKan_") .. min .. ScpArgMsg("Auto_Bun_Soyo"));
+		timeCtrl:SetText("".. hour ..ScpArgMsg("Auto_SiKan_") .. min .. ScpArgMsg("Auto_Bun_Soyo")); 
 	else
 		if min < 1 then
 
@@ -354,12 +354,18 @@ function MAKE_ABILITYSHOP_ICON(frame, pc, grid, abilClass, groupClass, posY)
 		classCtrl:SetSkinName("test_skin_01_btn_cursoron");
 	end
 	
-		
-	if isMax == 1 then
-		local timeCtrl = GET_CHILD(classCtrl, "abilTime", "ui::CRichText");	
-		local levelCtrl = GET_CHILD(classCtrl, "abilLevel", "ui::CRichText");	
-		timeCtrl:SetText(ScpArgMsg("Auto_{@st}_ChoeKo_LeBel_MaSeuTeo!"));	
-		levelCtrl:SetText("Lv.".. groupClass.MaxLevel);
+	local timeCtrl = GET_CHILD(classCtrl, "abilTime", "ui::CRichText");	
+	local levelCtrl = GET_CHILD(classCtrl, "abilLevel", "ui::CRichText");	
+
+	local diffAbilTimeHeight = timeCtrl:GetHeight() - 20;
+	if diffAbilTimeHeight > 0 then
+		descCtrl:Move(0, diffAbilTimeHeight);
+		bg3:Move(0, diffAbilTimeHeight);
+	end
+
+	if isMax == 1 then		
+		timeCtrl:SetText(ScpArgMsg("Auto_{@st}_ChoeKo_LeBel_MaSeuTeo!"));
+		levelCtrl:SetText("Lv.".. groupClass.MaxLevel);	
 	end
 	
 	local priceSize = 60;
@@ -596,8 +602,13 @@ function GET_ABILITY_PRICE(price, groupClass, abilClass, abilLv)
 --	else
 --	    price = price - (price * 0.2)
 	end
+	
+  if (GetServerNation() == "KOR" and GetServerGroupID() == 9001) then --큐폴 서버
+    price = price - (price * 0.5)
+  end
+  
 	price = math.floor(price);
-
+	
 	return price;
 end
 

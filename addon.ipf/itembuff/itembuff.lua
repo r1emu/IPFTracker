@@ -1,6 +1,7 @@
 --itembuff.lua
 
 function ITEMBUFF_ON_INIT(addon, frame)
+	MAX_BYTE_OF_TITLE = 40;
 end
 
 function ITEMBUFF_SET_SKILLTYPE(frame, skillName, skillLevel, titleName)
@@ -45,8 +46,12 @@ function ITEM_BUFF_CREATE_STORE(frame)
 		return;
 	end
 
-	if string.len( edit:GetText() ) == 0 then
+	local titleLen = ui.GetCharNameLength(edit:GetText());
+	if titleLen < 1 then
 		ui.MsgBox(ClMsg("InputTitlePlease"));
+		return;
+	elseif titleLen > MAX_BYTE_OF_TITLE then
+		ui.MsgBox(ScpArgMsg("ShopNameMustLongerThen{ENG_LEN}{KOR_LEN}", "ENG_LEN", MAX_BYTE_OF_TITLE, "KOR_LEN", MAX_BYTE_OF_TITLE / 2));
 		return;
 	end
 
@@ -54,6 +59,12 @@ function ITEM_BUFF_CREATE_STORE(frame)
 	local sklName = frame:GetUserValue("SKILLNAME");
 	local sklLevel = frame:GetUserIValue("SKILLLEVEL");
 	local dummyInfo = session.autoSeller.CreateToGroup("ItemBuffStore");
+
+	if sklName == 'Appraiser_Apprise' and price > APPRRISE_MAX_UNIT_MONEY then
+		ui.MsgBox(ScpArgMsg("ApprisePriceMustLowerThan{PRICE}", "PRICE", APPRRISE_MAX_UNIT_MONEY));
+		return;
+	end
+
 	dummyInfo.classID = GetClass("Skill", sklName).ClassID;
 	dummyInfo.price = price;
 	dummyInfo.level = sklLevel;
@@ -85,7 +96,6 @@ function ITEM_BUFF_CREATE_STORE(frame)
 		ui.SysMsg(ClMsg("MaterialItemIsLock"));
 		return;
 	end
-
 	session.autoSeller.RequestRegister("ItemBuffStore", storeGroupName, edit:GetText(), sklName);
 end
 
@@ -102,13 +112,15 @@ function OPEN_MY_ITEMBUFF_UI(groupName, sellType, handle)
 	elseif "Alchemist_Roasting" == sklName then
 		ITEMBUFFGEMROASTING_UI_COMMON(groupName, sellType, handle);
 		return;
+	elseif sklName == 'Appraiser_Apprise' then
+		APPRAISAL_PC_UI_COMMON(groupName, sellType, handle);
+		return;
 	end
 
 	OPEN_ITEMBUFF_UI_COMMON(groupName, sellType, handle);
 end
 
 function OPEN_ITEMBUFF_UI(groupName, sellType, handle)
-
 	local groupInfo = session.autoSeller.GetByIndex(groupName, 0);
 	if groupInfo == nil then
 		return;
@@ -129,6 +141,9 @@ function OPEN_ITEMBUFF_UI(groupName, sellType, handle)
 		REGISTERR_LASTUIOPEN_POS(frame);
 		frame:RunUpdateScript("LASTUIOPEN_CHECK_PC_POS", 0.1);
 		return
+	elseif sklName == 'Appraiser_Apprise' then
+		APPRAISAL_PC_UI_COMMON(groupName, sellType, handle);
+		return;
 	end
 
 	OPEN_ITEMBUFF_UI_COMMON(groupName, sellType, handle);
@@ -168,17 +183,19 @@ function OPEN_ITEMBUFF_UI_COMMON(groupName, sellType, handle)
 	open:ShowWindow(1);
 	open:SetUserValue("GroupName", groupName);
 
-	-- 상점 이후 타이틀을 변경한다.
+	local statusTab = open:GetChild('statusTab');
+	ITEMBUFF_SHOW_TAB(statusTab, handle);
+
 	local sklName = GetClassByType("Skill", groupInfo.classID).ClassName;
 	local armor = open:GetChild("Squire_ArmorTouchUp");
 	local Weapon = open:GetChild("Squire_WeaponTouchUp");
 	
 	if 'Squire_WeaponTouchUp' == sklName then 
-		-- 장비손질과 같으면, 아머를 안보여주고
+
 		armor:SetVisible(0);
 		Weapon:SetVisible(1);
 	else
-		-- 같지 않으면 아머타이틀을 보여준다
+
 		armor:SetVisible(1);
 		Weapon:SetVisible(0);
 	end
@@ -188,7 +205,7 @@ function OPEN_ITEMBUFF_UI_COMMON(groupName, sellType, handle)
 	open:SetUserValue("HANDLE", handle);
 
 	local repairBox = open:GetChild("repair");
-	-- 주인만 판매 가격을 보여주자
+
 	if session.GetMyHandle() == handle then
 		local money = repairBox:GetChild("reqitemMoney");
 		money:SetTextByKey("txt", groupInfo.price);
@@ -218,4 +235,12 @@ function ITEM_BUFF_UI_CLOSE(handle)
 	end
 
 	ui.CloseFrame("itembuffopen");	
+end
+
+function ITEMBUFF_SHOW_TAB(tabCtrl, handle)
+	if handle == session.GetMyHandle() then
+		tabCtrl:ShowWindow(1);
+	else
+		tabCtrl:ShowWindow(0);
+	end
 end

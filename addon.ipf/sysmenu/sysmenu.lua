@@ -18,14 +18,21 @@ function SYSMENU_ON_INIT(addon, frame)
 	HIDE_CHILD(statusBtn, 'notice');
 	HIDE_CHILD(statusBtn, 'noticetext');
 	frame:EnableHideProcess(1);
+
 end
 
 function SYSMENU_ON_JOB_CHANGE(frame)
 	SYSMENU_CHECK_HIDE_VAR_ICONS(frame);
+	
+	--"SYSMENU_CHANGED" Î©îÏãúÏßÄ Î≥¥ÎÇ¥Í∏∞ ÎåÄÏã†.
+	SYSMENU_JOYSTICK_ON_MSG();
 end
 
 function SYSMENU_MYPC_GUILD_JOIN(frame)
-	SYSMENU_CHECK_HIDE_VAR_ICONS(frame);
+	SYSMENU_CHECK_HIDE_VAR_ICONS(frame);	
+	
+	--"SYSMENU_CHANGED" Î©îÏãúÏßÄ Î≥¥ÎÇ¥Í∏∞ ÎåÄÏã†.
+	SYSMENU_JOYSTICK_ON_MSG();
 end
 
 function SYSMENU_ON_MSG(frame, msg, argStr, argNum)
@@ -98,7 +105,7 @@ function SYSMENU_CHECK_HIDE_VAR_ICONS(frame)
 	-- frame:CreateControl("")
 	-- print(status:GetWidth());
 
-	-- 		<button name="grimoire" rect="0 0 44 44" margin="520 0 0 10" layout_gravity="center bottom" LBtnUpScp="ui.ToggleFrame(&apos;grimoire&apos;)" MouseOffAnim="btn_mouseoff_2" MouseOnAnim="btn_mouseover_2" clickrgn="0 0 44 44" clicksound="button_click_2" image="sysmenu_card" oversound="button_over" skin="textbutton" textalign="center center" texttooltip="{@st59}±◊∏Æ∏æÓ{/}"/>
+	-- 		<button name="grimoire" rect="0 0 44 44" margin="520 0 0 10" layout_gravity="center bottom" LBtnUpScp="ui.ToggleFrame(&apos;grimoire&apos;)" MouseOffAnim="btn_mouseoff_2" MouseOnAnim="btn_mouseover_2" clickrgn="0 0 44 44" clicksound="button_click_2" image="sysmenu_card" oversound="button_over" skin="textbutton" textalign="center center" texttooltip="{@st59}Í∑∏Î¶¨Î™®Ïñ¥{/}"/>
 	-- CHECK_CTRL_OPENCONDITION(frame, "necronomicon", "necronomicon");	
 	-- CHECK_CTRL_OPENCONDITION(frame, "grimoire", "grimoire");
 
@@ -132,7 +139,7 @@ function SYSMENU_CREATE_VARICON(frame, status, ctrlName, frameName, imageName, s
 	btn:SetTextTooltip("{@st59}" .. tooltipString);
 	btn:SetEventScript(ui.LBUTTONUP, string.format("ui.ToggleFrame('%s')", frameName));
 	return startX;
-	----- 		<button name="grimoire" rect="0 0 44 44" margin="520 0 0 10" layout_gravity="center bottom" LBtnUpScp="ui.ToggleFrame(&apos;grimoire&apos;)" MouseOffAnim="btn_mouseoff_2" MouseOnAnim="btn_mouseover_2" clickrgn="0 0 44 44" clicksound="button_click_2" image="sysmenu_card" oversound="button_over" skin="textbutton" textalign="center center" texttooltip="{@st59}±◊∏Æ∏æÓ{/}"/>
+	----- 		<button name="grimoire" rect="0 0 44 44" margin="520 0 0 10" layout_gravity="center bottom" LBtnUpScp="ui.ToggleFrame(&apos;grimoire&apos;)" MouseOffAnim="btn_mouseoff_2" MouseOnAnim="btn_mouseover_2" clickrgn="0 0 44 44" clicksound="button_click_2" image="sysmenu_card" oversound="button_over" skin="textbutton" textalign="center center" texttooltip="{@st59}Í∑∏Î¶¨Î™®Ïñ¥{/}"/>
 
 end
 
@@ -361,8 +368,9 @@ end
 
 function SYSMENU_LOSTFOCUS_SCP(frame, ctrl, argStr, argNum)
 
+
 	--[[
-	∏ﬁ¥∫ ∞Ëº” »∞º∫»≠ µ«æÓ¿÷µµ∑œ «ÿº≠ ¡÷ºÆ√≥∏Æ
+	Î©îÎâ¥ Í≥ÑÏÜç ÌôúÏÑ±Ìôî ÎêòÏñ¥ÏûàÎèÑÎ°ù Ìï¥ÏÑú Ï£ºÏÑùÏ≤òÎ¶¨
 
 	local focusFrame = ui.GetFocusFrame();
 	if focusFrame ~= nil then
@@ -548,6 +556,18 @@ function TOGGLE_CARD_REINFORCE(frame)
 	end
 end
 
+
+function TOGGLE_CERTIFICATE_REINFORCE(frame)		-- This is registered in restquickslotinfo.xml
+	local rframe = ui.GetFrame("reinforce_by_mix_certificate");
+	if rframe:IsVisible() == 1 then
+		rframe:ShowWindow(0);
+	else
+		local title = rframe:GetChild("title");
+		title:SetTextByKey("value", ClMsg("CertificateReinforce"));
+		rframe:ShowWindow(1);
+	end
+end
+
 function TOGGLE_GEM_REINFORCE(frame)
 	local rframe = ui.GetFrame("reinforce_by_mix");
 	if rframe:IsVisible() == 1 then
@@ -558,6 +578,4 @@ function TOGGLE_GEM_REINFORCE(frame)
 		rframe:ShowWindow(1);
 	end
 end
-
-
 

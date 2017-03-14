@@ -1462,10 +1462,10 @@ function SCR_POSSIBLE_UI_OPEN_CHECK(pc, questIES, subQuestCount, chType)
     elseif (chType == 'ZoneMap' or chType == 'NPCMark') and abandonCheck == 'ABANDON/LIST' then
         ret = "OPEN"
         return ret, subQuestCount
-    elseif questIES.QuestMode ~= "MAIN" and subQuestCount == 0 and result == 'POSSIBLE' and (questIES.StartMap == GetZoneName(pc) or table.find(SCR_STRING_CUT(questIES.StartMapListUI), GetZoneName(pc)) > 0) then
+    elseif questIES.QuestMode ~= "MAIN" and questIES.QuestMode ~= "KEYITEM" and subQuestCount == 0 and result == 'POSSIBLE' and (questIES.StartMap == GetZoneName(pc) or table.find(SCR_STRING_CUT(questIES.StartMapListUI), GetZoneName(pc)) > 0) then
         ret = "OPEN"
         return ret, subQuestCount + 1
-    elseif questIES.QuestMode ~= "MAIN" and questIES.Check_QuestCount > 0 and zonecheckFun ~= nil and zonecheckFun(GetZoneName(pc), questIES.StartMap) == 'YES' then
+    elseif questIES.QuestMode ~= "MAIN" and questIES.QuestMode ~= "KEYITEM" and questIES.Check_QuestCount > 0 and zonecheckFun ~= nil and zonecheckFun(GetZoneName(pc), questIES.StartMap) == 'YES' then
         local sObj = GetSessionObject(pc, "ssn_klapeda")
         local result1 = SCR_QUEST_CHECK_MODULE_QUEST(pc, questIES, sObj)
         if result1 == "YES" then
@@ -1534,4 +1534,42 @@ function GET_COMMAED_STRING(num) -- 백억정도까진 가능합니다
 	end
 	retStr = string.format("%d", num)..retStr;
 	return retStr;
+end
+
+function IS_ENABLE_EQUIP_GEM(targetItem, gemType)
+	if targetItem == nil or gemType == nil then
+		return false;
+	end
+
+	local maxSocket = TryGetProp(targetItem, 'MaxSocket');
+	if maxSocket < VALID_DUP_GEM_CNT then
+		return true;
+	end
+	
+	local curCnt = 0;
+	for i = 0, maxSocket - 1 do
+		if TryGetProp(targetItem, 'Socket_Equip_'..i) == gemType then
+			curCnt = curCnt + 1;
+		end
+	end
+
+	if curCnt + 1 > VALID_DUP_GEM_CNT then
+		return false;
+	end
+
+	return true;
+end
+
+function IS_ITEM_IN_LIST(list, item)
+	if list == nil or item == nil or #list < 1 then
+		return false;
+	end
+
+	for i = 1, #list do
+		if list[i] == item then
+			return true;
+		end
+	end
+
+	return false;
 end

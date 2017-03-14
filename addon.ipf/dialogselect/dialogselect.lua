@@ -38,7 +38,7 @@ function DIALOGSELECT_ITEM_ADD(frame, msg, argStr, argNum)
 	local ItemBtn		= frame:GetChild(controlName);
 	local ItemBtnCtrl	= tolua.cast(ItemBtn, 'ui::CButton');
 	local locationUI = DialogSelect_offsetY - argNum * 37 - 10;
-
+	
 	ItemBtnCtrl:SetGravity(ui.CENTER_HORZ, ui.TOP);
     
 	if questRewardBox ~= nil then
@@ -78,20 +78,21 @@ function DIALOGSELECT_ITEM_ADD(frame, msg, argStr, argNum)
 				frameHeight = height + offsetEx + 50;	
 				ItemBtnCtrl:SetOffset(0, height + offsetEx);
 			end
-		end;		
+		end
+
 		frame:Resize(600, frameHeight + 10);			
 		frame:ShowWindow(1);	
 		
 	else
 		ItemBtnCtrl:SetOffset(0, (argNum-1) * 40 + 40);
-		frame:Resize(600, argNum * 40 + 90);
+		frame:Resize(600, (argNum + 1) * 40 + 10);		
         frame:SetOffset(frame:GetX(),  locationUI);
 	end
 
 	ItemBtnCtrl:SetEventScript(ui.LBUTTONDOWN, 'control.DialogSelect(' .. argNum .. ')');
 	ItemBtnCtrl:ShowWindow(1);
 	ItemBtnCtrl:SetText('{s18}{b}{#2f1803}'..argStr);
-  frame:Update()
+	frame:Update();
 end
 
 
@@ -203,6 +204,7 @@ end
 function DIALOGSELECT_ON_MSG(frame, msg, argStr, argNum)
 	frame:Invalidate();
 	frame:SetOffset(frame:GetX(),frame:GetY())
+
     if  msg == 'DIALOG_CHANGE_SELECT'  then
 		for i = 1, 11 do
 			local childName = 'item' .. i .. 'Btn'
@@ -252,16 +254,19 @@ function DIALOGSELECT_ON_MSG(frame, msg, argStr, argNum)
 		DialogSelect_Type = 0;
 		DIALOGSELECT_ITEM_ADD(frame, msg, argStr, argNum);
 
+		local ItemBtn = frame:GetChild('item1Btn');
+		local itemWidth = ItemBtn:GetWidth();
+		local x, y = GET_SCREEN_XY(ItemBtn,itemWidth/2.5);		
+
 		local questRewardBox = frame:GetChild('questreward');
 		if questRewardBox ~= nil then
 			argNum = argNum - 1;
+			
+			-- questreward가 있는 경우, DIALOGSELECT_ITEM_ADD 함수에서 버튼의 layout_gravity가 ui.TOP으로 바뀌면서
+			-- GET_SCRREN_XY의 반환 값에 questreward가 반영되어 계산됨.
+			y = y - questRewardBox:GetY();
 		end
 		DialogSelect_count = argNum;
-
-		local ItemBtn = frame:GetChild('item1Btn');
-		local itemWidth = ItemBtn:GetWidth();
-		local x, y = GET_SCREEN_XY(ItemBtn,itemWidth/2.5);
-
 		DialogSelect_index = 1;
 
 		mouse.SetPos(x,y);
@@ -274,7 +279,7 @@ function DIALOGSELECT_ON_MSG(frame, msg, argStr, argNum)
 		ui.CloseFrame(frame:GetName());
 		DialogSelect_index = 0;
 		DialogSelect_count = 0;
-		mouse.SetHidable(1);
+		mouse.SetHidable(1);	
 
 	elseif msg == 'DIALOGSELECT_UP' then
 		DialogSelect_index = DialogSelect_index - 1;
@@ -346,7 +351,7 @@ function MAKE_REWARD_ITEM_CTRL(box, cls, y)
 	local job = SCR_JOBNAME_MATCHING(JobName)
 	local index = 0
 	local pc = GetMyPCObject();
-
+	
 
 	local isItem = 0;
 

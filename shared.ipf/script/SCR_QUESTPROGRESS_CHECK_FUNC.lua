@@ -257,20 +257,20 @@ function IS_SELECTED_JOB(pc, questname, scriptInfo)
 		etcObj = GetMyEtcObject();
 		
 	end
-
-
-    if IS_SEASON_SERVER(pc) == 'YES' then
-        local temp
-        local totalRank
-        if IsServerSection(pc) == 1 then
-            temp, totalRank = GetJobGradeByName(pc, pc.JobName);
-        else
-            totalRank = session.GetPcTotalJobGrade()
-        end
-        if totalRank >= 7 then
-            return 'NO'
-        end
-    end
+    
+    
+--    if IS_SEASON_SERVER(pc) == 'YES' then
+--        local temp
+--        local totalRank
+--        if IsServerSection(pc) == 1 then
+--            temp, totalRank = GetJobGradeByName(pc, pc.JobName);
+--        else
+--            totalRank = session.GetPcTotalJobGrade()
+--        end
+--        if totalRank >= 7 then
+--            return 'NO'
+--        end
+--    end
 
 	local jobclassid = 0
 
@@ -361,7 +361,7 @@ function IS_POSSIBLE_HIDDEN_JOB(pc, questname, scriptInfo)
         local selct_classlist = GetClassByNameFromList(classlist, scriptInfo[2])
         if selct_classlist ~= nil then
             if selct_classlist.HiddenJob == "YES" then
-                if etcObj["HiddenJob_"..scriptInfo[2]] == 300 then
+                if etcObj["HiddenJob_"..scriptInfo[2]] == 300 or (GetServerNation() == 'KOR' and GetServerGroupID() == 9001 and scriptInfo[2] == 'Char3_13') then
                     return "YES"
                 end
             end

@@ -1,4 +1,4 @@
-
+﻿
 function QUEST_ON_INIT(addon, frame)
 	addon:RegisterMsg('GAME_START', 'UPDATE_ALLQUEST');
 	addon:RegisterMsg('QUEST_UPDATE', 'UPDATE_ALLQUEST');
@@ -11,6 +11,8 @@ function QUEST_ON_INIT(addon, frame)
 	addon:RegisterMsg('CUSTOM_QUEST_DELETE', 'ON_CUSTOM_QUEST_DELETE');
 	addon:RegisterMsg('MYPC_PARTY_JOIN', 'QUEST_MYPC_PARTY_JOIN');
 	addon:RegisterMsg("PARTY_PROPERTY_UPDATE", "QUEST_PARTY_PROPERTY_UPDATE");
+
+	addon:RegisterMsg('PARTY_UPDATE', "ON_PARTY_UPDATE_SHARED_QUEST")
 	
 end
 
@@ -409,10 +411,14 @@ function SET_QUEST_LIST_SET(frame, questGbox, posY, ctrlName, questIES, result, 
 		Quest_Ctrl:SetSkinName('test_mainquest_skin');
 	elseif questIES.QuestMode == 'SUB' then
 		Quest_Ctrl:SetSkinName('test_subquest_skin');
+	elseif questIES.PeriodInitialization ~= "None" then -- 일일 퀘스트
+		Quest_Ctrl:SetSkinName('test_dayquest_skin');
 	elseif questIES.QuestMode == 'REPEAT' then
 		Quest_Ctrl:SetSkinName('test_repeatquest_skin');
 	elseif questIES.QuestMode == 'PARTY' then
 		Quest_Ctrl:SetSkinName('test_partyquest_skin');
+	elseif questIES.QuestMode == 'KEYITEM' then
+		Quest_Ctrl:SetSkinName('test_keyque_skin');
 	end
 
 	QUEST_CTRL_UPDATE_PARTYINFO(Quest_Ctrl, questIES);
@@ -859,7 +865,7 @@ function QUEST_ABANDON_RESTARTLIST_CHECK(questIES, sObj_main)
 		return nil;
 	end
     local questAutoIES = GetClass('QuestProgressCheck_Auto',questIES.ClassName)
-    if sObj_main[questIES.ClassName] == QUEST_ABANDON_VALUE or sObj_main[questIES.ClassName] == QUEST_FAIL_VALUE or sObj_main[questIES.ClassName] == QUEST_SYSTEMCANCEL_VALUE then
+    if (sObj_main[questIES.ClassName] == QUEST_ABANDON_VALUE or sObj_main[questIES.ClassName] == QUEST_FAIL_VALUE or sObj_main[questIES.ClassName] == QUEST_SYSTEMCANCEL_VALUE) and questIES.QuestMode ~= 'KEYITEM'  then
         local trackInfo = SCR_STRING_CUT(questAutoIES.Track1)
         if trackInfo[1] == 'SPossible' or (trackInfo[1] == 'SProgress' and questAutoIES.Possible_NextNPC == 'PROGRESS') or (trackInfo[1] == 'SSuccess' and questAutoIES.Possible_NextNPC == 'SUCCESS') then
             --???? ???????? ???? ????????? ??????? ???
@@ -923,6 +929,8 @@ end
 
 function CANCEL_SHARE_QUEST_WITH_PARTY(parent, ctrlSet)
 	party.ReqChangeMemberProperty(PARTY_NORMAL, "Shared_Quest", 0);
+	party.ReqChangeMemberProperty(PARTY_NORMAL, "Shared_Quest", -1);
+
 	local gbox = parent:GetParent();
 	gbox:RunUpdateScript("QUEST_GBOX_UPDATE_PARTY_PROP");
 	local questframe = parent:GetTopParentFrame();
@@ -932,6 +940,7 @@ end
 function SHARE_QUEST_WITH_PARTY(parent, ctrlSet)
 	local clsID = parent:GetUserIValue("QUEST_CLASSID");
 	party.ReqChangeMemberProperty(PARTY_NORMAL, "Shared_Quest", clsID);
+	REQUEST_SHARED_QUEST_PROGRESS(clsID)
 
 	local gbox = parent:GetParent();
 	gbox:RunUpdateScript("QUEST_GBOX_UPDATE_PARTY_PROP");	
@@ -970,6 +979,7 @@ function CHECK_PARTY_QUEST_DELETE(frame, questID)
 	local myObj = GetIES(myInfo:GetObject());
 	if questID == myObj.Shared_Quest then
 		party.ReqChangeMemberProperty(PARTY_NORMAL, "Shared_Quest", questID);
+		REQUEST_SHARED_QUEST_PROGRESS(questID)
 	end
 
 end
@@ -987,6 +997,7 @@ function QUEST_MYPC_PARTY_JOIN(frame)
 			local clsID = ctrlSet:GetUserIValue("QUEST_CLASSID");
 			if clsID > 0 then
 				party.ReqChangeMemberProperty(PARTY_NORMAL, "Shared_Quest", clsID);
+				REQUEST_SHARED_QUEST_PROGRESS(clsID)
 				local questinfoset2 = ui.GetFrame("questinfoset_2");
 				local questGbox = questinfoset2:GetChild('member');
 				questGbox:RunUpdateScript("QUEST_GBOX_UPDATE_PARTY_PROP");
@@ -1026,15 +1037,54 @@ function CHECK_PARTY_QUEST_ADD(frame, questID)
 			end
 
 			party.ReqChangeMemberProperty(PARTY_NORMAL, "Shared_Quest", questID);
+			REQUEST_SHARED_QUEST_PROGRESS(questID)
 			local questinfoset2 = ui.GetFrame("questinfoset_2");
 			local questGbox = questinfoset2:GetChild('member');
 			questGbox:RunUpdateScript("QUEST_GBOX_UPDATE_PARTY_PROP");
 		end
 	else
 		party.ReqChangeMemberProperty(PARTY_NORMAL, "Shared_Quest", questID);
+		REQUEST_SHARED_QUEST_PROGRESS(questID)
 		local questinfoset2 = ui.GetFrame("questinfoset_2");
 		local questGbox = questinfoset2:GetChild('member');
 		questGbox:RunUpdateScript("QUEST_GBOX_UPDATE_PARTY_PROP");	
+	end
+end
+
+function REQUEST_SHARED_QUEST_PROGRESS(questClsID)
+	party.ReqChangeMemberProperty(PARTY_NORMAL, "Shared_Progress", -1) -- 값을 초기화해야 바뀜
+
+	local myInfo = session.party.GetMyPartyObj(PARTY_NORMAL);
+	if nil == myInfo then
+		return;
+	end
+
+	local myObj = GET_MY_PARTY_INFO_C()
+	local sharedQuestID = TryGetProp(myObj, 'Shared_Quest')
+	if nil == sharedQuestID or sharedQuestID == 0 then
+		return;
+	end
+
+	local questIES = GetClassByType("QuestProgressCheck", questClsID)
+	if questIES == nil then
+		return;
+	end
+
+	local progStr = SCR_QUEST_CHECK_C(GetMyPCObject(), questIES.ClassName)
+	local progValue = quest.GetQuestStateValue(progStr)
+	party.ReqChangeMemberProperty(PARTY_NORMAL, "Shared_Progress", progValue)
+	party.SendSharedQuestSession(questIES.ClassID, questIES.ClassName, myInfo:GetAID());
+end
+
+function ON_PARTY_UPDATE_SHARED_QUEST()
+	local myInfo = session.party.GetMyPartyObj(PARTY_NORMAL);
+	local myPartyMemObj = GET_MY_PARTY_INFO_C()
+	local sharedQuestID = TryGetProp(myPartyMemObj, 'Shared_Quest')
+	if myInfo ~= nil and sharedQuestID ~= nil and sharedQuestID > 0 then
+		local questCls = GetClassByType('QuestProgressCheck', sharedQuestID)
+		if questCls ~= nil then
+			REQUEST_SHARED_QUEST_PROGRESS(sharedQuestID)
+		end
 	end
 end
 

@@ -313,7 +313,7 @@ function ON_MARKET_MINMAX_INFO(frame, msg, argStr, argNum)
 		edit_price:SetText(avg);
 		if IGNORE_ITEM_AVG_TABLE_FOR_TOKEN == 1 then
 			if false == session.loginInfo.IsPremiumState(ITEM_TOKEN) then
-		edit_price:SetMaxNumber(maxAllow);
+				edit_price:SetMaxNumber(maxAllow);
 			else
 				edit_price:SetMaxNumber(2147483647);
 			end
@@ -513,4 +513,5 @@ function MARKET_SELL_SELECT(pageControl, numCtrl)
 --local frame = pageControl:GetTopParentFrame();
 --market.ReqMySellList(page);
 end
+
 

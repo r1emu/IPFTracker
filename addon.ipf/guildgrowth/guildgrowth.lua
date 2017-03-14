@@ -1,4 +1,4 @@
-
+﻿
 function GUILDGROWTH_ON_INIT(addon, frame)
 	
 	addon:RegisterMsg("OPEN_DLG_GUILDGROWTH", "ON_OPEN_DLG_GUILDGROWTH");		
@@ -21,7 +21,7 @@ function GUILDGROWTH_UPDATE_ABILITY(frame, guildObj)
 	local ablePoint = current - used;
 	local ablePointText = ScpArgMsg("UsableAbilityPoint") .. " : " .. ablePoint;	
 	txt_current_point:SetTextByKey("value", ablePointText);
-	
+
 	local gbox_list = gbox_ability:GetChild("gbox_list");
 	gbox_list:RemoveAllChild();
 	
@@ -270,11 +270,13 @@ function GUILDGROWTH_UPDATE_CONTRIBUTION(frame, guildObj)
 			t_name:SetTextByKey("value", partyMemberInfo:GetName());
 			if currentExp > 0 then
 				local percent = curContribution * 100 / currentExp;
+				local percentStr = string.format('%.2f', percent);
 				local t_percent = GET_CHILD(ctrlSet, "t_percent");
-				t_percent:SetTextByKey("value", percent);
+				t_percent:SetTextByKey("value", percentStr);
 				local gauge = GET_CHILD(ctrlSet, "gauge");
 				gauge:SetPoint(curContribution, currentExp);
 			end
+
 			
 		end
 
@@ -294,15 +296,10 @@ end
 function DROP_GUILDGROWTH_TALT(parent, ctrl)
 
 	local invItem = GET_DRAG_INVITEM_INFO();
-	
-	local itemName = GET_GUILD_EXPUP_ITEM_INFO();
+
 	local dropItemCls = GetClassByType("Item", invItem.type);
-	if dropItemCls.ClassName == 'misc_talt_event' then
-        itemName = GET_GUILD_EXPUP_ITEM_INFO2();
-	end
-
+	local itemName = GET_GUILD_EXPUP_ITEM_INFO();
 	local taltCls = GetClass("Item", itemName);
-
 	if itemName ~= dropItemCls.ClassName then
 		local text = ScpArgMsg("DropItem{Name}ForGuildExpUp", "Name", taltCls.Name);
 		ui.SysMsg(text);

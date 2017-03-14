@@ -2,11 +2,7 @@
 
 function INDUN_ON_INIT(addon, frame)
 	addon:RegisterMsg('CHAT_INDUN_UI_OPEN', 'ON_CHAT_INDUN_UI_OPEN');
-	addon:RegisterMsg('INDUN_COUNT_RESET', 'ON_INDUN_COUNT_RESET');	
-end
-
-function ON_INDUN_COUNT_RESET(frame)
-	--리셋관련 구현해야함.
+	--addon:RegisterMsg('INDUN_COUNT_RESET', 'ON_INDUN_COUNT_RESET');
 end
 
 function ON_CHAT_INDUN_UI_OPEN(frame, msg, argStr, argNum)
@@ -18,7 +14,11 @@ function ON_CHAT_INDUN_UI_OPEN(frame, msg, argStr, argNum)
 end
 
 function INDUN_UI_OPEN(frame)
-	INDUN_DRAW_CATEGORY(frame)
+	INDUN_DRAW_CATEGORY(frame);
+
+	-- resize frame for using system menu and quickslot
+	local bg3 = frame:GetChild('bg3');
+	frame:Resize(frame:GetWidth(), bg3:GetY() + bg3:GetHeight());
 end
 
 function INDUN_DRAW_CATEGORY(frame)

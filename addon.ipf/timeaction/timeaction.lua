@@ -75,7 +75,7 @@ function END_TIME_ACTION(frame, isFail)
 	timer:Stop();
 	timer:EnableHideUpdate(0);
 	frame:EnableHideProcess(0);
-		
+
 	
 	local rankresetFrame = ui.GetFrame("rankreset");
 	if 1 == rankresetFrame:IsVisible() then

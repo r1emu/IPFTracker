@@ -10,11 +10,10 @@ function ON_REFRESH_ITEM_TOOLTIP()
 end
 
 function UPDATE_ITEM_TOOLTIP(tooltipframe, strarg, numarg1, numarg2, userdata, tooltipobj, noTradeCnt)
-
 	tolua.cast(tooltipframe, "ui::CTooltipFrame");
 	
 	local itemObj, isReadObj = nil
-
+	
 	if tooltipobj ~= nil then
 		itemObj = tooltipobj;
 		isReadObj = 0;
@@ -26,7 +25,15 @@ function UPDATE_ITEM_TOOLTIP(tooltipframe, strarg, numarg1, numarg2, userdata, t
 		tooltipframe:Resize(1, 1);
         return;
 	end
-
+	
+	-- 모조품은 가상의 아이템 정보를 만들어서 보여주기 때문에 GUID가 없어서 strarg를 통해 정보 보내줌(forgery#ModifiedPropertyString)
+	local isForgeryItem = false;	
+	if string.find(strarg, 'forgery') ~= nil and itemObj ~= nil then
+		isForgeryItem = true;
+		local strList = StringSplit(strarg, '#');
+		SetModifiedPropertiesString(itemObj, strList[2]);
+	end	
+	tooltipframe:SetUserValue('TOOLTIP_ITEM_GUID', numarg2);
 
 	local recipeitemobj = nil
 
@@ -69,7 +76,8 @@ function UPDATE_ITEM_TOOLTIP(tooltipframe, strarg, numarg1, numarg2, userdata, t
 
 	local recipeclass = recipeitemobj;
 
-	if recipeclass ~= nil then
+	-- 콜렉션에서 툴팁을 띄울때는 제작서는 제작서만 보여준다. 
+	if recipeclass ~= nil and strarg ~= 'collection' then
 		local ToolTipScp = _G[ 'ITEM_TOOLTIP_' .. recipeclass.ToolTipScp];
 		ToolTipScp(tooltipframe, recipeclass, strarg, "usesubframe_recipe");
 		DestroyIES(recipeitemobj);
@@ -82,15 +90,17 @@ function UPDATE_ITEM_TOOLTIP(tooltipframe, strarg, numarg1, numarg2, userdata, t
 	
 	local needAppraisal = TryGetProp(itemObj, "NeedAppraisal");
 	local drawCompare = true;
+	local showAppraisalPic = false;
 	if needAppraisal ~= nil and needAppraisal == 1 then
 		DRAW_APPRAISAL_PICTURE(tooltipframe);
-		drawCompare = false
+		drawCompare = false;
+		showAppraisalPic = true;
 	end
 	
 	-- 비교툴팁
 	-- 툴팁 비교는 무기와 장비에만 해당된다. (미감정 제외)
 
-	if drawCompare == true and ( (itemObj.ToolTipScp == 'WEAPON' or itemObj.ToolTipScp == 'ARMOR') and  (strarg == 'inven' or strarg =='sell') and (string.find(itemObj.GroupName, "Pet") == nil)) then
+	if drawCompare == true and ( (itemObj.ToolTipScp == 'WEAPON' or itemObj.ToolTipScp == 'ARMOR') and  (strarg == 'inven' or strarg =='sell' or isForgeryItem == true) and (string.find(itemObj.GroupName, "Pet") == nil)) then
 
 		local CompItemToolTipScp = _G[ 'ITEM_TOOLTIP_' .. itemObj.ToolTipScp];
 		local ChangeValueToolTipScp = _G[ 'ITEM_TOOLTIP_' .. itemObj.ToolTipScp..'_CHANGEVALUE'];
@@ -139,7 +149,6 @@ function UPDATE_ITEM_TOOLTIP(tooltipframe, strarg, numarg1, numarg2, userdata, t
 			end
 			end
 		else
-
 			local equiptype = itemObj.EqpType
 
 			if equiptype == 'RING' then
@@ -173,9 +182,8 @@ function UPDATE_ITEM_TOOLTIP(tooltipframe, strarg, numarg1, numarg2, userdata, t
 			
 		local class = itemObj;
 		if class ~= nil then
-
 			local ToolTipScp = _G[ 'ITEM_TOOLTIP_' .. class.ToolTipScp];
-			ToolTipScp(tooltipframe, class, strarg, "mainframe");
+			ToolTipScp(tooltipframe, class, strarg, "mainframe", isForgeryItem);
 		end
 
 		
@@ -193,23 +201,61 @@ function UPDATE_ITEM_TOOLTIP(tooltipframe, strarg, numarg1, numarg2, userdata, t
 		DestroyIES(itemObj);
 	end
 
-	ITEMTOOLTIPFRAME_ARRANGE_CHILDS(tooltipframe)
-	ITEMTOOLTIPFRAME_RESIZE(tooltipframe)
+	ITEMTOOLTIPFRAME_ARRANGE_CHILDS(tooltipframe, showAppraisalPic);
+	ITEMTOOLTIPFRAME_RESIZE(tooltipframe);
 
 end
 
-function ITEMTOOLTIPFRAME_ARRANGE_CHILDS(tooltipframe)
+function ITEMTOOLTIPFRAME_ARRANGE_CHILDS(tooltipframe, showAppraisalPic)
 
 	local cvalueGBox = GET_CHILD(tooltipframe, 'changevalue','ui::CGroupBox')
+	if showAppraisalPic == true then
+		cvalueGBox =  GET_CHILD(tooltipframe, 'appraisal','ui::CGroupBox');
+	end
 	local cvalueGBoxheight = cvalueGBox:GetHeight()
 	local childCnt = tooltipframe:GetChildCount();
+	local minY = option.GetClientHeight();
+	local arrange = false;
 	for i = 0 , childCnt - 1 do
 		local chld = tooltipframe:GetChildByIndex(i);
 		if chld:GetName() ~= 'changevalue' then
-			chld:SetOffset(chld:GetX(), chld:GetY() + cvalueGBoxheight)
+			local targetY = chld:GetY() + cvalueGBoxheight;			
+			local diff = targetY + chld:GetHeight() - option.GetClientHeight();
+			if diff > 0 then
+				arrange = true;
+				targetY = targetY - diff;
+			end
+
+			chld:SetOffset(chld:GetX(), targetY);
+
+			if minY > targetY then
+				minY = targetY;
+			end
 		end
 	end
 
+	if arrange == true then
+		-- 비교 툴팁 위치 맞춰주기
+		local equip_main = tooltipframe:GetChild('equip_main');
+		local equip_sub = tooltipframe:GetChild('equip_sub');
+		local mainY = equip_main:GetY();
+		local subY = equip_sub:GetY();
+		if mainY > subY then
+			equip_main:SetOffset(equip_main:GetX(), subY);
+		elseif mainY < subY then
+			equip_sub:SetOffset(equip_sub:GetX(), mainY);
+		end
+
+		-- 비교 말풍선 위치 조정
+		local changevalue = tooltipframe:GetChild('changevalue');
+		local appraisalOffset = 0;
+		if showAppraisalPic == true then
+			changevalue = tooltipframe:GetChild('appraisal');
+			local marginRect = changevalue:GetMargin();
+			appraisalOffset = marginRect.top;
+		end
+		changevalue:SetOffset(changevalue:GetX(), minY - cvalueGBoxheight + appraisalOffset);
+	end
 end
 
 function INIT_ITEMTOOLTIPFRAME_CHILDS(tooltipframe)
@@ -473,8 +519,7 @@ function SET_ITEM_TOOLTIP_ALL_TYPE(icon, invitem, className, strType, ItemType, 
 	end
 end
 
-function SET_ITEM_TOOLTIP_TYPE(prop, itemID, itemCls, tooltipType)
-	
+function SET_ITEM_TOOLTIP_TYPE(prop, itemID, itemCls, tooltipType)	
 	local customTooltipScp = TryGetProp(itemCls, "CustomToolTip");
 	if customTooltipScp ~= nil and customTooltipScp ~= "None" then
 		customTooltipScp = _G[customTooltipScp];
@@ -543,9 +588,10 @@ function ICON_SET_INVENTORY_TOOLTIP(icon, invitem, strarg, itemCls)
 
 end
 
-function ICON_SET_EQUIPITEM_TOOLTIP(icon, equipitem)
-
+function ICON_SET_EQUIPITEM_TOOLTIP(icon, equipitem, topParentFrameName)
 	SET_ITEM_TOOLTIP_TYPE(icon, equipitem.type);
 	icon:SetTooltipArg('equip', equipitem.type, equipitem:GetIESID());
-
+	if topParentFrameName ~= nil then
+		icon:SetTooltipTopParentFrame(topParentFrameName);
+	end
 end

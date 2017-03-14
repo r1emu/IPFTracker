@@ -94,7 +94,7 @@ function SCR_Get_SpendSP(skill)
 	
 	value = basicsp + (lv - 1) * lvUpSpendSpRound + abilAddSP;
 	value = value - decsp;
-	
+
 	if value < 1 then
 		value = 1;
 	end
@@ -231,6 +231,41 @@ function SCR_Skill_STA(skill)
 
 end
 
+function SCR_Skill_SubweaponCancel_STA(skill)
+
+	local basicsta = skill.BasicSta;
+	if basicsta == 0 then
+		return 0;
+	end
+
+	local pc = GetSkillOwner(skill);
+	local jolly = GetSkill(pc, 'Corsair_JollyRoger')
+	if jolly ~= nil and IsBuffApplied(pc, 'JollyRoger_Buff') == 'YES' then
+	    basicsta = basicsta - (basicsta * (jolly.Level * 0.05))
+	end
+	return basicsta * 1000
+end
+
+function SCR_Skill_DoublePunch_STA(skill)
+
+	local basicsta = skill.BasicSta;
+	if basicsta == 0 then
+		return 0;
+	end
+
+	local pc = GetSkillOwner(skill);
+	local abil = GetAbility(pc, 'Monk10')
+	if abil ~= nil and abil.ActiveState == 1 then
+	    local random = IMCRandom(1,100);
+        if random >= 51 then
+	        basicsta = basicsta / 2
+	    else
+	        return basicsta * 1000;
+	    end
+	end
+	return basicsta * 1000;
+end
+
 function SCR_GET_SKL_CAST(skill)
 
 	local pc = GetSkillOwner(skill);
@@ -363,6 +398,35 @@ function SCR_GET_SKL_COOLDOWN_MISTWIND(skill)
 
 	return basicCoolDown;
 
+end
+
+function SCR_GET_SKL_COOLDOWN_Golden_Bell_Shield(skill)
+	local pc = GetSkillOwner(skill);
+	local basicCoolDown = skill.BasicCoolDown;
+	basicCoolDown = basicCoolDown - ((skill.Level - 1) * 1000);
+	if basicCoolDown < 0 then
+	    basicCoolDown = 0;
+	end
+    
+	local abilAddCoolDown = GetAbilityAddSpendValue(pc, skill.ClassName, "CoolDown");
+	
+	basicCoolDown = basicCoolDown + abilAddCoolDown;
+		
+	if IsBuffApplied(pc, 'CarveLaima_Buff') == 'YES' then
+		basicCoolDown = basicCoolDown * 0.8;
+	elseif IsBuffApplied(pc, 'CarveLaima_Debuff') == 'YES' then
+	    basicCoolDown = basicCoolDown * 1.2;
+	end
+	
+	if IsBuffApplied(pc, 'GM_Cooldown_Buff') == 'YES' then
+	    basicCoolDown = basicCoolDown * 0.9;
+	end
+	
+	if IsPVPServer(pc) == 1 then
+	    basicCoolDown = basicCoolDown + 10000;
+	end
+
+	return math.floor(basicCoolDown);
 end
 
 function SCR_GET_SKL_COOLDOWN_WIZARD(skill)
@@ -2297,7 +2361,7 @@ end
 
 function SCR_GET_Cyclone_Ratio2(skill)
 
- return 2.5 + skill.Level * 0.3
+ return 2.5 + skill.Level * 0.2
 
 end
 
@@ -3005,7 +3069,7 @@ function SCR_GET_Sturzhau_Ratio(skill)
 end
 
 function SCR_GET_Sturzhau_Ratio2(skill)
-    local value = skill.Level * 75
+    local value = skill.Level * 200
     return value
 end
 
@@ -4550,6 +4614,12 @@ function SCR_Get_SkillFactor_ThrowGuPot(skill)
 
 end
 
+
+function SCR_GET_ThrowGuPot_Time(skill)
+	local value = 5 + (skill.Level - 1);
+    return value;
+end
+
 function SCR_GET_ThrowGuPot_Ratio(skill)
 
 	local pc = GetSkillOwner(skill);
@@ -4592,6 +4662,15 @@ function SCR_GET_FluFlu_Ratio2(skill)
 	if abil ~= nil then 
         return SCR_ABIL_ADD_SKILLFACTOR_TOOLTIP(abil);
     end
+
+end
+
+function SCR_GET_JincanGu_Ratio(skill)
+
+	local pc = GetSkillOwner(skill);
+	local value = skill.Level
+
+    return value;
 
 end
 
@@ -8769,6 +8848,12 @@ function SCR_GET_Merkabah_Ratio(skill)
 
 end
 
+function SCR_GET_Merkabah_Ratio2(skill)
+
+	local value = skill.Level * 10;
+    return value
+end
+
 function SCR_Get_SkillFactor_MagnusExorcismus(skill)
 
 	local pc = GetSkillOwner(skill);
@@ -9888,7 +9973,11 @@ end
 
 
 function SCR_GET_PsychicPressure_Ratio2(skill)
-
+    local pc = GetSkillOwner(skill)
+    local abil = GetAbility(pc, 'Psychokino10')
+    if abil ~= nil and abil.ActiveState == 1 then
+        return 2;
+    end
 	return 1
 end
 
@@ -9898,6 +9987,15 @@ function SCR_GET_GravityPole_Ratio(skill)
     end
 
 	return 5 + skill.Level * 1
+end
+
+function SCR_GET_GravityPole_Ratio3(skill)
+    local pc = GetSkillOwner(skill)
+    local abil = GetAbility(pc, 'Psychokino20')
+    if abil ~= nil and abil.ActiveState == 1 then
+        return 3;
+    end
+    return 2;
 end
 
 
@@ -11367,9 +11465,14 @@ function SCR_Get_Zhendu_Ratio(skill)
 end
 
 function SCR_GET_JollyRoger_Bufftime(skill)
-    local value = 20 + skill.Level * 10;
+    local value = 35
     
     return value
+end
+
+function SCR_GET_JollyRoger_Ratio(skill)
+    local value = 15 + ((skill.Level - 1) * 3);
+    return value;
 end
 
 function SCR_GET_SubweaponCancel_Bufftime(skill)
@@ -11484,11 +11587,15 @@ function SCR_GET_DeedsOfValor_Bufftime(skill)
 end
 
 function SCR_GET_DeedsOfValor_Ratio(skill)
-    return 10
+    return 10;
 end
 
 function SCR_GET_DeedsOfValor_Ratio2(skill)
     return skill.Level
+end
+
+function SCR_GET_DeedsOfValor_Ratio3(skill)
+    return 5;
 end
 
 function SCR_GET_PainBarrier_Bufftime(skill)
@@ -12276,6 +12383,18 @@ function SCR_Get_Monstrance_Bufftime(skill)
     return math.floor(value);
 end
 
+function SCR_Get_Monstrance_Debufftime(skill)
+	local pc = GetSkillOwner(skill);
+	local value = 30
+	
+	local abil = GetAbility(pc, "Priest22")
+    if abil ~= nil and abil.ActiveState == 1 then
+	    value = value + abil.Level
+	end
+	
+    return math.floor(value);
+end
+
 
 function SCR_Get_Monstrance_Ratio(skill)
 
@@ -12359,7 +12478,7 @@ end
 
 function SCR_GET_Algiz_Bufftime(skill)
 
-    return 10 * skill.Level
+    return 20 * skill.Level
 
 end
 
@@ -12867,7 +12986,12 @@ function SCR_Get_Transpose_Bufftime(skill)
 end
 
 function SCR_Get_Meteor_Casttime(skill)
+    local pc = GetSkillOwner(skill);
 	local value = skill.Level * 1
+    local abil = GetAbility(pc, "Elementalist25")
+    if abil ~= nil and abil.ActiveState == 1 then
+        value = value * 0.5
+    end
 
 	return value;
 end
@@ -13089,6 +13213,24 @@ function SCR_GET_SR_LV(skill)
 	
 end
 
+function SCR_GET_SR_LV_Bazooka_Buff(skill)
+
+	local pc = GetSkillOwner(skill);
+	local skillSR = skill.SklSR;
+	if IsBuffApplied(pc, 'Bazooka_Buff') == 'YES' then
+        skillSR = math.floor(skillSR * 2);
+	end
+	
+	local value = pc.SR + skillSR;
+	
+	if value < 1 then
+	    value = 1
+	end
+	
+	return value
+	
+end
+
 
 function SCR_GET_SR_LV_MagicMissile(skill)
 
@@ -13253,6 +13395,95 @@ function SCR_GET_Dekatos_Ratio(skill)
 	return 1500
 end
 
+
+function SCR_GET_Overestimate_Ratio(skill)
+    local pc = GetSkillOwner(skill);
+	return skill.Level
+end
+
+function SCR_GET_Overestimate_Ratio2(skill)
+    local pc = GetSkillOwner(skill);
+    local abil = GetAbility(pc, 'Appraiser1')
+    local time = 40
+    if abil ~= nil and abil.ActiveState == 1 then
+        time = time + (abil.Level * 1)
+    end
+	return time;
+end
+
+function SCR_GET_Devaluation_Ratio(skill)
+    local pc = GetSkillOwner(skill);
+	return 5 + skill.Level;
+end
+
+function SCR_GET_Devaluation_Ratio2(skill)
+    local pc = GetSkillOwner(skill);
+	return skill.Level * 4;
+end
+
+function SCR_GET_Devaluation_Ratio3(skill)
+    local pc = GetSkillOwner(skill);
+	return skill.Level * 4;
+end
+
+function SCR_GET_Blindside_Ratio(skill)
+    local pc = GetSkillOwner(skill);
+	return 10 + (skill.Level * 2);
+end
+
+function SCR_GET_Forgery_Ratio(skill)
+    local pc = GetSkillOwner(skill);
+	return skill.Level * 60;
+end
+
+function SCR_GET_Forgery_Ratio2(skill)
+    local pc = GetSkillOwner(skill);
+	return 150 + (skill.Level * 30);
+end
+
+function SCR_GET_Apprise_Ratio(skill)
+    local pc = GetSkillOwner(skill);
+	return 20 + (skill.Level * 2);
+end
+
+function SCR_GET_Apprise_Ratio2(skill)
+    local pc = GetSkillOwner(skill);
+	return 20 + (skill.Level * 2);
+end
+
+function SCR_GET_Devaluation_BuffTime(skill)
+    local pc = GetSkillOwner(skill);
+    local abil = GetAbility(pc, "Appraiser2")
+    local ratio = 50
+    if abil ~= nil and abil.ActiveState == 1 then
+        ratio = ratio + (abil.Level * 1)
+    end
+	return ratio
+end
+
+function SCR_Get_SkillFactor_Blindside(skill)
+
+	local pc = GetSkillOwner(skill);
+	local value = skill.SklFactor
+	local abil = GetAbility(pc, "Appraiser4")      -- Skill Damage add
+    if abil ~= nil then
+        value = SCR_ABIL_ADD_SKILLFACTOR(abil, value);
+    end
+
+    return math.floor(value)
+
+end
+
+function SCR_GET_Blindside_Ratio2(skill)
+
+	local pc = GetSkillOwner(skill);
+	local abil = GetAbility(pc, "Appraiser4") 
+	local value = 0
+	if abil ~= nil then 
+        return SCR_ABIL_ADD_SKILLFACTOR_TOOLTIP(abil);
+    end
+
+end
 
 
 

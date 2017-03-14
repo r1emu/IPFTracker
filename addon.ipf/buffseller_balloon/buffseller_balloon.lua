@@ -32,7 +32,8 @@ function AUTOSELLER_BALLOON(title, sellType, handle, skillID, skillLv)
 		return;
 	end
 
-	local frame = ui.CreateNewFrame("buffseller_balloon", "SELL_BALLOON_" .. handle);
+	local frameName = "SELL_BALLOON_" .. handle;
+	local frame = ui.CreateNewFrame("buffseller_balloon", frameName);
 	if frame == nil then
 		return nil;
 	end
@@ -56,6 +57,8 @@ function AUTOSELLER_BALLOON(title, sellType, handle, skillID, skillLv)
 		pic:SetImage("sign_enchant");
   elseif sellType == AUTO_SELL_ORACLE_SWITCHGENDER then
 		pic:SetImage("sign_gender");
+	elseif sellType == AUTO_SELL_APPRAISE then
+		pic:SetImage("sign_Appraiser");
 	else
 		pic:SetImage("sign_buy");
 	end
@@ -63,10 +66,10 @@ function AUTOSELLER_BALLOON(title, sellType, handle, skillID, skillLv)
 	frame:SetUserValue("SELL_TYPE", sellType);
 	frame:SetUserValue("HANDLE", handle);
 
-	-- level???�시?�야 ?�는 경우 ?�벨�??�?��????�께 ?�는 ui�?보여주고, ?�니�??�름�?보여�?
+	-- level을 표시해야 하는 경우 레벨과 타이틀이 함께 있는 ui를 보여주고, 아니면 이름만 보여줌
 	local lvBox = frame:GetChild("withLvBox")
 	local text = frame:GetChild("text");
-	if sellType == AUTO_SELL_BUFF or sellType == AUTO_SELL_GEM_ROASTING or sellType == AUTO_SELL_SQUIRE_BUFF or sellType == AUTO_SELL_ENCHANTERARMOR then
+	if sellType == AUTO_SELL_BUFF or sellType == AUTO_SELL_GEM_ROASTING or sellType == AUTO_SELL_SQUIRE_BUFF or sellType == AUTO_SELL_ENCHANTERARMOR or sellType == AUTO_SELL_APPRAISE then
 		local lvText = lvBox:GetChild("lv_text")
 		local lvTitle = lvBox:GetChild('lv_title')
 		lvText:SetTextByKey("value", skillLv)
@@ -78,12 +81,16 @@ function AUTOSELLER_BALLOON(title, sellType, handle, skillID, skillLv)
 	end	
 	frame:ShowWindow(1);
 
-	local offsetY = - 30;
+	local offsetY = - 100;
 	if sellType == AUTO_TITLE_FOOD_TABLE then
-		offsetY = - 150;
+		offsetY = -50;
 	end
-
-	FRAME_AUTO_POS_TO_OBJ(frame, handle, -frame:GetWidth() / 2, offsetY, 3, 1, 1);
+	
+	local actor = world.GetActor(handle);
+	if actor ~= nil then
+		actor:GetTitle():SetBuffSellerBalloonFrame(frameName, offsetY);
+	end
+	
 end
 
 function BUFFSELLER_OPEN(parent, ctrl)
@@ -105,7 +112,7 @@ function CLOSE_SQUIRE_STORE(handle, skillID)
 	end
 
 	local skillName = GetClassByType("Skill", skillID).ClassName;
-	 -- GetUserIValue ??string, GetUserIValue inter!
+	 -- GetUserIValue 는 string, GetUserIValue inter!
 
 	if "Squire_Repair" == skillName then
 		local repair = ui.GetFrame("itembuffrepair");
@@ -126,6 +133,12 @@ function CLOSE_SQUIRE_STORE(handle, skillID)
 		local mend_handle = mending:GetUserIValue("HANDLE");
 		if handle == mend_handle then
 				ui.CloseFrame("itembuffgemroasting");
+		end
+	elseif skillName == 'Appraiser_Apprise' then
+		local pcAppraise = ui.GetFrame('appraisal_pc');
+		local buyerHandle = pcAppraise:GetUserIValue('HANDLE');
+		if handle == buyerHandle then
+			ui.CloseFrame('appraisal_pc');
 		end
 	end
 		
