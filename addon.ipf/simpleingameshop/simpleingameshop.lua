@@ -24,9 +24,24 @@ function SIMPLEINGAMESHOP_OPEN(frame)
 
 	local listbox = GET_CHILD_RECURSIVELY(frame, "itemlist");
 	listbox:RemoveAllChild();
-	frame:Invalidate()
+
+    local status = GET_CHILD_RECURSIVELY(frame, "status");
+    status:SetText(ScpArgMsg("LoadingTPItemList"));
+	
+    frame:Invalidate()
 
 	ui.OpenIngameShopUI();
+
+    frame:CancelReserveScript("SIMPLEINGAMESHOP_RECEIVE_LIST_ERROR");
+	frame:ReserveScript("SIMPLEINGAMESHOP_RECEIVE_LIST_ERROR", 5, 0, "");
+end
+
+function SIMPLEINGAMESHOP_RECEIVE_LIST_ERROR(frame)
+
+    local status = GET_CHILD_RECURSIVELY(frame, "status");
+    status:SetText(ScpArgMsg("LoadFailTPItemList","Code","001"));
+    SendSystemLog()
+
 end
 
 function ON_UPDATE_INGAME_SHOP_ITEM_LIST(frame)
@@ -53,8 +68,13 @@ function ON_UPDATE_INGAME_SHOP_ITEM_LIST(frame)
 		btn:SetUserValue("ITEMGUID", iteminfo:GetItemGuid());
 
 	end
-	
+
 	frame:Invalidate()
+
+    local status = GET_CHILD_RECURSIVELY(frame, "status");
+    status:SetText(ScpArgMsg("LoadedTPItemList"));
+    frame:CancelReserveScript("SIMPLEINGAMESHOP_RECEIVE_LIST_ERROR");
+    SendSystemLog()
 
 end
 
@@ -70,15 +90,10 @@ end
 
 function EXEC_INGAMESHOP_ITEM_PURCHASE(itemguid)
 
-	if itemguid == nil then
-		return;
-	end
-
 	ui.BuyIngameShopItem(itemguid);
 end
 
 function UI_CHECK_SIMPLEINGAMESHOP_UI_OPEN() -- 오버라이드로 사용해라
 	
-	print("qweqwe")
 	return 1
 end
