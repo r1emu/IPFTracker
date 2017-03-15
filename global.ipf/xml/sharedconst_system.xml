@@ -9,7 +9,7 @@
 		<Class ClassID="400007" ClassName="USE_COUNT_INDUN_USING_RATE" Value="1"/>
 	</Category>
 	<Category Name="System">
-		<Class ClassID="100037" ClassName="MAX_MIC_LEN" Value="150"/>
+		<Class ClassID="100037" ClassName="MAX_MIC_LEN" Value="500"/>
 		<Class ClassID="100056" ClassName="DLC_GET_DELAY" Value="0"/>
 		<Class ClassID="100057" ClassName="TRADABLE_DELAY" Value="604800"/>
 		<Class ClassID="100058" ClassName="USE_STEAM_INVENTORY" Value="1"/>
