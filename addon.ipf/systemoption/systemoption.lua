@@ -83,6 +83,11 @@ function INIT_SCREEN_CONFIG(frame)
 	if autoPerfBtn ~= nil then
 		autoPerfBtn:Select();
 	end
+	
+	local chkOptimization = GET_CHILD_RECURSIVELY(frame, "check_optimization", "ui::CCheckBox");
+	if nil ~= chkOptimization then
+		chkOptimization:SetCheck(imcperfOnOff.IsEnableOptimization());
+	end;
 
 	local syncMode = option.IsEnableVSync()
 	local syncBtn = GET_CHILD_RECURSIVELY(frame,"vsync_" .. syncMode,"ui::CRadioButton");
@@ -223,6 +228,14 @@ function APPLY_PERFMODE(frame)
 	config.SetAutoAdjustLowLevel(perfType)
 	config.SaveConfig();
 
+end
+
+function APPLY_OPTIMIZATION(frame)
+	if imcperfOnOff.IsEnableOptimization() == 1 then
+		imcperfOnOff.EnableOptimization(0);
+	else
+		imcperfOnOff.EnableOptimization(1);
+	end
 end
 
 function APPLY_SCREEN(frame)
