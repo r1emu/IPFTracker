@@ -1,10 +1,10 @@
 
 function SIMPLEINGAMESHOP_ON_INIT(addon, frame)
 
-		addon:RegisterMsg("UPDATE_INGAME_SHOP_ITEM_LIST", "ON_UPDATE_INGAME_SHOP_ITEM_LIST");
-		addon:RegisterMsg("CLOSE_INGAMESHOP_UI", "ON_CLOSE_INGAMESHOP_UI");
-		addon:RegisterMsg("UPDATE_INGAME_SHOP_REMAIN_CASH", "ON_UPDATE_INGAME_SHOP_REMAIN_CASH");
-		addon:RegisterMsg("INGAMESHOP_STATE_MSG", "ON_INGAMESHOP_STATE_MSG");
+		--addon:RegisterMsg("UPDATE_INGAME_SHOP_ITEM_LIST", "ON_UPDATE_INGAME_SHOP_ITEM_LIST");
+		--addon:RegisterMsg("CLOSE_INGAMESHOP_UI", "ON_CLOSE_INGAMESHOP_UI");
+		--addon:RegisterMsg("UPDATE_INGAME_SHOP_REMAIN_CASH", "ON_UPDATE_INGAME_SHOP_REMAIN_CASH");
+		--addon:RegisterMsg("INGAMESHOP_STATE_MSG", "ON_INGAMESHOP_STATE_MSG");
 end
 
 function ON_INGAMESHOP_STATE_MSG(frame, msg, argStr, argNum)
@@ -68,12 +68,12 @@ function ON_INGAMESHOP_STATE_MSG(frame, msg, argStr, argNum)
 
     
 end
-
+--[[
 function numWithCommas(n)
   return tostring(math.floor(n)):reverse():gsub("(%d%d%d)","%1,")
                                 :gsub(",(%-?)$","%1"):reverse()
 end
-
+]]
 function ON_UPDATE_INGAME_SHOP_REMAIN_CASH(frame) -- for override
 
 end

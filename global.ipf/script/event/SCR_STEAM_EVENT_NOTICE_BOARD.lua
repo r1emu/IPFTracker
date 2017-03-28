@@ -26,12 +26,30 @@ function EVENT_LVUP_13094(self,pc)
     local select = 0
     
     if sObj.EVENT_VALUE_SOBJ01 ~= 0 then
-        select = ShowSelDlg(pc, 0, 'NPC_EVENT_VERUP_DLG6', ScpArgMsg("Auto_DaeHwa_JongLyo"), ScpArgMsg("Steam_VerUP_Select01"), ScpArgMsg("Steam_VerUP_Select02"), ScpArgMsg("Steam_VerUP_Select03"))
+        select = ShowSelDlg(pc, 0, 'NPC_EVENT_VERUP_DLG6', ScpArgMsg("Auto_DaeHwa_JongLyo"), ScpArgMsg("steam_OneYear_1"), ScpArgMsg("Steam_VerUP_Select01"), ScpArgMsg("Steam_VerUP_Select02"), ScpArgMsg("Steam_VerUP_Select03"))
     else
-        select = ShowSelDlg(pc, 0, 'NPC_EVENT_VERUP_DLG6', ScpArgMsg("Auto_DaeHwa_JongLyo"), ScpArgMsg("Steam_VerUP_Select01"), ScpArgMsg("Steam_VerUP_Select02"))
+        select = ShowSelDlg(pc, 0, 'NPC_EVENT_VERUP_DLG6', ScpArgMsg("Auto_DaeHwa_JongLyo"), ScpArgMsg("steam_OneYear_1"), ScpArgMsg("Steam_VerUP_Select01"), ScpArgMsg("Steam_VerUP_Select02"))
     end
     
     if select == 2 then
+        if GetServerNation() ~= 'GLOBAL' then
+            return
+        end
+        local now_time = os.date('*t')
+        local yday = now_time['yday']
+        if 87 == yday then
+            if aObj.EVENT_VALUE_AOBJ05 == 0 then
+                local tx = TxBegin(pc)
+                TxGiveItem(tx, 'Event_Fire_Songpyeon', 3, 'Event_1year');
+                TxSetIESProp(tx, aObj, 'EVENT_VALUE_AOBJ05', 1)
+                local ret = TxCommit(tx)
+            elseif aObj.EVENT_VALUE_AOBJ05 > 0 then
+                ShowOkDlg(pc,'NPC_EVENT_OneYear_2', 1)
+            end
+        else
+            ShowOkDlg(pc,'NPC_EVENT_OneYear_1', 1)    
+        end             
+    elseif select == 3 then
         if sObj.EVENT_VALUE_SOBJ03 == 0 and pc.Lv < 330 then
             local nextLv = 0
 	        local nextlv_group = {280, 235, 185, 135, 85, 45, 1}
@@ -52,7 +70,7 @@ function EVENT_LVUP_13094(self,pc)
         elseif sObj.EVENT_VALUE_SOBJ03 > 0 then
             ShowOkDlg(pc,'NPC_EVENT_VERUP_DLG2', 1)    
         end
-    elseif select == 3 then
+    elseif select == 4 then
         if aObj.EVENT_VALUE_AOBJ04 == 0 then
             if pc.Lv == 330 then
                 ShowOkDlg(pc,'NPC_EVENT_VERUP_DLG3', 1)
@@ -66,7 +84,7 @@ function EVENT_LVUP_13094(self,pc)
         elseif aObj.EVENT_VALUE_AOBJ04 > 0 then
             ShowOkDlg(pc,'NPC_EVENT_VERUP_DLG5', 1)    
         end
-    elseif select == 4 then
+    elseif select == 5 then
         local sObj = GetSessionObject(pc, 'ssn_klapeda')
         if sObj.EVENT_VALUE_SOBJ02 < 10 then
             if pc.Lv >= 330 then

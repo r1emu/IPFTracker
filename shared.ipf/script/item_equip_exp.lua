@@ -28,6 +28,8 @@ function GET_MORE_EVENT_EXP(pc)
 	sumExp = sumExp + IsBuffAppliedEXP(pc, 'Event_LargeRice_Soup');	-- 특대 떡국
 	sumExp = sumExp + IsBuffAppliedEXP(pc, 'Event_WhiteDay_Buff');	-- 화이트데이
 
+    sumExp = sumExp + IsBuffAppliedEXP(pc, 'Event_ManWoo_Pet_1'); --pet
+    sumExp = sumExp + IsBuffAppliedEXP(pc, 'Event_FireSongPyeon'); --스팀1주년 폭죽 
 	return sumExp; 
 end
 
