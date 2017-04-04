@@ -104,6 +104,7 @@
 		<Code Code="ERRCODE_LOGIC_RANDOM_MISSION" CallStack="NO" Desc="살러스 수녀원 관련 에러"/>
 		<Code Code="ERRCODE_LOGIC_MISSION_ROOM_EXIT" CallStack="NO" Desc="미션룸 삭제"/>
 <Code Code="ERRCODE_LOGIC_ERROR_LOGOUT" CallStack="NO" Desc="존 입장 실패"/>
+<Code Code="ERRCODE_LOGIC_UNKNOWN_ACTOR_MESSAGE" CallStack="NO" Desc="정의되지 않은 메세지 입니다."/>		<Code Code="ERRCODE_LOGIC_DUPLICATE_LOGIN" CallStack="NO" Desc="중복 로그인 관련 에러"/>
 	</Type>
 	<Type Type="DATA">
 		<Code Code="ERRCODE_DATA_INIT_TABLE" CallStack="NO" Desc="테이블 초기화에 실패하였습니다. 다음 정보를 참조하세요."/>

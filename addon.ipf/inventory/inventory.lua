@@ -2133,7 +2133,8 @@ function SET_EQUIP_SLOT_BY_SPOT(frame, equipItem, eqpItemList, iconFunc, ...)
 					icon:SetColorTone("FFFFFFFF");
 				end
 
-				icon:Set(obj.Icon, 'Item', rhItem.type, rhItem.equipSpot, rhItem:GetIESID());
+                local iconImage = GET_EQUIP_ITEM_IMAGE_NAME(obj, 'Icon');
+				icon:Set(iconImage, 'Item', rhItem.type, rhItem.equipSpot, rhItem:GetIESID());
 				iconFunc(slot, icon, rhItem, ...);
 
 				if rhItem.isLockState == true then
