@@ -141,17 +141,4 @@ function FIRSTPLAY(pc)
 		--??????? ?????
 		LogSessionObject(pc, sObj, "ChangeProp", "StartLineSet", "QSTARTZONETYPE", startzonevalue);
 	end
---Steam Retention EVENT
-	local year, month, day, hour, min = GetAccountCreateTime(pc)
-	local sObj = GetSessionObject(pc, 'ssn_klapeda')
-	if GetServerNation() ~= 'GLOBAL' then
-        return
-    end
-	if (month >= 3 and day >= 28) or (month >= 4 and day >= 1) and year == 2017 then
-        local tx = TxBegin(pc)
-        TxGiveItem(tx, "Event_Guide_Cube_1", 19, "RETENTION_EVENT")
-        TxSetIESProp(tx, sObj, 'EVENT_VALUE_SOBJ12', sObj.EVENT_VALUE_SOBJ12 + 1)
-        local ret = TxCommit(tx)
-	end
---Steam Retention EVENT
 end

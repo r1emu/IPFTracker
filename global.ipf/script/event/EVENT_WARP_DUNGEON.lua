@@ -120,15 +120,17 @@ function SCR_USE_ITEM_Guide_Cube_1(pc)
 end
 
 function SCR_NPC_RETENTION_DIALOG(self, pc)
-    local year, month, day, hour, min = GetAccountCreateTime(pc)
-    local sObj = GetSessionObject(pc, 'ssn_klapeda')
+  local year, month, day, hour, min = GetAccountCreateTime(pc)
+  local sObj = GetSessionObject(pc, 'ssn_klapeda')
 	if GetServerNation() ~= 'GLOBAL' then
-        return
-    end
+      return
+  end
+
 	if sObj.EVENT_VALUE_SOBJ12 >= 1 then
 	    return
 	end
-	if (month >= 3 and day >= 28) or (month >= 4 and day >= 1) and year == 2017 then
+
+	if ((month == 3 and day >= 28) or month >= 4) and year == 2017 then
 	    ShowOkDlg(pc, 'NPC_EVENT_RETENTION_1', 1)
         local tx = TxBegin(pc)
         TxGiveItem(tx, "Event_Guide_Cube_1", 19, "RETENTION_EVENT")
