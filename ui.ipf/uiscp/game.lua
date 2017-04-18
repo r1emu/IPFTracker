@@ -146,7 +146,7 @@ function TEST_MAPMAKE()
 end
 
 
-
+	
 function TEST_AYASE2(x,y)
 
 
@@ -216,10 +216,10 @@ function MAKE_ALL_DEFAULT_HAIR()
 end
 
 	
-function TEST_AYASE()
-
-ui.Chat("/w 이동익 {img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}{img emoticon_0012 2147483647 2147483647}{/}");
-
+function TEST_AYASE()    
+    print("friend ui test");    
+    session.friends.TestAddManyFriend(FRIEND_LIST_COMPLETE, 200);
+    session.friends.TestAddManyFriend(FRIEND_LIST_BLOCKED, 100);
 end
 
 function JOB_COMMAND()
@@ -3220,7 +3220,7 @@ function SCR_GEM_ITEM_SELECT(argNum, luminItem, frameName)
 		return
 	end
 
-	-- 몬스터젬만 중복검사
+	-- 몬스?�젬�?중복검?
 	local gemClass = GetClassByType("Item", luminItem.type)
 	if gemClass ~= nil then
 		local gemEquipGroup = TryGetProp(gemClass, "EquipXpGroup")
@@ -3662,8 +3662,8 @@ end
 
 function SCR_QUEST_CHECK_C(pc, questname)
 	local questState = GetQuestState(questname);
-	if "PROGRESS" == questState then -- ¸??O¶§, ¼¼¼?:끧?´ μ쿲?®N?º¸μμ·??Z.
-	-- ¸¶¹??½º?°¡ °≫½??μ???±?¹®¿¡
+	if "PROGRESS" == questState then -- ¸??O¶§, ¼¼¼?:??´ μ�?®N?º¸μμ·??Z.
+	-- ¸¶¹??½º?°¡ °?��??μ???±?¹®¿¡
 		local questIES = GetClass('QuestProgressCheck', questname);
 		local sObj_quest = GetSessionObject(pc, questIES.Quest_SSN);
 		if nil ~= sObj_quest then
@@ -4119,7 +4119,7 @@ function CHEAT_LIST_OPEN()
 end
 
 function ON_RIDING_VEHICLE(onoff)
-
+    
 	if control.HaveNearCompanionToRide() == true then
 		local fsmActor = GetMyActor();
 
@@ -4240,7 +4240,7 @@ function UPDATE_COMPANION_TITLE(frame, handle)
 		local petObj = GetIES(pet:GetObject());
 		gauge_stamina:SetPoint(petObj.Stamina, petObj.MaxStamina);
 		
-		local petInfo = info.GetStat(handle); --IESObject 정보 사용시 HP는 실시간으로 동기화 되지 않는다.
+		local petInfo = info.GetStat(handle); --IESObject ?�보 ?�용??HP???�시간으�??�기???��? ?�는??
 		gauge_HP:SetPoint(petInfo.HP, petInfo.maxHP);		
 	end
 
@@ -4273,7 +4273,7 @@ end
 function TEST_TIARUA()
 
 ReloadHotKey()
---print("由щ줈?쒗빂??)
+--print("?�щ줈??�빂??)
 --ui.OpenFrame("joystickrestquickslot");
 --[[
 local quickFrame = ui.GetFrame('quickslotnexpbar')
@@ -4381,7 +4381,7 @@ function UI_MODE_CHANGE(index)
 end
 
 function KEYBOARD_INPUT()
-	
+
 	if GetChangeUIMode() == 1 then
 		return;
 	end
@@ -4493,4 +4493,3 @@ function BLOCK_MSG(blockName, sysTime)
 	ui.SysMsg(msgStr);
 	
 end
-
