@@ -45,17 +45,23 @@ function REFRESH_ABILITYSHOP(frame, msg)
 	local posY = 5;
 
 	-- abilGroupName으로 xml에서 해당되는 구입가능한 특성리스트 가져오기
-	local abilList, abilListCnt = GetClassList("Ability");
 	local abilGroupList, abilGroupListCnt = GetClassList(abilGroupName);
 
-	for i = 0, abilGroupListCnt-1 do
+    if session.IsGM() == 1 and abilGroupName == 'Ability_Warrior' then
+        IMC_NORMAL_INFO("GetClassList("..abilGroupName.."), count("..abilGroupListCnt..")");
+    end
 
+	for i = 0, abilGroupListCnt-1 do
 		local groupClass = GetClassByIndexFromList(abilGroupList, i);
 		if groupClass ~= nil then
-			local abilClass = GetClassByNameFromList(abilList, groupClass.ClassName);
+			local abilClass = GetClass('Ability', groupClass.ClassName);
 			if abilClass ~= nil then
 				posY = MAKE_ABILITYSHOP_ICON(frame, pc, gbox, abilClass, groupClass, posY);
+            else
+                IMC_NORMAL_INFO("GetClass from Ability fail:className("..groupClass.ClassName..")");
 			end
+        else
+            IMC_NORMAL_INFO("GetClass from Ability_[Group] fail: abilGroupName("..abilGroupName.."), index("..i..")");
 		end
 	end
 
@@ -190,10 +196,11 @@ function SET_ABILITY_COST_CTRL(frame, classCtrl, pc, groupClass, abilClass, coun
 	if count > 0 then
 		price, totalTime = GET_ABILITY_LEARN_COST(pc, groupClass, abilClass, curLv + count);
 	end
+    classCtrl:SetUserValue('ABILITY_LEARN_TIME', totalTime);
 	
 	local priceCtrl = GET_CHILD(classCtrl, "abilPrice", "ui::CRichText");	
 	local maxLevelCtrl = GET_CHILD(classCtrl, "abilLevelMax", "ui::CRichText");	
-	local timeCtrl = GET_CHILD(classCtrl, "abilTime", "ui::CRichText");		
+	local timeCtrl = GET_CHILD(classCtrl, "abilTime", "ui::CRichText");
 
 	SET_ABILITY_PRICE_CTRL(classCtrl, priceCtrl, abilClass, price)
 	SET_ABILITY_MAX_LEVEL_CTRL(frame, maxLevelCtrl, abilGroupName, abilClass)
@@ -446,7 +453,8 @@ function ADD_ABILITY_COUNT(frame, control, abilName, abilID)
 	local classCtrl = control:GetParent();
 	local addCount = classCtrl:GetUserValue("COUNT_"..abilName);
 		
-	if true == session.loginInfo.IsPremiumState(ITEM_TOKEN) then
+    local abilLearnTime = classCtrl:GetUserIValue('ABILITY_LEARN_TIME');
+	if true == session.loginInfo.IsPremiumState(ITEM_TOKEN) or abilLearnTime == 0 then
 		addCount = addCount + 1;
 	else
 		ui.SysMsg(ScpArgMsg("OnlyTokenUserAbilCount"));
@@ -465,7 +473,8 @@ function ADD_TEN_ABILITY_COUNT(frame, control, abilName, abilID)
 	local classCtrl = control:GetParent();  
 	local addCount = classCtrl:GetUserValue("COUNT_"..abilName);
 	
-	if true == session.loginInfo.IsPremiumState(ITEM_TOKEN) then
+    local abilLearnTime = classCtrl:GetUserIValue('ABILITY_LEARN_TIME');
+	if true == session.loginInfo.IsPremiumState(ITEM_TOKEN) or abilLearnTime == 0 then
 		addCount = addCount + 10;
 	else
 		ui.SysMsg(ScpArgMsg("OnlyTokenUserAbilCount"));
@@ -579,7 +588,7 @@ function REQUEST_BUY_ABILITY(frame, control, abilName, abilID)
 	local addCount = tonumber( ctrlSet:GetUserValue("COUNT_"..abilName) );
 	local price = tonumber( ctrlSet:GetUserValue("PRICE_"..abilName) );
 	s_buyAbilCount = addCount;
-	
+    
 	if GET_TOTAL_MONEY() < price then
 		ui.SysMsg(ScpArgMsg('Auto_SilBeoKa_BuJogHapNiDa.'));
 		return;

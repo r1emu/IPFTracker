@@ -135,25 +135,36 @@ function QUEST_REWARD_TEST(frame, questID)
     end
     
 	local succExp = cls.Success_Exp;
+	local succJobExp = 0;
 	if repeat_reward_exp > 0 then
 	    succExp = succExp + repeat_reward_exp
 	end
 	
 	if cls.Success_Lv_Exp > 0 then
-        local xpIES = GetClass('Xp', questCls.Level)
+        local xpIES = GetClass('Xp', pc.Lv)
         if xpIES ~= nil then
             local lvexpvalue =  math.floor(xpIES.QuestStandardExp * cls.Success_Lv_Exp)
             if lvexpvalue ~= nil and lvexpvalue > 0 then
 	            succExp = succExp + lvexpvalue
             end
+            local lvjobexpvalue =  math.floor(xpIES.QuestStandardJobExp * cls.Success_Lv_Exp)
+            if lvjobexpvalue ~= nil and lvjobexpvalue > 0 then
+	            succJobExp = succJobExp + lvjobexpvalue
+            end
         end
     end
     
 	if succExp > 0 then
-	    y = y + 10;
-		y = BOX_CREATE_RICHTEXT(box, "t_successExp", y, 20, ScpArgMsg("Auto_{@st41}KyeongHeomChi_:_") .."{s20}{ol}{#FFFF00}"..succExp.."{/}");	
-		
-		y = MAKE_QUESTINFO_REWARD_LVUP(box, questCls, 10, y)
+	    y = y + 5;
+		y = BOX_CREATE_RICHTEXT(box, "t_successExp", y, 20, ScpArgMsg("Auto_{@st41}KyeongHeomChi_:_") .."{s20}{ol}{#FFFF00}"..succExp.."{/}", 10);	
+		local tempY = y
+		y = MAKE_QUESTINFO_REWARD_LVUP(box, questCls, 20, y, '{@st41b}')
+		if tempY ~= y then
+		    y = y - 5
+		end
+	end
+	if succJobExp > 0 then
+		y = BOX_CREATE_RICHTEXT(box, "t_successJobExp", y, 20, ScpArgMsg("SuccessJobExpGiveMSG1") .."{s20}{#FFFF00}"..  succJobExp.."{/}", 10);
 		y = y + 10;
 	end
 
@@ -165,7 +176,7 @@ function QUEST_REWARD_TEST(frame, questID)
     	y = MAKE_BASIC_REWARD_REPE_CTRL(box, questCls, cls, y + 20);
 --    	y = y + 20
     end
-    
+
 	
 	local cancelBtn = frame:GetChild('CancelBtn');
 	local useBtn = frame:GetChild('UseBtn');
@@ -187,6 +198,7 @@ function QUEST_REWARD_TEST(frame, questID)
 		box:InvalidateScrollBar();
 		frame:Resize(frame:GetWidth() + 10, margin);
 	else
+		box:SetCurLine(0) -- scroll init
 		box:EnableScrollBar(0);
 		box:Resize(box:GetWidth(), y);
 		frame:Resize(frame:GetWidth() + 10, maxSizeHeightFrame);
@@ -202,8 +214,8 @@ function QUEST_REWARD_TEST(frame, questID)
 		if string.find(name, "REWARD_") ~= nil then
 			selectExist = 1;
 		end 
-	end
-
+	end    
+    
     local flag = false
     
     local dlgShowState = SCR_QUEST_SUCC_REWARD_DLG(pc, questCls, cls, sObj)
@@ -362,15 +374,15 @@ function MAKE_ITEM_TAG_TEXT_CTRL(y, box, ctrlNameHead, itemName, itemCount, inde
 	if itemCount < 0 then
 		local invItem = session.GetInvItemByName(itemName);
 		if invItem ~= nil then
-		    itemText = ScpArgMsg("{Auto_1}ItemName{Auto_2}NeedCount", "Auto_1", itemCls.Name, "Auto_2", invItem.count);
+		    itemText = ScpArgMsg("{Auto_1}ItemName{Auto_2}NeedCount", "Auto_1", itemCls.Name, "Auto_2", GetCommaedText(invItem.count));
 		else
 		    itemText = '{@st45w3}{s18}'..itemCls.Name..'{/}'
 		end
 	else
 	    if itemName ~= 'Vis' then
-			itemText = ScpArgMsg("{Auto_1}ItemName{Auto_2}NeedCount","Auto_1", itemCls.Name, "Auto_2",itemCount);
+			itemText = ScpArgMsg("{Auto_1}ItemName{Auto_2}NeedCount","Auto_1", itemCls.Name, "Auto_2",GetCommaedText(itemCount));
 		else
-    		itemText = ScpArgMsg("QuestRewardMoneyText", "Auto_1", itemCount);
+    		itemText = ScpArgMsg("QuestRewardMoneyText", "Auto_1", GetCommaedText(itemCount));
     	end
     end
 	itemNameCtrl:SetText(itemText);
@@ -662,7 +674,6 @@ function MAKE_ITEM_ICON_CTRL_QUEST(y, box, ctrlNameHead, itemName, itemCount, in
     	
 --    	ctrlSet:SetEnableSelect(1);
 --        ctrlSet:SetOverSound('button_cursor_over_2');
-        print('DDDDDDDD',classID)
         ctrlSet:EnableHitTest(1);
     	SET_ITEM_TOOLTIP_BY_TYPE(ctrlSet, classID)
     end
@@ -908,8 +919,11 @@ function CREATE_QUEST_REWARE_CTRL(box, y, index, ItemName, itemCnt, callFunc)
 
 end
 
-function BOX_CREATE_RICHTEXT(box, name, y, height, text)
-	local title = box:CreateControl("richtext", name, 10, y, box:GetWidth() - 30, height);
+function BOX_CREATE_RICHTEXT(box, name, y, height, text, marginX)
+    if marginX == nil then
+        marginX = 0
+    end
+	local title = box:CreateControl("richtext", name, 10 + marginX, y, box:GetWidth() - 30, height);
 	tolua.cast(title, "ui::CRichText");
 	title:SetTextFixWidth(1);
 	title:SetText(text.."{/}");
@@ -1114,7 +1128,7 @@ function QUEST_REWARD_CHECK(questname)
     if cls.Success_HonorPoint ~= 'None' then
         result[#result + 1] = 'HonorPoint'
     end
-
+    
     local pcProperty = GetClass('reward_property', questname)
     if pcProperty ~= nil then
         result[#result + 1] = 'PCProperty'

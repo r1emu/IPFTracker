@@ -764,7 +764,7 @@ function TPITEM_DRAW_ITEM_DETAIL(obj, itemobj, itemcset)
 
 			local tradeable = GET_CHILD_RECURSIVELY(itemcset,"tradeable")
 			local itemProp = geItemTable.GetPropByName(itemobj.ClassName);
-			if itemProp:IsExchangeable() == true then
+			if itemProp:IsEnableUserTrade() == true then
 				tradeable:ShowWindow(0)
 			else
 				tradeable:ShowWindow(1)
@@ -1433,7 +1433,7 @@ function TPSHOP_SET_PREVIEW_APC_IMAGE(frame, rotDir)
 		[ES_NECK] = function() 
 				invSlot = invframe:GetChild("NECK");	
 		end,
-		[ES_LAST] = function() --ES_LENS
+		[ES_LENS] = function() --ES_LENS
 				invSlot = invframe:GetChild("LENS");			
 		end,
 		--[ES_HELMET] = function() end,		-- 6

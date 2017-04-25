@@ -9,7 +9,7 @@ function CREATE_JOURNAL_ARTICLE_MAP(frame, grid, key, text, iconImage, callback)
 	CREATE_JOURNAL_ARTICLE(frame, grid, key, text, iconImage, callback);
 
 	local group = GET_CHILD(frame, 'map', 'ui::CGroupBox')
-	local page = group:CreateOrGetControl('groupbox', 'page_Map', 0, 0, ui.NONE_HORZ, ui.NONE_VERT, 0, 0, 0, 0)
+	local page = group:CreateOrGetControl('groupbox', 'page_Map', 0, 0, ui.NONE_HORZ, ui.NONE_VERT, 10, 50, 10, 30);
 	local queue = page:CreateOrGetControl('queue', 'page_Queue', 0, 100, ui.NONE_HORZ, ui.TOP, 0, 0, 0, 0)
 	queue:RemoveAllChild();
 	page:SetSkinName(frame:GetUserConfig(""));
@@ -52,7 +52,7 @@ function CREATE_JOURNAL_ARTICLE_MAP(frame, grid, key, text, iconImage, callback)
 			recoverRate = GetWikiIntProp(wiki, "RevealRate");
 		end
 
-		--¸¶À» °°Àº °æ¿ì¿¡´Â ¸ðµÎ Å½»ö·ü 100ÇÁ·Î·Î º¸¿©ÁÖÀÚ
+		--ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ Å½ï¿½ï¿½ï¿½ï¿½ 100ï¿½ï¿½ï¿½Î·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if cls.Journal == "TRUE" and cls.UseMapFog == 0 then
 			recoverRate = 100
 		else
@@ -115,7 +115,7 @@ function CREATE_JOURNAL_ARTICLE_MAP(frame, grid, key, text, iconImage, callback)
 	end
 
 	JOURNAL_MAP_UPDATE_SCORE(frame, group, totalScore * 0.1);
-
+    
 	tolua.cast(page, 'ui::CGroupBox')
 	--page:SetCurLine(0);
 	page:Invalidate();
@@ -123,15 +123,14 @@ function CREATE_JOURNAL_ARTICLE_MAP(frame, grid, key, text, iconImage, callback)
 end
 
 function JOURNAL_MAP_UPDATE_SCORE(frame, group, totalScore)
-
 	local ctrlset = group:GetChild("ctrlset");
 	local rationText = ctrlset:GetChild("rationText");
 	local scoreText = ctrlset:GetChild("scoreText");
 	local allCount = GetCategoryWikiListCount("Map");
 
-	if rationText ~= nil then
-		rationText:SetTextByKey("rate", math.floor(totalScore / allCount));
-		scoreText:SetTextByKey("score2", math.floor(totalScore));
+	if rationText ~= nil then        
+        rationText:SetTextByKey("rate", string.format("%.2f", totalScore / allCount * 100))	
+		scoreText:SetTextByKey("score2", math.floor(totalScore));        
 	end
 	
 end
@@ -172,13 +171,14 @@ function JOURNAL_OPEN_MAP_ARTICLE(frame, ctrlSet)
 	local group = GET_CHILD(f, 'map', 'ui::CGroupBox');
 
 	local bg = GET_CHILD(f, "bg", "ui::CGroupBox");
-	local page = group:CreateOrGetControl('groupbox', 'page_Map', 0, 0, ui.NONE_HORZ, ui.NONE_VERT, 10, 50, 10, 30);
-	local scrollBarHeight = bg:GetHeight() - group:GetY();
-	tolua.cast(page, 'ui::CGroupBox');
-	page:SetScrollBar(scrollBarHeight);
+	local page = GET_CHILD(group, "page_Map", "ui::CGroupBox");
+
+	if page ~= nil then
+		local scrollBarHeight = bg:GetHeight() - group:GetY();
+		page:SetScrollBar(scrollBarHeight);
+	end
 
 	group:ShowWindow(1);
 	imcSound.PlaySoundEvent('button_click_3');
 	--SET_JOURNAL_RANK_TYPE(f, 'Map');
 end
-

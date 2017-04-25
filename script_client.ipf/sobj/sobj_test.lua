@@ -707,7 +707,8 @@ function SSN_CLIENT_UPDATE_QUEST_POSSIBLE(sObj, list, questPossible)
                     
                 if questIES.StartMap ~= 'None' and questIES.StartNPC ~= 'None' and GetZoneName(self) == questIES.StartMap then
                     local result2
-                    result2, subQuestCount = SCR_POSSIBLE_UI_OPEN_CHECK(self, questIES, subQuestCount, 'ZoneMap')
+                    local subQuestZoneList = {}
+                    result2, subQuestZoneList = SCR_POSSIBLE_UI_OPEN_CHECK(self, questIES, subQuestZoneList, 'ZoneMap')
                             
                     if result2 == 'OPEN' then
                         local genDlgIESList = SCR_GET_XML_IES('GenType_'..questIES.StartMap, 'Dialog', questIES.StartNPC)
@@ -952,7 +953,7 @@ function PREV_SSN_CLIENT_UPDATE_FOR_QA(pc)
 		return;
 	end
 	
-	local subQuestCount = 0
+	local subQuestZoneList = {}
 	
     for i = 0, class_count-1 do
         local questIES = GetClassByIndex('QuestProgressCheck', i);
@@ -1056,7 +1057,7 @@ function PREV_SSN_CLIENT_UPDATE_FOR_QA(pc)
                     if result == 'POSSIBLE' then
                         if questIES.StartMap ~= 'None' and questIES.StartNPC ~= 'None' and GetZoneName(self) == questIES.StartMap then
                             local result2
-                            result2, subQuestCount = SCR_POSSIBLE_UI_OPEN_CHECK(self, questIES, subQuestCount, 'ZoneMap')
+                            result2, subQuestZoneList = SCR_POSSIBLE_UI_OPEN_CHECK(self, questIES, subQuestZoneList, 'ZoneMap')
                             
                             if result2 == 'OPEN' then
                             	local genDlgIESList = SCR_GET_XML_IES('GenType_'..questIES.StartMap, 'Dialog', questIES.StartNPC)

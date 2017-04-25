@@ -47,7 +47,6 @@ function SHOW_TOKEN_REMAIN_TIME(ctrl)
 end
 
 function TOKEN_ON_MSG(frame, msg, argStr, argNum)
-
 	local logoutGBox = frame:GetChild("logoutGBox");
 	local logoutInternal = logoutGBox:GetChild("logoutInternal");
 	local gToken = logoutInternal:GetChild("gToken");
@@ -103,7 +102,7 @@ function TOKEN_ON_MSG(frame, msg, argStr, argNum)
 				txt = string.format("{img 9plus_image2 %d %d}", 100, 45) 
 			end
 
-			local value = ctrlSet:GetChild("value");
+			local value = GET_CHILD_RECURSIVELY(ctrlSet, "value");
 			if str =="abilityMax" then
 				value:ShowWindow(0);
 			else
@@ -118,19 +117,21 @@ function TOKEN_ON_MSG(frame, msg, argStr, argNum)
 	local prop = ctrlSet:GetChild("prop");
     local imag = string.format(STATUS_OVERRIDE_GET_IMGNAME1(), 55, 45) 
 	prop:SetTextByKey("value", imag.. ScpArgMsg("Token_ExpUp{PER}", "PER", " ")); 
-    local value = ctrlSet:GetChild("value");
+    local value = GET_CHILD_RECURSIVELY(ctrlSet, "value");
 	imag = string.format(STATUS_OVERRIDE_GET_IMGNAME2(), 100, 45) 
     value:SetTextByKey("value", imag);
 
 	local itemClassID = session.loginInfo.GetPremiumStateArg(ITEM_TOKEN)
 	local itemCls = GetClassByType("Item", itemClassID);
-	if nil ~= itemCls and itemCls.NumberArg2 > 0 then
+    local accountObj = GetMyAccountObj();
+    local tradeCount = TryGetProp(accountObj, 'TradeCount');
+	if tradeCount ~= nil and tradeCount > 0 then
 		local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 6,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
 		local prop = ctrlSet:GetChild("prop");
 		local img = string.format("{img dealok_image %d %d}", 55, 45) 
 		prop:SetTextByKey("value", img .. ScpArgMsg("AllowTradeByCount"));
 
-		local value = ctrlSet:GetChild("value");
+		local value = GET_CHILD_RECURSIVELY(ctrlSet, "value");
 		img = string.format("{img dealok30_image2 %d %d}", 100, 45) 
 		value:SetTextByKey("value", img);
 	end
@@ -139,14 +140,35 @@ function TOKEN_ON_MSG(frame, msg, argStr, argNum)
     local prop = ctrlSet:GetChild("prop");
     local imag = string.format("{img 1plus_image %d %d}", 55, 45) 
     prop:SetTextByKey("value", imag..ClMsg("CanGetMoreBuff")); 
-    local value = ctrlSet:GetChild("value");
+    local value = GET_CHILD_RECURSIVELY(ctrlSet, "value");
     value:ShowWindow(0);
 
 	local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 8,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
     local prop = ctrlSet:GetChild("prop");
     local imag = string.format("{img paid_pose_image %d %d}", 55, 45) 
     prop:SetTextByKey("value", imag..ClMsg("AllowPremiumPose")); 
-    local value = ctrlSet:GetChild("value");
+    local value = GET_CHILD_RECURSIVELY(ctrlSet, "value");
+    value:ShowWindow(0);
+
+	local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 9,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
+    local prop = ctrlSet:GetChild("prop");
+    local imag = string.format("{img paid_pose_image %d %d}", 55, 45) 
+    prop:SetTextByKey("value", imag..ClMsg("CanGetMoneyByMarketImmediately")); 
+    local value = GET_CHILD_RECURSIVELY(ctrlSet, "value");
+    value:ShowWindow(0);
+
+	local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 10,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
+    local prop = ctrlSet:GetChild("prop");
+    local imag = string.format("{img MarketLimitedRM_image %d %d}", 55, 45) 
+    prop:SetTextByKey("value", imag..ClMsg("CanRegisterMarketRegradlessOfLimit")); 
+    local value = GET_CHILD_RECURSIVELY(ctrlSet, "value");
+    value:ShowWindow(0);
+
+local ctrlSet = tokenList:CreateControlSet("tokenDetail", "CTRLSET_" .. 11,  ui.CENTER_HORZ, ui.TOP, 0, 0, 0, 0);
+    local prop = ctrlSet:GetChild("prop");
+    local imag = string.format("{img teamcabinet_image %d %d}", 55, 45) 
+    prop:SetTextByKey("value", imag..ClMsg("TeamWarehouseEnable")); 
+    local value = GET_CHILD_RECURSIVELY(ctrlSet, "value");
     value:ShowWindow(0);
 
 	STATUS_OVERRIDE_NEWCONTROLSET1(tokenList)
@@ -1687,7 +1709,7 @@ function STATUS_ACHIEVE_INIT(frame)
 			eachAchiveGauge:SetTextTooltip("(" .. nowpoint .. "/" .. cls.NeedCount ..")")
 
 			if HAVE_ACHIEVE_FIND(cls.ClassID) == 1 then
-				if equipAchieveName == cls.Name then
+				if equipAchieveName ~= 'None' and equipAchieveName == cls.Name then
 					eachAchiveDescTitle:SetText('{@stx2}'..cls.DescTitle..ScpArgMsg('Auto__(SayongJung)'));
 				else
 					eachAchiveDescTitle:SetText('{@stx2}'..cls.DescTitle);
@@ -1781,7 +1803,7 @@ function STATUS_ACHIEVE_INIT(frame)
 				eachColorE = string.lower(eachColorE)
 
 				-- 업적 받으면 헤어 컬러 사라지는 현상이 있다고 해서 HairColor 프로퍼티 값으로도 확인
-				if string.find(nowAllowedColor, eachColorE) ~= nil or TryGetProp(etc, "HairColor_"..eachColorE) == 1 then
+				if TryGetProp(etc, "HairColor_"..eachColorE) == 1 then
 				
 					local eachhairimg = customizingGBox:CreateOrGetControl('picture', 'hairColor_'..eachColorE, 30 + 35 * haircount, 55, 35, 35);
 					tolua.cast(eachhairimg, "ui::CPicture");
@@ -1893,6 +1915,10 @@ function GET_HAIRCOLOR_IMGNAME_BY_ENGNAME(engname)
 	
 	if engname == 'orange' then
 		return "orange_color"
+	end
+	
+	if engname == 'midnightblue' then
+		return "midnightblue_color"
 	end
 	return "basic_color"
 

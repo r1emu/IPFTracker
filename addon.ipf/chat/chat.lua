@@ -1,31 +1,26 @@
+
+
 CHAT_LINE_HEIGHT = 100;
 
 function CHAT_ON_INIT(addon, frame)	
 	
-	-- ë§ˆìš°ìŠ¤ í˜¸ë²„ë§ì„ ìœ„í•œ ë§ˆìš°ìŠ¤ ì—…í• ë•Œ ë‹«ê¸° ì´ë²¤íŠ¸ ì„¤ì • ë¶€ë¶„.
-	--{	
+	-- ¸¶¿ì½º È£¹ö¸µÀ» À§ÇÑ ¸¶¿ì½º ¾÷ÇÒ¶§ ´İ±â ÀÌº¥Æ® ¼³Á¤ ºÎºĞ.
 	local btn_emo = GET_CHILD(frame, "button_emo");
 	btn_emo:SetEventScript(ui.MOUSEMOVE, "CHAT_OPEN_EMOTICON");
 
 	local btn_type = GET_CHILD(frame, "button_type");
 	btn_type:SetEventScript(ui.MOUSEMOVE, "CHAT_OPEN_TYPE");	
-	--}
 
-	--ì´ˆê¸° ì±„íŒ… íƒ€ì… ì„¤ì •ì€ 'ì¼ë°˜ìœ¼ë¡œ
-	config.SetConfig("ChatTypeNumber", 1);
 end
 
---ì±„íŒ…ë°”ë¥¼ Opení• ë•Œë§ˆë‹¤ ë¶ˆëŸ¬ì˜¤ê¸°ë¡œ.
 function CHAT_OPEN_INIT()
-	--'ì±„íŒ… íƒ€ì…'ì— ë”°ë¥¸ ì±„íŒ…ë°”ì˜ 'ì±„íŒ…íƒ€ì… ë²„íŠ¼ ëª©ë¡'ì´ ê²°ì •ëœë‹¤.
-	CHAT_TYPE_LISTSET(config.GetConfigInt("ChatTypeNumber"));	
-	if config.GetServiceNation() == "JP" or config.GetServiceNation() == "GLOBAL" then
+	--'Ã¤ÆÃ Å¸ÀÔ'¿¡ µû¸¥ Ã¤ÆÃ¹ÙÀÇ 'Ã¤ÆÃÅ¸ÀÔ ¹öÆ° ¸ñ·Ï'ÀÌ °áÁ¤µÈ´Ù.
+	if config.GetServiceNation() == "JP" or config.GetServiceNation() == "GLOBAL" or config.GetServiceNation() == "IDN" then
 		local frame = ui.GetFrame('chat');	
 		local chatEditCtrl = frame:GetChild('mainchat');
 		local btn_emo = GET_CHILD(frame, "button_emo");
-		local btn_option = GET_CHILD(frame, "button_option");
 		local titleCtrl = GET_CHILD(frame,'edit_to_bg');	
-		chatEditCtrl:Resize(chatEditCtrl:GetOriginalWidth() - btn_emo:GetWidth() - btn_option:GetWidth() - titleCtrl:GetWidth() - 28, chatEditCtrl:GetOriginalHeight());
+		chatEditCtrl:Resize(chatEditCtrl:GetOriginalWidth() - btn_emo:GetWidth() - titleCtrl:GetWidth() - 28, chatEditCtrl:GetOriginalHeight());
 	end
 end;
 
@@ -33,343 +28,9 @@ function CHAT_CLOSE_SCP()
 	CHAT_CLICK_CHECK();
 end;
 
-function CHAT_ROOM_UPDATE(roomID) -- ê·¸ë£¹ ì±„íŒ… ë¦¬ìŠ¤íŠ¸ ì—…ë°ì´íŠ¸. ê·“ë§ ëª©ë¡ ê·¸ê±°ì„
-
-	local frame = ui.GetFrame("chatframe")
-
-	local chatRoom = GET_CHILD(frame, 'chatgbox_'..roomID)	
-
-	local info = session.chat.GetByStringID(roomID);
-
-	local group = GET_CHILD(frame, "grouplist")
-	if group ~= nil then
-		local queue = GET_CHILD_RECURSIVELY(group, 'queue')
-		local newMsgCount = info:GetNewMessageCount();
-		local btn = GET_CHILD(queue, 'btn_'..roomID, "ui::CControlSet");
-		if btn ~= nil then
-			local text = GET_CHILD(btn, "text", "ui::CRichText");
-			local notReadCount = info:GetNewMessageCount();
-
-			if notReadCount > 0 then
-				text:SetTextByKey("newmsg", string.format("(%d) ", newMsgCount));
-			else
-				text:SetTextByKey("newmsg", "");
-			end
-		end
-
-	end
-
-
-	--ê·¸ë£¹ ì „ì²´ noticecountí‘œì‹œ
-	local whisper_btn = GET_CHILD_RECURSIVELY(frame,"btn_whisper") 
-	SET_COUNT_NOTICE(whisper_btn, session.chat.GetAllGroupChatNotReadMsgCount() );
-	local whisper_pic_btn = GET_CHILD_RECURSIVELY(frame,"btn_whisper_pic") 
-	SET_COUNT_NOTICE(whisper_pic_btn, session.chat.GetAllGroupChatNotReadMsgCount() );
-	
-	frame:Invalidate();
-
-end
-
-function SET_COUNT_NOTICE(ctrl, count)
-
-	if count <= 0 then
-		ctrl:RemoveChild("COUNTNOTICE");
-		return;
-	end
-
-	local ctrlSet = ctrl:CreateOrGetControlSet('countnotice', "COUNTNOTICE", 0, 0);
-
-	ctrlSet:GetChild("count"):SetTextByKey("value", count);
-	ctrlSet:ShowWindow(1)
-	ctrl:Invalidate()
-end
-
-
-function CHAT_GROUP_REMOVE(roomID) 
-	local frame = ui.GetFrame('chatframe');
-	local child = frame:GetChild('chatgbox_'..roomID);
-	if child == nil then
-		return;
-	end
-	local visible = child:IsVisible();
-	frame:RemoveChild('chatgbox_'..roomID);
-
-	local group = GET_CHILD(frame, 'grouplist', 'ui::CGroupBox')
-	local queue = GET_CHILD_RECURSIVELY(group, 'queue', 'ui::CQueue')
-	queue:RemoveChild('btn_'..roomID);
-
-	if visible == 1 then
-		CHAT_WHISPER_ON_BTN_UP()
-	end
-
-	local popupframe = ui.GetFrame('chatpopup_'..roomID);
-	if popupframe ~= nil then
-		CLOSE_CHAT_POPUP(popupframe)
-	end
-end
-
-
-function CHAT_WHISPER_TARGET_ON_BTN_UP(ctrl, ctrlset, argStr, artNum) 
-
-	ui.SetChatGroupBox(CT_WHISPER,argStr);
-
-end
-
-function MAKE_POPUP_CHAT_BY_XML(roomid, titleText, width, height, x, y)
-	
-	titleText = string.sub(titleText, 8, string.len(titleText) - 3  )
-
-	local newFrame = ui.CreateNewFrame("chatpopup", "chatpopup_" .. roomid);
-	newFrame:SetOffset(x, y)
-	newFrame:Resize(width, height)
-	newFrame:ShowWindow(1);
-
-	local name = newFrame:GetChild("name");
-	name:SetTextByKey("title", titleText);
-
-	local gboxleftmargin = newFrame:GetUserConfig("GBOX_LEFT_MARGIN")
-	local gboxrightmargin = newFrame:GetUserConfig("GBOX_RIGHT_MARGIN")
-	local gboxtopmargin = newFrame:GetUserConfig("GBOX_TOP_MARGIN")
-	local gboxbottommargin = newFrame:GetUserConfig("GBOX_BOTTOM_MARGIN")
-	
-	local gbox = newFrame:CreateControl("groupbox", "chatgbox_" .. roomid, newFrame:GetWidth() - (gboxleftmargin + gboxrightmargin), newFrame:GetHeight() - (gboxtopmargin + gboxbottommargin), ui.RIGHT, ui.BOTTOM, 0, 0, gboxrightmargin, gboxbottommargin);
-	_ADD_GBOX_OPTION_FOR_CHATFRAME(gbox)
-
-
-	chat.UpdateReadFlag(roomid);
-	chat.CheckNewMessage(roomid);
-
-	ui.RedrawGroupChat(roomid)
-end
-
-function MAKE_POPUP_CHAT(parent, ctrl, roomid)
-	local info = session.chat.GetByStringID(roomid);
-	if info == nil then
-		return;
-	end
-
-	local oldframe = ui.GetFrame("chatpopup_" .. roomid )
-
-	if oldframe ~= nil then
-
-		oldframe:ShowWindow(1)
-
-		chat.UpdateReadFlag(roomid);
-		chat.CheckNewMessage(roomid);
-		ui.RedrawGroupChat(roomid)
-
-		return;
-	end
-
-	MAKE_POPUP_CHAT_BY_BTN(roomid)
-end
-
-g_popupframeinitx = 50
-g_popupframeinity = 200
-
-function MAKE_POPUP_CHAT_BY_BTN(roomid)
-	
-	local newFrame = ui.CreateNewFrame("chatpopup", "chatpopup_" .. roomid);
-	newFrame:SetOffset(g_popupframeinitx,g_popupframeinity)
-	newFrame:ShowWindow(1);
-
-	g_popupframeinitx = g_popupframeinitx + 15
-	g_popupframeinity = g_popupframeinity + 15
-
-	local info = session.chat.GetByStringID(roomid);
-	local titleText = GET_GROUP_TITLE(info);
-	titleText = 'From. '..titleText;
-	local name = newFrame:GetChild("name");
-	name:SetTextByKey("title", titleText);
-
-	local gboxleftmargin = newFrame:GetUserConfig("GBOX_LEFT_MARGIN")
-	local gboxrightmargin = newFrame:GetUserConfig("GBOX_RIGHT_MARGIN")
-	local gboxtopmargin = newFrame:GetUserConfig("GBOX_TOP_MARGIN")
-	local gboxbottommargin = newFrame:GetUserConfig("GBOX_BOTTOM_MARGIN")
-	
-	local gbox = newFrame:CreateControl("groupbox", "chatgbox_" .. roomid, newFrame:GetWidth() - (gboxleftmargin + gboxrightmargin), newFrame:GetHeight() - (gboxtopmargin + gboxbottommargin), ui.RIGHT, ui.BOTTOM, 0, 0, gboxrightmargin, gboxbottommargin);
-	_ADD_GBOX_OPTION_FOR_CHATFRAME(gbox)
-
-
-	chat.UpdateReadFlag(roomid);
-	chat.CheckNewMessage(roomid);
-
-	ui.RedrawGroupChat(roomid);
-
-	ui.SaveChatConfig();
-end
-
-
-function SEND_POPUP_FRAME_CHAT(parent, ctrl)
-
-	local frame = parent:GetTopParentFrame();
-	local guid = string.sub(parent:GetName() , 11, string.len(parent:GetName() ))
-
-	local text = ctrl:GetText();
-	local sendText = "/r " .. guid .. " " .. text;
-
-	ctrl:SetText("");
-	ui.Chat(sendText);
-
-end
-
-
-function GET_GROUP_TITLE(info)
-
-	local memberString = "";
-
-	if info == nil then
-		return memberString
-	end
-
-	--[[
-	if info:GetMemberCount() > 2 then
-		memberString = ScpArgMsg('TargetNameandOthers','TargetName',info:GetMember(0),'Count',info:GetMemberCount()-1)
-		return memberString;
-	end
-	]]
-
-	for i = 0 , info:GetMemberCount() - 1 do
-		if memberString ~= "" then
-			memberString = memberString .. ", ";
-		end
-
-		memberString = memberString .. info:GetMember(i);
-	end
-
-	return memberString;
-end
-
-function CHAT_CREATE_GROUP_LIST(frame, roomID)
-
-	local info = session.chat.GetByStringID(roomID);
-	
-	
-	local queue = GET_CHILD_RECURSIVELY(frame, 'queue')
-
-
-
-	local btn = queue:CreateOrGetControlSet("chatlist", 'btn_'..roomID, 0, 0);
-	tolua.cast(btn, "ui::CControlSet");
-	local newMsgCount = info:GetNewMessageCount();
-	local text = GET_CHILD(btn, "text", "ui::CRichText");
-
-	if newMsgCount > 0 then
-		text:SetTextByKey("newmsg", string.format("(%d) ", newMsgCount));
-	else
-		text:SetTextByKey("newmsg", "");
-	end
-
-	local memberString = GET_GROUP_TITLE(info);
-	text:SetTextByKey("title", memberString);
-	btn:SetEventScript(ui.LBUTTONUP, 'CHAT_WHISPER_TARGET_ON_BTN_UP');
-	btn:SetEventScriptArgString(ui.LBUTTONUP, roomID);
-
-	local btn_popup = btn:GetChild("btn_popup");
-	btn_popup:SetEventScript(ui.LBUTTONUP, 'MAKE_POPUP_CHAT');
-	btn_popup:SetEventScriptArgString(ui.LBUTTONUP, roomID);
-
-	local btn_invite = btn:GetChild("btn_invite");
-	btn_invite:SetEventScript(ui.LBUTTONUP, 'CHAT_WHISPER_INVITE');
-	btn_invite:SetEventScriptArgString(ui.LBUTTONUP, roomID);
-
-	local btn_exit = btn:GetChild("btn_exit");
-	btn_exit:SetEventScript(ui.LBUTTONUP, 'CHAT_WHISPER_LEAVE');
-	btn_exit:SetEventScriptArgString(ui.LBUTTONUP, roomID);
-
-
-
-	local groupboxname = "chatgbox_"..roomID
-	local groupbox = GET_CHILD(frame, groupboxname);
-	if groupbox == nil then
-
-		local gboxleftmargin = frame:GetUserConfig("GBOX_LEFT_MARGIN")
-		local gboxrightmargin = frame:GetUserConfig("GBOX_RIGHT_MARGIN")
-		local gboxtopmargin = frame:GetUserConfig("GBOX_TOP_MARGIN")
-		local gboxbottommargin = frame:GetUserConfig("GBOX_BOTTOM_MARGIN")
-		
-		groupbox = frame:CreateControl("groupbox", groupboxname, frame:GetWidth() - (gboxleftmargin + gboxrightmargin), frame:GetHeight() - (gboxtopmargin + gboxbottommargin), ui.RIGHT, ui.BOTTOM, 0, 0, gboxrightmargin, gboxbottommargin);
-
-		_ADD_GBOX_OPTION_FOR_CHATFRAME(groupbox)
-		groupbox:SetUserValue("CHAT_ID", roomID);
-		groupbox:SetEventScript(ui.SCROLL, "SCROLL_CHAT");
-	end
-
-	--ê·¸ë£¹ ì „ì²´ noticecountí‘œì‹œ
-	local whisper_btn = GET_CHILD_RECURSIVELY(frame,"btn_whisper") 
-	SET_COUNT_NOTICE(whisper_btn, session.chat.GetAllGroupChatNotReadMsgCount() );
-	local whisper_pic_btn = GET_CHILD_RECURSIVELY(frame,"btn_whisper_pic") 
-	SET_COUNT_NOTICE(whisper_pic_btn, session.chat.GetAllGroupChatNotReadMsgCount() );
-
-	local eachheight = ui.GetControlSetAttribute("chatlist", 'height');
-	local queueparent = GET_CHILD_RECURSIVELY(frame, 'queueparent')
-	queueparent:Resize( queueparent:GetWidth(), queue:GetChildCount() * eachheight)
-
-	return groupbox;
-end
-
 function CHAT_WHISPER_INVITE(ctrl, ctrlset, roomID, artNum)
 	ctrl:SetUserValue("ROOM_ID",roomID)
 	INPUT_STRING_BOX_CB(frame, ScpArgMsg("PlzInputInviteName"), "EXED_GROUPCHAT_ADD_MEMBER2", "",nil,roomID,20);
-end
-
-function EXED_GROUPCHAT_ADD_MEMBER2(text,frame)
-	
-	local roomID = frame:GetUserValue("ArgString");
-	ui.GroupChatInviteSomeone(roomID, text)
-end
-
-function CHAT_WHISPER_LEAVE(ctrl, ctrlset, argStr, artNum)
-	ui.LeaveGroupChat(argStr);
-end
-
-
-
-
-function CHAT_GROUP_CREATE(roomID, autoFocusToRoom)
-	
-	local frame = ui.GetFrame('chatframe');
-	if frame == nil then
-		return;
-	end
-
-	local groupbox = CHAT_CREATE_GROUP_LIST(frame, roomID);
-
-	ui.OnGroupChatCreated(roomID);
-
-	if autoFocusToRoom == 1 then
-		ui.SetChatGroupBox(CT_WHISPER,roomID);
-	end
-
-	local popupframe = ui.GetFrame("chatpopup_"..roomID);
-	if (popupframe ~= nil and popupframe:IsVisible() == 1) or groupbox:IsVisible() == 1 then -- ì´ë¯¸ ë©”ì‹œì§€ê°€ í‘œì‹œ ì¤‘ì´ë©´ ë°”ë¡œ ì—…ë°ì´íŠ¸
-		chat.UpdateReadFlag(roomID);
-		chat.CheckNewMessage(roomID);
-	end
-	
-end
-
-function GET_CHAT_FONT_SIZE()
-
-	local fontSize = config.GetConfigInt("CHAT_FONTSIZE", 100) - 100;
-	if fontSize < 0 then
-		fontSize = fontSize * 0.8;
-	else
-		fontSize = fontSize * 4;
-	end
-
-	local size = math.floor(16 * (1 + fontSize / 100));
-
-	if size < 10 then
-		size = 10
-	end
-
-	if size > 50 then
-		size = 50
-	end
-
-	return size 
-			
 end
 
 function CHAT_NOTICE(msg)
@@ -381,9 +42,8 @@ function CHAT_SYSTEM(msg)
 end
 
 
---ì±„íŒ…íƒ€ì…ì— ë”°ë¼ 'ì±„íŒ…ë°”ì˜ ì…ë ¥ê¸°' ìœ„ì¹˜ì™€ í¬ê¸° ì„¤ì •. 
-
-function CHAT_SET_TO_TITLENAME(chatType, targetName, count)
+--Ã¤ÆÃÅ¸ÀÔ¿¡ µû¶ó 'Ã¤ÆÃ¹ÙÀÇ ÀÔ·Â±â' À§Ä¡¿Í Å©±â ¼³Á¤. 
+function CHAT_SET_TO_TITLENAME(chatType, targetName)
 	local frame = ui.GetFrame('chat');
 	local chatEditCtrl = frame:GetChild('mainchat');
 	local titleCtrl = GET_CHILD(frame,'edit_to_bg');
@@ -391,25 +51,29 @@ function CHAT_SET_TO_TITLENAME(chatType, targetName, count)
 	local name  = GET_CHILD(titleCtrl,'title_to');		
 	local btn_ChatType = GET_CHILD(frame,'button_type');
 
-	-- ê·“ì†ë§ ctrlì˜ ì‹œì‘ìœ„ì¹˜ëŠ” type btn ë’¤ìª½ì—.
+	-- ±Ó¼Ó¸» ctrlÀÇ ½ÃÀÛÀ§Ä¡´Â type btn µÚÂÊ¿¡.
 	titleCtrl:SetOffset(btn_ChatType:GetOriginalWidth(), titleCtrl:GetOriginalY());
-	local offsetX = btn_ChatType:GetOriginalWidth(); -- ì‹œì‘ offsetì€ type btn ë„“ì´ ë‹¤ìŒìœ¼ë¡œ.
+	local offsetX = btn_ChatType:GetOriginalWidth(); -- ½ÃÀÛ offsetÀº type btn ³ĞÀÌ ´ÙÀ½À¸·Î.
 	local titleText = '';
 	local isVisible = 0;
-	-- ê·“ë§ê³¼ ê·¸ë£¹ì±„íŒ…ì— ë”°ë¥¸ ìƒëŒ€ë¥¼ í‘œì‹œí•´ì•¼ í•  ê²½ìš° 
-	if chatType == 'whisperchat' or chatType == 'whisperFromchat' or chatType == 'whisperTochat' then
+
+	-- ±Ó¸»°ú ±×·ìÃ¤ÆÃ¿¡ µû¸¥ »ó´ë¸¦ Ç¥½ÃÇØ¾ß ÇÒ °æ¿ì 
+	if chatType == CT_WHISPER then
+
 		isVisible = 1;
 		titleText = ScpArgMsg('WhisperChat','Who',targetName);
-	elseif chatType == 'groupchat' then
-		if count > 1 then
-			titleText = ScpArgMsg('GroupChat','Who',targetName,'Count',count-1);
-		else
-			titleText = ScpArgMsg('WhisperChat','Who',targetName);
-		end
+
+	elseif chatType == CT_GROUP then
+		
 		isVisible = 1;
+		titleText = session.chat.GetRoomConfigTitle(targetName)
+		if titleText == "" or titleText == nil then
+			return
+		end
+
 	end
 		
-	-- ì´ë¦„ì„ ë¨¼ì € ì„¤ì •í•´ì¤˜ì•¼ í¬ê¸°ì™€ ìœ„ì¹˜ ì„¤ì •ì´ ì´ë£¨ì–´ì§„ë‹¤.
+	-- ÀÌ¸§À» ¸ÕÀú ¼³Á¤ÇØÁà¾ß Å©±â¿Í À§Ä¡ ¼³Á¤ÀÌ ÀÌ·ç¾îÁø´Ù.
 	name:SetText(titleText);	
 	if titleText ~= '' then
 		titleCtrl:Resize(name:GetWidth() + 20, titleCtrl:GetOriginalHeight())
@@ -430,7 +94,7 @@ function CHAT_SET_TO_TITLENAME(chatType, targetName, count)
 end
 
 
--- ì±„íŒ…ì°½ì˜ ì´ëª¨í‹°ì½˜ì„ íƒì°½ê³¼ ì˜µì…˜ì°½ì˜ Open ìŠ¤í¬ë¦½íŠ¸
+-- Ã¤ÆÃÃ¢ÀÇ ÀÌ¸ğÆ¼ÄÜ¼±ÅÃÃ¢°ú ¿É¼ÇÃ¢ÀÇ Open ½ºÅ©¸³Æ®
 --{
 function CHAT_OPEN_OPTION(frame)
 	CHAT_SET_OPEN(frame, 1);
@@ -441,7 +105,7 @@ function CHAT_OPEN_EMOTICON(frame)
 end
 --}
 
--- ì±„íŒ…ì°½ì˜ ì´ëª¨í‹°ì½˜ì„ íƒì°½ê³¼ ì˜µì…˜ì°½ì´ ì—´ë ¤ìˆì„ ê²½ìš°ì— ë‹¤ë¥¸ ê³³ í´ë¦­ì‹œ í•´ë‹¹ ì°½ë“¤ì„ Close
+-- Ã¤ÆÃÃ¢ÀÇ ÀÌ¸ğÆ¼ÄÜ¼±ÅÃÃ¢°ú ¿É¼ÇÃ¢ÀÌ ¿­·ÁÀÖÀ» °æ¿ì¿¡ ´Ù¸¥ °÷ Å¬¸¯½Ã ÇØ´ç Ã¢µéÀ» Close
 function CHAT_CLICK_CHECK(frame)
 	local type_frame = ui.GetFrame('chattypelist');
 	local emo_frame = ui.GetFrame('chat_emoticon');
@@ -451,7 +115,7 @@ function CHAT_CLICK_CHECK(frame)
 	type_frame:ShowWindow(0);
 end;
 
---ì´ëª¨í‹°ì½˜ì„ íƒì°½ê³¼ ì˜µì…˜ì°½ì˜ ìœ„ì¹˜ë¥¼ ì±„íŒ…ë°”ì— ë”°ë¼ êµì •í•˜ê³  Open ê´€ë¦¬
+--ÀÌ¸ğÆ¼ÄÜ¼±ÅÃÃ¢°ú ¿É¼ÇÃ¢ÀÇ À§Ä¡¸¦ Ã¤ÆÃ¹Ù¿¡ µû¶ó ±³Á¤ÇÏ°í Open °ü¸®
 function CHAT_SET_OPEN(frame, numFrame)
 	local opt_frame = ui.GetFrame('chat_option');
 	opt_frame:SetPos(frame:GetX() + frame:GetWidth() - 35, frame:GetY() - opt_frame:GetHeight());
@@ -468,7 +132,7 @@ function CHAT_SET_OPEN(frame, numFrame)
 	end;
 end;
 
--- ì±„íŒ…ì°½ì˜ 'íƒ€ì… ëª©ë¡ ì—´ê¸° ë²„íŠ¼'ì„ í´ë¦­ì‹œ 'íƒ€ì… ëª©ë¡'ì˜ ìœ„ì¹˜ë¥¼ ì±„íŒ…ë°”ì— ë”°ë¼ êµì •í•˜ê³  Open
+-- Ã¤ÆÃÃ¢ÀÇ 'Å¸ÀÔ ¸ñ·Ï ¿­±â ¹öÆ°'À» Å¬¸¯½Ã 'Å¸ÀÔ ¸ñ·Ï'ÀÇ À§Ä¡¸¦ Ã¤ÆÃ¹Ù¿¡ µû¶ó ±³Á¤ÇÏ°í Open
 function CHAT_OPEN_TYPE()
 	local chatFrame = ui.GetFrame('chat');
 	local frame = ui.GetFrame('chattypelist');
