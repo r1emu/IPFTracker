@@ -25,9 +25,9 @@
 	<TimeAction Name="CraftAnimation" RandomLoop="1" StartAnim="CRAFT_READY" StartAnimCount="1" NextStart="NONE" NextStartCount="1" BeforEnd="NONE" BeforEndCount="1" EndAniTime="0" EndAnim="CRAFT_READY">
 		<LoopAnim Anim="CRAFT" AnimCount="1"/>
 	</TimeAction>
-  <TimeAction Name="GuildBattle" RandomLoop="1" StartAnim="absorb" StartAnimCount="1" NextStart="NONE" NextStartCount="1" BeforEnd="NONE" BeforEndCount="1" EndAniTime="0" EndAnim="CRAFT_READY">
-    <LoopAnim Anim="absorb" AnimCount="1"/>
-  </TimeAction>
+	<TimeAction Name="GuildBattle" RandomLoop="1" StartAnim="absorb" StartAnimCount="1" NextStart="NONE" NextStartCount="1" BeforEnd="NONE" BeforEndCount="1" EndAniTime="0" EndAnim="CRAFT_READY">
+		<LoopAnim Anim="absorb" AnimCount="1"/>
+	</TimeAction>
 	<TimeAction Name="BriqAnimation" RandomLoop="0" StartAnim="SKL_BRIQUETTING_BORN" StartAnimCount="1" NextStart="SKL_BRIQUETTING_STEP1_READY" NextStartCount="1" BeforEnd="SKL_BRIQUETTING_HARDENING" BeforEndCount="1" EndAniTime="8" EndAnim="SKL_BRIQUETTING_DEAD">
 		<LoopAnim Anim="SKL_BRIQUETTING_STEP1" AnimCount="7"/>
 		<LoopAnim Anim="SKL_BRIQUETTING_ADD_MATERIAL_READY" AnimCount="1"/>
@@ -83,5 +83,20 @@
 		<LoopAnim Anim="SKL_WEAPON_CHECK" AnimCount="1"/>
 		<LoopAnim Anim="SKL_WEAPON_SHARPEN" AnimCount="5"/>
 		<LoopAnim Anim="SKL_WEAPON_FINISH" AnimCount="1"/>
+	</TimeAction>
+	<TimeAction Name="Enchanter_EnchantArmor" RandomLoop="1" StartAnim="absorb" StartAnimCount="1" NextStart="NONE" NextStartCount="1" BeforEnd="NONE" BeforEndCount="1" EndAniTime="0" EndAnim="CRAFT_READY">
+		<LoopAnim Anim="absorb" AnimCount="1"/>
+	</TimeAction>
+	<TimeAction Name="PC_Orgel" RandomLoop="0" StartAnim="NONE" StartAnimCount="0" NextStart="NONE" NextStartCount="0" BeforEnd="NONE" BeforEndCount="0" EndAniTime="0" EndAnim="NONE">
+		<LoopAnim Anim="musicbox" AnimCount="1"/>
+	</TimeAction>
+	<TimeAction Name="Monster_Orgel" RandomLoop="0" StartAnim="NONE" StartAnimCount="0" NextStart="NONE" NextStartCount="0" BeforEnd="NONE" BeforEndCount="0" EndAniTime="0" EndAnim="NONE">
+		<LoopAnim Anim="rotate" AnimCount="1"/>
+	</TimeAction>
+	<TimeAction Name="PC_Orgel2" RandomLoop="0" StartAnim="musicbox_cast" StartAnimCount="1" NextStart="NONE" NextStartCount="0" BeforEnd="NONE" BeforEndCount="0" EndAniTime="0" EndAnim="NONE">
+		<LoopAnim Anim="musicbox_loop" AnimCount="1"/>
+	</TimeAction>
+	<TimeAction Name="Monster_Orgel2" RandomLoop="0" StartAnim="rotate_cast" StartAnimCount="1" NextStart="NONE" NextStartCount="0" BeforEnd="NONE" BeforEndCount="0" EndAniTime="0" EndAnim="NONE">
+		<LoopAnim Anim="rotate_loop" AnimCount="1"/>
 	</TimeAction>
 </TimeActionAnim>
