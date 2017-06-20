@@ -2,5 +2,7 @@
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <idspace id="Indun">
 	<Category Name="Indun">
+		<Class ClassID="101" ClassName="Indun_d_prison_62_1_event" Name="아샤크 지하 감옥" PlayPerResetType="1000"/>
+		<Class ClassID="102" ClassName="Indun_d_prison_event_easy" Name="아샤크 지하 감옥 : 쉬움" PlayPerResetType="1000"/>
 	</Category>
 </idspace>
