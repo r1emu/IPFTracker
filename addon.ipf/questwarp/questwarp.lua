@@ -57,7 +57,15 @@ function OPEN_QUESTWARP_FRAME(frame)
 			questCount = questCount + 1;
 			lastIndex = i;
 			
-			itemBtn:SetText('{@st66b}'..quest);
+    		local mapName , x, y, z = GET_QUEST_RET_POS(pc, questIES)
+    		local distanceMsg = ''
+    		if GetZoneName(pc) == mapName then
+    		    local pcX, pcY, pcZ = GetPos(pc)
+    		    distanceMsg = ScpArgMsg('QuestNPCDistanceMsg1','DISTANCE',SCR_POINT_DISTANCE(pcX, pcZ, x, z))
+    		else
+    		    distanceMsg = ScpArgMsg('QuestNPCDistanceMsg2','ZONE',GetClassString('Map', mapName, 'Name'))
+    		end
+			itemBtn:SetText('{@st66b}'..distanceMsg..quest);
 			itemBtn:ShowWindow(1);
 			if questState ~= nil then
     			itemBtn:SetTextTooltip(questIES[questState..'Desc'])
@@ -129,4 +137,4 @@ function QUESTWARP_QUESTID(frame, obj, argStr, index)
 	local questID = tonumber( frame:GetUserValue("QUEST_WARP_CLASSID_"..index) );
 	QUESTION_QUEST_WARP(nil, nil, nil, questID);
 	frame:ShowWindow(0);
-end
+end
