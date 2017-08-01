@@ -189,12 +189,6 @@ function GET_GUILD_EXPUP_ITEM_INFO()
 
 end
 
-function GET_GUILD_EXPUP_ITEM_INFO2()
-
-	return "misc_talt_event", 20;
-
-end
-
 function GET_GUILD_LEVEL_BY_EXP(exp)
 	local lv = 1;
 	local clsList, cnt = GetClassList("GuildExp");

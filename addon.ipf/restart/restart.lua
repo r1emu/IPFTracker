@@ -12,12 +12,25 @@ end
 
 function RESTART_ON_RESSURECT_HERE(frame)
 	local cristal = GetClass("Item", "RestartCristal");
+	local cristal_14d = GetClass("Item", "RestartCristal_14d");
+	local cristal_recycle = GetClass("Item", "RestartCristal_Recycle");
 	local item = session.GetInvItemByName(cristal.ClassName);
-	if item == nil then
+
+	local item_14d = nil
+	if cristal_14d ~= nil then
+		item_14d = session.GetInvItemByName(cristal_14d.ClassName);
+	end
+	
+	local item_recycle = nil
+	if cristal_recycle ~= nil then
+		item_recycle = session.GetInvItemByName(cristal_recycle.ClassName);
+	end
+   
+	if (item == nil) and (item_14d == nil) and (item_recycle == nil) then
 		ui.SysMsg(ScpArgMsg("NotEnough{ItemName}Item","ItemName", cristal.Name));
 		return;
-
 	end
+
 	restart.SendRestartHereMsg();
 end
 
@@ -84,7 +97,7 @@ function AUTORESIZE_RESTART(frame)
 		return;
 	end
 	campGroup:RemoveAllChild();
-	-- ∆ƒ∆ºø¯¿Ã ¡∏¿Á «“ ∂ß
+	-- ÌååÌã∞ÏõêÏù¥ Ï°¥Ïû¨ Ìï† Îïå
 	if 0 < count then
 		local y = 0;
 		for i = 0 , count - 1 do
@@ -148,6 +161,12 @@ function RESTART_MOVE_INDEX(frame, isDown)
 end
 
 function RESTART_ON_MSG(frame, msg, argStr, argNum)
+
+	local minigameover = ui.GetFrame('minigameover');	
+	if minigameover:IsVisible() == 1 then
+		return;
+	end;
+
 
 	if msg == 'RESTART_HERE' then
 		for i = 1 , 5 do

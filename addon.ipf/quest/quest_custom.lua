@@ -1,4 +1,4 @@
-﻿
+
 
 
 function ON_CUSTOM_QUEST_DELETE(frame, msg, keyName, argNum)
@@ -26,7 +26,7 @@ function ON_CUSTOM_QUEST_UPDATE(frame, msg, keyName, argNum)
 	if customQuest.useMainUI == 1 then
 		local key = customQuest:GetKey();
 		local ctrlName = "_Q_CUSTOM_" .. key;
-		local quest_ctrl = groupbox:CreateOrGetControlSet('custom_quest_list', ctrlName, 45, 0);
+		local quest_ctrl = groupbox:CreateOrGetControlSet('custom_quest_list', ctrlName, 20, 0);
 		local ret = CUSTOM_CONTROLSET_UPDATE(quest_ctrl, customQuest);
 		if ret == -1 then
 			groupbox:RemoveChild(ctrlName);
@@ -56,7 +56,7 @@ function QUESTINFOSET_2_MAKE_CUSTOM(frame, updateSize)
 		local customQuest = geQuest.GetCustomQuestByIndex(i);
 		local key = customQuest:GetKey();
 		local ctrlName = "_Q_CUSTOM_" .. key;
-		-- 여기서 같은 이름으로 찾고 생성하니 덮어씌어짐
+		-- ���⼭ ���� �̸����� ã�� �����ϴ� �������
 		--local ctrlset = GroupCtrl:CreateOrGetControlSet('emptyset2', ctrlName, 0, 0);
 		local ctrlset = GroupCtrl:CreateOrGetControlSet('emptyset2', ctrlName.."_"..i, 0, 0);
 		ctrlset:Resize(GroupCtrl:GetWidth() - 20, ctrlset:GetHeight());
@@ -69,8 +69,7 @@ function QUESTINFOSET_2_MAKE_CUSTOM(frame, updateSize)
 end
 
 function ATTACH_QUEST_CTRLSET_TEXT(ctrlset, key, text, startx, y)
-
-	local content = ctrlset:CreateOrGetControl('richtext', key, startx, y, ctrlset:GetWidth(), 10);
+	local content = ctrlset:CreateOrGetControl('richtext', key, startx, y, ctrlset:GetWidth() - 60, 10);
 	tolua.cast(content, "ui::CRichText");
 	content:EnableSplitBySpace(0);
 	content:EnableHitTest(0);
@@ -84,7 +83,7 @@ end
 function MIN_LV_NOTIFY_UPDATE(ctrlset, strArg, minLv)
 	local name = GET_CHILD(ctrlset, "name", "ui::CRichText");
 	if name == nil then
-		name = ctrlset:CreateOrGetControl('richtext', 'name', 50, 0, ctrlset:GetWidth() - 10, 30);
+		name = ctrlset:CreateOrGetControl('richtext', 'name', 10, 0, ctrlset:GetWidth() - 10, 30);
 		name = tolua.cast(name, "ui::CRichText");
 	end
 
@@ -95,7 +94,7 @@ end
 
 
 function MGAME_QUEST_UPDATE(ctrlset)
-	
+
 	local stageList = session.mgame.GetStageQuestList();
 	local stageCnt = stageList:size();
 	if stageCnt == 0 then
@@ -104,18 +103,16 @@ function MGAME_QUEST_UPDATE(ctrlset)
 
 	local name = GET_CHILD(ctrlset, "name", "ui::CRichText");
 	if name == nil then
-		name = ctrlset:CreateOrGetControl('richtext', 'name', 10, 10, ctrlset:GetWidth() - 10, 100);
+		name = ctrlset:CreateOrGetControl('richtext', 'name', 40, 10, ctrlset:GetWidth() - 10, 100);
 		name = tolua.cast(name, "ui::CRichText");
 	end
-
-	name:SetText(ScpArgMsg("Auto_{@st43}MiSyeon_SuHaeng"));
-	
+		
 	DESTROY_CHILD_BYNAME(ctrlset, 'ITEM_');
 			
 	local nameTxt = "{@st42}";
-	local startx = 20;
-	local y = 40;
-
+	local startx = 25;
+	local y = 20;
+    
 	local stageList = session.mgame.GetStageQuestList();
 	local stageCnt = stageList:size();
 	if stageCnt == 0 then
@@ -142,13 +139,13 @@ function MGAME_QUEST_UPDATE(ctrlset)
 
 				local titleName = stageInfo:GetTitleName();
 				if titleName ~= "" then
-					y = ATTACH_QUEST_CTRLSET_TEXT(ctrlset, "ITEM_TITLE_" .. j, "{@st41_yellow} ".. titleName, 10, y);
+					y = ATTACH_QUEST_CTRLSET_TEXT(ctrlset, "ITEM_TITLE_" .. j, "{@st41_yellow} ".. titleName, startx, y);
 				end
 
 				if timeOut > 0 and stageInstInfo ~= nil then
 					local serverTime = GetServerAppTime();
 					local remainSec = timeOut - serverTime;
-					y = ATTACH_TIME_CTRL_EX(ctrlset, "ITEM_TIME_" .. j , remainSec, 10, y);
+					y = ATTACH_TIME_CTRL_EX(ctrlset, "ITEM_TIME_" .. j , remainSec, 50, y);
 				end
 
 				for i = 0 ,  monList:size() - 1 do
@@ -179,7 +176,23 @@ function MGAME_QUEST_UPDATE(ctrlset)
 		end
 	end
 	
-	ctrlset:Resize(ctrlset:GetWidth(), y + 10);
+	local avandonquest_try = ctrlset:GetChild("avandonquest_try")
+	if avandonquest_try ~= nil then
+	    avandonquest_try:ShowWindow(0)
+	end
+	local dialogReplay = ctrlset:GetChild("dialogReplay")
+	if dialogReplay ~= nil then
+	    dialogReplay:ShowWindow(0)
+	end
+	local abandon = ctrlset:GetChild("abandon")
+	if abandon ~= nil then
+	    abandon:ShowWindow(0)
+	end
+	local save = ctrlset:GetChild("save")
+	if save ~= nil then
+	    save:ShowWindow(0)
+	end
+	ctrlset:Resize(ctrlset:GetWidth(), y + 20);
 	return y;
 
 end
