@@ -48,11 +48,6 @@
             </Stage>
             <Stage Name="end" AutoStart="0">
                 <StartScpList>
-                    <ToolScp Scp="MGAME_SET_DM_ICON" Client="NO" UseSleep="NO">
-                        <Str Str="클리어!! 60초 후 입구로 돌아갑니다"/>
-                        <Str Str="Clear"/>
-                        <Num Num="5"/>
-                    </ToolScp>
                 </StartScpList>
                 <ObjList/>
                 <StageEvents>
@@ -63,10 +58,6 @@
                             </ToolScp>
                         </condList>
                         <execList>
-                            <ToolScp Scp="MGAME_MSG" Client="YES" UseSleep="NO">
-                                <Str Str="60초 후 입구로 돌아갑니다!"/>
-                                <Num Num="5"/>
-                            </ToolScp>
                             <ToolScp Scp="MGAME_RETURN" Client="NO" UseSleep="NO"/>
                         </execList>
                     </Event>
@@ -294,6 +285,10 @@
                             </ToolScp>
                         </condList>
                         <execList>
+                            <ToolScp Scp="MGAME_MSG" Client="YES" UseSleep="NO">
+                                <Str Str="60초 입구로 돌아갑니다."/>
+                                <Num Num="5"/>
+                            </ToolScp>
                             <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_DISABLE" Client="NO" UseSleep="NO">
                                 <Str Str="boss"/>
                             </ToolScp>
@@ -342,44 +337,6 @@
                             </ToolScp>
                         </execList>
                     </Event>
-                <Event eventName="FAILCHECK">
-                        <condList>
-                            <ToolScp Scp="MGAME_EVT_COND_PCCNT" Client="NO" UseSleep="NO">
-                                <Num Num="0"/>
-                            </ToolScp>
-                        </condList>
-                        <execList>
-                            <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
-                                <Str Str="FAIL"/>
-                            </ToolScp>
-                        </execList>
-                    </Event>
-                </StageEvents>
-            </Stage>
-            <Stage Name="FAIL" AutoStart="0">
-                <StartScpList>
-                    <ToolScp Scp="MGAME_SET_QUEST_NAME" Client="NO" UseSleep="NO">
-                        <Str Str="미션 실패 : 3초 후 원래 존으로 돌아갑니다"/>
-                    </ToolScp>
-                    <ToolScp Scp="MGAME_SET_TIMEOUT" Client="NO" UseSleep="NO">
-                        <Num Num="3"/>
-                    </ToolScp>
-                </StartScpList>
-                <ObjList/>
-                <StageEvents>
-                    <Event eventName="MOVE_ZONE">
-                        <condList>
-                            <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
-                                <Num Num="3"/>
-                            </ToolScp>
-                        </condList>
-                        <execList>
-                            <ToolScp Scp="MGAME_RETURN" Client="NO" UseSleep="NO"/>
-                            <ToolScp Scp="MGAME_END" Client="NO" UseSleep="NO">
-                                <Num Num="1"/>
-                            </ToolScp>
-                        </execList>
-                    </Event>
                 </StageEvents>
             </Stage>
         </StageList>
@@ -389,4 +346,4 @@
             </ToolScp>
         </EnterList>
     </Game>
-</GameList>
+</GameList>
