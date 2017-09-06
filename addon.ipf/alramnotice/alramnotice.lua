@@ -35,4 +35,11 @@ function ALRAMNOTICE_LIST_HELP(frame)
 			helpNoticeCtrl:Emphasize("helpicon_ef", 10.0, 0.3, "FFFFFFFF");
 		end
 	end
-end
+end
+
+function HELP_ALRAMNOTICE_LBTNUP(frame, ctrl, argStr, argNum)
+	ctrl:ShowWindow(0);
+	frame:Invalidate();
+
+	packet.ReqHelpReadType(argNum);
+end

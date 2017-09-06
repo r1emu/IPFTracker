@@ -430,8 +430,11 @@
             </Stage>
             <Stage Name="end" AutoStart="0">
                 <StartScpList>
+                    <ToolScp Scp="MGAME_GIVE_ADVENTURE_BOOK_CLEAR_POINT" Client="NO" UseSleep="NO">
+                        <Str Str="Indun_FireTower"/>
+                    </ToolScp>
                     <ToolScp Scp="MGAME_MSG" Client="YES" UseSleep="NO">
-                        <Str Str="60초 후 입구로 되돌아 갑니다"/>
+                        <Str Str="60초 후에 입구로 돌아갑니다"/>
                     </ToolScp>
                 </StartScpList>
                 <ObjList/>
@@ -487,44 +490,6 @@
                             </ToolScp>
                         </execList>
                     </Event>
-                <Event execMS="3000" eventName="FAILCHECK">
-                        <condList>
-                            <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
-                                <Num Num="30"/>
-                            </ToolScp>
-                        </condList>
-                        <execList>
-                            <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_RESTART" Client="NO" UseSleep="NO">
-                                <Str Str="FAIL"/>
-                            </ToolScp>
-                        </execList>
-                    </Event>
-                </StageEvents>
-            </Stage>
-            <Stage Name="FAIL" AutoStart="0">
-                <StartScpList>
-                    <ToolScp Scp="MGAME_SET_QUEST_NAME" Client="NO" UseSleep="NO">
-                        <Str Str="미션 실패 : 3초 후 원래 존으로 돌아갑니다"/>
-                    </ToolScp>
-                    <ToolScp Scp="MGAME_SET_TIMEOUT" Client="NO" UseSleep="NO">
-                        <Num Num="3"/>
-                    </ToolScp>
-                </StartScpList>
-                <ObjList/>
-                <StageEvents>
-                    <Event eventName="MOVE_ZONE">
-                        <condList>
-                            <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
-                                <Num Num="3"/>
-                            </ToolScp>
-                        </condList>
-                        <execList>
-                            <ToolScp Scp="MGAME_RETURN" Client="NO" UseSleep="NO"/>
-                            <ToolScp Scp="MGAME_END" Client="NO" UseSleep="NO">
-                                <Num Num="1"/>
-                            </ToolScp>
-                        </execList>
-                    </Event>
                 </StageEvents>
             </Stage>
         </StageList>
@@ -534,4 +499,4 @@
             </ToolScp>
         </EnterList>
     </Game>
-</GameList>
+</GameList>

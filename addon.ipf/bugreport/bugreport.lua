@@ -18,7 +18,7 @@ end
 function EXEC_REPORT_REPLAY(parent, ctrl)
 	local frame = parent:GetTopParentFrame();
 	local txt = frame:GetChild("inputtext"):GetText();
-	local ret = debug.SendReplayReport(txt);
+	local ret = debug.SendLastReplayReport(txt);
 	if ret == true then
 		ui.MsgBox(ClMsg("TransferSuccess"));
 	else
@@ -27,4 +27,4 @@ function EXEC_REPORT_REPLAY(parent, ctrl)
 
 	frame:ShowWindow(0);
 end
-
+
