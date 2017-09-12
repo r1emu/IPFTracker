@@ -1211,8 +1211,7 @@ function INVENTORY_TOTAL_LIST_GET(frame, setpos, isIgnorelifticon)
 					if cap ~= "" then
 						local itemname = string.lower(dictionary.ReplaceDicIDInCompStr(itemCls.Name));		
 						local tempcap = string.lower(cap);
-						
-						local a = string.find(itemname, cap);
+						local a = string.find(itemname, tempcap);
 						if a == nil then
 							makeSlot = false;
 						end
