@@ -4,6 +4,9 @@
 	if partyObj == nil then
 		return;
 	end
+    if partyObj.TowerLevel < 3 then
+        return;
+    end
 
 	local item, cnt = GetInvItemByGuid(pc, iesID);
 	local needItem, expPerItem = GET_GUILD_EXPUP_ITEM_INFO();

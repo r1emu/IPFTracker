@@ -78,7 +78,7 @@ function REINFORCE_MIX_DROP(frame, icon, argStr, argNum)
 		local invItem = GET_ITEM_BY_GUID(guid);
 
 		local obj = GetIES(invItem:GetObject());
-		if IS_KEY_ITEM(obj) == true or IS_KEY_MATERIAL(obj) == true then
+		if IS_KEY_ITEM(obj) == true or IS_KEY_MATERIAL(obj) == true or obj.ItemLifeTimeOver ~= 0 then
 			ui.SysMsg(ClMsg("CanNotBeUsedMaterial"));
 			return;
 		end
@@ -88,7 +88,7 @@ function REINFORCE_MIX_DROP(frame, icon, argStr, argNum)
 end
 
 function REINFORCE_MIX_RBTN(itemObj, slot)    
-	if IS_KEY_ITEM(itemObj) == true or IS_KEY_MATERIAL(obj) == true then
+	if IS_KEY_ITEM(itemObj) == true or IS_KEY_MATERIAL(itemObj) == true or itemObj.ItemLifeTimeOver ~= 0 then
 		ui.SysMsg(ClMsg("CanNotBeUsedMaterial"));
 		return;
 	end
@@ -443,7 +443,7 @@ function REINF_MIX_CHECK_ICON(slot, reinfItemObj, invItem, itemobj)
 		if materialScp ~= nil then
 			if 1 == _G[materialScp](reinfItemObj, itemobj) then
 				--slot:PlayUIEffect("I_sys_item_slot_loop_yellow", 1.7, "Reinforce");
-				if 0 == slot:GetUserIValue("REINF_MIX_SELECTED") then
+				if 0 == slot:GetUserIValue("REINF_MIX_SELECTED") and itemobj.ItemLifeTimeOver == 0 then
 						icon:SetColorTone("FFFFFFFF");
 					else
 						icon:SetColorTone("33000000");
@@ -475,7 +475,7 @@ function REINFORCE_MIX_INV_RBTN(itemObj, slot, selectall)
 		return;
 	end
 
-	if IS_KEY_ITEM(itemObj) == true or IS_KEY_MATERIAL(obj) == true then
+	if IS_KEY_ITEM(itemObj) == true or IS_KEY_MATERIAL(itemObj) == true or itemObj.ItemLifeTimeOver ~= 0 then
 		ui.SysMsg(ClMsg("CanNotBeUsedMaterial"));
 		return;
 	end
@@ -565,10 +565,39 @@ function REINFORCE_BY_MIX_SLOT_RBTN(parent, slot)
 end
 
 function REINFORCE_BY_MIX_EXECUTE(parent)
+  
+  if  session.world.IsIntegrateServer() == true or
+	    session.world.IsIntegrateIndunServer() == true or
+	    session.IsMissionMap() == true then      
+	      ui.SysMsg(ClMsg("CannotCraftInIndun"));
+        return
+    end
+
+
 	local frame = parent:GetTopParentFrame();
 
 	local slots = GET_MAT_SLOT(frame);
 	local cnt = slots:GetSlotCount();
+	
+    local tgtItem = GET_REINFORCE_MIX_ITEM();
+    if tgtItem.ItemLifeTimeOver == 1 then
+        ui.SysMsg(ScpArgMsg("CannotUseLifeTimeOverItem"))
+        return
+    end
+	local slots = GET_MAT_SLOT(frame);
+	local cnt = slots:GetSlotCount();
+	for i = 0 , cnt - 1 do
+		local slot = slots:GetSlotByIndex(i);
+		local matItem, count = GET_SLOT_ITEM(slot);
+		if matItem ~= nil then
+		    local obj = GetIES(matItem:GetObject());
+		    if obj.ItemLifeTimeOver == 1 then
+                ui.SysMsg(ScpArgMsg("CannotUseLifeTimeOverItem"))
+        		return
+        	end
+		end
+	end
+
     
 	local ishavevalue = 0
     local canProcessReinforce = false
@@ -604,8 +633,12 @@ function _REINFORCE_BY_MIX_EXECUTE()
 		end
 	end
 	local frame = ui.GetFrame("reinforce_by_mix");
+	local reinforceButton = GET_CHILD_RECURSIVELY(frame, "exec_mixreinf");
+	if reinforceButton ~= nil then
+	  reinforceButton:EnableHitTest(0);
+    end
 	
-    frame:SetUserValue("EXECUTE_REINFORCE", 1);
+    frame:SetUserValue("EXECUTE_REINFORCE", 1)
 
 	session.ResetItemList();
 
@@ -649,6 +682,10 @@ end
 function REINFORCE_MIX_ITEM_EXP_STOP()	
 	local frame = ui.GetFrame("reinforce_by_mix");
 	frame:SetUserValue("EXECUTE_REINFORCE", 0);
+    local reinforceButton = GET_CHILD_RECURSIVELY(frame, "exec_mixreinf");
+	if reinforceButton ~= nil then
+	  reinforceButton:EnableHitTest(1);
+    end
 end;
 
 function REINFORCE_MIX_FORCE(slot, resultText, x, y)
@@ -662,7 +699,11 @@ function REINFORCE_MIX_FORCE(slot, resultText, x, y)
 
 end
 
-function REINFORCE_MIX_ITEM_EXPUP_END(frame, msg, multiPly, totalPoint)        
+function REINFORCE_MIX_ITEM_EXPUP_END(frame, msg, multiPly, totalPoint)     
+	local reinforceButton = GET_CHILD_RECURSIVELY(frame, "exec_mixreinf");
+	if reinforceButton ~= nil then
+	  reinforceButton:EnableHitTest(1);
+    end   
 	imcSound.PlaySoundEvent("sys_jam_mix_whoosh");
 		
 	local box_item = frame:GetChild("box_item");
@@ -781,7 +822,10 @@ function REINF_FORCE_END()
 	if exp == 0 then
 		return;
 	end
-
+    local reinforceButton = GET_CHILD_RECURSIVELY(frame, "exec_mixreinf");
+	if reinforceButton ~= nil then
+	  reinforceButton:EnableHitTest(1);
+    end
 	frame:SetUserValue("_FORCE_SHOOT_EXP", "0");
 	frame:SetUserValue("_EXP_UP_VALUE", exp);
 	

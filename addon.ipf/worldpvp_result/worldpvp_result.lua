@@ -49,13 +49,10 @@ function WORLDPVP_RESULT_UPDATE_EXITTIME(ctrl)
 end
 
 function WORLDPVP_RESULT_UI(argStr)
-
-	local frame = ui.GetFrame("worldpvp_result");
-
+local frame = ui.GetFrame("worldpvp_result");
 	local stringList = StringSplit(argStr, "\\");
-	local guildBttle = tonumber(stringList[1]);
-	local winTeam = tonumber(stringList[2]);
-	local autoExitTime = tonumber(stringList[3]);
+	local winTeam = tonumber(stringList[1]);
+	local autoExitTime = tonumber(stringList[2]);
 	local autoexittext = frame:GetChild("autoexittext");
 	autoexittext:SetTextByKey("value", math.floor(autoExitTime));
 	autoexittext:SetUserValue("END_TIME", imcTime.GetAppTime() + math.floor(autoExitTime));
@@ -68,11 +65,11 @@ function WORLDPVP_RESULT_UI(argStr)
 		local result = GET_CHILD(frame, "result_" ..i);
 
 		if winTeam > 0 then
-		if winTeam == i then
-			result:SetImage("test_pvp_win");
+			if winTeam == i then
+				result:SetImage("test_pvp_win");
 				gbox:SetSkinName('test_com_winbg');
-		else
-			result:SetImage("test_pvp_lose");
+			else
+				result:SetImage("test_pvp_lose");
 				gbox:SetSkinName('test_com_losebg');
 			end
 		else
@@ -84,8 +81,8 @@ function WORLDPVP_RESULT_UI(argStr)
 	local mvpChar = nil;
 	local mvpTeam = nil;
 	local maxScore = -1;
-	local tokenPerChar = 11;
-	local startIndex = 3;
+	local tokenPerChar = 13;
+	local startIndex = 2;
 	local charCount = (#stringList - startIndex) / tokenPerChar;
 	local lastTeam = -1;
 	for i = 0 , charCount - 1 do
@@ -97,10 +94,12 @@ function WORLDPVP_RESULT_UI(argStr)
 		local iconStr = stringList[indexBase + 5];
 		local famName = stringList[indexBase + 6];
 		local charName = stringList[indexBase + 7];
-		local killCnt = stringList[indexBase + 8];
-		local deathCnt = stringList[indexBase + 9];
-		local dealAmount = tonumber(stringList[indexBase + 10]);
-		local skillDeals = stringList[indexBase + 11];
+		local winPoint = stringList[indexBase + 8];
+		local losePoint = stringList[indexBase + 9];
+		local killCnt = stringList[indexBase + 10];
+		local deathCnt = stringList[indexBase + 11];
+		local dealAmount = tonumber(stringList[indexBase + 12]);
+		local skillDeals = stringList[indexBase + 13];
 		
 		local iconInfo = ui.GetPCIconInfoByString(iconStr);
 		local iconName = ui.CaptureModelHeadImage_IconInfo(iconInfo);
@@ -120,13 +119,13 @@ function WORLDPVP_RESULT_UI(argStr)
 		local txt_death = GET_CHILD(ctrlSet, "txt_death");
 		txt_death:SetTextByKey("value", deathCnt);
 		local txt_getpoint = GET_CHILD(ctrlSet, "txt_getpoint");
-		if isConnected == "0" or guildBttle == 1 then
+		if isConnected == "0" then
 			txt_getpoint:SetTextByKey("value", 0);
 		else
 			if winTeam == tonumber(teamID) then
-				txt_getpoint:SetTextByKey("value", math.min(WORLDPVP_WIN_GET_POINT));
+				txt_getpoint:SetTextByKey("value", winPoint);
 			else
-				txt_getpoint:SetTextByKey("value", math.min(WORLDPVP_LOSE_GET_POINT));
+				txt_getpoint:SetTextByKey("value", losePoint);
 			end
 		end
 
