@@ -7,6 +7,25 @@ function ADVENTURE_BOOK_TEAM_BATTLE_COMMON_INIT(adventureBookFrame, teamBattleRa
     -- ranking
     local rankingBox = teamBattleRankingPage:GetChild('teamBattleRankingBox');
     ADVENTURE_BOOK_TEAM_BATTLE_RANK(teamBattleRankingPage, rankingBox);
+	
+	local join = GET_CHILD_RECURSIVELY(teamBattleRankingPage, 'teamBattleMatchingBtn');
+	join:SetEnable(0);
+	
+	local cnt = session.worldPVP.GetPlayTypeCount();
+	if cnt > 0 then
+		local isGuildBattle = 0;
+		for i = 1, cnt do
+			local type = session.worldPVP.GetPlayTypeByIndex(i);
+			if type == 210 then
+				isGuildBattle = 1;
+				break;
+			end
+		end
+
+		if isGuildBattle == 0 then
+			join:SetEnable(1);
+		end
+	end
 end
 
 function GET_TEAM_BATTLE_CLASS()
@@ -184,7 +203,7 @@ function ADVENTURE_BOOK_TEAM_BATTLE_STATE_CHANGE(frame, msg, argStr, argNum)
 	local state = session.worldPVP.GetState();
 	local stateText = GetPVPStateText(state);
 	local viewText = ClMsg( "PVP_State_".. stateText );
-	local join = GET_CHILD_RECURSIVELY(frame, 'teamBattleMatchingBtn');    
+	local join = GET_CHILD_RECURSIVELY(frame, 'teamBattleMatchingBtn');
 	join:SetTextByKey("text", viewText);
 
 	if state == PVP_STATE_FINDING then

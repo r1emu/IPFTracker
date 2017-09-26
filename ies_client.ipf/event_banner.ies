@@ -1,5 +1,5 @@
 ClassID,StartTimeYYYYMM,StartTimeDDHHMM,NewTimeYYYYMM,NewTimeDDHHMM,EndTimeYYYYMM,EndTimeDDHHMM,DeadlineTimeYYYYMM,DeadlineTimeDDHHMM,ExchangeTimeYYYYMM,ExchangeTimeDDHHMM,ClassName,Name,ImagePath,url,UserCommand1,UserCommand2,UserCommand3
-999900,201709,261400,201710,31400,999901,61400,999901,11400,0,0,"inGame_E1","Patch Notes","inGame_E1","https://treeofsavior.com/page/news/view.php?n=1112","","",""
+999900,201709,261400,201710,31400,201710,31400,201710,41400,0,0,"inGame_E1","Patch Notes","inGame_E1","https://treeofsavior.com/page/news/view.php?n=1112","","",""
 999910,201709,261400,201710,11400,201710,101400,201710,51400,0,0,"inGame_E2","Leticia's Secret Cube","inGame_E2","https://treeofsavior.com/page/news/view.php?n=1113","","",""
 999920,201709,191400,201709,241400,201710,171400,201710,121400,0,0,"inGame_E3","Sidekick Booster","inGame_E3","https://treeofsavior.com/page/news/view.php?n=1107","","",""
 999930,201709,121400,201709,171400,201710,171400,201710,121400,0,0,"inGame_E4","The Masters' Unit","inGame_E4","https://treeofsavior.com/page/news/view.php?n=1092","","",""
