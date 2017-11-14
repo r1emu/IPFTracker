@@ -1,5 +1,5 @@
 ClassID,StartTimeYYYYMM,StartTimeDDHHMM,NewTimeYYYYMM,NewTimeDDHHMM,EndTimeYYYYMM,EndTimeDDHHMM,DeadlineTimeYYYYMM,DeadlineTimeDDHHMM,ExchangeTimeYYYYMM,ExchangeTimeDDHHMM,ClassName,Name,ImagePath,url,UserCommand1,UserCommand2,UserCommand3
-999900,201711,71400,201711,121400,201711,141400,201711,91400,0,0,"inGame_E1","Patch Notes","inGame_E1","https://treeofsavior.com/page/news/view.php?n=1167","","",""
+999900,201711,141400,201711,191400,201711,211400,201711,161400,0,0,"inGame_E1","Patch Notes","inGame_E1","https://treeofsavior.com/page/news/view.php?n=1167","","",""
 999901,201711,71400,201711,121400,201811,121400,201811,71400,0,0,"inGame_E2","Master Blacksmith Pack","inGame_E2","http://store.steampowered.com/app/716440","","",""
 999902,201711,141400,201711,191400,201711,281400,201711,231400,0,0,"inGame_E3","Goddess' Blessed Cube","inGame_E3","https://treeofsavior.com/page/news/view.php?n=1168","","",""
 999903,201711,71400,201711,121400,201711,281400,201711,231400,0,0,"inGame_E4","Survival Instinct","inGame_E4","https://treeofsavior.com/page/news/view.php?n=1159","","",""
