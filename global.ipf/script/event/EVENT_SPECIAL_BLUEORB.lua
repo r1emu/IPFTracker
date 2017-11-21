@@ -436,7 +436,10 @@ function SCR_BLUEORB_REWARD(cmd, curStage, eventInst, obj)
 	-- end
     local list, cnt = GetCmdPCList(cmd:GetThisPointer());
 	for i = 1 , cnt do
-	    RunScript('SCR_BLUEORB_REWARD_PLAY', list[i])
+        local zoneObj = GetLayerObject(list[i]);
+        local aObj = GetAccountObj(list[i])
+        local bossLV = GetExProp(zoneObj, "bossLV");
+	    RunScript('SCR_BLUEORB_REWARD_PLAY', list[i], zoneObj, aObj, bossLV)
 	end
 end
 
