@@ -687,7 +687,7 @@ function ON_WORLDPVP_RANK_PAGE(frame)
 	local cid = session.GetMySession():GetCID();
 	local myRank = session.worldPVP.GetPrevRankInfoByCID(cid);
 	if myRank ~= nil then
-		-- 1,2,3µî¸¸ º¸¿©ÁØ´Ù.
+		-- 1,2,3ï¿½î¸¸ ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 		if myRank.ranking < 3 then
 			btnReward:SetVisible(1);
 		end
