@@ -38,7 +38,7 @@ function BLACKMARKET_SHOW_DETAIL(bg, ctrl)
 		local mapName = cls.StartMap;
 		local mapCls = GetClass("Map", mapName);
 		
-		world.PreloadMinimap(mapName);
+		world.PreloadMinimap(mapName, true, true);
 		local pic_gbox = ctrlSet:GetChild("pic_gbox");
 		local pic = GET_CHILD(pic_gbox, "map", "ui::CPicture");
 		pic:SetImage(mapName .. "_fog");
@@ -97,4 +97,4 @@ function BLACKMARKET_UPDATE(frame)
 	frame:Invalidate();
 end
 
-
+
