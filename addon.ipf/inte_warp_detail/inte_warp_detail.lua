@@ -35,7 +35,7 @@ function INTE_WARP_DETAIL_INFO(cost, infoString, xPos)
 		nameRechText2:SetTextByKey("medal",cost..ScpArgMsg('Auto__SilBeo_SoMo'));
 		--nameRechText2:SetTextByKey("medal",'');
 
-		world.PreloadMinimap(camp_warp_class.Zone);
+		world.PreloadMinimap(camp_warp_class.Zone, true, true);
 		local pic = GET_CHILD(frame, "picture_minimap", "ui::CPicture");
 		pic:SetImage(camp_warp_class.Zone);
 
@@ -71,7 +71,7 @@ function INTE_WARP_DETAIL_INFO(cost, infoString, xPos)
 		nameRechText2:SetTextByKey("medal",cost..ScpArgMsg('Auto__SilBeo_SoMo'));
 		--nameRechText2:SetTextByKey("medal",'');
 
-		world.PreloadMinimap(mapClass.ClassName);
+		world.PreloadMinimap(mapClass.ClassName, true, true);
 		local pic = GET_CHILD(frame, "picture_minimap", "ui::CPicture");
 		pic:SetImage(mapClass.ClassName);
 
@@ -91,26 +91,6 @@ function INTE_WARP_DETAIL_INFO(cost, infoString, xPos)
 	frame:ShowWindow(1);
 	frame:Invalidate();
 end
-
---[[
-function WARP_TO_AREA_OLD(frame, data, argStr, argNum)
-
-	local dest_mapClassID = data:GetEventScriptArgNumber(ui.LBUTTONDOWN);
-	local cheat = string.format("/intewarp %d", dest_mapClassID);
-
-	local warpFrame = ui.GetFrame('inte_warp');	
-	if warpFrame:GetUserValue('SCROLL_WARP') == 'YES' then
-		cheat = string.format("/intewarpByItem %d", dest_mapClassID);
-	end
-	movie.InteWarp(session.GetMyHandle(), cheat);
-	local frame2 = ui.GetFrame('inte_warp_detail');
-	frame2:ShowWindow(0);
-	frame2:Invalidate()
-
-	packet.ClientDirect("InteWarp");
-
-end
-]]
 
 function ON_INTE_SKILL_WARP(frame, msg, argStr, argNum)
 
