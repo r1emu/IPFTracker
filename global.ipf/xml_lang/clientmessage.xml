@@ -7,8 +7,8 @@
 		<Class ClassID="302027" OverrideType="ADD" ClassName="Valen_Select3" Data="대화 종료"/>
 	</Category>
 	<Category Name="GLOBAL">
-		<Class ClassID="501016" OverrideType="None" ClassName="steam_Premium_SkillReset" Data="스킬 초기화 포션"/>
-		<Class ClassID="501017" OverrideType="None" ClassName="steam_Premium_SkillReset_1" Data="스킬 초기화 포션"/>
+		<Class ClassID="501016" ClassName="steam_Premium_SkillReset" Data="스킬 초기화 포션"/>
+		<Class ClassID="501017" ClassName="steam_Premium_SkillReset_1" Data="스킬 초기화 포션"/>
 		<Class ClassID="501018" OverrideType="ADD" ClassName="steam_OneYear_1" Data="1주년 폭죽 받기"/>
 		<Class ClassID="501021" OverrideType="ADD" ClassName="DayQuest_Rand_Desc01" Data=" {nl}아래 특성을 가진 몬스터를 처치하고 증표 10개를 가지고 오십시오.{nl} - 종족 : {RACE}{{nl} - 레벨 : {LV} 이상"/>
 		<Class ClassID="501022" OverrideType="ADD" ClassName="DayQuest_Rand_Desc02" Data="퀘스트 수령 하기"/>
