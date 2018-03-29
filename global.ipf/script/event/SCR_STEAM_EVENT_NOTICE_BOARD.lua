@@ -2,6 +2,10 @@ function SCR_STEAM_TREASURE_EVENT_DIALOG(self,pc)
     local serverID = GetServerGroupID()
     local select = 0;
 
+    if IsBuffApplied(pc, 'Event_Steam_Secret_Market') == 'YES' then
+        RemoveBuff(pc, 'Event_Steam_Secret_Market')
+    end
+
     if serverID == 1001 or serverID == 1004 then
         select = ShowSelDlg(pc, 0, 'EV_DAILYBOX_SEL', ScpArgMsg("Cancel"), ScpArgMsg("EVENT_COOPERATION_DLG4"), ScpArgMsg("EVENT_STEAM_2018REWARD_DLG1"), ScpArgMsg("EVENT_STEAM_2018REWARD_DLG2"), ScpArgMsg("EVENT_COOPERATION_DLG3"))
     else

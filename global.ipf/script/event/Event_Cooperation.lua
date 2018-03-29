@@ -33,7 +33,7 @@ function SCR_EVENT_COOPERRATION_DIALOG(self, pc)
     local select = ShowSelDlg(pc, 0, 'EVENT_SELECT_BOSSLV_05', ScpArgMsg('EventShop'), ScpArgMsg('EVENT_7DAY_EXP_SEL2'), ScpArgMsg('EVENT_COOPERATION_DLG2'), ScpArgMsg('Auto_DaeHwa_JongLyo'))
 
     if select == 1 then -- event shop
-        ExecClientScp(pc, "REQ_EVENT_ITEM_SHOP7_OPEN()")
+        ExecClientScp(pc, "REQ_EVENT_ITEM_SHOP2_OPEN()")
     elseif select == 2 then -- exp buff
         local get_buff = ShowSelDlg(pc, 0, 'EVENT_1708_JURATE_DLG5', ScpArgMsg('No'), ScpArgMsg('Yes'))
 
