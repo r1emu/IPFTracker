@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <uiframe name="legendcardupgrade" x="0" y="0" width="600" height="1030" create="open">
 	<draw drawnotitlebar="false" drawtitlebar="false"/>
 	<skin frameskin=" "/>
@@ -40,7 +40,7 @@
 		<richtext name="legendcard_name_text" parent="legendcardnameGbox" rect="0 0 100 30" margin="0 -2 0 0" layout_gravity="center center " hittest="false" format="{@st66d}{#ffcc33}{s18}%s{/}" param1="value" stretch="true"/>
 		<picture name="labelline1" margin="0 60 0 0" parent="option_bg" rect="0 0 580 2" stretch="true" image="guild_line_h2" layout_gravity="center top"/>
 		<picture name="labelline2" margin="0 130 0 0" parent="option_bg" rect="0 0 580 2" stretch="true" image="guild_line_h2" layout_gravity="center top"/>
-		<button name="upgradeBtn" rect="0 0 180 50" margin="-5 0  0 70" layout_gravity="center bottom" LBtnUpScp="DO_LEGENDCARD_UPGRADE_LBTNUP" skin="test_red_button" format="{@st41b}{s18}%s" oversound="button_cursor_over_3" param1="value" param1_def="강화" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" clicksound="button_click_big"/>
+		<button name="upgradeBtn" rect="0 0 180 50" margin="-5 0  0 70" layout_gravity="center bottom" LBtnUpScp="DO_LEGENDCARD_UPGRADE_LBTNUP" skin="test_red_button" format="{@st41b}{s18}Enhance" oversound="button_cursor_over_3" param1="" param1_def="" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" clicksound="button_click_big"/>
 		<button name="close" rect="0 0 44 44" margin="0 20 28 0" layout_gravity="right top" LBtnUpArgNum="" LBtnUpScp="ui.CloseFrame(&apos;legendcardupgrade&apos;)" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" caption="" clicksound="button_click_big" image="testclose_button" oversound="button_over" texttooltip="{@st59}레전드 카드 강화 UI를 닫습니다{/}"/>
 		<groupbox name="resultGbox2" parent="subGbox1" rect="0 0 580 620" margin="0 0 0 0" layout_gravity="center top" draw="false" hittestbox="false" resizebyparent="false" resizebyresolution="false" scrollbar="false"/>
 		<groupbox name="resultGbox" parent="subGbox1" rect="0 0 580 620" margin="0 0 0 0" layout_gravity="center top" draw="false" hittestbox="false" resizebyparent="false" resizebyresolution="false" scrollbar="false"/>
