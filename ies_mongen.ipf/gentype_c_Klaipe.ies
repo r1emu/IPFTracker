@@ -63,7 +63,6 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 5084,10029,1,40,1,60000,1,1,0,0,0,0,0,"npc_matron5","리마","","","","","","","CHAR119_MSTEP3_4_NPC","","","NO","YES","NO","Neutral","","","",""
 5118,10061,1,40,1,60000,1,2,0,0,0,0,0,"npc_soldier_female_01","경비병 리엔","","","","","","","INSTANCE_DUNGEON","","","NO","YES","NO","Neutral","","","",""
 5171,10062,1,40,1,60000,1,1,0,0,0,0,0,"HiddenTrigger6","[케도라 상단원]{nl}게랄다시아","","","","","","JUNK_SHOP_CREATE_AI","","","","NO","YES","NO","Neutral","","","",""
-5173,5173,1,100,1,1000,1,2,0,0,0,0,0,"NPC_GM2","초기화 지원 도우미","","","","","","","EVENT_1801_RANKRESET_NPC","","","NO","YES","NO","Neutral","","","",""
 5178,10063,1,40,1,60000,1,0,0,0,0,0,0,"npc_ROD_master","[로델레로 마스터]{nl}        카미야","","","","","","","STEAM_EVENT_2YEARS_MASTER1","","","NO","YES","NO","Neutral","","","",""
 5179,10064,1,40,1,60000,1,0,0,0,0,0,0,"npc_COS_master","[커세어 마스터]{nl}    하이레이번","","","","","","","STEAM_EVENT_2YEARS_MASTER5","","","NO","YES","NO","Neutral","","","",""
 5181,10066,1,40,1,60000,1,0,0,0,0,0,0,"npc_SQR_master","[스콰이어 마스터]{nl}   유스티나 르귄","","","","","","","STEAM_EVENT_2YEARS_MASTER9","","","NO","YES","NO","Neutral","","","",""
