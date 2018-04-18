@@ -20,7 +20,7 @@ function DELETE_WARNING_BOX_ON_INIT(second, petGuid)
 	local monCls = GetClassByType("Monster", petInfo:GetPetType());	
 	local nameStr = string.format("%s (%s)", petInfo:GetName(), monCls.Name);
 	frame:SetUserValue("PET_GUID_DEL", petGuid);
-	frame:SetUserValue("CHAR_CID_DEL", brkSystem:GetCID());		
+	frame:SetUserValue("CHAR_CID_DEL", brkSystem:GetCIDStr());		
 	text1 = frame:GetChild("richtext_1");
 	text2 = frame:GetChild("richtext_3");
 	btnYes = frame:GetChild("button_yes");		
@@ -218,4 +218,4 @@ function DELETE_WARNING_BOX_SETPOS(frame, stage)
 	skinFrame2:SetAlpha(0.01, 100, 10, 2, "QUIT_ALPHA_BLEND_END", 1);
 
 	--skinFrame:SetColorBlend(1, "FFFF0000", "FFFFFFFF", true);
-en
+end
