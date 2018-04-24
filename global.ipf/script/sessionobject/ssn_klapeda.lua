@@ -130,15 +130,6 @@ function SCR_SSN_KLAPEDA_ZoneEner(self, sObj, msg, argObj, argStr, argNum)
                 AddHelpByName(self, 'TUTO_ITEM_AWAKENING')
             end
         end
-        --스팀 콜로니전 최초 승리 보상 지급 스크립트
-        local state = GetColonyWarState()
-       if state ~= 2 then
-            if GetServerNation() ~= 'KOR' then
-                if GetServerNation() == 'GLOBAL' then
-                    SCR_STEAM_COLONY_WAR_FIRST_VICTORY_REWARD(self)
-                end
-            end
-        end
     elseif argStr == 'c_orsha' then
         if sObj.TUTO_SOCIAL == 0 then
             sObj.TUTO_SOCIAL = 300
@@ -163,18 +154,6 @@ function SCR_SSN_KLAPEDA_ZoneEner(self, sObj, msg, argObj, argStr, argNum)
                 AddHelpByName(self, 'TUTO_GEM_ROASTING')
             end
         end
-        --스팀 콜로니전 최초 승리 보상 지급 스크립트
-        local state = GetColonyWarState()
-        if state ~= 2 then
-            if GetServerNation() ~= 'KOR' then
-                if GetServerNation() == 'GLOBAL' then
-                    SCR_STEAM_COLONY_WAR_FIRST_VICTORY_REWARD(self)
-                end
-            end
-        end
-    elseif argStr == 'c_barber_dress' then
-        FixCamera(self, -7.83 , 4.81, 13.42, 230)
-        AddBuff(self, self, "BEAUTY_HAIR_BUFF", 1, 0, 0)
     elseif argStr == 'f_pilgrimroad_31_2' then
         PILGRIM312_SQ_04_01_ADD(self, sObj, msg, argObj, argStr, argNum)
     elseif argStr == 'f_bracken_63_1' then
