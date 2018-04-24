@@ -25,6 +25,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 114,114,1,20,1,60000,1,2,0,0,0,0,0,"npc_PRS_master","[프리스트 마스터]{nl}         보러블","","","","MON_DUMMY","","","MASTER_PRIEST","","","No","YES","NO","Neutral","","","",""
 115,115,1,20,1,60000,1,2,0,0,0,0,0,"npc_KRV_master","[크리비 마스터]{nl}      헤르쿠스","","","","MON_DUMMY","","","MASTER_KRIWI","","","No","YES","NO","Neutral","","","",""
 117,117,1,40,-1,60000,1,2,0,0,1,0,0,"npc_ORC_master","    [오라클 마스터]{nl}아폴로니야 바르보라","","","","MON_DUMMY","","","MASTER_ORACLE","","","NO","YES","NO","Neutral","","","",""
+118,118,1,40,-1,60000,1,2,0,0,1,0,0,"npc_ONM_master","[음양사 마스터]{nl}아히로 세이메이","","","","MON_DUMMY","","","ONMYOJI_MASTER","","","NO","YES","NO","Neutral","","","",""
 130,130,1,20,1,1,1,1,0,0,0,0,0,"Board1","알림판","","","","MON_DUMMY","","","KLAPEDA_SIGN30","","","No","YES","NO","Neutral","","","",""
 131,131,1,20,1,1,1,1,0,0,0,0,0,"Board1","알림판","","","","MON_DUMMY","","","KLAPEDA_SIGN31","","","No","YES","NO","Neutral","","","",""
 132,132,1,20,1,1,1,1,0,0,0,0,0,"Board1","알림판","","","","MON_DUMMY","","","KLAPEDA_SIGN32","","","No","YES","NO","Neutral","","","",""
