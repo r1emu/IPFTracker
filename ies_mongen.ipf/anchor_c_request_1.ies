@@ -1,0 +1,3 @@
+ClassID,GenType,PosX,PosY,PosZ,Direction,AnchorRange,NPCID,Name
+1,1,195,4,-130,0,1,0,"WarpSpot"
+4,10,98,0,-29,315,1,0,"안내 게시판"
