@@ -2,4 +2,4 @@
 
 - [KR](https://github.com/r1emu/IPFTracker/tree/KR)
 - [International](https://github.com/r1emu/IPFTracker/tree/International)
-- [KRTest)(https://github.com/r1emu/IPFTracker/tree/KrTest)
+- [KRTest](https://github.com/r1emu/IPFTracker/tree/KrTest)
