@@ -1289,11 +1289,12 @@ function MAP_COLONY_MONSTER(frame, msg, posStr, monID)
     colonyMonPic = AUTO_CAST(colonyMonPic);    
     colonyMonPic:SetImage(COLONY_MON_IMG);
 	
+    local zoneClassName = GetZoneName();
+    local mapprop = geMapTable.GetMapProp(zoneClassName);
+
 	local width = ui.GetImageWidth(zoneClassName .. "_fog");
 	local height = ui.GetImageHeight(zoneClassName .. "_fog");
 
-    local zoneClassName = GetZoneName();
-    local mapprop = geMapTable.GetMapProp(zoneClassName);
     local MapPos = mapprop:WorldPosToMinimapPos(x, z, width, height);
     local mappicturetemp = GET_CHILD_RECURSIVELY(frame, 'map', 'ui::CPicture');
     local offsetX = mappicturetemp:GetX();
