@@ -5837,7 +5837,8 @@
 		<image name="icon_button_warning" file="\skin\pip_test.tga" imgrect="919 708 36 36" CMM_Caption="버튼 경고아이콘"/>
 	</imagelist>
 	<imagelist category="Collar_image">
-		<image name="Collar_The_Gifted_Artist" file="\skin\Collar_skin.tga" imgrect="0 0 30 30" CMM_Caption="칭호 진저 쿠키"/>
+	
+<image name="market_event_test" file="\skin\market_event_test.png" imgrect="0 0 520 250" CMM_Caption="마켓배너준비(테스트)"/>	<image name="Collar_The_Gifted_Artist" file="\skin\Collar_skin.tga" imgrect="0 0 30 30" CMM_Caption="칭호 진저 쿠키"/>
 		<image name="Collar_New_Class_Artist" file="\skin\Collar_skin.tga" imgrect="31 0 30 30" CMM_Caption="눈꽃"/>
 		<image name="Collar_Happy_2_year_anniversary" file="\skin\Collar_skin.tga" imgrect="62 0 30 30" CMM_Caption="스팀 2주년 기념"/>
 		<image name="Collar_Fashionista" file="\skin\Collar_skin.tga" imgrect="93 0 30 30" CMM_Caption="4월 팬아트 칭호"/>

@@ -4,12 +4,14 @@
 function SCR_TX_TP_SHOP(pc, argList)
 
 	if #argList < 1 then
+		IMC_LOG('ERROR_LOGIC', 'SCR_TX_TP_SHOP: argError- aid['..GetPcAIDStr(pc)..']');
 		return
 	end
 
 	local aobj = GetAccountObj(pc);
 	local etcObj = GetETCObject(pc);
 	if aobj == nil or etcObj == nil then
+		IMC_LOG('ERROR_LOGIC', 'SCR_TX_TP_SHOP: account or etc object is nil- aid['..GetPcAIDStr(pc)..']');
 		return
 	end
 
@@ -162,7 +164,10 @@ function SCR_TX_TP_SHOP(pc, argList)
 		local ret = TxCommit(tx);
 		if ret == "SUCCESS" then
 			CustomMongoLog(pc,"TpshopBuyList","AllPrice",tostring(allprice),"Items", itemcls.ClassName)
+			CustomMongoCashLog(pc,"TpshopBuyList","AllPrice",tostring(allprice),"Items", itemcls.ClassName)
 			SendAddOnMsg(pc, "TPSHOP_BUY_SUCCESS", "", 0);
+		else
+			IMC_LOG('ERROR_LOGIC', 'SCR_TX_TP_SHOP: Tx Fail- aid['..GetPcAIDStr(pc)..'], tpitem['..tpitem.ClassName..']');
 		end
 	end
 end
