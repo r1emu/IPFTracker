@@ -218,7 +218,7 @@ function SCR_TX_BEAUTYSHOP_PURCHASE(pc, idSpaceList, classNameList, colorClassNa
 			end
 
 			-- 헤어구매의 경우 이벤트 프로퍼티 설정
-			-- TX_SET_BEAUTYSHOP_EVENT_PROPERTY(tx, pc) -- 5월 17일 이벤트 종료
+			TX_SET_BEAUTYSHOP_EVENT_PROPERTY(tx, pc) -- 5월 17일 이벤트 종료
 
 		else
 			-- Beauty_Shop_Costume, Beauty_Shop_Lens, Beauty_Shop_Package_Cube Beauty_Shop_Wig
