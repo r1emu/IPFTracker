@@ -88,6 +88,11 @@ function ON_JOYSTICK_RESTQUICKSLOT_CLOSE(frame, msg, argStr, argNum)
 
 	frame = ui.GetFrame("joystickrestquickslot");
 
+	local flutFrame = ui.GetFrame("fluting_keyboard");
+	if flutFrame:IsVisible() == 1 then
+		flutFrame:ShowWindow(0);
+	end
+	
 	frame:ShowWindow(0);
 
 	if IsJoyStickMode() == 0 then
@@ -239,4 +244,10 @@ function UPDATE_JOYSTICK_REST_INPUT(frame)
 		gbox:SetSkinName(padslot_offskin);
 	end
 
+end
+
+function OPEN_JOYSTICK_REST_QUICKSLOT(frame)
+end
+
+function CLOSE_JOYSTICK_REST_QUICKSLOT(frame)
 end

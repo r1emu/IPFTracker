@@ -8,11 +8,10 @@ function FPS_ON_INIT(addon, frame)
 end
 
 function FPS_ON_MSG(frame, msg, argStr, argNum)
-
+	local showFPS = config.GetXMLConfig("ShowPerformanceValue")
+	local fpsFrame = ui.GetFrame("fps")
+	fpsFrame:ShowWindow(showFPS)
 	local perfType = config.GetAutoAdjustLowLevel()
-
-	local fpsnumber = tonumber(argStr)
-
 	local nowLowOptionValue = config.GetUseLowOption();
 
 	local nowLowOptionValueprt = "Low"
@@ -30,11 +29,11 @@ function FPS_ON_MSG(frame, msg, argStr, argNum)
 
 	elseif perfType == 1 then
 
-		if fpsnumber < 20 then
+		if argNum < 20 then
 			if nowLowOptionValue == 0 then
 				graphic.EnableLowOption(1);
 			end
-		elseif fpsnumber > 40 then
+		elseif argNum > 40 then
 			if nowLowOptionValue == 1 then
 				graphic.EnableLowOption(0);
 			end
@@ -68,4 +67,13 @@ function FPS_ON_MSG(frame, msg, argStr, argNum)
 		fpsRichText:ShowWindow(1);
 
 	end
+end
+
+function SHOW_FPS_FRAME(flag)
+	local frame = ui.GetFrame("fps")
+	if frame == nil or flag == nil then
+		return
+	end
+
+	frame:ShowWindow(flag)
 end
