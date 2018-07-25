@@ -234,6 +234,7 @@
 		<Class ClassID="2256" ClassName="PleaseRegisterBriquettingLook" Data="외형 추출할 무기를 올려주세요."/>
 		<Class ClassID="2257" ClassName="CannotLock{UI}VisibleState" Data="{UI} UI가 열려 있는 상태에서는 잠금을 시도할 수 없습니다."/>
 		<Class ClassID="2258" ClassName="EnchantedItemForBriquetting" Data="{@st66d_y}강화{/} 및 {@st66d_y}초월{/}된 아이템입니다.{nl}정말 무기 외형 변환을 위해 사용하시겠습니까?"/>
+		<Class ClassID="2259" ClassName="ItemSellFailPlzReconnect" Data="아이템 판매에 실패했습니다. 다시 시도하려면 재접속해주세요."/>
 	</Category>
 	<Category Name="Manufacture">
 		<Class ClassID="3001" ClassName="CONTINUE_MIXING_USING_S" Data="{Auto_1} 아이템을 사용하여 제작을 시작합니다. 계속하시겠습니까?"/>
