@@ -5,6 +5,9 @@
             end
     end
 
+        -- EVENT_1809_CHUSEOK_MOON
+    SCR_SSN_EVENT_1809_CHUSEOK_MOON_KillMonster(self, sObj, msg, argObj, argStr, argNum, party_pc)
+
 end
 
 function SCR_SSN_KLAPEDA_KillMonster(self, sObj, msg, argObj, argStr, argNum)
@@ -18,6 +21,9 @@ function SCR_SSN_KLAPEDA_KillMonster(self, sObj, msg, argObj, argStr, argNum)
 		IndunMonKillCountIncrease(self);
 	end
 
+
+        -- EVENT_1809_CHUSEOK_MOON
+    SCR_SSN_EVENT_1809_CHUSEOK_MOON_KillMonster(self, sObj, msg, argObj, argStr, argNum)
 
 ---- ID_WHITETREES1
     if GetZoneName(self) == 'id_whitetrees1' then
