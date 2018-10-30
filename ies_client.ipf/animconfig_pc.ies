@@ -1252,3 +1252,4 @@ ClassID,BlendIn,BlendOut,Priority,OffsetValue,ClassName,Main,Loop,Freeze,Additiv
 1286,0,0,4,0,"SKL_DRAGONFALL_SHOT","YES","NO","YES","NO","YES","NO","NO","","YES","Attack"
 1287,0,0,4,0,"SKL_HIGHGUARD_SWITCH2","YES","NO","YES","NO","YES","NO","NO","","NO","Attack"
 1288,0,0,4,0,"SKL_HIGHGUARD_SWITCH2_RIDE","YES","NO","YES","NO","YES","NO","NO","","NO","Attack"
+1351,0,0,4,0,"SKL_ASSISTATTACK_FIREWORK_EVENT1","YES","NO","YES","NO","YES","NO","NO","","NO","Stand"
