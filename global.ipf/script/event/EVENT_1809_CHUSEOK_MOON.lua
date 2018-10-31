@@ -171,7 +171,7 @@ function SCR_EVENT_1809_CHUSEOK_MOON_DIALOG(self, pc)
 
    local rank, score, totalRankerCnt = GetRankerInfo(pc, 'EVENT_1809_CHUSEOK_MOON', 'SEASON1', 0);
    
-   local select = ShowSelDlg(pc, 0, 'EVENT_1809_CHUSEOK_MOON_DLG1', ScpArgMsg("EVENT_1809_CHUSEOK_MOON_MSG1"), addRewardSelMsg, ScpArgMsg("EVENT_1809_CHUSEOK_MOON_MSG3"), ScpArgMsg("EVENT_1809_CHUSEOK_MOON_MSG4")..ScpArgMsg("EVENT_1809_CHUSEOK_MOON_MSG18","COUNT",score), ScpArgMsg("Auto_JongLyo"))
+   local select = ShowSelDlg(pc, 0, 'EVENT_1809_CHUSEOK_MOON_DLG1', ScpArgMsg("EVENT_1809_CHUSEOK_MOON_MSG1"), addRewardSelMsg, ScpArgMsg("EVENT_1809_CHUSEOK_MOON_MSG3"), ScpArgMsg("EVENT_1809_CHUSEOK_MOON_MSG4"), ScpArgMsg("Auto_JongLyo"))
    
    local itemObj, invItemCount = GetInvItemByName(pc, 'EVENT_1809_CHUSEOK_MOON_PIECE');
    local islock = 0
