@@ -5,9 +5,9 @@
             end
     end
 
-        -- EVENT_1809_CHUSEOK_MOON
-    SCR_SSN_EVENT_1809_CHUSEOK_MOON_KillMonster(self, sObj, msg, argObj, argStr, argNum, party_pc)
-
+    if IsSameActor(self, party_pc) ~= "YES" and GetDistance(self, party_pc) < PARTY_SHARE_RANGE then
+        SCR_EVENT_TODAY_TREEROOT_DROPITEM(self, sObj, msg, argObj, argStr, argNum)  
+    end
 end
 
 function SCR_SSN_KLAPEDA_KillMonster(self, sObj, msg, argObj, argStr, argNum)
@@ -21,9 +21,7 @@ function SCR_SSN_KLAPEDA_KillMonster(self, sObj, msg, argObj, argStr, argNum)
 		IndunMonKillCountIncrease(self);
 	end
 
-
-        -- EVENT_1809_CHUSEOK_MOON
-    SCR_SSN_EVENT_1809_CHUSEOK_MOON_KillMonster(self, sObj, msg, argObj, argStr, argNum)
+    SCR_EVENT_TODAY_TREEROOT_DROPITEM(self, sObj, msg, argObj, argStr, argNum)  
 
 ---- ID_WHITETREES1
     if GetZoneName(self) == 'id_whitetrees1' then
