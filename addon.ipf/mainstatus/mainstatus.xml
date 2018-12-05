@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by L (IMCGames Co., Ltd) -->
-<uitile name="mainstatus" x="5" y="82" width="260" height="42" bodycolor="#ffff00" bodyalpha="0">
+<uitile name="mainstatus" x="5" y="82" width="260" height="42">
     <frame layout_gravity="left top"/>
     <input maxwidth="1280" moveable="false" hittestframe="false"/>
     <layer layerlevel="100"/>
@@ -18,4 +18,4 @@
         <richtext name="RR_text" rect="60 0 30 24" layout_gravity="center bottom" caption="{@st45tw3}256" hittest="false"/>
         <richtext name="CRTHR_text" rect="100 0 30 24" layout_gravity="center bottom" caption="{@st45tw3}64" hittest="false"/>
     </controls>
-</uitile>
+</uitile>

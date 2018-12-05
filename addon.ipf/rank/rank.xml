@@ -5,7 +5,7 @@
     <input maxwidth="1280" moveable="false"/>
     <layer layerlevel="80"/>
     <skin frameskin="pipwin_L"/>
-    <draw drawnotitlebar="false" drawtitlebar="false"/>
+    <draw drawtitlebar="false"/>
     <option closebutton="false"/>
     <sound opensound="window_open" closesound="window_close"/>
     <script OpenScp="RANK_OPEN" CloseScp="RANK_CLOSE"/>
@@ -50,4 +50,4 @@
         <page name="page" parent="group_journalTop" rect="0 0 0 0" margin="0 230 0 50" layout_gravity="none none" border="15 10 0 10" slotsize="400 70" slotspc="0 5"/>
         <button name="back" rect="0 0 60 30" margin="50 135 0 0" layout_gravity="left top" LBtnUpScp="RANK_BACK_MAIN" caption="{@st41b}메뉴{/}" clicksound="button_click_big" oversound="button_over"/>
     </controls>
-</uiframe>
+</uiframe>

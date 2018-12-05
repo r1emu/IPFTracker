@@ -2,7 +2,7 @@
 <uiframe name="tournament_win" x="0" y="0" width="1320" height="1236" create="open">
     <frame fullheight="true" fasthide="true" layout_gravity="right top" margin="0 0 -680 0" open="pip"/>
     <skin frameskin="pipwin"/>
-    <draw drawnotitlebar="false" drawtitlebar="false"/>
+    <draw drawtitlebar="false"/>
     <layer layerlevel="80"/>
     <option closebutton="false"/>
     <sound opensound="skill_window_open" closesound="skill_window_close"/>
@@ -15,4 +15,4 @@
         <groupbox name="rankers" rect="0 0 1175 666" margin="70 336 0 0" layout_gravity="left top" hittestbox="false" skin="bg"/>
         <queue name="queue" parent="rankers" rect="0 0 1175 666" margin="10 10 10 10" layout_gravity="left top" skin="None"/>
     </controls>
-</uiframe>
+</uiframe>

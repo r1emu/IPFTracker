@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <uiframe name="questdetail" x="0" y="0" width="450" height="200">
-	<frame title="{@st43}{s22}퀘스트 정보{/}" titlepos="0 0" layout_gravity="left center" snapclient="true" snapframe="true" scale_align="center top"/>
+	<frame title="{@st43}{s22}퀘스트 정보{/}" titlepos="0 0" layout_gravity="left center" scale_align="center top"/>
 	<skin frameskin="mainwindow2"/>
 	<draw drawframe="true" drawtitlebar="false"/>
 	<layer layerlevel="100"/>
@@ -15,4 +15,4 @@
 		<button name="close" rect="0 0 44 44" margin="0 7 7 0" layout_gravity="right top" LBtnUpArgNum="" LBtnUpScp="ui.CloseFrame(&apos;questdetail&apos;)" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" caption="" clicksound="button_click_big" image="testclose_button" oversound="button_over" texttooltip="{@st59}퀘스트 정보를 닫습니다{/}"/>
 		<groupbox name="box" rect="0 0 380 175" margin="0 65 0 0" layout_gravity="center top" draw="false" hittestbox="true" rateheight="true" ratewidth="true" scrollbar="false" skin="groupbox"/>
 	</controls>
-</uiframe>
+</uiframe>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uiframe name="worldpvp_result" x="0" y="0" width="1800" height="650" create="open">
-    <frame title="" layout_gravity="center center" snapclient="true" snapframe="true" margin="0 -90 0 0"/>
+    <frame title="" layout_gravity="center center" margin="0 -90 0 0"/>
     <skin backgroundimage="mixer_back" layout_gravity="center center" rect="0 0 0 0" frameskin="none"/>
     <option hideable="false" closebutton="true" useimageitem="true"/>
     <sound opensound="win_open" closesound="win_close"/>
@@ -31,4 +31,4 @@
         <richtext name="richtext_1_1_1_1" parent="gbox_2" rect="0 0 147 36" margin="629 2 0 0" layout_gravity="left top" drawbackground="false" fixwidth="true" fontname="white_16_ol" format="{@st45tw2}{#000000}%s{/}" maxwidth="0" param1="value" param1_def="피해량" resizebytext="false" slideshow="false" spacey="0" textalign="center center" updateparent="false"/>
         <richtext name="richtext_1_1_1_2_1" parent="gbox_2" rect="0 0 136 37" margin="492 1 0 0" layout_gravity="left top" drawbackground="false" fixwidth="true" fontname="white_16_ol" format="{@st45tw2}{#000000}%s{/}" maxwidth="0" param1="value" param1_def="획득점수" resizebytext="false" slideshow="false" spacey="0" textalign="center center" updateparent="false"/>
     </controls>
-</uiframe>
+</uiframe>

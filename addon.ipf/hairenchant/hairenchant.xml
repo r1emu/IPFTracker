@@ -2,7 +2,7 @@
 <uiframe name="hairenchant" x="0" y="0" width="360" height="560">
     <frame fullheight="false" fasthide="true" layout_gravity="right center" margin="0 65 0 0"/>
     <skin frameskin="none"/>
-    <draw drawnotitlebar="false" drawtitlebar="false"/>
+    <draw drawtitlebar="false"/>
     <layer layerlevel="100"/>
     <option closebutton="false"/>
     <sound opensound="button_click_stats_OK" />
@@ -26,4 +26,4 @@
         <richtext name="HatPropName_3" margin="40 365 0 0" rect="0 0 120 24" format="{@st66}%s{/}" param1="value" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="white_16_ol" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
         <richtext name="scrollCnt" margin="0 0 0 129" rect="0 0 120 24" format="{@st42b}현재 스크롤 보유 개수 : %s개{/}" param1="value" textalign="center top" resizebytext="true" spacey="0" maxwidth="0" fontname="white_16_ol" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="center bottom"/>
     </controls>
-</uiframe>
+</uiframe>

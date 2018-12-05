@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by 11 (IMCGames Co., Ltd) -->
 <uiframe name="status_dummypc" x="0" y="0" width="450" height="590" create="open">
-    <draw drawnotitlebar="false" drawtitlebar="false"/>
+    <draw drawtitlebar="false"/>
     <skin frameskin="pipwin"/>
     <frame fullheight="true" fasthide="true" layout_gravity="left top" open="pip" margin="-450 0 0 0"/>
     <input maxwidth="1280" moveable="false"/>
@@ -49,4 +49,4 @@
         <richtext name="INT_STAT" parent="statusGbox" rect="-20 290 50 20" layout_gravity="right top" caption="100" fontname="white_20_ol" hittest="false" spacey="0" textalign="left top"/>
         <richtext name="DEX_STAT" parent="statusGbox" rect="-20 310 50 20" layout_gravity="right top" caption="100" fontname="white_20_ol" hittest="false" spacey="0" textalign="left top"/>
     </controls>
-</uiframe>
+</uiframe>

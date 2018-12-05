@@ -2,7 +2,7 @@
 <!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by MintPC (Mi) -->
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <uiframe name="selectteam" x="0" y="0" width="1024" height="600">
-	<frame title="캐릭터선택" layout_gravity="center center" snapclient="true" fullwidth="true" fullheight="true"/>
+	<frame title="캐릭터선택" layout_gravity="center center" fullwidth="true" fullheight="true"/>
 	<draw drawtitlebar="false" drawframe="false"/>
 	<input moveable="false" hittestframe="false"/>
 	<option hideable="false" closebutton="false"/>
@@ -18,4 +18,4 @@
 		<button name="upgrade" caption="{@st41b}꾸미기{/}" texttooltip="{@st59}숙소 꾸미기{/}" rect="0 0 120 30" layout_gravity="center top" margin="160 20 0 0" textalign="center center" skin="textbutton" clicksound="button_click_big" oversound="button_over" LBtnUpScp="ui.ToggleFrame('barrackupgrade')"/>
 		<button name="setting" caption="{@st41b}설  정{/}" texttooltip="{@st59}숙소 설정{/}" rect="0 0 120 30" layout_gravity="center top" margin="-160 20 0 0" textalign="center center" skin="textbutton" clicksound="button_click_big" oversound="button_over" LBtnUpScp="SELECTTEAM_OPEN_BARRACK_SETTING"/>
 	</controls>
-</uiframe>
+</uiframe>

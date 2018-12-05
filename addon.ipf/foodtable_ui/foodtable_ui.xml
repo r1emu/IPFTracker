@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <uiframe name="foodtable_ui" x="0" y="0" width="470" height="609" create="open">
-	<draw drawnotitlebar="false" drawtitlebar="false"/>
+	<draw drawtitlebar="false"/>
 	<skin frameskin=" "/>
 	<frame title="" fullheight="true" fasthide="true" layout_gravity="left top" open="pip" margin="-470 0 0 0"/>
 	<input maxwidth="1280" moveable="false"/>
@@ -25,4 +25,4 @@
 		<groupbox name="log_gbox" parent="gbox_log" rect="0 0 444 800" margin="16 0 0 0" layout_gravity="center top" draw="false" hittestbox="false" resizebyparent="false" resizebyresolution="false" scrollbar="true"/>
 		<button name="button_1" parent="gbox_log" rect="0 0 160 50" margin="0 480 0 0" layout_gravity="center bottom" LBtnUpScp="REMOVE_FOOD_TABLE" caption="{@st41b}배식대 해체" skin="test_red_button"/>
 	</controls>
-</uiframe>
+</uiframe>

@@ -63,7 +63,7 @@ function CHAINSKILL_ADD_ICON(frame, skillName, time)
 
 	local hotKey = GET_HOTKEY("Skill", sklCls.ClassID);
 	if hotKey ~= nil then
-		slot:SetText('{s20}{b}{ol}'..hotKey, 'default', 'right', 'top', -8, 1);
+		slot:SetText('{s20}{b}{ol}'..hotKey, 'default', ui.RIGHT, ui.BOTTOM, -8, 1);
 	else
 		slot:ClearText();
 	end
@@ -115,4 +115,4 @@ function PROCESS_CHAIN_SKILL(frame)
 		end
 	end
 
-end
+end

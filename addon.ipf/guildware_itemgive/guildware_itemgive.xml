@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uiframe name="guildware_itemgive" x="0" y="0" width="450" height="600" create="open">
-    <frame titlepos="0 0" margin="2 -102 0 0" layout_gravity="center center" snapclient="true" snapframe="true" scale_align="center top"/>
+    <frame titlepos="0 0" margin="2 -102 0 0" layout_gravity="center center" scale_align="center top"/>
     <draw drawframe="true" drawtitlebar="true" />
     <layer layerlevel="100" />
     <input moveable="true" />
@@ -15,4 +15,4 @@
         <richtext name="txt_itemname" margin="105 -12 0 0" rect="0 0 319 25" format="{#000000}%s{/}" param1="value" param1_def="ZZZZZZZZZZZZZZZZZZZZ" textalign="left center" resizebytext="false" spacey="0" maxwidth="0" fontname="white_16" fixwidth="true" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
         <numupdown name="numupdown" rect="0 0 140 30" layout_gravity="left top" clicksound="button_click_big" oversound="button_over" minvalue="1" incrvalue="1" fontname="white_20_ol" keypad="false" margin="101 18 0 0" font="white_20_ol"/>
     </controls>
-</uiframe>
+</uiframe>

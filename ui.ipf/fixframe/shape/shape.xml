@@ -2,7 +2,7 @@
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by WonSup (IMCGames Co., Ltd) -->
 <!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by MinstFaith (EMBRACE) -->
 <uiframe name="shape" x="0" y="316" width="480" height="404">
-	<frame title="커스터마이즈 아이템 프레임" layout_gravity="right top" snapclient="true" snapframe="true"/>
+	<frame title="커스터마이즈 아이템 프레임" layout_gravity="right top" snapframe="true"/>
 	<input resize="false" hittestframe="false"/>
 	<option hideable="true"/>
 	<draw drawtitlebar="false"/>
@@ -24,4 +24,4 @@
 		<edit name="Color_Blue_Value" caption="0000" textalign="left center" layout_gravity="left top" rect="372 310 44 20" EnterKeyScp="SHAPE_COLOR_B_EDITBOX"/>
 		<edit name="Color_Density_Value" caption="0000" textalign="left center" layout_gravity="left top" rect="372 336 44 20" EnterKeyScp="SHAPE_COLOR_D_EDITBOX"/>
 	</controls>
-</uiframe>
+</uiframe>

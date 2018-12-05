@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
-<uitile name="bossscore" x="0" y="0" width="440" height="220" bodycolor="#ffffff" bodyalpha="0" create="open">
+<uitile name="bossscore" x="0" y="0" width="440" height="220" create="open">
     <frame title="" layout_gravity="right top" margin="440 220 0 0" piptype="top"/>
     <sound opensound="win_open" closesound="win_close"/>
     <draw drawframe="false"/>
@@ -16,4 +16,4 @@
         <picture name="s2time" rect="0 0 28 38" margin="52 20 0 0" layout_gravity="center top" caption="초" image="time_9" visible="true"/>
         <timer name="addontimer" rect="0 0 10 10" margin="0 0 0 0" layout_gravity="left top"/>
     </controls>
-</uitile>
+</uitile>

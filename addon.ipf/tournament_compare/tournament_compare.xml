@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <uiframe name="tournament_compare" x="0" y="0" width="360" height="350" create="open" layout_gravity="left center">
-    <draw drawnotitlebar="false" drawtitlebar="false"/>
+    <draw drawtitlebar="false"/>
     <skin frameskin="wiki_add"/>
     <frame layout_gravity="left top" fasthide="true" margin="0 1 0 0"/>
     <input maxwidth="1280" moveable="false"/>
@@ -14,4 +14,4 @@
         <queue name="queue" rect="0 0 350 100" margin="0 153 0 0" layout_gravity="center top" skin=""/>
         <richtext name="gift" rect="0 0 120 24" margin="157 117 0 0" layout_gravity="left top" drawbackground="false" fixwidth="false" fontname="white_16_ol" format="{@st53b}받은선물 : %s개" maxwidth="0" param1="count" param1_def="0" resizebytext="true" slideshow="false" spacey="0" textalign="left top" updateparent="false"/>
     </controls>
-</uiframe>
+</uiframe>

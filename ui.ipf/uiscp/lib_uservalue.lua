@@ -54,4 +54,19 @@ function GET_CHILD_BY_USERVALUE(frame, valueName, value)
 	end
 
 	return nil;
-en
+end
+
+
+function GET_CHILD_LIST_BY_USERVALUE(frame, valueName, value)
+	local list = {}
+	local retCnt = 0;
+	local cnt = frame:GetChildCount();
+	for i = 0, cnt - 1 do
+		local slot = frame:GetChildByIndex(i);
+		if slot:GetUserValue(valueName) == value then
+			list[#list+1] = slot
+		end
+	end
+
+	return list;
+end

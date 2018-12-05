@@ -4,7 +4,7 @@
     <frame title="{@st41b}NewUI{/}" titlepos="0 -8" margin="0 -300 0 0" layout_gravity="center center"/>
     <draw drawtitlebar="false"/>
     <skin frameskin="notice_bg"/>
-    <option hideable="false" closebutton="false" closebuttonpos="-5 22" useimageitem="true"/>
+    <option hideable="false" useimageitem="true"/>
     <sound opensound="sys_popup_open_1" closesound="character_item_window_close"/>
     <animation frameOpenAnim="popup_start" frameCloseAnim="popup_end"/>
     <controls>
@@ -25,4 +25,4 @@
         <richtext name="itemtext_2" rect="0 0 100 24" margin="0 160 0 0" layout_gravity="center top" drawbackground="false" fixwidth="false" fontname="white_16_ol" format="{@st42b}%s{/}" maxwidth="0" param1="txt" resizebytext="false" slideshow="false" spacey="0" textalign="center top" updateparent="false"/>
         <richtext name="itemtext_3" rect="0 0 100 24" margin="160 160 0 0" layout_gravity="center top" drawbackground="false" fixwidth="false" fontname="white_16_ol" format="{@st42b}%s{/}" maxwidth="0" param1="txt" resizebytext="false" slideshow="false" spacey="0" textalign="center top" updateparent="false"/>
     </controls>
-</uiframe>
+</uiframe>
