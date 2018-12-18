@@ -79,4 +79,10 @@
 			<effect TargetNode="dummy_effect" effect="F_pc_item_ChristmasTHS_light_orange" scale="3" offsetX="0" offsetY="0" ReinforceValue="21" UseAttach="YES" PlayType="All" IsKeeping="NO" BlendMode="NO" OnLifeTime="NO" LifeTimeValue="0.0"/>
 		</ItemList>
 	</Effect_Item>
+	<Effect_Item>
+		<ItemList ItemClassName="wing_winter_star">
+			<effect TargetNode="dummy_effect" effect="F_pc_item_ChristmasTHS_light_orange" scale="1.2" offsetX="0" offsetY="0" ReinforceValue="0" UseAttach="YES" PlayType="All" IsKeeping="NO" BlendMode="NO" OnLifeTime="NO" LifeTimeValue="0.0"/>
+			<effect TargetNode="dummy_effect" effect="F_pc_item_ChristmasTHS_light_orange" scale="1.2" offsetX="0" offsetY="0" ReinforceValue="1" UseAttach="YES" PlayType="All" IsKeeping="NO" BlendMode="NO" OnLifeTime="NO" LifeTimeValue="0.0"/>
+		</ItemList>
+	</Effect_Item>
 </List>
