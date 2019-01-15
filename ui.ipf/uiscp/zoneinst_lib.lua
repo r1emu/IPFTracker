@@ -1,7 +1,11 @@
 ---- zoneinst_lib.lua --
 
 function GET_CHANNEL_STRING(zoneInst, isShowPCCount)
-	local maxCount = session.serverState.GetMaxPCCount();
+	if zoneInst == nil then 
+		return
+	end
+
+    local maxCount = zoneInst.maxCount
 	local fontStr = "{@st42b}";
 	local fullColor = "{#FF0000}";
 	local normalColor = "{#FFCC33}";

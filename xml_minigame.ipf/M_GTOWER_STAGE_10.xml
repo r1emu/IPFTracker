@@ -30,6 +30,11 @@
                             </ToolScp>
                         </execList>
                     </Event>
+                    <Event execCount="1" eventName="SavePCList">
+                        <execList>
+                            <ToolScp Scp="EARTH_TOWER_SAVE_PC_LIST" Client="NO" UseSleep="NO"/>
+                        </execList>
+                    </Event>
                 </StageEvents>
             </Stage>
             <Stage Name="FAIL" AutoStart="0">
@@ -42,7 +47,7 @@
                         <Str Str="raid_fail"/>
                         <Num Num="30"/>
                     </ToolScp>
-                <ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
+                    <ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
                         <Str Str="Fail"/>
                     </ToolScp>
                 </StartScpList>
@@ -80,7 +85,7 @@
                         <Str Str="stage_start"/>
                         <Num Num="20"/>
                     </ToolScp>
-                <ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
+                    <ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
                         <Str Str="Start"/>
                     </ToolScp>
                 </StartScpList>
@@ -367,6 +372,10 @@
                             <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
                                 <Str Str="CHECK"/>
                             </ToolScp>
+                            <ToolScp Scp="MGAME_RANK_RESET_POINT_SETTING" Client="NO" UseSleep="NO">
+                                <Num Num="5"/>
+                                <Str Str="LegendRaid: M_GTOWER_1_10F"/>
+                            </ToolScp>
                         </execList>
                     </Event>
                     <Event execCount="1" eventName="PROG">
@@ -440,6 +449,10 @@
                             </ToolScp>
                         </condList>
                         <execList>
+                            <ToolScp Scp="GAME_ST_EVT_FAIL" Client="NO" UseSleep="NO">
+                                <Str Str="모든 플레이어가 전투 불능 상태가 되었습니다."/>
+                                <Str Str="확인을 누르시면 입장했던 곳으로 이동합니다."/>
+                            </ToolScp>
                             <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
                                 <Str Str="FAIL"/>
                             </ToolScp>
@@ -507,7 +520,7 @@
                             <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_DISABLE" Client="NO" UseSleep="NO">
                                 <Str Str="CHECK"/>
                             </ToolScp>
-                            </execList>
+                        </execList>
                     </Event>
                     <Event execCount="1" eventName="TIMEOUT">
                         <condList>
@@ -543,7 +556,7 @@
                     <ToolScp Scp="MGAME_SET_TIMEOUT" Client="NO" UseSleep="NO">
                         <Num Num="20"/>
                     </ToolScp>
-                <ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
+                    <ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
                         <Str Str="Success"/>
                     </ToolScp>
                 </StartScpList>
@@ -559,7 +572,7 @@
                             </StartList>
                         </SelfAI>
                     </Obj>
-                    <Obj Type="Monster" MonType="57272" Pos="-2640.48#268.91#-4329.30" angle="90" genCount="1" genTime="20000" objectKey="1" autoDestroy="0"/>
+                    <Obj Type="Monster" MonType="57272" Pos="-2640.48#268.91#-4329.30" angle="90" genCount="1" genTime="20000" objectKey="1" autoDestroy="0" propList="&apos;Faction&apos; &apos;Neutral&apos; &apos;Name&apos; &apos;UnvisibleName&apos; &apos;BTree&apos; &apos;None&apos; "/>
                 </ObjList>
                 <StageEvents>
                     <Event execCount="1" eventName="RunMGame">
@@ -584,7 +597,7 @@
                     <ToolScp Scp="MGAME_SET_TIMEOUT" Client="NO" UseSleep="NO">
                         <Num Num="60"/>
                     </ToolScp>
-                <ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
+                    <ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
                         <Str Str="End"/>
                     </ToolScp>
                 </StartScpList>
@@ -600,7 +613,7 @@
                             <ToolScp Scp="MGAME_RETURN" Client="NO" UseSleep="NO"/>
                         </execList>
                     </Event>
-                <Event execCount="1" eventName="Reward">
+                    <Event execCount="1" eventName="Reward">
                         <execList>
                             <ToolScp Scp="REWARD_EARTH_TOWER" Client="NO" UseSleep="NO">
                                 <Str Str="GT_SELECT_STAGE_10"/>
