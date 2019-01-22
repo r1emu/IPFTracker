@@ -197,14 +197,14 @@
 		<!--프리미엄 샵 아이템 목록 그룹박스-->
 		<groupbox name="maingbox" parent="leftgbox" rect="0 0 885 840" margin="365 90 0 0" layout_gravity="left top" draw="true" hittestbox="false" resizebyparent="false" tabname="Itembox1" skin="test_frame_midle_light" scrollbar="false"/>
 		<groupbox name="mainBanner" parent="maingbox" rect="0 0 885 40" margin="0 0 0 0" skin="market_listbase" layout_gravity="left top"/>
-		<richtext name="mainText" parent="mainBanner" rect="0 0 300 50" margin="10 -2 0 0" layout_gravity="left center" caption="new > costume" drawbackground="false" fixwidth="true" fontname="black_16_b" resizebytext="true" textalign="left center"/>
+		<richtext name="mainText" parent="mainBanner" rect="0 0 500 50" margin="10 0 0 0" layout_gravity="left center" caption="new > costume" drawbackground="false" fixwidth="true" fontname="black_16_b" resizebytext="true" textalign="left center"/>
 		<!--<checkbox name="showOnlyAvailable" parent="mainBanner" rect="0 0 100 20" margin="0 0 5 0" layout_gravity="right center" LBtnDownScp="SHOW_ONLY_AVAILABLE_ITEM" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" caption="사용 가능한 항목만 표시" clicksound="button_click_big" fontname="black_14" oversound="button_over"/>-->
 		<groupbox name="mainSubGbox" parent="maingbox" rect="0 0 880 800" margin="5 39 0 0" layout_gravity="left top" draw="false" hittestbox="false" resizebyparent="false" skin="test_frame_low"/>
 		<!--리사이클 아이템 목록 그룹박스-->
 		<groupbox name="rcycle_maingbox" parent="leftgbox" rect="0 0 885 840" margin="365 90 0 0" layout_gravity="left top" draw="true" hittestbox="false" resizebyparent="false" tabname="Itembox3" skin="test_frame_midle_light" scrollbar="false"/>
 		<groupbox name="rcycle_mainBanner" parent="rcycle_maingbox" rect="0 0 885 40" margin="0 0 0 0" skin="market_listbase" layout_gravity="left top"/>
-		<richtext name="rcycle_mainBuyText" parent="rcycle_mainBanner" rect="0 0 300 50" margin="10 -2 0 0" layout_gravity="left center" caption="구매가능 목록" drawbackground="false" fixwidth="true" fontname="black_16_b" resizebytext="true" textalign="left center"/>
-		<richtext name="rcycle_mainSellText" parent="rcycle_mainBanner" rect="0 0 300 50" margin="10 -2 0 0" layout_gravity="left center" caption="판매가능 목록" drawbackground="false" fixwidth="true" fontname="black_16_b" resizebytext="true" textalign="left center"/>
+		<richtext name="rcycle_mainBuyText" parent="rcycle_mainBanner" rect="0 0 300 50" margin="10 0 0 0" layout_gravity="left center" caption="구매가능 목록" drawbackground="false" fixwidth="true" fontname="black_16_b" resizebytext="true" textalign="left center"/>
+		<richtext name="rcycle_mainSellText" parent="rcycle_mainBanner" rect="0 0 300 50" margin="10 0 0 0" layout_gravity="left center" caption="판매가능 목록" drawbackground="false" fixwidth="true" fontname="black_16_b" resizebytext="true" textalign="left center"/>
 		<groupbox name="rcycle_mainSubGbox" parent="rcycle_maingbox" rect="0 0 880 800" margin="5 39 0 0" layout_gravity="left top" draw="false" hittestbox="false" resizebyparent="false" skin="test_frame_low"/>
 		<!-- 계열 코스튬 교환 샵 아이템 목록 그룹박스 -->
 		<groupbox name="costume_exchange_maingbox" parent="leftgbox" rect="0 0 885 840" margin="365 90 0 0" layout_gravity="left top" draw="true" hittestbox="false" resizebyparent="false" tabname="Itembox5" skin="test_frame_midle_light" scrollbar="false"/>
@@ -214,12 +214,12 @@
 		<!-- 신규유저 전용상점 아이템 목록 그룹박스 -->
 		<groupbox name="newbie_maingbox" parent="leftgbox" rect="0 0 885 840" margin="365 90 0 0" layout_gravity="left top" draw="true" hittestbox="false" resizebyparent="false" tabname="Itembox6" skin="test_frame_midle_light" scrollbar="false"/>
 		<groupbox name="newbie_mainBanner" parent="newbie_maingbox" rect="0 0 885 40" margin="0 0 0 0" skin="market_listbase" layout_gravity="left top"/>
-		<richtext name="newbie_mainBuyText" parent="newbie_mainBanner" rect="0 0 300 50" margin="10 -2 0 0" layout_gravity="left center" caption="구매가능 목록" drawbackground="false" fixwidth="true" fontname="black_16_b" resizebytext="true" textalign="left center"/>
+		<richtext name="newbie_mainBuyText" parent="newbie_mainBanner" rect="0 0 300 50" margin="10 0 0 0" layout_gravity="left center" caption="구매가능 목록" drawbackground="false" fixwidth="true" fontname="black_16_b" resizebytext="true" textalign="left center"/>
 		<groupbox name="newbie_mainSubGbox" parent="newbie_maingbox" rect="0 0 880 800" margin="5 39 0 0" layout_gravity="left top" draw="false" hittestbox="false" resizebyparent="false" skin="test_frame_low"/>
 		<!-- 복귀유저 전용상점 아이템 목록 그룹박스 -->
 		<groupbox name="returnuser_maingbox" parent="leftgbox" rect="0 0 885 840" margin="365 90 0 0" layout_gravity="left top" draw="true" hittestbox="false" resizebyparent="false" tabname="Itembox7" skin="test_frame_midle_light" scrollbar="false"/>
 		<groupbox name="returnuser_mainBanner" parent="returnuser_maingbox" rect="0 0 885 40" margin="0 0 0 0" skin="market_listbase" layout_gravity="left top"/>
-		<richtext name="returnuser_mainBuyText" parent="returnuser_mainBanner" rect="0 0 300 50" margin="10 -2 0 0" layout_gravity="left center" caption="구매가능 목록" drawbackground="false" fixwidth="true" fontname="black_16_b" resizebytext="true" textalign="left center"/>
+		<richtext name="returnuser_mainBuyText" parent="returnuser_mainBanner" rect="0 0 300 50" margin="10 0 0 0" layout_gravity="left center" caption="구매가능 목록" drawbackground="false" fixwidth="true" fontname="black_16_b" resizebytext="true" textalign="left center"/>
 		<groupbox name="returnuser_mainSubGbox" parent="returnuser_maingbox" rect="0 0 880 800" margin="5 39 0 0" layout_gravity="left top" draw="false" hittestbox="false" resizebyparent="false" skin="test_frame_low"/>
 		<!-- Beauty Shop -->
 		<groupbox name="beautyShopBox" parent="leftgbox" rect="0 0 1238 843" margin="15 90 0 0" layout_gravity="left top" hittestbox="false" resizebyparent="false" tabname="Itembox4" scrollbar="false" tabchangescp="TPITEM_INIT_BEAUTY_SHOP_TAB" draw="false"/>

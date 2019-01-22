@@ -524,7 +524,7 @@ ClassID,ActiveState,Level,ClassName,Name,Icon,Job,SkillCategory,AddSpend,Desc,Bu
 207015,1,1,"Elementalist4","헤일: 결빙","ability_Wizard_Elementalist4","Char2_11","Elementalist_Hail","SP/30","* 스킬 [헤일]에 적이 피격될 때마다 특성 레벨당 5% 확률로{nl}    5초 동안 [결빙] 디버프{nl}* SP 소모 30%증가","","","NO","","SCR_ABIL_NONE","NO",""
 207016,1,1,"Elementalist5","메테오: 회피","ability_Wizard_Elementalist5","Char2_11","Elementalist_Meteor","SP/10","* 스킬 [메테오] 챠지 중 회피가 특성 레벨당 50 증가{nl}* SP 소모 10%증가","","","NO","","SCR_ABIL_NONE","NO",""
 207017,1,1,"Elementalist6","엘리멘탈리스트: 저항","ability_Wizard_Elementalist6","Char2_11","All","","* 자신의 불, 얼음, 전기속성 저항이 5 증가{nl}* 2레벨 부터 특성 레벨당 1씩 증가","","","NO","","SCR_ABIL_ELEMENTALIST6","NO",""
-207018,1,1,"Elementalist7","불 속성: 폭발","ability_Wizard_Elementalist7","Char2_11","All","","* 적을 불 속성 공격으로 마무리 하면 30% 확률로 폭발이 일어나{nl}    근처 적들에게 대미지의 80%만큼 대미지","","","NO","","SCR_ABIL_NONE","NO",""
+207018,1,1,"Elementalist7","불 속성: 폭발","ability_Wizard_Elementalist7","Char2_11","All","","* 스킬 사용 시 10% 확률로 불 속성 공격 시 대미지가 30% 증가하는 버프가 5초간 걸림","","","NO","","SCR_ABIL_NONE","NO",""
 207019,1,1,"Elementalist8","얼음 속성: 둔화","ability_Wizard_Elementalist8","Char2_11","All","","* 적을 얼음 속성 공격으로 마무리 하면 50% 확률로{nl}    근처 적들은 6초 동안 [둔화] 디버프","","","NO","","SCR_ABIL_NONE","NO",""
 207020,1,1,"Elementalist9","레인: 장마","ability_Wizard_Elementalist9","Char2_11","Elementalist_Rain","SP/10","* 일정 확률로 [레인]의 지속시간이 2배로 적용{nl}* 확률은 특성 레벨당 5% 증가{nl}* SP 소모 10%증가","","","NO","","SCR_ABIL_NONE","NO",""
 207021,1,1,"Elementalist23","프로스트 클라우드: 강화","ability_Wizard_Elementalist23","Char2_11","Elementalist_FrostCloud","","* [프로스트 클라우드]의 스킬 계수가 특성 레벨당{nl}    0.5% 증가{nl} * 최고 레벨 마스터 시 10% 추가로 증가","","","YES","","SCR_ABIL_NONE","NO",""
