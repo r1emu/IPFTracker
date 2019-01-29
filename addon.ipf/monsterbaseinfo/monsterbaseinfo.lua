@@ -331,7 +331,7 @@ function MONSTERBASEINFO_CHECK_CTRL_OPENCONDITION(frame, ctrlName, frameName)
         return;
     end
     
-	hpGauge:ShowWindow(targetInfoOpen);
+	hpGauge:ShowWindow(beforeVisible);
     frame:Invalidate();
 end
 

@@ -218,6 +218,7 @@
 		<Class ClassID="2093" ClassName="WillBeAppliedOptionRandomly" Data="다음 옵션 중 하나가 랜덤으로 장착됩니다."/>
 		<Class ClassID="2094" ClassName="AdditionalItemCountIsMax" Data="마정석 개수를 최대로 사용하여 최대 확률로 강화를 시도합니다."/>
 		<Class ClassID="2095" ClassName="AdditionalItemCountIsNotMax" Data="현재 마정석 개수가 최대가 아닙니다."/>
+		<Class ClassID="2096" ClassName="SealReinforceInfo" Data="아이템을 강화할 경우 재료 인장은 {#8e0000}소멸{/}되고, 실패할 경우 주 옵션 인장이 {#8e0000}소멸{/}됩니다."/>
 	</Category>
 	<Category Name="ItemContents">
 		<Class ClassID="2200" ClassName="ClickSocketTargetItem" Data="소켓을 추가 할 아이템을 선택해주세요"/>
@@ -601,6 +602,7 @@
 		<Class ClassID="4225" ClassName="LegendCard_Box" Data="레전드 카드 선택 봉투"/>
 		<Class ClassID="4226" ClassName="Use_Item_LegendCard_Slot_Open2" Data="{nl}{nl}레전드 카드 슬롯 봉인 해제를 진행하시겠습니까?"/>
 		<Class ClassID="4227" ClassName="YouHaveRankCardReallyLastCardUse?" Data="사용하지 않은 하위 랭크 카드가 있습니다.{nl}하위 랭크 카드를 사용하시고 다시 시도해주세요."/>
+		<Class ClassID="4228" ClassName="{itemName}OverStackItem" Data="[{itemName}]아이템이 너무 많습니다. 해당 아이템을 비워주세요"/>
 	</Category>
 	<Category Name="ItemTooltip">
 		<Class ClassID="5001" ClassName="CoolDown : {Sec} Sec" Data="재사용 대기시간 : {Sec}초"/>
@@ -11887,7 +11889,7 @@
 		<Class ClassID="138404" ClassName="ReallyDestroy{ITEM}{COUNT}" Data="정말 {#fe7e00}[{ITEM}]{/}을/를 {#fe7e00}[{COUNT}]{/}개 버리시겠습니까?"/>
 		<Class ClassID="138405" ClassName="ReallyDestroy{ITEM}" Data="정말 {#fe7e00}[{ITEM}]{/}을/를 버리시겠습니까?"/>
 		<Class ClassID="138406" ClassName="ChallengeMode_InvalidPos_CantCreateWarp" Data="공간이 협소하여 포탈을 생성할 수 없습니다."/>
-	</Category>
+		</Category>
 	<Category Name="SkillMsg">
 		<Class ClassID="200001" ClassName="DontBuildCampThisAria" Data="해당 지역에서는 거점을 설치할 수 없습니다."/>
 		<Class ClassID="200002" ClassName="WithdrawToCamp" Data="님께서 꺼내가셨습니다."/>
@@ -11927,6 +11929,7 @@
 		<Class ClassID="200036" ClassName="PositionObstructed" Data="해당 위치에 물체가 있습니다."/>
 		<Class ClassID="200037" ClassName="Fanaticism_Martyrdom" Data="파나티시즘: 순교"/>
 		<Class ClassID="200038" ClassName="CannotWarpThisZone" Data="이동할 수 없는 지역입니다."/>
+		<Class ClassID="200039" ClassName="DontOpenThisAria" Data="해당 지역에서는 개설할 수 없습니다."/>
 	</Category>
 	<Category Name="HotKey">
 		<Class ClassID="201001" ClassName="Minimap_-" Data="미니맵 -"/>

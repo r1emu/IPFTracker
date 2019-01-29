@@ -8055,15 +8055,19 @@ function SCR_GET_Aggressor_Bufftime(skill)
 end
 
 function SCR_GET_Frenzy_Buff_Ratio2(skill, pc)
-
     if nil ~= pc then
         local abil = GetAbility(pc, 'Barbarian22');
         if nil ~= abil and 1 == abil.ActiveState then
             return skill.Level
         end
     end
-      return skill.Level * 2
+    return skill.Level * 2
+end
 
+function SCR_GET_Frenzy_Buff_Ratio3(skill)
+    local value = 2
+    value = value * SCR_REINFORCEABILITY_TOOLTIP(skill)
+    return value;
 end
 
 function SCR_GET_BackMasking_Ratio(skill, pc)

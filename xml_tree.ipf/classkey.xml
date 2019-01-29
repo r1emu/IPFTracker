@@ -7688,6 +7688,23 @@
         <Key Name="SIAULIAI16_REPORT3_S2_TRACK" Value="8117"/>
         <Key Name="SIAULIAI16_SEARCH1_TRACK" Value="8211"/>
         <Key Name="SIAULIAI_SPIRIT_TRACK" Value="7817"/>
+        <Key Name="HadVisited_1009" Value="103318"/>
+        <Key Name="HadVisited_117" Value="103314"/>
+        <Key Name="HadVisited_118" Value="103315"/>
+        <Key Name="HadVisited_4350" Value="103319"/>
+        <Key Name="HadVisited_4962" Value="103320"/>
+        <Key Name="HadVisited_4963" Value="103321"/>
+        <Key Name="HadVisited_4972" Value="103322"/>
+        <Key Name="HadVisited_4973" Value="103323"/>
+        <Key Name="HadVisited_4980" Value="103324"/>
+        <Key Name="HadVisited_518" Value="103316"/>
+        <Key Name="HadVisited_711" Value="103299"/>
+        <Key Name="HadVisited_8024" Value="103325"/>
+        <Key Name="HadVisited_999" Value="103317"/>
+        <Key Name="HadVisited_9999" Value="103326"/>
+        <Key Name="InDunCountType_8002" Value="103300"/>
+        <Key Name="InDunCountType_8003" Value="103367"/>
+        <Key Name="Reward_d_irredians_113_1" Value="103368"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Guild">
         <Key Name="GUILD_SYSTEM_MSG_DEF" Value="103188"/>
@@ -7916,6 +7933,13 @@
         <Key Name="GuildRaidSelectID" Value="9383"/>
         <Key Name="MaxCount" Value="7691"/>
         <Key Name="MiningLevel" Value="9329"/>
+        <Key Name="GUILD_AGIT_RAID_BOSS_KILL_LAST_COUNT" Value="103329"/>
+        <Key Name="GUILD_AGIT_RAID_COUNT" Value="103328"/>
+        <Key Name="GUILD_AGIT_RAID_CREATE_BOSS_COUNT" Value="103332"/>
+        <Key Name="GUILD_AGIT_RAID_RECORD_PERIOD" Value="103327"/>
+        <Key Name="GUILD_AGIT_RAID_SUMMON_BOSS_LEVEL" Value="103330"/>
+        <Key Name="GUILD_AGIT_THIS_WEEK_BOSS_KILL_COUNT" Value="103333"/>
+        <Key Name="GUILD_RAID_BOSS_RELOAD_NAME" Value="103331"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PartyMember">
         <Key Name="Name" Value="7220"/>
@@ -8021,6 +8045,12 @@
         <Key Name="Hide_1312" Value="7758"/>
         <Key Name="Hide_1313" Value="7759"/>
         <Key Name="IsPrivate" Value="9890"/>
+        <Key Name="FD_IRREDIAN1131_CENTER_POINT_1" Value="103357"/>
+        <Key Name="FD_IRREDIAN1131_CENTER_POINT_FLAG" Value="103358"/>
+        <Key Name="FD_IRREDIAN1131_EASTSIDE_POINT_1" Value="103355"/>
+        <Key Name="FD_IRREDIAN1131_EASTSIDE_POINT_FLAG" Value="103356"/>
+        <Key Name="FD_IRREDIAN1131_WESTSIDE_POINT_1" Value="103359"/>
+        <Key Name="FD_IRREDIAN1131_WESTSIDE_POINT_FLAG" Value="103354"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Skill">
         <Key Name="MinR" Value="6710"/>
@@ -8230,6 +8260,7 @@
         <Key Name="SkillCategory" Value="136"/>
         <Key Name="AddSpend" Value="134"/>
         <Key Name="Script" Value="140"/>
+        <Key Name="Keyword" Value="103301"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Monster">
         <Key Name="OnCheat" Value="6470"/>
@@ -9738,6 +9769,46 @@
         <Key Name="TradeLimit_490063" Value="34263"/>
         <Key Name="TradeLimit_495034" Value="34264"/>
         <Key Name="TradeLimit_495035" Value="34262"/>
+        <Key Name="ACCOUNT_GUILD_EXIT_DATE" Value="103338"/>
+        <Key Name="EVENT_1801_ORB_SHOP5_JP" Value="103298"/>
+        <Key Name="EVENT_1901_3DAY_TARGET_ACC_REWARD_COUNT" Value="103302"/>
+        <Key Name="EVENT_1901_3DAY_TARGET_DAY_SUCCESS_COUNT" Value="103305"/>
+        <Key Name="EVENT_1901_3DAY_TARGET_LAST_COUNT" Value="103307"/>
+        <Key Name="EVENT_1901_3DAY_TARGET_LAST_DATE" Value="103306"/>
+        <Key Name="EVENT_1901_3DAY_TARGET_SELECT_DATE" Value="103304"/>
+        <Key Name="EVENT_1901_3DAY_TARGET_SELECT_TYPE" Value="103303"/>
+        <Key Name="EVENT_1901_GOLDPIG_BASIC_REWARD_COUNT" Value="103310"/>
+        <Key Name="EVENT_1901_GOLDPIG_BASIC_REWARD_DATE" Value="103309"/>
+        <Key Name="EVENT_1901_GOLDPIG_TOPPOINT_REWARD_DATE" Value="103311"/>
+        <Key Name="EVENT_1901_ORB_SHOP1" Value="103364"/>
+        <Key Name="EVENT_1901_ORB_SHOP2" Value="103365"/>
+        <Key Name="EVENT_1901_ORB_SHOP3" Value="103366"/>
+        <Key Name="EVENT_1901_ORB_SHOP4" Value="103362"/>
+        <Key Name="EVENT_1901_ORB_SHOP5" Value="103363"/>
+        <Key Name="EVENT_STEAM_1901_REWARD_2" Value="103370"/>
+        <Key Name="EVENT_STEAM_1901_REWARD_3" Value="103371"/>
+        <Key Name="EVENT_STEAM_1901_REWARD_4" Value="103372"/>
+        <Key Name="EVENT_STEAM_1901_REWARD_5" Value="103373"/>
+        <Key Name="GUILD_AGIT_RAID_CONTRIBUTION_LAST_RATIO" Value="103335"/>
+        <Key Name="GUILD_AGIT_RAID_CONTRIBUTION_RATIO" Value="103334"/>
+        <Key Name="GUILD_AGIT_RAID_PARTICIPATE_COUNT" Value="103337"/>
+        <Key Name="GUILD_AGIT_RAID_PERIOD" Value="103336"/>
+        <Key Name="HadVisited_1009" Value="103342"/>
+        <Key Name="HadVisited_117" Value="103349"/>
+        <Key Name="HadVisited_118" Value="103350"/>
+        <Key Name="HadVisited_4350" Value="103339"/>
+        <Key Name="HadVisited_4962" Value="103344"/>
+        <Key Name="HadVisited_4963" Value="103345"/>
+        <Key Name="HadVisited_4972" Value="103346"/>
+        <Key Name="HadVisited_4973" Value="103347"/>
+        <Key Name="HadVisited_4980" Value="103348"/>
+        <Key Name="HadVisited_518" Value="103353"/>
+        <Key Name="HadVisited_711" Value="103308"/>
+        <Key Name="HadVisited_8024" Value="103351"/>
+        <Key Name="HadVisited_999" Value="103340"/>
+        <Key Name="HadVisited_9999" Value="103352"/>
+        <Key Name="SOLO_RAID_IRREDIAN1131_DAY" Value="103343"/>
+        <Key Name="SOLO_RAID_RESET_TIME_WEEK" Value="103341"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PC">
         <Key Name="LUCK" Value="7117"/>
@@ -17110,6 +17181,11 @@
         <Key Name="test_zone_evballgame1" Value="7501"/>
         <Key Name="test_zone_evcopy001" Value="7502"/>
         <Key Name="test_zone_evhilowgame1" Value="7503"/>
+        <Key Name="EVENT_1901_RANKRESET_CLR_DATE" Value="103313"/>
+        <Key Name="MG_Last_GUILD_AGIT_RAID" Value="103360"/>
+        <Key Name="MG_Last_MISSION_EVENT_1901_GOLDPIG" Value="103312"/>
+        <Key Name="TUTO_GUILD_AGIT_RAID" Value="103369"/>
+        <Key Name="WARP_D_IRREDIANS113_1" Value="103361"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Item">
         <Key Name="Reinforce_Type" Value="7332"/>

@@ -2548,7 +2548,7 @@ function SCR_ZONE_KEYWORD_CHECK(zoneName, keyword)
 	
 	local mapClass = GetClass("Map", zoneName);
 	local mapKeyWord = TryGetProp(mapClass, "Keyword", "None");
-	if mapKeyWord ~= "None" or mapKeyWord ~= "" then
+	if mapKeyWord == "None" or mapKeyWord == "" then
 		return "NO";
 	end
 	
