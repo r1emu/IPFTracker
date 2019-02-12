@@ -863,6 +863,7 @@
         <Effect Name="moveatk"/>
         <Effect Name="I_arrow015_mash#large_crossbow"/>
         <Effect Name="I_arrow015_mash#Dummy_force_start"/>
+        <Effect Name="Dummy_root"/>
     </Category>
     <Category ID="201">
         <Effect Name="F_cleric_devinestigma_hit_smoke_LOW##0.5"/>

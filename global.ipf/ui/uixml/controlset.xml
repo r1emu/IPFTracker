@@ -120,4 +120,9 @@
 			<picture name="isLimit_mark" image="special_mark2"/>
 		</controls>
 	</controlset>
+	<controlset name="craftRecipe_detail_item">
+		<controls>
+			<richtext name="item" rect="0 0 230 45"/>
+		</controls>
+	</controlset>
 </controlsetlist>
