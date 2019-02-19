@@ -1134,3 +1134,7 @@ ClassID,WikiPoint,TeachPoint,AutoGet,ClassName,TargetClassName,TargetMapName,Ill
 400029,0,0,0,"R_CAN04_103_Steam_Leticia","R_CAN04_103_Steam_Leticia","","icon_item_weapon_misc5","장인의 비밀 제작서-에멘가드 캐논","Recipe","{#5090ff}{ol}","{/}{/}{/}","WIKIPAGE_ITEM","장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다."
 400030,0,0,0,"R_MUS04_103_Steam_Leticia","R_MUS04_103_Steam_Leticia","","icon_item_shirts_misc5","장인의 비밀 제작서-에멘가드 머스킷","Recipe","{#5090ff}{ol}","{/}{/}{/}","WIKIPAGE_ITEM","장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다."
 400031,0,0,0,"R_SHD04_105_Steam_Leticia","R_SHD04_105_Steam_Leticia","","icon_item_shirts_misc5","장인의 비밀 제작서-에멘가드 실드","Recipe","{#5090ff}{ol}","{/}{/}{/}","WIKIPAGE_ITEM","장비를 제작할 수 있는 제작서입니다. 마우스 오른쪽 클릭으로 제작서를 모험일지에 등록할 수 있습니다."
+400064,10,5,0,"R_Steam_HP_Potion_1Day","R_Steam_HP_Potion_1Day","","icon_item_grimoire_red","제작서 - HP 포션 (1일)","Recipe","{#5090ff}{ol}","{/}{/}{/}","WIKIPAGE_ITEM","아이템을 제작할 수 있는 제작서입니다."
+400065,10,5,0,"R_Steam_HP_Potion_7Day","R_Steam_HP_Potion_7Day","","icon_item_grimoire_red","제작서 - HP 포션 (7일)","Recipe","{#5090ff}{ol}","{/}{/}{/}","WIKIPAGE_ITEM","아이템을 제작할 수 있는 제작서입니다."
+400066,10,5,0,"R_Steam_SP_Potion_1Day","R_Steam_SP_Potion_1Day","","icon_item_grimoire_blue","제작서 - SP 포션 (1일)","Recipe","{#5090ff}{ol}","{/}{/}{/}","WIKIPAGE_ITEM","아이템을 제작할 수 있는 제작서입니다."
+400067,10,5,0,"R_Steam_SP_Potion_7Day","R_Steam_SP_Potion_7Day","","icon_item_grimoire_blue","제작서 - SP 포션 (7일)","Recipe","{#5090ff}{ol}","{/}{/}{/}","WIKIPAGE_ITEM","아이템을 제작할 수 있는 제작서입니다."

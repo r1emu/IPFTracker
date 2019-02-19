@@ -1503,3 +1503,125 @@ function Achieve_Event_2019_New_Year_Artist(pc)
     TxAddAchievePoint(tx, 'Achieve_Event_2019_New_Year_Artist', 1)
     local ret = TxCommit(tx);
 end
+
+--NEW YEAR PACKAGE 2019
+
+function SCR_USE_ITEM_1902_NEWYEAR_PACKAGE_01(pc, target, string1, arg1, arg2, itemID)
+    local tx = TxBegin(pc);
+    TxGiveItem(tx, "Select_Weapon_NewYear_Box", 1, '1902_NEW_YEAR_PACKAGE_01')
+    TxGiveItem(tx, "NewYear_Weapon_Reinforce_11", 1, '1902_NEW_YEAR_PACKAGE_01')
+    TxGiveItem(tx, "NewYear_Weapon_Transcend_5", 1, '1902_NEW_YEAR_PACKAGE_01')
+    TxGiveItem(tx, "Event_drug_steam_1h_Premium", 30, '1902_NEW_YEAR_PACKAGE_01')
+    TxGiveItem(tx, "Event_Drug_Alche_HP15_Premium", 200, '1902_NEW_YEAR_PACKAGE_01')
+    TxGiveItem(tx, "Event_Drug_Alche_SP15_Premium", 200, '1902_NEW_YEAR_PACKAGE_01')
+    TxGiveItem(tx, "Ability_Point_Stone_10000", 5, '1902_NEW_YEAR_PACKAGE_01')
+    TxGiveItem(tx, "PremiumToken_New_Return", 1, '1902_NEW_YEAR_PACKAGE_01')
+    TxGiveItem(tx, "R_Steam_HP_Potion_1Day", 3, '1902_NEW_YEAR_PACKAGE_01') -- steam add -- 
+    TxGiveItem(tx, "R_Steam_SP_Potion_1Day", 3, '1902_NEW_YEAR_PACKAGE_01') -- steam add -- 
+    local ret = TxCommit(tx);
+end
+
+function SCR_USE_ITEM_1902_NEWYEAR_PACKAGE_03(pc, target, string1, arg1, arg2, itemID)
+    local tx = TxBegin(pc);
+        TxGiveItem(tx, "Moru_Silver_Team_Trade", 5, '1902_NEW_YEAR_PACKAGE_03') -- steam count change -- 
+        TxGiveItem(tx, "Moru_Gold_Team_Trade", 3, '1902_NEW_YEAR_PACKAGE_03') -- steam count change -- 
+        TxGiveItem(tx, "Transcend_Scroll_8", 1, '1902_NEW_YEAR_PACKAGE_03')
+        TxGiveItem(tx, "R_Steam_HP_Potion_1Day", 5, '1902_NEW_YEAR_PACKAGE_03') -- steam add -- 
+        TxGiveItem(tx, "R_Steam_SP_Potion_1Day", 5, '1902_NEW_YEAR_PACKAGE_03') -- steam add -- 
+        for i = 1, 5 do
+            local cmdidx = TxGiveItem(tx, 'Unique_Enchant_Jewel_Team', 2, "1902_NEW_YEAR_PACKAGE_03");
+            TxAppendProperty(tx, cmdidx, 'Level', 390);
+        end
+    local ret = TxCommit(tx);
+end
+
+
+function SCR_USE_ITEM_1902_NEWYEAR_PACKAGE_ALL(pc, target, string1, arg1, arg2, itemID)
+    local accountObject = GetAccountObj(pc)
+    local today = SCR_JOB_SHADOWMANCER_TIME_CHECK(pc)
+    local tx = TxBegin(pc);
+    TxGiveItem(tx, "1902_NewYear_Package_01", 1, '1902_NEW_YEAR_PACKAGE_ALL')
+    TxGiveItem(tx, "1902_NewYear_Package_03", 1, '1902_NEW_YEAR_PACKAGE_ALL')
+    TxGiveItem(tx, "Steam_HP_Potion_7Day", 1, '1902_NEW_YEAR_PACKAGE_ALL') -- steam add -- 
+    TxGiveItem(tx, "Steam_SP_Potion_7Day", 1, '1902_NEW_YEAR_PACKAGE_ALL') -- steam add -- 
+    TxGiveItem(tx, "widnium_piece_Premium", 3, '1902_NEW_YEAR_PACKAGE_ALL')
+    TxSetIESProp(tx, accountObject, "NEWYEAR_PACKAGE_1902_EXCHANGE_ITEM", tostring(today))
+    local ret = TxCommit(tx);
+    
+    local sObj = GetSessionObject(pc, "ssn_klapeda")
+    sObj.NEWYEAR_PACKAGE_1902_INFORM = 0
+    SaveSessionObject(pc, sObj)
+end
+
+function SCR_USE_Event_Steam_Popo_Point(pc, strArg, argnum1, arg2, itemClassID)
+    local aObj = GetAccountObj(pc)
+    local nowpoint = GetPcBangPoint(pc)
+    local maxPoint = PCBANG_POINT_MAX_VALUE
+    local TP_premium_Popo = argnum1
+    --print(nowpoint..'/'..maxPoint)
+    if nowpoint + TP_premium_Popo > maxPoint then -- 현재 포인트 + add포인트가 최대 포인트보다 높아지게 될 경우 return--
+        SendAddOnMsg(pc, 'NOTICE_Dm_!', ScpArgMsg("EVENT_STEAM_POPOSHOP_POINT_RETURN_2", 'MAX', maxPoint), 5) -- {MAX}포인트를 초과할 수 없습니다. --
+        return
+    end
+
+    if strArg == 'PoPoPoint_100' then
+        SCR_USE_Event_Steam_Popo_Point_100_PLAY(pc, strArg, argnum1, arg2, itemClassID)
+    elseif strArg =='PoPoPoint_500' then
+        SCR_USE_Event_Steam_Popo_Point_500_PLAY(pc, strArg, argnum1, arg2, itemClassID)
+    elseif strArg =='PoPoPoint_1000' then
+        SCR_USE_Event_Steam_Popo_Point_1000_PLAY(pc, strArg, argnum1, arg2, itemClassID)
+    end
+end
+
+function SCR_USE_Event_Steam_Popo_Point_100_PLAY(pc, strArg, argnum1, arg2, itemClassID)
+    local itemCls = GetClassByType('Item', itemClassID);
+    local itemName = itemCls.ClassName
+    local aObj = GetAccountObj(pc)
+    local TP_premium_Popo = argnum1
+    local nowpoint = GetPcBangPoint(pc) -- 현재 pc가 보유하고 있는 포포샵 포인트 --
+    local maxPoint = PCBANG_POINT_MAX_VALUE -- 현재 포포샵 포인트 최대치 --
+
+    local tx = TxBegin(pc);
+    TxSetIESProp(tx, aObj, "EVENT_STEAM_POPO_POINT_PREMIUM_BUY_100", aObj.EVENT_STEAM_POPO_POINT_PREMIUM_BUY_100 + TP_premium_Popo)
+    TxTakeItem(tx, itemName, 1, "BUY_TP_PoPo_Point_Take") 
+    local ret = TxCommit(tx);
+    if ret == 'SUCCESS' then
+        GivePCBangPointShopPoint(pc, TP_premium_Popo, "BUY_TP_PoPo_Point")
+    end
+end
+
+function SCR_USE_Event_Steam_Popo_Point_500_PLAY(pc, strArg, argnum1, arg2, itemClassID)
+    local itemCls = GetClassByType('Item', itemClassID);
+    local itemName = itemCls.ClassName
+    local aObj = GetAccountObj(pc)
+    local TP_premium_Popo = argnum1
+    local nowpoint = GetPcBangPoint(pc) -- 현재 pc가 보유하고 있는 포포샵 포인트 --
+    --print(ENABLE_USE_PCBANG_POINT_SHOP_EVERYBODY) -- 현재 포포샵이 열려 있는지 (1이면 열림 0이면 닫힘) --
+    local maxPoint = PCBANG_POINT_MAX_VALUE -- 현재 포포샵 포인트 최대치 --
+
+    local tx = TxBegin(pc);
+    TxSetIESProp(tx, aObj, "EVENT_STEAM_POPO_POINT_PREMIUM_BUY_500", aObj.EVENT_STEAM_POPO_POINT_PREMIUM_BUY_500 + TP_premium_Popo)
+    TxTakeItem(tx, itemName, 1, "BUY_TP_PoPo_Point_Take") 
+    local ret = TxCommit(tx);
+    if ret == 'SUCCESS' then
+        GivePCBangPointShopPoint(pc, TP_premium_Popo, "BUY_TP_PoPo_Point")
+    end
+end
+
+function SCR_USE_Event_Steam_Popo_Point_1000_PLAY(pc, strArg, argnum1, arg2, itemClassID)
+    local itemCls = GetClassByType('Item', itemClassID);
+    local itemName = itemCls.ClassName
+    local aObj = GetAccountObj(pc)
+    local TP_premium_Popo = argnum1
+    local nowpoint = GetPcBangPoint(pc) -- 현재 pc가 보유하고 있는 포포샵 포인트 --
+    --print(ENABLE_USE_PCBANG_POINT_SHOP_EVERYBODY) -- 현재 포포샵이 열려 있는지 (1이면 열림 0이면 닫힘) --
+    local maxPoint = PCBANG_POINT_MAX_VALUE -- 현재 포포샵 포인트 최대치 --
+
+    local tx = TxBegin(pc);
+    TxSetIESProp(tx, aObj, "EVENT_STEAM_POPO_POINT_PREMIUM_BUY_1000", aObj.EVENT_STEAM_POPO_POINT_PREMIUM_BUY_1000 + TP_premium_Popo)
+    TxTakeItem(tx, itemName, 1, "BUY_TP_PoPo_Point_Take") 
+    local ret = TxCommit(tx);
+    if ret == 'SUCCESS' then
+        GivePCBangPointShopPoint(pc, TP_premium_Popo, "BUY_TP_PoPo_Point")
+    end
+end
