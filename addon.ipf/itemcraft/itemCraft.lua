@@ -591,10 +591,10 @@ function CRAFT_BEFORE_START_CRAFT(ctrl, ctrlset, recipeName, artNum)
     end
 
 	if someflag > 0 then
-		local yesScp = string.format("CRAFT_START_CRAFT(\'%s\', \'%s\', %d)",idSpace, recipeName, totalCount);
+		local yesScp = string.format("CRAFT_START_CRAFT(\'%s\', \'%s\', %d)",idSpace, recipeName, totalCount);        
 		ui.MsgBox(ScpArgMsg("IsValueAbleItem"), yesScp, "None");
-	else        
-		CRAFT_START_CRAFT(idSpace, recipeName, totalCount)
+	else   
+		CRAFT_START_CRAFT(idSpace, recipeName, totalCount, upDown)        
 	end
 end
 
@@ -709,13 +709,12 @@ local function CHECK_MATERIAL_COUNT(recipecls, totalCount)
     return true, 0 -- 조건 만족
 end
 
-function CRAFT_START_CRAFT(idSpace, recipeName, totalCount)    
+function CRAFT_START_CRAFT(idSpace, recipeName, totalCount, upDown)    
 	control.DialogEscape();
 	local frame = ui.GetFrame(g_itemCraftFrameName);
 	local ctrl = GET_CHILD_RECURSIVELY(frame, "LABEL", "ui::CGroupBox");
 
 	local recipecls = GetClass(idSpace, recipeName);
-
 	local nameList = nil;
 	local targetItem = GetClass("Item", recipecls.TargetItem);
 	
@@ -756,11 +755,14 @@ function CRAFT_START_CRAFT(idSpace, recipeName, totalCount)
 			nameList:Add(memo);
 		end
 	end
-	
 
     local flag, cnt = CHECK_MATERIAL_COUNT(recipecls, totalCount)
     if flag == false then
-        ui.AddText("SystemMsgFrame", ClMsg('NotEnoughRecipe'));
+        ui.AddText("SystemMsgFrame", ClMsg('NotEnoughRecipe'))        
+        if upDown ~= nil then
+            upDown:SetNumberValue(cnt)
+            ITMCRAFT_BUTTON_UP(upDown)
+        end
 		return
     end
 
@@ -768,29 +770,25 @@ function CRAFT_START_CRAFT(idSpace, recipeName, totalCount)
     local validRecipeMaterial = GET_MATERIAL_VALIDATION_SCRIPT(recipecls);
     local IsValidRecipeMaterial = _G[validRecipeMaterial];
 
+    local is_stack_item = true
 	local resultlist = session.GetItemIDList();
 	for index=1, 5 do
 		local clsName = "Item_"..index.."_1";
 		local itemName = recipecls[clsName];        
 		local recipeItemCnt, recipeItemLv = GET_RECIPE_REQITEM_CNT(recipecls, clsName);
+
 		if 'None' ~= itemName then
 			for j = 0, resultlist:Count() - 1 do
 				local tempitem = resultlist:PtrAt(j);
 				local invItem = session.GetInvItemByGuid(tempitem.ItemID);
 				local itemobj = GetIES(invItem:GetObject());
+                if itemobj ~= nil and itemobj.MaxStack == 1 then
+                    is_stack_item = false
+                end                
 				if nil ~= invItem and IsValidRecipeMaterial(itemName, itemobj) then
 					if true == invItem.isLockState then
 						ui.SysMsg(ClMsg("MaterialItemIsLock"));
 						return;
-					end
-	
-					if 0 ~= recipeItemCnt and 0 == IS_EQUIPITEM(itemName) then
-                    --[[    -- 위에서 재료 개수 체크함
-						if nil ~= invItem and invItem.count < (recipeItemCnt * totalCount) then                            
-							ui.AddText("SystemMsgFrame", ClMsg('NotEnoughRecipe'));
-							return;
-						end
-                    --]]
 					end
 					break
 				end
@@ -812,21 +810,35 @@ function CRAFT_START_CRAFT(idSpace, recipeName, totalCount)
 		session.CopyTempItemID();
 		local queueFrame = ui.GetFrame("craftqueue");
 		CLEAR_CRAFT_QUEUE(queueFrame);
-		for i = 1, totalCount do            
-			ADD_CRAFT_QUEUE(queueFrame, targetItem, recipecls.ClassID, 1);
-		end
+		queueFrame:SetUserValue("RECIPE_NAME", recipeName);    
+
+        if is_stack_item == true then
+			ADD_CRAFT_QUEUE(queueFrame, targetItem, recipecls.ClassID, totalCount, is_stack_item);
+        else
+            for i = 1, totalCount do
+			    ADD_CRAFT_QUEUE(queueFrame, targetItem, recipecls.ClassID, 1, is_stack_item);
+		    end
+        end
+
 		if frame:GetUserIValue("MANUFACTURING") == 1 then
 			return;
-	end
+		end
+
 	    frame:SetUserValue("MANUFACTURING", 1);
 	    SetCraftState(1);
 		ui.OpenFrame("craftqueue");	
 		frame:SetUserValue("MANUFACTURING", 1);
 	end
-	
+
 	local resultlist = session.GetItemIDList();
-	local cntText = string.format("%s %s", recipecls.ClassID, 1);
-	frame:SetUserValue("IDSPACE", idSpace);    
+    local cntText = ''
+    if is_stack_item == true then
+        cntText = string.format("%s %s", recipecls.ClassID, totalCount);        
+    else
+        cntText = string.format("%s %s", recipecls.ClassID, 1)
+    end
+
+	frame:SetUserValue("IDSPACE", idSpace);
 	item.DialogTransaction("SCR_ITEM_MANUFACTURE_" .. idSpace, resultlist, cntText, nameList);    
 end
 
@@ -927,16 +939,27 @@ function CRAFT_DETAIL_CRAFT_EXEC_ON_SUCCESS(frame, msg, str, time)
 	imcSound.PlaySoundEvent('sys_item_jackpot_get');
 
 	frame = ui.GetFrame(frame:GetUserValue("UI_NAME"))
-	if frame:GetUserIValue("MANUFACTURING") ~= 1 then        
+	if frame:GetUserIValue("MANUFACTURING") ~= 1 then       
 		return;
 	end
 
 	local queueFrame = ui.GetFrame("craftqueue");
 	local recipeType, totalCount = REMOVE_CRAFT_QUEUE(queueFrame);
+	local remainCount = GET_CRAFT_REMAIONCOUNT(queueFrame);
 	if recipeType == nil then
 		frame:SetUserValue("MANUFACTURING", 0);
 		SetCraftState(0)        
-		return
+		return;
+	elseif totalCount ~= remainCount and string.find(str, "Premium_boostToken") == nil then
+		if frame:GetUserIValue("MANUFACTURING") == 1 then
+			local queueFrame = ui.GetFrame("craftqueue");
+			CLEAR_CRAFT_QUEUE(queueFrame);
+			ui.CloseFrame("craftqueue");
+		end
+
+	    frame:SetUserValue("MANUFACTURING", 0);
+	    SetCraftState(0)
+		return;
 	end
 
 	local idSpace = frame:GetUserValue("IDSPACE");
@@ -1021,9 +1044,8 @@ function CRAFT_DETAIL_CRAFT_EXEC_ON_SUCCESS(frame, msg, str, time)
             end
         end
     end
-    
-    session.ResetItemList()
 
+    session.ResetItemList()
     for i = 1, ordered_cnt - 1 do        
         if ordered_list[i] == nil or map_cnt[i] == nil then
             session.ResetItemList()
@@ -1055,6 +1077,7 @@ function CRAFT_DETAIL_CRAFT_EXEC_ON_SUCCESS(frame, msg, str, time)
         nameList:Add(name)
 	    nameList:Add(memo)
     end
+
 	item.DialogTransaction("SCR_ITEM_MANUFACTURE_" .. idSpace, resultlist, cntText, nameList)
 end
 
@@ -1280,7 +1303,7 @@ end
 
 function CRAFT_MAKE_DETAIL_REQITEMS(ctrlset)	
 	session.ResetItemList();
-	
+
 	local frame = ctrlset:GetTopParentFrame();
 	local idSpace = frame:GetUserValue("IDSPACE");
 	local recipecls = GetClass(idSpace, ctrlset:GetName());
@@ -1346,7 +1369,7 @@ function CRAFT_MAKE_DETAIL_REQITEMS(ctrlset)
 				
 				slot:SetOverSound('button_cursor_over_2');
 				slot:SetClickSound('button_click');
-			end
+		end
 		end
 	end
 
@@ -1388,7 +1411,7 @@ function CRAFT_MAKE_DETAIL_REQITEMS(ctrlset)
 	upDown:SetNumChangeScp('ITMCRAFT_BUTTON_UP');
 	upDown:SetNumberValue(1)
 	upDown:ShowWindow(1)
-	upDown:SetOverSound('button_cursor_over_2');
+upDown:SetOverSound('button_cursor_over_2');
 	upDown:SetClickSound('button_click');
 
 	y = y + 10
@@ -1688,11 +1711,11 @@ function CRAFT_ITEM_ALL(itemSet, btn)
 	if #invItemlist < 1 or invItemlist == nil then
 		return;
 	end
+
 	local targetslot = GET_CHILD(itemSet, "slot", "ui::CSlot");
 	local materialItemClassID = targetslot:GetEventScriptArgNumber(ui.DROP);    
 	local materialItemCnt = tonumber(targetslot:GetEventScriptArgString(ui.DROP));
-	local needcount = tonumber(materialItemCnt)
-	
+	local needcount = tonumber(materialItemCnt);
 	local resultlist = session.GetItemIDList();	
 
 	for i = 1, #invItemlist do
@@ -1701,7 +1724,6 @@ function CRAFT_ITEM_ALL(itemSet, btn)
 
 		for j = 0, resultlist:Count() - 1 do
 			local tempitem = resultlist:PtrAt(j);
-
 			if tempitem.ItemID == tempinvItem:GetIESID() then                
 				isAlreadyAdd = 1
 			end
@@ -1718,12 +1740,11 @@ function CRAFT_ITEM_ALL(itemSet, btn)
 	end
 	
 	local itemObj = GetIES(invItemadd:GetObject())
-				
 	if IS_EQUIP(itemObj) == true then		
 		local frame = ui.GetFrame(g_itemCraftFrameName);
 		frame:SetUserValue("TARGETSET", itemSet:GetName())
 		frame:SetUserValue("TARGET_GUID", GetIESID(itemObj))
-		local equip =	REGISTER_EQUIP(itemObj, invItemadd);
+		local equip = REGISTER_EQUIP(itemObj, invItemadd);
 		if equip == 1 then
 			return;
 		end
@@ -1811,7 +1832,6 @@ function REGISTER_EQUIP(itemObj, invItem)
 	end
 
 	return 0
-
 end
 
 function MAKE_DETAIL_REQITEMS(ctrlset)

@@ -884,7 +884,7 @@ function SCR_Get_MON_KDArmorType(self)
     end
     
     local value = self.KDArmor;
-    local buffList = { "Safe", "PainBarrier_Buff", "Lycanthropy_Buff", "Marschierendeslied_Buff", "Methadone_Buff", "Mon_PainBarrier_Buff" };
+    local buffList = { "Safe", "PainBarrier_Buff", "Lycanthropy_Buff", "Marschierendeslied_Buff", "Methadone_Buff", "Mon_PainBarrier_Buff", "SkullFollowPainBarrier_Buff" };
     for i = 1, #buffList do
         if IsBuffApplied(self, buffList[i]) == 'YES' then
             value = 9999;
@@ -1693,7 +1693,7 @@ function SCR_MON_ITEM_ARMOR_CALC(self, defType)
     if defType ~= nil then
         local defClass = GetClass("item_grade", "armorMaterial_" .. defType);
         local armorMaterial = TryGetProp(self, "ArmorMaterial", "None");
-        local defRatio = TryGetProp(defClass, armorMaterial);
+        local defRatio = TryGetProp(defClass, armorMaterial, 1);
         if defRatio ~= nil then
             value = value * defRatio;
         end
