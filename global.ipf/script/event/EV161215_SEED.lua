@@ -77,6 +77,7 @@ function SCR_USE_161215EVENT_SEED(pc,argObj,BuffName,arg1,arg2)
         SetLifeTime(npc, 330)
         AttachEffect(npc, 'F_light081_ground_orange_loop', 8, 'BOT', 0, 0, 0, 0)
 		ChangeScale(npc, 2.5, 0, 1, 0, 0, 1)
+		SendAddOnMsg(pc, "NOTICE_Dm_!", ScpArgMsg("EVENT_STEAM_SEED_MS01"), 3)
 --        AttachEffect(npc, 'F_pattern013_ground_white', 1.9, 'BOT')
     end
 end
@@ -180,7 +181,7 @@ function SCR_161215EVENT_SEED_TS_BORN_UPDATE(self)
                         PlayEffect(objList[i], 'I_light013_spark_blue_2', 1,1,'TOP')
                         SendAddOnMsg(objList[i], "NOTICE_Dm_GetItem", ScpArgMsg("EV161215_SEED_MSG6","STEP",step), 10);
                     end
-                    RunScript("SCR_EVENT_STEAM_TS_CALL", objList[i])
+                    --RunScript("SCR_EVENT_STEAM_TS_CALL", objList[i]) --event closed
                 end
             end
         end

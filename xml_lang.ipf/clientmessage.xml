@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by IMC (IMCGames Co., Ltd) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <idspace id="ClientMessage">
 	<Category Name="ErrorMsg">
 		<Class ClassID="1" Data="DirectX 9.0c 이상의 버전이 설치되어 있어야 합니다"/>
@@ -1179,7 +1179,7 @@
 		<Class ClassID="10514" ClassName="CharacterLengthLimit" Data="{COUNT}자 이내로만 입력 가능합니다."/>
 		<Class ClassID="10515" ClassName="AskReallyDelete" Data="정말로 삭제하시겠습니까?"/>
 		<Class ClassID="10516" ClassName="AskReallyExit" Data="정말로 종료하시겠습니까?"/>
-    <Class ClassID="10519" ClassName="CharacterNameTooShort" Data="캐릭터 이름이 너무 짧거나, 사용할 수 없는 문자가 포함되어 있습니다."/>
+		<Class ClassID="10519" ClassName="CharacterNameTooShort" Data="캐릭터 이름이 너무 짧거나, 사용할 수 없는 문자가 포함되어 있습니다."/>
 	</Category>
 	<Category Name="FoodTable">
 		<Class ClassID="20001" ClassName="IncreaseHP{Value}For{Time}Minute" Data="{Time}분 동안 HP가 {Value}% 증가합니다."/>
@@ -1514,7 +1514,7 @@
 		<Class ClassID="21330" ClassName="Attendance_infoText_1" Data="* 출석 보상은 1일 1회, 당일 첫 접속한 캐릭터 인벤토리로 자동 지급됩니다."/>
 		<Class ClassID="21331" ClassName="Attendance_infoText_2" Data="* 출석 체크 기간 동안에만 출석 보상을 받을 수 있으며, 기간 경과 시 더 이상 지급되지 않습니다"/>
 		<Class ClassID="21332" ClassName="Attendance_infoText_3" Data="* 신규/복귀 출석체크 시작 일자는 구원자님의 신규/복귀 일자에 따라 다를 수 있습니다."/>
-    <Class ClassID="21334" ClassName="UI_Hour_2" Data="시간"/>
+		<Class ClassID="21334" ClassName="UI_Hour_2" Data="시간"/>
 	</Category>
 	<Category Name="ChatText">
 		<Class ClassID="22001" ClassName="Guard" Data="방어"/>
@@ -7014,6 +7014,15 @@
 		<Class ClassID="67313" ClassName="IRREDIAN1131_BOSS_PORTAL_NOTICE" Data="수호자 대기실로 향하는 포탈이 생성되었습니다.{nl} 30분간 지속 됩니다."/>
 		<Class ClassID="67314" ClassName="EVENT1902_FISHINGBOX_GACHA" Data="{s24}축하드립니다!{nl}{PC} 님이 [이벤트]연못에 숨겨진 보물 상자에서{nl}{ITEMNAME} 를 획득하셨습니다!"/>
 		<Class ClassID="67316" ClassName="EVENT1902_FISHINGBOX_GIVEITEM_1" Data="[이벤트]요하가 기른 미꾸라지를 획득했습니다"/>
+		<Class ClassID="67317" ClassName="EVENT_1903_PAJAUTA_DLG_1" Data="퀘스트를 완료해야 보상을 받을 수 있습니다"/>
+		<Class ClassID="67320" ClassName="PAYAUTA_EP11_4_MSG_1" Data="그들에게 내 모습을 보일 필요는 없겠지"/>
+		<Class ClassID="67321" ClassName="PAYAUTA_EP11_4_MSG_2" Data="보여져서 좋을 게 없어"/>
+		<Class ClassID="67322" ClassName="PAYAUTA_EP11_7_MSG_1" Data="내가 널 지킬게!"/>
+		<Class ClassID="67323" ClassName="PAYAUTA_EP11_7_MSG_2" Data="여긴 내게 맡겨"/>
+		<Class ClassID="67324" ClassName="PAYAUTA_EP11_7_MSG_3" Data="내가 있다는 걸 잊지마"/>
+		<Class ClassID="67325" ClassName="PAYAUTA_EP11_7_1" Data="찾는 중"/>
+		<Class ClassID="67326" ClassName="PAYAUTA_EP11_8_MSG_ADD_01" Data="마족의 흔적을 찾았습니다"/>
+		<Class ClassID="67327" ClassName="PAYAUTA_EP11_10_RUN_1_ACT_MSG_1" Data="표식을 설치하고 왔어!{nl}도와줄게"/>
 		<Class ClassID="70001" ClassName="FARM49_2_MQ06_DRAW" Data="우물 물을 긷는 중"/>
 		<Class ClassID="70002" ClassName="FARM49_2_MQ06_SUCCESS" Data="우물 물을 길었습니다.{nl}옆 물통에서 물을 뜨세요."/>
 		<Class ClassID="70003" ClassName="FARM49_2_MQ06_ALREADY" Data="이미 우물 물을 길었습니다.{nl}옆 물통에서 물을 뜨세요."/>
@@ -12720,6 +12729,8 @@
 		<Class ClassID="501178" ClassName="EVENT_1806_PENALTY_MSG6" Data="승부의 신"/>
 		<Class ClassID="501179" ClassName="EVENT_1806_PENALTY_MSG7" Data="승부의 신 종료"/>
 		<Class ClassID="501180" ClassName="EVENT_1806_PENALTY_MSG8" Data="승부의 신 랭킹"/>
+		<Class ClassID="501201" ClassName="EVENT_STEAM_Secret_Buff_1" Data="이미 어둠의 기운 버프가 적용 중입니다."/>
+		<Class ClassID="501202" ClassName="EVENT_STEAM_SEED_MS01" Data="씨앗을 땅에 심었습니다.{nl}1분마다 단계별로 새싹 버프가 획득됩니다."/>
 	</Category>
 	<Category Name="GEM_GACHA">
 		<Class ClassID="510001" ClassName="GEM_GACHA_SEL1" Data="젬 1회 뽑기"/>

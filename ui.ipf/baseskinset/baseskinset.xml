@@ -8946,6 +8946,11 @@
 		<image name="Dlg_port_Jazz_Kellefinker" file="\npcimg\Jazz_Kellefinker.png" imgrect="0 0 850 1000" CMM_Caption="아웃로 마스터"/>
 		<image name="Dlg_port_Maea_Kellefinker" file="\npcimg\Maea_Kellefinker.png" imgrect="0 0 850 1000" CMM_Caption="아웃로 마스터"/>
 		<image name="Dlg_port_Rashid_Zabanya" file="\npcimg\Rashid_Zabanya.png" imgrect="0 0 850 1000" CMM_Caption="어쌔신 마스터"/>
+		<image name="Dlg_port_medeina" file="\npcimg\medeina.png" imgrect="0 0 800 900" CMM_Caption="메데이나 여신"/>
+		<image name="Dlg_port_TIGERHUNTER_MASTER" file="\npcimg\TIGERHUNTER_MASTER.png" imgrect="0 0 800 950" CMM_Caption="산포 마스터"/>
+		<image name="Dlg_port_SHERIFF_MASTER" file="\npcimg\SHERIFF_MASTER.png" imgrect="0 0 700 1000" CMM_Caption="셰리프 마스터"/>
+		<image name="Dlg_port_ARDITI_MASTER" file="\npcimg\ARDITI_MASTER.png" imgrect="0 0 750 1000" CMM_Caption="아르디티 마스터"/>
+		<image name="Dlg_port_MATROSS_MASTER" file="\npcimg\MATROSS_MASTER.png" imgrect="0 0 900 950" CMM_Caption="매트로스 마스터"/>
 	</imagelist>
 	<imagelist category="bufficon">
 		<image name="icon_Str_up" file="\icon\buff_icon.tga" imgrect="256 384 128 128" CMM_Caption="힘+"/>
@@ -9336,6 +9341,9 @@
 		<image name="skill-charge_gauge_R" file="\skin\pip_test.tga" imgrect="403 594 45 30"/>
 		<image name="skill-name_bg" file="\skin\loading_gauge.tga" imgrect="1594 457 290 55"/>
 		<image name="full_charge_fontimg2" file="\skin\pip_test.tga" imgrect="1798 470 110 35"/>
+	</imagelist>
+	<imagelist category="npccard">
+		<image name="001_npc_payawoota" file="\skin\npccard\001_npc_payawoota.tga" imgrect="0 0 330 440"/>
 	</imagelist>
 	<imagelist category="bosscard2">
 		<image name="001_boss_poata" file="\skin\bosscard\001_boss_poata.tga" imgrect="0 0 330 440"/>
