@@ -19,7 +19,8 @@ function IS_MORU_FREE_PRICE(moruItem)
         or moruItem.ClassName == "Moru_Event160929_14d" 
         or moruItem.ClassName == "Moru_Potential" 
         or moruItem.ClassName == "Moru_Potential14d"
-        or moruItem.StringArg == 'SILVER' then
+        or moruItem.StringArg == 'SILVER'
+        or moruItem.ClassName == 'Moru_Silver_Team' then
         return true;
     end
 
@@ -31,7 +32,8 @@ function IS_MORU_DISCOUNT_50_PERCENT(moruItem)
         return false;
     end
 
-    if moruItem.ClassName == "Moru_Platinum_Premium" then
+    if moruItem.ClassName == "Moru_Platinum_Premium" 
+     or moruItem.StringArg ==  'Reinforce_Discount_50' then
         return true;
     end
 
@@ -161,7 +163,7 @@ function GET_REINFORCE_PRICE(fromItem, moruItem, pc)
     if IS_MORU_FREE_PRICE(moruItem) == true then
         value = 0;
     end
-
+    
     if moruItem.StringArg == 'DIAMOND' and reinforcecount > 1 then
         value = value + (value_diamond * 2.1)
     end

@@ -1515,6 +1515,7 @@
 		<Class ClassID="21331" ClassName="Attendance_infoText_2" Data="* 출석 체크 기간 동안에만 출석 보상을 받을 수 있으며, 기간 경과 시 더 이상 지급되지 않습니다"/>
 		<Class ClassID="21332" ClassName="Attendance_infoText_3" Data="* 신규/복귀 출석체크 시작 일자는 구원자님의 신규/복귀 일자에 따라 다를 수 있습니다."/>
 		<Class ClassID="21334" ClassName="UI_Hour_2" Data="시간"/>
+		<Class ClassID="21335" ClassName="TP_Total" Data="전체"/>
 	</Category>
 	<Category Name="ChatText">
 		<Class ClassID="22001" ClassName="Guard" Data="방어"/>
@@ -7015,6 +7016,8 @@
 		<Class ClassID="67314" ClassName="EVENT1902_FISHINGBOX_GACHA" Data="{s24}축하드립니다!{nl}{PC} 님이 [이벤트]연못에 숨겨진 보물 상자에서{nl}{ITEMNAME} 를 획득하셨습니다!"/>
 		<Class ClassID="67316" ClassName="EVENT1902_FISHINGBOX_GIVEITEM_1" Data="[이벤트]요하가 기른 미꾸라지를 획득했습니다"/>
 		<Class ClassID="67317" ClassName="EVENT_1903_PAJAUTA_DLG_1" Data="퀘스트를 완료해야 보상을 받을 수 있습니다"/>
+		<Class ClassID="67318" ClassName="EVENT_1903_TERIAVELIS_MSG_1" Data="[이벤트]아르바이트에 지원한다"/>
+		<Class ClassID="67319" ClassName="EVENT_1903_TERIAVELIS_MSG_2" Data="[이벤트]반짝이는 별의 조각을 전달한다"/>
 		<Class ClassID="67320" ClassName="PAYAUTA_EP11_4_MSG_1" Data="그들에게 내 모습을 보일 필요는 없겠지"/>
 		<Class ClassID="67321" ClassName="PAYAUTA_EP11_4_MSG_2" Data="보여져서 좋을 게 없어"/>
 		<Class ClassID="67322" ClassName="PAYAUTA_EP11_7_MSG_1" Data="내가 널 지킬게!"/>
@@ -7023,6 +7026,7 @@
 		<Class ClassID="67325" ClassName="PAYAUTA_EP11_7_1" Data="찾는 중"/>
 		<Class ClassID="67326" ClassName="PAYAUTA_EP11_8_MSG_ADD_01" Data="마족의 흔적을 찾았습니다"/>
 		<Class ClassID="67327" ClassName="PAYAUTA_EP11_10_RUN_1_ACT_MSG_1" Data="표식을 설치하고 왔어!{nl}도와줄게"/>
+		<Class ClassID="67328" ClassName="EVENT_1903_TERIAVELIS_SEL_MSG_1" Data="콘텐츠를 클리어 한 뒤, 약 5초 뒤에 {#003399}반짝이는 별의 조각{/} 이 지급 됩니다."/>
 		<Class ClassID="70001" ClassName="FARM49_2_MQ06_DRAW" Data="우물 물을 긷는 중"/>
 		<Class ClassID="70002" ClassName="FARM49_2_MQ06_SUCCESS" Data="우물 물을 길었습니다.{nl}옆 물통에서 물을 뜨세요."/>
 		<Class ClassID="70003" ClassName="FARM49_2_MQ06_ALREADY" Data="이미 우물 물을 길었습니다.{nl}옆 물통에서 물을 뜨세요."/>
@@ -12690,8 +12694,6 @@
 		<Class ClassID="501013" ClassName="Steam_VerUP_Select01" Data="'레벨업 보상 상자' 받기"/>
 		<Class ClassID="501014" ClassName="Steam_VerUP_Select02" Data="'330 Level 보상' 받기"/>
 		<Class ClassID="501015" ClassName="Steam_VerUP_Select03" Data="목표레벨 확인"/>
-		<Class ClassID="501016" ClassName="ManWoo_1" Data="컴패니언 탑승 상태에서 사용할 수 없습니다."/>
-		<Class ClassID="501017" ClassName="ManWoo_2" Data="만우절 아이템 받기"/>
 		<Class ClassID="501072" ClassName="Event_Nru2_Guide_2" Data="장비 선택"/>
 	</Category>
 	<Category Name="Npc_Equip_Shop_270_315">
@@ -13020,6 +13022,7 @@
 		<Class ClassID="801149" ClassName="Guild_Colony_Attendance_Reward_MSG8" Data="해당 캐릭터는 이미 버프가 적용되어 있습니다."/>
 		<Class ClassID="801150" ClassName="Guild_Colony_Attendance_Reward_MSG9" Data="받을 수 있는 버프 횟수가 없습니다."/>
 		<Class ClassID="801151" ClassName="Guild_Colony_Attendance_Reward_MSG10" Data="[콜로니전] 점령 포인트를 10점 이상 기록했습니다.{nl}콜로니전 종료 후 종군 상인을 통해 참여 보상을 받을 수 있습니다."/>
+		<Class ClassID="801155" ClassName="Guild_Colony_Attendance_Reward_MSG14" Data="콜로니전 진행중에는 참여 보상을 받을 수 없습니다."/>
 	</Category>
 	<Category Name="ColonyTax">
 		<Class ClassID="810000" ClassName="ColonyTaxRateDetail{Default}{Min}{Max}{ModifyDelay}{DisableModifyDelay1}{DisableModifyDelay2}" Data="- 스팟 지역을 점령한 길드는 각 도시의 적립요율을 조정할 수 있습니다.({Min}% ~ {Max}%) {nl}- 도시 적립요율은 기본적으로 표준 요율({Default}%)이 적용되어 있습니다.{nl}- 도시 적립요율 조정은 길드 마스터 또는 해당 권한을 가진 일원만 가능합니다.{nl}- 도시 적립요율은 조정 후, {ModifyDelay}시간 뒤에 재조정이 가능합니다.{nl}- 콜로니전 시작 {DisableModifyDelay1}시간 전부터 종료 {DisableModifyDelay2}분 후까지 도시 적립요율 조정이 제한됩니다.{nl}- 매 콜로니전 종료 후, 최종 점령 길드가 지난번 점령 길드와 다른 경우 도시 적립요율은 표준 요율({Default}%)로 조정됩니다.{nl}- 점령 길드에 가입된 인원들은 해당 적립요율 적용 도시에 한해 최소 요율({Min}%)로 고정되어 적용됩니다.{nl}- 적립금 누적 기간 동안 [적립요율 적용 항목]의 실버 소비 시, 적용된 요율에 따라 적립금이 누적됩니다.{nl}   (적립금 누적 기간 : 콜로니전 종료 5분 후 시각을 기점으로 다음 콜로니전 종료 시 까지){nl}- 적립금 누적 기간이 끝나면 [적립금 분배] 탭에서 수령된 적립금을 길드원에게 분배할 수 있습니다."/>

@@ -6010,6 +6010,9 @@
 		<image name="test_companion_23" file="\icon\companion.tga" imgrect="808 369 100 122" CMM_Caption="황금돼지_탭버튼"/>
 		<image name="test_companion_23_cursoron" file="\icon\companion.tga" imgrect="909 369 100 122"/>
 		<image name="test_companion_23_clicked" file="\icon\companion.tga" imgrect="909 369 100 122"/>
+		<image name="test_companion_24" file="\icon\companion.tga" imgrect="808 492 100 122" CMM_Caption="병아리_탭버튼"/>
+		<image name="test_companion_24_cursoron" file="\icon\companion.tga" imgrect="909 492 100 122"/>
+		<image name="test_companion_24_clicked" file="\icon\companion.tga" imgrect="909 492 100 122"/>
 		<image name="test_com_ability" file="\skin\pip_test.tga" imgrect="1832 851 54 35" CMM_Caption="컴패니언_특성플러스"/>
 		<image name="test_com_ability_cursoron" file="\skin\pip_test.tga" imgrect="1832 887 54 35"/>
 		<image name="test_com_ability_clicked" file="\skin\pip_test.tga" imgrect="1832 923 54 35"/>
@@ -6096,6 +6099,7 @@
 		<image name="spreadclose" file="\icon\arrow_icon.tga" imgrect="105 21 20 20" CMM_Caption="펼침닫기"/>
 		<image name="blue_down_arrow" file="\icon\arrow_icon.tga" imgrect="0 42 20 20" CMM_Caption="파랑_다운_화살표"/>
 		<image name="blue_none_arrow" file="\icon\arrow_icon.tga" imgrect="21 42 20 20" CMM_Caption="파랑_그대로화살표"/>
+		<image name="tp_shop_all" file="\icon\arrow_icon.tga" imgrect="84 42 20 20" CMM_Caption="TP상점_전체_카테고리"/>
 		<image name="keyboard_img" file="\skin\pip_test.tga" imgrect="477 944 75 35" CMM_Caption="키보드이미지"/>
 		<image name="joypad_img" file="\skin\pip_test.tga" imgrect="553 944 54 35" CMM_Caption="조이패드이미지"/>
 		<image name="mouse_img" file="\skin\pip_test.tga" imgrect="608 944 38 35" CMM_Caption="마우스이미지"/>
@@ -7115,6 +7119,7 @@
 		<image name="companion_guineapig_white" file="\icon\companion_Velhider.tga" imgrect="400 240 80 80"/>
 		<image name="companion_horse1" file="\icon\companion_Velhider.tga" imgrect="480 0 80 80"/>
 		<image name="companion_gold_pig" file="\icon\companion_Velhider.tga" imgrect="480 80 80 80"/>
+		<image name="companion_chick_crowtit" file="\icon\companion_Velhider.tga" imgrect="480 160 80 80"/>
 		<image name="bg_w" file="\skin\button.tga" imgrect="252 974 50 50"/>
 		<image name="barrack_signboard" file="\skin\barrack.tga" imgrect="356 0 257 192"/>
 		<image name="barrack_attack_icon" file="\skin\barrack.tga" imgrect="59 720 55 61"/>
