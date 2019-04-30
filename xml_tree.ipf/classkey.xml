@@ -8571,6 +8571,18 @@
         <Key Name="Hide_2988" Value="103836"/>
         <Key Name="LEVELINFORM_WEAPONCHANGE11" Value="103834"/>
         <Key Name="PAYAUTA_EP11_WARP" Value="103835"/>
+        <Key Name="HadVisited_10003" Value="103863"/>
+        <Key Name="Hide_2989" Value="103854"/>
+        <Key Name="InDunCountType_801" Value="103845"/>
+        <Key Name="IndunWeeklyEnteredCount_10000" Value="103844"/>
+        <Key Name="IndunWeeklyEnteredCount_801" Value="103847"/>
+        <Key Name="Kill_Raid_boss_Skiaclipse" Value="103846"/>
+        <Key Name="Kill_Raid_boss_Skiaclipse_Sealed" Value="103848"/>
+        <Key Name="Kill_Raid_boss_Skiaclipse_Sealed_Nocage" Value="103851"/>
+        <Key Name="Kill_Shadowmancer_Spike" Value="103850"/>
+        <Key Name="Kill_Unique_boss_Skiaclipse" Value="103852"/>
+        <Key Name="Kill_Unique_boss_Skiaclipse_Sealed_Nocage" Value="103853"/>
+        <Key Name="Kill_shadow_cage" Value="103849"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PartyMember">
         <Key Name="Name" Value="7220"/>
@@ -9293,6 +9305,7 @@
         <Key Name="TR" Value="6607"/>
         <Key Name="TR_BM" Value="6601"/>
         <Key Name="Velnias_Defence" Value="6644"/>
+        <Key Name="BarrackPos" Value="103861"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Ability">
         <Key Name="Name" Value="129"/>
@@ -10514,6 +10527,21 @@
         <Key Name="SPROUT_SHOP_TradeCount21" Value="103828"/>
         <Key Name="SPROUT_SHOP_TradeCount22" Value="103829"/>
         <Key Name="SPROUT_SHOP_TradeCount23" Value="103826"/>
+        <Key Name="EVENT_STEAM_TULIP_GIVE" Value="103869"/>
+        <Key Name="EVENT_STEAM_TULIP_MIN" Value="103868"/>
+        <Key Name="EVENT_STEAM_TULIP_REWARD" Value="103870"/>
+        <Key Name="EVENT_STEAM_TULIP_TIMECHECK_YDAY_1" Value="103871"/>
+        <Key Name="EVENT_STEAM_TULIP_TIMECHECK_YDAY_2" Value="103872"/>
+        <Key Name="EVENT_STEAM_TULIP_TIMECHECK_YDAY_3" Value="103873"/>
+        <Key Name="EVENT_STEAM_TULIP_TIMECHECK_YDAY_4" Value="103865"/>
+        <Key Name="EVENT_STEAM_TULIP_TIMECHECK_YDAY_5" Value="103866"/>
+        <Key Name="EVENT_STEAM_TULIP_TIMECHECK_YDAY_6" Value="103867"/>
+        <Key Name="HadVisited_10003" Value="103864"/>
+        <Key Name="InDunCountType_1100" Value="103862"/>
+        <Key Name="InDunCountType_801" Value="103856"/>
+        <Key Name="IndunWeeklyEnteredCount_10000" Value="103855"/>
+        <Key Name="IndunWeeklyEnteredCount_801" Value="103857"/>
+        <Key Name="RVR_BK_ENTRANCE_LIMIT" Value="103843"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PC">
         <Key Name="LootingChance" Value="101663"/>
@@ -18069,6 +18097,10 @@
         <Key Name="SPROUT_SHOP_TradeCount7" Value="103809"/>
         <Key Name="SPROUT_SHOP_TradeCount8" Value="103783"/>
         <Key Name="SPROUT_SHOP_TradeCount9" Value="103788"/>
+        <Key Name="EVENT_STEAM_TULIP_LISTCHECK" Value="103874"/>
+        <Key Name="MG_Last_LEGEND_RAID_WHITE_CROW" Value="103860"/>
+        <Key Name="MG_Last_UNIQUE_RAID_WHITE_CROW" Value="103858"/>
+        <Key Name="SHADOW_RAID_QUEST" Value="103859"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Party">
         <Key Name="PartyPVP" Value="49"/>

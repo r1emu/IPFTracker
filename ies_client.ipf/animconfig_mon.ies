@@ -249,3 +249,5 @@ ClassID,BlendIn,BlendOut,Priority,OffsetValue,ClassName,Main,Loop,Freeze,Additiv
 269,0,0,4,0,"IDLE_LOOP","YES","YES","NO","NO","YES","NO","NO","","YES",""
 270,0,0,4,0,"EVENT_SICK2","YES","YES","NO","NO","YES","NO","NO","","NO",""
 271,0,0,4,0,"EVENT_SICK_LOOP","YES","YES","NO","NO","YES","NO","NO","","NO",""
+272,0.300000,0.300000,4,0,"SIT_IDLE","YES","YES","NO","NO","YES","YES","NO","","YES",""
+273,0.300000,0.300000,4,0,"SIT_IDLE2","YES","YES","NO","NO","YES","YES","NO","","YES",""

@@ -88,3 +88,9 @@ function SCR_BUFF_LEAVE_Event_Steam_Carnival_Fire(self, buff, arg1, arg2, over)
     self.PATK_BM = self.PATK_BM - 50;
     self.MATK_BM = self.MATK_BM - 50;
 end
+
+function SCR_BUFF_ENTER_GOOD_STAMP_EFFECT(self, buff, arg1, arg2, over)
+    OverrideSurfaceType(self, 'good_stamp')
+    PlayEffect(self, "F_pc_welldone_ground_A", 1.5, 1.5, 'BOT')
+end
+

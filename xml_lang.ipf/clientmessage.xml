@@ -12733,6 +12733,11 @@
 		<Class ClassID="501180" ClassName="EVENT_1806_PENALTY_MSG8" Data="승부의 신 랭킹"/>
 		<Class ClassID="501201" ClassName="EVENT_STEAM_Secret_Buff_1" Data="이미 어둠의 기운 버프가 적용 중입니다."/>
 		<Class ClassID="501202" ClassName="EVENT_STEAM_SEED_MS01" Data="씨앗을 땅에 심었습니다.{nl}1분마다 단계별로 새싹 버프가 획득됩니다."/>
+		<Class ClassID="501203" ClassName="EVENT_STEAM_TULIP_FESTIVAL_LIST_1" Data='현재 튤립을 선물할 NPC는{nl}"{@st66d_y}{s16}{NPC}{/}{/}"입니다.'/>
+		<Class ClassID="501204" ClassName="EVENT_STEAM_TULIP_FESTIVAL_LIST_2" Data="튤립 선물 리스트 받기"/>
+		<Class ClassID="501205" ClassName="EVENT_STEAM_TULIP_FESTIVAL_LIST_3" Data="해당 캐릭터는 이미 튤립 선물 리스트를 받았습니다."/>
+		<Class ClassID="501206" ClassName="EVENT_STEAM_TULIP_FESTIVAL_LIST_4" Data="NPC에게 찾아가 튤립을 선물하고 원하는 보상을 교환하세요.{nl}{@st66d_y}{s16}튤립 선물 리스트{/}{/}는 이벤트 알림판에서 획득할 수 있습니다."/>
+		<Class ClassID="501210" ClassName="EVENT_STEAM_TULIP_FESTIVAL_LIST_5" Data="튤립 선물하기"/>
 	</Category>
 	<Category Name="GEM_GACHA">
 		<Class ClassID="510001" ClassName="GEM_GACHA_SEL1" Data="젬 1회 뽑기"/>

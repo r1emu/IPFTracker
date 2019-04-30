@@ -5070,6 +5070,10 @@
 		<image name="icon_item_event1902_bait" file="\icon\item\icon_item_event1902_bait.png" imgrect="0 0 128 128" CMM_Caption="미꾸라지 미끼"/>
 		<image name="icon_item_astronaut02_themebox" file="\icon\item\icon_item_astronaut02_themebox.png" imgrect="0 0 256 256" CMM_Caption="우주선 테마 큐브_주황색"/>
 		<image name="icon_item_Gacha_PC_Event_Costume01" file="\icon\item\icon_item_Gacha_PC_Event_Costume01.png" imgrect="0 0 256 256" CMM_Caption="우주선 테마 큐브_주황색"/>
+		<image name="icon_item_misc_0530" file="\icon\item\icon_item_misc_0530.png" imgrect="0 0 128 128" CMM_Caption="빛나는 붉은 단풍잎"/>
+		<image name="icon_item_misc_0531" file="\icon\item\icon_item_misc_0531.png" imgrect="0 0 128 128" CMM_Caption="순백의 코스모스"/>
+		<image name="icon_item_misc_0532" file="\icon\item\icon_item_misc_0532.png" imgrect="0 0 128 128" CMM_Caption="보라색 라벤더"/>
+		<image name="icon_item_misc_0533" file="\icon\item\icon_item_misc_0533.png" imgrect="0 0 128 128" CMM_Caption="붉은 튤립"/>
 	</imagelist>
 	<imagelist category="payment">
 		<image name="icon_item_hpPotionPremium" file="\icon\payment\icon_item_hpPotionPremium.png" imgrect="0 0 256 256" CMM_Caption="HP포션"/>

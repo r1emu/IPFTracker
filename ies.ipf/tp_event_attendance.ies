@@ -3,3 +3,4 @@ ClassID,TotalNumberDays,ClassName,Name,AttendancePass,StartTime,EndTime
 2,28,"SteamNewRank","TOS - New Rank Booster","NO","",""
 3,30,"EventUser","신규/복귀 유저","NO","",""
 104,25,"Month_4","4월 출석 보상","NO","2019-04-01 00:01:00","2019-04-30 23:59:00"
+105,25,"Month_5","5월 출석 보상","NO","2019-05-01 00:01:00","2019-05-31 23:59:00"

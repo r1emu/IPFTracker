@@ -1679,3 +1679,9 @@ function Achieve_Event_Steam_Happy_Anniversary(pc)
     TxAddAchievePoint(tx, 'Achieve_Event_Steam_Happy_Anniversary', 1)
     local ret = TxCommit(tx);
 end
+
+function Achieve_Event_Steam_Guide_Master(pc)
+    local tx = TxBegin(pc);
+    TxAddAchievePoint(tx, 'Achieve_Event_Steam_Guide_Master', 1)
+    local ret = TxCommit(tx);
+end

@@ -120,7 +120,7 @@ function EARTH_TOWER_INIT(frame, shopType)
 	if shopType == 'EarthTower' then
 		title:SetText('{@st43}'..ScpArgMsg("EarthTowerShop"));
 		close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EarthTowerShop")));
-	elseif shopType == 'EventShop' or shopType == 'EventShop2' or shopType == 'EventShop3' then
+	elseif shopType == 'EventShop' or shopType == 'EventShop2' or shopType == 'EventShop3' or 'EventShop8' then
 		title:SetText('{@st43}'..ScpArgMsg("EventShop"));
 		close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EventShop")));
 	elseif shopType == 'KeyQuestShop1' then
@@ -327,7 +327,7 @@ function EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls)
 				CRAFT_DETAIL_CTRL_INIT(itemSet);
 				local slot = GET_CHILD(itemSet, "slot", "ui::CSlot");
 				local needcountTxt = GET_CHILD(itemSet, "needcount", "ui::CSlot");
-				needcountTxt:SetTextByKey("count",recipeItemCnt)--���ۿ� �ʿ��� ������ ī��Ʈ
+				needcountTxt:SetTextByKey("count",recipeItemCnt)--????? ????? ?????? ????
 				local itemtext = GET_CHILD(itemSet, "item", "ui::CRichText");
 				SET_SLOT_ITEM_CLS(slot, dragRecipeItem);
 				slot:SetEventScript(ui.DROP, "ITEMCRAFT_ON_DROP");
