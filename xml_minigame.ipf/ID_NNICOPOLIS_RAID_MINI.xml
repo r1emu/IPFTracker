@@ -293,6 +293,9 @@
                                 <Num Num="20"/>
                                 <Str Str="UniqueRaid: Indun_Nicopolis_uniqe_raid"/>
                             </ToolScp>
+                            <ToolScp Scp="MGAME_EVT_SCRIPT" Client="NO" UseSleep="NO">
+                                <Str Str="SCR_EVENT_REFILL_STONE_WEISTREL_REWARD"/>
+                            </ToolScp>
                         </execList>
                     </Event>
                     <Event execCount="1" eventName="OPEN_END">
