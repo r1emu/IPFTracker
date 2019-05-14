@@ -185,7 +185,7 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         local countText = GET_CHILD_RECURSIVELY(countBox, 'countText');
         local cycleCtrlPic = GET_CHILD_RECURSIVELY(countBox, 'cycleCtrlPic');
         if GET_RESET_CYCLE(resetGroupID) == true then
-            cycleImage:SetImage('indun_icon_week_l')
+            cycleImage:SetImage('indun_icon_week_l_eng')
         else
             if indunCls.DungeonType == "Raid" or indunCls.DungeonType == "GTower" then
                 cycleImage:ShowWindow(0);
