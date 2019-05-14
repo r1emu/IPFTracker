@@ -33,18 +33,9 @@
 		<Class ClassID="501048" OverrideType="ADD" ClassName="steam_Premium_StatReset" Data="스탯 초기화 포션"/>
 		<Class ClassID="501050" OverrideType="ADD" ClassName="steam_Event_Select_1" Data="친절한 도네스 이벤트"/>
 		<Class ClassID="501051" OverrideType="ADD" ClassName="steam_Event_Select_2" Data="신규 유저 이벤트"/>
-		<Class ClassID="501053" OverrideType="ADD" ClassName="Moru_King_Select_1" Data="빛나는 네잎클로버 받기"/>
-		<Class ClassID="501054" OverrideType="ADD" ClassName="Moru_King_Select_2" Data="상품 교환하기"/>
-		<Class ClassID="501055" OverrideType="ADD" ClassName="Moru_King_Select_3" Data="강화 8단계 상품"/>
-		<Class ClassID="501056" OverrideType="ADD" ClassName="Moru_King_Select_4" Data="강화 10단계 상품"/>
-		<Class ClassID="501057" OverrideType="ADD" ClassName="Moru_King_Select_5" Data="강화 15단계 상품"/>
-		<Class ClassID="501058" OverrideType="ADD" ClassName="Moru_King_Select_6" Data="강화 20단계 상품"/>
-		<Class ClassID="501059" OverrideType="ADD" ClassName="Moru_King_Select_7" Data="강화 25단계 상품"/>
 		<Class ClassID="501060" OverrideType="ADD" ClassName="Event_Steam_Wedding_1" Data="청첩장 받기"/>
 		<Class ClassID="501061" OverrideType="ADD" ClassName="Event_Steam_Wedding_2" Data="남은 청첩장 확인"/>
 		<Class ClassID="501062" OverrideType="ADD" ClassName="Event_Steam_Wedding_3" Data="앞으로 {WEDDINGCOUNT}명에게 청첩장을 건네주어야 합니다."/>
-		<Class ClassID="501065" OverrideType="ADD" ClassName="Event_GOLDEN_WHALE_1" Data="황금 석화 고래 이벤트 (모두)"/>
-		<Class ClassID="501066" OverrideType="ADD" ClassName="Event_GOLDEN_WHALE_2" Data="고래의 보물 받기"/>
 		<Class ClassID="501067" OverrideType="ADD" ClassName="Event_Today_Number_1" Data="같이 시작 이벤트 (복귀, 기존)"/>
 		<Class ClassID="501068" OverrideType="ADD" ClassName="Event_Today_Number_2" Data="오늘의 숫자 맞추기"/>
 		<Class ClassID="501069" OverrideType="ADD" ClassName="Event_Today_Number_3" Data="이벤트 진행 정보"/>
@@ -54,9 +45,6 @@
 		<Class ClassID="501073" OverrideType="ADD" ClassName="Event_CB_1" Data="다시 시작 이벤트 (복귀자의 선물)"/>
 		<Class ClassID="501075" OverrideType="ADD" ClassName="Event_Steam_fishing_1" Data="은빛 물고기 건네주기"/>
 		<Class ClassID="501076" OverrideType="ADD" ClassName="Event_Steam_YC_1" Data="당신의 선택은? 이벤트"/>
-		<Class ClassID="501077" OverrideType="ADD" ClassName="Event_Steam_YC_2" Data="클라페다"/>
-		<Class ClassID="501078" OverrideType="ADD" ClassName="Event_Steam_YC_3" Data="오르샤"/>
-		<Class ClassID="501079" OverrideType="ADD" ClassName="Event_Steam_YC_4" Data="페디미안"/>
 		<Class ClassID="501080" OverrideType="ADD" ClassName="Event_Steam_YC_5" Data="마을 선택"/>
 		<Class ClassID="501081" OverrideType="ADD" ClassName="Event_Steam_YC_6" Data="마을 초기화"/>
 		<Class ClassID="501082" OverrideType="ADD" ClassName="Event_Steam_YC_7" Data="제작서-[이벤트] 복원된 여신상 받기"/>
@@ -68,12 +56,6 @@
 		<Class ClassID="501088" OverrideType="ADD" ClassName="Event_Together_Master_2" Data="마스터의 증표를 획득하셨습니다"/>
 		<Class ClassID="501089" OverrideType="ADD" ClassName="Event_Steam_Together_Master_3" Data="마스터와 함께"/>
 		<Class ClassID="501091" OverrideType="ADD" ClassName="EVENT_SELECT_BOSSLV_SEL1" Data="육성하기"/>
-		<Class ClassID="501092" OverrideType="ADD" ClassName="EVENT_SELECT_BOSSLV_SEL2" Data="몬스터명 : {NAME}"/>
-		<Class ClassID="501093" OverrideType="ADD" ClassName="EVENT_SELECT_BOSSLV_SEL3" Data=" {nl}몬스터명 : {NAME}{nl}현재레벨 : {LV}{nl}{nl}레벨을 올리기 위해서는 '몬스터의 기운' 아이템이 필요합니다."/>
-		<Class ClassID="501094" OverrideType="ADD" ClassName="EVENT_SELECT_BOSSLV_SEL4" Data="방생하기"/>
-		<Class ClassID="501096" OverrideType="ADD" ClassName="EVENT_SELECT_BOSSLV_SEL5" Data="특별한 블루 오브 이벤트"/>
-		<Class ClassID="501097" OverrideType="ADD" ClassName="EVENT_SELECT_BOSSLV_SEL6" Data=" {nl}몬스터 정보{nl}Lv {LV1} {NAME1}{nl}Lv {LV2} {NAME2}{nl}Lv {LV3} {NAME3}"/>
-		<Class ClassID="501098" OverrideType="ADD" ClassName="EVENT_SELECT_BOSSLV_SEL7" Data=" {nl}이벤트 미션 정보{nl}최대 클리어 단계 : {MAX}"/>
 		<Class ClassID="501099" OverrideType="ADD" ClassName="EVENT_SURVIVAL_NAME" Data="서바이벌 이벤트"/>
 		<Class ClassID="501100" OverrideType="ADD" ClassName="EVENT_JUMP_MISSION_1" Data="크리스마스 이벤트 : 깊은 산속의 선물 상자"/>
 		<Class ClassID="501101" OverrideType="ADD" ClassName="EVENT_STEAM_CHRISTMAS_SEL1" Data="크리스마스 이벤트 : 착한 거짓말"/>
@@ -106,7 +88,6 @@
 		<Class ClassID="501151" OverrideType="ADD" ClassName="NPC_EVENT_MAGAZINE_NUM1_SEL1" Data="칭호 받기"/>
 		<Class ClassID="501152" OverrideType="ADD" ClassName="NPC_EVENT_MAGAZINE_NUM1_SEL2" Data="버프 받기"/>
 		<Class ClassID="501153" OverrideType="ADD" ClassName="NPC_EVENT_MAGAZINE_NUM1_SEL3" Data="첫 번째 세계관 이벤트 : 수정광산"/>
-		<Class ClassID="501155" OverrideType="ADD" ClassName="NPC_EVENT_VIVID_CITY_SEL1" Data="비비드 시티 이벤트"/>
 		<Class ClassID="501156" OverrideType="ADD" ClassName="NPC_EVENT_USER_ROUTE_SEL1" Data="신규"/>
 		<Class ClassID="501157" OverrideType="ADD" ClassName="NPC_EVENT_USER_ROUTE_SEL2" Data="복귀"/>
 		<Class ClassID="501158" OverrideType="ADD" ClassName="NPC_EVENT_USER_ROUTE_SEL3" Data="기존"/>
@@ -141,11 +122,8 @@
 		<Class ClassID="501196" OverrideType="ADD" ClassName="EVENT_STEAM_CARNIVAL_FIRE_MSG3" Data='축제 의상을 입고 축제 폭죽을 사용하면{nl}"모두의 불꽃 축제"{nl}버프를 추가로 획득할 수 있습니다.'/>
 		<Class ClassID="501199" OverrideType="ADD" ClassName="EVENT_STEAM_1903_CHOCO_REWARD_SEL1" Data="달콤한 초콜릿 받기"/>
 		<Class ClassID="501200" OverrideType="ADD" ClassName="EVENT_STEAM_1903_CHOCO_REWARD_SEL2" Data="이벤트 기간이 아닙니다."/>
-		<Class ClassID="501201" OverrideType="ADD" ClassName="EVENT_STEAM_Secret_Buff_1" Data="이미 어둠의 기운 버프가 적용 중입니다."/>
-		<Class ClassID="501202" OverrideType="ADD" ClassName="EVENT_STEAM_SEED_MS01" Data="씨앗을 땅에 심었습니다.{nl}1분마다 단계별로 새싹 버프가 획득됩니다."/>
 	</Category>
 	<Category Name="Premium">
-		<Class ClassID="300174" OverrideType="ADD" ClassName="Ability_Point_Stone" Data="특성 포인트 1,000"/>
 		<Class ClassID="660001" OverrideType="ADD" ClassName="steam_PremiumToken_30day" Data="토큰:30일"/>
 		<Class ClassID="660002" OverrideType="ADD" ClassName="steam_PremiumToken_60d" Data="토큰:60일"/>
 	</Category>
@@ -173,9 +151,6 @@
 		<Class ClassID="501145" OverrideType="ADD" ClassName="EVENT_STEAM_2YEARS_MASTER_CHECK" Data="2주년 이벤트 - 마스터 명단 리스트 받기"/>
 		<Class ClassID="501146" OverrideType="ADD" ClassName="EVENT_STEAM_2YEARS_MASTER_CHECK_2" Data="이벤트 진행 상황 : {COUNT}/55{nl}오늘의 초대장을 확인할 마스터는{nl}{JOB} 마스터입니다."/>
 		<Class ClassID="501147" OverrideType="ADD" ClassName="EVENT_STEAM_2YEARS_MASTER_CHECK_3" Data="이벤트 진행 상황 : {COUNT}/55{nl}오늘의 초대장은 이미 확인했습니다."/>
-	</Category>
-	<Category Name="ColonyWar">
-		<Class ClassID="801047" OverrideType="ADD" ClassName="STEAM_COLONY_WAR_ONEDAY_REWARD_MSG{itemName}{itemCount}{nowCount}{limitCount}" Data="길드 콜로니전 참여 보상으로  [{itemName}] x {itemCount} 개 지급{nl}(일일 지급 횟수 : {nowCount}/{limitCount} 회)"/>
 	</Category>
 	<Category Name="UIText">
 		<Class ClassID="21293" ClassName="pcbang_shop" Data="Popo Shop"/>

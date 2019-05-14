@@ -742,6 +742,11 @@ function SETEXP_SLOT(gbox, addBuffClsName, isAdd)
                 expupValue = SETEXP_SLOT_ADD_ICON(expupBuffBox, buffCls.ClassName, GOLDEN_FISH_EXP_RATE);
             elseif buffCls.ClassName == 'Premium_Nexon_PartyExp' then
                 expupValue = SETEXP_SLOT_ADD_ICON(expupBuffBox, buffCls.ClassName, (NEXON_PC_PARTY_EXP_RATE + JAEDDURY_NEXON_PC_PARTY_EXP_RATE)*100);
+            --EVENT_1903_NEWUSER
+            elseif buffCls.ClassName == 'Event_ep11_sprout3' then
+                if info.GetLevel(handle) < 380 then
+                    expupValue = SETEXP_SLOT_ADD_ICON(expupBuffBox, buffCls.ClassName);
+                end
             else
                 expupValue = SETEXP_SLOT_ADD_ICON(expupBuffBox, buffCls.ClassName);
             end
@@ -1294,7 +1299,8 @@ function SET_VALUE_ZERO(value)
     if value == 0 then
         return 1, '0';
     else
-        return 0, value;
+        -- 실제로는 소수점 값이 있지만, UI상으로는 0으로 표기. (ex: 메니스샷 이동불가 처리)
+        return 0, math.floor(value);
     end
 end
 

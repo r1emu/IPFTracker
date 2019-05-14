@@ -589,10 +589,23 @@ function CRAFT_BEFORE_START_CRAFT(ctrl, ctrlset, recipeName, artNum)
         ui.SysMsg(ClMsg('CannotUseLifeTimeOverItem'));
         return;
     end
+    
+    local recipeCls = GetClass('Recipe', recipeName)
+    local targetItemName = TryGetProp(recipeCls, 'TargetItem', 'None')
+    local targetItem = GetClass('Item', targetItemName,'None')
+    local targetItemGrade = TryGetProp(targetItem, 'ItemGrade', 0)
+    
 
-	if someflag > 0 then
+	if someflag > 0 and targetItemGrade ~= 4 then
 		local yesScp = string.format("CRAFT_START_CRAFT(\'%s\', \'%s\', %d)",idSpace, recipeName, totalCount);        
 		ui.MsgBox(ScpArgMsg("IsValueAbleItem"), yesScp, "None");
+		
+	elseif someflag == 0 and targetItemGrade == 4 then
+	    local yesScp = string.format("CRAFT_START_CRAFT(\'%s\', \'%s\', %d)",idSpace, recipeName, totalCount);        
+		ui.MsgBox(ScpArgMsg("UniqueTranscendAllow").." "..ScpArgMsg("AllowManufacture"), yesScp, "None");
+	elseif someflag > 0 and targetItemGrade == 4 then
+		local yesScp = string.format("CRAFT_START_CRAFT(\'%s\', \'%s\', %d)",idSpace, recipeName, totalCount);        
+		ui.MsgBox(ScpArgMsg("UniqueTranscendAllow") .."{nl}"..ScpArgMsg("IsValueAbleItem"), yesScp, "None");
 	else   
 		CRAFT_START_CRAFT(idSpace, recipeName, totalCount, upDown)        
 	end
@@ -919,7 +932,21 @@ function CRAFT_DETAIL_CRAFT_EXEC_ON_START(frame, msg, str, time)
 	end
 end
 
+function CANCEL_ANIM_ITEMCRAFT()
+	local myActor = GetMyActor();
+	if myActor ~= nil then
+		myActor:SetHoldMovePath(false);
+	end
+end
+
 function CRAFT_DETAIL_CRAFT_EXEC_ON_FAIL(mainFrame, msg, str, time)
+	local myActor = GetMyActor();
+	if myActor ~= nil then
+		myActor:SetHoldMovePath(true);
+	end
+
+	AddLuaTimerFuncWithLimitCount("CANCEL_ANIM_ITEMCRAFT", 1500, 1);
+
 	local frame = ui.GetFrame(mainFrame:GetUserValue("UI_NAME"))
 	if nil == frame then
 		mainFrame:SetUserValue("MANUFACTURING", 0);

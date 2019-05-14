@@ -49,7 +49,7 @@ function EARTH_TOWER_SHOP_EXEC(parent, ctrl)
 
 	local parentcset = ctrl:GetParent()
 
-	
+
 	local frame = ctrl:GetTopParentFrame();	
 	local cnt = parentcset:GetChildCount();
 	for i = 0, cnt - 1 do
@@ -100,16 +100,46 @@ function EARTH_TOWER_SHOP_EXEC(parent, ctrl)
 	local cntText = string.format("%s %s", recipeCls.ClassID, 1);
 	
 
-	local shopType = frame:GetUserValue("SHOP_TYPE");
-	if shopType == 'EarthTower' then
-		item.DialogTransaction("EARTH_TOWER_SHOP_TREAD", resultlist, cntText);
-	elseif shopType == 'EarthTower2' then
-		item.DialogTransaction("EARTH_TOWER_SHOP_TREAD2", resultlist, cntText);
-	elseif shopType == 'EventShop' then
-		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD", resultlist, cntText);
-	elseif shopType == 'EventShop2' then
-		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD2", resultlist, cntText);
-	elseif shopType == 'EventShop6_1' then
+    local shopType = frame:GetUserValue("SHOP_TYPE");
+    if shopType == 'EarthTower' then
+        item.DialogTransaction("EARTH_TOWER_SHOP_TREAD", resultlist, cntText);
+    elseif shopType == 'EarthTower2' then
+        item.DialogTransaction("EARTH_TOWER_SHOP_TREAD2", resultlist, cntText);
+    elseif shopType == 'EventShop' then
+        item.DialogTransaction("EVENT_ITEM_SHOP_TREAD", resultlist, cntText);
+    elseif shopType == 'EventShop2' then
+        item.DialogTransaction("EVENT_ITEM_SHOP_TREAD2", resultlist, cntText);
+    elseif shopType == 'KeyQuestShop1' then
+        item.DialogTransaction("KEYQUESTSHOP1_SHOP_TREAD", resultlist, cntText);
+    elseif shopType == 'KeyQuestShop2' then
+        item.DialogTransaction("KEYQUESTSHOP2_SHOP_TREAD", resultlist, cntText);
+    elseif shopType == 'HALLOWEEN' then
+        item.DialogTransaction("HALLOWEEN_SHOP_TREAD", resultlist, cntText);
+    elseif shopType == 'EventShop3' then
+        item.DialogTransaction("EVENT_ITEM_SHOP_TREAD3", resultlist, cntText);  
+    elseif shopType == 'EventShop4' then
+        item.DialogTransaction("EVENT_ITEM_SHOP_TREAD4", resultlist, cntText);
+    elseif shopType == 'EventShop8' then
+        item.DialogTransaction("EVENT_ITEM_SHOP_TREAD8", resultlist, cntText);
+    elseif shopType == 'EventShop7' then
+	item.DialogTransaction("EVENT_ITEM_SHOP_TREAD7", resultlist, cntText);
+    elseif shopType == 'EventShop8' then
+	item.DialogTransaction("EVENT_ITEM_SHOP_TREAD8", resultlist, cntText);
+    elseif shopType == 'PVPMine' then
+        item.DialogTransaction("PVP_MINE_SHOP", resultlist, cntText);
+    elseif shopType == 'MCShop1' then
+        item.DialogTransaction("MASSIVE_CONTENTS_SHOP_TREAD1", resultlist, cntText);
+    elseif shopType == 'DailyRewardShop' then
+        item.DialogTransaction("DAILY_REWARD_SHOP_1_TREAD1", resultlist, cntText);
+    elseif shopType == 'Bernice' then
+        item.DialogTransaction("SoloDungeon_Bernice_SHOP", resultlist, cntText);
+    elseif shopType == 'NewChar' then
+        item.DialogTransaction("NEW_CHAR_SHOP_1_TREAD1", resultlist, cntText);
+    elseif shopType == 'SproutShop' then
+        item.DialogTransaction("SPROUT_SHOP_1_TREAD1", resultlist, cntText);
+    elseif shopType == 'SproutPremiumShop' then
+        item.DialogTransaction("SPROUT_PREMIUM_SHOP_1_TREAD1", resultlist, cntText);
+    elseif shopType == 'EventShop6_1' then
 		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD6_1", resultlist, cntText);
 	elseif shopType == 'EventShop6_2' then
 		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD6_2", resultlist, cntText);
@@ -119,28 +149,6 @@ function EARTH_TOWER_SHOP_EXEC(parent, ctrl)
 		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD6_4", resultlist, cntText);
 	elseif shopType == 'EventShop6_5' then
 		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD6_5", resultlist, cntText);
-	elseif shopType == 'KeyQuestShop1' then
-		item.DialogTransaction("KEYQUESTSHOP1_SHOP_TREAD", resultlist, cntText);
-	elseif shopType == 'KeyQuestShop2' then
-		item.DialogTransaction("KEYQUESTSHOP2_SHOP_TREAD", resultlist, cntText);
-	elseif shopType == 'HALLOWEEN' then
-		item.DialogTransaction("HALLOWEEN_SHOP_TREAD", resultlist, cntText);
-	elseif shopType == 'EventShop3' then
-		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD3", resultlist, cntText);	
-	elseif shopType == 'EventShop4' then
-		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD4", resultlist, cntText);
-	elseif shopType == 'EventShop8' then
-		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD8", resultlist, cntText);
-	elseif shopType == 'EventShop7' then
-		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD7", resultlist, cntText);
-	elseif shopType == 'EventShop8' then
-		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD8", resultlist, cntText);
-	elseif shopType == 'PVPMine' then
-		item.DialogTransaction("PVP_MINE_SHOP", resultlist, cntText);
-	elseif shopType == 'MCShop1' then
-		item.DialogTransaction("MASSIVE_CONTENTS_SHOP_TREAD1", resultlist, cntText);
-	elseif shopType == 'DailyRewardShop' then
-		item.DialogTransaction("DAILY_REWARD_SHOP_1_TREAD1", resultlist, cntText);
 	end
 
 	frame:ShowWindow(0)

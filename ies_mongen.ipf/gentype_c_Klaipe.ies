@@ -70,5 +70,6 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 5185,5185,1,100,1,1000,1,2,0,0,0,0,0,"NPC_GM","계열 변경 도우미","","","","","","","CTRLTYPE_RESET_NPC","","","NO","YES","NO","Neutral","","","",""
 5214,10064,1,30,-1,1,1,2,0,0,1,0,0,"npc_SCT_master","[스카우트 마스터]{nl}레콘 림가일레","","","","MON_DUMMY","","","JOB_SCOUT3_1_NPC","","","NO","YES","NO","Neutral","","","",""
 5218,5218,1,40,-1,60000,1,0,0,1,0,0,1,"HiddenTrigger6","UnvisibleName","","","","PVP_MINE_START_ALARAM","","","","","","NO","YES","NO","Neutral","","","",""
-5300,5300,1,100,1,1000,1,2,0,0,0,0,0,"NPC_GM","내 마음도 받아줄래 이벤트 도우미","","","","","","","EVENT_STEAM_1905_WHITEDAY_REWARD","","","NO","YES","NO","Neutral","","","",""
+5219,10066,1,40,-1,1,1,0,0,0,0,0,0,"HiddenTrigger6","UnvisibleName","","","","MON_DUMMY","","EVENT_RANK_RESET_NPC_1902_AI","","","","NO","YES","NO","Neutral","","","",""
+13000,13000,1,40,1,60000,1,2,0,0,0,0,0,"NPC_GM","특별한 선물 이벤트 도우미","","","","","","","EVENT_STEAM_1905_EP11_REWARD","","","NO","YES","NO","Neutral","","","",""
 10001,50001,1,40,1,60000,1,2,0,0,0,0,0,"Board3_Event","이벤트 알림판","","","","","","","STEAM_TREASURE_EVENT","","","NO","YES","NO","Neutral","","","",""

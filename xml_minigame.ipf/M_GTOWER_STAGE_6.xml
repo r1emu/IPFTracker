@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GameList>
-    <Game Name="M_GTOWER_STAGE_6" minLv="0" maxLv="0" startWaitSec="15">
+    <Game Name="M_GTOWER_STAGE_6" minLv="0" maxLv="0" mapName="mission_groundtower_1" playerCountCheckDestroy="1" startWaitSec="15">
         <StageList>
             <Stage Name="SETTING">
                 <StartScpList>
@@ -14,7 +14,9 @@
                     </ToolScp>
                 </StartScpList>
                 <ObjList>
-                    <Obj Type="Monster" MonType="57272" Pos="105.73#268.00#-1875.28" angle="90" genCount="1" genTime="20000" objectKey="0" autoDestroy="0" propList="&apos;Faction&apos; &apos;Neutral&apos; &apos;Name&apos; &apos;UnvisibleName&apos; "/>
+                    <Obj Type="Monster" MonType="57272" Pos="107.01#268.00#-1877.96" angle="90" genCount="1" genTime="20000" objectKey="0" autoDestroy="0" propList="&apos;Faction&apos; &apos;Neutral&apos; &apos;Name&apos; &apos;UnvisibleName&apos; &apos;BTree&apos; &apos;None&apos; "/>
+                    <Obj Type="Monster" MonType="40001" Pos="2709.61#433.85#-6136.05" angle="98" genCount="1" genTime="20000" objectKey="1" propList="&apos;Name&apos; &apos;대지의 탑 6층&apos; &apos;Range&apos; &apos;50&apos; &apos;Enter&apos; &apos;G_TOWER_WARP_TO_6&apos; "/>
+                    <Obj Type="Monster" MonType="57272" Pos="140.25#271.55#-4165.26" angle="90" genCount="1" genTime="20000" objectKey="2" autoDestroy="0" propList="&apos;Faction&apos; &apos;Neutral&apos; &apos;Name&apos; &apos;UnvisibleName&apos; &apos;BTree&apos; &apos;None&apos; "/>
                 </ObjList>
                 <StageEvents>
                     <Event execCount="1" eventName="END">
@@ -43,6 +45,9 @@
                     </ToolScp>
                     <ToolScp Scp="MGAME_SET_TIMEOUT" Client="NO" UseSleep="NO">
                         <Num Num="20"/>
+                    </ToolScp>
+                    <ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
+                        <Str Str="Success"/>
                     </ToolScp>
                 </StartScpList>
                 <ObjList>
@@ -83,6 +88,9 @@
                         <Str Str="raid_fail"/>
                         <Num Num="30"/>
                     </ToolScp>
+                    <ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
+                        <Str Str="Fail"/>
+                    </ToolScp>
                 </StartScpList>
                 <ObjList/>
                 <StageEvents>
@@ -121,6 +129,9 @@
                         <Str Str="stage_start"/>
                         <Num Num="20"/>
                     </ToolScp>
+                    <ToolScp Scp="MGAME_EARTH_TOWER_LOG" Client="NO" UseSleep="NO">
+                        <Str Str="Start"/>
+                    </ToolScp>
                 </StartScpList>
                 <ObjList>
                     <Obj Type="Monster" MonType="100064" Pos="-108.21#243.26#-4597.04" range="200" genCount="1" genTime="10000" objectKey="0" UseAiOutOfPc="1" tendency="1">
@@ -129,13 +140,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -156,13 +172,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -183,13 +204,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -210,13 +236,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -237,13 +268,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -264,13 +300,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -291,13 +332,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -318,13 +364,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -345,13 +396,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -372,13 +428,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -399,13 +460,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -426,13 +492,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -453,13 +524,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -480,13 +556,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -507,13 +588,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -534,13 +620,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -561,13 +652,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -588,13 +684,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -615,13 +716,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -642,13 +748,18 @@
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
                                     <Num Num="2000"/>
                                 </ToolScp>
+                                <ToolScp Scp="S_AI_MOVE_RALLY" Client="NO" UseSleep="YES" ExtraArg="1">
+                                    <AbsPos X="142.56017" Y="243.25525" Z="-4561.9082" Random="40"/>
+                                </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -674,11 +785,13 @@
                                 </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -704,11 +817,13 @@
                                 </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -734,11 +849,13 @@
                                 </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -764,11 +881,13 @@
                                 </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -794,11 +913,13 @@
                                 </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -824,11 +945,13 @@
                                 </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -854,11 +977,13 @@
                                 </ToolScp>
                             </List>
                             <DeadList>
-                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="SAI_DEAD_ADD_MGAME_V_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="1"/>
                                 </ToolScp>
-                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM" Client="NO" UseSleep="NO">
+                                <ToolScp Scp="S_AI_DEAD_GTOWER_DM_NAME" Client="NO" UseSleep="NO">
+                                    <Str Str="M_GTOWER_STAGE_6"/>
                                     <Str Str="MGTSTAGE6"/>
                                     <Num Num="165"/>
                                     <Str Str="남은 몬스터"/>
@@ -877,7 +1002,7 @@
                 <StageEvents>
                     <Event execCount="1" eventName="END">
                         <condList>
-                            <ToolScp Scp="SCR_MGAME_VALUE_CHECK_2" Client="NO" UseSleep="NO">
+                            <ToolScp Scp="GAME_ST_EVT_COND_VALUE" Client="NO" UseSleep="NO">
                                 <Str Str="MGTSTAGE6"/>
                                 <Str Str="OVER"/>
                                 <Num Num="165"/>
@@ -936,6 +1061,10 @@
                             </ToolScp>
                         </condList>
                         <execList>
+                            <ToolScp Scp="GAME_ST_EVT_FAIL" Client="NO" UseSleep="NO">
+                                <Str Str="모든 플레이어가 전투 불능 상태가 되었습니다."/>
+                                <Str Str="확인을 누르시면 입장했던 곳으로 이동합니다."/>
+                            </ToolScp>
                             <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
                                 <Str Str="FAIL"/>
                             </ToolScp>
@@ -965,5 +1094,9 @@
                 </StageEvents>
             </Stage>
         </StageList>
-    </Game>
+<EnterList>
+            <ToolScp Scp="MGAME_CHECK_INDUN" Client="NO" UseSleep="YES">
+                <Str Str="M_GTOWER_1_2"/>
+            </ToolScp>
+        </EnterList>    </Game>
 </GameList>

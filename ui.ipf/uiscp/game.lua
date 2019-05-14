@@ -217,12 +217,13 @@ end
 
 	
 function TEST_AYASE()
-	--debug.TestMannequin();
-	--camera.CustomZoom(75);
+    print("friend ui test");    
+    session.friends.TestAddManyFriend(FRIEND_LIST_COMPLETE, 200);
+    session.friends.TestAddManyFriend(FRIEND_LIST_BLOCKED, 100);
+end
 
-	local actor = GetMyActor();
-	local pos = actor:GetPos();
-	effect.AddActorEffect(actor, "I_wizard_hellBreath_shot", 3.6, pos.x, pos.y, pos.z, -1);
+function JOB_COMMAND()
+		TEST_PARTY();
 end
 
 function TEST_DIALOG_CALLBACK(frame, ack)
@@ -2105,18 +2106,16 @@ function SET_ITEM_TOOLTIP_BY_TYPE(ctrl, type)
 	ctrl:SetTooltipArg('inven', type, "");
 end
 
-function SET_ITEM_TOOLTIP_BY_ATTENDANCE(ctrl, orgtype, type)
+function SET_ITEM_TOOLTIP_BY_CLASSIDSPACE(ctrl, classidspace, orgtype, type)
 	SET_ITEM_TOOLTIP_TYPE(ctrl, type);
-	ctrl:SetTooltipArg('attendance', type, orgtype);
+	ctrl:SetTooltipArg(classidspace, type, orgtype);
 end
 
 function SET_ITEM_TOOLTIP_BY_CLASSID(ctrl, orgName, classidspace, className)
 	local cls = GetClass(classidspace, className);
 	local orgcls = GetClass("Item", orgName);
 	if cls ~= nil then
-		if classidspace == 'RewardAttendance' then
-			SET_ITEM_TOOLTIP_BY_ATTENDANCE(ctrl, orgcls.ClassID, cls.ClassID)
-		end		
+		SET_ITEM_TOOLTIP_BY_CLASSIDSPACE(ctrl, classidspace, orgcls.ClassID, cls.ClassID)
 	end
 end
 
@@ -3714,7 +3713,7 @@ end
 
 
 function UPDATE_COMPANION_TITLE(frame, handle)
-
+	
 	frame = tolua.cast(frame, "ui::CObject");
 
 	local petguid  = session.pet.GetPetGuidByHandle(handle);
@@ -3725,9 +3724,7 @@ function UPDATE_COMPANION_TITLE(frame, handle)
 	end
 		
 	local otherscompinfo = GET_CHILD_RECURSIVELY(frame, "otherscompinfo");
-
 	if petguid == 'None' then
-		
 		mycompinfoBox:ShowWindow(0)
 		otherscompinfo:ShowWindow(1)
 		
@@ -3740,8 +3737,13 @@ function UPDATE_COMPANION_TITLE(frame, handle)
 		othernameTxt:SetText(targetinfo.name)
 
 	else
-		mycompinfoBox:ShowWindow(1)
-		otherscompinfo:ShowWindow(0)
+		local myActor = GetMyPCObject();
+		if myActor ~= nil and IsBuffApplied(myActor, "RidingCompanion") == "YES" then 
+			mycompinfoBox:ShowWindow(0);			
+		else
+			mycompinfoBox:ShowWindow(1);
+		end
+		otherscompinfo:ShowWindow(0);
 
 		local mynameRtext = GET_CHILD_RECURSIVELY(frame, "myname");
 		local gauge_stamina = GET_CHILD_RECURSIVELY(frame, "StGauge");

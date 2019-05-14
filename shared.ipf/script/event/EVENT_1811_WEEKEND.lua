@@ -1,25 +1,28 @@
-function SCR_EVENT_1811_WEEKEND_CHECK(inputType)
-    local now_time = os.date('*t')
-    local month = now_time['month']
-    local day = now_time['day']
+function SCR_EVENT_1903_WEEKEND_CHECK(inputType, isServer)
+
+    local sysTime
     
+    if isServer == true then
+        sysTime = GetDBTime()
+    else
+        sysTime = geTime.GetServerSystemTime();
+    end
+    
+    local month = sysTime.wMonth
+    local day = sysTime.wDay
     local t = {
-                {12,8,{'REINFORCE'}},
-                {12,9,{'TRANSCEND'}},
-                {12,15,{'ITEMRANDOMRESET'}},
-                {12,16,{'LOOTINGCHANCE'}},
-                {12,22,{'REINFORCE'}},
-                {12,23,{'TRANSCEND'}},
-                {12,25,{'ITEMRANDOMRESET','LOOTINGCHANCE'}},
-                {12,29,{'REINFORCE'}},
-                {12,30,{'TRANSCEND'}},
-                {1,1,{'ITEMRANDOMRESET','LOOTINGCHANCE'}},
-                {1,5,{'REINFORCE'}},
-                {1,6,{'TRANSCEND'}},
-                {1,12,{'ITEMRANDOMRESET'}},
-                {1,13,{'LOOTINGCHANCE'}},
-                {1,19,{'REINFORCE'}},
-                {1,20,{'TRANSCEND'}}
+                {5,18,{'EXP'}},
+                {5,19,{'EXP'}},
+                {5,25,{'EXP'}},
+                {5,26,{'EXP'}},
+                {6,1,{'EXP'}},
+                {6,2,{'EXP'}},
+                {6,8,{'EXP'}},
+                {6,9,{'EXP'}},
+                {6,15,{'EXP'}},
+                {6,16,{'EXP'}},
+                --{5,5,{'EXP'}},
+                --{5,6,{'LOOTINGCHANCE','ITEMRANDOMRESET'}},
                 }
     for i = 1, #t do
         if t[i][1] == month and t[i][2] == day then
@@ -35,16 +38,21 @@ function SCR_EVENT_1811_WEEKEND_CHECK(inputType)
     return 'NO'
 end
 
-
-function SCR_EVENT_1811_WEEKEND_LOOTINGCHANCE_BUFF_CHECK(self)
+function SCR_EVENT_1903_WEEKEND_LOOTINGCHANCE_BUFF_CHECK(self, isServer)
     if IsServerSection() == 1 then
-        if IsBuffApplied(self, 'Event_1710_Holiday') == 'YES' then
-            if IS_BASIC_FIELD_DUNGEON(self) ~= 'YES' or SCR_EVENT_1811_WEEKEND_CHECK('LOOTINGCHANCE') ~= 'YES' then
-                RemoveBuff(self, 'Event_1710_Holiday')
-            end
-        else
-            if IS_BASIC_FIELD_DUNGEON(self) == 'YES' and SCR_EVENT_1811_WEEKEND_CHECK('LOOTINGCHANCE') == 'YES' then
-                AddBuff(self, self, 'Event_1710_Holiday')
+        local buffList = {{'LOOTINGCHANCE','Event_ep11_LootingChance'}
+                            ,{'EXP','Event_ep11_Expup'}
+                            ,{'REINFORCE','Event_ep11_reinforce'}}
+        for i = 1,#buffList do
+            if SCR_EVENT_1903_WEEKEND_CHECK(buffList[i][1], isServer) == 'YES' then
+                if IsBuffApplied(self, buffList[i][2]) ~= 'YES' then
+                    AddBuff(self, self, buffList[i][2])
+                    AddBuff(self, self, 'Event_ep11_Expup_base')
+                end
+            else
+                if IsBuffApplied(self, buffList[i][2]) == 'YES' then
+                    RemoveBuff(self, buffList[i][2])
+                end
             end
         end
     end
@@ -67,7 +75,27 @@ function SCR_RAID_EVENT_20190102(pc, isServer)
     local month = sysTime.wMonth
     local day = sysTime.wDay
    
-    if (month == 2 and day >= 18 ) or (month == 3 and day <= 20) then
+    if (month == 1 and day == 31 ) or (month == 2 and day <= 7) then
+        return true
+    else
+        return false
+    end
+end
+
+-- if event is end then, delete this function
+function SCR_RAID_EVENT_20190221(pc, isServer)
+    local sysTime
+
+    if isServer == true then
+        sysTime = GetDBTime()
+    else
+        sysTime = geTime.GetServerSystemTime();
+    end
+    
+    local month = sysTime.wMonth
+    local day = sysTime.wDay
+
+    if (month == 5 and day >= 14 ) or (month == 5 and day <= 28) then
         return true
     else
         return false

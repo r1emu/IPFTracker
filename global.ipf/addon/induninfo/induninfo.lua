@@ -34,7 +34,11 @@ function INDUNINFO_CREATE_CATEGORY(frame)
                 if GET_RESET_CYCLE(resetGroupID) == true then
                     cyclePicImg:SetImage('indun_icon_week_s_eng')
                 else
-                    cyclePicImg:SetImage('indun_icon_day_s_eng')
+                    if indunCls.DungeonType == "Raid" or indunCls.DungeonType == "GTower" then
+                        cyclePicImg:ShowWindow(0);
+                    else
+                        cyclePicImg:SetImage('indun_icon_day_s_eng')
+                    end
                 end
 
                 --유니크 레이드의 경우 cyclePic을 숨긴다
@@ -114,6 +118,14 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
     
     admissionItemCount = math.floor(admissionItemCount);
     
+    if indunCls.UnitPerReset == 'ACCOUNT' then
+        etc = GetMyAccountObj()
+    end
+    
+     if indunCls.WeeklyEnterableCount ~= 0 then
+        nowCount = TryGetProp(etc, "IndunWeeklyEnteredCount_"..tostring(TryGetProp(indunCls, "PlayPerResetType")));
+     end
+     
     if admissionItemName == "None" or admissionItemName == nil then
       --  print("if " .. indunCls.Name)
     
@@ -129,7 +141,11 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         if GET_RESET_CYCLE(resetGroupID) == true then
             cycleImage:SetImage('indun_icon_week_l_eng')
         else
-            cycleImage:SetImage('indun_icon_day_l_eng')
+            if indunCls.DungeonType == "Raid" or indunCls.DungeonType == "GTower" then
+                cycleImage:ShowWindow(0);
+            else
+                cycleImage:SetImage('indun_icon_day_l_eng')
+            end
         end
 
         local countBox = GET_CHILD_RECURSIVELY(frame, 'countBox');
@@ -157,12 +173,36 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         else
             nowAdmissionItemCount  = admissionItemCount + addCount
         end
+        
+        local currentEnteranceCnt = GET_CURRENT_ENTERANCE_COUNT(resetGroupID);
+        local maxEnteranceCnt = indunCls.WeeklyEnterableCount;
+        if tonumber(currentEnteranceCnt) > maxEnteranceCnt then
+            nowAdmissionItemCount = admissionItemCount + (currentEnteranceCnt - maxEnteranceCnt);
+        end
+        
         countItemData:SetTextByKey('admissionitem', '  {img '..indunAdmissionItemImage..' 30 30}  '..nowAdmissionItemCount..'')
         local countBox = GET_CHILD_RECURSIVELY(frame, 'countBox');
         local countText = GET_CHILD_RECURSIVELY(countBox, 'countText');
         local cycleCtrlPic = GET_CHILD_RECURSIVELY(countBox, 'cycleCtrlPic');
-        countText:SetText(ScpArgMsg("IndunAdmissionItem"))
-        cycleCtrlPic:ShowWindow(0);
+        if GET_RESET_CYCLE(resetGroupID) == true then
+            cycleImage:SetImage('indun_icon_week_l')
+        else
+            if indunCls.DungeonType == "Raid" or indunCls.DungeonType == "GTower" then
+                cycleImage:ShowWindow(0);
+            end
+        end
+        if indunCls.DungeonType == "Raid" or indunCls.DungeonType == "GTower" then
+            if indunCls.WeeklyEnterableCount > nowCount then
+                countText:SetText(ScpArgMsg("IndunAdmissionItemReset"))
+                cycleCtrlPic:ShowWindow(0);
+            else
+                countText:SetText(ScpArgMsg("IndunAdmissionItem"))
+                cycleCtrlPic:ShowWindow(0);
+            end
+        else
+            countText:SetText(ScpArgMsg("IndunAdmissionItem"))
+            cycleCtrlPic:ShowWindow(0);
+        end
         
         if indunCls.DungeonType == 'UniqueRaid' then
             if SCR_RAID_EVENT_20190102(nil, false) and admissionItemName == 'Dungeon_Key01' then -- 별의 탑 폐쇄 구역 제외 조건 걸어주기

@@ -1477,11 +1477,11 @@ local function CHECK_INVENTORY_OPTION_ETC(itemCls)
 
 	local itemCategory = itemCls.MarketCategory
 	local optionConfig = 0
-	if itemCategory == "Misc_Usual" then
+	if itemCategory == "Misc_Usual" or itemCategory == "Misc_MiscSkill" then
 		optionConfig = config.GetXMLConfig("InvOption_Etc_Usual")
 	elseif itemCategory == "Misc_Quest" then
 		optionConfig = config.GetXMLConfig("InvOption_Etc_Quest")
-	elseif itemCategory == "Misc_Special" then
+	elseif itemCategory == "Misc_Special" or itemCategory == "OPTMisc_IcorWeapon" or itemCategory == "OPTMisc_IcorArmor" then
 		optionConfig = config.GetXMLConfig("InvOption_Etc_Special")
 	elseif itemCategory == "Misc_Collect" then
 		optionConfig = config.GetXMLConfig("InvOption_Etc_Collect")
@@ -1926,6 +1926,11 @@ function SLOT_ITEMUSE_BY_TYPE(frame, object, argStr, type)
 end
 
 function TRY_TO_USE_WARP_ITEM(invitem, itemobj)
+	-- 워프 주문서 아니면 리턴
+	if itemobj.ClassID ~= 640022 and itemobj.ClassID ~= 640079 and itemobj.ClassID ~= 490006 and itemobj.ClassID ~= 490110 then
+		return 0;
+	end
+
 	local pc = GetMyPCObject();
 	if pc == nil or IsPVPServer(pc) == 1 then
 		local isEnableUseInPVPMap = TryGetProp(itemobj, "PVPMap");
@@ -1935,8 +1940,7 @@ function TRY_TO_USE_WARP_ITEM(invitem, itemobj)
 		end
 	end
 	
-	if (IsBuffApplied(pc, 'Event_Penalty') == 'YES' or IsBuffApplied(pc, 'PVP_MINE_BUFF1') == 'YES' or IsBuffApplied(pc, 'PVP_MINE_BUFF2') == 'YES') 
-	and (itemobj.ClassID == 640022 or itemobj.ClassID == 640079 or itemobj.ClassID == 490006 or itemobj.ClassID == 490110) then
+	if IsBuffApplied(pc, 'Event_Penalty') == 'YES' or IsBuffApplied(pc, 'PVP_MINE_BUFF1') == 'YES' or IsBuffApplied(pc, 'PVP_MINE_BUFF2') == 'YES' then
 		ui.SysMsg(ScpArgMsg("CannotUseThieInThisMap"));
 		return 0;
 	end

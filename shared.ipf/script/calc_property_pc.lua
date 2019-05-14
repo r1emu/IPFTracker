@@ -671,7 +671,7 @@ end
 
 function SCR_Get_MINPATK(self)
     local defaultValue = 20;
-    
+
     local lv = TryGetProp(self, "Lv");
     if lv == nil then
         lv = 1;
@@ -710,9 +710,10 @@ function SCR_Get_MINPATK(self)
     if IsBuffApplied(self, 'Warrior_RH_VisibleObject') == 'YES' and rightHand ~= nil then
         throwItemMinAtk = rightHand.MINATK;
     end
-    
+    REFRESH_ITEM(self, rightHand);
+
     value = value - leftMinAtk - throwItemMinAtk;
-    
+
     local byBuff = 0;
     local byBuffList = { "PATK_BM", "MINPATK_BM", "PATK_MAIN_BM", "MINPATK_MAIN_BM" };
     for i = 1, #byBuffList do
@@ -747,7 +748,7 @@ function SCR_Get_MINPATK(self)
     if value < 1 then
     	value = 1;
     end
-    
+
     return math.floor(value);
 end
 
@@ -792,6 +793,7 @@ function SCR_Get_MAXPATK(self)
     if IsBuffApplied(self, 'Warrior_RH_VisibleObject') == 'YES' and rightHand ~= nil then
         throwItemMaxAtk = rightHand.MAXATK;
     end
+    REFRESH_ITEM(self, rightHand);
     
     value = value - leftMaxAtk - throwItemMaxAtk;
     
@@ -830,7 +832,7 @@ end
 
 function SCR_Get_MINPATK_SUB(self)
     local defaultValue = 20;
-    
+
     local lv = TryGetProp(self, "Lv");
     if lv == nil then
         lv = 1;
@@ -863,6 +865,7 @@ function SCR_Get_MINPATK_SUB(self)
     if rightHand ~= nil then
         rightMinAtk = rightHand.MINATK;
     end
+    REFRESH_ITEM(self, rightHand);
     
     value = value - rightMinAtk;
     
@@ -939,6 +942,7 @@ function SCR_Get_MAXPATK_SUB(self)
     if rightHand ~= nil then
         rightMaxAtk = rightHand.MAXATK;
     end
+    REFRESH_ITEM(self, rightHand);
     
     value = value - rightMaxAtk;
     
@@ -1010,6 +1014,7 @@ function SCR_Get_MINMATK(self)
     if IsBuffApplied(self, 'Warrior_RH_VisibleObject') == 'YES' and rightHand ~= nil then
         throwItemMinMAtk = rightHand.MATK;
     end
+    REFRESH_ITEM(self, rightHand);
     
     value = value - throwItemMinMAtk;
     
@@ -1086,6 +1091,7 @@ function SCR_Get_MAXMATK(self)
     if IsBuffApplied(self, 'Warrior_RH_VisibleObject') == 'YES' and rightHand ~= nil then
         throwItemMaxMAtk = rightHand.MATK;
     end
+    REFRESH_ITEM(self, rightHand);
     
     value = value - throwItemMaxMAtk;
     
@@ -1144,6 +1150,7 @@ function SCR_Get_DEF(self)
     if IsBuffApplied(self, 'Warrior_LH_VisibleObject') == 'YES' and leftHand ~= nil then
         throwItemDef = leftHand.DEF;
     end
+    REFRESH_ITEM(self, leftHand);
     
     value = value - throwItemDef;
     
@@ -2037,6 +2044,10 @@ function SCR_Get_MSPD(self)
     	return 10;
     end
     
+    if IsBuffApplied(self, 'HideShot_Buff') == 'YES' then
+        return 25;
+    end
+    
     if IsBuffApplied(self, 'MissileHole_MSPD_Buff') == 'YES' then
     	return 60;
     end
@@ -2123,25 +2134,30 @@ function SCR_Get_MSPD(self)
     local jobObj = GetJobObject(self);
     local jobCtrlType = TryGetProp(jobObj, 'CtrlType')
     if jobCtrlType == "Archer" then
-    	if IsBattleState(self) == 1 then
+    	if IsBattleState(self) == 1 and IsBuffApplied(self, "Tracking_Buff") == "NO" then
     		isDashRun = 0
     	end
+    end
+    
+    if IsBuffApplied(self, 'Slithering_Buff') == 'YES' then
+    	isDashRun = 0
+    	return 19;
+    end
+    
+    if IsBuffApplied(self, 'Taglio_Buff') == 'YES' then
+        isDashRun = 0
+        return value;
     end
     
     if isDashRun > 0 then    -- 대시 런 --
         local dashRunAddValue = 10
         
-        --if IsBuffApplied(self, 'GIMMICK_TRANSFORM_BUFF') == 'YES' then --event
-		--    value = 15;
-		--    SendAddOnMsg(self, "NOTICE_Dm_!", ScpArgMsg("EVENT_STEAM_TS_MS01"), 3)
-		--    return math.floor(value);
-	    --end   
 	    if jobCtrlType == "Wizard" then
 	    	dashRunAddValue = dashRunAddValue - 4
 	    end
 	    
 	    if jobCtrlType == "Archer" then
-	    	if IsBattleState(self) == 0 then
+	    	if IsBattleState(self) == 0 or IsBuffApplied(self, "Tracking_Buff") == "YES" then
 	    		dashRunAddValue = dashRunAddValue + 3
 	    	else
 	    		isDashRun = 0
@@ -2440,7 +2456,7 @@ function SCR_MOVING_SHOT_SPEED(pc) -- archer moving shot
     return value;
 end
 
-function SCR_Get_MSTA(self)
+function SCR_Get_MaxSta(self)
     local defaultMSTA = 25000;
     
     local byItem = GetSumOfEquipItem(self, 'MSTA');
@@ -2504,13 +2520,27 @@ function SCR_Get_Sta_Run(self)
     local jobObj = GetJobObject(self);
     local jobCtrlType = TryGetProp(jobObj, 'CtrlType')
     if jobCtrlType == "Archer" then
-    	if IsBattleState(self) == 1 then
+    	if IsBattleState(self) == 1 and IsBuffApplied(self, "Tracking_Buff") == "NO" then
     		isDashRun = 0
     	end
     end
     
     if isDashRun > 0 then
         local dashAmount = 500;
+
+	    if jobCtrlType == "Archer" then
+	    	if IsBuffApplied(self, "Tracking_Buff") == "YES" then
+	    	    local level = 0;
+	    	    local buff = GetBuffByName(self, "Tracking_Buff")
+	    	    if buff ~= nil then
+	    	        level = GetBuffArg(buff)
+	    	    end
+	    	    
+	    	    local addRate = 1 + (0.5 - 0.03 * level)
+	    		dashAmount = dashAmount * addRate
+	    	end
+	    end        
+        
 	    if jobCtrlType == "Cleric" then
 			if IsBuffApplied(self, "Lycanthropy_Half_Buff") == "YES" then
 				dashAmount = dashAmount * 0.5
@@ -2524,7 +2554,7 @@ function SCR_Get_Sta_Run(self)
         consumptionSTA = consumptionSTA + dashAmount;
         
         if isDashRun == 2 then
-            addRateConsumptionSTA = addRateConsumptionSTA - 0.1;  -- 인보 특성 있는 중에는 추가량 10% 감소
+            addRateConsumptionSTA = addRateConsumptionSTA - 0.25;  -- 인보 특성 있는 중에는 추가량 25% 감소
         end
 	    
         local byRateBuffDash = TryGetProp(self, 'DASHSTA_RATE_BM');

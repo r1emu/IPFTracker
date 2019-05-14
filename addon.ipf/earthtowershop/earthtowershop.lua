@@ -1,221 +1,256 @@
 function REQ_EARTH_TOWER_SHOP_OPEN()
 
-	local frame = ui.GetFrame("earthtowershop");
-	frame:SetUserValue("SHOP_TYPE", 'EarthTower');
-	ui.OpenFrame('earthtowershop');
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'EarthTower');
+    ui.OpenFrame('earthtowershop');
 end
 
 function REQ_EARTH_TOWER2_SHOP_OPEN()
 
-	local frame = ui.GetFrame("earthtowershop");
-	frame:SetUserValue("SHOP_TYPE", 'EarthTower2');
-	ui.OpenFrame('earthtowershop');
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'EarthTower2');
+    ui.OpenFrame('earthtowershop');
 end
 
 function REQ_EVENT_ITEM_SHOP_OPEN()
-	local frame = ui.GetFrame("earthtowershop");
-	frame:SetUserValue("SHOP_TYPE", 'EventShop');
-	ui.OpenFrame('earthtowershop');
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'EventShop');
+    ui.OpenFrame('earthtowershop');
 end
 
 function REQ_EVENT_ITEM_SHOP2_OPEN()
-	local frame = ui.GetFrame("earthtowershop");
-	frame:SetUserValue("SHOP_TYPE", 'EventShop2');
-	ui.OpenFrame('earthtowershop');
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'EventShop2');
+    ui.OpenFrame('earthtowershop');
 end
 
 function REQ_EVENT_ITEM_SHOP3_OPEN()
-	local frame = ui.GetFrame("earthtowershop");
-	frame:SetUserValue("SHOP_TYPE", 'EventShop3');
-	ui.OpenFrame('earthtowershop');
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'EventShop3');
+    ui.OpenFrame('earthtowershop');
 end
 
 function REQ_KEY_QUEST_TRADE_HETHRAN_LV1_OPEN()
-	local frame = ui.GetFrame("earthtowershop");
-	frame:SetUserValue("SHOP_TYPE", 'KeyQuestShop1');
-	ui.OpenFrame('earthtowershop');
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'KeyQuestShop1');
+    ui.OpenFrame('earthtowershop');
 end
 
 function REQ_KEY_QUEST_TRADE_HETHRAN_LV2_OPEN()
-	local frame = ui.GetFrame("earthtowershop");
-	frame:SetUserValue("SHOP_TYPE", 'KeyQuestShop2');
-	ui.OpenFrame('earthtowershop');
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'KeyQuestShop2');
+    ui.OpenFrame('earthtowershop');
 end
 
 function HALLOWEEN_EVENT_ITEM_SHOP_OPEN()
-	local frame = ui.GetFrame("earthtowershop");
-	frame:SetUserValue("SHOP_TYPE", 'HALLOWEEN');
-	ui.OpenFrame('earthtowershop');
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'HALLOWEEN');
+    ui.OpenFrame('earthtowershop');
 end
 
 function REQ_EVENT_ITEM_SHOP8_OPEN()
-	local frame = ui.GetFrame("earthtowershop");
-	frame:SetUserValue("SHOP_TYPE", 'EventShop8');
-	ui.OpenFrame('earthtowershop');
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'EventShop8');
+    ui.OpenFrame('earthtowershop');
 end
 
 function REQ_PVP_MINE_SHOP_OPEN()
-	local frame = ui.GetFrame("earthtowershop");
-	frame:SetUserValue("SHOP_TYPE", 'PVPMine');
-	ui.OpenFrame('earthtowershop');
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'PVPMine');
+    ui.OpenFrame('earthtowershop');
 end
 
 function REQ_MASSIVE_CONTENTS_SHOP1_OPEN()
-	local frame = ui.GetFrame("earthtowershop");
-	frame:SetUserValue("SHOP_TYPE", 'MCShop1');
-	ui.OpenFrame('earthtowershop');
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'MCShop1');
+    ui.OpenFrame('earthtowershop');
+end
+
+function REQ_SoloDungeon_Bernice_SHOP_OPEN()
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'Bernice');
+    ui.OpenFrame('earthtowershop');
 end
 
 function REQ_DAILY_REWARD_SHOP_1_OPEN()
-	local frame = ui.GetFrame("earthtowershop");
-	frame:SetUserValue("SHOP_TYPE", 'DailyRewardShop');
-	ui.OpenFrame('earthtowershop');
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'DailyRewardShop');
+    ui.OpenFrame('earthtowershop');
 end
 
+--function REQ_NEW_CHAR_SHOP_1_OPEN()
+--    local frame = ui.GetFrame("earthtowershop");
+--    frame:SetUserValue("SHOP_TYPE", 'NewChar');
+--    ui.OpenFrame('earthtowershop');
+--end
+
+function REQ_SPROUT_SHOP_1_OPEN()
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'SproutShop');
+    ui.OpenFrame('earthtowershop');
+end
+function REQ_SPROUT_PREMIUM_SHOP_1_OPEN()
+    local frame = ui.GetFrame("earthtowershop");
+    frame:SetUserValue("SHOP_TYPE", 'SproutPremiumShop');
+    ui.OpenFrame('earthtowershop');
+end
+
+
 function EARTH_TOWER_SHOP_OPEN(frame)
-	if frame == nil then
-		frame = ui.GetFrame("earthtowershop")
-	end
-	
-	local shopType = frame:GetUserValue("SHOP_TYPE");
-	if shopType == 'None' then
-		shopType = "EarthTower";
-		frame:SetUserValue("SHOP_TYPE", shopType);
-	end
+    if frame == nil then
+        frame = ui.GetFrame("earthtowershop")
+    end
+    
+    local shopType = frame:GetUserValue("SHOP_TYPE");
+    if shopType == 'None' then
+        shopType = "EarthTower";
+        frame:SetUserValue("SHOP_TYPE", shopType);
+    end
 
-	EARTH_TOWER_INIT(frame, shopType)
+    EARTH_TOWER_INIT(frame, shopType)
 
-	local bg = GET_CHILD(frame, "bg", "ui::CGroupBox");
-	bg:ShowWindow(1);
+    local bg = GET_CHILD(frame, "bg", "ui::CGroupBox");
+    bg:ShowWindow(1);
 
-	local article = GET_CHILD(frame, 'recipe', "ui::CGroupBox");
-	if article ~= nil then
-		article:ShowWindow(0)
-	end
+    local article = GET_CHILD(frame, 'recipe', "ui::CGroupBox");
+    if article ~= nil then
+        article:ShowWindow(0)
+    end
 
-	local bg = GET_CHILD(frame, "bg", "ui::CGroupBox");
-	bg:ShowWindow(0);
-	
-	local group = GET_CHILD(frame, 'Recipe', 'ui::CGroupBox')
-	group:ShowWindow(1)
-	imcSound.PlaySoundEvent('button_click_3');
+    local bg = GET_CHILD(frame, "bg", "ui::CGroupBox");
+    bg:ShowWindow(0);
+    
+    local group = GET_CHILD(frame, 'Recipe', 'ui::CGroupBox')
+    group:ShowWindow(1)
+    imcSound.PlaySoundEvent('button_click_3');
 
-	session.ResetItemList();
+    session.ResetItemList();
 end
 
 function  EARTH_TOWER_SHOP_OPTION(frame, ctrl)
     session.ResetItemList();
-	frame = frame:GetTopParentFrame();
-	local shopType = frame:GetUserValue("SHOP_TYPE");
-	EARTH_TOWER_INIT(frame, shopType);
+    frame = frame:GetTopParentFrame();
+    local shopType = frame:GetUserValue("SHOP_TYPE");
+    EARTH_TOWER_INIT(frame, shopType);
 end
 
 function EARTH_TOWER_INIT(frame, shopType)
 
-	INVENTORY_SET_CUSTOM_RBTNDOWN("None");
-	RESET_INVENTORY_ICON();
+    INVENTORY_SET_CUSTOM_RBTNDOWN("None");
+    RESET_INVENTORY_ICON();
 
-	local title = GET_CHILD(frame, 'title', 'ui::CRichText')
-	local close = GET_CHILD(frame, 'close');
-	if shopType == 'EarthTower' then
-		title:SetText('{@st43}'..ScpArgMsg("EarthTowerShop"));
-		close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EarthTowerShop")));
-	elseif shopType == 'EventShop' or shopType == 'EventShop2' or shopType == 'EventShop3' or 'EventShop8' then
-		title:SetText('{@st43}'..ScpArgMsg("EventShop"));
-		close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EventShop")));
-	elseif shopType == 'KeyQuestShop1' then
-		title:SetText('{@st43}'..ScpArgMsg("KeyQuestShopTitle1"));
-		close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("KeyQuestShopTitle1")));
-	elseif shopType == 'KeyQuestShop2' then
-		title:SetText('{@st43}'..ScpArgMsg("KeyQuestShopTitle2"));
-		close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("KeyQuestShopTitle2")));
-	elseif shopType == 'HALLOWEEN' then
-		title:SetText('{@st43}'..ScpArgMsg("EVENT_HALLOWEEN_SHOP_NAME"));
-		close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EVENT_HALLOWEEN_SHOP_NAME")));
-	elseif shopType == 'PVPMine' then
-		title:SetText('{@st43}'..ScpArgMsg("pvp_mine_shop_name"));
-		close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("pvp_mine_shop_name")));
-	elseif shopType == 'MCShop1' then
-		title:SetText('{@st43}'..ScpArgMsg("MASSIVE_CONTENTS_SHOP_NAME"));
-		close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("MASSIVE_CONTENTS_SHOP_NAME")));
-	elseif shopType == 'EventShop8' then
-		local taltPropCls = GetClassByType('Anchor_c_Klaipe', 5187);
-		title:SetText('{@st43}'..taltPropCls.Name);
-		close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', taltPropCls.Name));
-	elseif shopType == 'DailyRewardShop' then
-		title:SetText('{@st43}'..ScpArgMsg("DAILY_REWARD_SHOP_1"));
-		close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("DAILY_REWARD_SHOP_1")));
-	end
-
-
-	local group = GET_CHILD(frame, 'Recipe', 'ui::CGroupBox')
-
-	local slotHeight = ui.GetControlSetAttribute('earthTowerRecipe', 'height') + 5;
-
-	local tree_box = GET_CHILD(group, 'recipetree_Box','ui::CGroupBox')
-	local tree = GET_CHILD(tree_box, 'recipetree','ui::CTreeControl')
-
-	if nil == tree then
-		return;
-	end
-	tree:Clear();
-	tree:EnableDrawTreeLine(false)
-	tree:EnableDrawFrame(false)
-	tree:SetFitToChild(true,200)
-	tree:SetFontName("brown_18_b");
-	tree:SetTabWidth(5);
-		
+    local title = GET_CHILD(frame, 'title', 'ui::CRichText')
+    local close = GET_CHILD(frame, 'close');
+    if shopType == 'EarthTower' then
+        title:SetText('{@st43}'..ScpArgMsg("EarthTowerShop"));
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EarthTowerShop")));
+    elseif shopType == 'EventShop' or shopType == 'EventShop2' or shopType == 'EventShop3' then
+        title:SetText('{@st43}'..ScpArgMsg("EventShop"));
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EventShop")));
+    elseif shopType == 'KeyQuestShop1' then
+        title:SetText('{@st43}'..ScpArgMsg("KeyQuestShopTitle1"));
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("KeyQuestShopTitle1")));
+    elseif shopType == 'KeyQuestShop2' then
+        title:SetText('{@st43}'..ScpArgMsg("KeyQuestShopTitle2"));
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("KeyQuestShopTitle2")));
+    elseif shopType == 'HALLOWEEN' then
+        title:SetText('{@st43}'..ScpArgMsg("EVENT_HALLOWEEN_SHOP_NAME"));
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EVENT_HALLOWEEN_SHOP_NAME")));
+    elseif shopType == 'PVPMine' then
+        title:SetText('{@st43}'..ScpArgMsg("pvp_mine_shop_name"));
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("pvp_mine_shop_name")));
+    elseif shopType == 'MCShop1' then
+        title:SetText('{@st43}'..ScpArgMsg("MASSIVE_CONTENTS_SHOP_NAME"));
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("MASSIVE_CONTENTS_SHOP_NAME")));
+    elseif shopType == 'EventShop8' then
+        local taltPropCls = GetClassByType('Anchor_c_Klaipe', 5187);
+        title:SetText('{@st43}'..taltPropCls.Name);
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', taltPropCls.Name));
+    elseif shopType == 'DailyRewardShop' then
+        title:SetText('{@st43}'..ScpArgMsg("DAILY_REWARD_SHOP_1"));
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("DAILY_REWARD_SHOP_1")));
+    elseif shopType == 'Bernice' then
+        title:SetText('{@st43}'..ScpArgMsg("SoloDungeonSelectMsg_5"));
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("SoloDungeonSelectMsg_5")));
+    elseif shopType == 'NewChar' then
+        title:SetText('{@st43}'..ScpArgMsg("NEW_CHAR_SHOP_1"));
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("NEW_CHAR_SHOP_1")));
+    elseif shopType == 'SproutShop' then
+        title:SetText('{@st43}'..ScpArgMsg("SPROUT_SHOP_1"));
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("SPROUT_SHOP_1")));
+    elseif shopType == 'SproutPremiumShop' then
+        title:SetText('{@st43}'..ScpArgMsg("SPROUT_PREMIUM_SHOP_1"));
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("SPROUT_PREMIUM_SHOP_1")));
+    end
 
 
-	local clslist = GetClassList("ItemTradeShop");
-	if clslist == nil then return end
+    local group = GET_CHILD(frame, 'Recipe', 'ui::CGroupBox')
 
-	local i = 0;
-	local cls = GetClassByIndexFromList(clslist, i);
+    local slotHeight = ui.GetControlSetAttribute('earthTowerRecipe', 'height') + 5;
 
-	local showonlyhavemat = GET_CHILD(frame, "showonlyhavemat", "ui::CCheckBox");	
-	local checkHaveMaterial = showonlyhavemat:IsChecked();	
-	
-	while cls ~= nil do
+    local tree_box = GET_CHILD(group, 'recipetree_Box','ui::CGroupBox')
+    local tree = GET_CHILD(tree_box, 'recipetree','ui::CTreeControl')
 
-		if cls.ShopType == shopType then
-			local haveM = CRAFT_HAVE_MATERIAL(cls);		
-			if checkHaveMaterial == 1 then
-				if haveM == 1 then
-					INSERT_ITEM(cls, tree, slotHeight,haveM);
-				end
-			else
-				INSERT_ITEM(cls, tree, slotHeight,haveM);
-			end
-		end
+    if nil == tree then
+        return;
+    end
+    tree:Clear();
+    tree:EnableDrawTreeLine(false)
+    tree:EnableDrawFrame(false)
+    tree:SetFitToChild(true,200)
+    tree:SetFontName("brown_18_b");
+    tree:SetTabWidth(5);
 
-		i = i + 1;
-		cls = GetClassByIndexFromList(clslist, i);
-	end
 
-	tree:OpenNodeAll();
+
+    local clslist = GetClassList("ItemTradeShop");
+    if clslist == nil then return end
+
+    local i = 0;
+    local cls = GetClassByIndexFromList(clslist, i);
+
+    local showonlyhavemat = GET_CHILD(frame, "showonlyhavemat", "ui::CCheckBox");   
+    local checkHaveMaterial = showonlyhavemat:IsChecked();  
+    
+    while cls ~= nil do
+
+        if cls.ShopType == shopType then
+            local haveM = CRAFT_HAVE_MATERIAL(cls);     
+            if checkHaveMaterial == 1 then
+                if haveM == 1 then
+                    INSERT_ITEM(cls, tree, slotHeight,haveM);
+                end
+            else
+                INSERT_ITEM(cls, tree, slotHeight,haveM);
+            end
+        end
+        
+        i = i + 1;
+        cls = GetClassByIndexFromList(clslist, i);
+    end
+
+    tree:OpenNodeAll();
 
 end
 
 
 function INSERT_ITEM(cls, tree, slotHeight, haveMaterial)
 
-	local item = GetClass('Item', cls.TargetItem);
-	local groupName = item.GroupName;
-	local classType = nil;
-	if GetPropType(item, "ClassType") ~= nil then
-		classType = item.ClassType;
-		if classType == 'None' then
-		    classType = nil
-		end
-	end
+    local item = GetClass('Item', cls.TargetItem);
+    local groupName = item.GroupName;
+    local classType = nil;
+    if GetPropType(item, "ClassType") ~= nil then
+        classType = item.ClassType;
+        if classType == 'None' then
+            classType = nil
+        end
+    end
 
-	EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls);
+    EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls);
 end
 
 
 function EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls)
-	
 	local hGroup = tree:FindByValue(groupName);
 	if tree:IsExist(hGroup) == 0 then
 		hGroup = tree:Add(ScpArgMsg(groupName), groupName);
@@ -241,16 +276,16 @@ function EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls)
 		pageCtrlName = pageCtrlName .. "_" .. classType;
 	end
 
-	--DESTROY_CHILD_BY_USERVALUE(tree, "EARTH_TOWER_CTRL", "YES");
+    --DESTROY_CHILD_BY_USERVALUE(tree, "EARTH_TOWER_CTRL", "YES");
 
-	--local page = tree:GetChild(pageCtrlName);
-	--if page == nil then
-	--page = tree:CreateOrGetControl('page', pageCtrlName, 0, 1000, tree:GetWidth()-35, 470);
-	--CreateOrGetControl('groupbox', "upbox", 0, 0, detailView:GetWidth(), 0);
-	--local groupbox = tree:CreateOrGetControlSet('groupbox_sub', tree:GetName(), 0, 0)
-	--local groupbox = CreateOrGetControl('groupbox', 'questreward', 10, 10, frame:GetWidth()-70, frame:GetHeight());
-	--print(tree:GetName())
-	
+    --local page = tree:GetChild(pageCtrlName);
+    --if page == nil then
+    --page = tree:CreateOrGetControl('page', pageCtrlName, 0, 1000, tree:GetWidth()-35, 470);
+    --CreateOrGetControl('groupbox', "upbox", 0, 0, detailView:GetWidth(), 0);
+    --local groupbox = tree:CreateOrGetControlSet('groupbox_sub', tree:GetName(), 0, 0)
+    --local groupbox = CreateOrGetControl('groupbox', 'questreward', 10, 10, frame:GetWidth()-70, frame:GetHeight());
+    --print(tree:GetName())
+    
 	local page = tree:GetChild(pageCtrlName);
 	if page == nil then
 		page = tree:CreateOrGetControl('page', pageCtrlName, 0, 1000, tree:GetWidth()-35, 470);
@@ -269,13 +304,13 @@ function EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls)
 	
 	local ctrlset = page:CreateOrGetControlSet('earthTowerRecipe', cls.ClassName, 10, 10);
 	local groupbox = ctrlset:CreateOrGetControl('groupbox', pageCtrlName, 0, 0, 530, 200);	
-	
+    
 	groupbox:SetSkinName("None")
 	groupbox:EnableHitTest(0);
 	groupbox:ShowWindow(1);
 	tree:Add(hParent, groupbox);	
-	tree:SetNodeFont(hParent,"brown_18_b")		
-
+    tree:SetNodeFont(hParent,"brown_18_b")	
+    	
 	local x = 180;
 	local startY = 80;
 	local y = startY;
@@ -287,11 +322,19 @@ function EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls)
 	local itemIcon = GET_CHILD(ctrlset, "itemIcon")
 	local minHeight = itemIcon:GetHeight() + startY + 10;
 
+    itemName:SetTextByKey("value", targetItem.Name .. " [" .. recipecls.TargetItemCnt .. ScpArgMsg("Piece") .. "]" );
+    if targetItem.StringArg == "EnchantJewell" then
+        itemName:SetTextByKey("value", "[Lv. "..cls.TargetItemAppendValue.."] "..targetItem.Name .. " [" .. recipecls.TargetItemCnt .. ScpArgMsg("Piece") .. "]");
+    end
 
-	itemName:SetTextByKey("value", targetItem.Name .. " [" .. recipecls.TargetItemCnt .. ScpArgMsg("Piece") .. "]" );
 	itemIcon:SetImage(targetItem.Icon);
 	itemIcon:SetEnableStretch(1);
+    
+    if targetItem.StringArg == "EnchantJewell" then
+        SET_ITEM_TOOLTIP_BY_CLASSID(itemIcon, targetItem.ClassName, 'ItemTradeShop', cls.ClassName);
+    else  
 	SET_ITEM_TOOLTIP_ALL_TYPE(itemIcon, nil, targetItem.ClassName, '', targetItem.ClassID, 0);
+    end
 
 	local itemCount = 0;
 	for i = 1, 5 do
@@ -305,20 +348,23 @@ function EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls)
 					local slot = GET_CHILD(itemSet, "slot", "ui::CSlot");
 					local needcountTxt = GET_CHILD(itemSet, "needcount", "ui::CSlot");
 					needcountTxt:SetTextByKey("count", recipeItemCnt)
-					local itemtext = GET_CHILD(itemSet, "item", "ui::CRichText");
+
 					SET_SLOT_ITEM_CLS(slot, dragRecipeItem);
 					slot:SetEventScript(ui.DROP, "ITEMCRAFT_ON_DROP");
 					slot:SetEventScriptArgNumber(ui.DROP, dragRecipeItem.ClassID);
 					slot:SetEventScriptArgString(ui.DROP, 1)
 					slot:EnableDrag(0);
+                    slot:SetOverSound('button_cursor_over_2');
+                    slot:SetClickSound('button_click');
+
 					local icon 		= slot:GetIcon();
 					icon:SetColorTone('33333333')
+                    itemSet:SetUserValue("ClassName", dragRecipeItem.ClassName);
+                    
+                    local itemtext = GET_CHILD(itemSet, "item", "ui::CRichText");
 					itemtext:SetText(dragRecipeItem.Name);
+
 					y = y + itemHeight;
-					itemSet:SetUserValue("ClassName", dragRecipeItem.ClassName)
-						
-					slot:SetOverSound('button_cursor_over_2');
-					slot:SetClickSound('button_click');
 					itemCount = itemCount + 1;				
 				end
 			else			
@@ -327,25 +373,38 @@ function EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls)
 				CRAFT_DETAIL_CTRL_INIT(itemSet);
 				local slot = GET_CHILD(itemSet, "slot", "ui::CSlot");
 				local needcountTxt = GET_CHILD(itemSet, "needcount", "ui::CSlot");
-				needcountTxt:SetTextByKey("count",recipeItemCnt)--????? ????? ?????? ????
-				local itemtext = GET_CHILD(itemSet, "item", "ui::CRichText");
+                needcountTxt:SetTextByKey("count", recipeItemCnt);
+
 				SET_SLOT_ITEM_CLS(slot, dragRecipeItem);
 				slot:SetEventScript(ui.DROP, "ITEMCRAFT_ON_DROP");
 				slot:SetEventScriptArgNumber(ui.DROP, dragRecipeItem.ClassID);
 				slot:SetEventScriptArgString(ui.DROP, tostring(recipeItemCnt));
 				slot:EnableDrag(0);	
+                slot:SetOverSound('button_cursor_over_2');
+                slot:SetClickSound('button_click');
+
 				local icon 		= slot:GetIcon();
 				icon:SetColorTone('33333333')
+                itemSet:SetUserValue("ClassName", dragRecipeItem.ClassName)
+
+                local itemtext = GET_CHILD(itemSet, "item", "ui::CRichText");
 				itemtext:SetText(dragRecipeItem.Name);
+
 				y = y + itemHeight;
-				itemSet:SetUserValue("ClassName", dragRecipeItem.ClassName)
+                itemCount = itemCount + 1;
+            end
 				
-				slot:SetOverSound('button_cursor_over_2');
-				slot:SetClickSound('button_click');
-				itemCount = itemCount + 1;
+            if dragRecipeItem ~= nil then
+                local_dragrecipeitem = dragRecipeItem;
+            end
 			end
-		end
-	end
+        end
+        
+    -- edittext Reset
+    local edit_itemcount = GET_CHILD_RECURSIVELY(ctrlset, "itemcount");
+    if edit_itemcount ~= nil then
+        edit_itemcount:SetText(recipecls.TargetItemCnt);
+    end
 
 	local height = 0;	
 	if y < minHeight then
@@ -422,7 +481,7 @@ function EARTH_TOWER_SHOP_EXEC(parent, ctrl)
 
 	local parentcset = ctrl:GetParent()
 
-	
+
 	local frame = ctrl:GetTopParentFrame();	
 	local cnt = parentcset:GetChildCount();
 	for i = 0, cnt - 1 do

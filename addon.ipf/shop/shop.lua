@@ -381,14 +381,13 @@ function SHOP_SELL(invitem, sellCount, frame, setTotalCount)
 		ui.SysMsg(ClMsg("MaterialItemIsLock"));
 		return;
 	end
-
 	local itemobj = GetIES(invitem:GetObject());
 	local itemProp = geItemTable.GetPropByName(itemobj.ClassName);
 	if itemProp:IsEnableShopTrade() == false then
 		ui.SysMsg(ClMsg("CannoTradeToNPC"));
 		return;
 	end
-
+	
 	imcSound.PlaySoundEvent('button_inven_click_item');
 	local slot = GET_USABLE_SLOTSET(frame, invitem);
 	slot:SetUserValue("SLOT_ITEM_ID", invitem:GetIESID());
@@ -397,7 +396,7 @@ function SHOP_SELL(invitem, sellCount, frame, setTotalCount)
 	icon:Set(imageName, 'SELLITEMITEM', 0, 0, invitem:GetIESID());
 
 	SET_ITEM_TOOLTIP_ALL_TYPE(icon, invitem, itemobj.ClassName,'buy', invitem.type, invitem:GetIESID());
-	
+
 	slot:SetEventScript(ui.RBUTTONDOWN, "CANCEL_SELL");
 
 	local curCnt = slot:GetUserIValue("SELL_CNT");
@@ -436,7 +435,6 @@ function SHOP_SELL(invitem, sellCount, frame, setTotalCount)
 	SHOP_UPDATE_BUY_PRICE(frame);
 
 	INVENTORY_UPDATE_ICON_BY_INVITEM(ui.GetFrame('inventory'), invitem);
-
 end
 
 function GET_SHOP_TOTAL_USED_POINT(frame, shopItem)
@@ -665,7 +663,7 @@ function CANCEL_SELL(frame, ctrl, argstr, argnum)
 	local invitem = session.GetInvItemByGuid(itemID);
 
 	SHOP_SELECT_ITEM_LIST[itemID] = nil
-	INVENTORY_UPDATE_ICONS(ui.GetFrame("inventory"));
+	INVENTORY_SLOT_UNCHECK(ui.GetFrame("inventory"), itemID);
 
 	CLEAR_SELL_SLOT(slot);
 	SHOP_UPDATE_BUY_PRICE(frame);
@@ -1217,16 +1215,31 @@ function UPDATE_SOLD_ITEM_LIST(frame)
 	CLEAR_SOLD_ITEM_LIST(slotSet);
 
 	local list = session.GetSoldItemList();
-	FOR_EACH_INVENTORY(list, function(invItemList, info, slotSet)		
+	local count = list:Count();
+	local guidList = list:GetGuidList();
+	local indexTable = {}
+	for i = 0, count - 1 do
+		local guid = guidList:Get(i);
+		local item = list:GetItemByGuid(guid)
+		local index = item.invIndex
+		if index~=nil then
+			table.insert(indexTable,index)
+		end
+	end
+	table.sort(indexTable, function(a,b) return (a>b) end)
+	for i = 1, #indexTable do
+		local index = indexTable[i]
 		local idx = imcSlot:GetEmptySlotIndex(slotSet);
 		local slot = slotSet:GetSlotByIndex(idx);
+		local itemInfo = list:GetByInvIndex(index)
 		if slot == nil then
-			return 'break';
+			break;
 		end
-		local obj = GetIES(info:GetObject());		
-		SOLD_SLOT_SET(slot, idx, info);
-	end, true, slotSet);
-
+		if itemInfo ~= nil then
+			local obj = GetIES(itemInfo:GetObject());
+			SOLD_SLOT_SET(slot, idx, itemInfo);
+		end
+	end
 	slotSet:Invalidate();
 	FINALPRICE = GET_TOTAL_MONEY_STR();
 

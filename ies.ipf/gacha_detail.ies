@@ -26,3 +26,4 @@ ClassID,Count,Price,ClassName,ItemClassName,Group,GachaType,RewardGroup,PreCheck
 87,1,999,"Gacha_HairAcc_001_event14d_Team","Gacha_HairAcc_001_event14d_Team","CUBE","hair","GACHA_HAIRACC_001","","HAIR_GACHA","1","CUBE","",""
 106,1,10,"STEAM_Gacha_TP_Box_1","STEAM_Gacha_TP_Box_1","CUBE","costume","STEAM_Gacha_TP_Box_1","","STEAM_Gacha_TP_Box_1","1","TP","",""
 107,11,100,"STEAM_Gacha_TP_Box_11","STEAM_Gacha_TP_Box_11","CUBE","costume","STEAM_Gacha_TP_Box_1","","STEAM_Gacha_TP_Box_11","1","TP","",""
+110,1,999,"Gacha_HairAcc_001_event1d","Gacha_HairAcc_001_event1d","CUBE","hair","GACHA_HAIRACC_001","","RANDOM_BOX","1","CUBE","",""
