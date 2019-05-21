@@ -2,6 +2,10 @@
 <!-- Price는 스팀에서는 사용하지 않는다. 인니 등 타 국가용. 스팀의 Price는 steam store 웹 페이지에서 지정한다-->
 <!-- GroupID는 스팀에서만 사용하는 컬럼. 해당 아이템을 사용 가능한 서버 그룹을 지정-->
 <idspace id="ingamepurchaseitem">
+	<Class ClassID="30" OverrideType="ADD" ClassName="30TP(NA)" GiveTpAmount="30" Price="3" GroupID="G1001/G1002" ImgName="icon_item_tospoint30" ItemCode="DEF" ProductName="DEF" PriceUnit="DEF"/>
+	<Class ClassID="31" OverrideType="ADD" ClassName="30TP(EU)" GiveTpAmount="30" Price="3" GroupID="G1003" ImgName="icon_item_tospoint30" ItemCode="DEF" ProductName="DEF" PriceUnit="DEF"/>
+	<Class ClassID="32" OverrideType="ADD" ClassName="30TP(SEA)" GiveTpAmount="30" Price="3" GroupID="G1004/G1006" ImgName="icon_item_tospoint30" ItemCode="DEF" ProductName="DEF" PriceUnit="DEF"/>
+	<Class ClassID="33" OverrideType="ADD" ClassName="30TP(SA)" GiveTpAmount="30" Price="3" GroupID="G1005" ImgName="icon_item_tospoint30" ItemCode="DEF" ProductName="DEF" PriceUnit="DEF"/>
 	<Class ClassID="100" OverrideType="ADD" ClassName="100TP(NA)" GiveTpAmount="100" Price="10" GroupID="G1001/G1002" ImgName="icon_item_tospoint100" ItemCode="DEF" ProductName="DEF" PriceUnit="DEF"/>
 	<Class ClassID="101" OverrideType="ADD" ClassName="100TP(EU)" GiveTpAmount="100" Price="10" GroupID="G1003" ImgName="icon_item_tospoint100" ItemCode="DEF" ProductName="DEF" PriceUnit="DEF"/>
 	<Class ClassID="102" OverrideType="ADD" ClassName="100TP(SEA)" GiveTpAmount="100" Price="10" GroupID="G1004/G1006" ImgName="icon_item_tospoint100" ItemCode="DEF" ProductName="DEF" PriceUnit="DEF"/>
@@ -19,4 +23,4 @@
 	<Class ClassID="902" OverrideType="ADD" ClassName="900TP(SEA)" GiveTpAmount="990" Price="90" GroupID="G1004/G1006" ImgName="icon_item_tospoint900" ItemCode="DEF" ProductName="DEF" PriceUnit="DEF"/>
 	<Class ClassID="903" OverrideType="ADD" ClassName="900TP(SA)" GiveTpAmount="990" Price="90" GroupID="G1005" ImgName="icon_item_tospoint900" ItemCode="DEF" ProductName="DEF" PriceUnit="DEF"/>
 </idspace>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->

@@ -4097,14 +4097,11 @@ function SCR_GET_IceBlast_Ratio(skill)
 end
 
 function SCR_GET_SnowRolling_Ratio2(skill)
-
-    local pc = GetSkillOwner(skill);
-    local abil = GetAbility(pc, "Cryomancer20") 
-    local value = 0
-    if abil ~= nil then 
-        return SCR_ABIL_ADD_SKILLFACTOR_TOOLTIP(abil);
-    end
-
+	local value = 3 + skill.Level
+	if value>=10 then
+		value = 10;
+	end
+	return value
 end
 
 function SCR_GET_Telekinesis_Ratio2(skill)
