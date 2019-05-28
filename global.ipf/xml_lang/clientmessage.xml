@@ -5,6 +5,7 @@
 		<Class ClassID="302025" OverrideType="ADD" ClassName="Valen_Select1" Data="사랑의 초콜릿 레서피 구입."/>
 		<Class ClassID="302026" OverrideType="ADD" ClassName="Valen_Select2" Data="사랑의 초콜릿을 건네준다."/>
 		<Class ClassID="302027" OverrideType="ADD" ClassName="Valen_Select3" Data="대화 종료"/>
+		<Class ClassID="302035" ClassName="Leticia_Cube" Data="Mystery Cube"/>
 	</Category>
 	<Category Name="GLOBAL">
 		<Class ClassID="501016" ClassName="steam_Premium_SkillReset" Data="스킬 초기화 포션"/>

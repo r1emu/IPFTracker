@@ -1529,7 +1529,7 @@ function SCR_USE_ITEM_1902_NEWYEAR_PACKAGE_03(pc, target, string1, arg1, arg2, i
         TxGiveItem(tx, "R_Steam_HP_Potion_1Day", 5, '1902_NEW_YEAR_PACKAGE_03') -- steam add -- 
         TxGiveItem(tx, "R_Steam_SP_Potion_1Day", 5, '1902_NEW_YEAR_PACKAGE_03') -- steam add -- 
         for i = 1, 5 do
-            local cmdidx = TxGiveItem(tx, 'Unique_Enchant_Jewel_Team', 2, "1902_NEW_YEAR_PACKAGE_03");
+            local cmdidx = TxGiveItem(tx, 'Unique_Enchant_Jewel_Team', 1, "1902_NEW_YEAR_PACKAGE_03");
             TxAppendProperty(tx, cmdidx, 'Level', 390);
         end
     local ret = TxCommit(tx);

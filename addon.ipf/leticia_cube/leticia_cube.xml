@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by IMC (IMCGames Co., Ltd) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <uiframe name="leticia_cube" x="0" y="0" width="860" height="550" create="open">
 	<draw drawtitlebar="false"/>
 	<skin frameskin="test_frame_low"/>
@@ -13,7 +13,7 @@
 	<userconfig TP_IMG="icon_item_tpBox_30" ITEM_LIST_INTERVAL="-3"/>
 	<controls>
 		<groupbox name="headerBox" rect="0 0 862 72" margin="0 0 0 0" layout_gravity="left top" skin="TPshop_title"/>
-		<richtext name="headerText" rect="0 0 300 30" parent="headerBox" margin="0 0 0 0" layout_gravity="center center" caption="{@st43}{s22}레티샤 시크릿 큐브{/}"/>
+		<richtext name="headerText" rect="0 0 300 30" parent="headerBox" margin="0 0 0 0" layout_gravity="center center" caption="{@st43}{s22}Mystery Cube{/}"/>
 		<button name="closeBtn" rect="0 0 60 60" margin="0 15 5 0" layout_gravity="right top" image="testclose_button" LBtnUpScp="ui.CloseFrame('leticia_cube')"/>
 		<picture name="cubeBox" rect="0 0 450 345" margin="13 70 0 0" layout_gravity="left top" image="cube_item_bg" stretch="true" skin="None"/>
 		<picture name="cubePic" rect="0 0 200 200" parent="cubeBox" margin="0 0 0 0" layout_gravity="center center" image="testclose_button" stretch="true"/>

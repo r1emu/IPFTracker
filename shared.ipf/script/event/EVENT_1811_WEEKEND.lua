@@ -81,23 +81,3 @@ function SCR_RAID_EVENT_20190102(pc, isServer)
         return false
     end
 end
-
--- if event is end then, delete this function
-function SCR_RAID_EVENT_20190221(pc, isServer)
-    local sysTime
-
-    if isServer == true then
-        sysTime = GetDBTime()
-    else
-        sysTime = geTime.GetServerSystemTime();
-    end
-    
-    local month = sysTime.wMonth
-    local day = sysTime.wDay
-
-    if (month == 5 and day >= 14 ) or (month == 5 and day <= 28) then
-        return true
-    else
-        return false
-    end
-end
