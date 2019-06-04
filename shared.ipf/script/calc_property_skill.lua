@@ -10949,6 +10949,11 @@ function SCR_GET_GenbuArmor_Ratio(skill)
     local pc = GetSkillOwner(skill);
     local value = 100 - ((skill.Level - 1) * 10)
     
+    local abilOnmyoji12 = GetAbility(pc, "Onmyoji12")
+    if abilOnmyoji12 ~= nil and TryGetProp(abilOnmyoji12, "ActiveState", 0) == 1 then
+        value = value - (value * abilOnmyoji12.Level * 0.01)
+    end
+    
     return value
 end
 

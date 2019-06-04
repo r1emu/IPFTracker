@@ -67,6 +67,10 @@ function SCR_TX_TP_SHOP(pc, argList)
 					end
 				end
 			end
+			-- 사용한 tp 값에 따른 아이템 구입 가능 조건 체크
+			if SCR_IS_BUY_TP_OPTION_CHECK(pc, tpitem) == false then
+				return;
+			end
 		end
 	end
 
@@ -275,7 +279,10 @@ function SCR_TX_NEWBIE_TP_SHOP(pc, argList)
 		   SendSysMsg(pc, "IncludeCanNotBuyItem");
 		   return
 		end
-
+		-- 사용한 tp 값에 따른 아이템 구입 가능 조건 체크
+		if SCR_IS_BUY_TP_OPTION_CHECK(pc, tpitem) == false then
+			return;
+		end
 		itemListPrice = itemListPrice + tpitem.Price;
 	 end
 
@@ -449,6 +456,10 @@ function SCR_TX_RETURNUSER_TP_SHOP(pc, argList)
 		if IS_ENABLE_BUY_TPITEM_WITH_SHOPTYPE(pc, tpitem, 1, userType) == false then
 		   SendSysMsg(pc, "IncludeCanNotBuyItem");
 		   return
+		end
+		-- 사용한 tp 값에 따른 아이템 구입 가능 조건 체크
+		if SCR_IS_BUY_TP_OPTION_CHECK(pc, tpitem) == false then
+			return;
 		end
 		itemListPrice = itemListPrice + tpitem.Price;
 	 end

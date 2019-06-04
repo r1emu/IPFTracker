@@ -9202,7 +9202,8 @@
 		<image name="icon_Event_ep11_reinforce" file="\icon\buff_icon2.tga" imgrect="384 1024 128 128" CMM_Caption="자라나라 나무나무 장비 업글 버프"/>
 		<image name="icon_Event_ep11_Expup" file="\icon\buff_icon2.tga" imgrect="512 1024 128 128" CMM_Caption="자라나라 나무나무 경험치 버프"/>
 		<image name="icon_Event_ep11_flower" file="\icon\buff_icon2.tga" imgrect="640 1024 128 128" CMM_Caption="새싹과 함께한"/>
-	</imagelist>
+		<image name="icon_Headfish" file="\icon\buff_icon2.tga" imgrect="256 1280 128 128" CMM_Caption="개복치의 기운"/>
+		</imagelist>
 	<imagelist category="for frame"/>
 	<imagelist category="roadmap"/>
 	<imagelist category="inventory">
