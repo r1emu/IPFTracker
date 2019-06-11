@@ -89,11 +89,6 @@ function REQ_SPROUT_SHOP_1_OPEN()
     frame:SetUserValue("SHOP_TYPE", 'SproutShop');
     ui.OpenFrame('earthtowershop');
 end
-function REQ_SPROUT_PREMIUM_SHOP_1_OPEN()
-    local frame = ui.GetFrame("earthtowershop");
-    frame:SetUserValue("SHOP_TYPE", 'SproutPremiumShop');
-    ui.OpenFrame('earthtowershop');
-end
 
 
 function EARTH_TOWER_SHOP_OPEN(frame)
@@ -178,9 +173,6 @@ function EARTH_TOWER_INIT(frame, shopType)
     elseif shopType == 'SproutShop' then
         title:SetText('{@st43}'..ScpArgMsg("SPROUT_SHOP_1"));
         close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("SPROUT_SHOP_1")));
-    elseif shopType == 'SproutPremiumShop' then
-        title:SetText('{@st43}'..ScpArgMsg("SPROUT_PREMIUM_SHOP_1"));
-        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("SPROUT_PREMIUM_SHOP_1")));
     end
 
 
@@ -526,7 +518,7 @@ function EARTH_TOWER_SHOP_EXEC(parent, ctrl)
 				session.AddItemID(invItem:GetIESID(), recipeItemCnt);
 			end
 		end
-	end
+    end
 
 	local resultlist = session.GetItemIDList();
 	local cntText = string.format("%s %s", recipeCls.ClassID, 1);
