@@ -1,6 +1,6 @@
 ClassID,StartTimeYYYYMM,StartTimeDDHHMM,NewTimeYYYYMM,NewTimeDDHHMM,EndTimeYYYYMM,EndTimeDDHHMM,DeadlineTimeYYYYMM,DeadlineTimeDDHHMM,ExchangeTimeYYYYMM,ExchangeTimeDDHHMM,ClassName,Name,ImagePath,url,UserCommand1,UserCommand2,UserCommand3
 999901,201906,111400,201906,161400,201906,251400,201906,201400,0,0,"inGame_E1","Attribute Point Re-Run","inGame_E1","https://treeofsavior.com/page/news/view.php?n=1726","","",""
-999902,201906,111400,201906,161400,202011,121400,201911,71400,0,0,"inGame_E2","https://store.steampowered.com/itemstore/372000/browse/?filter=All","inGame_E2","https://store.steampowered.com/itemstore/372000/browse/?filter=All","","",""
+999902,201906,111400,201906,161400,202011,121400,201911,71400,0,0,"inGame_E2","30TP Bundle AVAILABLE FOR PURCHASE","inGame_E2","https://store.steampowered.com/itemstore/372000/browse/?filter=All","","",""
 999903,201906,41400,201906,91400,201906,181400,201906,131400,0,0,"inGame_E3","Leticia's Secret Cube","inGame_E3","https://treeofsavior.com/page/news/view.php?n=1724","","",""
 999904,201906,41400,201906,91400,202011,121400,201911,71400,0,0,"inGame_E4","First Time Shoppers Only","inGame_E4","https://treeofsavior.com/page/news/view.php?n=1722","","",""
 999905,201906,41400,201906,91400,201906,251400,201906,201400,0,0,"inGame_E5","Sunfish Attacks!","inGame_E5","https://treeofsavior.com/page/news/view.php?n=1721","","",""
