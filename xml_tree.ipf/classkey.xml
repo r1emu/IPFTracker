@@ -252,6 +252,11 @@
         <Key Name="GuildRaidSelectID" Value="9383"/>
         <Key Name="MaxCount" Value="7691"/>
         <Key Name="MiningLevel" Value="9329"/>
+        <Key Name="ColonySecondLeague_NuoridinFalls" Value="103937"/>
+        <Key Name="ColonySecondLeague_SalviasForest" Value="103936"/>
+        <Key Name="ColonySecondLeague_SventimasExile" Value="103935"/>
+        <Key Name="GuildEvent_BorutosKapas_Count" Value="103950"/>
+        <Key Name="GuildEvent_BorutosKapas_Reset" Value="103949"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PCEtc">
         <Key Name="Kill_GDB_boss_Sequoia" Value="9399"/>
@@ -8187,6 +8192,14 @@
         <Key Name="HadVisited_10003" Value="103863"/>
         <Key Name="Kill_boss_Skiaclipse_Sealed_Nocage_event" Value="103876"/>
         <Key Name="Kill_boss_Skiaclipse_event" Value="103875"/>
+        <Key Name="HadVisited_4952" Value="103951"/>
+        <Key Name="HadVisited_8025" Value="103956"/>
+        <Key Name="HadVisited_9993" Value="103938"/>
+        <Key Name="HadVisited_9994" Value="103939"/>
+        <Key Name="HadVisited_9995" Value="103940"/>
+        <Key Name="Hide_2992" Value="103933"/>
+        <Key Name="Hide_2993" Value="103953"/>
+        <Key Name="Kill_Guild_boss_Boruta" Value="103952"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PartyMember">
         <Key Name="Name" Value="7220"/>
@@ -8809,6 +8822,8 @@
         <Key Name="Socket_JamLv_7" Value="100059"/>
         <Key Name="Socket_JamLv_8" Value="100066"/>
         <Key Name="Socket_JamLv_9" Value="100060"/>
+        <Key Name="EnableEquipMap" Value="103958"/>
+        <Key Name="InheritanceRandomItemName" Value="103948"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Monster">
         <Key Name="SuperDropRatio" Value="6451"/>
@@ -10489,6 +10504,16 @@
         <Key Name="EVENT_STEAM_TULIP_TIMECHECK_YDAY_5" Value="103866"/>
         <Key Name="EVENT_STEAM_TULIP_TIMECHECK_YDAY_6" Value="103867"/>
         <Key Name="HadVisited_10003" Value="103864"/>
+        <Key Name="HadVisited_4952" Value="103954"/>
+        <Key Name="HadVisited_8025" Value="103957"/>
+        <Key Name="HadVisited_9993" Value="103941"/>
+        <Key Name="HadVisited_9994" Value="103942"/>
+        <Key Name="HadVisited_9995" Value="103943"/>
+        <Key Name="LEGEND_RAID_WHITE_CROW" Value="103934"/>
+        <Key Name="STEAM190618_GACHA_HAIRACC_BOUNS" Value="103978"/>
+        <Key Name="STEAM190618_GACHA_HAIRACC_COUNT" Value="103977"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_AC_01" Value="103959"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_AC_02" Value="103960"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PC">
         <Key Name="KDImmune" Value="6938"/>
@@ -18062,6 +18087,27 @@
         <Key Name="EVENT_1905_TOS_CHILD_TradeCount20" Value="103919"/>
         <Key Name="EVENT_1905_TOS_CHILD_TradeCount3" Value="103920"/>
         <Key Name="EVENT_STEAM_TULIP_LISTCHECK" Value="103874"/>
+        <Key Name="JOB_BALLENCE_REWARD2_DATE" Value="103947"/>
+        <Key Name="MG_Last_GUILD_COLONY_F_PILGRIMROAD_41_2" Value="103944"/>
+        <Key Name="MG_Last_GUILD_COLONY_F_REMAINS_37_1" Value="103946"/>
+        <Key Name="MG_Last_GUILD_COLONY_F_TABLELAND_72" Value="103945"/>
+        <Key Name="MG_Last_Guild_RAID_BORUTOS_KAPAS_1" Value="103955"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_01" Value="103972"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_02" Value="103967"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_03" Value="103968"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_04" Value="103963"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_05" Value="103965"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_06" Value="103976"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_07" Value="103971"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_08" Value="103974"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_09" Value="103973"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_10" Value="103966"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_11" Value="103969"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_12" Value="103962"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_13" Value="103964"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_14" Value="103961"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_15" Value="103970"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_16" Value="103975"/>
     </KeyIDSpc>
     <KeyIDSpc Name="ZoneObject">
         <Key Name="Patrol_Line" Value="105"/>

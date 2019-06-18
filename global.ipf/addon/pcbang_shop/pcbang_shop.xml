@@ -6,5 +6,6 @@
 		<!--메뉴 탭-->
 		<richtext name="point_timer_text" rect="0 0 300 30" margin="0 0 15 20" layout_gravity="right bottom" format=" " param1="day" param1_def=" " param2="hour" param2_def=" " param3="min" param3_def=" " fontname="limitedsale"/>
 		<tabitem name="main_tab" parent="tab" layout_gravity="left top" caption="{@st66b}{/}" width="0"/>
+		<richtext name="pointshop_list_info_text" parent="pointshop_list_title_gb" rect="0 0 340 30" margin="0 0 10 0" layout_gravity="right center" caption=" " fontname="brown_16_b" textalign="left center" fixwidth="false"/>
 	</controls>
 </uiframe>

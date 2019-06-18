@@ -1,7 +1,7 @@
 function SCR_GACHA_BOUNS_VALUE(self, pc)
     local aObj = GetAccountObj(pc);
-    local count = aObj.STEAM190326_GACHA_HAIRACC_COUNT;
-    local bouns = aObj.STEAM190326_GACHA_HAIRACC_BOUNS;
+    local count = aObj.STEAM190618_GACHA_HAIRACC_COUNT;
+    local bouns = aObj.STEAM190618_GACHA_HAIRACC_BOUNS;
     local cubetype = 2;
     local next_count, next_bouns = 0, 0;
     local rewardlist = {}
@@ -9,7 +9,7 @@ function SCR_GACHA_BOUNS_VALUE(self, pc)
 
     local bounslist = {
         {25, 55, 85, 115, 200,      'GACHA_TP_COUNT',      'GACHA_TP_BOUNS', 100}, -- tp
-        {15, 25, 35,  50, 100, 'STEAM190326_GACHA_HAIRACC_COUNT', 'STEAM190326_GACHA_HAIRACC_BOUNS', 50} -- hairacc
+        {25, 50, 75,  100, 125, 'STEAM190618_GACHA_HAIRACC_COUNT', 'STEAM190618_GACHA_HAIRACC_BOUNS', 25} -- hairacc
     }
 
     -- next count
@@ -59,6 +59,12 @@ function SCR_GACHA_BOUNS_VALUE(self, pc)
 end
 
 function SCR_GACHA_BOUNS_DIALOG(self, pc)
+
+    local ridingCompanion = GetRidingCompanion(pc);
+    if ridingCompanion ~= nil then
+        RideVehicle(pc, ridingCompanion, 0)
+    end
+
     local aObj = GetAccountObj(pc);
 
     local count, bouns, cubetype, next_count, next_bouns, rewardlist, rewardtext = SCR_GACHA_BOUNS_VALUE(self, pc)
