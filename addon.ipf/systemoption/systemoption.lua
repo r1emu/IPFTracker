@@ -19,7 +19,8 @@ function SYSTEMOPTION_CREATE(frame)
 	SET_SHOW_PAD_SKILL_RANGE(frame);
 	SET_SIMPLIFY_BUFF_EFFECTS(frame);
 	SET_SIMPLIFY_MODEL(frame);
-    SET_RENDER_SHADOW(frame);
+	SET_RENDER_SHADOW(frame);
+	SET_QUESTINFOSET_TRANSPARENCY(frame);
 end
 
 function INIT_LANGUAGE_CONFIG(frame)
@@ -255,7 +256,8 @@ function APPLY_PERFMODE(frame)
 	local highTexture = GET_CHILD_RECURSIVELY(parent, "check_highTexture", "ui::CCheckBox");
 	local softParticle = GET_CHILD_RECURSIVELY(parent, "check_SoftParticle", "ui::CCheckBox");
 	local otherPCDamage = GET_CHILD_RECURSIVELY(parent, "check_ShowOtherPCDamageEffect", "ui::CCheckBox");
-  
+	local renderShadow = GET_CHILD_RECURSIVELY(parent, "check_RenderShadow", "ui::CCheckBox");
+	
 	if 0 == perfType then
 		graphic.EnableHighTexture(0);
 		config.EnableOtherPCDamageEffect(0);
@@ -269,10 +271,10 @@ function APPLY_PERFMODE(frame)
 	end
 	highTexture:SetCheck(config.GetHighTexture());
 	otherPCDamage:SetCheck(config.GetOtherPCDamageEffect());
+	renderShadow:SetCheck(imcperfOnOff.IsEnableRenderShadow());
 
 	config.SetAutoAdjustLowLevel(perfType)
 	config.SaveConfig();
-
 end
 
 function SHOW_PERFORMANCE_VALUE(frame)
@@ -629,9 +631,7 @@ end
 
 function SET_RENDER_SHADOW(frame)
     local isEnable = config.IsRenderShadow();
-
     imcperfOnOff.EnableRenderShadow(isEnable);
-
 	local chkRenderShadow = GET_CHILD_RECURSIVELY(frame, "check_RenderShadow", "ui::CCheckBox");
 	if nil ~= chkRenderShadow then
 		chkRenderShadow:SetCheck(isEnable);
@@ -642,10 +642,23 @@ function CONFIG_RENDER_SHADOW(frame, ctrl, str, num)
     local isEnable = ctrl:IsChecked();
     config.SetRenderShadow(isEnable);
     imcperfOnOff.EnableRenderShadow(isEnable);
+	config.SaveConfig();
 end
 
 function ENABLE_SOUND_REVERB(parent, ctrl)
 	local value = config.IsEnableSoundReverb();
 	config.EnableSoundReverb(1-value);
 	config.SaveConfig();
+end
+
+function CONFIG_QUESTINFOSET_TRANSPARENCY(frame, ctrl, str, num)
+    tolua.cast(ctrl, "ui::CSlideBar");
+	config.SetQuestinfosetTransparency(ctrl:GetLevel());
+	SET_QUESTINFOSET_TRANSPARENCY(frame);
+end
+
+
+function SET_QUESTINFOSET_TRANSPARENCY(frame)
+	SET_SLIDE_VAL(frame, "questinfosetTransparency", "questinfosetTransparency_text", config.GetQuestinfosetTransparency());
+	UPDATE_QUESTINFOSET_TRANSPARENCY(nil)
 end

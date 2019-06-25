@@ -35,6 +35,11 @@ function LETICIA_CUBE_LIST_UPDATE(frame)
                     tpText:SetTextByKey('consumeType', TP_IMG);
                     tpText:SetTextByKey('typeName', 'TP');
                     priceText:SetText(info.Price);                    
+                elseif info.ConsumeType == 'ITEM' then
+                    local consumeItem = GetClass('Item', info.ConsumeItem);
+                    tpText:SetTextByKey('consumeType', consumeItem.Icon);
+                    tpText:SetTextByKey('typeName', consumeItem.Name);
+                    priceText:SetText(math.floor(info.ConsumeItemCnt));
                 else
                     tpText:SetTextByKey('consumeType', itemCls.Icon);
                     tpText:SetTextByKey('typeName', '');
@@ -70,6 +75,9 @@ function LETICIA_CUBE_CHANGE_INFO(cubeListBox, ctrlSet, argStr)
     cubeText:SetText(itemCls.Name);
     if gachaCls.ConsumeType == 'TP' then
         openBtn:SetTextByKey('icon', TP_IMG);
+    elseif gachaCls.ConsumeType == 'ITEM' then
+        local consumeItem = GetClass('Item', gachaCls.ConsumeItem);
+        openBtn:SetTextByKey('icon', consumeItem.Icon);
     else
         openBtn:SetTextByKey('icon', itemCls.Icon);
     end
@@ -93,12 +101,21 @@ function LETICIA_CUBE_OPEN_BUTTON(frame, ctrl, argStr, argNum, _gachaClassName, 
     local clMsg = '';
     if gachaCls.ConsumeType == 'TP' then
         clMsg = string.format('{@st66d}{s18}{img %s 40 40} %d{/}{/}', TP_IMG, gachaCls.Price);
+    elseif gachaCls.ConsumeType == 'ITEM' then
+        local consumeItem = GetClass('Item', gachaCls.ConsumeItem);
+        local consumeInvItem = session.GetInvItemByName(gachaCls.ConsumeItem);        
+        if consumeInvItem == nil or consumeInvItem.count < tonumber(gachaCls.ConsumeItemCnt) then
+            ui.SysMsg(ClMsg('REQUEST_TAKE_ITEM'));
+            return;
+        end
+
+        clMsg = string.format('{nl}{@st66d}{s18}{img %s 40 40} %s %d{/}{/}', consumeItem.Icon, consumeItem.Name, gachaCls.ConsumeItemCnt);
     else
-        clMsg = string.format('{@st66d}{s18}{img %s 40 40} %s{/}{/}', cubeItemCls.Icon, cubeItemCls.Name);
+        clMsg = string.format('{nl}{@st66d}{s18}{img %s 40 40} %s{/}{/}', cubeItemCls.Icon, cubeItemCls.Name);
     end    
 
     if frame:GetUserIValue('OPEN_MSG_BOX') == 0 then
-        ui.MsgBox(ScpArgMsg('LeticiaGacha{CONSUME}', 'CONSUME', clMsg)..'{nl} {nl}'..'{#85070a}'..ClMsg('ContainWarningItem'), 'REQ_LETICIA_CUBE_OPEN("'..cubeName..'")', 'LETICIA_CUBE_CLOSE_ALL()');
+        ui.MsgBox(ScpArgMsg('LeticiaGacha{CONSUME}', 'CONSUME', clMsg)..'{nl} {nl}'..'{#85070a}', 'REQ_LETICIA_CUBE_OPEN("'..cubeName..'")', 'LETICIA_CUBE_CLOSE_ALL()');
         frame:SetUserValue('OPEN_MSG_BOX', 1);
     end
 end

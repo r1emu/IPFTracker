@@ -18,7 +18,11 @@ function SCR_TX_TP_SHOP(pc, argList)
 		IMC_LOG('ERROR_LOGIC', 'SCR_TX_TP_SHOP: account or etc object is nil- aid['..GetPcAIDStr(pc)..']');
 		return
 	end
-
+	
+	if SCR_IS_ENABLE_BUY_TP_ITEM(pc) == false then
+		return;	
+	end
+	
 	local tpitem = nil;
 	
 	for i = 1, #argList do

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
+<GameList>
+	<Game Name="GLOBAL_EVENT_MISSION_TRY" rankScript="RAID_RANK_SCP" minLv="0" maxLv="0" mapName="GLOBAL_guild_mission_3_pvp" playerCountCheckDestroy="1" startWaitSec="-1">
+		<StageList>
+			<Stage Name="Mission_Fail_Check">
+				<StartScpList>
+					<ToolScp Scp="MGAME_SET_TIMEOUT" Client="NO" UseSleep="NO">
+						<Num Num="900"/>
+					</ToolScp>
+				</StartScpList>
+				<ObjList/>
+				<StageEvents>
+					<Event execCount="1" eventName="pc_count">
+						<condList>
+							<ToolScp Scp="MGAME_EVT_COND_PCCNT" Client="NO" UseSleep="NO">
+								<Num Num="0"/>
+							</ToolScp>
+						</condList>
+						<execList>
+							<ToolScp Scp="MGAME_MSG_ICON" Client="YES" UseSleep="NO">
+								<Str Str="모든 PC가 사망하였습니다"/>
+								<Str Str="!"/>
+								<Num Num="5"/>
+							</ToolScp>
+							<ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
+								<Str Str="Fail"/>
+							</ToolScp>
+						</execList>
+					</Event>
+					<Event execCount="1" eventName="TimeOut">
+						<condList>
+							<ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
+								<Num Num="900"/>
+							</ToolScp>
+						</condList>
+						<execList>
+							<ToolScp Scp="MGAME_MSG_ICON" Client="YES" UseSleep="NO">
+								<Str Str="시간을 초과하여 던전 공략에 실패했습니다"/>
+								<Str Str="!"/>
+								<Num Num="5"/>
+							</ToolScp>
+							<ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
+								<Str Str="Fail"/>
+							</ToolScp>
+						</execList>
+					</Event>
+					<Event execCount="1" eventName="Time_Check">
+						<condList>
+							<ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
+								<Num Num="300"/>
+							</ToolScp>
+						</condList>
+						<execList>
+							<ToolScp Scp="MGAME_MSG_ICON" Client="YES" UseSleep="NO">
+								<Str Str="제한시간이 10분 남았습니다."/>
+								<Str Str="!"/>
+								<Num Num="5"/>
+							</ToolScp>
+						</execList>
+					</Event>
+					<Event execCount="1" eventName="Time_Check_2">
+						<condList>
+							<ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
+								<Num Num="600"/>
+							</ToolScp>
+						</condList>
+						<execList>
+							<ToolScp Scp="MGAME_MSG_ICON" Client="YES" UseSleep="NO">
+								<Str Str="제한시간이 5분 남았습니다."/>
+								<Str Str="!"/>
+								<Num Num="5"/>
+							</ToolScp>
+						</execList>
+					</Event>
+				</StageEvents>
+			</Stage>
+			<Stage Name="Fail" AutoStart="0">
+				<ObjList/>
+				<StageEvents>
+					<Event execCount="1" eventName="Fail">
+						<condList>
+							<ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
+								<Num Num="10"/>
+							</ToolScp>
+						</condList>
+						<execList>
+							<ToolScp Scp="MGAME_END" Client="NO" UseSleep="NO">
+								<Num Num="1"/>
+							</ToolScp>
+							<ToolScp Scp="MGAME_RETURN" Client="NO" UseSleep="NO"/>
+						</execList>
+					</Event>
+					<Event execCount="1">
+						<execList>
+							<ToolScp Scp="MGAME_MSG_ICON" Client="YES" UseSleep="NO">
+								<Str Str="이벤트 실패: 10초뒤 원래있던 곳으로 되돌아갑니다."/>
+								<Str Str="!"/>
+								<Num Num="5"/>
+							</ToolScp>
+						</execList>
+					</Event>
+				</StageEvents>
+			</Stage>
+			<Stage Name="Mission_INFO">
+				<ObjList/>
+				<StageEvents>
+					<Event execCount="1" eventName="First_INFO">
+						<condList>
+							<ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
+								<Num Num="4"/>
+							</ToolScp>
+						</condList>
+						<execList>
+							<ToolScp Scp="MGAME_MSG_ICON" Client="YES" UseSleep="NO">
+								<Str Str="이벤트: 승부에 입장했습니다."/>
+								<Str Str="scroll"/>
+								<Num Num="5"/>
+							</ToolScp>
+						</execList>
+					</Event>
+					<Event execCount="1" eventName="First2_INFO">
+						<condList>
+							<ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
+								<Num Num="10"/>
+							</ToolScp>
+						</condList>
+						<execList>
+							<ToolScp Scp="MGAME_MSG_ICON" Client="YES" UseSleep="NO">
+								<Str Str="모든 보스를 찾아 처치해주세요"/>
+								<Str Str="timestart"/>
+								<Num Num="5"/>
+							</ToolScp>
+							<ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
+								<Str Str="Stage_1"/>
+							</ToolScp>
+						</execList>
+					</Event>
+				</StageEvents>
+			</Stage>
+			<Stage Name="Stage_1" AutoStart="0">
+				<ObjList>
+					<Obj Type="Monster" MonType="58979" Pos="968.01#150.49#-952.12" angle="130" genCount="1" genTime="20000" objectKey="0" propList="&apos;Lv&apos; &apos;360&apos; &apos;Scale&apos; &apos;0.6&apos; &apos;StatType&apos; &apos;UniqueRaid&apos; &apos;DropItemList&apos; &apos;None&apos; &apos;Journal&apos; &apos;None&apos; "/>
+					<Obj Type="Monster" MonType="47392" Pos="959.45#150.49#972.83" angle="-131" genCount="1" genTime="20000" objectKey="1" propList="&apos;Lv&apos; &apos;360&apos; &apos;Scale&apos; &apos;0.5&apos; &apos;StatType&apos; &apos;UniqueRaid&apos; &apos;DropItemList&apos; &apos;None&apos; &apos;Journal&apos; &apos;None&apos; "/>
+					<Obj Type="Monster" MonType="58991" Pos="-959.91#150.49#969.08" angle="-53" genCount="1" genTime="20000" objectKey="2" propList="&apos;Lv&apos; &apos;360&apos; &apos;Scale&apos; &apos;0.8&apos; &apos;StatType&apos; &apos;UniqueRaid&apos; &apos;DropItemList&apos; &apos;None&apos; &apos;Journal&apos; &apos;None&apos; "/>
+					<Obj Type="Monster" MonType="47498" Pos="-960.85#150.49#-951.71" angle="35" genCount="1" genTime="20000" objectKey="3" propList="&apos;Lv&apos; &apos;360&apos; &apos;Scale&apos; &apos;1&apos; &apos;StatType&apos; &apos;UniqueRaid&apos; &apos;DropItemList&apos; &apos;None&apos; &apos;Journal&apos; &apos;None&apos; "/>
+				</ObjList>
+				<StageEvents>
+					<Event execCount="1" eventName="Stage_Success">
+						<condList>
+							<ToolScp Scp="MGAME_EVT_COND_MONCNT" Client="NO" UseSleep="NO">
+								<MGameObj List="Stage_1/2/Stage_1/3/Stage_1/0/Stage_1/1"/>
+								<Num Num="0"/>
+							</ToolScp>
+						</condList>
+						<execList>
+							<ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_CLEAR" Client="NO" UseSleep="NO">
+								<Str Str="Stage_1"/>
+							</ToolScp>
+							<ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
+								<Str Str="Stage_2"/>
+							</ToolScp>
+						</execList>
+					</Event>
+				</StageEvents>
+			</Stage>
+			<Stage Name="Mission_Success" AutoStart="0">
+				<ObjList>
+					<Obj Type="Monster" MonType="156162" Pos="-1.15#3.47#-1.01" genCount="1" genTime="20000" objectKey="0" propList="&apos;Dialog&apos; &apos;EVENT_GLOBAL_TRY_CUBE&apos; &apos;Name&apos; &apos;이벤트: 승부 큐브&apos; "/>
+				</ObjList>
+				<StageEvents>
+					<Event execCount="1" eventName="Mission_Out">
+						<condList>
+							<ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
+								<Num Num="60"/>
+							</ToolScp>
+						</condList>
+						<execList>
+							<ToolScp Scp="MGAME_END" Client="NO" UseSleep="NO">
+								<Num Num="1"/>
+							</ToolScp>
+							<ToolScp Scp="MGAME_GUILD_INDUN_EXIT" Client="NO" UseSleep="NO"/>
+							<ToolScp Scp="MGAME_RETURN" Client="NO" UseSleep="NO"/>
+						</execList>
+					</Event>
+					<Event execCount="1" eventName="Success_INFO">
+						<execList>
+							<ToolScp Scp="MGAME_MSG_ICON" Client="YES" UseSleep="NO">
+								<Str Str="승부 큐브가 등장하였습니다.: 60초 후 존으로 돌아갑니다."/>
+								<Str Str="Clear"/>
+								<Num Num="5"/>
+							</ToolScp>
+						</execList>
+					</Event>
+				</StageEvents>
+			</Stage>
+			<Stage Name="Stage_2" AutoStart="0">
+				<ObjList>
+					<Obj Type="Monster" MonType="47389" Pos="-1.85#3.44#1.30" genCount="1" genTime="20000" objectKey="0" propList="&apos;Scale&apos; &apos;0.8&apos; &apos;Lv&apos; &apos;360&apos; &apos;StatType&apos; &apos;UniqueRaid&apos; &apos;DropItemList&apos; &apos;None&apos; "/>
+				</ObjList>
+				<StageEvents>
+					<Event execCount="1" eventName="Stage_Success">
+						<condList>
+							<ToolScp Scp="MGAME_EVT_COND_MONCNT" Client="NO" UseSleep="NO">
+								<MGameObj List="Stage_2/0"/>
+								<Num Num="0"/>
+							</ToolScp>
+						</condList>
+						<execList>
+							<ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_CLEAR" Client="NO" UseSleep="NO">
+								<Str Str="Stage_2"/>
+							</ToolScp>
+							<ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
+								<Str Str="Mission_Success"/>
+							</ToolScp>
+							<ToolScp Scp="MGAME_EXEC_SETPOS" Client="NO" UseSleep="NO">
+								<AbsPosRange X="21.398354" Y="4.0404897" Z="-28.510315"/>
+							</ToolScp>
+						</execList>
+					</Event>
+					<Event execCount="1" eventName="Stage_INFO">
+						<execList>
+							<ToolScp Scp="MGAME_MSG_ICON" Client="YES" UseSleep="NO">
+								<Str Str="소환된 데스위버를 처치해 주세요."/>
+								<Str Str="!"/>
+								<Num Num="5"/>
+							</ToolScp>
+						</execList>
+					</Event>
+				</StageEvents>
+			</Stage>
+		</StageList>
+	</Game>
+</GameList>

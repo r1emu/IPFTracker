@@ -6,8 +6,9 @@ function IS_VALID_ITEM_FOR_GIVING_PREFIX(item)
     return true;
 end
 
+-- 스택형 한종류 아이템 이름은 반환
 function GET_LEGEND_PREFIX_MATERIAL_ITEM_NAME(legendgroup)
-    return 'Legend_ExpPotion_2';    
+    return 'Legend_ExpPotion_2_complete';
 end
 
 function GET_LEGEND_PREFIX_NEED_MATERIAL_COUNT(item)
@@ -20,7 +21,7 @@ function GET_LEGEND_PREFIX_NEED_MATERIAL_COUNT(item)
             return 6;
         end
         return 24;
-    elseif item.LegendGroup == 'Savinose' then
+    elseif item.LegendGroup == 'Savinose' or item.LegendGroup == 'Varna' then
         if item.GroupName == 'Armor' then
             return 8;
         end

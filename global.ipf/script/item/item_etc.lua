@@ -274,14 +274,6 @@ function SCR_USE_HiddenJobUnlock(self,argObj, StringArg, Numarg1, Numarg2)
     local jobNameKOR = GetClassString('Job', StringArg, 'EngName')
     local select_1 = ShowSelDlg(self, 0, 'HIDDEN_JOB_UNLOCK_ITEM_DLG1\\'..ScpArgMsg('HIDDEN_JOB_UNLOCK_VIEW_MSG6','JOBNAME', jobNameKOR), ScpArgMsg('Yes'), ScpArgMsg('No'))
     if select_1 == 1 then
-        if StringArg == 'Char4_18' then
-            if self.Gender ~= 2 then
-                local select_2 = ShowSelDlg(self, 0, 'HIDDEN_JOB_UNLOCK_ITEM_DLG2', ScpArgMsg('Yes'), ScpArgMsg('No')) 
-                if select_2 ~= 1 then
-                    return
-                end
-            end
-        end
         local result = SCR_HIDDEN_JOB_UNLOCK(self, StringArg)
         if result == 'SUCCESS' then
             if StringArg == 'Char4_18' then

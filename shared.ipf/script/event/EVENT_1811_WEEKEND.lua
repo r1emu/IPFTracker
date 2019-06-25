@@ -11,18 +11,18 @@ function SCR_EVENT_1903_WEEKEND_CHECK(inputType, isServer)
     -- local month = sysTime.wMonth
     -- local day = sysTime.wDay
     -- local t = {
-    --             {5,18,{'EXP'}},
-    --             {5,19,{'EXP'}},
-    --             {5,25,{'EXP'}},
-    --             {5,26,{'EXP'}},
-    --             {6,1,{'EXP'}},
-    --             {6,2,{'EXP'}},
-    --             {6,8,{'EXP'}},
-    --             {6,9,{'EXP'}},
-    --             {6,15,{'EXP'}},
-    --             {6,16,{'EXP'}},
-    --             --{5,5,{'EXP'}},
-    --             --{5,6,{'LOOTINGCHANCE','ITEMRANDOMRESET'}},
+    --             {4,5,{'REINFORCE', 'TRANSCEND'}},
+    --             {4,6,{'EXP'}},
+    --             {4,7,{'LOOTINGCHANCE','ITEMRANDOMRESET'}},
+    --             {4,13,{'REINFORCE', 'TRANSCEND'}},
+    --             {4,14,{'EXP'}},
+    --             {4,20,{'LOOTINGCHANCE','ITEMRANDOMRESET'}},
+    --             {4,21,{'REINFORCE', 'TRANSCEND'}},
+    --             {4,27,{'EXP'}},
+    --             {4,28,{'LOOTINGCHANCE','ITEMRANDOMRESET'}},
+    --             {5,4,{'REINFORCE', 'TRANSCEND'}},
+    --             {5,11,{'EXP','LOOTINGCHANCE','ITEMRANDOMRESET'}},
+    --             {5,12,{'EXP','LOOTINGCHANCE','ITEMRANDOMRESET'}},
     --             }
     -- for i = 1, #t do
     --     if t[i][1] == month and t[i][2] == day then

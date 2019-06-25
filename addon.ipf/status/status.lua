@@ -742,11 +742,11 @@ function SETEXP_SLOT(gbox, addBuffClsName, isAdd)
                 expupValue = SETEXP_SLOT_ADD_ICON(expupBuffBox, buffCls.ClassName, GOLDEN_FISH_EXP_RATE);
             elseif buffCls.ClassName == 'Premium_Nexon_PartyExp' then
                 expupValue = SETEXP_SLOT_ADD_ICON(expupBuffBox, buffCls.ClassName, (NEXON_PC_PARTY_EXP_RATE + JAEDDURY_NEXON_PC_PARTY_EXP_RATE)*100);
-            --EVENT_1903_NEWUSER
-            elseif buffCls.ClassName == 'Event_ep11_sprout3' then
-                if info.GetLevel(handle) < 380 then
-                    expupValue = SETEXP_SLOT_ADD_ICON(expupBuffBox, buffCls.ClassName);
-                end
+            --EVENT_1905_TOS_CHILD
+            --elseif buffCls.ClassName == 'EVENT_1905_TOS_CHIILD_BUFF1' then
+            --    if info.GetLevel(handle) < 380 then
+            --        expupValue = SETEXP_SLOT_ADD_ICON(expupBuffBox, buffCls.ClassName);
+            --    end
             else
                 expupValue = SETEXP_SLOT_ADD_ICON(expupBuffBox, buffCls.ClassName);
             end
@@ -2514,9 +2514,13 @@ function SCR_PC_PROPERTY_UPDATE_DETAIL(frame, msg, propertyName, argNum)
 	local y = 0;
 	if controlSet ~= nil then
 		y = controlSet:GetY();
-	end
-
-    STATUS_ATTRIBUTE_VALUE_NEW(pc, nil, frame, gboxctrl, propertyName, y);
+    end
+    
+    if propertyName == "CastingSpeed" then
+        STATUS_ATTRIBUTE_VALUE_WITH_PERCENT_SYMBOL(pc, nil, frame, gboxctrl, propertyName, y);
+    else
+        STATUS_ATTRIBUTE_VALUE_NEW(pc, nil, frame, gboxctrl, propertyName, y);
+    end
 end
 
 function STATUS_OPEN_CLASS_DROPLIST(parent, ctrl)

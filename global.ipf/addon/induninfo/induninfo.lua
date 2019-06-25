@@ -50,7 +50,12 @@ function INDUNINFO_CREATE_CATEGORY(frame)
                         cyclePicImg:Resize(cyclePicImg:GetOriginalWidth() + 11, cyclePicImg:GetOriginalHeight());
                     else
                         cyclePicImg:ShowWindow(0);
-                    end      
+                    end
+                elseif indunCls.DungeonType == 'GLOBAL_EVENT_MISSION_TRY' then 
+                    cyclePicImg:SetImage('indun_icon_event_s_eng')     
+                    local margin = cyclePicImg:GetOriginalMargin();
+                        cyclePicImg:SetMargin(margin.left, margin.top, margin.right, margin.bottom);
+                        cyclePicImg:Resize(cyclePicImg:GetOriginalWidth() + 11, cyclePicImg:GetOriginalHeight());         
                 end
 
                 categoryCtrl:SetUserValue('RESET_GROUP_ID', resetGroupID);
@@ -94,6 +99,25 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
     local countData = GET_CHILD_RECURSIVELY(frame, 'countData');
     local cycleImage = GET_CHILD_RECURSIVELY(frame, 'cyclePic');
     
+    -- skill restriction
+    local restrictBox = GET_CHILD_RECURSIVELY(frame, 'restrictBox');
+    restrictBox:ShowWindow(0);
+
+    local mapName = TryGetProp(indunCls, "MapName");
+    if mapName ~= nil and mapName ~= "None" then
+        local indunMap = GetClass("Map", mapName);
+        local mapKeyword = TryGetProp(indunMap, "Keyword");
+        if string.find(mapKeyword, "IsRaidField") ~= nil then
+            restrictBox:ShowWindow(1);
+            restrictBox:SetTooltipOverlap(1);
+            local TOOLTIP_POSX = frame:GetUserConfig("TOOLTIP_POSX");
+            local TOOLTIP_POSY = frame:GetUserConfig("TOOLTIP_POSY");
+            restrictBox:SetPosTooltip(TOOLTIP_POSX, TOOLTIP_POSY);
+            restrictBox:SetTooltipType("skillRestrictList");
+            restrictBox:SetTooltipArg("IsRaidField");
+        end
+    end
+    
     --local tokenStatePic = GET_CHILD_RECURSIVELY(frame, 'tokenStatePic');
     local resetGroupID = indunCls.PlayPerResetType;    
     -- local isTokenState = session.loginInfo.IsPremiumState(ITEM_TOKEN);
@@ -109,7 +133,7 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
     local indunAdmissionItemImage = admissionItemIcon
     local etc = GetMyEtcObject();
     local nowCount = TryGetProp(etc, "InDunCountType_"..tostring(TryGetProp(indunCls, "PlayPerResetType")));
-    local addCount = math.floor(nowCount * admissionPlayAddItemCount)
+    local addCount = math.floor(nowCount * admissionPlayAddItemCount);
     ---local etNowCount = TryGetProp(etc, "IndunWeeklyEnteredCount_"..tostring(TryGetProp(indunCls, "PlayPerResetType")));
     
     if admissionItemCount == nil then
@@ -140,11 +164,16 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         countData:SetTextByKey('max', GET_MAX_ENTERANCE_COUNT(resetGroupID));
         if GET_RESET_CYCLE(resetGroupID) == true then
             cycleImage:SetImage('indun_icon_week_l_eng')
+            cycleImage:ShowWindow(1);
         else
             if indunCls.DungeonType == "Raid" or indunCls.DungeonType == "GTower" then
                 cycleImage:ShowWindow(0);
+            elseif indunCls.DungeonType == "GLOBAL_EVENT_MISSION_TRY" then
+                cycleImage:SetImage('indun_icon_event_l_eng');
+                cycleImage:ShowWindow(1);
             else
                 cycleImage:SetImage('indun_icon_day_l_eng')
+                cycleImage:ShowWindow(1);
             end
         end
 
@@ -152,9 +181,8 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         local countText = GET_CHILD_RECURSIVELY(countBox, 'countText');
         local cycleCtrlPic = GET_CHILD_RECURSIVELY(countBox, 'cycleCtrlPic');
         countText:SetText(ScpArgMsg("IndunAdmissionItemReset"))
-        countData:ShowWindow(1)
-        countItemData:ShowWindow(0)
-        cycleImage:ShowWindow(1);
+        countData:ShowWindow(1);
+        countItemData:ShowWindow(0);
         cycleCtrlPic:ShowWindow(0);
     else
         -- if isTokenState == true then
@@ -174,11 +202,6 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
             nowAdmissionItemCount  = admissionItemCount + addCount
         end
         
-        local currentEnteranceCnt = GET_CURRENT_ENTERANCE_COUNT(resetGroupID);
-        local maxEnteranceCnt = indunCls.WeeklyEnterableCount;
-        if tonumber(currentEnteranceCnt) > maxEnteranceCnt then
-            nowAdmissionItemCount = admissionItemCount + (currentEnteranceCnt - maxEnteranceCnt);
-        end
         
         countItemData:SetTextByKey('admissionitem', '  {img '..indunAdmissionItemImage..' 30 30}  '..nowAdmissionItemCount..'')
         local countBox = GET_CHILD_RECURSIVELY(frame, 'countBox');
@@ -186,22 +209,36 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         local cycleCtrlPic = GET_CHILD_RECURSIVELY(countBox, 'cycleCtrlPic');
         if GET_RESET_CYCLE(resetGroupID) == true then
             cycleImage:SetImage('indun_icon_week_l_eng')
+            cycleImage:ShowWindow(1);
         else
             if indunCls.DungeonType == "Raid" or indunCls.DungeonType == "GTower" then
                 cycleImage:ShowWindow(0);
+            else
+                cycleImage:SetImage('indun_icon_day_l_eng')
+                cycleImage:ShowWindow(1);
             end
         end
         if indunCls.DungeonType == "Raid" or indunCls.DungeonType == "GTower" then
             if indunCls.WeeklyEnterableCount > nowCount then
                 countText:SetText(ScpArgMsg("IndunAdmissionItemReset"))
                 cycleCtrlPic:ShowWindow(0);
+				
+                countData:SetTextByKey('now', nowCount);
+                countData:SetTextByKey('max', indunCls.WeeklyEnterableCount);
+
+                countData:ShowWindow(1);
+                countItemData:ShowWindow(0);
             else
                 countText:SetText(ScpArgMsg("IndunAdmissionItem"))
                 cycleCtrlPic:ShowWindow(0);
+                countData:ShowWindow(0);
+                countItemData:ShowWindow(1);
             end
         else
             countText:SetText(ScpArgMsg("IndunAdmissionItem"))
             cycleCtrlPic:ShowWindow(0);
+            countData:ShowWindow(0);
+            countItemData:ShowWindow(1);
         end
         
         if indunCls.DungeonType == 'UniqueRaid' then
@@ -222,8 +259,6 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
             cycleImage:ShowWindow(0);
         end
 
-        countData:ShowWindow(0)
-        countItemData:ShowWindow(1)
     end    
 
     -- level

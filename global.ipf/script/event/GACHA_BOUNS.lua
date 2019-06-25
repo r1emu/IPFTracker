@@ -9,7 +9,7 @@ function SCR_GACHA_BOUNS_VALUE(self, pc)
 
     local bounslist = {
         {25, 55, 85, 115, 200,      'GACHA_TP_COUNT',      'GACHA_TP_BOUNS', 100}, -- tp
-        {25, 50, 75,  100, 125, 'STEAM190618_GACHA_HAIRACC_COUNT', 'STEAM190618_GACHA_HAIRACC_BOUNS', 25} -- hairacc
+        {15, 25, 35,  50, 100, 'STEAM190618_GACHA_HAIRACC_COUNT', 'STEAM190618_GACHA_HAIRACC_BOUNS', 50} -- hairacc
     }
 
     -- next count
