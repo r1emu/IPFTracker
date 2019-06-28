@@ -1978,6 +1978,13 @@
         <Effect Name="SHOW_REMOVE_BUFF"/>
         <Effect Name="Matross_CanisterShot_End"/>
         <Effect Name="Cannoneer_SiegeBurst_FlashBomb"/>
+    <Effect Name="voice_wiz_m_tiwaz_shot"/>
+        <Effect Name="voice_wiz_f_tiwaz_shot"/>
+        <Effect Name="voice_wiz_m_stan_cast"/>
+        <Effect Name="I_warrior_shieldcharger_sphere_mesh"/>
+        <Effect Name="Bendrinti_Heal"/>
+        <Effect Name="I_warrior_leapattack_cast_lineup##2"/>
+        <Effect Name="F_cleric_StereaTrofh_buff"/>
     </Category>
     <Category ID="84">
         <Effect Name="M_PAST_FLIBRARY_1"/>

@@ -170,6 +170,18 @@ function SCR_Get_SpendSP(skill)
     end
     value = value - decsp;
     
+    if IsBuffApplied(pc, "Gymas_Buff") == "YES" then
+        local ratio = 0.25;
+        
+        local isDragonPower = GetExProp(pc, 'ITEM_DRAGON_POWER')
+        if tonumber(isDragonPower) >= 1 then
+            ratio = ratio + 0.25
+        end
+        
+        decsp = value * ratio
+    end
+    value = value - decsp;
+    
     if value < 1 then
         value = 0
     end
@@ -11273,6 +11285,55 @@ function SCR_GET_Rykuma_Ratio(skill)
         end  
     end
     
+    return value;
+end
+
+function SCR_GET_Apsauga_Ratio(skill)
+    local pc = GetSkillOwner(skill);
+    local value = 25
+    if pc ~= nil then
+        local isDragonPower = GetExProp(pc, 'ITEM_DRAGON_POWER')
+        if tonumber(isDragonPower) >= 1 then
+            value = value + 25
+        end  
+    end
+    
+    return value;
+end
+
+function SCR_GET_Bendrinti_Time(skill)
+    local value = 30
+    return value;
+end
+
+function SCR_GET_Bendrinti_Ratio(skill)
+    local pc = GetSkillOwner(skill);
+    local value = 25
+    if pc ~= nil then
+        local isDragonPower = GetExProp(pc, 'ITEM_DRAGON_POWER')
+        if tonumber(isDragonPower) >= 1 then
+            value = value + 15
+        end  
+    end
+    
+    return value;
+end
+
+function SCR_GET_Gymas_Ratio(skill)
+    local pc = GetSkillOwner(skill);
+    local value = 25
+    if pc ~= nil then
+        local isDragonPower = GetExProp(pc, 'ITEM_DRAGON_POWER')
+        if tonumber(isDragonPower) >= 1 then
+            value = value + 25
+        end  
+    end
+    
+    return value;
+end
+
+function SCR_GET_Smugis_Ratio(skill)
+    local value = 10
     return value;
 end
 
