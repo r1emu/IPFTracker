@@ -50,7 +50,7 @@ function SKL_KEY_DYNAMIC_CASTING(actor, obj, dik, movable, rangeChargeTime, maxC
 	end
 
 	local useMouseDir = 0;
-	if obj ~= nil and obj.type == 21614 then
+	if obj ~= nil and obj.type == 21614 and session.config.IsMouseMode() == true then
 		useMouseDir = 1;		
 	end
 

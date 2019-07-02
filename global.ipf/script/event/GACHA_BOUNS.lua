@@ -1,14 +1,14 @@
 function SCR_GACHA_BOUNS_VALUE(self, pc)
     local aObj = GetAccountObj(pc);
-    local count = aObj.STEAM190618_GACHA_HAIRACC_COUNT;
-    local bouns = aObj.STEAM190618_GACHA_HAIRACC_BOUNS;
-    local cubetype = 2;
+    local count = aObj.STEAM190702_GACHA_TP_COUNT;
+    local bouns = aObj.STEAM190702_GACHA_TP_BOUNS;
+    local cubetype = 1; -- 레티샤는 1/ 여큐는 2 / 반드시 지켜주세요 --
     local next_count, next_bouns = 0, 0;
     local rewardlist = {}
     local rewardtext = ''
 
     local bounslist = {
-        {25, 55, 85, 115, 200,      'GACHA_TP_COUNT',      'GACHA_TP_BOUNS', 100}, -- tp
+        {50, 100, 150, 200, 250,      'STEAM190702_GACHA_TP_COUNT',      'STEAM190702_GACHA_TP_BOUNS', 50}, -- tp
         {15, 25, 35,  50, 100, 'STEAM190618_GACHA_HAIRACC_COUNT', 'STEAM190618_GACHA_HAIRACC_BOUNS', 50} -- hairacc
     }
 
@@ -85,7 +85,9 @@ function SCR_GACHA_BOUNS_DIALOG(self, pc)
             return;
         elseif select == 2 then
             local bounslist = {'GACHA_HAIRACC_BOUNS01', 'GACHA_HAIRACC_BOUNS02', 'GACHA_HAIRACC_BOUNS03', 'GACHA_HAIRACC_BOUNS04', 'GACHA_HAIRACC_BOUNS05'}
-
+            if cubetype == 1 then
+                bounslist = {'GACHA_TP_BOUNS01', 'GACHA_TP_BOUNS02', 'GACHA_TP_BOUNS03', 'GACHA_TP_BOUNS04', 'GACHA_TP_BOUNS05'}
+            end
             if bouns >= 4 then
                 bouns = 4;
             end

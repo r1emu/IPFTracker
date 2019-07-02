@@ -10658,6 +10658,12 @@
         <Key Name="InDunCountType_1300" Value="104015"/>
         <Key Name="SOLO_LEGEND_RAID_UNDERAQUEDUCT_DAY" Value="103981"/>
         <Key Name="UPHILL_DEFENSE_SHOP_POINT" Value="103997"/>
+        <Key Name="GLOBAL_STEAM190702_EVENT_VIVID_SHOP1" Value="104039"/>
+        <Key Name="GLOBAL_STEAM190702_EVENT_VIVID_SHOP2" Value="104040"/>
+        <Key Name="STEAM190702_GACHA_TP_BOUNS" Value="104038"/>
+        <Key Name="STEAM190702_GACHA_TP_COUNT" Value="104037"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_AC_03" Value="104035"/>
+        <Key Name="WOOSCAR_2019_07_NECHAR_AC_04" Value="104036"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PC">
         <Key Name="Guardable" Value="7132"/>
