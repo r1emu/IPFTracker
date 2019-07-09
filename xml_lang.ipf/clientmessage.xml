@@ -1525,6 +1525,7 @@
 		<Class ClassID="21320" ClassName="MoreNeedCostumeExchangeCoupon" Data="소유중인 교환권이 부족합니다."/>
 		<Class ClassID="21321" ClassName="TP_Sale_New2" Data="[프리미엄]신규 상품 [10%]할인"/>
 		<Class ClassID="21322" ClassName="NoMarketTrade" Data="마켓 거래 불가"/>
+		<Class ClassID="21323" ClassName="NoUserTrade" Data="개인 거래 불가"/>
 		<Class ClassID="21325" ClassName="UI_Day" Data="일"/>
 		<Class ClassID="21326" ClassName="UI_Hour" Data="시간"/>
 		<Class ClassID="21327" ClassName="UI_Min" Data="분"/>

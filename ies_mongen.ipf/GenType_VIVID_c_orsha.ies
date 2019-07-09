@@ -153,7 +153,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 161,161,1,40,1,60000,1,0,0,0,0,0,0,"Hidden_pillar","","","","","EVENT_VIVID_RED_120","","","","","","NO","YES","NO","Neutral","","","",""
 162,162,1,40,1,60000,1,0,0,0,0,0,0,"Hidden_pillar","","","","","EVENT_VIVID_YELLOW_150","","","","","","NO","YES","NO","Neutral","","","",""
 163,163,1,40,1,60000,1,0,0,0,0,0,0,"Hidden_pillar","","","","","","","VIVID_CITY_HIDE_RED","","","","NO","YES","NO","Neutral","","","",""
-164,164,1,40,1,60000,1,0,0,0,0,0,0,"Hidden_pillar","","","","","","","VIVID_CITY_UPDOWN2","","","","NO","YES","NO","Neutral","","","",""
+164,164,1,40,1,60000,1,0,0,0,0,0,0,"Hidden_pillar","","","","","EVENT_VIVID_RED_180","","","","","","NO","YES","NO","Neutral","","","",""
 165,165,1,40,1,60000,1,0,0,0,0,0,0,"Hidden_pillar","","","","","","","VIVID_CITY_UPDOWN3","","","","NO","YES","NO","Neutral","","","",""
 166,166,1,40,1,60000,1,0,0,0,0,0,0,"Hidden_pillar","","","","","","","VIVID_CITY_UPDOWN4","","","","NO","YES","NO","Neutral","","","",""
 167,167,1,40,1,60000,1,0,0,0,0,0,0,"Hidden_pillar","","","","","","","VIVID_CITY_UPDOWN3","","","","NO","YES","NO","Neutral","","","",""

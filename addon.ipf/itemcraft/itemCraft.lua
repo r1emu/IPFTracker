@@ -181,6 +181,7 @@ function CREATE_CRAFT_ARTICLE(frame)
 	tree:SetFitToChild(true,100)
 	tree:SetFontName("brown_18_b");
 	tree:SetTabWidth(5);
+	tree:EnableScrollBar(0);
 
 	local idSpace = frame:GetUserValue("IDSPACE");
 	

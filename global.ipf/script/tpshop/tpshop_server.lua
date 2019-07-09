@@ -176,7 +176,13 @@ function SCR_TX_TP_SHOP(pc, argList)
 			end	
 		end
 		
-		local cmdIdx = TxGiveItem(tx, itemcls.ClassName, 1, "NpcShop");
+		local cmdIdx
+		if tpitem.SubCategory == 'TP_FirstBuy' and GetServerNation() == "GLOBAL" then
+			cmdIdx = TxGiveItem(tx, itemcls.ClassName, 1, "NBUShop");
+		else
+			cmdIdx = TxGiveItem(tx, itemcls.ClassName, 1, "NpcShop");
+		end
+		
 		itemID = TxGetGiveItemID(tx, cmdIdx);
 		local logType = "NpcShop:";
 		logType = logType ..tostring(itemcls.ClassID)..":";
