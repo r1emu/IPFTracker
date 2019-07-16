@@ -631,7 +631,7 @@
 		<Class ClassID="4234" ClassName="IcorductilityError01" Data="등록된 장비와 같은 부위의 장비를 등록해주세요"/>
 		<Class ClassID="4235" ClassName="CantUseJob" Data="사용 할 수 없는 직업입니다."/>
 		<Class ClassID="4236" ClassName="MagicEnchant" Data="마법 부여"/>
-    <Class ClassID="4237" ClassName="ExceedAmountItem_misc_pvp_mine2{Extra}{Count}" Data="[용병단 증표]의 최대 소유할 수 있는 개수가 초과되어 {Extra}개는 제외하고 {Count}만큼 지급되었습니다."/>
+		<Class ClassID="4237" ClassName="ExceedAmountItem_misc_pvp_mine2{Extra}{Count}" Data="[용병단 증표]의 최대 소유할 수 있는 개수가 초과되어 {Extra}개는 제외하고 {Count}만큼 지급되었습니다."/>
 		<Class ClassID="4238" ClassName="SelectEventItem{ITEM}" Data="{@st66d_y}{s20}{ITEM}{/}{/} {nl}아이템을 정말 선택하시겠습니까?{nl} {nl}선택 후에는 다른 아이템으로{nl}교환할 수 없습니다."/>
 		<Class ClassID="4239" ClassName="nohaveskillnouse" Data="습득한 스킬이 없어 사용 할 수 없습니다."/>
 	</Category>
@@ -1194,7 +1194,7 @@
 		<Class ClassID="10513" ClassName="CanAddMoreSlotBecauseFullSlot" Data="더 이상 캐릭터 슬롯을 추가할 수 없습니다."/>
 		<Class ClassID="10514" ClassName="CharacterLengthLimit" Data="{COUNT}자 이내로만 입력 가능합니다."/>
 		<Class ClassID="10515" ClassName="AskReallyDelete" Data="정말로 삭제하시겠습니까?"/>
-	<Class ClassID="10516" ClassName="AskReallyExit" Data="정말로 종료하시겠습니까?"/>
+		<Class ClassID="10516" ClassName="AskReallyExit" Data="정말로 종료하시겠습니까?"/>
 		<Class ClassID="10517" ClassName="ItemOptionLegendExtractMessage_1" Data="등록된 재료는 모두 사라지고 아이커가 연성됩니다."/>
 		<Class ClassID="10518" ClassName="ItemOptionLegendExtractMessage_2" Data="아이커 연성에 실패 할 수 있습니다.{nl}실패시 등록된 재료는 모두 {#aa0000}파괴{/}됩니다."/>
 		<Class ClassID="10519" ClassName="CharacterNameTooShort" Data="캐릭터 이름이 너무 짧거나, 사용할 수 없는 문자가 포함되어 있습니다."/>
@@ -5079,7 +5079,8 @@
 		<Class ClassID="28156" ClassName="QUEST_JOURNEYSHOP_MSG2" Data="{ol}{@st45w3}{s18}{ITEM} : {COUNT}개{/}"/>
 		<Class ClassID="28157" ClassName="QUEST_JOURNEYSHOP_MSG3" Data="자유 스테이터스 포인트"/>
 		<Class ClassID="28160" ClassName="EVENT_1810_UNIQUE_MSG1" Data="로타의 특별 지원 달성!{nl}클라페다로 돌아가시면 의뢰소장 로타에게 특별한 선물을 받으실 수 있습니다"/>
-		<Class ClassID="28161" ClassName="EVENT_1810_UNIQUE_MSG2" Data="[로타의 특별 지원] 참여한다"/>
+		<Class ClassID="28161" ClassName="EVENT_1810_UNIQUE_MSG2" Data="[로타의 특별 지원] 참여한다 (별의 탑 폐쇄 구역)"/>
+		<Class ClassID="28162" ClassName="EVENT_1810_UNIQUE_MSG3" Data="[로타의 특별 지원] 참여한다 (흰 까마귀의 영면지 : 유니크)"/>
 		<Class ClassID="28170" ClassName="EVENT_1810_FALL_LEAF_MSG1" Data="단풍 축제 이벤트에 참여한다"/>
 		<Class ClassID="28171" ClassName="EVENT_1810_FALL_LEAF_MSG2" Data="클라페다, 오르샤로 돌아가시면 단풍 축제 이벤트 도우미에게 선물을 받으실 수 있습니다"/>
 		<Class ClassID="28175" ClassName="EVENT_1810_HALLOWEEN_MSG1" Data="호박 코스튬을 선택해주세요"/>
@@ -8630,7 +8631,7 @@
 		<Class ClassID="100085" ClassName="skill_SpellShop_Aspersion" Data="축복: 물리 방어력 증가"/>
 		<Class ClassID="100086" ClassName="attendance_word" Data="{@st42}{s16}출석"/>
 		<Class ClassID="100087" ClassName="REMOVE_BUFF_{Auto_1}" Data="버프 {Auto_1}개 제거!"/>
-    <Class ClassID="100088" ClassName="UnableToJoinChallengeModeCuzMaxTeamCount" Data="현재 채널에서 활성화 중인 챌린지 모드 파티의 수가 최대치에 도달하여 입장하실 수 없습니다. 다른 지역을 이용해 주세요."/>
+		<Class ClassID="100088" ClassName="UnableToJoinChallengeModeCuzMaxTeamCount" Data="현재 채널에서 활성화 중인 챌린지 모드 파티의 수가 최대치에 도달하여 입장하실 수 없습니다. 다른 지역을 이용해 주세요."/>
 	</Category>
 	<Category Name="Party">
 		<Class ClassID="101001" ClassName="GULID_OUT" Data="길드 탈퇴"/>
@@ -9013,7 +9014,7 @@
 		<Class ClassID="102417" ClassName="ReallyChangeLeader" Data="[{NAME}] 님에게 길드를 양도합니다. 길드 양도 후에는 직급이 변경되므로 신중히 선택해주시기 바랍니다. {nl} 계속 하시겠습니까?"/>
 		<Class ClassID="102418" ClassName="DecreaseCraftTime" Data="제작시간 감소"/>
 		<Class ClassID="102419" ClassName="CantJoinGuildUntilDaysBefore{Number2}Days{Time}" Data="길드 탈퇴 후 {Number2}일 이내에 타 길드에 가입이 불가능 합니다.{nl}가입 가능일 : {Time} 이후"/>
-		</Category>
+	</Category>
 	<Category Name="EqupClasses">
 		<Class ClassID="103001" ClassName="THSword" Data="양손검"/>
 		<Class ClassID="103002" ClassName="Sword" Data="한손검"/>
@@ -9050,7 +9051,7 @@
 		<Class ClassID="104027" ClassName="ItIsAlreadyInProcessAfter" Data="이미 처리중입니다. 잠시 후에 다시 시도해 주세요."/>
 		<Class ClassID="104028" ClassName="FailToRegisterMargketItem" Data="마켓에 아이템 등록을 실패했습니다. 다시 시도해주세요."/>
 		<Class ClassID="104029" ClassName="CheckWeaponSwapSlot" Data="무기 스왑 슬롯에 아이템이 현재 장착중에 있습니다."/>
-		</Category>
+	</Category>
 	<Category Name="ShopCommon">
 		<Class ClassID="105001" ClassName="ReallyBuy?" Data="구매하시겠습니까?"/>
 		<Class ClassID="105002" ClassName="ReallyBuyCompanion?" Data="분양받으시겠습니까?"/>
@@ -9207,7 +9208,7 @@
 		<Class ClassID="107029" ClassName="IsSureNotUseAbrasive" Data="{@st66d}각성 연마제가 없습니다.{nl} {@st66d_y}알케미스트 기본능력{@st66d}으로만 각성됩니다.{nl}"/>
 		<Class ClassID="107030" ClassName="IsSureUseAbrasive" Data="{@st66d}각성 연마제가 소모되어{nl}{@st66d_y}더욱 높은 수치의 옵션{@st66d}을 얻을 수 있습니다.{nl}"/>
 		<Class ClassID="107031" ClassName="IsSureItemdungeon" Data="진행하시겠습니까?{/}"/>
-		</Category>
+	</Category>
 	<Category Name="ChatMsg">
 		<Class ClassID="108001" ClassName="GetOut!WeMustTransportStones!" Data="비켜주십시오! 빨리 돌을 운반해야 합니다."/>
 	</Category>
@@ -9776,7 +9777,7 @@
 		<Class ClassID="130003" ClassName="QuestOf{Name}" Data="{Name}의 퀘스트"/>
 		<Class ClassID="130004" ClassName="EtcMapQuestTitle" Data="기타 퀘스트"/>
 		<Class ClassID="130005" ClassName="quest_command_window" Data="퀘스트 지령창"/>
-		</Category>
+	</Category>
 	<Category Name="WorldPVP">
 		<Class ClassID="131001" ClassName="PVP_State_None" Data="참여"/>
 		<Class ClassID="131002" ClassName="PVP_State_Finding" Data="검색 중..."/>
@@ -12382,8 +12383,8 @@
 		<Class ClassID="138407" ClassName="miss_match_confirm_text" Data="확인 문자가 일치하지 않습니다."/>
 		<Class ClassID="138408" ClassName="HighItemGradeReallyDestroy{ITEM}{COUNT}" Data="{#fe7e00}[{ITEM}]{/}을/를 {#fe7e00}[{COUNT}]{/}개 파괴하실려면 숫자 [0000] 을 입력해주세요."/>
 		<Class ClassID="138409" ClassName="HighItemGradeReallyDestroy{ITEM}" Data="정말 {#fe7e00}[{ITEM}]{/}을/를 파괴하실려면 숫자 [0000] 을 입력해주세요."/>
-    <Class ClassID="138411" ClassName="ReallyWantToPartyForChallengeMode" Data="챌린지 모드 진행중 파티를 탈퇴하는 경우, 챌린지 모드가 정상적으로 진행되지 않습니다. 정말 파티를 탈퇴하시겠습니까?"/>
-		</Category>
+		<Class ClassID="138411" ClassName="ReallyWantToPartyForChallengeMode" Data="챌린지 모드 진행중 파티를 탈퇴하는 경우, 챌린지 모드가 정상적으로 진행되지 않습니다. 정말 파티를 탈퇴하시겠습니까?"/>
+	</Category>
 	<Category Name="SkillMsg">
 		<Class ClassID="200001" ClassName="DontBuildCampThisAria" Data="해당 지역에서는 거점을 설치할 수 없습니다."/>
 		<Class ClassID="200002" ClassName="WithdrawToCamp" Data="님께서 꺼내가셨습니다."/>
@@ -13091,8 +13092,8 @@
 		<Class ClassID="501014" ClassName="Steam_VerUP_Select02" Data="'330 Level 보상' 받기"/>
 		<Class ClassID="501015" ClassName="Steam_VerUP_Select03" Data="목표레벨 확인"/>
 		<Class ClassID="501072" ClassName="Event_Nru2_Guide_2" Data="장비 선택"/>
-		</Category>
-		<Category Name="Npc_Equip_Shop_270_315">
+	</Category>
+	<Category Name="Npc_Equip_Shop_270_315">
 		<Class ClassID="510200" ClassName="NPC_SHOP_WEAPON_NORMAL_270_315" Data="무기"/>
 		<Class ClassID="510201" ClassName="NPC_SHOP_ARMOR_NORMAL_270_315" Data="방어구"/>
 		<Class ClassID="501065" ClassName="Event_GOLDEN_WHALE_1" Data="황금 석화 고래 이벤트"/>
@@ -13127,18 +13128,28 @@
 		<Class ClassID="501178" ClassName="EVENT_1806_PENALTY_MSG6" Data="승부의 신"/>
 		<Class ClassID="501179" ClassName="EVENT_1806_PENALTY_MSG7" Data="승부의 신 종료"/>
 		<Class ClassID="501180" ClassName="EVENT_1806_PENALTY_MSG8" Data="승부의 신 랭킹"/>
-		<Class ClassID="501197" ClassName="EVENT_1903_SPROUT_MSG1" Data='오늘 씨앗을 총 {@st66d_y}{s18}{GET}{/}{/}개 획득하였습니다. {@st66d_y}{s18}{REMAIN}{/}{/}개의 씨앗을 더 획득할 수 있습니다.'/>
+		<Class ClassID="501197" ClassName="EVENT_1903_SPROUT_MSG1" Data="오늘 씨앗을 총 {@st66d_y}{s18}{GET}{/}{/}개 획득하였습니다. {@st66d_y}{s18}{REMAIN}{/}{/}개의 씨앗을 더 획득할 수 있습니다."/>
 		<Class ClassID="501198" ClassName="EVENT_1903_SPROUT_MSG2" Data="곧 새싹이 지급됩니다. 새싹 지급 전 종료시 정상적으로 아이템이 지급되지 않을 수 있습니다."/>
 		<Class ClassID="501201" ClassName="EVENT_STEAM_Secret_Buff_1" Data="이미 어둠의 기운 버프가 적용 중입니다."/>
 		<Class ClassID="501202" ClassName="EVENT_STEAM_SEED_MS01" Data="씨앗을 땅에 심었습니다.{nl}1분마다 단계별로 새싹 버프가 획득됩니다."/>
 		<Class ClassID="501207" ClassName="EVENT_1905_TOS_CHILD_MSG1" Data="하루 획득가능한 뱃지 200개를 모두 모았습니다."/>
 		<Class ClassID="501208" ClassName="EVENT_1905_TOS_CHILD_MSG2" Data="오늘 뱃지를 총 {@st66d_y}{s18}{GET}{/}{/}개 획득하였습니다. {@st66d_y}{s18}{REMAIN}{/}{/}개의 뱃지를 더 획득할 수 있습니다."/>
 		<Class ClassID="501209" ClassName="EVENT_1905_TOS_CHILD_MSG3" Data="곧 뱃지가 지급됩니다. 뱃지 지급 전 종료시 정상적으로 아이템이 지급되지 않을 수 있습니다."/>
+		<Class ClassID="501211" ClassName="EVENT_TWN_3YEARS_FESTIVAL_MSG1" Data="이미 {@st47}{s18}{PET}{/}{/}가 함께하고 있습니다."/>
+		<Class ClassID="501212" ClassName="EVENT_TWN_3YEARS_FESTIVAL_MSG2" Data="성장에는 {@st47}{s18}{ITEM}{/}{/} {@st66d_y}{s18}{COUNT}{/}{/}개가 필요합니다."/>
+		<Class ClassID="501213" ClassName="EVENT_TWN_3YEARS_FESTIVAL_MSG3" Data="오늘 굶은거 같은데 츄츄..."/>
+		<Class ClassID="501214" ClassName="EVENT_TWN_3YEARS_FESTIVAL_MSG4" Data="같이가 츄..."/>
+		<Class ClassID="501215" ClassName="EVENT_TWN_3YEARS_FESTIVAL_MSG5" Data="더 이상 성장할 수 없습니다."/>
+		<Class ClassID="501216" ClassName="EVENT_TWN_3YEARS_FESTIVAL_MSG6" Data="밖으로 나가면 {@st47}{s18}{PET}{/}{/}가 성장합니다."/>
+		<Class ClassID="501217" ClassName="EVENT_TWN_3YEARS_FESTIVAL_MSG7" Data="{NAME}의 {PET}"/>
 		<Class ClassID="501220" ClassName="GLOBAL_EVENT_MISSION_TRY_SEL1" Data="이번 주 {@st47}{s18}탈트{/}{/} 교환은 이미 사용하였습니다."/>
 		<Class ClassID="501221" ClassName="GLOBAL_EVENT_MISSION_TRY_SEL2" Data="이번 주 {@st47}{s18}실버{/}{/} 교환은 이미 사용하였습니다."/>
 		<Class ClassID="501222" ClassName="GLOBAL_EVENT_MISSION_TRY_SEL3" Data="승부 큐브 교환 횟수: {@st47}{s18}{MCount}{/}{/}회{nl}남은 탈트 교환: {@st66d_y}{s18}{TCount}{/}{/}회{nl}남은 실버 교환: {@st66d_y}{s18}{SCount}{/}{/}회"/>
 		<Class ClassID="501225" ClassName="GLOBAL_EVENT_MISSION_TRY_SEL4" Data="이벤트: 승부 던전 입장"/>
 		<Class ClassID="501226" ClassName="GLOBAL_EVENT_MISSION_TRY_SEL5" Data="그래도 이벤트: 승부 던전에 입장하시겠습니까?"/>
+		<Class ClassID="501230" ClassName="EVENT_TWN_3YEARS_FESTIVAL_MSG9" Data="오늘은 더 이상 성장할 수 없습니다."/>
+		<Class ClassID="501231" ClassName="EVENT_TWN_3YEARS_FESTIVAL_MSG10" Data="동행 하기"/>
+		<Class ClassID="501232" ClassName="EVENT_TWN_3YEARS_FESTIVAL_MSG11" Data="혼자 하기"/>
 	</Category>
 	<Category Name="GEM_GACHA">
 		<Class ClassID="510001" ClassName="GEM_GACHA_SEL1" Data="젬 1회 뽑기"/>
@@ -13272,7 +13283,7 @@
 		<Class ClassID="700015" ClassName="TopRanking" Data="상위 랭킹"/>
 		<Class ClassID="700016" ClassName="{CtrlType}Type" Data="{CtrlType}"/>
 		<Class ClassID="700017" ClassName="Score" Data="점수"/>
-		</Category>
+	</Category>
 	<Category Name="LegendTrade">
 		<Class ClassID="510400" ClassName="GT2_RELICSHOP_NPC_SEL_4" Data="다른 장비로 교환 가능한지 물어본다."/>
 	</Category>
@@ -13691,7 +13702,7 @@
 		<Class ClassID="514008" ClassName="NicopolisItemMsg" Data="마나 램프를 사용하려면 대기중의 마나를 수집해야 합니다."/>
 		<Class ClassID="514009" ClassName="UniqStarTowerMsg" Data="마법진 너머로 이동중.."/>
 		<Class ClassID="514010" ClassName="TableLand_ReturnCity{SEC}" Data="잠시 후 베다 고원으로 귀환됩니다. ({SEC}초)"/>
-		</Category>
+	</Category>
 	<Category Name="SoloDungeon">
 		<Class ClassID="513001" ClassName="SoloDungeonStageMSG" Data="스테이지의 몬스터가 몰려옵니다. 모두 처치해 주세요!"/>
 		<Class ClassID="513002" ClassName="SoloDungeonSelectMsg_1" Data="이공간에 들어간다(권장레벨:300)"/>

@@ -8506,6 +8506,8 @@
         <Key Name="Kill_Guild_boss_Boruta" Value="103952"/>
         <Key Name="HadVisited_531" Value="104013"/>
         <Key Name="InDunCountType_1300" Value="104014"/>
+        <Key Name="IsHaveWarpStone_Klaipeda" Value="104043"/>
+        <Key Name="IsHaveWarpStone_Orsha" Value="104044"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Item">
         <Key Name="DeadBreakRatio" Value="7317"/>
@@ -10664,6 +10666,10 @@
         <Key Name="STEAM190702_GACHA_TP_COUNT" Value="104037"/>
         <Key Name="WOOSCAR_2019_07_NECHAR_AC_03" Value="104035"/>
         <Key Name="WOOSCAR_2019_07_NECHAR_AC_04" Value="104036"/>
+        <Key Name="EVENT_TWN_3YEARS_MONSTER_TOGETHER" Value="104045"/>
+        <Key Name="EventTotalShop1906_AC_19" Value="104042"/>
+        <Key Name="STEAM190716_GACHA_HAIRACC_BOUNS" Value="104046"/>
+        <Key Name="STEAM190716_GACHA_HAIRACC_COUNT" Value="104047"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PC">
         <Key Name="Guardable" Value="7132"/>
@@ -18267,6 +18273,9 @@
         <Key Name="EventTotalShop1906_6" Value="104008"/>
         <Key Name="GLOBAL_EVENT_MISSION_TRY_INFO" Value="104034"/>
         <Key Name="MG_Last_GLOBAL_EVENT_MISSION_TRY" Value="104033"/>
+        <Key Name="EventTotalShop1906_7" Value="104041"/>
+        <Key Name="GLOBAL_STEAM_EVENT_1812_UNIQUE_PC_STATE" Value="104048"/>
+        <Key Name="GLOBAL_STEAM_EVENT_1812_UNIQUE_PC_YDAY" Value="104049"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Party">
         <Key Name="CategoryType" Value="51"/>

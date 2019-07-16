@@ -63,12 +63,14 @@ function SCR_STEAM_TREASURE_EVENT_1902_WEEKEND_DIALOG(self, pc) -- 버전업 기
     local day = now_time['day']
     local wday = now_time['wday']
     local dayCheckReward = {
-        {31, 'Ability_Point_Stone_1000_14d_Team', 5},
-        {1, 'EVENT_190124_RankReset_Point_Lv2', 1},
-        {2, 'Moru_Gold_14d_Team', 2},
-        {7, 'Ability_Point_Stone_1000_14d_Team', 5},
-        {8, 'EVENT_190124_RankReset_Point_Lv2', 1},
-        {9, 'Moru_Gold_14d_Team', 2}
+        {20, 'Ability_Point_Stone_1000_14d_Team', 5},
+        {21, 'EVENT_190124_RankReset_Point_Lv2', 1},
+        {27, 'Moru_Gold_14d_Team', 2},
+        {28, 'Ability_Point_Stone_1000_14d_Team', 5},
+        {3, 'EVENT_190124_RankReset_Point_Lv2', 1},
+        {4, 'Moru_Gold_14d_Team', 2},
+        {10, 'Ability_Point_Stone_1000_14d_Team', 5},
+        {11, 'EVENT_190124_RankReset_Point_Lv2', 1}
     }
     --print(day)
 
@@ -77,24 +79,30 @@ function SCR_STEAM_TREASURE_EVENT_1902_WEEKEND_DIALOG(self, pc) -- 버전업 기
         return
     end
     
-    ShowOkDlg(pc, 'STEAM_TREASURE_EVENT_1902_WEEKEND_NPC_DLG1', 1)
-    if aObj.STEAM_TREASURE_EVENT_1902_WEEKEND ~= day then
-        for i = 1, #dayCheckReward do
-            local tx = TxBegin(pc);
-            local result = i
-             --print(result)
-            if dayCheckReward[result][1] == day then
-                for j = 2, #dayCheckReward[result], 2 do
-                    --print(j)
-                    --print(dayCheckReward[result][j]..'/'..dayCheckReward[result][j+1])
-                    TxSetIESProp(tx, aObj, 'STEAM_TREASURE_EVENT_1902_WEEKEND', day)
-                    TxGiveItem(tx, dayCheckReward[result][j], dayCheckReward[result][j+1], "STEAM_TREASURE_EVENT_1902_WEEKEND")
+
+    local select = ShowSelDlg(pc,0, 'STEAM_TREASURE_EVENT_1902_WEEKEND_NPC_DLG1', ScpArgMsg("Receieve"), ScpArgMsg("Cancel"))
+    --ShowOkDlg(pc, 'STEAM_TREASURE_EVENT_1902_WEEKEND_NPC_DLG1', 1)
+    if select == 1 then 
+        if aObj.STEAM_TREASURE_EVENT_1902_WEEKEND ~= day then
+            for i = 1, #dayCheckReward do
+                local tx = TxBegin(pc);
+                local result = i
+                --print(result)
+                if dayCheckReward[result][1] == day then
+                    for j = 2, #dayCheckReward[result], 2 do
+                        --print(j)
+                        --print(dayCheckReward[result][j]..'/'..dayCheckReward[result][j+1])
+                        TxSetIESProp(tx, aObj, 'STEAM_TREASURE_EVENT_1902_WEEKEND', day)
+                        TxGiveItem(tx, dayCheckReward[result][j], dayCheckReward[result][j+1], "STEAM_TREASURE_EVENT_1902_WEEKEND")
+                    end
+                else
+                    SendAddOnMsg(pc, "NOTICE_Dm_scroll", ScpArgMsg("EVENT_STEAM_1903_CHOCO_REWARD_SEL2"), 5);
                 end
+                local ret = TxCommit(tx);
+                --print(aObj.STEAM_TREASURE_EVENT_1902_WEEKEND)
             end
-            local ret = TxCommit(tx);
-            --print(aObj.STEAM_TREASURE_EVENT_1902_WEEKEND)
+        else
+            SendAddOnMsg(pc, "NOTICE_Dm_Clear", ScpArgMsg("UNDER301_EVENT1_REWARD_TAKE"), 5); -- 이미 보상을 받았습니다. -- 
         end
-    else
-        SendAddOnMsg(pc, "NOTICE_Dm_Clear", ScpArgMsg("UNDER301_EVENT1_REWARD_TAKE"), 5); -- 이미 보상을 받았습니다. -- 
     end
 end

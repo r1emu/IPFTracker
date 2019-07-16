@@ -1,15 +1,15 @@
 function SCR_GACHA_BOUNS_VALUE(self, pc)
     local aObj = GetAccountObj(pc);
-    local count = aObj.STEAM190702_GACHA_TP_COUNT;
-    local bouns = aObj.STEAM190702_GACHA_TP_BOUNS;
-    local cubetype = 1; -- 레티샤는 1/ 여큐는 2 / 반드시 지켜주세요 --
+    local count = aObj.STEAM190716_GACHA_HAIRACC_COUNT;
+    local bouns = aObj.STEAM190716_GACHA_HAIRACC_BOUNS;
+    local cubetype = 2; -- 레티샤는 1/ 여큐는 2 / 반드시 지켜주세요 --
     local next_count, next_bouns = 0, 0;
     local rewardlist = {}
     local rewardtext = ''
 
     local bounslist = {
         {50, 100, 150, 200, 250,      'STEAM190702_GACHA_TP_COUNT',      'STEAM190702_GACHA_TP_BOUNS', 50}, -- tp
-        {15, 25, 35,  50, 100, 'STEAM190618_GACHA_HAIRACC_COUNT', 'STEAM190618_GACHA_HAIRACC_BOUNS', 50} -- hairacc
+        {25, 50, 75, 100, 125, 'STEAM190716_GACHA_HAIRACC_COUNT', 'STEAM190716_GACHA_HAIRACC_BOUNS', 25} -- hairacc
     }
 
     -- next count
