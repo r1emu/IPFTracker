@@ -94,3 +94,16 @@ function SCR_BUFF_ENTER_GOOD_STAMP_EFFECT(self, buff, arg1, arg2, over)
     PlayEffect(self, "F_pc_welldone_ground_A", 1.5, 1.5, 'BOT')
 end
 
+function SCR_BUFF_ENTER_Event_STEAM_Secret_EventBuff(self, buff, arg1, arg2, over)
+    self.DEF_BM = self.DEF_BM + 3000
+	self.MDEF_BM = self.MDEF_BM + 3000
+end
+
+function SCR_BUFF_UPDATE_Event_STEAM_Secret_EventBuff(self, buff, arg1, arg2, RemainTime, ret, over)
+
+end
+
+function SCR_BUFF_LEAVE_Event_STEAM_Secret_EventBuff(self, buff, arg1, arg2, over)
+    self.DEF_BM = self.DEF_BM - 3000
+	self.MDEF_BM = self.MDEF_BM - 3000
+end

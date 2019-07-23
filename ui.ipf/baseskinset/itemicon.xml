@@ -6168,6 +6168,11 @@
 		<image name="icon_item_selectbox_beachwear01" file="\icon\payment\icon_item_selectbox_beachwear01.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_selectbox_beachwear02" file="\icon\payment\icon_item_selectbox_beachwear02.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_selectbox_beachwear03" file="\icon\payment\icon_item_selectbox_beachwear03.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_gift_box_01" file="\icon\payment\icon_item_gift_box_01.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_gift_box_02" file="\icon\payment\icon_item_gift_box_02.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_gift_box_03" file="\icon\payment\icon_item_gift_box_03.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_gift_box_04" file="\icon\payment\icon_item_gift_box_04.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_gift_box_05" file="\icon\payment\icon_item_gift_box_05.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="seal">
 		<image name="icon_seal_yellow_cc_A1" file="\icon\seal\seal_yellow_cc_A1.tga" imgrect="0 0 80 80"/>

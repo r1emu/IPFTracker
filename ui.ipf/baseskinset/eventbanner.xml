@@ -23,6 +23,11 @@
 		<image name="inGame_E18" file="\event_banner\inGame_E18.jpg" imgrect="0 0 480 180"/>
 		<image name="inGame_E19" file="\event_banner\inGame_E19.jpg" imgrect="0 0 480 180"/>
 		<image name="inGame_E20" file="\event_banner\inGame_E20.jpg" imgrect="0 0 480 180"/>
+		<image name="inGame_E21" file="\event_banner\inGame_E21.jpg" imgrect="0 0 480 180"/>
+		<image name="inGame_E22" file="\event_banner\inGame_E22.jpg" imgrect="0 0 480 180"/>
+		<image name="inGame_E23" file="\event_banner\inGame_E23.jpg" imgrect="0 0 480 180"/>
+		<image name="inGame_E24" file="\event_banner\inGame_E24.jpg" imgrect="0 0 480 180"/>
+		<image name="inGame_E25" file="\event_banner\inGame_E25.jpg" imgrect="0 0 480 180"/>
 	</imagelist>
 	<imagelist category="banner">
 		<image name="tpshop_event_banner" file="\skin\tpshop_event_banner.tga" imgrect="0 0 520 250"/>
