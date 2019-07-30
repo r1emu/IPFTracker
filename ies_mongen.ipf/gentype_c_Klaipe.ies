@@ -75,4 +75,4 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 5220,10067,1,40,-1,1,1,2,0,0,1,0,0,"Event_FishingBox","요하의 미꾸라지통","","","","","","","EVENT_1902_FISHINGBOX_NPC","","","NO","YES","NO","Neutral","","","",""
 10001,50001,1,40,1,60000,1,2,0,0,0,0,0,"Board3_Event","이벤트 알림판","","","","","","","STEAM_TREASURE_EVENT","","","NO","YES","NO","Neutral","","","",""
 10004,50004,1,40,1,60000,1,2,0,0,0,0,0,"gacha_cube1_event","보너스 큐브","","","","","","","GACHA_BOUNS","","","NO","YES","NO","Neutral","","","",""
-10007,50007,1,40,1,60000,1,2,0,0,0,0,0,"NPC_GM2","초기화 지원 도우미","","","","","","","EVENT_1812_STEAM_RESET_NPC","","","NO","YES","NO","Neutral","","","",""
+10006,50006,1,40,1,60000,1,2,0,0,0,0,0,"npc_crystal_machine","탈트 가공 장치","","","","","","","STEAM_FISHING_TALT","","","NO","YES","NO","Neutral","","","",""

@@ -2978,7 +2978,7 @@
 	</controlset>
 	<controlset name="keyconfig_right" hittest="true" width="450" height="52" hittestset="false" draw="false" skin="none">
 		<controls>
-			<richtext name="txt_actionname" margin="15 6 0 0" rect="0 0 240 50" format="{@st42b}%s{/}" param1="value" param1_def="Move to right direction ZZZZZZZZZZZZZZZZZZZZ" textalign="left center" autofontsizebywidth="240" resizebytext="false" spacey="0" maxwidth="0" fontname="white_16_ol" fixwidth="true" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
+			<richtext name="txt_actionname" margin="15 6 0 0" rect="0 0 200 50" format="{@st42b}%s{/}" param1="value" param1_def="None" textalign="left center" resizebytext="false" spacey="0" maxwidth="0" fontname="white_16_ol" fixwidth="true" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
 			<labelline name="labelline_1" margin="0 50 0 0" rect="0 0 450 1" skin="labelline_def" layout_gravity="left top"/>
 			<button name="txt_key" margin="215 0 0 0" rect="0 0 230 55" layout_gravity="left top" skin="base_btn" format="{@st68}%s" param1="value" param1_def="MoveToRight" textalign="center center" LBtnUpScp="KEYCONFIG_EDIT_START"/>
 		</controls>

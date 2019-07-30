@@ -50,12 +50,7 @@ function INDUNINFO_CREATE_CATEGORY(frame)
                         cyclePicImg:Resize(cyclePicImg:GetOriginalWidth() + 11, cyclePicImg:GetOriginalHeight());
                     else
                         cyclePicImg:ShowWindow(0);
-                    end
-                elseif indunCls.DungeonType == 'GLOBAL_EVENT_MISSION_TRY' then 
-                    cyclePicImg:SetImage('indun_icon_event_s_eng')     
-                    local margin = cyclePicImg:GetOriginalMargin();
-                        cyclePicImg:SetMargin(margin.left, margin.top, margin.right, margin.bottom);
-                        cyclePicImg:Resize(cyclePicImg:GetOriginalWidth() + 11, cyclePicImg:GetOriginalHeight());         
+                    end      
                 end
 
                 categoryCtrl:SetUserValue('RESET_GROUP_ID', resetGroupID);
@@ -168,9 +163,6 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         else
             if indunCls.DungeonType == "Raid" or indunCls.DungeonType == "GTower" then
                 cycleImage:ShowWindow(0);
-            elseif indunCls.DungeonType == "GLOBAL_EVENT_MISSION_TRY" then
-                cycleImage:SetImage('indun_icon_event_l_eng');
-                cycleImage:ShowWindow(1);
             else
                 cycleImage:SetImage('indun_icon_day_l_eng')
                 cycleImage:ShowWindow(1);

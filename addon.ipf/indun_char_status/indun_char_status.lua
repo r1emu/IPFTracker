@@ -68,9 +68,6 @@ function INDUNINFO_CHAR_UI_OPEN(frame, msg, argStr, argNum)
                             entranceCount = 0;
                         end
                         indunCntLabel:SetText("{@st42b}" .. entranceCount .. "/" .. GET_INDUN_MAX_ENTERANCE_COUNT(indunCls.PlayPerResetType))
-                        if indunCls.ClassName == 'GLOBAL_EVENT_MISSION_TRY' then
-                            indunCntLabel:SetText("{@st42b}" .. entranceCount .. "/" .. "{img infinity_text 20 10}")
-                        end
                     end
                     if indunCls.Level <= pcInfo:GetLevel() or playPerRestTypeTable["INDUN_COUNT_" .. indunCls.PlayPerResetType]==1 then
                         indunLabel:SetEnable(1)

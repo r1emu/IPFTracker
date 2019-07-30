@@ -183,7 +183,7 @@ function EARTH_TOWER_INIT(frame, shopType)
     if shopType == 'EarthTower' then
         title:SetText('{@st43}'..ScpArgMsg("EarthTowerShop"));
         close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EarthTowerShop")));
-    elseif shopType == 'EventShop' or shopType == 'EventShop2' or shopType == 'EventShop3' then
+    elseif shopType == 'EventShop' or shopType == 'EventShop2' or shopType == 'EventShop3' or EventShop8 then
         title:SetText('{@st43}'..ScpArgMsg("EventShop"));
         close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EventShop")));
     elseif shopType == 'KeyQuestShop1' then
@@ -201,10 +201,10 @@ function EARTH_TOWER_INIT(frame, shopType)
     elseif shopType == 'MCShop1' then
         title:SetText('{@st43}'..ScpArgMsg("MASSIVE_CONTENTS_SHOP_NAME"));
         close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("MASSIVE_CONTENTS_SHOP_NAME")));
-    elseif shopType == 'EventShop8' then
-        local taltPropCls = GetClassByType('Anchor_c_Klaipe', 5187);
-        title:SetText('{@st43}'..taltPropCls.Name);
-        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', taltPropCls.Name));
+--    elseif shopType == 'EventShop8' then
+--        local taltPropCls = GetClassByType('Anchor_c_Klaipe', 5187);
+--        title:SetText('{@st43}'..taltPropCls.Name);
+--        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', taltPropCls.Name));
     elseif shopType == 'DailyRewardShop' then
         title:SetText('{@st43}'..ScpArgMsg("DAILY_REWARD_SHOP_1"));
         close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("DAILY_REWARD_SHOP_1")));

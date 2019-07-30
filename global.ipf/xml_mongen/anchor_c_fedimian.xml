@@ -2,6 +2,7 @@
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <idspace id="Anchor_c_fedimian">
 	<Category>
-		<Class ClassID="10001" GenType="50001" PosX="-882.96" PosY="208.32" PosZ="-266.49" Direction="0" Name="게시판" OverrideType="REMOVE"/>
+		<Class OverrideType="ADD" ClassID="10001" GenType="50001" PosX="-518" PosY="169" PosZ="-141" Direction="-45" Name="게시판"/>
+		<Class OverrideType="ADD" ClassID="10004" GenType="50004" PosX="135" PosY="160" PosZ="-209" Direction="0" Name="보너스 큐브"/>
 	</Category>
 </idspace>

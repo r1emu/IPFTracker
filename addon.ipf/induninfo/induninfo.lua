@@ -207,7 +207,6 @@ function INDUNINFO_CATEGORY_LBTN_CLICK(categoryCtrl, ctrl)
             -- 주간 입장 텍스트 설정
             local resetInfoText = GET_CHILD_RECURSIVELY(topFrame, 'resetInfoText');             --"입장 횟수는 매일 %s시에 초기화 됩니다."
             local resetInfoText_Week = GET_CHILD_RECURSIVELY(topFrame, 'resetInfoText_Week');   --"입장 횟수는 매주 월요일 %s시에 초기화 됩니다."
-            local resetInfoText_Steam = GET_CHILD_RECURSIVELY(topFrame, 'resetInfoText_Steam');   --"탈트 및 실버 입장 횟수는 매주 화요일 점검 시에 초기화 됩니다."
 
             local resetTime = INDUN_RESET_TIME % 12;
             local ampm = ClMsg('AM');
@@ -229,18 +228,11 @@ function INDUNINFO_CATEGORY_LBTN_CLICK(categoryCtrl, ctrl)
                     resetInfoText_Week:SetTextByKey('resetTime', resetText_wkeely);
                     resetInfoText:ShowWindow(0);
                     resetInfoText_Week:ShowWindow(1);
-                    resetInfoText_Steam:ShowWindow(0);
                 else                                                                                --일간
                     local resetText = string.format('%s %s', ampm, resetTime);
                     resetInfoText:SetTextByKey('resetTime', resetText);
                     resetInfoText_Week:ShowWindow(0);
-                    if indunCls.ClassName == 'GLOBAL_EVENT_MISSION_TRY' then
-                        resetInfoText:ShowWindow(0);
-                        resetInfoText_Steam:ShowWindow(1);
-                    else
-                        resetInfoText_Steam:ShowWindow(0);
-                        resetInfoText:ShowWindow(1);
-                    end
+                    resetInfoText:ShowWindow(1);
                 end
             end
         end
@@ -298,7 +290,7 @@ function GET_MAX_ENTERANCE_COUNT(resetGroupID)
     end
     
     local infinity = TryGetProp(indunCls, 'EnableInfiniteEnter', 'NO')
-    if indunCls.AdmissionItemName ~= "None" or infinity == 'YES' or indunCls.ClassName == 'GLOBAL_EVENT_MISSION_TRY' then
+    if indunCls.AdmissionItemName ~= "None" or infinity == 'YES' then
         local a = "{img infinity_text 20 10}"
         if indunCls.DungeonType == "Raid" or indunCls.DungeonType == "GTower" then
             if indunCls.WeeklyEnterableCount > TryGetProp(etc, "IndunWeeklyEnteredCount_"..tostring(TryGetProp(indunCls, "PlayPerResetType"))) then
@@ -734,9 +726,6 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
 
         countData:SetTextByKey('now', GET_CURRENT_ENTERANCE_COUNT(resetGroupID));
         countData:SetTextByKey('max', GET_MAX_ENTERANCE_COUNT(resetGroupID));
-        if indunCls.ClassName  == 'GLOBAL_EVENT_MISSION_TRY' then
-            countData:SetTextByKey('max', "{img infinity_text 20 10 }");
-        end
 
         if GET_RESET_CYCLE(resetGroupID) == true then
             cycleImage:SetImage('indun_icon_week_l')
@@ -780,7 +769,7 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         end
         
         countItemData:SetTextByKey('admissionitem', '  {img '..indunAdmissionItemImage..' 30 30}  '..nowAdmissionItemCount..'')
-        
+
         local countBox = GET_CHILD_RECURSIVELY(frame, 'countBox');
         local countText = GET_CHILD_RECURSIVELY(countBox, 'countText');
         local cycleCtrlPic = GET_CHILD_RECURSIVELY(countBox, 'cycleCtrlPic');

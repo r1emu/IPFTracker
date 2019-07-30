@@ -697,10 +697,7 @@ function INDUNENTER_MAKE_COUNT_BOX(frame, noPicBox, indunCls)
             end
         end
         countData:SetTextByKey("max", maxCount);
-        if indunCls.ClassName  == 'GLOBAL_EVENT_MISSION_TRY' then
-            countData:SetTextByKey('max', "{img infinity_text 20 10 }");
-        end
-        
+
         -- set min/max multi count
         local minCount = frame:GetUserConfig('MULTI_MIN');
         frame:SetUserValue("MIN_MULTI_CNT", minCount);
@@ -753,7 +750,7 @@ function INDUNENTER_MAKE_COUNT_BOX(frame, noPicBox, indunCls)
                     maxCount = maxCount + TryGetProp(indunCls, 'PlayPerReset_NexonPC', 0)
                 end
                 countData:SetTextByKey("max", maxCount);
-                
+            
                     -- set min/max multi count
                 local minCount = frame:GetUserConfig('MULTI_MIN');
                 frame:SetUserValue("MIN_MULTI_CNT", minCount);

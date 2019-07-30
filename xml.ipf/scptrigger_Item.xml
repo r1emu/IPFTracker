@@ -3093,7 +3093,7 @@ return math.floor(self.MINMATK);"/>
 		</TriggerList>
 	</SpcItem>
 	<SpcItem Name="TBW03_101">
-		<TriggerList Act="AfterHitScript_Attack">
+		<TriggerList Act="BeforeAttack">
 			<Trigger>
 				<ExecList>
 					<ToolScp Scp="SPCI_CRITICAL" Client="NO" UseSleep="NO"/>
