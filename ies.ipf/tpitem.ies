@@ -21,8 +21,6 @@ ClassID,Price,JobGrade,Itemdate,AccountLimitCount,ClassName,Category,SubCategory
 33,7,0,190717,0,"ClassName33","TP_Premium","TP_Useable","GLOBAL_steam_Lucky_Shard_Package_3","","",""
 35,110,0,190723,5,"ClassName35","TP_Premium","TP_Useable","GLOBAL_STEAM_WakeUp_PACKAGE_1","","",""
 36,69,0,190723,5,"ClassName36","TP_Premium","TP_Useable","GLOBAL_STEAM_WakeUp_PACKAGE_2","","",""
-42,999,0,1907302,1,"ClassName42","TP_Premium","TP_Useable","Transcend_Scroll_9_PC","","",""
-43,799,0,1907301,1,"ClassName43","TP_Premium","TP_Useable","GLOBAL_STEAM_Transcend_Scroll_8_PC","","",""
 101,8,0,151229,0,"ClassName101","TP_Premium","TP_Consume","Mic_bundle10","","",""
 102,1,0,151229,0,"ClassName102","TP_Premium","TP_Consume","Mic","","",""
 103,32,0,151229,0,"ClassName103","TP_Premium","TP_Consume","RestartCristal_bundle10","","",""
