@@ -1,39 +1,39 @@
 function SCR_EVENT_1903_WEEKEND_CHECK(inputType, isServer)
 
-    local sysTime
+    -- local sysTime
     
-    if isServer == true then
-        sysTime = GetDBTime()
-    else
-        sysTime = geTime.GetServerSystemTime();
-    end
+    -- if isServer == true then
+    --     sysTime = GetDBTime()
+    -- else
+    --     sysTime = geTime.GetServerSystemTime();
+    -- end
     
-    local month = sysTime.wMonth
-    local day = sysTime.wDay
-    local t = {
-                {7,20,{'EXP'}},
-                {7,21,{'EXP'}},
-                {7,27,{'EXP'}},
-                {7,28,{'EXP'}},
-                {8,3,{'EXP'}},
-                {8,4,{'EXP'}},
-                {8,10,{'EXP'}},
-                {8,11,{'EXP'}}
-                --{6,15,{'EXP'}},
-                --{6,16,{'EXP'}},
-                --{5,5,{'EXP'}},
-                --{5,6,{'LOOTINGCHANCE','ITEMRANDOMRESET'}},
-                }
-    for i = 1, #t do
-        if t[i][1] == month and t[i][2] == day then
-            for i2 = 1, #t[i][3] do
-                if inputType == t[i][3][i2] then
-                    return 'YES'
-                end
-            end
-            break
-        end
-    end
+    -- local month = sysTime.wMonth
+    -- local day = sysTime.wDay
+    -- local t = {
+    --             {7,20,{'EXP'}},
+    --             {7,21,{'EXP'}},
+    --             {7,27,{'EXP'}},
+    --             {7,28,{'EXP'}},
+    --             {8,3,{'EXP'}},
+    --             {8,4,{'EXP'}},
+    --             {8,10,{'EXP'}},
+    --             {8,11,{'EXP'}}
+    --             --{6,15,{'EXP'}},
+    --             --{6,16,{'EXP'}},
+    --             --{5,5,{'EXP'}},
+    --             --{5,6,{'LOOTINGCHANCE','ITEMRANDOMRESET'}},
+    --             }
+    -- for i = 1, #t do
+    --     if t[i][1] == month and t[i][2] == day then
+    --         for i2 = 1, #t[i][3] do
+    --             if inputType == t[i][3][i2] then
+    --                 return 'YES'
+    --             end
+    --         end
+    --         break
+    --     end
+    -- end
     
     return 'NO'
 end
