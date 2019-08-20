@@ -2,6 +2,6 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 1,8000,270,284,0,0,0,0,0,"","Money_Mid","Money","Moneybag1",""
 2,850,0,0,0,0,0,0,0,"","Item","Item","misc_0165",""
 3,48,0,0,0,0,0,0,0,"","Item","Item","misc_jore10",""
-4,135,0,0,0,0,0,0,0,"","Item","Item","R_HAND01_146",""
+4,135,0,0,0,0,0,0,0,"","Item","Item","HAND01_146",""
 5,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_Lizardman_orange",""
 6,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_Lizardman_orange",""

@@ -23,30 +23,6 @@
 			</ResultList>
 		</MainSkl>
 	</Skill>
-	<Skill Name="Hoplite_SpearLunge">
-		<MainSkl JumpFlee="NO" MSPDToUsePos="0" ScrLock="None">
-			<HitList>
-				<Frame Angle="0" AniTime="350" Dist="0" ForceATK="0" HitCount="1" Length="70" PosType="0" RandDist="0" RandomPerHit="0" RotAngle="0" SklAngle="0.17453292" TermMax="0" TermMin="0" Time="150" Type="SQUARE" Width="20" />
-			</HitList>
-			<EtcList>
-				<Scp Client="YES" Scp="C_VOICE_SOUND" Time="200" UseSleep="NO">
-					<Str Str="voice_war_atk_short" />
-					<Str Str="voice_atk_short_war_f" />
-				</Scp>
-			</EtcList>
-			<ResultList>
-				<ToolScp Client="NO" Scp="S_R_TGTBUFF" UseSleep="NO">
-					<Str Str="SpearLunge_Debuff" />
-					<Num Num="1" />
-					<Num Num="0" />
-					<Num Num="6000" />
-					<Num Num="1" />
-					<Num Num="100" />
-					<Num Num="-1" />
-				</ToolScp>
-			</ResultList>
-		</MainSkl>
-	</Skill>
 	<Skill Name="Hoplite_SharpSpear">
 		<MainSkl JumpFlee="NO" MSPDToUsePos="0" ScrLock="None">
 			<HitList>
@@ -78,25 +54,25 @@
 	<Skill Name="Hoplite_Pierce">
 		<MainSkl JumpFlee="NO" MSPDToUsePos="0" ScrLock="None">
 			<HitList>
-				<Frame Angle="0" AniTime="400" Dist="0" ForceATK="0" HitCount="1" Length="90" PosType="0" RandDist="0" RandomPerHit="0" RotAngle="0" TermMax="0" TermMin="0" Time="200" Type="SQUARE" Width="20" />
+                <Frame Angle="0" AniTime="375" Dist="0" ForceATK="0" HitCount="1" Length="90" PosType="0" RandDist="0" RandomPerHit="0" RotAngle="0" TermMax="0" TermMin="0" Time="175" Type="SQUARE" Width="20" />
 			</HitList>
 			<EtcList>
 				<Scp Client="YES" Scp="MONSKL_C_PLAY_ANIM" Time="0" UseSleep="NO">
 					<Str Str="SKL_PIERCE" />
-					<Num Num="1.5" />
+					<Num Num="1.6" />
 					<Num Num="1" />
 					<Num Num="0" />
 				</Scp>
 			</EtcList>
 			<ResultList>
 				<ToolScp Client="YES" Scp="C_SR_EFT" UseSleep="NO">
-					<Str_Arg Arg="0.40000001" Str="F_explosion011_yellow" />
+					<Str_Arg Arg="0.40000001" Str="F_explosion011_yellow2" />
 					<Pos Angle="0" Dist="0" PosType="1" />
 					<Num Num="0" />
 					<Num Num="0" />
 				</ToolScp>
 				<ToolScp Client="YES" Scp="C_SR_EFT" UseSleep="NO">
-					<Str_Arg Arg="0.30000001" Str="F_burstup022_smoke" />
+					<Str_Arg Arg="0.30000001" Str="F_burstup022_smoke_2" />
 					<Pos Angle="0" Dist="0" PosType="1" />
 					<Num Num="0" />
 					<Num Num="0" />
@@ -168,15 +144,21 @@
 				<Frame Angle="0" AniTime="10199" Dist="0" ForceATK="0" HitCount="1" Length="30" PosType="0" RandDist="0" RandomPerHit="0" RotAngle="0" SklAngle="0.17453299" TermMax="0" TermMin="0" Time="9999" Type="FAN" Width="30" />
 			</HitList>
 			<EtcList>
-				<Scp Client="YES" Scp="C_VOICE_SOUND" Time="0" UseSleep="NO">
+				<Scp Client="YES" Scp="MONSKL_C_PLAY_ANIM" Time="0" UseSleep="NO">
+                    <Str Str="SKL_THROUWINGSPEAR" />
+                    <Num Num="1.4" />
+                    <Num Num="1" />
+                    <Num Num="0" />
+                </Scp>
+                <Scp Client="YES" Scp="C_VOICE_SOUND" Time="0" UseSleep="NO">
 					<Str Str="voice_war_atk_short" />
 					<Str Str="voice_atk_short_war_f" />
 				</Scp>
-				<Scp Client="YES" Scp="C_VOICE_SOUND" Time="600" UseSleep="NO">
+				<Scp Client="YES" Scp="C_VOICE_SOUND" Time="420" UseSleep="NO">
 					<Str Str="voice_war_atk_medium" />
 					<Str Str="voice_atk_medium_war_f" />
 				</Scp>
-				<Scp Client="NO" Scp="SKL_THROW_EQUIP_OBJECT" Time="1100" TimeSync="0" UseSleep="YES">
+				<Scp Client="NO" Scp="SKL_THROW_EQUIP_OBJECT" Time="785" TimeSync="0" UseSleep="YES">
 					<Str Str="warrior_f_" />
 					<Str Str="RH" />
 					<Pos Angle="0" Dist="0" PosType="3" />
@@ -188,7 +170,7 @@
 					<Num Num="1" />
 					<Str Str="Spear" />
 				</Scp>
-				<Scp Client="YES" Scp="C_SHOCKWAVE" Time="1150" UseSleep="NO">
+				<Scp Client="YES" Scp="C_SHOCKWAVE" Time="785" UseSleep="NO">
 					<Num Num="8" />
 					<Num Num="0.40000001" />
 					<Num Num="55" />
@@ -327,7 +309,11 @@
 					<Num Num="0" />
 				</Scp>
 				<Scp Client="NO" Scp="SKL_CHECK_LOOPING_COUNT_INIT" Time="550" TimeSync="0" UseSleep="NO">
-					<Num FuncTxt=" local value = 14; local abil = GetAbility(self, &quot;Hoplite28&quot;) if abil ~= nil and abil.ActiveState == 1 then value = value + abil.Level; end  return value;" Num="14" UseFunc="1" />
+					<Num Num="14" UseFunc="1" FuncTxt="local value = 14;
+if IsBuffApplied(self, &quot;DragoonHelmet_Buff&quot;) == &quot;YES&quot; or IsBuffApplied(self, &quot;DragoonHelmet_Abil_Buff&quot;) == &quot;YES&quot; or IsBuffApplied(self, &quot;Commence_Buff&quot;) == &quot;YES&quot; then
+value = value + 3
+end
+return value;" />
 				</Scp>
 				<Scp Client="NO" LoopTime="140" Scp="SKL_CHECK_LOOPING_COUNT" Time="550" TimeSync="0" UseSleep="NO" />
 			</EtcList>

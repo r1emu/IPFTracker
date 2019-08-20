@@ -1,6 +1,6 @@
 ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max,Zone,Type,GroupName,ItemClassName,ItemProperty
 1,8000,123,129,0,0,0,0,0,"","Money_Mid","Money","Moneybag1",""
-2,115,0,0,0,0,0,0,0,"","Item","Item","R_MAC01_132",""
+2,115,0,0,0,0,0,0,0,"","Item","Item","MAC01_132",""
 3,80,0,0,0,0,0,0,0,"","Item","Item","R_NECK02_112",""
 4,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_FD_yognome",""
 5,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_FD_yognome",""

@@ -229,7 +229,9 @@ function SCR_Get_SpendSP_Magic(skill)
     if TryGetProp(skill, "ClassName", "None") == "Cleric_Heal" then
         local jobHistory = '';
         if IsServerObj(pc) == 1 then
-            jobHistory = GetJobHistoryString(pc);
+            if IS_PC(pc) == true then
+                jobHistory = GetJobHistoryString(pc);
+            end
         else
             jobHistory = GetMyJobHistoryString();
         end
@@ -1147,23 +1149,11 @@ end
 
 --[ Normal_Attack ]--
 function SCR_Get_SkillFactor(skill)
-    
     local sklFactor;
     local skillOwner = GetSkillOwner(skill);
     
-    if skillOwner.ClassName == 'PC' then
-        local atkType = skill.AttackType;
-        local attribute = skill.Attribute;
-        
-        local atkTypebyItem = GetSumOfEquipItem(skillOwner, atkType);
-        local attributebyItem = GetSumOfEquipItem(skillOwner, attribute);
-        
-        sklFactor = skill.SklFactor + (skill.Level - 1) * skill.SklFactorByLevel + atkTypebyItem + attributebyItem;
-        return math.floor(sklFactor);
-    else
-        sklFactor = skill.SklFactor + (skill.Level - 1) * skill.SklFactorByLevel;
-        return math.floor(sklFactor);
-    end
+    sklFactor = skill.SklFactor + (skill.Level - 1) * skill.SklFactorByLevel;
+    return math.floor(sklFactor);
 end
 
 function SCR_Get_SkillFactor_Reinforce_Ability(skill)
@@ -1349,6 +1339,7 @@ end
 
 -- skillshared.lua 의 function SCR_REINFORCEABILITY_FOR_BUFFSKILL(self, skill) 와 내용 동일함
 -- 같이 변경해야 함
+-- done , 해당 함수 내용은 cpp로 이전되었습니다. 변경 사항이 있다면 반드시 프로그래팀에 알려주시기 바랍니다.
 function SCR_REINFORCEABILITY_TOOLTIP(skill)
     local pc = GetSkillOwner(skill);
     local addAbilRate = 1;
@@ -1894,7 +1885,7 @@ function SCR_GET_Impaler_Ratio2(skill)
     local pc = GetSkillOwner(skill);
     local value = 8 + skill.Level;
     local zone = GetZoneName(pc);
-    if IsPVPServer(pc) == 1 or zone == 'pvp_Mine' then
+    if IsPVPServer(pc) == 1 or IsPVPField(pc) == 1 then
         value = 6;
     end
     return value;
@@ -2269,10 +2260,6 @@ end
 
 function SCR_GET_AdvancedOrders_Ratio2(skill)
     local value = skill.Level
-    local pc = GetSkillOwner(skill);
-    if IsPVPServer(pc) == 1 then
-        value = skill.Level * 2
-    end
     
     return value
 end
@@ -2874,7 +2861,7 @@ function SCR_GET_Joust_Ratio2(skill)
     local pc = GetSkillOwner(skill);
     local value = 10 + skill.Level * 1;
     local zone = GetZoneName(pc);
-    if IsPVPServer(pc) == 1 or zone == 'pvp_Mine' then
+    if IsPVPServer(pc) == 1 or IsPVPField(pc) == 1 then
         value = value * 0.5;
     end
     
@@ -3221,6 +3208,16 @@ function SCR_GET_StakeStockades_Time(skill)
     local value = 15
     if IsPVPServer(pc) == 1 then
         value = 900
+    end
+    
+    return value
+end
+
+function SCR_GET_StakeStockades_HitCount(skill)--CaptionRatio2
+    local pc = GetSkillOwner(skill);
+    local value = 15
+    if IsPVPServer(pc) == 1 then
+        value = 6
     end
     
     return value
@@ -5117,6 +5114,17 @@ function SCR_GET_MissileHole_Ratio(skill)
     return math.floor(value)
 end
 
+function SCR_GET_Heal_Ratio3(skill)
+
+    local pc = GetSkillOwner(skill);
+    local abil = GetAbility(pc, "Cleric12") 
+    local value = 0
+    if abil ~= nil then 
+        return SCR_ABIL_ADD_SKILLFACTOR_TOOLTIP(abil);
+    end
+
+end
+
 function SCR_GET_Heal_Time(skill)
 
     local pc = GetSkillOwner(skill);
@@ -6027,9 +6035,9 @@ end
 function SCR_GET_KaguraDance_Ratio(skill)
     local value = 70 + skill.Level * 2
     local pc = GetSkillOwner(skill);
-    local abil = GetAbility(pc, "Miko5")
+    local abil = GetAbility(pc, "Miko8")
     if abil ~= nil and abil.ActiveState == 1 then
-        value = value * 1.1
+        value = value * 1.3
     end
     
     return math.floor(value)
@@ -6148,7 +6156,7 @@ end
 function SCR_Get_DeployPavise_Time(skill)
     local pc = GetSkillOwner(skill);
     local value = 30;
-    if IsPVPServer(pc) == 1 then
+    if IsPVPField(pc) == 1 then
         value = 900;
     end
     
@@ -6164,7 +6172,7 @@ function SCR_Get_DeployPavise_Ratio(skill)
     local value = 15 + skill.Level * 5;
     
     local pc = GetSkillOwner(skill);
-    if IsPVPServer(pc) == 1 then
+    if IsPVPField(pc) == 1 then
         value = 15;
     else
         local abil = GetAbility(pc, 'QuarrelShooter24')
@@ -6363,7 +6371,7 @@ function SCR_GET_Stop_Time(skill)
     local pc = GetSkillOwner(skill)
     local value = 5 + skill.Level * 1
     local zone = GetZoneName(pc);
-    if IsPVPServer(pc) == 1 or zone == 'pvp_Mine' then
+    if IsPVPServer(pc) == 1 or IsPVPField(pc) == 1 then
         value = value * 0.5
     end
     
@@ -6609,7 +6617,7 @@ function SCR_Get_StoneShot_Bufftime(skill)
     local value = 4;
     local pc = GetSkillOwner(skill);
     local zone = GetZoneName(pc);
-    if IsPVPServer(pc) == 1 or zone == 'pvp_Mine' then
+    if IsPVPServer(pc) == 1 or IsPVPField(pc) == 1 then
         value = value / 2
     end
     
@@ -6876,7 +6884,7 @@ function SCR_GET_Telekinesis_Holdtime(skill)
     local pc = GetSkillOwner(skill)
     local value = 3 + skill.Level * 1;
     local zone = GetZoneName(pc);
-    if IsPVPServer(pc) == 1 or zone == 'pvp_Mine' then
+    if IsPVPServer(pc) == 1 or IsPVPField(pc) == 1 then
         value = value * 0.5;
     end
     
@@ -7074,7 +7082,7 @@ end
 
 function SCR_GET_Sacrament_Bufftime(skill)
 
-    return 200 + skill.Level * 20;
+    return 800 + skill.Level * 100;
 
 end
 
@@ -7665,20 +7673,16 @@ function SCR_GET_Effigy_Bonus(skill)
 
 end
 
+-- done , 해당 함수 내용은 cpp로 이전되었습니다. 변경 사항이 있다면 반드시 프로그래팀에 알려주시기 바랍니다.
 function SCR_GET_Effigy_Ratio(skill)
-
     local value = 1.60 + 0.07 * (skill.Level-1);
-
     return value
-
 end
 
+-- done , 해당 함수 내용은 cpp로 이전되었습니다. 변경 사항이 있다면 반드시 프로그래팀에 알려주시기 바랍니다.
 function SCR_GET_Effigy_Ratio2(skill)
-
     local value = 2.3 + 0.09 * (skill.Level-1)
-
     return value
-
 end
 
 function SCR_GET_SR_LV_Damballa(skill)
@@ -8059,8 +8063,8 @@ function SCR_GET_DeathVerdict_Ratio3(skill)
     local value = 25
     local pc = GetSkillOwner(skill)
     local abil = GetAbility(pc, "Oracle18")
-    if abil ~= nil and abil.ActiveState == 1 then
-        value = 15
+    if abil ~= nil and abil.ActiveState >= 1 then
+        value = 11 + abil.Level * 1
     end
     
     return value
@@ -8072,13 +8076,13 @@ function SCR_GET_Prophecy_Ratio(skill)
 end
 
 function SCR_GET_Foretell_Time(skill)
-    local value = 5 + skill.Level;
+    local value = 10
     return value;
 end
 
 function SCR_GET_Foretell_Ratio(skill)
-    local value = 5 + skill.Level
-    
+    local value = skill.Level * 6
+    value = value * SCR_REINFORCEABILITY_TOOLTIP(skill);
     return value
 end
 
@@ -8119,7 +8123,7 @@ function SCR_GET_Sleep_Ratio(skill)
     local value = skill.Level
     local pc = GetSkillOwner(skill);
     local zone = GetZoneName(pc);
-    if IsPVPServer(pc) == 1 or zone == 'pvp_Mine' then
+    if IsPVPServer(pc) == 1 or IsPVPField(pc) == 1 then
         value = 1;
     end
     return value;
@@ -9038,7 +9042,9 @@ function SCR_GET_Heal_Ratio2(skill)
 
     local jobHistory = '';
     if IsServerObj(pc) == 1 then
-        jobHistory = GetJobHistoryString(pc);
+        if IS_PC(pc) == true then
+            jobHistory = GetJobHistoryString(pc);
+        end
     else
         jobHistory = GetMyJobHistoryString();
     end
@@ -9052,22 +9058,6 @@ function SCR_GET_Heal_Ratio2(skill)
     end
     
     return math.floor(value);
-end
-
-function SCR_GET_Heal_Ratio3(skill)
-    local value = skill.Level
-    return math.floor(value);
-end
-
-function SCR_GET_Cure_Ratio3(skill)
-    local pc = GetSkillOwner(skill);
-    local value = 0.4;
-    local abil = GetAbility(pc, "Cleric1")
-    if abil ~= nil and abil.ActiveState == 1 then
-        value = 0.2;
-    end
-
-    return value;
 end
 
 function SCR_GET_Cure_Ratio(skill)
@@ -9223,19 +9213,10 @@ function SCR_GET_Finestra_Ratio(skill)
 end
 
 function SCR_GET_Finestra_Ratio2(skill)
-
     local pc = GetSkillOwner(skill);
-    
---  local value = 8.8 + (skill.Level - 1) * 2.2
-    local value = 15 * skill.Level
-    
-    local abil = GetAbility(pc, 'Hoplite9');
-    if abil ~= nil and 1 == abil.ActiveState and skill.Level >= 3 then
-        value = value * 2;
-    end
+    local value = 5 * skill.Level
     
     return math.floor(value)
-
 end
 
 function SCR_GET_Finestra_Ratio3(skill)
@@ -9266,22 +9247,30 @@ function SCR_GET_SharpSpear_Ratio(skill)
 end
 
 function SCR_GET_HighGuard_Ratio(skill)
-    local value = skill.Level * 2
-    
+    local pc = GetSkillOwner(skill);
+    local value = skill.Level * 5
     value = math.floor(value * SCR_REINFORCEABILITY_TOOLTIP(skill));
     
-    return math.floor(value)
+    if IsPVPField(pc) == 1 then
+        value = value / 2
+    end
+    
+    return value
 end
 
 function SCR_GET_HighGuard_Ratio2(skill)
-
-    local pc = GetSkillOwner(skill);
-    
---  local value = skill.Level * 6
-    local value = skill.Level * 10
-    
+    local value = 50 - (skill.Level * 2)
     return math.floor(value)
+end
 
+function SCR_GET_HighGuard_Time(skill)
+    local pc = GetSkillOwner(skill);
+    local value = 20
+    if IsPVPField(pc) == 1 then
+        value = value * 0.1
+    end
+    
+    return value
 end
 
 function SCR_GET_HighGuard_AtkDown(skill)
@@ -9360,9 +9349,9 @@ function SCR_GET_Aukuras_Ratio2(skill)
         -- 지능 + 정신 계수 합산
         local casterINT = TryGetProp(pc, 'INT', 1);
         local casterMNA = TryGetProp(pc, 'MNA', 1);        
-        value = 100 + (skill.Level * 90) + (casterINT + casterMNA)        
+        value = 100 + (TryGetProp(skill, 'Level', 0) * 90) + (casterINT + casterMNA)        
     else
-        value = 100 + (skill.Level * 90)
+        value = 100 + (TryGetProp(skill, 'Level', 0) * 90)
     end
     value = value * SCR_REINFORCEABILITY_TOOLTIP(skill);
     
@@ -10003,7 +9992,7 @@ function SCR_Get_Raise_Ratio2(skill)
     local pc = GetSkillOwner(skill);
     local value = 5 + skill.Level * 1;
     local zone = GetZoneName(pc);
-    if IsPVPServer(pc) == 1 or zone == 'pvp_Mine' then
+    if IsPVPServer(pc) == 1 or IsPVPField(pc) == 1 then
         value = value * 0.5;
     end
     
@@ -10364,8 +10353,11 @@ function SCR_NORMAL_SYNCHROTHRUSTING(self, from, skill, splash, ret)
     end
     
     local exceptDEF = byItem + from.DEF_BM;
-    local atkRate = 1;
-    local strikeDamage = math.floor((from.DEF - exceptDEF) * atkRate);
+    local basicDEF = TryGetProp(from, "DEF", 0) - exceptDEF
+    local shieldDEF = TryGetProp(lhEquipWeapon, "DEF", 0)
+    
+    local atkRate = 0.65;
+    local strikeDamage = (shieldDEF + basicDEF) * atkRate
     -------------------------------------------
     
     local abil = GetAbility(from, 'Hoplite7');
@@ -10628,6 +10620,10 @@ function SCR_GET_SKILLLV_WITH_BM(skill)
         return 0;
     end
     
+    if TryGetProp(skill, "ClassName", "None") == "Peltasta_Guardian" and value > 7 then
+        value = 7;
+    end
+    
     if value < 1 then
         value = 1;
     end
@@ -10818,7 +10814,7 @@ function SCR_GET_IronHook_Ratio(skill)
     local pc = GetSkillOwner(skill);
     local value = 4 + skill.Level * 1;
     local zone = GetZoneName(pc);
-    if IsPVPServer(pc) == 1 or zone == 'pvp_Mine' then
+    if IsPVPServer(pc) == 1 or IsPVPField(pc) == 1 then
         value = value * 0.5;
     end
     
@@ -10872,9 +10868,6 @@ function SCR_GET_Samdiveve_Ratio2(skill)
     local pc = GetSkillOwner(skill);
     local value = 3 + skill.Level * 1
     local zone = GetZoneName(pc)
-    if IsPVPServer(pc) == 1 or zone == 'pvp_Mine' then
-        value = value * 0.5
-    end
     
     return value
 end
@@ -11319,6 +11312,14 @@ function SCR_GET_Bendrinti_Ratio(skill)
     return value;
 end
 
+function SCR_GET_Goduma_Ratio(skill)
+    local pc = GetSkillOwner(skill)
+    local casterMHP = TryGetProp(pc, "MHP", 0) - TryGetProp(pc, "MHP_BM", 0)
+    local value = math.floor(casterMHP / (2000 * PC_MAX_LEVEL) * 100)
+    
+    return value
+end
+
 function SCR_GET_Gymas_Ratio(skill)
     local pc = GetSkillOwner(skill);
     local value = 25
@@ -11333,7 +11334,7 @@ function SCR_GET_Gymas_Ratio(skill)
 end
 
 function SCR_GET_Smugis_Ratio(skill)
-    local value = 10
+    local value = 20
     return value;
 end
 
@@ -11881,18 +11882,44 @@ end
 
 function SCR_GET_SKL_COOLDOWN_Preparation(skill)
     local pc = GetSkillOwner(skill);
-    local value = skill.BasicCoolDown;
-    value = value - (skill.Level * 1000);
+    local basicCoolDown = TryGetProp(skill, "BasicCoolDown", 0) - TryGetProp(skill, "Level", 0) * 1000;
+    local abilAddCoolDown = GetAbilityAddSpendValue(pc, skill.ClassName, "CoolDown");
     
-    return value
+    basicCoolDown = basicCoolDown + abilAddCoolDown;
+        
+    local laimaCoolTime = GetExProp(pc, "LAIMA_BUFF_COOLDOWN")
+    if laimaCoolTime ~= 0 then
+        basicCoolDown = basicCoolDown * (1 - laimaCoolTime)
+    elseif IsBuffApplied(pc, 'CarveLaima_Debuff') == 'YES' then
+        basicCoolDown = basicCoolDown * 1.2;
+    end
+    
+    if IsBuffApplied(pc, 'GM_Cooldown_Buff') == 'YES' then
+        basicCoolDown = basicCoolDown * 0.9;
+    end
+    
+    return math.floor(basicCoolDown);
 end
 
 function SCR_GET_SKL_COOLDOWN_KnifeThrowing(skill)
     local pc = GetSkillOwner(skill);
-    local value = skill.BasicCoolDown;
-    value = value - (skill.Level  * 1000);
+    local basicCoolDown = TryGetProp(skill, "BasicCoolDown", 0) - TryGetProp(skill, "Level", 0) * 1000;
+    local abilAddCoolDown = GetAbilityAddSpendValue(pc, skill.ClassName, "CoolDown");
     
-    return value
+    basicCoolDown = basicCoolDown + abilAddCoolDown;
+        
+    local laimaCoolTime = GetExProp(pc, "LAIMA_BUFF_COOLDOWN")
+    if laimaCoolTime ~= 0 then
+        basicCoolDown = basicCoolDown * (1 - laimaCoolTime)
+    elseif IsBuffApplied(pc, 'CarveLaima_Debuff') == 'YES' then
+        basicCoolDown = basicCoolDown * 1.2;
+    end
+    
+    if IsBuffApplied(pc, 'GM_Cooldown_Buff') == 'YES' then
+        basicCoolDown = basicCoolDown * 0.9;
+    end
+    
+    return math.floor(basicCoolDown);
 end
 
 function SCR_GET_Bully_Time(skill)
@@ -12194,6 +12221,12 @@ function SCR_GET_Prevent_Bufftime(skill)
     end
 
     return value
+end
+
+function SCR_GET_Methadone_Ratio(skill)
+	local value = 20 - (skill.Level * 2)
+	
+	return value;
 end
 
 function SCR_GET_Prevent_Ratio(skill)

@@ -1,7 +1,7 @@
 ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max,Zone,Type,GroupName,ItemClassName,ItemProperty
 1,8000,180,189,0,0,0,0,0,"","Money_Mid","Money","Moneybag1",""
 2,114,0,0,0,0,0,0,0,"","Item","Item","misc_0194",""
-3,115,0,0,0,0,0,0,0,"","Item","Item","R_TSP01_112",""
+3,115,0,0,0,0,0,0,0,"","Item","Item","TSP01_112",""
 4,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_Hohen_mane_brown",""
 5,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_Hohen_mane_brown",""
 6,213,0,0,0,0,0,0,0,"","Item","Item","misc_gemExpStone_randomQuest2_TA",""

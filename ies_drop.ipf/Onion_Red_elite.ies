@@ -3,5 +3,4 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 2,1000,0,0,0,0,0,0,0,"","Item","Item","NECK02_116",""
 3,100,0,0,0,0,0,0,0,"","Item","Item","SHD03_104",""
 4,160,0,0,0,0,0,0,0,"","Item","Item","R_TOP02_101",""
-5,133,0,0,0,0,0,0,0,"","Item","Item","misc_0011",""
-6,160,0,0,0,0,0,0,0,"","Item","Item","OnionPiece_Red",""
+5,160,0,0,0,0,0,0,0,"","Item","Item","OnionPiece_Red",""

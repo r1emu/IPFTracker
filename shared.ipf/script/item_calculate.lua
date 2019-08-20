@@ -268,12 +268,11 @@ function GET_REINFORCE_ADD_VALUE(prop, item, ignoreReinf, reinfBonusValue)
     
     reinforceValue = reinforceValue + reinfBonusValue;
     
-    value = math.floor((reinforceValue + (lv * (reinforceValue * (0.12 + (math.floor((math.min(21,reinforceValue)-1)/5) * 0.0225 )))) / typeRatio)) *1.25* gradeRatio;
-    --    value = math.floor((reinforceValue + (lv * (reinforceValue * (0.08 + (math.floor((math.min(21,reinforceValue)-1)/5) * 0.015 )))) / typeRatio)) * gradeRatio;
+    value = math.floor((reinforceValue + (lv * (reinforceValue * (0.12 + (math.floor((math.min(21,reinforceValue)-1)/5) * 0.065 )))) / typeRatio)) *1.25* gradeRatio;
     
     if classType == 'Neck' or classType == 'Ring' then
      --ACC is reinforce /#16818 --
-          value = math.floor((reinforceValue + (lv * (reinforceValue * (0.08 + (math.floor((math.min(21,reinforceValue)-1)/5) * 0.015 )))) / typeRatio)) * gradeRatio;
+        value = math.floor((reinforceValue + (lv * (reinforceValue * (0.08 + (math.floor((math.min(21,reinforceValue)-1)/5) * 0.015 )))) / typeRatio)) * gradeRatio;
     end
     value = value * (item.ReinforceRatio / 100) + buffValue;
 

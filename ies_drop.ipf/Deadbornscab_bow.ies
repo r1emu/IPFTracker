@@ -1,7 +1,7 @@
 ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max,Zone,Type,GroupName,ItemClassName,ItemProperty
 1,8000,39,41,0,0,0,0,0,"","Money_Mid","Money","Moneybag1",""
 2,134,0,0,0,0,0,0,0,"","Item","Item","HAND01_113",""
-3,33,0,0,0,0,0,0,0,"","Item","Item","R_TBW02_105",""
+3,33,0,0,0,0,0,0,0,"","Item","Item","TBW02_105",""
 4,150,0,0,0,0,0,0,0,"","Item","Item","BOW02_114",""
 5,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_Deadbornscab_bow",""
 6,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_Deadbornscab_bow",""

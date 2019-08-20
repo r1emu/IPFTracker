@@ -2,4 +2,3 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 1,8000,38,39,0,0,0,0,0,"","Money_Mid","Money","Moneybag1",""
 2,0,6080,6240,0,0,0,0,0,"","Money_Hi","Money","Moneybag1",""
 3,750,0,0,0,0,0,0,0,"","Item","Item","misc_humming_bud",""
-4,90,0,0,0,0,0,0,0,"","Item","Item","misc_humming_bud2",""

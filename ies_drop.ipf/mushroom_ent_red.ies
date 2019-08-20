@@ -4,4 +4,4 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 3,174,0,0,0,0,0,0,0,"","Item","Item","R_BRC01_138",""
 4,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_mushroom_ent_red",""
 5,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_mushroom_ent_red",""
-6,41,0,0,0,0,0,0,0,"","Item","Item","R_FOOT02_204",""
+6,41,0,0,0,0,0,0,0,"","Item","Item","FOOT02_204",""

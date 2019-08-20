@@ -1,13 +1,13 @@
-local local_parent = nil
-local local_control = nil
-local local_dragrecipeitem = nil
+﻿g_earth_shop_local_parent = nil
+g_earth_shop_local_control = nil
+g_earth_shop_local_dragrecipeitem = nil
 
 function EARTHTOWERSHOP_ON_INIT(addon, frame)
     addon:RegisterMsg('EARTHTOWERSHOP_BUY_ITEM', 'EARTHTOWERSHOP_BUY_ITEM');
 end
 
 function EARTHTOWERSHOP_BUY_ITEM(itemName,itemCount)
-    local ctrlset = local_control:GetParent();
+    local ctrlset = g_earth_shop_local_control:GetParent();
     local recipecls = GetClass('ItemTradeShop', ctrlset:GetName());
     local exchangeCountText = GET_CHILD(ctrlset, "exchangeCount");
 	if recipecls.NeedProperty ~= 'None' then
@@ -26,6 +26,14 @@ function EARTHTOWERSHOP_BUY_ITEM(itemName,itemCount)
 	if recipecls.AccountNeedProperty ~= 'None' then
 	    local aObj = GetMyAccountObj()
 		local sCount = TryGetProp(aObj, recipecls.AccountNeedProperty); 
+        --EVENT_1906_SUMMER_FESTA
+        local time = geTime.GetServerSystemTime()
+        time = time.wYear..time.wMonth..time.wDay
+        if time < '2018725' then
+            if recipecls.ClassName == 'EventTotalShop1906_25' or recipecls.ClassName == 'EventTotalShop1906_26' then
+                sCount = sCount - 2
+            end
+        end
 		local cntText = ScpArgMsg("Excnaged_AccountCount_Remind","COUNT",string.format("%d", sCount))
 		local tradeBtn = GET_CHILD(ctrlset, "tradeBtn");
 		if sCount <= 0 then
@@ -123,17 +131,12 @@ function REQ_VIVID_CITY2_SHOP_OPEN()
     ui.OpenFrame('earthtowershop');
 end
 
-function REQ_EVENT_ITEM_SHOP9_OPEN()
+function REQ_EVENT1906_TOTAL_SHOP_OPEN()
     local frame = ui.GetFrame("earthtowershop");
-    frame:SetUserValue("SHOP_TYPE", 'EventShop9');
+    frame:SetUserValue("SHOP_TYPE", 'EventTotalShop1906');
     ui.OpenFrame('earthtowershop');
 end
 
-function REQ_EVENT_ITEM_SHOP10_OPEN()
-    local frame = ui.GetFrame("earthtowershop");
-    frame:SetUserValue("SHOP_TYPE", 'EventShop10');
-    ui.OpenFrame('earthtowershop');
-end
 
 function EARTH_TOWER_SHOP_OPEN(frame)
     if frame == nil then
@@ -183,7 +186,7 @@ function EARTH_TOWER_INIT(frame, shopType)
     if shopType == 'EarthTower' then
         title:SetText('{@st43}'..ScpArgMsg("EarthTowerShop"));
         close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EarthTowerShop")));
-    elseif shopType == 'EventShop' or shopType == 'EventShop2' or shopType == 'EventShop3' or EventShop8 then
+    elseif shopType == 'EventShop' or shopType == 'EventShop2' or shopType == 'EventShop3' then
         title:SetText('{@st43}'..ScpArgMsg("EventShop"));
         close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EventShop")));
     elseif shopType == 'KeyQuestShop1' then
@@ -201,10 +204,10 @@ function EARTH_TOWER_INIT(frame, shopType)
     elseif shopType == 'MCShop1' then
         title:SetText('{@st43}'..ScpArgMsg("MASSIVE_CONTENTS_SHOP_NAME"));
         close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("MASSIVE_CONTENTS_SHOP_NAME")));
---    elseif shopType == 'EventShop8' then
---        local taltPropCls = GetClassByType('Anchor_c_Klaipe', 5187);
---        title:SetText('{@st43}'..taltPropCls.Name);
---        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', taltPropCls.Name));
+    elseif shopType == 'EventShop8' then
+        local taltPropCls = GetClassByType('Anchor_c_Klaipe', 5187);
+        title:SetText('{@st43}'..taltPropCls.Name);
+        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', taltPropCls.Name));
     elseif shopType == 'DailyRewardShop' then
         title:SetText('{@st43}'..ScpArgMsg("DAILY_REWARD_SHOP_1"));
         close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("DAILY_REWARD_SHOP_1")));
@@ -214,10 +217,7 @@ function EARTH_TOWER_INIT(frame, shopType)
     elseif shopType == 'VividCity2_Shop' then
         title:SetText('{@st43}'..ScpArgMsg("EventShop"));
         close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EventShop")));
-    elseif shopType == 'EventShop9' then
-        title:SetText('{@st43}'..ScpArgMsg("EventShop"));
-        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EventShop")));
-    elseif shopType == 'EventShop10' then
+    elseif shopType == 'EventTotalShop1906' then
         title:SetText('{@st43}'..ScpArgMsg("EventShop"));
         close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EventShop")));
     end
@@ -439,7 +439,7 @@ function EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls, 
             end
 
             if dragRecipeItem ~= nil then
-                local_dragrecipeitem = dragRecipeItem;
+                g_earth_shop_local_dragrecipeitem = dragRecipeItem;
             end
         end
     end
@@ -485,6 +485,14 @@ function EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls, 
     if recipecls.AccountNeedProperty ~= 'None' then
         local aObj = GetMyAccountObj()
         local sCount = TryGetProp(aObj, recipecls.AccountNeedProperty); 
+        --EVENT_1906_SUMMER_FESTA
+        local time = geTime.GetServerSystemTime()
+        time = time.wYear..time.wMonth..time.wDay
+        if time < '2018725' then
+            if recipecls.ClassName == 'EventTotalShop1906_25' or recipecls.ClassName == 'EventTotalShop1906_26' then
+                sCount = sCount - 2
+            end
+        end
         local cntText = ScpArgMsg("Excnaged_AccountCount_Remind","COUNT",string.format("%d", sCount))
         local tradeBtn = GET_CHILD(ctrlset, "tradeBtn");
         if sCount <= 0 then
@@ -519,8 +527,8 @@ function EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls, 
 end
 
 function EARTH_TOWER_SHOP_EXEC(parent, ctrl)
-    local_parent = parent;
-    local_control = ctrl;
+    g_earth_shop_local_parent = parent;
+    g_earth_shop_local_control = ctrl;
 
     local parentcset = ctrl:GetParent();
     local edit_itemcount = GET_CHILD_RECURSIVELY(parentcset, "itemcount");
@@ -557,7 +565,7 @@ function EARTH_TOWER_SHOP_EXEC(parent, ctrl)
             return;
         end
     end
-    local frame = local_parent:GetTopParentFrame();
+    local frame = g_earth_shop_local_parent:GetTopParentFrame();
     local shopType = frame:GetUserValue("SHOP_TYPE");
     if recipecls==nil or recipecls["Item_2_1"] ~='None' then
         AddLuaTimerFuncWithLimitCountEndFunc("EARTH_TOWER_SHOP_TRADE_ENTER", 100, resultCount - 1, "EARTH_TOWER_SHOP_TRADE_LEAVE");
@@ -567,17 +575,15 @@ function EARTH_TOWER_SHOP_EXEC(parent, ctrl)
 end
 
 function EARTH_TOWER_SHOP_TRADE_ENTER()
-    local frame = local_parent:GetTopParentFrame();
+    local frame = g_earth_shop_local_parent:GetTopParentFrame();
     if frame:GetName() == 'legend_craft' then
-        LEGEND_CRAFT_EXECUTE(local_parent, local_control);
+        LEGEND_CRAFT_EXECUTE(g_earth_shop_local_parent, g_earth_shop_local_control);
         return;
     end
-
-    local parentcset = local_control:GetParent()
-    local frame = local_control:GetTopParentFrame(); 
-    
+    local parentcset = g_earth_shop_local_control:GetParent()
+    local frame = g_earth_shop_local_control:GetTopParentFrame(); 
     if frame:GetName() == 'legend_craft' then
-       LEGEND_CRAFT_EXECUTE(local_parent, local_control);
+       LEGEND_CRAFT_EXECUTE(g_earth_shop_local_parent, g_earth_shop_local_control);
        return;
    end
     
@@ -593,15 +599,15 @@ function EARTH_TOWER_SHOP_TRADE_ENTER()
         end
     end
 
-    local resultlist = session.GetItemIDList();
-    local someflag = 0
-    for i = 0, resultlist:Count() - 1 do
-        local tempitem = resultlist:PtrAt(i);
+	local resultlist = session.GetItemIDList();
+	local someflag = 0
+	for i = 0, resultlist:Count() - 1 do
+		local tempitem = resultlist:PtrAt(i);
 
-        if IS_VALUEABLE_ITEM(tempitem.ItemID) == 1 then
-            someflag = 1
-        end
-    end
+		if IS_VALUEABLE_ITEM(tempitem.ItemID) == 1 then
+			someflag = 1
+		end
+	end
 
     session.ResetItemList();
 
@@ -639,9 +645,9 @@ function EARTH_TOWER_SHOP_TRADE_ENTER()
         end
     end
 
-    local resultlist = session.GetItemIDList();
-    local cntText = string.format("%s %s", recipeCls.ClassID, 1);
-    
+	local resultlist = session.GetItemIDList();
+	local cntText = string.format("%s %s", recipeCls.ClassID, 1);
+	
     local edit_itemcount = GET_CHILD_RECURSIVELY(parentcset, "itemcount");
     if edit_itemcount == nil then 
         return; 
@@ -654,47 +660,45 @@ function EARTH_TOWER_SHOP_TRADE_ENTER()
     end
     cntText = string.format("%s %s", recipeCls.ClassID, resultCount);
     local shopType = frame:GetUserValue("SHOP_TYPE");
-    if shopType == 'EarthTower' then
-        item.DialogTransaction("EARTH_TOWER_SHOP_TREAD", resultlist, cntText);
-    elseif shopType == 'EarthTower2' then
-        item.DialogTransaction("EARTH_TOWER_SHOP_TREAD2", resultlist, cntText);
-    elseif shopType == 'EventShop' then
-        item.DialogTransaction("EVENT_ITEM_SHOP_TREAD", resultlist, cntText);
-    elseif shopType == 'EventShop2' then
-        item.DialogTransaction("EVENT_ITEM_SHOP_TREAD2", resultlist, cntText);
-    elseif shopType == 'KeyQuestShop1' then
-        item.DialogTransaction("KEYQUESTSHOP1_SHOP_TREAD", resultlist, cntText);
-    elseif shopType == 'KeyQuestShop2' then
-        item.DialogTransaction("KEYQUESTSHOP2_SHOP_TREAD", resultlist, cntText);
-    elseif shopType == 'HALLOWEEN' then
-        item.DialogTransaction("HALLOWEEN_SHOP_TREAD", resultlist, cntText);
-    elseif shopType == 'EventShop3' then
-        item.DialogTransaction("EVENT_ITEM_SHOP_TREAD3", resultlist, cntText);  
-    elseif shopType == 'EventShop4' then
-        item.DialogTransaction("EVENT_ITEM_SHOP_TREAD4", resultlist, cntText);
+	if shopType == 'EarthTower' then
+		item.DialogTransaction("EARTH_TOWER_SHOP_TREAD", resultlist, cntText);
+	elseif shopType == 'EarthTower2' then
+		item.DialogTransaction("EARTH_TOWER_SHOP_TREAD2", resultlist, cntText);
+	elseif shopType == 'EventShop' then
+		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD", resultlist, cntText);
+	elseif shopType == 'EventShop2' then
+		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD2", resultlist, cntText);
+	elseif shopType == 'KeyQuestShop1' then
+		item.DialogTransaction("KEYQUESTSHOP1_SHOP_TREAD", resultlist, cntText);
+	elseif shopType == 'KeyQuestShop2' then
+		item.DialogTransaction("KEYQUESTSHOP2_SHOP_TREAD", resultlist, cntText);
+	elseif shopType == 'HALLOWEEN' then
+		item.DialogTransaction("HALLOWEEN_SHOP_TREAD", resultlist, cntText);
+	elseif shopType == 'EventShop3' then
+		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD3", resultlist, cntText);	
+	elseif shopType == 'EventShop4' then
+		item.DialogTransaction("EVENT_ITEM_SHOP_TREAD4", resultlist, cntText);
     elseif shopType == 'EventShop8' then
         item.DialogTransaction("EVENT_ITEM_SHOP_TREAD8", resultlist, cntText);
-    elseif shopType == 'PVPMine' then
-        item.DialogTransaction("PVP_MINE_SHOP", resultlist, cntText);
-    elseif shopType == 'MCShop1' then
-        item.DialogTransaction("MASSIVE_CONTENTS_SHOP_TREAD1", resultlist, cntText);
-    elseif shopType == 'DailyRewardShop' then
-        item.DialogTransaction("DAILY_REWARD_SHOP_1_TREAD1", resultlist, cntText);
+	elseif shopType == 'PVPMine' then
+		item.DialogTransaction("PVP_MINE_SHOP", resultlist, cntText);
+	elseif shopType == 'MCShop1' then
+		item.DialogTransaction("MASSIVE_CONTENTS_SHOP_TREAD1", resultlist, cntText);
+	elseif shopType == 'DailyRewardShop' then
+		item.DialogTransaction("DAILY_REWARD_SHOP_1_TREAD1", resultlist, cntText);
     elseif shopType == 'Bernice' then
         item.DialogTransaction("SoloDungeon_Bernice_SHOP", resultlist, cntText);
-    elseif shopType == 'VividCity2_Shop' then
+	elseif shopType == 'VividCity2_Shop' then
         item.DialogTransaction("EVENT_VIVID_CITY2_SHOP_1_TREAD1", resultlist, cntText);
-    elseif shopType == 'EventShop9' then
-        item.DialogTransaction("EVENT_ITEM_SHOP_TREAD9", resultlist, cntText);
-    elseif shopType == 'EventShop10' then
-        item.DialogTransaction("EVENT_ITEM_SHOP_TREAD10", resultlist, cntText);
-    end
+    elseif shopType == 'EventTotalShop1906' then
+        item.DialogTransaction("EVENT_1906_TOTAL_SHOP_1_TREAD1", resultlist, cntText);
+	end
 end
 
 function EARTH_TOWER_SHOP_TRADE_LEAVE()
     session.ResetItemList();
 
-    local ctrlSet = local_control:GetParent();
+    local ctrlSet = g_earth_shop_local_control:GetParent();
     local recipecls = GetClass('ItemTradeShop', ctrlSet:GetName());
     if recipecls == nil then
         return;
@@ -707,6 +711,10 @@ function EARTH_TOWER_SHOP_TRADE_LEAVE()
     if itemName ~= nil then
         itemName:SetTextByKey("value", targetItem.Name.." ["..recipecls.TargetItemCnt..ScpArgMsg("Piece").."]");
     end
+
+    if targetItem.StringArg == "EnchantJewell" then
+        itemName:SetTextByKey("value", "[Lv. "..recipecls.TargetItemAppendValue.."] "..targetItem.Name .. " [" .. recipecls.TargetItemCnt .. ScpArgMsg("Piece") .. "]");
+    end  
 
     for i = 1, 5 do
         if recipecls["Item_"..i.."_1"] ~= "None" then
@@ -859,10 +867,39 @@ function EARTHTOWERSHOP_CHANGECOUNT_NUM_CHANGE(ctrlset,change)
     if recipecls.AccountNeedProperty ~= 'None' then
         local aObj = GetMyAccountObj()
         local sCount = TryGetProp(aObj, recipecls.AccountNeedProperty); 
+        --EVENT_1906_SUMMER_FESTA
+        local time = geTime.GetServerSystemTime()
+        time = time.wYear..time.wMonth..time.wDay
+        if time < '2018725' then
+            if recipecls.ClassName == 'EventTotalShop1906_25' or recipecls.ClassName == 'EventTotalShop1906_26' then
+                sCount = sCount - 2
+            end
+        end
         if sCount < countText then
             countText = sCount
         end
     end
     edit_itemcount:SetText(countText);
     return countText;
+end
+
+function CRAFT_ITEM_CANCEL(eachSet, slot, stringArg)
+    if eachSet~=nil then
+        eachSet:SetUserValue("MATERIAL_IS_SELECTED", 'nonselected');
+
+        local slot = GET_CHILD_RECURSIVELY(eachSet, "slot");
+        if slot ~= nil then
+            slot:SetEventScript(ui.DROP, "ITEMCRAFT_ON_DROP");
+            slot:EnableDrag(0); 
+            local icon = slot:GetIcon();
+            icon:SetColorTone('33333333')
+            session.RemoveItemID(stringArg);
+        end
+
+        -- btn Reset
+        local btn = GET_CHILD_RECURSIVELY(eachSet, "btn");
+        if btn ~= nil then
+            btn:ShowWindow(1);
+        end
+    end
 end

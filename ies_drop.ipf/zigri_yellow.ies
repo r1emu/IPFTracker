@@ -2,4 +2,4 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 1,8000,7,8,0,0,0,0,0,"","Money_Mid","Money","Moneybag1",""
 2,1500,0,0,0,0,0,0,0,"","Item","Item","misc_zigri",""
 3,400,0,0,0,0,0,0,0,"","Item","Item","SHD01_103",""
-4,57,0,0,0,0,0,0,0,"","Item","Item","R_STF02_103",""
+4,57,0,0,0,0,0,0,0,"","Item","Item","STF02_103",""

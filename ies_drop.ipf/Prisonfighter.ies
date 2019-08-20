@@ -1,7 +1,7 @@
 ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max,Zone,Type,GroupName,ItemClassName,ItemProperty
 1,8000,196,206,0,0,0,0,0,"","Money_Mid","Money","Moneybag1",""
-2,135,0,0,0,0,0,0,0,"","Item","Item","R_SPR01_114",""
-3,135,0,0,0,0,0,0,0,"","Item","Item","R_TOP01_140",""
+2,135,0,0,0,0,0,0,0,"","Item","Item","SPR01_114",""
+3,135,0,0,0,0,0,0,0,"","Item","Item","TOP01_140",""
 4,40,0,0,0,0,0,0,0,"","Item","Item","R_NECK03_103",""
 5,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_Prisonfighter",""
 6,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_Prisonfighter",""

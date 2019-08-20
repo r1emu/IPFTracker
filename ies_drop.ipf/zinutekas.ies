@@ -5,5 +5,6 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 4,38,0,0,0,0,0,0,0,"","Item","Item","SPR02_103",""
 5,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_zinutekas",""
 6,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_zinutekas",""
-7,47,0,0,0,0,0,0,0,"","Item","Item","R_LEG03_107",""
+7,47,0,0,0,0,0,0,0,"","Item","Item","LEG03_107",""
 8,4,0,0,0,0,0,0,0,"","Item","Item","GEM_Archer_Concentration",""
+9,500,0,0,0,0,0,0,0,"","Item","Item","NECK01_145",""

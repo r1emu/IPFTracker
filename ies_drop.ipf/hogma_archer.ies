@@ -5,4 +5,4 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 4,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_hogma_archer",""
 5,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_hogma_archer",""
 6,2,0,0,0,0,0,0,0,"","Item","Item","Gem_Sapper_PunjiStake",""
-7,30,0,0,0,0,0,0,0,"","Item","Item","R_LEG03_105",""
+7,30,0,0,0,0,0,0,0,"","Item","Item","LEG03_105",""

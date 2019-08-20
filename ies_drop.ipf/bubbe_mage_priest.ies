@@ -3,7 +3,7 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 2,800,0,0,0,0,0,0,0,"","Item","Item","misc_0013",""
 3,60,0,0,0,0,0,0,0,"","Item","Item","TSW01_114",""
 4,250,0,0,0,0,0,0,0,"","Item","Item","FOOT01_104",""
-5,155,0,0,0,0,0,0,0,"","Item","Item","R_TSW02_101",""
+5,155,0,0,0,0,0,0,0,"","Item","Item","TSW02_101",""
 6,134,0,0,0,0,0,0,0,"","Item","Item","misc_gemExpStone_randomQuest1_TA",""
 7,134,0,0,0,0,0,0,0,"","Item","Item","BRC01_124",""
 8,2,0,0,0,0,0,0,0,"","Item","Item","TSF02_113",""

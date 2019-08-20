@@ -1,4 +1,4 @@
--- util
+﻿-- util
 function GET_MON_STAT(self, lv, statStr)
     -- Sum MaxStat --
     local allStatMax = 10 + (lv * 2);
@@ -334,6 +334,10 @@ function SCR_Get_MON_DEF(self)
     end 
     
     local value = byLevel + byStat + byItem;
+    --아이템 계산 후 배율로 올려준다--
+    local statTypeRate = SCR_MON_STAT_RATE(self, "DEF")
+    statTypeRate = statTypeRate / 100;
+    value = value * statTypeRate;
     
     local raceTypeRate = SCR_RACE_TYPE_RATE(self, "DEF");
     
@@ -393,6 +397,10 @@ function SCR_Get_MON_MDEF(self)
     end 
     
     local value = byLevel + byStat + byItem;
+    --아이템 계산 후 배율로 올려준다--
+    local statTypeRate = SCR_MON_STAT_RATE(self, "MDEF")
+    statTypeRate = statTypeRate / 100;
+    value = value * statTypeRate;
     
     local raceTypeRate = SCR_RACE_TYPE_RATE(self, "MDEF");
     
@@ -590,6 +598,10 @@ function SCR_Get_MON_MINPATK(self)
     local byItem = SCR_MON_ITEM_WEAPON_CALC(self);
     
     local value = byLevel + byStat + byItem;
+    --아이템 계산 후 배율로 올려준다--
+    local statTypeRate = SCR_MON_STAT_RATE(self, "ATK")
+    statTypeRate = statTypeRate / 100;
+    value = value * statTypeRate;
     
     local monAtkRange = TryGetProp(self, "ATK_RANGE");
     if monAtkRange == nil then
@@ -653,6 +665,10 @@ function SCR_Get_MON_MAXPATK(self)
     local byItem = SCR_MON_ITEM_WEAPON_CALC(self);
     
     local value = byLevel + byStat + byItem
+    --아이템 계산 후 배율로 올려준다--
+    local statTypeRate = SCR_MON_STAT_RATE(self, "ATK")
+    statTypeRate = statTypeRate / 100;
+    value = value * statTypeRate;
     
     local monAtkRange = TryGetProp(self, "ATK_RANGE");
     if monAtkRange == nil then
@@ -716,6 +732,10 @@ function SCR_Get_MON_MINMATK(self)
     local byItem = SCR_MON_ITEM_WEAPON_CALC(self);
     
     local value = byLevel + byStat + byItem;
+    --아이템 계산 후 배율로 올려준다--
+    local statTypeRate = SCR_MON_STAT_RATE(self, "ATK")
+    statTypeRate = statTypeRate / 100;
+    value = value * statTypeRate;
     
     local monAtkRange = TryGetProp(self, "ATK_RANGE");
     if monAtkRange == nil then
@@ -779,6 +799,10 @@ function SCR_Get_MON_MAXMATK(self)
     local byItem = SCR_MON_ITEM_WEAPON_CALC(self);
     
     local value = byLevel + byStat + byItem;
+    --아이템 계산 후 배율로 올려준다--
+    local statTypeRate = SCR_MON_STAT_RATE(self, "ATK")
+    statTypeRate = statTypeRate / 100;
+    value = value * statTypeRate;
     
     local monAtkRange = TryGetProp(self, "ATK_RANGE");
     if monAtkRange == nil then
@@ -1095,6 +1119,11 @@ function SCR_Get_MON_MSPD(self)
             end
         end
     end
+
+    if (IsRaidField(self) == 1 and TryGetProp(self, "MonRank", "None") == "Boss") or TryGetProp(self, "StrArg1", nil) == "PartyFieldBoss" or TryGetProp(self, "StatType", nil) == "WorldRaidBoss" then
+        byBuff = 0;
+        byBuffOnlyTopValue = 0;
+    end
     
     local moveType = GetExProp(self, 'MOVE_TYPE_CURRENT');
     if moveType ~= 0 then
@@ -1256,13 +1285,6 @@ end
 
 function SCR_GET_MONSKL_SKIACLIPSE_METEOR_COOL(skill)
     local value = TryGetProp(skill, "BasicCoolDown", 0);
-    local mon = GetSkillOwner(skill);
-    if mon ~= nil then
-        local num = GetMGameValue(mon, "GIMMICK_FAIL_STACK");
-        if num ~= nil then
-            value = value - (10000 * num);
-        end
-    end
     
     return value;
 end
@@ -1592,6 +1614,37 @@ function SCR_RACE_TYPE_RATE(self, prop)
     local raceTypeClass = GetClass("Stat_Monster_Race", raceType);
     if raceTypeClass ~= nil then
         raceTypeRate = TryGetProp(raceTypeClass, prop, raceTypeRate);
+        --방어력, 마법방어력 평균치 적용--
+        if prop == "DEF" or prop == "MDEF" then
+            local statType = TryGetProp(self, "StatType", "None");
+            if statType ~= nil and statType ~= 'None' then
+                local statTypeClass = GetClass("Stat_Monster_Type", statType);
+                if statTypeClass ~= nil then
+                    local averge_def = TryGetProp(statTypeClass, "AVERAGE_DEF", nil);
+                    if averge_def ~= nil and averge_def ~= 0 then
+                        local defTypeList = {"DEF", "MDEF"}
+                        local raceTypeRateTable = {};
+                        for i = 1, #defTypeList do
+                            raceTypeRateTable[#raceTypeRateTable + 1] = TryGetProp(raceTypeClass, defTypeList[i], raceTypeRate);
+                        end
+                
+                        if averge_def == 1 then
+                            if raceTypeRateTable[1] >= raceTypeRateTable[2] then
+                                raceTypeRate = raceTypeRateTable[2];
+                            else
+                                raceTypeRate = raceTypeRateTable[1];
+                            end
+                        elseif averge_def == 2 then
+                            if raceTypeRateTable[1] >= raceTypeRateTable[2] then
+                                raceTypeRate = raceTypeRateTable[1];
+                            else
+                                raceTypeRate = raceTypeRateTable[2];
+                            end
+                        end
+                    end
+                end
+            end
+        end
     end
     
     raceTypeRate = raceTypeRate / 100;
@@ -1714,10 +1767,43 @@ function SCR_MON_ITEM_ARMOR_CALC(self, defType)
     lv = math.max(1, lv - 30);
 
     local value = (40 + (lv * 8));
+    local statType = TryGetProp(self, "StatType", "None");
+    local statTypeClass = nil;
+    if statType ~= nil then
+        statTypeClass = GetClass("Stat_Monster_Type", statType);
+    end
+    
     if defType ~= nil then
         local defClass = GetClass("item_grade", "armorMaterial_" .. defType);
         local armorMaterial = TryGetProp(self, "ArmorMaterial", "None");
         local defRatio = TryGetProp(defClass, armorMaterial, 1);
+        -- 물리 방어력, 마법 방어력 평균치 적용 --
+        if statTypeClass ~= nil then
+            local averge_def = TryGetProp(statTypeClass, "AVERAGE_DEF", nil);
+            if averge_def ~= nil and averge_def ~= 0 then
+                local defTypeList = {"DEF", "MDEF"}
+                local defRatioTable = {};
+                for i = 1, #defTypeList do
+                    local defClassType = GetClass("item_grade", "armorMaterial_" .. defTypeList[i]);
+                    defRatioTable[#defRatioTable + 1] = TryGetProp(defClassType, armorMaterial, 1);
+                end
+                
+                if averge_def == 1 then
+                    if defRatioTable[1] >= defRatioTable[2] then
+                        defRatio = defRatioTable[2];
+                    else
+                        defRatio = defRatioTable[1];
+                    end
+                elseif averge_def == 2 then
+                    if defRatioTable[1] >= defRatioTable[2] then
+                        defRatio = defRatioTable[1];
+                    else
+                        defRatio = defRatioTable[2];
+                    end
+                end
+            end
+        end
+        
         if defRatio ~= nil then
             value = value * defRatio;
         end
@@ -1726,9 +1812,7 @@ function SCR_MON_ITEM_ARMOR_CALC(self, defType)
     local byReinforce = 0;
     local byTranscend = 0;
 
-    local statType = TryGetProp(self, "StatType", "None");
     if statType ~= nil then
-        local statTypeClass = GetClass("Stat_Monster_Type", statType);
         if statTypeClass ~= nil then
             local itemGrade = TryGetProp(statTypeClass, "ArmorGrade", "C")
             local basicGradeRatio, reinforceGradeRatio = SCR_MON_ITEM_GRADE_RATE(self, itemGrade);
@@ -1855,4 +1939,21 @@ function SCR_MON_OWNERITEM_ARMOR_CALC(self, defType)
     value = (value * total_grade) + total_reinfroce + total_transcend;
     
     return math.floor(value);
+end
+
+function SCR_MON_STAT_RATE(self, prop)
+    local statType = TryGetProp(self, "StatType", "None");
+    local statTypeRate = 0;
+    if statType ~= nil and statType ~= 'None' then
+        local statTypeClass = GetClass("Stat_Monster_Type", statType);
+        if statTypeClass ~= nil then
+            statTypeRate = TryGetProp(statTypeClass, prop, statTypeRate);
+        end
+    end
+    
+    if statTypeRate == nil or statTypeRate == 0 then
+        statTypeRate = 100;
+    end
+    
+    return statTypeRate;
 end

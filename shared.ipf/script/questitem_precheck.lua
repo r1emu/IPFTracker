@@ -1787,14 +1787,14 @@ function SCR_PRE_CATHEDRAL54_SQ04_PART2_ITEM(self, argstring, argnum1, argnum2)
     if result == "PROGRESS" then
         if GetZoneName(self) == 'd_cathedral_54' then
             if GetLayer(self) == 0 then 
---                local list, cnt = SelectObject(self, 40, 'ALL')
---                local i
---                for i = 1 , cnt do
+                local list, cnt = SelectObject(self, 100, 'ALL')
+                local i
+                for i = 1 , cnt do
 --                    if list[i].ClassName == "Stoulet_blue" then
---                        return GetHandle(list[i])
-                            return 1
+                        return GetHandle(list[i])
+--                            return 1
 --                    end
---                end
+                end
             end
         end
     end
@@ -5466,6 +5466,11 @@ function SCR_PRE_ITEM_Escape(self, argObj, BuffName, arg1, arg2)
             return 0;
         end
         
+        if zone == "d_limestonecave_70_1" or zone == "d_limestonecave_70_1_guild" then
+            SendSysMsg(self, "ThisLocalUseNot");
+            return 0;
+        end
+        
         if obj.Type == "MISSION" then
             SendAddOnMsg(self, "NOTICE_Dm_!", ScpArgMsg("EscapeDisabled"), 5);
             return 0
@@ -8355,7 +8360,7 @@ end
 function SCR_PRE_STARTOWER_91_MQ_70_ITEM(self, argObj, argstring, arg1, arg2)
     local questCheck = SCR_QUEST_CHECK(self, "STARTOWER_91_MQ_80")
     local itemCount = GetInvItemCount(self, "STARTOWER_91_MQ_70_ITEM")
-    if itemCount == 1 then
+    if itemCount >= 1 then
         if questCheck == "PROGRESS" then
             if GetZoneName(self) == "d_startower_91" then
                 if GetLayer(self) == 0 then

@@ -29,6 +29,7 @@ local questViewOptions = {
 	}
 };
 
+local viewOptionsSaveCID = 0;
 local questViewOptionsSave = {
 	tabInfo = nil,
 	levelOption = nil,
@@ -58,12 +59,18 @@ function QUEST_ON_INIT(addon, frame)
 
 	-- 초기화 함수에서 퀘스트 목록을 제거한다. 
 	questList = nil;
-	questViewOptionsSave =
-	{
-		tabInfo = nil,
-		levelOption = nil,
-		modeFilterOptions = nil,
-	}
+
+	-- 맵이동/채널 이동시의 옵션 저장내용 삭제를 방지한다. 단, 다른캐릭으로 들어오는 경우에는 초기화 한다.
+	local mySession = session.GetMySession();
+	if mySession:GetCID() ~= viewOptionsSaveCID then
+		questViewOptionsSave =
+		{
+			tabInfo = nil,
+			levelOption = nil,
+			modeFilterOptions = nil,
+		}
+		viewOptionsSaveCID = mySession:GetCID()
+	end
 	
 end
 
@@ -1106,7 +1113,7 @@ function CHECK_PROGRESS_QUEST_VIEW_FILTER(titlename, questInfo)
 		end
 	end
 
-	-- add sub mode filter
+	-- -- add sub mode filter
 	if CHECK_QUEST_MODE_ALL(questIES) == false then
 	 if  CHECK_SUB_MODE_FILER(questIES) == false then
 		return false;
@@ -1184,7 +1191,7 @@ function CHECK_SUB_MODE_FILER(questIES)
 		return true;
 	end
 
-	if isCorrect == true and LINKZONECHECK(GetZoneName(pc), questIES.StartMap) == 'YES'  and QUEST_SUB_VIEWCHECK_LEVEL(pc, questIES) == 'YES' then
+	if isCorrect == true and LINKZONECHECK(GetZoneName(pc), questIES.StartMap) == 'YES' then
 
 		return true
 	end

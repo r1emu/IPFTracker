@@ -2,7 +2,7 @@
 function SCR_PRECHECK_CONSUME_ZOMBIECAPSUL(self)
     local curMap = GetZoneName(self);
     local mapCls = GetClass("Map", curMap);
-    if mapCls.MapType == 'City' and mapCls.ClassName ~= 'pvp_Mine' then
+    if mapCls.MapType == 'City' then
         SendAddOnMsg(self, "NOTICE_Dm_!", ScpArgMsg("NotAllowedInTown"), 3);
         return 0;
     end

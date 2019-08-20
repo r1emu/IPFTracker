@@ -3,6 +3,6 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 2,1000,0,0,0,0,0,0,0,"","Item","Item","misc_resin",""
 3,3330,0,0,0,0,0,0,0,"","Item","Item","misc_jore01",""
 4,2500,0,0,0,0,0,0,0,"","Item","Item","food_004",""
-5,33,0,0,0,0,0,0,0,"","Item","Item","R_TSP02_101",""
+5,33,0,0,0,0,0,0,0,"","Item","Item","TSP02_101",""
 6,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_Long_Arm",""
 7,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_Long_Arm",""

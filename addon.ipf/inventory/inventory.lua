@@ -30,8 +30,8 @@ local invenTitleName = nil
 local clickedLockItemSlot = nil
 
 g_invenTypeStrList = {"All", "Equip", "Consume", "Recipe", "Card", "Etc", "Gem", "Premium"};
-local _invenCatOpenOption = {}; -- key: CategoryName, value: IsToggle
-local _invenTreeOpenOption = {}; -- key: TreegroupName, value: IsToggle
+local _invenCatOpenOption = {}; -- key: cid, value: {key: CategoryName, value: IsToggle}
+local _invenTreeOpenOption = {}; -- key: cid, value: {key: TreegroupName, value: IsToggle}
 
 function INVENTORY_ON_INIT(addon, frame)
 	addon:RegisterMsg('ITEM_LOCK_FAIL', 'INV_ITEM_LOCK_SAVE_FAIL');
@@ -4405,47 +4405,51 @@ end
 
 
 function INVENTORY_CATEGORY_OPENCHECK(frame, tree)
-	for key, value in pairs(_invenCatOpenOption) do
-		local strFind = ":"
-		local strFindStart, strFindEnd = string.find(key, strFind)
-		local treename = string.sub(key, 0, strFindStart - 1) 
+	local mySession = session.GetMySession();
+	local cid = mySession:GetCID();
 
-		if treename == tree:GetName() then			
-			local strSub = string.sub(key, strFindStart + 1, string.len(key)) 
-			local groupName = 'sset_'..strSub;
-			local treegroup = tree:FindByName(groupName);
-			if treegroup == 0 then
-				return;
-			end
-	
-			if value == 0 then
-				local tab = GET_CHILD_RECURSIVELY(frame, treename)
-	
-				local sloatName = 'ssettitle_'..strSub;
-				local ctrl = GET_CHILD_RECURSIVELY(tab, sloatName);	
-				if ctrl == nil then
-					 return;
-				end
-	
-				local slotset = GET_CHILD_RECURSIVELY(tab, groupName)
-				if slotset == nil then
-					return
+	if _invenCatOpenOption[cid] then
+		for key, value in pairs(_invenCatOpenOption[cid]) do
+			local strFind = ":"
+			local strFindStart, strFindEnd = string.find(key, strFind)
+			local treename = string.sub(key, 0, strFindStart - 1) 
+
+			if treename == tree:GetName() then			
+				local strSub = string.sub(key, strFindStart + 1, string.len(key)) 
+				local groupName = 'sset_'..strSub;
+				local treegroup = tree:FindByName(groupName);
+				if treegroup == 0 then
+					return;
 				end
 		
-				local width = slotset:GetWidth();
-				local height = slotset:GetHeight();
-	
-				if width ~= 0 and height ~= 0 then		
-					slotset:SetUserValue("width", width)
-					slotset:SetUserValue("height", height)
-					slotset:Resize(0, 0)
-					local title = ctrl:GetText()
-					local changeTitle = string.gsub(title, "btn_minus", "btn_plus")
-					ctrl:SetText(changeTitle)
+				if value == 0 then
+					local tab = GET_CHILD_RECURSIVELY(frame, treename)
+		
+					local sloatName = 'ssettitle_'..strSub;
+					local ctrl = GET_CHILD_RECURSIVELY(tab, sloatName);	
+					if ctrl == nil then
+						return;
+					end
+		
+					local slotset = GET_CHILD_RECURSIVELY(tab, groupName)
+					if slotset == nil then
+						return
+					end
+			
+					local width = slotset:GetWidth();
+					local height = slotset:GetHeight();
+		
+					if width ~= 0 and height ~= 0 then		
+						slotset:SetUserValue("width", width)
+						slotset:SetUserValue("height", height)
+						slotset:Resize(0, 0)
+						local title = ctrl:GetText()
+						local changeTitle = string.gsub(title, "btn_minus", "btn_plus")
+						ctrl:SetText(changeTitle)
+					end
 				end
 			end
 		end
-
 	end
 
 	for i = 1, #GROUP_NAMELIST do
@@ -4456,8 +4460,10 @@ function INVENTORY_CATEGORY_OPENCHECK(frame, tree)
 			if treenode ~= nil then
 				local OptionName = tree:GetName()..":"..treenode:GetValue();
 
-				if _invenTreeOpenOption[OptionName] == false then
-					tree:OpenNode(treenode, false, true);
+				if _invenTreeOpenOption[cid] then
+					if _invenTreeOpenOption[cid][OptionName] == false then
+						tree:OpenNode(treenode, false, true);
+					end
 				end
 			end
 		end
@@ -4466,22 +4472,38 @@ function INVENTORY_CATEGORY_OPENCHECK(frame, tree)
 end
 
 function INVENTORY_CATEGORY_OPENOPTION_CHECK(treename, strarg)
+	local mySession = session.GetMySession();
+	local cid = mySession:GetCID();
 	local OptionName = treename..":"..strarg;
 
-	return _invenCatOpenOption[OptionName];
+	if _invenCatOpenOption[cid] == nil then
+		_invenCatOpenOption[cid] = {};
+	end
+
+	return _invenCatOpenOption[cid][OptionName];
 end
 
 function INVENTORY_CATEGORY_OPENOPTION_CHANGE(parent, ctrl, strarg, numarg)
+	local mySession = session.GetMySession();
+	local cid = mySession:GetCID();
 	local OptionName = parent:GetName()..":"..strarg;
-	if _invenCatOpenOption[OptionName] == 1 or _invenCatOpenOption[OptionName] == nil then
-		_invenCatOpenOption[OptionName] = 0;
+
+	if _invenCatOpenOption[cid] == nil then
+		_invenCatOpenOption[cid] = {};
+	end
+
+	if _invenCatOpenOption[cid][OptionName] == 1 or _invenCatOpenOption[cid][OptionName] == nil then
+		_invenCatOpenOption[cid][OptionName] = 0;
 	else
-		_invenCatOpenOption[OptionName] = 1;
+		_invenCatOpenOption[cid][OptionName] = 1;
 	end
 	
 end
 
 function INVENTORY_TREE_OPENOPTION_CHANGE(parent, ctrl, strarg, numarg)
+	local mySession = session.GetMySession();
+	local cid = mySession:GetCID();
+
 	for i = 1, #GROUP_NAMELIST do
 		local treegroup = ctrl:FindByValue(GROUP_NAMELIST[i]);
 		if treegroup == nil then
@@ -4493,7 +4515,11 @@ function INVENTORY_TREE_OPENOPTION_CHANGE(parent, ctrl, strarg, numarg)
 			local openoption = treenode:GetIsOpen();
 
 			local OptionName = ctrl:GetName()..":"..treenode:GetValue();
-			_invenTreeOpenOption[OptionName] = openoption;
+
+			if _invenTreeOpenOption[cid] == nil then
+				_invenTreeOpenOption[cid] = {};
+			end
+			_invenTreeOpenOption[cid][OptionName] = openoption;
 		end
 		
 	end

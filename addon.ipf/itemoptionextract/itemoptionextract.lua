@@ -4,10 +4,10 @@ function ITEMOPTIONEXTRACT_ON_INIT(addon, frame)
 	addon:RegisterMsg("OPEN_DLG_ITEMOPTIONEXTRACT", "ON_OPEN_DLG_ITEMOPTIONEXTRACT");
 
 	--성공시 UI 호출
-	addon:RegisterMsg("MSG_SUCCESS_ITEM_OPTION_EXTRACT", "SUCCESS_ITEM_OPTION_EXTRACT");
+    addon:RegisterMsg("MSG_RUN_SUCCESS_EFFECT", 'RUN_SUCCESS_EFFECT');
+	
 	--실패시 UI 호출
-	addon:RegisterMsg("MSG_FAIL_ITEM_OPTION_EXTRACT", "FAIL_ITEM_OPTION_EXTRACT");
-
+    addon:RegisterMsg("MSG_RUN_FAIL_EFFECT", 'RUN_FAIL_EFFECT');
 end
 
 function ON_OPEN_DLG_ITEMOPTIONEXTRACT(frame)
@@ -631,11 +631,16 @@ function _ITEMOPTIONEXTRACT_EXEC(checkRebuildFlag)
 	local argList = string.format("%d", extractKitIconInfo.type);
 	pc.ReqExecuteTx_Item("EXTRACT_ITEM_OPTION", invItem:GetIESID(), argList)
 	
-	return
+	PLAY_EXEC_EFFECT(frame)
 
+	return
 end
 
-function SUCCESS_ITEM_OPTION_EXTRACT(frame)
+function release_ui_lock()
+    ui.SetHoldUI(false)
+end
+
+function PLAY_EXEC_EFFECT(frame)
 	local frame = ui.GetFrame("itemoptionextract");
 	local EXTRACT_RESULT_EFFECT_NAME = frame:GetUserConfig('EXTRACT_RESULT_EFFECT');
 	local EFFECT_SCALE = tonumber(frame:GetUserConfig('EFFECT_SCALE'));
@@ -652,7 +657,7 @@ function SUCCESS_ITEM_OPTION_EXTRACT(frame)
 	do_extract:ShowWindow(0)
 	ui.SetHoldUI(true);
 
-	ReserveScript("_SUCCESS_ITEM_OPTION_EXTRACT()", EFFECT_DURATION)
+    ReserveScript('release_ui_lock()', EFFECT_DURATION);
 end
 
 function _SUCCESS_ITEM_OPTION_EXTRACT()
@@ -709,8 +714,6 @@ function _SUCCESS_ITEM_OPTION_EXTRACT()
 	resultItemImg:SetImage(icor_img)
 				
 	EXTRACT_SUCCESS_EFFECT(frame)
-
-	return
 end
 
 function EXTRACT_SUCCESS_EFFECT(frame)
@@ -749,22 +752,12 @@ function  _EXTRACT_SUCCESS_EFFECT()
 	ui.SetHoldUI(false);
 end
 
-function FAIL_ITEM_OPTION_EXTRACT(frame)
-	local EXTRACT_RESULT_EFFECT_NAME = frame:GetUserConfig('EXTRACT_RESULT_EFFECT');
-	local EFFECT_SCALE = tonumber(frame:GetUserConfig('EFFECT_SCALE'));
-	local EFFECT_DURATION = tonumber(frame:GetUserConfig('EFFECT_DURATION'));
-	local pic_bg = GET_CHILD_RECURSIVELY(frame, 'pic_bg');
-	if pic_bg == nil then
-		return;
-	end
+function RUN_FAIL_EFFECT()
+    ReserveScript("_FAIL_ITEM_OPTION_EXTRACT()", 0)
+end
 
-	pic_bg:PlayUIEffect(EXTRACT_RESULT_EFFECT_NAME, EFFECT_SCALE, 'EXTRACT_RESULT_EFFECT');
-
-	local do_extract = GET_CHILD_RECURSIVELY(frame, "do_extract")
-	do_extract:ShowWindow(0)
-	ui.SetHoldUI(true);
-
-	ReserveScript("_FAIL_ITEM_OPTION_EXTRACT()", EFFECT_DURATION)
+function RUN_SUCCESS_EFFECT()
+    ReserveScript("_SUCCESS_ITEM_OPTION_EXTRACT()", 0)
 end
 
 function _FAIL_ITEM_OPTION_EXTRACT()
@@ -774,8 +767,8 @@ function _FAIL_ITEM_OPTION_EXTRACT()
 		return;
 	end
 
-	local slot = GET_CHILD_RECURSIVELY(frame, "slot");
-	
+	local slot = GET_CHILD_RECURSIVELY(frame, "slot");	
+
 
 	local EXTRACT_RESULT_EFFECT_NAME = frame:GetUserConfig('EXTRACT_RESULT_EFFECT');
 	local EFFECT_SCALE = tonumber(frame:GetUserConfig('EFFECT_SCALE'));

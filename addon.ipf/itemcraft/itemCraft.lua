@@ -536,7 +536,13 @@ function CRAFT_BEFORE_START_CRAFT(ctrl, ctrlset, recipeName, artNum)
 	 session.IsMissionMap() == true then      
 	  ui.SysMsg(ClMsg("CannotCraftInIndun"));
       return
-    end
+	end
+	
+	-- In Challenge Mode
+	if info.GetBuffByName(session.GetMyHandle(), "ChallengeMode_Player") ~= nil then
+		ui.SysMsg(ClMsg("CannotCraftInChallengeMode"));
+		return
+	end
 
 	local frame = ctrlset:GetTopParentFrame();
 	local parentcset = ctrlset:GetParent()
@@ -1788,6 +1794,9 @@ function CRAFT_ITEM_ALL(itemSet, btn)
 		local icon 		= targetslot:GetIcon();
 
 		SET_ITEM_TOOLTIP_BY_OBJ(icon, invItemadd)
+
+		targetslot:SetEventScript(ui.RBUTTONUP, "CRAFT_ITEM_CANCEL");
+		targetslot:SetEventScriptArgString(ui.RBUTTONUP,invItemadd:GetIESID())
 
 		--슬롯 컬러톤 및 폰트 밝게 변경. 
 		icon:SetColorTone('FFFFFFFF')

@@ -7,7 +7,7 @@ function WORLDPVP_ON_INIT(addon, frame)
 	addon:RegisterMsg("WORLDPVP_RANK_PAGE", "ON_WORLDPVP_RANK_PAGE");
 	addon:RegisterMsg("WORLDPVP_RANK_ICON", "ON_WORLDPVP_RANK_ICON");
 	addon:RegisterMsg("PLAY_COUNT_MAX", "ON_PLAY_COUNT_MAX");
-    addon:RegisterMsg('UPDATE_WORLDPVP_GAME_LIST', 'WORLDPVP_PUBLIC_GAME_LIST');
+	addon:RegisterMsg('UPDATE_WORLDPVP_GAME_LIST', 'WORLDPVP_PUBLIC_GAME_LIST');
 end
 
 g_enablePVPExp = 1;
@@ -232,7 +232,7 @@ function UPDATE_WORLDPVP(frame)
 	local curDateString = imcTime.GetCurDateString();
 	local lastPointGetDateName = GetPVPPointPropName(clsName, "LastPointGetDate");
 	local todayGetShopPointName = GetPVPPointPropName(clsName, "TodayGetShopPoint");
-	local shopPointName = GetPVPPointPropName(clsName, "ShopPoint");
+	local shopPointName = session.shop.GetShopPoint("uphill_defense_shoppoint")--GetPVPPointPropName(clsName, "ShopPoint");
     
 	local joinBtn = charinfo:GetChild("join");
 	local isPlaying = session.worldPVP.IsPlayingType(pvpType);
@@ -277,6 +277,19 @@ function JOIN_WORLDPVP(parent, ctrl)
 	if nil == cls then
 		ui.SysMsg(ScpArgMsg("DonotOpenPVP"))
 		return;
+	end
+
+	local curMapName = session.GetMapName();
+	local notAvailableJoinMapList = {
+					"guildhouse",
+					"guild_agit_1",
+					"guild_agit_extension",
+				};
+	for i, mapName in pairs(notAvailableJoinMapList) do
+		if curMapName == mapName then
+			ui.SysMsg(ScpArgMsg("CanNotJoinPVPFromMission"));
+			return;
+		end
 	end
 	
 	if cls.MatchType == "Guild" then
@@ -693,7 +706,7 @@ function ON_WORLDPVP_RANK_PAGE(frame)
 	local cid = session.GetMySession():GetCID();
 	local myRank = session.worldPVP.GetPrevRankInfoByCID(cid);
 	if myRank ~= nil then
-		-- 1,2,3� �����ش�.
+		-- 1,2,3?? ???????.
 		if myRank.ranking < 3 then
 			btnReward:SetVisible(1);
 		end
@@ -771,14 +784,17 @@ function WORLDPVP_GET_EXP(parent, ctrl)
 end
 
 function GET_PVP_POINT_C()
-	local mySession = session.GetMySession();
-	local cid = mySession:GetCID();
-	local pvpObj = session.worldPVP.GetPVPObject(cid);
-	if pvpObj == nil then
-		return 0;
-	end
+	return session.shop.GetShopPoint("uphill_defense_shoppoint")
+end
 
-	return pvpObj:GetPropIValue("ShopPoint", 0);
+
+function GET_PVP_BATTLE_POINT_C()
+	local item = session.GetInvItemByName('EQUIP_RENTAL_POINT')
+	local point = 0;
+	if item ~= nil then
+		point = item.count
+	end
+	return point
 end
 
 function PVP_CARD_GET_ITEM_C()
@@ -1009,6 +1025,10 @@ function MINE_OPEN_POINT_SHOP(parent, ctrl)
 
 end
 
+function MINE_BATTLE_OPEN_POINT_SHOP(frame, msg, argStr, argNum)
+	TOGGLE_PROPERTY_SHOP('PvpMineBattleShop',1);
+end
+
 function PVP_REWARD(parent, ctrl)
 	local type = session.worldPVP.GetRankProp("Type");
 	local cls = GetClassByType("WorldPVPType", type);
@@ -1053,11 +1073,11 @@ function GUILD_PVP_MISSION_CREATED(roomGuid, gameType, isCreated, zonePCCount)
 end
 
 function GET_PVP_MINE_POINT_C()
-	local aObj = GetMyAccountObj();
-
-	if aObj == nil then
-		return 0;
-	end
-
-    return aObj.PVP_MINE_POINT
+--	local aObj = GetMyAccountObj();
+--
+--	if aObj == nil then
+--		return 0;
+--	end
+--
+    return 0
 end

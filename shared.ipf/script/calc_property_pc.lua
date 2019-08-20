@@ -2094,7 +2094,7 @@ function SCR_Get_MSPD(self)
             byBuff = 0;
         end
         
-        if IsPVPServer(self) == 1 or zone == "pvp_Mine" then
+        if IsPVPServer(self) == 1 or IsPVPField(self) == 1 then
             byBuff = byBuff * 0.5
         end
         
@@ -2169,7 +2169,6 @@ function SCR_Get_MSPD(self)
         isDashRun = 0
         return value;
     end
-    
     if isDashRun > 0 then    -- 대시 런 --
         local dashRunAddValue = 10
         
@@ -2188,10 +2187,6 @@ function SCR_Get_MSPD(self)
 	    if jobCtrlType == "Scout" then
 	    	dashRunAddValue = dashRunAddValue + 3
 	    end
-        
-        if IsPVPServer(self) == 1 or zone == "pvp_Mine" then
-            dashRunAddValue = 5
-        end
         
         value = value + dashRunAddValue;
         if isDashRun == 2 then  -- 인보 특성이 있으면 속도 +1 --

@@ -3,4 +3,4 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 2,500,0,0,0,0,0,0,0,"","Item","Item","misc_0147",""
 3,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_Moya",""
 4,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_Moya",""
-5,115,0,0,0,0,0,0,0,"","Item","Item","R_RAP01_102",""
+5,115,0,0,0,0,0,0,0,"","Item","Item","RAP01_102",""

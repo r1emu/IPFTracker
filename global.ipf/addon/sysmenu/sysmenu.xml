@@ -9,24 +9,4 @@
 	<animation frameOpenAnim="dialog_start2" frameCloseAnim="dialog_end"/>
 	<input hittest="true" hittestframe="false"/>
 	<userconfig PC_BANG_SHOP_ICON="sysmenu_pp"/>
-	<controls>
-		<button name="guildRank" margin="0 0 485 10" texttooltip="{@st59}길드 홍보 (Alt + R){/}"/>
-		<button name="extraBag" margin="0 0 447 10" texttooltip="{@st59}낚시 살림통 (Alt + F){/}"/>
-		<button name="rankBtn" margin="0 0 408 10" texttooltip="{@st59}전직 정보{/}"/>
-		<button name="status" margin="0 0 376 10" texttooltip="{@st59}캐릭터 정보 (F1){/}"/>
-		<button name="inven" margin="0 0 344 10" texttooltip="{@st59}인벤토리 (F2){/}"/>
-		<button name="skilltree" margin="0 0 313 10" texttooltip="{@st59}스킬과 특성 (F3){/}"/>
-		<button name="journal" margin="0 0 276 10" texttooltip="{@st59}모험일지 (F4){/}"/>
-		<button name="quest" margin="0 0 240 10" texttooltip="{@st59}퀘스트 (F5){/}"/>
-		<button name="party" margin="0 0 208 10" texttooltip="{@st59}파티 (F6){/}"/>
-		<button name="friend" margin="0 0 171 10" texttooltip="{@st59}친구 (F7){/}"/>
-		<button name="macro" margin="0 0 134 10" texttooltip="{@st59}매크로 (F8){/}"/>
-		<button name="pet" margin="0 0 97 10" texttooltip="{@st59}컴패니언 (F9){/}"/>
-		<button name="dungenInfo" margin="0 0 62 10" texttooltip="{@st59}던전 정보(F10){/}"/>
-		<button name="sys_collection" margin="0 0 30 10" texttooltip="{@st59}컬렉션 (F11){/}"/>
-		<button name="system" margin="0 0 0 10" texttooltip="{@st59}시스템 메뉴 (Esc){/}"/>
-		<groupbox name="skilltreenotice" margin="0 0 305 40" skin="digitnotice_bg"/>
-		<groupbox name="friendnotice" margin="0 0 179 40" skin="digitnotice_bg"/>
-		<groupbox name="statusnotice" margin="0 0 376 40" skin="digitnotice_bg"/>
-	</controls>
 </uiframe>

@@ -3,4 +3,4 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 2,76,0,0,0,0,0,0,0,"","Item","Item","misc_0205",""
 3,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_colimen_blue",""
 4,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_colimen_blue",""
-5,43,0,0,0,0,0,0,0,"","Item","Item","R_TSP02_125",""
+5,43,0,0,0,0,0,0,0,"","Item","Item","TSP02_125",""

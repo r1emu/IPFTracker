@@ -3,5 +3,5 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 2,750,0,0,0,0,0,0,0,"","Item","Item","misc_0100",""
 3,180,0,0,0,0,0,0,0,"","Item","Item","misc_0084",""
 4,2500,0,0,0,0,0,0,0,"","Item","Item","misc_0117",""
-5,95,0,0,0,0,0,0,0,"","Item","Item","R_TSP01_106",""
-6,134,0,0,0,0,0,0,0,"","Item","Item","R_FOOT01_140",""
+5,95,0,0,0,0,0,0,0,"","Item","Item","TSP01_106",""
+6,134,0,0,0,0,0,0,0,"","Item","Item","FOOT01_140",""

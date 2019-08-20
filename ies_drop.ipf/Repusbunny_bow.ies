@@ -6,4 +6,4 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 5,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_Repusbunny_bow",""
 6,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_Repusbunny_bow",""
 7,2,0,0,0,0,0,0,0,"","Item","Item","Gem_QuarrelShooter_Teardown",""
-8,30,0,0,0,0,0,0,0,"","Item","Item","R_LEG03_103",""
+8,30,0,0,0,0,0,0,0,"","Item","Item","LEG03_103",""

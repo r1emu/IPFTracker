@@ -2,7 +2,7 @@ ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max
 1,8000,47,49,0,0,0,0,0,"","Money_Mid","Money","Moneybag1",""
 2,75,0,0,0,0,0,0,0,"","Item","Item","misc_0071",""
 3,60,0,0,0,0,0,0,0,"","Item","Item","MAC01_108",""
-4,47,0,0,0,0,0,0,0,"","Item","Item","R_TSW02_103",""
+4,47,0,0,0,0,0,0,0,"","Item","Item","TSW02_103",""
 5,2,0,0,0,0,0,0,0,"","Item","Item","BlueOrb_FD_Candlespider",""
 6,2,0,0,0,0,0,0,0,"","Item","Item","RedOrb_FD_Candlespider",""
 7,2,0,0,0,0,0,0,0,"","Item","Item","Gem_Barbarian_Embowel",""
