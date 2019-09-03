@@ -2070,7 +2070,7 @@
 		<Class ClassID="24460" ClassName="PILGRIM51_SQ_9_MSG02" Data="거절한다"/>
 		<Class ClassID="24461" ClassName="PILGRIM51_SQ_9_MSG03" Data="10실버를 헌금한다"/>
 		<Class ClassID="24462" ClassName="PILGRIM51_SQ_9_MSG04" Data="그만둔다"/>
-		<Class ClassID="24463" ClassName="PILGRIM51_SQ_9_MSG05" Data="헌금도 불가능하고 축복도 받아지지 않습니다!"/>
+		<Class ClassID="24463" ClassName="PILGRIM51_SQ_9_MSG05" Data="헌금도 불가능하고 축복도 받아지지 않는다{nl}파드너 마스터를 찾아가 조언을 구해보자"/>
 		<Class ClassID="24464" ClassName="PILGRIM51_SQ_10_MSG01" Data="성소의 축복을 받아 체력을 회복했습니다!"/>
 		<Class ClassID="24465" ClassName="PILGRIM52_SQ_011_MSG01" Data="묘비에 맺힌 이슬 채취 중"/>
 		<Class ClassID="24466" ClassName="PILGRIM52_SQ_011_MSG02" Data="이슬을 채취 하는 데 성공했습니다!"/>
@@ -7256,6 +7256,8 @@
 		<Class ClassID="67419" ClassName="BK_SEL_ENTERANCE_POS_5" Data="5 시 방향"/>
 		<Class ClassID="67420" ClassName="BK_SEL_ENTERANCE_POS_4" Data="4 시 방향"/>
 		<Class ClassID="67421" ClassName="BK_SEL_ENTERANCE_POS_3" Data="3 시 방향"/>
+		<Class ClassID="67422" ClassName="EVENT_1907_ICESHOP_GBOX_ALL_MSG_1" Data="{s24}축하드립니다!{nl}{PC} 님이 {BOX}에서{nl}{ITEMNAME} 를 획득하셨습니다!"/>
+		<Class ClassID="67423" ClassName="EVENT_1907_ICESHOP_TITLE_NAME_1" Data="[Summer Festa] 얼음 상점"/>
 		<Class ClassID="70001" ClassName="FARM49_2_MQ06_DRAW" Data="우물 물을 긷는 중"/>
 		<Class ClassID="70002" ClassName="FARM49_2_MQ06_SUCCESS" Data="우물 물을 길었습니다.{nl}옆 물통에서 물을 뜨세요."/>
 		<Class ClassID="70003" ClassName="FARM49_2_MQ06_ALREADY" Data="이미 우물 물을 길었습니다.{nl}옆 물통에서 물을 뜨세요."/>

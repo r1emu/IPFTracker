@@ -41,13 +41,15 @@ function SCR_ITEM_GACHA_TP(pc, rewGroup, gachaClassName, gachacnt, gachaLog, gac
 	local sendrewardcntlist = {}
 
 	for i = 1, gachacnt do 
-		local reward, rewardCount, rewardGroup = GET_HAIR_GACHA_REWARD(rewGroup, rewardID)
+		local reward, rewardCount, rewardGroup, rewardNeedProperty, rewardNeedPropertyValue = GET_HAIR_GACHA_REWARD(rewGroup, rewardID)
 		if reward == nil then		
 			TxRollBack(tx)
 			return;
 		end
-
-		TxGiveItem(tx, reward, rewardCount, reason, 0, nil, 99999);		
+		local txcmd = TxGiveItem(tx, reward, rewardCount, reason, 0, nil, 99999);		
+		if (rewardNeedProperty ~= nil and rewardNeedProperty ~= 'None') and (rewardNeedPropertyValue ~= nil and rewardNeedPropertyValue ~= 0) then
+			TxAppendProperty(tx, txcmd, rewardNeedProperty, rewardNeedPropertyValue);
+		end
 		sendrewardlist[#sendrewardlist+1] = reward		
 		sendrewardcntlist[#sendrewardcntlist+1] = rewardCount		
 	end

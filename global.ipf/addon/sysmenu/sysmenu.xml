@@ -9,4 +9,6 @@
 	<animation frameOpenAnim="dialog_start2" frameCloseAnim="dialog_end"/>
 	<input hittest="true" hittestframe="false"/>
 	<userconfig PC_BANG_SHOP_ICON="sysmenu_pp"/>
+	<controls>
+	</controls>
 </uiframe>
