@@ -9,11 +9,11 @@
 	</controlset>
 	<controlset name="tpshop_item" hittest="true" width="286" height="350" hittestset="true" draw="true" skin="test_skin_01_btn" stateskin="false">
 		<controls>
-			<picture name="isNew_mark" margin="0 60 0 0" rect="0 0 72 34" hittest="false" image="new_mark2" changecursor="false" layout_gravity="left top"/>
-			<picture name="isLimit_mark" margin="0 60 0 0" rect="0 0 72 34" hittest="false" image="special_mark2" changecursor="false" layout_gravity="left top"/>
-			<picture name="isHot_mark" margin="0 94 0 0" rect="0 0 72 34" hittest="false" image="hot_mark2" changecursor="false" layout_gravity="left top"/>
-			<picture name="isEvent_mark" margin="0 128 0 0" rect="0 0 72 34" hittest="false" image="best_mark2" changecursor="false" layout_gravity="left top"/>
-			<picture name="isSale_mark" margin="0 94 0 0" rect="0 0 72 34" hittest="false" image="sale_mark2" changecursor="false" layout_gravity="left top"/>
+			<picture name="isNew_mark" image="new_mark2"/>
+			<picture name="isLimit_mark" margin="0 94 0 0" image="special_mark2"/>
+			<picture name="isHot_mark" image="hot_mark2"/>
+			<picture name="isEvent_mark" image="best_mark2"/>
+			<picture name="isSale_mark" image="sale_mark2"/>
 		</controls>
 	</controlset>
 	<controlset name="guild_warinfo" hittest="true" width="590" height="900" hittestset="false" draw="false" skin="none">

@@ -2258,8 +2258,8 @@
 		<controls>
 			<richtext name="statNameText" rect="0 0 100 25" margin="20 0 0 0" layout_gravity="left top" textalign="left center" format="%s" param1="name" param1_def="HP" fontname="white_18_ol"/>
 			<button name="statUpBtn" rect="0 0 35 30" margin="0 0 5 0" layout_gravity="right center" image="test_com_ability" oversound="button_cursor_over_2" clicksound="button_click" LBtnUpScp="PET_STAT_UP"/>
-			<richtext name="statValueText" rect="0 0 100 25" margin="0 0 145 0" layout_gravity="right center" format="%s" param1="value" param1_def="1479" fontname="white_18_ol"/>
-			<picture name="arrowPic" rect="0 0 20 20" margin="0 0 115 0" layout_gravity="right center" image="white_right_arrow"/>
+			<richtext name="statValueText" rect="0 0 100 25" margin="0 0 165 0" layout_gravity="right center" format="%s" param1="value" param1_def="1479" fontname="white_18_ol"/>
+			<picture name="arrowPic" rect="0 0 20 20" margin="0 0 135 0" layout_gravity="right center" image="white_right_arrow"/>
 			<richtext name="afterValueText" rect="0 0 100 25" margin="0 0 60 0" layout_gravity="right center" format="{@st66d_y}%s{/}" param1="value" param1_def="1689"/>
 		</controls>
 	</controlset>

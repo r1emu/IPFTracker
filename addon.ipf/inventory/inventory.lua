@@ -3450,9 +3450,12 @@ function TOGGLE_ITEM_SLOT_INVEN_ON_MSG(frame, msg, argstr, argnum)
 	end
 
 	if cnt > 0 then
-		frame:RunUpdateScript("UPDATE_INVENTORY_TOGGLE_ITEM", 1.0);
+		local timer = GET_CHILD_RECURSIVELY(frame, "invenontimer", "ui::CAddOnTimer");
+		timer:SetUpdateScript("UPDATE_INVENTORY_TOGGLE_ITEM");
+		timer:Start(1);
 	else
-		frame:StopUpdateScript("UPDATE_INVENTORY_TOGGLE_ITEM");
+		local timer = GET_CHILD_RECURSIVELY(frame, "invenontimer", "ui::CAddOnTimer");
+		timer:Stop();
 	end
 end
 

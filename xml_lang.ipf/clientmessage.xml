@@ -639,6 +639,7 @@
 		<Class ClassID="4239" ClassName="nohaveskillnouse" Data="습득한 스킬이 없어 사용 할 수 없습니다."/>
 		<Class ClassID="4240" ClassName="RemainMoreOption" Data="{@st50}{#ff0000}-- More Option --"/>
 		<Class ClassID="4241" ClassName="CantIcorToRandomOptionLegend" Data="랜덤 옵션 레전드 아이템에 랜덤 옵션 아이커를 장착할 수 없습니다."/>
+		<Class ClassID="4243" ClassName="SelectBox_Default" Data="선택 상자"/>
 	</Category>
 	<Category Name="ItemTooltip">
 		<Class ClassID="5001" ClassName="CoolDown : {Sec} Sec" Data="재사용 대기시간 : {Sec}초"/>
@@ -13337,12 +13338,12 @@
 		<Class ClassID="510727" ClassName="goldencroon" Data="황금 노래단"/>
 		<Class ClassID="510728" ClassName="PvpMineBattleShop" Data="자원 쟁탈전 렌탈 상점"/>
 		<Class ClassID="510729" ClassName="PvpMineItemCount" Data="{ol}{img icon_item_pvpmine_1 35 35}{/}{#5ae2e7}[{COUNT}]"/>
-		<Class ClassID="510730" ClassName="PvpMine_Authority_BuffMsg1" Data="{ol}{img mine_pvp_teamicon_bladetryst 40 40}{/}{#5ae2e7} 황금노래 용병단원{/} {NAME}이(가) 여신의 권능 버프를 획득하였습니다."/>
-		<Class ClassID="510731" ClassName="PvpMine_Authority_BuffMsg2" Data="{ol}{img mine_pvp_teamicon_goldencroon 40 40}{/}{#ff6d00} 칼날서약 용병단원{/} {NAME}이(가) 여신의 권능 버프를 획득하였습니다."/>
-		<Class ClassID="510732" ClassName="PvpMine_TeamB_NPC_Dead" Data="{ol}{img mine_pvp_teamicon_bladetryst 40 40}{/}{#5ae2e7} 황금노래 용병단원{/}을 {NAME}이(가) 처치하였습니다.{nl}{ol}{img mine_pvp_teamicon_bladetryst 40 40}{/}{#5ae2e7} 황금노래 용병단원{/}의 포인트 {POINT}이 약탈되었습니다."/>
-		<Class ClassID="510733" ClassName="PvpMine_TeamA_NPC_Dead" Data="{ol}{img mine_pvp_teamicon_goldencroon 40 40}{/}{#ff6d00} 칼날서약 용병단원{/}을 {NAME}이(가) 처치하였습니다.{nl}{ol}{img mine_pvp_teamicon_goldencroon 40 40}{/}{#ff6d00} 칼날서약 용병단원{/}의 포인트 {POINT}이 약탈되었습니다."/>
-		<Class ClassID="510734" ClassName="PVP_MINE_TAKE_DAMAGE_MSG_1" Data="{ol}{img mine_pvp_teamicon_bladetryst 40 40}{/}{#5ae2e7} 황금노래 용병단원{/}이 피해를 입고 있습니다."/>
-		<Class ClassID="510735" ClassName="PVP_MINE_TAKE_DAMAGE_MSG_2" Data="{ol}{img mine_pvp_teamicon_goldencroon 40 40}{/}{#ff6d00} 칼날서약 용병단원{/}이 피해를 받고 있습니다."/>
+		<Class ClassID="510730" ClassName="PvpMine_Authority_BuffMsg1" Data="{ol}{img mine_pvp_teamicon_goldencroon 40 40}{/}{#5ae2e7} 황금노래 용병단원{/} {NAME}이(가) 여신의 권능 버프를 획득하였습니다."/>
+		<Class ClassID="510731" ClassName="PvpMine_Authority_BuffMsg2" Data="{ol}{img mine_pvp_teamicon_bladetryst 40 40}{/}{#ff6d00} 칼날서약 용병단원{/} {NAME}이(가) 여신의 권능 버프를 획득하였습니다."/>
+		<Class ClassID="510732" ClassName="PvpMine_TeamB_NPC_Dead" Data="{ol}{img mine_pvp_teamicon_goldencroon 40 40}{/}{#5ae2e7} 황금노래 용병단원{/}을 {NAME}이(가) 처치하였습니다.{nl}{ol}{img mine_pvp_teamicon_goldencroon 40 40}{/}{#5ae2e7} 황금노래 용병단원{/}의 포인트 {POINT}이 약탈되었습니다."/>
+		<Class ClassID="510733" ClassName="PvpMine_TeamA_NPC_Dead" Data="{ol}{img mine_pvp_teamicon_bladetryst 40 40}{/}{#ff6d00} 칼날서약 용병단원{/}을 {NAME}이(가) 처치하였습니다.{nl}{ol}{img mine_pvp_teamicon_bladetryst 40 40}{/}{#ff6d00} 칼날서약 용병단원{/}의 포인트 {POINT}이 약탈되었습니다."/>
+		<Class ClassID="510734" ClassName="PVP_MINE_TAKE_DAMAGE_MSG_1" Data="{ol}{img mine_pvp_teamicon_goldencroon 40 40}{/}{#5ae2e7} 황금노래 용병단원{/}이 피해를 입고 있습니다."/>
+		<Class ClassID="510735" ClassName="PVP_MINE_TAKE_DAMAGE_MSG_2" Data="{ol}{img mine_pvp_teamicon_bladetryst 40 40}{/}{#ff6d00} 칼날서약 용병단원{/}이 피해를 받고 있습니다."/>
 	</Category>
 	<Category Name="Beauty_Shop">
 		<Class ClassID="510801" ClassName="Beauty_Shop_IN" Data="뷰티샵 입장"/>
