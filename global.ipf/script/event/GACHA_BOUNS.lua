@@ -1,15 +1,27 @@
 function SCR_GACHA_BOUNS_VALUE(self, pc)
     local aObj = GetAccountObj(pc);
-    local count = aObj.STEAM190730_GACHA_TP_COUNT;
-    local bouns = aObj.STEAM190730_GACHA_TP_BOUNS;
-    local cubetype = 2; -- 레티샤는 1/ 여큐는 2 / 반드시 지켜주세요 --
+	local cubetype = 2; -- 레티샤는 1/ 여큐는 2 / 반드시 지켜주세요 --
+	local count_reward = 25; --n회마다 지급 / 반드시 지켜주세요 --
     local next_count, next_bouns = 0, 0;
     local rewardlist = {}
     local rewardtext = ''
+	local count;
+    local bouns;
+		
+	if cubetype == 1 then
+		count = aObj.STEAM190730_GACHA_TP_COUNT;
+		bouns = aObj.STEAM190730_GACHA_TP_BOUNS;
+	elseif cubetype == 2 then
+		count = aObj.STEAM190716_GACHA_HAIRACC_COUNT;
+		bouns = aObj.STEAM190716_GACHA_HAIRACC_BOUNS;
+	else 
+		Chat("Error cubetype")
+	end
+
                                     --[         카 운 트          ], [          보너스           ] --
     local bounslist = {
-        {50, 100, 150, 200, 250,      'STEAM190730_GACHA_TP_COUNT',      'STEAM190730_GACHA_TP_BOUNS', 50}, -- tp
-        {25, 50, 75, 100, 125, 'STEAM190716_GACHA_HAIRACC_COUNT', 'STEAM190716_GACHA_HAIRACC_BOUNS', 25} -- hairacc
+        {count_reward, count_reward*2, count_reward*3, count_reward*4, count_reward*5,      'STEAM190730_GACHA_TP_COUNT',      'STEAM190730_GACHA_TP_BOUNS', count_reward}, -- tp
+        {count_reward, count_reward*2, count_reward*3, count_reward*4, count_reward*5, 'STEAM190716_GACHA_HAIRACC_COUNT', 'STEAM190716_GACHA_HAIRACC_BOUNS', count_reward} -- hairacc
     }
 
     -- next count

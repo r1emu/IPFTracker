@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <packeteffects>
+	<Category ID="187">
+		<Effect Name="MoveBarrackLayer"/>
+		<Effect Name="HaveToPutPetAtBarrack"/>
+		<Effect Name="DontHaveSlot"/>
+		<Effect Name="CantMoveBarrackLayer"/>
+	</Category>
 	<Category ID="14">
 		<Effect Name="GUILD_COLONY_F_REMAINS_37_1"/>
 		<Effect Name="GUILD_COLONY_F_TABLELAND_72"/>
@@ -269,6 +275,7 @@
 		<Effect Name="F_wizard_MAGNUMOPUS_SHOVEL_soup_loop"/>
 		<Effect Name="5st"/>
 		<Effect Name="Boss_2"/>
+		<Effect Name="F_bg_water014_green"/>
 		<Effect Name="F_cleric_KaguraDance_buff"/>
 		<Effect Name="F_cleric_Incineration_loop"/>
 		<Effect Name="F_levitation005_dark_green3"/>

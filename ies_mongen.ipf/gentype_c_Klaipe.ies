@@ -77,3 +77,5 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 5189,5189,1,20,1,1,1,2,0,0,0,0,0,"npc_giltine_weapon_event","길티네의 환영","","","","EVENT_1812_GILTINE_TACTICS","","","EVENT_1812_GILTINE_NPC","","","NO","YES","NO","Neutral","","","",""
 10001,50001,1,40,1,60000,1,2,0,0,0,0,0,"Board3_Event","이벤트 알림판","","","","","","","STEAM_TREASURE_EVENT","","","NO","YES","NO","Neutral","","","",""
 10004,50004,1,40,1,60000,1,2,0,0,0,0,0,"gacha_cube1_event","보너스 큐브","","","","","","","GACHA_BOUNS","","","NO","YES","NO","Neutral","","","",""
+10005,50005,1,40,1,60000,1,0,0,0,0,0,0,"hidden_monster","음산한 폭포","","","","","","EVENT_CURSED_COAST_POTAL","","","","NO","YES","NO","Neutral","","","",""
+10006,50006,1,40,1,60000,1,2,0,0,0,0,0,"hidden_monster","음산한 폭포","음산한 폭포","","","","","","EVENT_CURSED_COAST_WARP","","","NO","YES","NO","Neutral","","","",""
