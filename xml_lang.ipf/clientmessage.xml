@@ -312,10 +312,10 @@
 		<Class ClassID="2281" ClassName="TranscendScrollWarning{Before}To{After}100Percent" Data="아이템 변경사항 안내{nl} {nl} - 아이템이 {Before}초월에서{#62100c}{After}초월{/}로 변경 {nl} - 초월 성공시{#62100c}1:1거래가 불가능{/} 합니다."/>
 		<Class ClassID="2282" ClassName="OverLength" Data="내용이 길어 등록할 수 없습니다."/>
 		<Class ClassID="2283" ClassName="OnlyBriquettingItem" Data="외형이 변환된 아이템만 등록 가능합니다."/>
-		<Class ClassID="2284" ClassName="YOU_ALREADY_TRANSCEND_NEWYEAR_WEAPON" Data="이미 인벤토리에 5초월을 한 [까치까치 설날] 무기가 있습니다."/>
-		<Class ClassID="2285" ClassName="YOU_ALREADY_REINFORCE_NEWYEAR_WEAPON" Data="이미 인벤토리에 강화가 11단계인 [까치까치 설날] 무기가 있습니다."/>
-		<Class ClassID="2286" ClassName="YOU_HAVE_ONE_NEWYEAR_WEAPON_IN_INVENTORY" Data="인벤토리에 [까치까치 설날] 무기가 하나만 있어야 합니다."/>
-		<Class ClassID="2287" ClassName="YOU_HAVE_NOT_NEWYEAR_WEAPON_IN_INVENTORY" Data="인벤토리에 [까치까치 설날] 무기가 없습니다."/>
+		<Class ClassID="2284" ClassName="YOU_ALREADY_TRANSCEND_NEWYEAR_WEAPON" Data="이미 인벤토리에 5초월을 한 [까치까치 설날] 혹은 [풍성한 한가위] 무기가 있습니다."/>
+		<Class ClassID="2285" ClassName="YOU_ALREADY_REINFORCE_NEWYEAR_WEAPON" Data="이미 인벤토리에 강화가 11단계인 [까치까치 설날] 혹은 [풍성한 한가위] 무기가 있습니다."/>
+		<Class ClassID="2286" ClassName="YOU_HAVE_ONE_NEWYEAR_WEAPON_IN_INVENTORY" Data="인벤토리에 [까치까치 설날] 혹은 [풍성한 한가위] 무기가 하나만 있어야 합니다."/>
+		<Class ClassID="2287" ClassName="YOU_HAVE_NOT_NEWYEAR_WEAPON_IN_INVENTORY" Data="인벤토리에 [까치까치 설날] 혹은 [풍성한 한가위] 무기가 없습니다."/>
 		<Class ClassID="2288" ClassName="ACC_Select_BOX" Data="악세사리 선택 상자"/>
 		<Class ClassID="2289" ClassName="IcorNotAdded" Data="아이커가 장착되어 있지 않은 아이템입니다."/>
 		<Class ClassID="2290" ClassName="ReallyRollbackIcor" Data="정말 아이커를 장착 해제하시겠습니까?"/>
@@ -8622,6 +8622,7 @@
 		<Class ClassID="90187" ClassName="ThereAreNoSkillsAvailable" Data="사용할 수 있는 스킬이 없습니다."/>
 		<Class ClassID="90188" ClassName="UPHILL_DEFENSE_CRYSTAL" Data="화염 결정"/>
 		<Class ClassID="90189" ClassName="CHANGEJOB_COMPANIONSKILL_GUID" Data="해당 클래스로 전직 후 스킬 사용 시 {@st41}[컴패니언]{/}이 필요하며, {@st41}[컴패니언]{/}은 {@st41}[숙소 캐릭터 슬롯]{/}이 있어야 생성 가능합니다"/>
+		<Class ClassID="90195" ClassName="400lvupCard_MSG" Data="{nl} {nl}사용 시 1레벨에서 400레벨 도달까지 필요한 만큼의 경험치를 얻습니다.{nl} {nl}{@st66d_y}경험치 카드를 사용하시겠습니까?"/>
 	</Category>
 	<Category Name="BattleText">
 		<Class ClassID="100001" ClassName="ADD_DAMAGE_{Auto_1}!" Data="추가 데미지 {Auto_1}!"/>

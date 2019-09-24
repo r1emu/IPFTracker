@@ -3476,10 +3476,19 @@ function UPDATE_INVENTORY_TOGGLE_ITEM(frame)
 			slot = INV_GET_SLOT_BY_TYPE(type, nil, 1)
 		end	
 		if slot ~= nil and slot:IsVisible() == 1 then
+			local slotset = slot:GetParent();
+			if slotset:GetHeight() == 0 then
+				return 1;
+			end
+
+			local inventoryGbox = GET_CHILD_RECURSIVELY(frame, "inventoryGbox");
+			local offset = frame:GetUserConfig("EFFECT_DRAW_OFFSET");
+			if slot:GetDrawY() <= invenTab:GetDrawY() or invenTab:GetDrawY() + inventoryGbox:GetHeight() - offset <= slot:GetDrawY() then
+				return 1;
+			end
+
 			if slot:IsVisibleRecursively() == true then
-				local size = frame:GetUserConfig("TOGGLE_ITEM_EFFECT_SIZE");	
-				slot:PlayOnceUIEffect('I_sys_item_slot', size);
-				slot:Invalidate();
+				slot:PlayUIEffect("I_sys_item_slot", 2.2, "Inventory_TOGGLE_ITEM", true);
 			end
 		end
 	end
@@ -3553,11 +3562,20 @@ function UPDATE_INVENTORY_DISPEL_DEBUFF(frame, ctrl, num, str, time)
 	if(slot == nil ) then
 		return;
 	end
-	local posX, posY = GET_SCREEN_XY(slot);
+
+	local slotset = slot:GetParent();
+	if slotset:GetHeight() == 0 then
+		return;
+	end
+
+	local inventoryGbox = GET_CHILD_RECURSIVELY(frame, "inventoryGbox");
+	local offset = frame:GetUserConfig("EFFECT_DRAW_OFFSET");
+	if slot:GetDrawY() <= invenTab:GetDrawY() or invenTab:GetDrawY() + inventoryGbox:GetHeight() - offset <= slot:GetDrawY() then
+		return;
+	end	
 	
 	if slot:IsVisibleRecursively() == true then
-		local size = frame:GetUserConfig("DISPEL_EFFECT_SIZE");	
-		slot:PlayOnceUIEffect('I_sys_item_slot', size);
+		slot:PlayUIEffect("I_sys_item_slot", 2.2, "Inventory_DISPEL_DEBUFF", true);	
 	end
 end
 
@@ -3635,7 +3653,7 @@ function UPDATE_INVENTORY_JUNGTAN(frame, ctrl, num, str, time)
 	if frame:IsVisible() == 0 then
 		return;
 	end
-	local jungtanID = frame:GetUserIValue("JUNGTAN_EFFECT");
+	local jungtanID = frame:GetUserValue("JUNGTAN_EFFECT");
 	if jungtanID == 0 then
 		return;
 	end
@@ -3650,13 +3668,25 @@ function UPDATE_INVENTORY_JUNGTAN(frame, ctrl, num, str, time)
 		slotSet = INV_GET_SLOTSET_BY_ITEMID(jungtanID, 1)
 	end	
 
-	local slot = GET_SLOT_BY_ITEMTYPE(slotSet, jungtanID);
+	local slot = GET_SLOT_BY_IESID(slotSet, jungtanID);
 	if slot == nil then
 		return;
 	end
-	local posX, posY = GET_SCREEN_XY(slot);
+	
+	local slotset = slot:GetParent();
+	if slotset:GetHeight() == 0 then
+		return;
+	end
 
-	movie.PlayUIEffect('I_sys_item_slot', posX, posY, 1.2);
+	local inventoryGbox = GET_CHILD_RECURSIVELY(frame, "inventoryGbox");
+	local offset = frame:GetUserConfig("EFFECT_DRAW_OFFSET");
+	if slot:GetDrawY() <= invenTab:GetDrawY() or invenTab:GetDrawY() + inventoryGbox:GetHeight() - offset <= slot:GetDrawY() then
+		return;
+	end
+
+	if slot:IsVisibleRecursively() == true then
+		slot:PlayUIEffect("I_sys_item_slot", 2.2, "Inventory_JUNGTAN", true);	
+	end
 end
 
 function UPDATE_INVENTORY_JUNGTANDEF(frame, ctrl, num, str, time)
@@ -3674,18 +3704,29 @@ function UPDATE_INVENTORY_JUNGTANDEF(frame, ctrl, num, str, time)
 	end
 
 	local tabIndex = invenTab:GetSelectItemIndex()
-	local slotSet = INV_GET_SLOTSET_BY_ITEMID(jungtanID)
+	local slot = INV_GET_SLOT_BY_TYPE(jungtanID)
 	if tabIndex == 0 then
-		slotSet = INV_GET_SLOTSET_BY_ITEMID(jungtanID, 1)
+		slot = INV_GET_SLOT_BY_TYPE(jungtanID, nil, 1)
 	end	
 
-	local slot = GET_SLOT_BY_ITEMTYPE(slotSet, jungtanID);
-	if(slot == nil ) then
+	if slot == nil then
 		return;
 	end
-	local posX, posY = GET_SCREEN_XY(slot);
 
-	movie.PlayUIEffect('I_sys_item_slot', posX, posY, 1.2);
+	local slotset = slot:GetParent();
+	if slotset:GetHeight() == 0 then
+		return;
+	end
+
+	local inventoryGbox = GET_CHILD_RECURSIVELY(frame, "inventoryGbox");
+	local offset = frame:GetUserConfig("EFFECT_DRAW_OFFSET");
+	if slot:GetDrawY() <= invenTab:GetDrawY() or invenTab:GetDrawY() + inventoryGbox:GetHeight() - offset <= slot:GetDrawY() then
+		return;
+	end
+	
+	if slot:IsVisibleRecursively() == true then
+		slot:PlayUIEffect("I_sys_item_slot", 2.2, "Inventory_JUNGTANDEF", true);	
+	end
 end
 
 -- slotanim
@@ -4550,4 +4591,54 @@ function BEFORE_APPLIED_NON_EQUIP_ITEM_OPEN(invItem)
 		ui.MsgBox_NonNested(textmsg, itemobj.Name, "REQUEST_SUMMON_BOSS_TX", "None");
 		return;
 	end
+end
+
+function BEFORE_APPLIED_YESSCP_OPEN(invItem)
+	if invItem == nil then
+		return;
+	end
+	
+	local invFrame = ui.GetFrame("inventory");	
+	local itemobj = GetIES(invItem:GetObject());
+	if itemobj == nil then
+		return;
+	end
+	invFrame:SetUserValue("INVITEM_GUID", invItem:GetIESID());
+	
+	local strLang = TryGetProp(itemobj , 'StringArg')
+	if strLang ~='None' then
+    	local textmsg = string.format("[ %s ]{nl}%s", itemobj.Name, ScpArgMsg(strLang));
+    	ui.MsgBox_NonNested(textmsg, itemobj.Name, 'REQUEST_SUMMON_BOSS_TX', "None");
+    end
+	return;
+	
+end
+
+function REQUEST_USE_ITEM_TX()
+	local invFrame = ui.GetFrame("inventory");
+	local itemGuid = invFrame:GetUserValue("INVITEM_GUID");
+	local invItem = session.GetInvItemByGuid(itemGuid)
+	
+	if nil == invItem then
+		return;
+	end
+	
+	if true == invItem.isLockState then
+		ui.SysMsg(ClMsg("MaterialItemIsLock"));
+		return;
+	end
+	
+	local stat = info.GetStat(session.GetMyHandle());		
+	if stat.HP <= 0 then
+		return;
+	end
+	
+	local itemtype = invItem.type;
+	local curTime = item.GetCoolDown(itemtype);
+	if curTime ~= 0 then
+		imcSound.PlaySoundEvent("skill_cooltime");
+		return;
+	end
+	
+	item.UseByGUID(invItem:GetIESID());
 end

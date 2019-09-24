@@ -6484,7 +6484,7 @@ end"/>
 		<TriggerList Act="Equip">
 			<Trigger>
 				<ExecList>
-					<ToolScp Scp="SPCI_BUFF_EQUIPITEM" Client="NO" UseSleep="NO">
+					<ToolScp Scp="SPCI_BUFF_EQUIPITEM_ADDOVER" Client="NO" UseSleep="NO">
 						<Str Str="ITEM_SKIACLIPS_CLOTH"/>
 						<Num Num="99"/>
 						<Num Num="0"/>
@@ -6510,7 +6510,7 @@ end"/>
 		<TriggerList Act="Equip">
 			<Trigger>
 				<ExecList>
-					<ToolScp Scp="SPCI_BUFF_EQUIPITEM" Client="NO" UseSleep="NO">
+					<ToolScp Scp="SPCI_BUFF_EQUIPITEM_ADDOVER" Client="NO" UseSleep="NO">
 						<Str Str="ITEM_SKIACLIPS_CLOTH"/>
 						<Num Num="99"/>
 						<Num Num="0"/>
@@ -6536,7 +6536,7 @@ end"/>
 		<TriggerList Act="Equip">
 			<Trigger>
 				<ExecList>
-					<ToolScp Scp="SPCI_BUFF_EQUIPITEM" Client="NO" UseSleep="NO">
+					<ToolScp Scp="SPCI_BUFF_EQUIPITEM_ADDOVER" Client="NO" UseSleep="NO">
 						<Str Str="ITEM_SKIACLIPS_CLOTH"/>
 						<Num Num="99"/>
 						<Num Num="0"/>
@@ -6562,7 +6562,7 @@ end"/>
 		<TriggerList Act="Equip">
 			<Trigger>
 				<ExecList>
-					<ToolScp Scp="SPCI_BUFF_EQUIPITEM" Client="NO" UseSleep="NO">
+					<ToolScp Scp="SPCI_BUFF_EQUIPITEM_ADDOVER" Client="NO" UseSleep="NO">
 						<Str Str="ITEM_SKIACLIPS_CLOTH"/>
 						<Num Num="99"/>
 						<Num Num="0"/>
