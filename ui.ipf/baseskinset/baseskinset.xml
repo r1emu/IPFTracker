@@ -6643,6 +6643,7 @@
 		<image name="NOTICE_Dm_Curse_1" file="\skin\indun_skin.tga" imgrect="205 784 60 132" CMM_Caption="저주 카운트 숫자1"/>
 		<image name="colonymap_unoccupation2" file="\skin\colony.tga" imgrect="1795 256 94 98" CMM_Caption="콜로니전 맵 아이콘2"/>
 		<image name="test_frame_midle_mini" file="\skin\colony.tga" imgrect="1890 256 68 68" CMM_Caption=""/>
+		<image name="pizza_middle" file="\skin\paid_skin_title.tga" imgrect="0 165 316 165" CMM_Caption="피자 혜택"/>
 	</imagelist>
 	<imagelist category="testje_image">
 		<image name="test_betrum_scoreboardT_skin" file="\skin\keynbet.tga" imgrect="0 528 352 88" CMM_Caption="배틀럼블 스코어 페이지"/>
@@ -9419,6 +9420,8 @@
 		<image name="icon_PVP_MINE_Escape" file="\icon\buff_icon2.tga" imgrect="0 1408 128 128" CMM_Caption="탈출"/>
 		<image name="icon_PVP_MINE_Divine_Protection" file="\icon\buff_icon2.tga" imgrect="128 1408 128 128" CMM_Caption="여신의 가호"/>
 		<image name="icon_PVP_MINE_Authority" file="\icon\buff_icon2.tga" imgrect="256 1408 128 128" CMM_Caption="여신의 권능"/>
+		<image name="icon_delivery_man" file="\icon\buff_icon2.tga" imgrect="640 1408 128 128" CMM_Caption="배달원"/>
+		<image name="icon_pizza" file="\icon\buff_icon2.tga" imgrect="768 1408 128 128" CMM_Caption="맛있는 피자"/>
 	</imagelist>
 	<imagelist category="for frame"/>
 	<imagelist category="roadmap"/>

@@ -1,7 +1,7 @@
 function SCR_GACHA_BOUNS_VALUE(self, pc)
     local aObj = GetAccountObj(pc);
-	local cubetype = 2; -- 레티샤는 1/ 여큐는 2 / 반드시 지켜주세요 --
-	local count_reward = 25; --n회마다 지급 / 반드시 지켜주세요 --
+	local cubetype = 1; -- 레티샤는 1/ 여큐는 2 / 반드시 지켜주세요 --
+	local count_reward;
     local next_count, next_bouns = 0, 0;
     local rewardlist = {}
     local rewardtext = ''
@@ -11,9 +11,11 @@ function SCR_GACHA_BOUNS_VALUE(self, pc)
 	if cubetype == 1 then
 		count = aObj.STEAM190730_GACHA_TP_COUNT;
 		bouns = aObj.STEAM190730_GACHA_TP_BOUNS;
+		count_reward = 50;
 	elseif cubetype == 2 then
 		count = aObj.STEAM190716_GACHA_HAIRACC_COUNT;
 		bouns = aObj.STEAM190716_GACHA_HAIRACC_BOUNS;
+		count_reward = 25;
 	else 
 		Chat("Error cubetype")
 	end

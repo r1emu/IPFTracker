@@ -72,6 +72,7 @@
 		<Effect Name="F_circle007_red_loop"/>
 		<Effect Name="Pattern_Pad"/>
 		<Effect Name="F_buff_basic048"/>
+		<Effect Name="STM_PIZZA_BUFF"/>
 	</Category>
 	<Category ID="135">
 		<Effect Name="HaveToPutPetAtBarrack"/>
