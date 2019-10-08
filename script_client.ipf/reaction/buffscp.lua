@@ -951,11 +951,13 @@ function Burrow_Rogue_CLIENT_LEAVE(actor, obj, buff)
 end
 
 function ShadowPool_Buff_CLIENT_ENTER(actor, obj, buff)
-    movie.ShowModel(actor:GetHandleVal(), 0);   
+    --movie.ShowModel(actor:GetHandleVal(), 0);
+    actor:GetEffect():SetColorBlend("ShadowPool", 0, 0, 0, 0, true, 0, false, 0);
 end
 
 function ShadowPool_Buff_CLIENT_LEAVE(actor, obj, buff)
-    movie.ShowModel(actor:GetHandleVal(), 1);
+    actor:GetEffect():SetColorBlend("ShadowPool", 255, 255, 255, 255, true, 0, false, 0);
+    --movie.ShowModel(actor:GetHandleVal(), 1);
 end
 
 function IMPALER_STUN_ANI_ENTER(actor, obj, buff, rps, dir)
@@ -1099,6 +1101,8 @@ function RamMuay_UPDATE(actor, obj, buff)
     if lhObj.ClassType == "Artefact" then
         actor:ShowModelByPart("LH", 0, 0);
     end
+    
+    actor:GetAnimation():SetSTDAnim("SKL_NAKMUAY_ASTD");
 end
 
 function RamMuay_LEAVE(actor, obj, buff)
