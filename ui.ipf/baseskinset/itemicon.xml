@@ -2855,6 +2855,22 @@
 		<image name="icon_item_chef_pistol" file="\icon\weapon\icon_item_chef_pistol.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_chef_mace" file="\icon\weapon\icon_item_chef_mace.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_chef_dagger" file="\icon\weapon\icon_item_chef_dagger.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_crossbow" file="\icon\weapon\icon_item_2019halloween_crossbow.png" imgrect="0 0 256 256" CMM_Caption="2019_할로윈 무기"/>
+		<image name="icon_item_2019halloween_thsword" file="\icon\weapon\icon_item_2019halloween_thsword.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_dagger" file="\icon\weapon\icon_item_2019halloween_dagger.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_bow" file="\icon\weapon\icon_item_2019halloween_bow.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_musket" file="\icon\weapon\icon_item_2019halloween_musket.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_pistol" file="\icon\weapon\icon_item_2019halloween_pistol.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_rapier" file="\icon\weapon\icon_item_2019halloween_rapier.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_rod" file="\icon\weapon\icon_item_2019halloween_rod.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_shield" file="\icon\weapon\icon_item_2019halloween_shield.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_staff" file="\icon\weapon\icon_item_2019halloween_staff.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_thmace" file="\icon\weapon\icon_item_2019halloween_thmace.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_cannon" file="\icon\weapon\icon_item_2019halloween_cannon.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_mace" file="\icon\weapon\icon_item_2019halloween_mace.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_spear" file="\icon\weapon\icon_item_2019halloween_spear.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_sword" file="\icon\weapon\icon_item_2019halloween_sword.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween_thspear" file="\icon\weapon\icon_item_2019halloween_thspear.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="acc_item">
 		<image name="item_necklace_01" file="\icon\acc\item_necklace_1.png" imgrect="0 0 256 256" CMM_Caption="목걸이"/>
@@ -3404,6 +3420,9 @@
 		<image name="icon_item_accessory_chef02" file="\icon\hairacc\icon_item_accessory_chef02.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_accessory_chef03" file="\icon\hairacc\icon_item_accessory_chef03.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_accessory_chef04" file="\icon\hairacc\icon_item_accessory_chef04.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_accessory_2019halloween01" file="\icon\hairacc\icon_item_accessory_2019halloween01.png" imgrect="0 0 256 256" CMM_Caption="2019_할로윈 헤어악세"/>
+		<image name="icon_item_accessory_2019halloween02" file="\icon\hairacc\icon_item_accessory_2019halloween02.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_accessory_2019halloween03" file="\icon\hairacc\icon_item_accessory_2019halloween03.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="collection_item">
 		<image name="icon_collitem_collection" file="\icon\colletion\icon_item_collection.tga" imgrect="0 0 673 419" CMM_Caption="월계수"/>
@@ -6272,6 +6291,25 @@
 		<image name="icon_item_1908_ChuSeok_Package_02" file="\icon\payment\icon_item_1908_ChuSeok_Package_02.png" imgrect="0 0 256 256" CMM_Caption="2019 한가위 강화 패키지"/>
 		<image name="icon_item_1908_ChuSeok_Package_03" file="\icon\payment\icon_item_1908_ChuSeok_Package_03.png" imgrect="0 0 256 256" CMM_Caption="2019 한가위 콘텐츠 패키지"/>
 		<image name="icon_item_1908_ChuSeok_Package_04" file="\icon\payment\icon_item_1908_ChuSeok_Package_04.png" imgrect="0 0 256 256" CMM_Caption="2019 한가위 아츠 패키지"/>
+		<image name="icon_item_2019halloween_effectcos" file="\icon\payment\icon_item_2019halloween_effectcos.png" imgrect="0 0 256 256" CMM_Caption="2019_할로윈 이펙트"/>
+		<image name="item_icon_txbox_devilrabbit" file="\icon\payment\item_icon_txbox_devilrabbit.png" imgrect="0 0 256 256" CMM_Caption="2019_할로윈 토끼 선택상자"/>
+		<image name="icon_item_selectbox_2019halloween03" file="\icon\payment\icon_item_selectbox_2019halloween03.png" imgrect="0 0 256 256" CMM_Caption="2019_할로윈 해골 선택상자"/>
+		<image name="icon_item_selectbox_2019halloween01" file="\icon\payment\icon_item_selectbox_2019halloween01.png" imgrect="0 0 256 256" CMM_Caption="2019_할로윈 처키 선택상자"/>
+		<image name="icon_item_selectbox_2019halloween02" file="\icon\payment\icon_item_selectbox_2019halloween02.png" imgrect="0 0 256 256" CMM_Caption="2019_간호사 선택상자"/>
+		<image name="item_icon_txbox_2019halloween02_m" file="\icon\payment\item_icon_txbox_2019halloween02_m.png" imgrect="0 0 256 256" CMM_Caption="2019_간호사 남자 헬멧코스튬"/>
+		<image name="item_icon_txbox_2019halloween02_f" file="\icon\payment\item_icon_txbox_2019halloween02_f.png" imgrect="0 0 256 256" CMM_Caption="2019_간호사 여자 헬멧코스튬"/>
+		<image name="icon_item_2019halloween02_f" file="\icon\payment\icon_item_2019halloween02_f.png" imgrect="0 0 256 256" CMM_Caption="2019_할로윈 코스튬"/>
+		<image name="icon_item_2019halloween02_m" file="\icon\payment\icon_item_2019halloween02_m.png" imgrect="0 0 256 256"/>
+		<image name="item_icon_helmet_2019halloween02_f" file="\icon\payment\item_icon_helmet_2019halloween02_f.png" imgrect="0 0 256 256"/>
+		<image name="item_icon_helmet_2019halloween02_m" file="\icon\payment\item_icon_helmet_2019halloween02_m.png" imgrect="0 0 256 256"/>
+		<image name="item_icon_helmet_devilrabbit" file="\icon\payment\item_icon_helmet_devilrabbit.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween03_f" file="\icon\payment\icon_item_2019halloween03_f.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween03_m" file="\icon\payment\icon_item_2019halloween03_m.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_devilrabbit_m" file="\icon\payment\icon_item_devilrabbit.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_devilrabbit_f" file="\icon\payment\icon_item_devilrabbit.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween01_f" file="\icon\payment\icon_item_2019halloween01_f.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019halloween01_m" file="\icon\payment\icon_item_2019halloween01_m.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_2019hallowen_weapon" file="\icon\payment\icon_item_2019hallowen_weapon.png" imgrect="0 0 256 256" CMM_Caption="2019_할로윈 무기선택상자"/>
 	</imagelist>
 	<imagelist category="seal">
 		<image name="icon_seal_yellow_cc_A1" file="\icon\seal\seal_yellow_cc_A1.tga" imgrect="0 0 80 80"/>

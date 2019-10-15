@@ -5747,6 +5747,7 @@
 		<Effect Name="GUILD_COLONY_F_PILGRIMROAD_41_2"/>
 		<Effect Name="GUILD_COLONY_F_TABLELAND_72"/>
 		<Effect Name="Guild_RAID_BORUTOS_KAPAS_1"/>
+		<Effect Name="EVENT_1910_HALLOWEEN_TRICK"/>
 	</Category>
 	<Category ID="27">
 		<Effect Name="SAPPER_TRAP_Sapper_BroomTrap"/>

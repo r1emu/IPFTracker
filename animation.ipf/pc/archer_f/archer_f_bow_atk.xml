@@ -1,7 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <ActionDesc>
-    <Sound frame="0.00" soundFile="arrow_blow_normal"/>
-    <Sound frame="1.00" soundFile="voice_archer_f_atk"/>
-    <Sound frame="2.00" soundFile="crossbow_shot"/>
-    <Sound frame="9.00" soundFile="crossbow_cast"/>
+	<Particle frame="4" attachNode="Dummy_arrowstart" particleName="F_null" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.1" pause="true" use2DEffect="true" targetPos="false"/>
+	<Sound frame="0.00" soundFile="arrow_blow_normal"/>
+	<Sound frame="1.00" soundFile="voice_archer_f_atk"/>
+	<Sound frame="2.00" soundFile="crossbow_shot"/>
+	<Sound frame="9.00" soundFile="crossbow_cast"/>
 </ActionDesc>

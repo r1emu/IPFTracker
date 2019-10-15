@@ -53,6 +53,4 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 5202,5202,1,40,-1,1,1,0,0,0,0,0,0,"HiddenTrigger6","UnvisibleName","","","","MON_DUMMY","","EVENT_RANK_RESET_NPC_1902_AI","","","","NO","YES","NO","Neutral","","","",""
 5203,5203,1,40,-1,10,1,1,0,0,1,0,0,"npc_pajauta_1","파야우타","","","","","","","PAYAUTA_EP11_NPC_CITY_1","","","NO","YES","NO","Neutral","","","",""
 5204,5204,1,1,1,1,1,2,0,0,1,0,0,"npc_soldier_female_03","경비병 에일리","","","","","","","INSTANCE_DUNGEON","","","NO","YES","NO","Neutral","","","",""
-5205,5205,1,40,1,100,1,2,0,0,0,0,0,"NPC_GM","이벤트 도우미","","","","","","","EVENT_1906_HELPER_NPC","","","NO","YES","NO","Neutral","","","",""
 10001,50001,1,40,1,60000,1,2,0,0,0,0,0,"Board3_Event","이벤트 알림판","","","","","","","STEAM_TREASURE_EVENT","","","NO","YES","NO","Neutral","","","",""
-10004,50004,1,40,1,60000,1,2,0,0,0,0,0,"gacha_cube1_event","보너스 큐브","","","","","","","GACHA_BOUNS","","","NO","YES","NO","Neutral","","","",""

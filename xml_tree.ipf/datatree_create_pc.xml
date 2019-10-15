@@ -612,6 +612,20 @@
 				<Node2 ClassID="605" ClassName="Hair51_orange" Face="head51" Hair="hair51_orange"/>
 				<Node2 ClassID="606" ClassName="Hair51_brown" Face="head51" Hair="hair51_brown"/>
 				<Node2 ClassID="607" ClassName="Hair51_midnightblue" Face="head51" Hair="hair51_midnightblue"/>
+				<Node2 ClassID="706" ClassName="Hair60" Face="head60" Hair="hair60" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="기본" EngColor="default" UseableBarrack="YES"/>
+				<Node2 ClassID="707" ClassName="Hair60_black" Face="head60" Hair="hair60_black" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="라이트 브라운" EngColor="black" UseableBarrack="NO"/>
+				<Node2 ClassID="708" ClassName="Hair60_blue" Face="head60" Hair="hair60_blue" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="애플 민트" EngColor="blue" UseableBarrack="NO"/>
+				<Node2 ClassID="709" ClassName="Hair60_peach" Face="head60" Hair="hair60_peach" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="다크 블루" EngColor="pink" UseableBarrack="NO"/>
+				<Node2 ClassID="710" ClassName="Hair60_white" Face="head60" Hair="hair60_white" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="흰색" EngColor="white" UseableBarrack="NO"/>
+				<Node2 ClassID="711" ClassName="Hair60_blond" Face="head60" Hair="hair60_blond" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="애쉬 블론드" EngColor="blond" UseableBarrack="NO"/>
+				<Node2 ClassID="712" ClassName="Hair60_red" Face="head60" Hair="hair60_red" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="루비 와인" EngColor="red" UseableBarrack="NO"/>
+				<Node2 ClassID="713" ClassName="Hair60_green" Face="head60" Hair="hair60_green" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="파스텔 그린" EngColor="green" UseableBarrack="NO"/>
+				<Node2 ClassID="714" ClassName="Hair60_gray" Face="head60" Hair="hair60_gray" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="애쉬 그레이" EngColor="gray" UseableBarrack="NO"/>
+				<Node2 ClassID="715" ClassName="Hair60_lightsalmon" Face="head60" Hair="hair60_lightsalmon" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="라이트 살몬" EngColor="lightsalmon" UseableBarrack="NO"/>
+				<Node2 ClassID="716" ClassName="Hair60_purple" Face="head60" Hair="hair60_purple" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="바이올렛" EngColor="purple" UseableBarrack="NO"/>
+				<Node2 ClassID="717" ClassName="Hair60_orange" Face="head60" Hair="hair60_orange" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="오렌지" EngColor="orange" UseableBarrack="NO"/>
+				<Node2 ClassID="718" ClassName="Hair60_brown" Face="head60" Hair="hair60_brown" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="브라운" EngColor="brown" UseableBarrack="NO"/>
+				<Node2 ClassID="719" ClassName="Hair60_midnightblue" Face="head60" Hair="hair60_midnightblue" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="미드나이트 블루" EngColor="midnightblue" UseableBarrack="NO"/>
 			</Node1>
 			<Node1 ClassID="2" ClassName="FEMALE">
 				<Node2 ClassID="1" ClassName="Hair01" Face="head" Hair="hair"/>
@@ -1271,6 +1285,20 @@
 				<Node2 ClassID="655" ClassName="Hair51_orange" Face="head51" Hair="hair51_orange"/>
 				<Node2 ClassID="656" ClassName="Hair51_brown" Face="head51" Hair="hair51_brown"/>
 				<Node2 ClassID="657" ClassName="Hair51_midnightblue" Face="head51" Hair="hair51_midnightblue"/>
+				<Node2 ClassID="756" ClassName="Hair60" Face="head60" Hair="hair60" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="기본" EngColor="default" UseableBarrack="YES"/>
+				<Node2 ClassID="757" ClassName="Hair60_black" Face="head60" Hair="hair60_black" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="라이트 브라운" EngColor="black" UseableBarrack="NO"/>
+				<Node2 ClassID="758" ClassName="Hair60_blue" Face="head60" Hair="hair60_blue" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="애플 민트" EngColor="blue" UseableBarrack="NO"/>
+				<Node2 ClassID="759" ClassName="Hair60_peach" Face="head60" Hair="hair60_peach" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="다크 블루" EngColor="pink" UseableBarrack="NO"/>
+				<Node2 ClassID="760" ClassName="Hair60_white" Face="head60" Hair="hair60_white" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="흰색" EngColor="white" UseableBarrack="NO"/>
+				<Node2 ClassID="761" ClassName="Hair60_blond" Face="head60" Hair="hair60_blond" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="애쉬 블론드" EngColor="blond" UseableBarrack="NO"/>
+				<Node2 ClassID="762" ClassName="Hair60_red" Face="head60" Hair="hair60_red" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="루비 와인" EngColor="red" UseableBarrack="NO"/>
+				<Node2 ClassID="763" ClassName="Hair60_green" Face="head60" Hair="hair60_green" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="파스텔 그린" EngColor="green" UseableBarrack="NO"/>
+				<Node2 ClassID="764" ClassName="Hair60_gray" Face="head60" Hair="hair60_gray" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="애쉬 그레이" EngColor="gray" UseableBarrack="NO"/>
+				<Node2 ClassID="765" ClassName="Hair60_lightsalmon" Face="head60" Hair="hair60_lightsalmon" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="라이트 살몬" EngColor="lightsalmon" UseableBarrack="NO"/>
+				<Node2 ClassID="766" ClassName="Hair60_purple" Face="head60" Hair="hair60_purple" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="바이올렛" EngColor="purple" UseableBarrack="NO"/>
+				<Node2 ClassID="767" ClassName="Hair60_orange" Face="head60" Hair="hair60_orange" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="오렌지" EngColor="orange" UseableBarrack="NO"/>
+				<Node2 ClassID="768" ClassName="Hair60_brown" Face="head60" Hair="hair60_brown" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="브라운" EngColor="brown" UseableBarrack="NO"/>
+				<Node2 ClassID="769" ClassName="Hair60_midnightblue" Face="head60" Hair="hair60_midnightblue" Name="검은 토끼 인형탈 헬멧 코스튬" EngName="helmet_devilrabbit" Color="미드나이트 블루" EngColor="midnightblue" UseableBarrack="NO"/>
 			</Node1>
 		</Class>
 	</Category>

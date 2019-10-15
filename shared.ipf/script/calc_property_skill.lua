@@ -6702,6 +6702,12 @@ function SCR_Get_Detoxify_Ratio(skill)
 end
 
 function SCR_GET_Daino_Ratio(skill)
+    local value = TryGetProp(skill, 'Level', 1) * 5
+    
+    return value;
+end
+
+function SCR_GET_Daino_Ratio2(skill)
     local value = TryGetProp(skill, 'Level', 1) * 1.5
     
     return value;

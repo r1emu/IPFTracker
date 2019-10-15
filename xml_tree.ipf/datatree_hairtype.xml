@@ -610,6 +610,20 @@
 			<Node Index="605" Type="충격받은 장미 기사 얼굴" EngName="helmet_romance02" ColorE="orange" Color="오렌지" UseableBarrack="NO"/>
 			<Node Index="606" Type="충격받은 장미 기사 얼굴" EngName="helmet_romance02" ColorE="brown" Color="브라운" UseableBarrack="NO"/>
 			<Node Index="607" Type="충격받은 장미 기사 얼굴" EngName="helmet_romance02" ColorE="midnightblue" Color="미드나이트 블루" UseableBarrack="NO"/>
+			<Node Index="692" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="default" Color="기본" UseableBarrack="NO"/>
+			<Node Index="693" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="black" Color="라이트 브라운" UseableBarrack="NO"/>
+			<Node Index="694" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="blue" Color="애플 민트" UseableBarrack="NO"/>
+			<Node Index="695" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="pink" Color="다크 블루" UseableBarrack="NO"/>
+			<Node Index="696" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="white" Color="흰색" UseableBarrack="NO"/>
+			<Node Index="697" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="blond" Color="애쉬 블론드" UseableBarrack="NO"/>
+			<Node Index="698" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
+			<Node Index="699" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="700" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="701" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="lightsalmon" Color="라이트 살몬" UseableBarrack="NO"/>
+			<Node Index="702" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="purple" Color="바이올렛" UseableBarrack="NO"/>
+			<Node Index="703" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="orange" Color="오렌지" UseableBarrack="NO"/>
+			<Node Index="704" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="brown" Color="브라운" UseableBarrack="NO"/>
+			<Node Index="705" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="midnightblue" Color="미드나이트 블루" UseableBarrack="NO"/>
 		</Class>
 		<Class ClassID="2">
 			<Node Index="1" Type="숏 컷" EngName="Shortcut" ColorE="default" Color="기본" UseableBarrack="YES"/>
@@ -1269,6 +1283,20 @@
 			<Node Index="655" Type="충격받은 장미 기사 얼굴" EngName="helmet_romance02" ColorE="orange" Color="오렌지" UseableBarrack="NO"/>
 			<Node Index="656" Type="충격받은 장미 기사 얼굴" EngName="helmet_romance02" ColorE="brown" Color="브라운" UseableBarrack="NO"/>
 			<Node Index="657" Type="충격받은 장미 기사 얼굴" EngName="helmet_romance02" ColorE="midnightblue" Color="미드나이트 블루" UseableBarrack="NO"/>
+			<Node Index="741" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="default" Color="기본" UseableBarrack="NO"/>
+			<Node Index="742" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="black" Color="라이트 브라운" UseableBarrack="NO"/>
+			<Node Index="743" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="blue" Color="애플 민트" UseableBarrack="NO"/>
+			<Node Index="744" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="pink" Color="다크 블루" UseableBarrack="NO"/>
+			<Node Index="745" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="white" Color="흰색" UseableBarrack="NO"/>
+			<Node Index="746" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="blond" Color="애쉬 블론드" UseableBarrack="NO"/>
+			<Node Index="747" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="red" Color="루비 와인" UseableBarrack="NO"/>
+			<Node Index="748" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="green" Color="파스텔 그린" UseableBarrack="NO"/>
+			<Node Index="749" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="gray" Color="애쉬 그레이" UseableBarrack="NO"/>
+			<Node Index="750" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="lightsalmon" Color="라이트 살몬" UseableBarrack="NO"/>
+			<Node Index="751" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="purple" Color="바이올렛" UseableBarrack="NO"/>
+			<Node Index="752" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="orange" Color="오렌지" UseableBarrack="NO"/>
+			<Node Index="753" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="brown" Color="브라운" UseableBarrack="NO"/>
+			<Node Index="754" Type="검은 토끼 인형탈 코스튬" EngName="helmet_devilrabbit" ColorE="midnightblue" Color="미드나이트 블루" UseableBarrack="NO"/>
 		</Class>
 	</Category>
 </idspace>

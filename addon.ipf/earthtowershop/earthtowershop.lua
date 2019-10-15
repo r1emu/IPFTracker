@@ -26,14 +26,14 @@ function EARTHTOWERSHOP_BUY_ITEM(itemName,itemCount)
 	if recipecls.AccountNeedProperty ~= 'None' then
 	    local aObj = GetMyAccountObj()
 		local sCount = TryGetProp(aObj, recipecls.AccountNeedProperty); 
-        --EVENT_1906_SUMMER_FESTA
-        local time = geTime.GetServerSystemTime()
-        time = time.wYear..time.wMonth..time.wDay
-        if time < '2018725' then
-            if recipecls.ClassName == 'EventTotalShop1906_25' or recipecls.ClassName == 'EventTotalShop1906_26' then
-                sCount = sCount - 2
-            end
-        end
+        -- --EVENT_1906_SUMMER_FESTA
+        -- local time = geTime.GetServerSystemTime()
+        -- time = time.wYear..time.wMonth..time.wDay
+        -- if time < '2018725' then
+        --     if recipecls.ClassName == 'EventTotalShop1906_25' or recipecls.ClassName == 'EventTotalShop1906_26' then
+        --         sCount = sCount - 2
+        --     end
+        -- end
 		local cntText = ScpArgMsg("Excnaged_AccountCount_Remind","COUNT",string.format("%d", sCount))
 		local tradeBtn = GET_CHILD(ctrlset, "tradeBtn");
 		if sCount <= 0 then
@@ -132,16 +132,16 @@ function REQ_VIVID_CITY2_SHOP_OPEN()
 end
 
 function REQ_EVENT1906_TOTAL_SHOP_OPEN()
-    local frame = ui.GetFrame("earthtowershop");
-    frame:SetUserValue("SHOP_TYPE", 'EventTotalShop1906');
-    ui.OpenFrame('earthtowershop');
+    -- local frame = ui.GetFrame("earthtowershop");
+    -- frame:SetUserValue("SHOP_TYPE", 'EventTotalShop1906');
+    -- ui.OpenFrame('earthtowershop');
 end
 
 
 function REQ_EVENT1907_ICE_SHOP_OPEN()
-    local frame = ui.GetFrame("earthtowershop");
-    frame:SetUserValue("SHOP_TYPE", 'EventIceShop1907');
-    ui.OpenFrame('earthtowershop');
+    -- local frame = ui.GetFrame("earthtowershop");
+    -- frame:SetUserValue("SHOP_TYPE", 'EventIceShop1907');
+    -- ui.OpenFrame('earthtowershop');
 end
 
 function EARTH_TOWER_SHOP_OPEN(frame)
@@ -227,8 +227,8 @@ function EARTH_TOWER_INIT(frame, shopType)
         title:SetText('{@st43}'..ScpArgMsg("EventShop"));
         close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EventShop")));
     elseif shopType == 'EventIceShop1907' then
-        title:SetText('{@st43}'..ScpArgMsg("EventShop"));
-        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EVENT_1907_ICESHOP_TITLE_NAME_1")));
+--        title:SetText('{@st43}'..ScpArgMsg("EventShop"));
+--        close:SetTextTooltip(ScpArgMsg('CloseUI{NAME}', 'NAME', ScpArgMsg("EVENT_1907_ICESHOP_TITLE_NAME_1")));
     end
 
 
@@ -494,14 +494,14 @@ function EXCHANGE_CREATE_TREE_PAGE(tree, slotHeight, groupName, classType, cls, 
     if recipecls.AccountNeedProperty ~= 'None' then
         local aObj = GetMyAccountObj()
         local sCount = TryGetProp(aObj, recipecls.AccountNeedProperty); 
-        --EVENT_1906_SUMMER_FESTA
-        local time = geTime.GetServerSystemTime()
-        time = time.wYear..time.wMonth..time.wDay
-        if time < '2018725' then
-            if recipecls.ClassName == 'EventTotalShop1906_25' or recipecls.ClassName == 'EventTotalShop1906_26' then
-                sCount = sCount - 2
-            end
-        end
+        -- --EVENT_1906_SUMMER_FESTA
+        -- local time = geTime.GetServerSystemTime()
+        -- time = time.wYear..time.wMonth..time.wDay
+        -- if time < '2018725' then
+        --     if recipecls.ClassName == 'EventTotalShop1906_25' or recipecls.ClassName == 'EventTotalShop1906_26' then
+        --         sCount = sCount - 2
+        --     end
+        -- end
         local cntText = ScpArgMsg("Excnaged_AccountCount_Remind","COUNT",string.format("%d", sCount))
         local tradeBtn = GET_CHILD(ctrlset, "tradeBtn");
         if sCount <= 0 then
@@ -878,14 +878,14 @@ function EARTHTOWERSHOP_CHANGECOUNT_NUM_CHANGE(ctrlset,change)
     if recipecls.AccountNeedProperty ~= 'None' then
         local aObj = GetMyAccountObj()
         local sCount = TryGetProp(aObj, recipecls.AccountNeedProperty); 
-        --EVENT_1906_SUMMER_FESTA
-        local time = geTime.GetServerSystemTime()
-        time = time.wYear..time.wMonth..time.wDay
-        if time < '2018725' then
-            if recipecls.ClassName == 'EventTotalShop1906_25' or recipecls.ClassName == 'EventTotalShop1906_26' then
-                sCount = sCount - 2
-            end
-        end
+        -- --EVENT_1906_SUMMER_FESTA
+        -- local time = geTime.GetServerSystemTime()
+        -- time = time.wYear..time.wMonth..time.wDay
+        -- if time < '2018725' then
+        --     if recipecls.ClassName == 'EventTotalShop1906_25' or recipecls.ClassName == 'EventTotalShop1906_26' then
+        --         sCount = sCount - 2
+        --     end
+        -- end
         if sCount < countText then
             countText = sCount
         end
