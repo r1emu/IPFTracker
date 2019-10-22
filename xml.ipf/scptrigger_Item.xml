@@ -7143,7 +7143,7 @@ end"/>
 			</Trigger>
 		</TriggerList>
 	</SpcItem>
-	<SpcItem Name="wing_halloween_moon">
+	<SpcItem Name="Effect_halloween_moon">
 		<TriggerList Act="Equip">
 			<Trigger>
 				<ExecList>

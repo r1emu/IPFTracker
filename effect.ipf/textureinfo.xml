@@ -3,6 +3,7 @@
 <!-- edited with XMLSpy v2006 U (http://www.altova.com) by Administrator (EMBRACE) -->
 <TextureInfo>
 	<Texture Name="light048" File="light048.dds" Size="128 128"/>
+	<Texture Name="fire015" File="fire015.dds" Size="256 256"/>
 	<Texture Name="pattern029" File="pattern029.dds" Size="128 128"/>
 	<Texture Name="sprite002_lightning_white" File="sprite002_lightning_white.dds" Size="256 256"/>
 	<Texture Name="leaf006_6" File="leaf006_6.dds" Size="128 128"/>
