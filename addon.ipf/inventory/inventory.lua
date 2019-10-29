@@ -29,9 +29,146 @@ end
 local invenTitleName = nil
 local clickedLockItemSlot = nil
 
-g_invenTypeStrList = {"All", "Equip", "Consume", "Recipe", "Card", "Etc", "Gem", "Premium"};
+g_shopList = {"companionshop", "housing_shop", "shop", "exchange", "oblation_sell"};
+g_invenTypeStrList = {"All", "Equip", "Consume", "Recipe", "Card", "Etc", "Gem", "Premium", "Housing"};
+
 local _invenCatOpenOption = {}; -- key: cid, value: {key: CategoryName, value: IsToggle}
 local _invenTreeOpenOption = {}; -- key: cid, value: {key: TreegroupName, value: IsToggle}
+local _invenSortTypeOption = {}; -- key: cid, value: SortType
+
+local function CHECK_INVENTORY_OPTION_EQUIP(itemCls)
+	if itemCls == nil then
+		return 0
+	end
+
+	local itemGrade = itemCls.ItemGrade
+	local optionConfig = 1
+	if itemGrade == 1 then
+		optionConfig = config.GetXMLConfig("InvOption_Equip_Normal")
+	elseif itemGrade == 2 then
+		optionConfig = config.GetXMLConfig("InvOption_Equip_Magic")
+	elseif itemGrade == 3 then
+		optionConfig = config.GetXMLConfig("InvOption_Equip_Rare")
+	elseif itemGrade == 4 then
+		optionConfig = config.GetXMLConfig("InvOption_Equip_Unique")
+	elseif itemGrade == 5 then
+		optionConfig = config.GetXMLConfig("InvOption_Equip_Legend")
+	end
+
+	if config.GetXMLConfig("InvOption_Equip_All") == 1 then
+		optionConfig = 1
+	end
+
+	if optionConfig == 0 then
+		return
+	end
+
+	local itemTranscend = TryGetProp(itemCls, "Transcend")
+	local itemReinforce = TryGetProp(itemCls, "Reinforce_2")
+	local itemAppraisal = TryGetProp(itemCls, "NeedAppraisal")
+	local itemRandomOption = TryGetProp(itemCls, "NeedRandomOption")
+
+	if config.GetXMLConfig("InvOption_Equip_Upgrade") == 1 then
+		if itemTranscend ~= nil and itemTranscend == 0 and itemReinforce ~= nil and itemReinforce == 0 then
+			optionConfig = 0
+		end
+	end
+
+	if config.GetXMLConfig("InvOption_Equip_Random") == 1 then
+		if itemAppraisal ~= nil and itemAppraisal == 0 and itemRandomOption ~= nil and itemRandomOption == 0 then
+			optionConfig = 0
+		end
+	end
+
+	return optionConfig
+end
+
+local function CHECK_INVENTORY_OPTION_CARD(itemCls)
+	if config.GetXMLConfig("InvOption_Card_All") == 1 then
+		return 1
+	end
+
+	if itemCls == nil then
+		return 0
+	end
+
+	local cardGroup = itemCls.MarketCategory
+	local optionConfig = 1
+	if cardGroup == "Card_CardRed" then
+		optionConfig = config.GetXMLConfig("InvOption_Card_Red")
+	elseif cardGroup == "Card_CardBlue" then
+		optionConfig = config.GetXMLConfig("InvOption_Card_Blue")
+	elseif cardGroup == "Card_CardGreen" then
+		optionConfig = config.GetXMLConfig("InvOption_Card_Green")
+	elseif cardGroup == "Card_CardPurple" then
+		optionConfig = config.GetXMLConfig("InvOption_Card_Purple")
+	elseif cardGroup == "Card_CardLeg" then
+		optionConfig = config.GetXMLConfig("InvOption_Card_Legend")
+	elseif cardGroup == "Card_CardAddExp" then
+		optionConfig = config.GetXMLConfig("InvOption_Card_Etc")
+	end
+	
+
+	return optionConfig
+end
+
+local function CHECK_INVENTORY_OPTION_ETC(itemCls)
+	if config.GetXMLConfig("InvOption_Etc_All") == 1 then
+		return 1
+	end
+
+	if itemCls == nil then
+		return 0
+	end
+
+	local itemCategory = itemCls.MarketCategory
+	local optionConfig = 0
+	if itemCategory == "Misc_Usual" or itemCategory == "Misc_MiscSkill" then
+		optionConfig = config.GetXMLConfig("InvOption_Etc_Usual")
+	elseif itemCategory == "Misc_Quest" then
+		optionConfig = config.GetXMLConfig("InvOption_Etc_Quest")
+	elseif itemCategory == "Misc_Special" or itemCategory == "OPTMisc_IcorWeapon" or itemCategory == "OPTMisc_IcorArmor" then
+		optionConfig = config.GetXMLConfig("InvOption_Etc_Special")
+	elseif itemCategory == "Misc_Collect" then
+		optionConfig = config.GetXMLConfig("InvOption_Etc_Collect")
+	elseif itemCategory == "Misc_Etc" then
+		optionConfig = config.GetXMLConfig("InvOption_Etc_Etc")
+	elseif itemCategory == "Misc_Mineral" then
+		optionConfig = config.GetXMLConfig("InvOption_Etc_Mineral")
+	end
+
+	return optionConfig
+end
+
+local function CHECK_INVENTORY_OPTION_GEM(itemCls)
+	if config.GetXMLConfig("InvOption_Gem_All") == 1 then
+		return 1
+	end
+
+	if itemCls == nil then
+		return 0
+	end
+
+	local cardGroup = itemCls.MarketCategory
+	local optionConfig = 1
+	if cardGroup == "Gem_GemRed" then
+		optionConfig = config.GetXMLConfig("InvOption_Gem_Red")
+	elseif cardGroup == "Gem_GemBlue" then
+		optionConfig = config.GetXMLConfig("InvOption_Gem_Blue")
+	elseif cardGroup == "Gem_GemGreen" then
+		optionConfig = config.GetXMLConfig("InvOption_Gem_Green")
+	elseif cardGroup == "Gem_GemYellow" then
+		optionConfig = config.GetXMLConfig("InvOption_Gem_Yellow")
+	elseif cardGroup == "Gem_GemLegend" then
+		optionConfig = config.GetXMLConfig("InvOption_Gem_Legend")
+	elseif cardGroup == "Gem_GemSkill" then
+		optionConfig = config.GetXMLConfig("InvOption_Gem_Skill")
+	elseif cardGroup == "Gem_GemWhite" then
+		optionConfig = config.GetXMLConfig("InvOption_Gem_White")
+	end
+	
+	return optionConfig
+end
 
 function INVENTORY_ON_INIT(addon, frame)
 	addon:RegisterMsg('ITEM_LOCK_FAIL', 'INV_ITEM_LOCK_SAVE_FAIL');
@@ -87,6 +224,16 @@ function INVENTORY_ON_INIT(addon, frame)
 	RESET_INVENTORY_ICON();
 end
 
+function IS_SHOP_FRAME_OPEN()
+	for i = 1, #g_shopList do
+		if ui.GetFrame(g_shopList[i]):IsVisible() == 1 then
+			return true;
+		end
+	end
+
+	return false;
+end
+
 function UI_TOGGLE_INVENTORY()
 	if app.IsBarrackMode() == true then
 		return;
@@ -121,13 +268,14 @@ end
 
 function UPDATE_INVENTORY_SLOT(slot, invItem, itemCls)
 	INIT_INVEN_SLOT(slot);
+
 	--거래목록 또는 상점 판매목록에서 올려놓은 아이템(슬롯) 표시 기능
-	if ui.GetFrame('shop'):IsVisible() == 1 or ui.GetFrame('exchange'):IsVisible() == 1 or ui.GetFrame("oblation_sell"):IsVisible() == 1 then
+	if IS_SHOP_FRAME_OPEN() then
 		local remainInvItemCount = GET_REMAIN_INVITEM_COUNT(invItem);
 		if remainInvItemCount ~= invItem.count then
 			slot:Select(1);
 		else
-			slot:Select(0);			
+			slot:Select(0);
 		end
 	end
 end
@@ -462,91 +610,106 @@ function TEMP_INV_ADD(frame,invIndex)
 
 	local typeStr = GET_INVENTORY_TREEGROUP(baseidcls)
 	local tree = GET_CHILD_RECURSIVELY(frame, 'inventree_' .. typeStr);	
-	INSERT_ITEM_TO_TREE(frame, tree, invItem, itemCls, baseidcls);
-	
-	--아이템 없는 빈 슬롯은 숨겨라
-	for i = 1 , #SLOTSET_NAMELIST do
-		local slotset = GET_CHILD_RECURSIVELY(tree,SLOTSET_NAMELIST[i],'ui::CSlotSet')	
-		HIDE_EMPTY_SLOT(slotset)
+
+	local viewOptionCheck = 1;
+	if typeStr == "Equip" then
+		viewOptionCheck = CHECK_INVENTORY_OPTION_EQUIP(itemCls)
+	elseif typeStr == "Card" then
+		viewOptionCheck = CHECK_INVENTORY_OPTION_CARD(itemCls)
+	elseif typeStr == "Etc" then
+		viewOptionCheck = CHECK_INVENTORY_OPTION_ETC(itemCls)					
+	elseif typeStr == "Gem" then
+		viewOptionCheck = CHECK_INVENTORY_OPTION_GEM(itemCls)
 	end
 	
-	ADD_GROUP_BOTTOM_MARGIN(frame,tree)
-
-	local treegroupname = baseidcls.TreeGroup;
-	local treegroup = tree:FindByValue(treegroupname);
-
-	if beforeSlotSetCount ~= #SLOTSET_NAMELIST then
-		tree:SortTreeChildByFunc(treegroup, "GET_SLOTSET_SORT_SCORE");
-	end
-
-	if beforeGroupCount ~= #GROUP_NAMELIST then
-		tree:SortTreeChildByFunc(tree:GetRootItem(), "GET_GROUP_SORT_SCORE");
-	end
-
-	local treeNode = tree:GetNodeByTreeItem(treegroup);
-	tree:OpenNode(treeNode, true, true);
-	
-	--검색결과 스크롤 세팅은 여기서 하자. 트리 업데이트 후에 위치가 고정된 다음에.
-	for i = 1 , #SLOTSET_NAMELIST do
-		slotset = GET_CHILD_RECURSIVELY(tree,SLOTSET_NAMELIST[i],'ui::CSlotSet')
-		local slotsetnode = tree:FindByValue(SLOTSET_NAMELIST[i]);
-		if setpos == 'setpos' then
-
-			local savedPos = frame:GetUserValue("INVENTORY_CUR_SCROLL_POS");
+	if viewOptionCheck == 1 then
+		INSERT_ITEM_TO_TREE(frame, tree, invItem, itemCls, baseidcls);	
 		
-			if savedPos == 'None' then
-				savedPos = 0
-			end
-				
-			local tree_box = GET_CHILD_RECURSIVELY(frame, 'treeGbox_'.. typeStr)
-			tree_box:SetScrollPos( tonumber(savedPos) )
+		--아이템 없는 빈 슬롯은 숨겨라
+		for i = 1 , #SLOTSET_NAMELIST do
+			local slotset = GET_CHILD_RECURSIVELY(tree,SLOTSET_NAMELIST[i],'ui::CSlotSet')	
+			HIDE_EMPTY_SLOT(slotset)
 		end
 		
-	end
+		ADD_GROUP_BOTTOM_MARGIN(frame,tree)
 
+		local treegroupname = baseidcls.TreeGroup;
+		local treegroup = tree:FindByValue(treegroupname);
+	
+		if beforeSlotSetCount ~= #SLOTSET_NAMELIST then
+			tree:SortTreeChildByFunc(treegroup, "GET_SLOTSET_SORT_SCORE");
+		end
+	
+		if beforeGroupCount ~= #GROUP_NAMELIST then
+			tree:SortTreeChildByFunc(tree:GetRootItem(), "GET_GROUP_SORT_SCORE");
+		end
+	
+		local treeNode = tree:GetNodeByTreeItem(treegroup);
+		tree:OpenNode(treeNode, true, true);
+		
+		--검색결과 스크롤 세팅은 여기서 하자. 트리 업데이트 후에 위치가 고정된 다음에.
+		for i = 1 , #SLOTSET_NAMELIST do
+			slotset = GET_CHILD_RECURSIVELY(tree,SLOTSET_NAMELIST[i],'ui::CSlotSet')
+			local slotsetnode = tree:FindByValue(SLOTSET_NAMELIST[i]);
+			if setpos == 'setpos' then
+	
+				local savedPos = frame:GetUserValue("INVENTORY_CUR_SCROLL_POS");
+			
+				if savedPos == 'None' then
+					savedPos = 0
+				end
+					
+				local tree_box = GET_CHILD_RECURSIVELY(frame, 'treeGbox_'.. typeStr)
+				tree_box:SetScrollPos( tonumber(savedPos) )
+			end
+			
+		end
+	end
 	
 ------------------------------
 	typeStr = "All"	
 
 	tree = GET_CHILD_RECURSIVELY(frame, 'inventree_' .. typeStr);	
-	INSERT_ITEM_TO_TREE(frame, tree, invItem, itemCls, baseidcls);
-	
-	--아이템 없는 빈 슬롯은 숨겨라
-	for i = 1 , #SLOTSET_NAMELIST do
-		local slotset = GET_CHILD_RECURSIVELY(tree,SLOTSET_NAMELIST[i],'ui::CSlotSet')	
-		HIDE_EMPTY_SLOT(slotset)
-	end
-	
-	ADD_GROUP_BOTTOM_MARGIN(frame,tree)
-
-	treegroupname = baseidcls.TreeGroup;
-	treegroup = tree:FindByValue(treegroupname);
-
-	if beforeSlotSetCount ~= #SLOTSET_NAMELIST then
-		tree:SortTreeChildByFunc(treegroup, "GET_SLOTSET_SORT_SCORE");
-	end
-
-	if beforeGroupCount ~= #GROUP_NAMELIST then
-		tree:SortTreeChildByFunc(tree:GetRootItem(), "GET_GROUP_SORT_SCORE");
-	end
-
-	treeNode = tree:GetNodeByTreeItem(treegroup);
-	tree:OpenNode(treeNode, true, true);
-	
-	--검색결과 스크롤 세팅은 여기서 하자. 트리 업데이트 후에 위치가 고정된 다음에.
-	for i = 1 , #SLOTSET_NAMELIST do
-		slotset = GET_CHILD_RECURSIVELY(tree,SLOTSET_NAMELIST[i],'ui::CSlotSet')
-		local slotsetnode = tree:FindByValue(SLOTSET_NAMELIST[i]);
-		if setpos == 'setpos' then
-
-			local savedPos = frame:GetUserValue("INVENTORY_CUR_SCROLL_POS");
+	if viewOptionCheck == 1 then
+		INSERT_ITEM_TO_TREE(frame, tree, invItem, itemCls, baseidcls); 
 		
-			if savedPos == 'None' then
-				savedPos = 0
-			end
-				
-			local tree_box = GET_CHILD_RECURSIVELY(frame, 'treeGbox_'.. typeStr)
-			tree_box:SetScrollPos( tonumber(savedPos) )
+		--아이템 없는 빈 슬롯은 숨겨라
+		for i = 1 , #SLOTSET_NAMELIST do
+			local slotset = GET_CHILD_RECURSIVELY(tree,SLOTSET_NAMELIST[i],'ui::CSlotSet')	
+			HIDE_EMPTY_SLOT(slotset)
+		end
+		
+		ADD_GROUP_BOTTOM_MARGIN(frame,tree)
+	
+		treegroupname = baseidcls.TreeGroup;
+		treegroup = tree:FindByValue(treegroupname);
+	
+		if beforeSlotSetCount ~= #SLOTSET_NAMELIST then
+			tree:SortTreeChildByFunc(treegroup, "GET_SLOTSET_SORT_SCORE");
+		end
+	
+		if beforeGroupCount ~= #GROUP_NAMELIST then
+			tree:SortTreeChildByFunc(tree:GetRootItem(), "GET_GROUP_SORT_SCORE");
+		end
+	
+		treeNode = tree:GetNodeByTreeItem(treegroup);
+		tree:OpenNode(treeNode, true, true);
+		
+		--검색결과 스크롤 세팅은 여기서 하자. 트리 업데이트 후에 위치가 고정된 다음에.
+		for i = 1 , #SLOTSET_NAMELIST do
+			slotset = GET_CHILD_RECURSIVELY(tree,SLOTSET_NAMELIST[i],'ui::CSlotSet')
+			local slotsetnode = tree:FindByValue(SLOTSET_NAMELIST[i]);
+			if setpos == 'setpos' then
+	
+				local savedPos = frame:GetUserValue("INVENTORY_CUR_SCROLL_POS");
+			
+				if savedPos == 'None' then
+					savedPos = 0
+				end
+					
+				local tree_box = GET_CHILD_RECURSIVELY(frame, 'treeGbox_'.. typeStr)
+				tree_box:SetScrollPos( tonumber(savedPos) )
+			end			
 		end
 		
 	end
@@ -1300,13 +1463,8 @@ function INIT_INVEN_SLOT(slot)
 	local dropscp = frame:GetUserConfig("TREE_SLOT_DROPSCRIPT");
 	local popscp = frame:GetUserConfig("TREE_SLOT_POPSCRIPT");
 
-	local shopframe = ui.GetFrame("shop");
-	local exchangeframe  = ui.GetFrame("exchange");
-	local companionshop = ui.GetFrame('companionshop');	
-	local oblationSell = ui.GetFrame("oblation_sell");
-
-	if shopframe:IsVisible() == 1 or exchangeframe:IsVisible() == 1 or companionshop:IsVisible() == 1 or oblationSell:IsVisible() == 1 then
-		slot:SetSelectedImage('socket_slot_check')  -- 거래시에만 체크 셀렉 아이콘 사용	
+	if IS_SHOP_FRAME_OPEN() then
+		slot:SetSelectedImage('socket_slot_check') -- 거래시에만 체크 셀렉 아이콘 사용	
 	end
 
 	slot:EnableHideInDrag(true)
@@ -1319,9 +1477,6 @@ end
 function INVENTORY_SLOT_UNCHECK(frame, itemID)
 	--Inventory Slot Uncheck Setting
 	local group = GET_CHILD_RECURSIVELY(frame, 'inventoryGbox', 'ui::CGroupBox');
-	local oblationSell = ui.GetFrame("oblation_sell");
-	local shopframe = ui.GetFrame("shop");
-	local exchangeframe  = ui.GetFrame("exchange");
 
 	for typeNo = 1, #g_invenTypeStrList do
 		local tree_box = GET_CHILD_RECURSIVELY(group, 'treeGbox_'.. g_invenTypeStrList[typeNo],'ui::CGroupBox');
@@ -1336,9 +1491,11 @@ function INVENTORY_SLOT_UNCHECK(frame, itemID)
 			for j = 0, slotSet:GetChildCount() - 1 do
 				local slot = slotSet:GetChildByIndex(j);
 				local slotItem = GET_SLOT_ITEM(slot);
-				if slotItem ~= nil and (oblationSell:IsVisible() == 1 or shopframe:IsVisible() == 1 or exchangeframe:IsVisible() == 1) then
-					if slotItem:GetIESID() == itemID then
-						slot:Select(0);				
+				if slotItem ~= nil then
+					if IS_SHOP_FRAME_OPEN() and ui.GetFrame('housing_shop'):IsVisible() ~= 1 then
+						if slotItem:GetIESID() == itemID then
+							slot:Select(0);
+						end
 					end
 				end
 				
@@ -1387,141 +1544,6 @@ function GET_REMAIN_INVITEM_COUNT(invItem)
 		end
 	end
 	return remainInvItemCount;
-end
-
-
-local function CHECK_INVENTORY_OPTION_EQUIP(itemCls)
-	if itemCls == nil then
-		return 0
-	end
-
-	local itemGrade = itemCls.ItemGrade
-	local optionConfig = 1
-	if itemGrade == 1 then
-		optionConfig = config.GetXMLConfig("InvOption_Equip_Normal")
-	elseif itemGrade == 2 then
-		optionConfig = config.GetXMLConfig("InvOption_Equip_Magic")
-	elseif itemGrade == 3 then
-		optionConfig = config.GetXMLConfig("InvOption_Equip_Rare")
-	elseif itemGrade == 4 then
-		optionConfig = config.GetXMLConfig("InvOption_Equip_Unique")
-	elseif itemGrade == 5 then
-		optionConfig = config.GetXMLConfig("InvOption_Equip_Legend")
-	end
-
-	if config.GetXMLConfig("InvOption_Equip_All") == 1 then
-		optionConfig = 1
-	end
-
-	if optionConfig == 0 then
-		return
-	end
-
-	local itemTranscend = TryGetProp(itemCls, "Transcend")
-	local itemReinforce = TryGetProp(itemCls, "Reinforce_2")
-	local itemAppraisal = TryGetProp(itemCls, "NeedAppraisal")
-	local itemRandomOption = TryGetProp(itemCls, "NeedRandomOption")
-
-	if config.GetXMLConfig("InvOption_Equip_Upgrade") == 1 then
-		if itemTranscend ~= nil and itemTranscend == 0 and itemReinforce ~= nil and itemReinforce == 0 then
-			optionConfig = 0
-		end
-	end
-
-	if config.GetXMLConfig("InvOption_Equip_Random") == 1 then
-		if itemAppraisal ~= nil and itemAppraisal == 0 and itemRandomOption ~= nil and itemRandomOption == 0 then
-			optionConfig = 0
-		end
-	end
-
-	return optionConfig
-end
-
-local function CHECK_INVENTORY_OPTION_CARD(itemCls)
-	if config.GetXMLConfig("InvOption_Card_All") == 1 then
-		return 1
-	end
-
-	if itemCls == nil then
-		return 0
-	end
-
-	local cardGroup = itemCls.MarketCategory
-	local optionConfig = 1
-	if cardGroup == "Card_CardRed" then
-		optionConfig = config.GetXMLConfig("InvOption_Card_Red")
-	elseif cardGroup == "Card_CardBlue" then
-		optionConfig = config.GetXMLConfig("InvOption_Card_Blue")
-	elseif cardGroup == "Card_CardGreen" then
-		optionConfig = config.GetXMLConfig("InvOption_Card_Green")
-	elseif cardGroup == "Card_CardPurple" then
-		optionConfig = config.GetXMLConfig("InvOption_Card_Purple")
-	elseif cardGroup == "Card_CardLeg" then
-		optionConfig = config.GetXMLConfig("InvOption_Card_Legend")
-	elseif cardGroup == "Card_CardAddExp" then
-		optionConfig = config.GetXMLConfig("InvOption_Card_Etc")
-	end
-	
-
-	return optionConfig
-end
-
-local function CHECK_INVENTORY_OPTION_ETC(itemCls)
-	if config.GetXMLConfig("InvOption_Etc_All") == 1 then
-		return 1
-	end
-
-	if itemCls == nil then
-		return 0
-	end
-
-	local itemCategory = itemCls.MarketCategory
-	local optionConfig = 0
-	if itemCategory == "Misc_Usual" or itemCategory == "Misc_MiscSkill" then
-		optionConfig = config.GetXMLConfig("InvOption_Etc_Usual")
-	elseif itemCategory == "Misc_Quest" then
-		optionConfig = config.GetXMLConfig("InvOption_Etc_Quest")
-	elseif itemCategory == "Misc_Special" or itemCategory == "OPTMisc_IcorWeapon" or itemCategory == "OPTMisc_IcorArmor" then
-		optionConfig = config.GetXMLConfig("InvOption_Etc_Special")
-	elseif itemCategory == "Misc_Collect" then
-		optionConfig = config.GetXMLConfig("InvOption_Etc_Collect")
-	elseif itemCategory == "Misc_Etc" then
-		optionConfig = config.GetXMLConfig("InvOption_Etc_Etc")
-	elseif itemCategory == "Misc_Mineral" then
-		optionConfig = config.GetXMLConfig("InvOption_Etc_Mineral")
-	end
-
-	return optionConfig
-end
-
-local function CHECK_INVENTORY_OPTION_GEM(itemCls)
-	if config.GetXMLConfig("InvOption_Gem_All") == 1 then
-		return 1
-	end
-
-	if itemCls == nil then
-		return 0
-	end
-
-	local cardGroup = itemCls.MarketCategory
-	local optionConfig = 1
-	if cardGroup == "Gem_GemRed" then
-		optionConfig = config.GetXMLConfig("InvOption_Gem_Red")
-	elseif cardGroup == "Gem_GemBlue" then
-		optionConfig = config.GetXMLConfig("InvOption_Gem_Blue")
-	elseif cardGroup == "Gem_GemGreen" then
-		optionConfig = config.GetXMLConfig("InvOption_Gem_Green")
-	elseif cardGroup == "Gem_GemYellow" then
-		optionConfig = config.GetXMLConfig("InvOption_Gem_Yellow")
-	elseif cardGroup == "Gem_GemLegend" then
-		optionConfig = config.GetXMLConfig("InvOption_Gem_Legend")
-	elseif cardGroup == "Gem_GemSkill" then
-		optionConfig = config.GetXMLConfig("InvOption_Gem_Skill")
-	elseif cardGroup == "Gem_GemWhite" then
-		optionConfig = config.GetXMLConfig("InvOption_Gem_White")
-	end
-	
-	return optionConfig
 end
 
 function INVENTORY_SORT_BY_GRADE(a, b)
@@ -1616,13 +1638,15 @@ function INVENTORY_TOTAL_LIST_GET(frame, setpos, isIgnorelifticon, invenTypeStr)
 		return
 	end
 
-	local sortType = frame:GetUserIValue("SORT_TYPE")
+	local mySession = session.GetMySession();
+	local cid = mySession:GetCID();
+	local sortType = _invenSortTypeOption[cid];
 	session.BuildInvItemSortedList();
 	local sortedList = session.GetInvItemSortedList();
 	local invItemCount = sortedList:size();
 
 	if sortType == nil then
-		sortType = 1
+		sortType = 0;
 	end
 
 	local blinkcolor = frame:GetUserConfig("TREE_SEARCH_BLINK_COLOR");
@@ -1751,7 +1775,7 @@ function INVENTORY_TOTAL_LIST_GET(frame, setpos, isIgnorelifticon, invenTypeStr)
 					end
 
 					if category == titleName then
-						local typeStr = GET_INVENTORY_TREEGROUP(baseidcls)						
+						local typeStr = GET_INVENTORY_TREEGROUP(baseidcls)
 						if itemCls ~= nil then
 							local makeSlot = true;
 							if cap ~= "" then
@@ -2032,16 +2056,19 @@ function INVENTORY_RBDC_ITEMUSE(frame, object, argStr, argNum)
     if INVENTORY_RBTN_MARKET_SELL(invitem) == true then
     	return;
     end
-
+	
 	local invFrame = ui.GetFrame("inventory");	
 	invFrame:SetUserValue("INVITEM_GUID", invitem:GetIESID());
 
     -- shop
 	local frame = ui.GetFrame("shop");
 	local companionshop = ui.GetFrame('companionshop');
+	local housingShopFrame = ui.GetFrame("housing_shop");
 	if companionshop:IsVisible() == 1 then
 		frame = companionshop:GetChild('foodBox');
-	end	
+	elseif housingShopFrame:IsVisible() == 1 then
+		frame = GET_CHILD_RECURSIVELY(housingShopFrame, "gbox_bottom");
+	end
 
 	if frame:IsVisible() == 1 then
 		local groupName = itemobj.GroupName;
@@ -2072,13 +2099,21 @@ function INVENTORY_RBDC_ITEMUSE(frame, object, argStr, argNum)
 				if keyboard.IsKeyPressed("LSHIFT") == 1 then
 					local sellableCount = invitem.count;
 					local titleText = ScpArgMsg("INPUT_CNT_D_D", "Auto_1", 1, "Auto_2", sellableCount);
-					INPUT_NUMBER_BOX(invFrame, titleText, "EXEC_SHOP_SELL", 1, 1, sellableCount);
+					if housingShopFrame:IsVisible() == 1 then
+						INPUT_NUMBER_BOX(invFrame, titleText, "EXEC_HOUSING_SHOP_SELL", 1, 1, sellableCount);
+					else
+						INPUT_NUMBER_BOX(invFrame, titleText, "EXEC_SHOP_SELL", 1, 1, sellableCount);
+					end
 					invFrame:SetUserValue("SELL_ITEM_GUID", invitem:GetIESID());
 					return;
 				end
 					
 				-- 상점 Sell Slot으로 넘긴다.
-				SHOP_SELL(invitem, 1, frame);
+				if housingShopFrame:IsVisible() == 1 then
+					HOUSING_SHOP_SELL(invitem, 1, frame);
+				else
+					SHOP_SELL(invitem, 1, frame);
+				end
 				return;
 			else
 	        	ui.SysMsg(ClMsg("CannotSellMore"));
@@ -2331,14 +2366,19 @@ function INVENTORY_RBDOUBLE_ITEMUSE(frame, object, argStr, argNum)
 		return;
 	end
 	
-	local frame     = ui.GetFrame("shop");
+	local frame = ui.GetFrame("shop");
 	local companionshop = ui.GetFrame('companionshop');
+	local housingShopFrame = ui.GetFrame("housing_shop");
 	if companionshop:IsVisible() == 1 then
 		frame = companionshop:GetChild('foodBox');
+	elseif housingShopFrame:IsVisible() == 1 then
+		frame = GET_CHILD_RECURSIVELY(housingShopFrame, "gbox_bottom");
 	end	
+
 	if frame:IsVisible() == 0 then
 		return;
 	end
+
 	local groupName = itemobj.GroupName;
 	if groupName == 'Money' then
 		return;
@@ -2368,7 +2408,13 @@ function INVENTORY_RBDOUBLE_ITEMUSE(frame, object, argStr, argNum)
 	if itemProp:IsEnableShopTrade() == true then
 		if IS_SHOP_SELL(invitem, Itemclass.MaxStack, frame) == 1 then
 			-- 상점 Sell Slot으로 다 넘긴다.
-			SHOP_SELL(invitem, invitem.count, frame);
+			
+			if housingShopFrame:IsVisible() == 1 then
+				HOUSING_SHOP_SELL(invitem, invitem.count, frame);
+			else
+				SHOP_SELL(invitem, invitem.count, frame);
+			end
+
 			return;
 		else
 	        ui.SysMsg(ClMsg("CannotSellMore"));
@@ -3813,7 +3859,10 @@ end
 
 function REQ_INV_SORT(invType, sortType)
 	local invFrame = ui.GetFrame("inventory")
-	invFrame:SetUserValue("SORT_TYPE", sortType +1)
+
+	local mySession = session.GetMySession();
+	local cid = mySession:GetCID();
+	_invenSortTypeOption[cid] = sortType +1;
 
 	item.SortInvIndex(invType, sortType);
 end
@@ -4356,7 +4405,7 @@ function INVENTORY_RBTN_LEGENDPREFIX(invItem)
 	if legendprefix ~= nil and legendprefix:IsVisible() == 0 then
 		return false;
 	end
-	_LEGENDPREFIX_SET_TARGET(legendprefix, invItem:GetIESID());
+	LEGENDPREFIX_SET_ITEM(legendprefix, invItem:GetIESID());
 	return true;
 end
 

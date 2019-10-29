@@ -1338,8 +1338,18 @@ function GET_FULL_NAME(item, useNewLine, isEquiped)
 	local bonusReinf = TryGetProp(pc, 'BonusReinforce');
 	local ignoreReinf = TryGetProp(pc, 'IgnoreReinforce');
 	local overReinf = TryGetProp(pc, 'OverReinforce');
+	-- 오버 리인포스 비급이 적용되면 값이 음수로 들어오므로 양수로 바꿔줌
+	local abil_flag = false;
+	if overReinf ~= nil and overReinf < 0 then
+		overReinf = -overReinf;
+		abil_flag = true;
+	end
 	if bonusReinf ~= nil then
-		if TryGetProp(item, 'EquipGroup') == 'SubWeapon' and isEquiped > 0 then
+		local equipGroup = TryGetProp(item, 'EquipGroup');
+		if equipGroup == 'SubWeapon' and isEquiped > 0 then
+			reinforce_2 = reinforce_2 + overReinf;
+		end
+		if abil_flag == true and (equipGroup == 'SHIRT' or equipGroup == 'PANTS' or equipGroup == 'GLOVES' or equipGroup == 'BOOTS') and isEquiped > 0 then
 			reinforce_2 = reinforce_2 + overReinf;
 		end
 	end
@@ -1360,7 +1370,7 @@ function GET_FULL_NAME(item, useNewLine, isEquiped)
 		ownName = string.format("+%d %s", reinforce_2, ownName);
 	end
 
-	if IS_ENCHANT_JEWELL_ITEM(item) == true then
+	if IS_ENCHANT_JEWELL_ITEM(item) == true or IS_ICOR_ITEM(item) == true then
 		return GET_EXTRACT_ITEM_NAME(item);
 	end
 
@@ -2889,9 +2899,17 @@ function USE_ITEMTARGET_ICON(frame, itemobj, argNum)
 	end
 
 	if itemobj.GroupName == "Gem" then
-		local yesscp = string.format("USE_ITEMTARGET_ICON_GEM(%d)", argNum);
-		ui.MsgBox(ClMsg("GemHasPenaltyLater"), yesscp, "RELEASE_ITEMTARGET_ICON_GEM()");
-		return;
+		local gemProp = geItemTable.GetProp(itemobj.ClassID);
+		local socketPenaltyProp = gemProp:GetSocketPropertyByLevel(0);
+		local propPenaltyAdd = socketPenaltyProp:GetPropPenaltyAddByIndex(0, 0); -- 몬스터 젬인지 검사 
+		if itemobj.GemRoastingLv == 0 and propPenaltyAdd ~= nil then
+			-- 로스팅 되지 않은 젬일 경우 경고창
+			NOT_ROASTING_GEM_EQUIP_WARNINGMSGBOX_FRAME_OPEN(GetIESID(itemobj), argNum);
+		else
+			local yesscp = string.format("USE_ITEMTARGET_ICON_GEM(%d)", argNum);
+			ui.MsgBox(ClMsg("GemHasPenaltyLater"), yesscp, "RELEASE_ITEMTARGET_ICON_GEM()");
+		end
+		return;		
 	end
 	item.SelectTargetItem(argNum);
 end

@@ -1,4 +1,4 @@
----- lib_reinforce_131014.lua
+﻿---- lib_reinforce_131014.lua
 function IS_MORU_FREE_PRICE(moruItem)
     if moruItem == nil then
         return false;
@@ -21,6 +21,7 @@ function IS_MORU_FREE_PRICE(moruItem)
         or moruItem.ClassName == "Moru_Potential14d"
         or moruItem.StringArg == 'SILVER'
         or moruItem.ClassName == 'Moru_Silver_Team'
+        or moruItem.ClassName == 'Moru_Silver_Team_event1909'
         then
         return true;
     end
@@ -53,7 +54,8 @@ function IS_MORU_NOT_DESTROY_TARGET_ITEM(moruItem)
         or moruItem.ClassName == "Moru_Gold_TA_NR" 
         or moruItem.ClassName == "Moru_Gold_Team_Trade" 
         or moruItem.ClassName == "Moru_Gold_14d_Team" 
-        or moruItem.ClassName == "Moru_Gold_EVENT_1710_NEWCHARACTER" then
+        or moruItem.ClassName == "Moru_Gold_EVENT_1710_NEWCHARACTER"
+        or moruItem.ClassName == "Moru_Gold_14d_Team_event1909" then
         return true;
     end
 
@@ -173,6 +175,11 @@ function GET_REINFORCE_PRICE(fromItem, moruItem, pc)
     --if SCR_EVENT_1903_WEEKEND_CHECK('REINFORCE', isServer) == 'YES' then
     --    value = value/2
     --end
+    
+    --burning_event
+    if IsBuffApplied(pc, "Event_Reinforce_Discount_50") == "YES" then
+        value = value/2
+    end
     
     return SyncFloor(value);
 

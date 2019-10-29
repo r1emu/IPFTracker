@@ -53,6 +53,8 @@ function QUEST_ON_INIT(addon, frame)
 	-- custom quest
 	addon:RegisterMsg('CUSTOM_QUEST_UPDATE', 'ON_CUSTOM_QUEST_UPDATE');
 	addon:RegisterMsg('CUSTOM_QUEST_DELETE', 'ON_CUSTOM_QUEST_DELETE');
+	addon:RegisterMsg('STYLE_INFO_UPDATE', 'ON_STYLE_INFO_UPDATE');
+	addon:RegisterMsg('CUSTOM_OPTION_CHECK', 'QUEST_CUSTOM_OPTION_CHECK');
 
 	-- party quest
 	addon:RegisterMsg('PARTY_UPDATE', "ON_PARTY_UPDATE_SHARED_QUEST")
@@ -1084,6 +1086,11 @@ function CHECK_PROGRESS_QUEST_VIEW_FILTER(titlename, questInfo)
 
 	local questIES = GetClassByType('QuestProgressCheck', questClassID)
 	if questIES == nil then
+		return false;
+	end
+
+	-- 증표퀘스트는 POSSIBLE 상태에서 보이면 안된다.
+	if questIES.QuestMode == 'KEYITEM' and state == 'POSSIBLE'then
 		return false;
 	end
 

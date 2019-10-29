@@ -1260,7 +1260,6 @@ function UPDATE_PET_BTN(petCtrl, petInfo, useDetachBtn)
 		
 		char_icon:SetImage(obj.Icon);
 		local btn = mainBox:GetChild("btn");
-		btn:SetEventScript(ui.LBUTTONUP, "SELECT_COMPANION_BTNUP");
 		btn:SetSkinName('companion_on');
 		if account == myaccount then
 			btn:SetEventScript(ui.LBUTTONUP, "SELECT_COMPANION_BTNUP");

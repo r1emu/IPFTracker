@@ -43,7 +43,9 @@ function INDUNINFO_CREATE_CATEGORY(frame)
 
                 --유니크 레이드의 경우 cyclePic을 숨긴다
                 if indunCls.DungeonType == 'UniqueRaid' then
-                    if SCR_RAID_EVENT_20190102(nil, false) then
+				    local pc = GetMyPCObject()
+                    if IsBuffApplied(pc, "Event_Unique_Raid_Bonus") == "YES" then
+                    --if SCR_RAID_EVENT_20190102(nil, false) then
                         cyclePicImg:SetImage('indun_icon_event_l_eng')
                         local margin = cyclePicImg:GetOriginalMargin();
                         cyclePicImg:SetMargin(margin.left, margin.top, margin.right + 20, margin.bottom);
@@ -80,17 +82,18 @@ function INDUNINFO_CREATE_CATEGORY(frame)
     INDUNINFO_CATEGORY_LBTN_CLICK(firstBtn:GetParent(), firstBtn);
 end
 
-function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
+function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)    
     local indunCls = GetClassByType('Indun', indunClassID);
     local etc = GetMyEtcObject();
     if indunCls == nil or etc == nil then
         return;
     end
+
     -- name
     local nameBox = GET_CHILD_RECURSIVELY(frame, 'nameBox');
-    local nameText = nameBox:GetChild('nameText');
+    local nameText = nameBox:GetChild('nameText');    
     nameText:SetTextByKey('name', indunCls.Name);
-
+    
     -- picture
     local indunPic = GET_CHILD_RECURSIVELY(frame, 'indunPic');
     indunPic:SetImage(indunCls.MapImage);
@@ -98,7 +101,7 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
     -- count
     local countData = GET_CHILD_RECURSIVELY(frame, 'countData');
     local cycleImage = GET_CHILD_RECURSIVELY(frame, 'cyclePic');
-    
+
     -- skill restriction
     local restrictBox = GET_CHILD_RECURSIVELY(frame, 'restrictBox');
     restrictBox:ShowWindow(0);
@@ -118,7 +121,7 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         end
     end
     
-    --local tokenStatePic = GET_CHILD_RECURSIVELY(frame, 'tokenStatePic');
+    -- local tokenStatePic = GET_CHILD_RECURSIVELY(frame, 'tokenStatePic');
     local resetGroupID = indunCls.PlayPerResetType;    
     -- local isTokenState = session.loginInfo.IsPremiumState(ITEM_TOKEN);
     -- local TOKEN_STATE_IMAGE = frame:GetUserConfig('TOKEN_STATE_IMAGE');
@@ -134,7 +137,6 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
     local etc = GetMyEtcObject();
     local nowCount = TryGetProp(etc, "InDunCountType_"..tostring(TryGetProp(indunCls, "PlayPerResetType")));
     local addCount = math.floor(nowCount * admissionPlayAddItemCount);
-    ---local etNowCount = TryGetProp(etc, "IndunWeeklyEnteredCount_"..tostring(TryGetProp(indunCls, "PlayPerResetType")));
     
     if admissionItemCount == nil then
         admissionItemCount = 0;
@@ -146,13 +148,15 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         etc = GetMyAccountObj()
     end
     
-     if indunCls.WeeklyEnterableCount ~= 0 then
+    if indunCls.WeeklyEnterableCount ~= 0 then
         nowCount = TryGetProp(etc, "IndunWeeklyEnteredCount_"..tostring(TryGetProp(indunCls, "PlayPerResetType")));
-     end
-     
-    if admissionItemName == "None" or admissionItemName == nil then
-      --  print("if " .. indunCls.Name)
+        addCount = math.floor((nowCount - indunCls.WeeklyEnterableCount) * admissionPlayAddItemCount);
+        if addCount < 0 then
+            addCount = 0;
+        end
+    end
     
+    if admissionItemName == "None" or admissionItemName == nil then
         -- if isTokenState == true then
         --     tokenStatePic:SetImage(TOKEN_STATE_IMAGE);
         --     tokenStatePic:SetTextTooltip(ScpArgMsg('YouCanMorePlayIndunWithToken', 'COUNT', indunCls.PlayPerReset_Token, 'TOKEN_STATE', ClMsg('Auto_HwalSeong')));
@@ -160,8 +164,10 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         --     tokenStatePic:SetImage(NOT_TOKEN_STATE_IMAGE);
         --     tokenStatePic:SetTextTooltip(ScpArgMsg('YouCanMorePlayIndunWithToken', 'COUNT', indunCls.PlayPerReset_Token, 'TOKEN_STATE', ClMsg('NotApplied')));
         -- end
+
         countData:SetTextByKey('now', GET_CURRENT_ENTERANCE_COUNT(resetGroupID));
         countData:SetTextByKey('max', GET_MAX_ENTERANCE_COUNT(resetGroupID));
+
         if GET_RESET_CYCLE(resetGroupID) == true then
             cycleImage:SetImage('indun_icon_week_l_eng')
             cycleImage:ShowWindow(1);
@@ -172,7 +178,7 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
                 cycleImage:SetImage('indun_icon_event_l_eng');
                 cycleImage:ShowWindow(1);
             else
-                cycleImage:SetImage('indun_icon_day_l_eng')
+                cycleImage:SetImage('indun_icon_day_l_eng');
                 cycleImage:ShowWindow(1);
             end
         end
@@ -180,10 +186,12 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         local countBox = GET_CHILD_RECURSIVELY(frame, 'countBox');
         local countText = GET_CHILD_RECURSIVELY(countBox, 'countText');
         local cycleCtrlPic = GET_CHILD_RECURSIVELY(countBox, 'cycleCtrlPic');
+
         countText:SetText(ScpArgMsg("IndunAdmissionItemReset"))
         countData:ShowWindow(1);
         countItemData:ShowWindow(0);
         cycleCtrlPic:ShowWindow(0);
+
     else
         -- if isTokenState == true then
         --     isTokenState = TryGetProp(indunCls, "PlayPerReset_Token")
@@ -194,19 +202,24 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
         --     tokenStatePic:SetImage(NOT_TOKEN_STATE_IMAGE);
         --     tokenStatePic:SetTextTooltip(ScpArgMsg('YouCanLittleIndunAdmissionItemWithToken', 'COUNT', indunCls.PlayPerReset_Token, 'TOKEN_STATE', ClMsg('NotApplied')));
         -- end
-        --local nowAdmissionItemCount = admissionItemCount + addCount - isTokenState
+        -- local nowAdmissionItemCount = admissionItemCount + addCount - isTokenState
+        
         local nowAdmissionItemCount = admissionItemCount
-        if SCR_RAID_EVENT_20190102(nil, false) == true and admissionItemName == 'Dungeon_Key01' then
-            nowAdmissionItemCount  = admissionItemCount - 1
+
+--        if SCR_RAID_EVENT_20190102(nil, false) == true and admissionItemName == 'Dungeon_Key01' then
+        local pc = GetMyPCObject()
+        if IsBuffApplied(pc, "Event_Unique_Raid_Bonus") == "YES" and admissionItemName == "Dungeon_Key01" then
+            nowAdmissionItemCount  = admissionItemCount
         else
             nowAdmissionItemCount  = admissionItemCount + addCount
         end
         
-        
         countItemData:SetTextByKey('admissionitem', '  {img '..indunAdmissionItemImage..' 30 30}  '..nowAdmissionItemCount..'')
+
         local countBox = GET_CHILD_RECURSIVELY(frame, 'countBox');
         local countText = GET_CHILD_RECURSIVELY(countBox, 'countText');
         local cycleCtrlPic = GET_CHILD_RECURSIVELY(countBox, 'cycleCtrlPic');
+
         if GET_RESET_CYCLE(resetGroupID) == true then
             cycleImage:SetImage('indun_icon_week_l_eng')
             cycleImage:ShowWindow(1);
@@ -218,11 +231,12 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
                 cycleImage:ShowWindow(1);
             end
         end
+
         if indunCls.DungeonType == "Raid" or indunCls.DungeonType == "GTower" then
             if indunCls.WeeklyEnterableCount > nowCount then
                 countText:SetText(ScpArgMsg("IndunAdmissionItemReset"))
                 cycleCtrlPic:ShowWindow(0);
-				
+
                 countData:SetTextByKey('now', nowCount);
                 countData:SetTextByKey('max', indunCls.WeeklyEnterableCount);
 
@@ -231,34 +245,36 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
             else
                 countText:SetText(ScpArgMsg("IndunAdmissionItem"))
                 cycleCtrlPic:ShowWindow(0);
+
                 countData:ShowWindow(0);
                 countItemData:ShowWindow(1);
             end
         else
             countText:SetText(ScpArgMsg("IndunAdmissionItem"))
             cycleCtrlPic:ShowWindow(0);
+
             countData:ShowWindow(0);
             countItemData:ShowWindow(1);
         end
         
         if indunCls.DungeonType == 'UniqueRaid' then
-            if SCR_RAID_EVENT_20190102(nil, false) and admissionItemName == 'Dungeon_Key01' then -- 별의 탑 폐쇄 구역 제외 조건 걸어주기
+--            if SCR_RAID_EVENT_20190102(nil, false) and admissionItemName == 'Dungeon_Key01' then -- 별의 탑 폐쇄 구역 제외 조건 걸어주기
+            if IsBuffApplied(pc, "Event_Unique_Raid_Bonus") == "YES" and admissionItemName == "Dungeon_Key01" then
                 cycleCtrlPic:ShowWindow(1);
             end
         
             cycleImage:ShowWindow(0);
         end
 
-        if indunCls.MGame == 'MISSION_EVENT_BLUEORB' then
-            local isTokenState = session.loginInfo.IsPremiumState(ITEM_TOKEN);
-            if isTokenState == true then
-                isTokenStateCount = TryGetProp(indunCls, "PlayPerReset_Token");
-                nowAdmissionItemCount = nowAdmissionItemCount - isTokenStateCount
-            end
-            countItemData:SetTextByKey('admissionitem', '  {img '..indunAdmissionItemImage..' 30 30}  '..nowAdmissionItemCount..'')
-            cycleImage:ShowWindow(0);
-        end
-
+--        if indunCls.MGame == 'MISSION_EVENT_BLUEORB' then
+--            local isTokenState = session.loginInfo.IsPremiumState(ITEM_TOKEN);
+--            if isTokenState == true then
+--                isTokenStateCount = TryGetProp(indunCls, "PlayPerReset_Token");
+--                nowAdmissionItemCount = nowAdmissionItemCount - isTokenStateCount
+--            end
+--            countItemData:SetTextByKey('admissionitem', '  {img '..indunAdmissionItemImage..' 30 30}  '..nowAdmissionItemCount..'')
+--            cycleImage:ShowWindow(0);
+--        end
     end    
 
     -- level
@@ -277,6 +293,50 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
 
     -- map
     local posBox = GET_CHILD_RECURSIVELY(frame, 'posBox');
+    local monBox = GET_CHILD_RECURSIVELY(frame, 'monBox');
+    local rewardBox = GET_CHILD_RECURSIVELY(frame, 'rewardBox');
+    local resizeHeight = tonumber(frame:GetUserConfig('HEIGHT_RESIZE_FOR_BUTTON'));
+    local originHeight = tonumber(frame:GetUserConfig('POSBOX_ORIGIN_HEIGHT'));
+    local mon_origin_top = tonumber(frame:GetUserConfig('MON_ORIGIN_TOP'));
+    local reward_origin_top = tonumber(frame:GetUserConfig('REWARD_ORIGIN_TOP'));
+    local moveBox = GET_CHILD_RECURSIVELY(frame, 'moveBox');
+
+    if TryGetProp(indunCls, 'DungeonType') == 'UniqueRaid' then
+        if posBox:GetHeight() == originHeight then
+            posBox:Resize(posBox:GetWidth(), posBox:GetHeight() - resizeHeight);
+        end
+        local mon_margin = monBox:GetMargin();
+        
+        if mon_margin.top == mon_origin_top then
+            monBox:SetMargin(mon_margin.left, mon_margin.top - resizeHeight, mon_margin.right, mon_margin.bottom);
+        end
+        local reward_margin = rewardBox:GetMargin();
+        
+        if reward_margin.top == reward_origin_top then
+            rewardBox:SetMargin(reward_margin.left, reward_margin.top - resizeHeight, reward_margin.right, reward_margin.bottom);
+        end
+
+        moveBox:ShowWindow(1);
+        local moveBtn = GET_CHILD_RECURSIVELY(moveBox, 'moveBtn');
+        moveBtn:SetUserValue('MOVE_INDUN_CLASSID', indunCls.ClassID);
+    else
+        if posBox:GetHeight() ~= originHeight then
+            posBox:Resize(posBox:GetWidth(), originHeight);
+        end
+
+        local mon_margin = monBox:GetMargin();
+        if mon_margin.top ~= mon_origin_top then
+            monBox:SetMargin(mon_margin.left, mon_origin_top, mon_margin.right, mon_margin.bottom);
+        end
+
+        local reward_margin = rewardBox:GetMargin();
+        if reward_margin.top ~= reward_origin_top then
+            rewardBox:SetMargin(reward_margin.left, reward_origin_top, reward_margin.right, reward_margin.bottom);
+        end
+
+        moveBox:ShowWindow(0);
+    end
+
     DESTROY_CHILD_BYNAME(posBox, 'MAP_CTRL_');
     local mapList = StringSplit(indunCls.StartMap, '/');
     for i = 1, #mapList do

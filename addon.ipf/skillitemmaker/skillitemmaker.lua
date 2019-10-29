@@ -75,6 +75,9 @@ function SKILLITEMMAKER_REGISTER(frame, skillType)
 	SET_SLOT_SKILL(skill_slot, sklObj);
 	
 	local count = sklObj.Level;
+	if skillTreeCls.MaxLevel < count then
+		count = skillTreeCls.MaxLevel;
+	end
 	if sklObj.Caption == "None" then
 		frame:GetChild("skilltext"):SetTextByKey("value", "");
 	else
@@ -227,7 +230,7 @@ function UPDATE_SKILLITEMMAKE_PRICE(frame, sklObj, levelSkill)
 
 	local makecount = GET_CHILD(frame, "makecount", "ui::CNumUpDown");
 	local curCount = makecount:GetNumber();
-	local makeSec = GET_SKILL_ITEM_MAKE_TIME(sklObj, curCount);
+	local makeSec = 3;	-- GET_SKILL_ITEM_MAKE_TIME(sklObj, curCount);
 	local progtime = frame:GetChild("progtime");
 	progtime:SetTextByKey("value", makeSec);
 	local gauge = GET_CHILD(frame, "gauge", "ui::CGauge");

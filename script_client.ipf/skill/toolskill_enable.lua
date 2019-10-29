@@ -182,6 +182,21 @@ function CHECK_IS_VILLAGE_C(actor, skl)
 
 end
 
+function CHECK_IS_GUIILDCOLONY_MAP_C(actor, skl)
+    local mymapname = session.GetMapName();
+    local map = GetClass("Map", mymapname);
+    if nil == map then
+        return 0;
+    end
+    
+    if map.Group == "GuildColony" then
+        return 0;
+    end
+    
+    return 1;
+
+end
+
 
 function SKL_CHECK_CHECK_BUFF_C(actor, skl, buffName)
 
@@ -383,4 +398,34 @@ function PET_SKILL_PRE_CHECK_C(self, skill)
 --    
 --    SendSysMsg(self, 'SummonedPetDoesNotExist');
 --    return 0;
+end
+
+function SKL_CHECK_ACTIVE_ABILITY_C(self, skill, abilName)
+    local abil = session.GetAbilityByName(abilName);
+    if abil ~= nil then
+        local abilObj = GetIES(abil:GetObject());
+        if TryGetProp(abilObj, "ActiveState") == 1 then
+            return 0;
+        end
+    end
+
+    return 1;
+end
+
+function SKL_CHECK_USE_TEMPLER_SKILL_C(actor, skl, abilName)
+    if actor:GetBuff():GetBuff("RidingCompanion") == nil then
+        local obj = nil
+        local abil = session.GetAbilityByName(abilName);
+        if abil ~= nil then
+            obj = GetIES(abil:GetObject());
+        end
+        
+        if abil == nil or TryGetProp(obj, "ActiveState", 0) == 0 then
+            return 0;
+        else
+            return 1;
+        end
+    end
+    
+    return 1;
 end

@@ -17,6 +17,7 @@ ClassID,Price,JobGrade,Itemdate,AccountLimitCount,ClassName,Category,SubCategory
 32,248,0,190501,0,"ClassName32","TP_Premium","TP_Useable","STEAM_Pack_TP_Box_2","","","","",""
 33,290,0,1910241,5,"ClassName33","TP_Premium","TP_Useable","GLOBAL_1910_PACKAGE_1","","2019-09-05 00:00:00","2019-12-01 00:00:00","",""
 34,235,0,1910242,5,"ClassName34","TP_Premium","TP_Useable","GLOBAL_1910_PACKAGE_2","","2019-09-05 00:00:00","2019-12-01 00:00:00","",""
+45,147,0,191029,5,"ClassName45","TP_Premium","TP_Useable","1909_Chuseok_Package_04","","2019-09-05 00:00:00","2019-12-01 00:00:00","",""
 101,8,0,151229,0,"ClassName101","TP_Premium","TP_Consume","Mic_bundle10","","","","",""
 102,1,0,151229,0,"ClassName102","TP_Premium","TP_Consume","Mic","","","","",""
 103,32,0,151229,0,"ClassName103","TP_Premium","TP_Consume","RestartCristal_bundle10","","","","",""

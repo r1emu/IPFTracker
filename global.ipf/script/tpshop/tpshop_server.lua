@@ -225,6 +225,33 @@ function SCR_TX_TP_SHOP(pc, argList)
 			CustomMongoLog(pc,"TpshopBuyList","AllPrice",tostring(allprice),"Items", itemcls.ClassName)
 			CustomMongoCashLog(pc,"TpshopBuyList","AllPrice",tostring(allprice),"Items", itemcls.ClassName)
 			SendAddOnMsg(pc, "TPSHOP_BUY_SUCCESS", "", 0);
+			--stamp tour property check
+            if itemcls.ClassName == "RestartCristal_bundle10" or itemcls.ClassName == "RestartCristal" then
+                local stampTourCheck = TryGetProp(aobj, "REGULAR_EVENT_STAMP_TOUR")
+                if aobj ~= nil then
+                    if stampTourCheck ~= nil and stampTourCheck ~= 0 then
+                        local checkProp = TryGetProp(aobj, "REGULAR_EVENT_STAMP_TOUR_COND35")
+                        if checkProp < 20 then
+                            if itemcls.ClassName == "RestartCristal_bundle10" then
+                                checkProp = checkProp + 10
+                            elseif itemcls.ClassName == "RestartCristal" then
+                                checkProp = checkProp + 1
+                            end
+                            local tx2 = TxBegin(pc)
+                            TxSetIESProp(tx2, aobj, "REGULAR_EVENT_STAMP_TOUR_COND35", checkProp)
+                            CustomMongoLog(pc, "REGULAR_EVENT_STAMP_TOUR", "Property", "REGULAR_EVENT_STAMP_TOUR_COND35", "ProgressDegree", checkProp)
+                            local ret2 = TxCommit(tx2)
+                            if ret2 == "SUCCESS" then
+                                if checkProp >= 20 then
+                                    SendSysMsg(pc, "STAMP_TOUR_MISSION_COMPLETE")
+                                    SendAddOnMsg(pc, 'NOTICE_Dm_Clear', ScpArgMsg('STAMP_TOUR_MISSION_COMPLETE'), 10)
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+            ---------------------------
 		else
 			IMC_LOG('ERROR_LOGIC', 'SCR_TX_TP_SHOP: Tx Fail- aid['..GetPcAIDStr(pc)..'], tpitem['..tpitem.ClassName..']');
 		end

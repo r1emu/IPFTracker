@@ -334,10 +334,10 @@
 				<ToolScp Client="NO" Scp="S_R_MAKE_LINK" UseSleep="NO">
 					<Str Str="ENEMY" />
 					<Str Str="Link_Enemy" />
-					<Num Num="20" />
+                    <Num Num="7"/>
 					<Num Num="120" />
 					<Num Num="0" />
-					<Num FuncTxt="return 3 + skill.Level * 0.5" Num="5" UseFunc="1" />
+					<Num FuncTxt="return 2.5 + skill.Level * 0.5" Num="5" UseFunc="1" />
 					<Str Str="Linker" />
 					<Num Num="0" />
 					<Num Num="0.2" />
@@ -346,6 +346,57 @@
 				</ToolScp>
 			</ResultList>
 		</MainSkl>
+        <ByCondSkills>
+            <SubSkl>
+                <Cond>
+                    <ToolScp Scp="SKL_SELECT_ABIL" Client="NO" UseSleep="NO">
+                        <Str Str="Linker19"/>
+                    </ToolScp>
+                </Cond>
+                <Skill ScrLock="None" JumpFlee="NO" MSPDToUsePos="0">
+                    <EtcList>
+                        <Scp Scp="C_VOICE_SOUND" Client="YES" UseSleep="NO" Time="0">
+                            <Str Str="voice_wiz_m_jointpenalty_shot"/>
+                            <Str Str="voice_wiz_jointpenalty_shot"/>
+                        </Scp>
+                        <Scp Scp="C_FORCE_EFT" Client="YES_Time" UseSleep="NO" Time="0">
+                            <Str_Arg Str="I_force018_trail_chain#Dummy_effect_ninja" Arg="0.60000002"/>
+                            <Str Str="arrow_cast"/>
+                            <Str_Arg Str="F_scout_JointPenalty_hit" Arg="0.5"/>
+                            <Str Str="arrow_blow"/>
+                            <Str Str="SLOW"/>
+                            <Num Num="150"/>
+                            <Num Num="1"/>
+                            <Num Num="0"/>
+                            <Angle_Abs Angle="0"/>
+                            <Num Num="0"/>
+                            <Num Num="60" UseFunc="1" FuncTxt="return 1 + obj.Level;"/>
+                            <Num Num="10"/>
+                            <Num Num="0"/>
+                            <Num Num="1"/>
+                            <Num Num="1"/>
+                            <Str Str="None"/>
+                        </Scp>
+                        <Scp Scp="SKL_MAKE_LINK" Client="NO" UseSleep="NO" Time="650">
+                            <PosDist Angle="0" Dist="3.8255448e-43" PosType="1"/>
+                            <Num Num="150"/>
+                            <Num Num="150"/>
+                            <Str Str="ENEMY"/>
+                            <Str Str="Link_Enemy"/>
+                            <Num Num="20"/>
+                            <Num Num="120"/>
+                            <Num Num="1"/>
+                            <Num Num="1"/>
+                            <Str Str="Linker"/>
+                            <Num Num="0"/>
+                            <Num Num="0.2"/>
+                            <Str_Arg Str="F_scout_JointPenalty_hit" Arg="0.40000001"/>
+                            <Str Str="swd_blow_cloth2"/>
+                        </Scp>
+                    </EtcList>
+                </Skill>
+            </SubSkl>
+        </ByCondSkills>
 	</Skill>
 	<Skill Name="Linker_SpiritualChain">
 		<MainSkl JumpFlee="NO" MSPDToUsePos="0" ScrLock="None">
@@ -461,7 +512,7 @@
 				<Scp Client="NO" Scp="SKL_MAKE_PARTY_LINK" Time="0" UseSleep="NO">
 					<Num Num="200" />
 					<Str Str="Linker_Sacrifice" />
-					<Num FuncTxt="return 10 + obj.Level * 5" Num="25" UseFunc="1" />
+					<Num FuncTxt="return 5 + obj.Level" Num="10" UseFunc="1" />
 					<Str Str="Linker2" />
 					<Num Num="0" />
 					<Num Num="0.30000001" />

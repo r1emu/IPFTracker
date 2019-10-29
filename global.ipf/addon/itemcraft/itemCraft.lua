@@ -25,13 +25,18 @@ function CRAFT_UPDATE_PAGE(page, cls, haveMaterial, item)
 		if cls.IDSpc == 'Skill_Ability' and nil ~= abil then
 			local abilObj =  GetIES(abil:GetObject());
 			Level = abilObj.Level;
+			
+			-- 비급 특성 대상 아이템은 레벨을 표기하지 않도록 한다.
+			if abilObj.Hidden == 1 then
+				Level = 0;
+			end
 		end
 	end
 	
     local DrugItemName = dictionary.ReplaceDicIDInCompStr(item.Name);
     local len = string.len(DrugItemName)
     local itmeName = string.sub(DrugItemName, 4, len)
-    if skill ~= nil then
+    if skill ~= nil and Level > 0 then
 	    titleText:SetText(font ..itmeName.." LV"..Level.. ableText .."{/}");
     else
         titleText:SetText(font ..DrugItemName.. ableText .."{/}");

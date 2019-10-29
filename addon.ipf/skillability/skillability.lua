@@ -21,12 +21,12 @@ function SKILLABILITY_ON_INIT(addon, frame)
     addon:RegisterMsg('DELETE_QUICK_SKILL', 'SKILLABILITY_ON_FULL_UPDATE');
 end
 
-function UPDATE_SKILL_BY_SKILLMAKECOSTUME_MAGICAL(resStr)
+function UPDATE_SKILL_BY_SKILLMAKECOSTUME(resStr)
     local datas = StringSplit(resStr, ":");
     local msg = datas[1];
     local skillName = datas[2];
     local skillID = datas[3];
-    local frame = ui.GetFrame("skillability")
+    local frame = ui.GetFrame("skillability");
     if frame ~= nil then
         local ctrlSet = GET_CHILD_RECURSIVELY(frame, "SKILL_"..skillName);
         if ctrlSet ~= nil then
@@ -50,11 +50,11 @@ function UPDATE_SKILL_BY_SKILLMAKECOSTUME_MAGICAL(resStr)
     end
 end
 
-function CHECK_SKILLTREEGB_IN_COMMON_MAGICALSKILL(gb, gbChildCnt)
+function CHECK_SKILLTREEGB_IN_COMMON_TRANSSKILL(gb, gbChildCnt)
     if gb == nil then return false; end
     for i = 0, gbChildCnt - 1 do
         local child = gb:GetChildByIndex(i);
-        if child ~= nil and string.find(child:GetName(), "SKILL_") ~= nil and string.find(child:GetName(), "MagicalGirl") ~= nil then
+        if child ~= nil and string.find(child:GetName(), "SKILL_") ~= nil and (string.find(child:GetName(), "MagicalGirl") ~= nil or string.find(child:GetName(), "Ranger") ~= nil) then
             return true;
         end
     end
@@ -70,29 +70,29 @@ function SKILLABILITY_COMMON_LEGENDITEMSKILL_UPDATE(frame, msg, skillID, argNum)
 
     -- check child skillID
     local gb_ChildCnt = skilltree_gb:GetChildCount();
-    local exist_magical_skill = CHECK_SKILLTREEGB_IN_COMMON_MAGICALSKILL(skilltree_gb, gb_ChildCnt);
-    if exist_magical_skill == nil then return; end
+    local exist_trans_skill = CHECK_SKILLTREEGB_IN_COMMON_TRANSSKILL(skilltree_gb, gb_ChildCnt);
+    if exist_trans_skill == nil then return; end
 
     -- check msg skillID
     local skillInfo = session.GetSkill(skillID);
     if skillInfo ~= nil then
         local sklObj = GetIES(skillInfo:GetObject());
         if sklObj == nil then return end
-        if string.find(sklObj.ClassName, "MagicalGirl") == nil then
-            exist_magical_skill = false;
+        if string.find(sklObj.ClassName, "MagicalGirl") == nil or string.find(sklObj.ClassName, "Ranger") == nil then
+            exist_trans_skill = false;
         end
     end
 
-    if exist_magical_skill == true  then
+    if exist_trans_skill == true  then
         local commSkillCnt = session.skill.GetCommonSkillCount();
         if commSkillCnt <= 0 then
             local job_tab = GET_CHILD_RECURSIVELY(frame, "job_tab");
             if job_tab ~= nil then
                 local tabIndex = job_tab:GetIndexByName("tab_0");
-                    job_tab:DeleteTab(tabIndex);
+                job_tab:DeleteTab(tabIndex);
             end
-                    return;
-                end
+            return;
+        end
 
         if msg == "DELETE_QUICK_SKILL" and argNum == 1 then
             if gb_ChildCnt <= 0 then return; end
@@ -100,9 +100,8 @@ function SKILLABILITY_COMMON_LEGENDITEMSKILL_UPDATE(frame, msg, skillID, argNum)
                 local gb_Child = skilltree_gb:GetChildByIndex(i);
                 if gb_Child == nil then break end
 
-                if string.find(gb_Child:GetName(), "SKILL_") ~= nil and string.find(gb_Child:GetName(), "MagicalGirl") == nil then
+                if string.find(gb_Child:GetName(), "SKILL_") ~= nil and (string.find(gb_Child:GetName(), "MagicalGirl") == nil or string.find(gb_Child:GetName(), "Ranger") == nil) then
                     local ctrlSet = GET_CHILD_RECURSIVELY(skilltree_gb, gb_Child:GetName());
-                    
                     if skillInfo == nil then
                         ctrlSet:SetVisible(0);
                         frame:RemoveChild(ctrlSet:GetName());
@@ -839,26 +838,30 @@ function SKILLABILITY_FILL_ABILITY_CTRLSET(ability_gb, classCtrl, abilClass, gro
     -- skin
     local unlockScpRet = GET_ABILITY_CONDITION_UNLOCK(abilIES, groupClass);
     local isLock = (unlockScpRet ~= nil and unlockScpRet ~= 'UNLOCK');
-    if isLock then
-		classCtrl:SetSkinName(SKIN_LOCK);
-    elseif abilLv + learnCount <= 0 then
-		classCtrl:SetSkinName(SKIN_LEVEL_ZERO);
-	elseif isMax == 1 then
-        classCtrl:SetSkinName(SKIN_LEVEL_MAX);
-    else
+    if abilLv + learnCount <= 0 then
+        classCtrl:SetSkinName(SKIN_LEVEL_ZERO);
+    elseif isLock then
+        classCtrl:SetSkinName(SKIN_LOCK);
+	elseif isMax ~= 1 then
         classCtrl:SetSkinName(SKIN_UNLOCK);
+    else
+        classCtrl:SetSkinName(SKIN_LEVEL_MAX);
     end
 
     -- price
+    -- 아츠는 다음 단계에 필요한 어빌리티 포인트를 표기해준다. KS.001
     local abilPrice = GET_CHILD_RECURSIVELY(classCtrl, "abilPrice");
     local cost = 0;
     if learnCount > 0 then
         cost = GET_ABILITY_LEARN_COST(GetMyPCObject(), groupClass, abilClass, abilLv + learnCount);
+    elseif TryGetProp(abilIES, "Hidden") == 1 then
+        cost = GET_ABILITY_LEARN_COST(GetMyPCObject(), groupClass, abilClass, abilLv + 1);
     end
     abilPrice:SetTextByKey("value", cost);
 
+    -- 아츠는 레벨 버튼을 활성화하지 않는다. KS.001
     local btnEnabled = 1;
-    if isLock then
+    if isLock or TryGetProp(abilIES, "Hidden") == 1 then
         btnEnabled = 0;
     end
 
@@ -1369,6 +1372,9 @@ function SKILLABILITY_DEPLOY_JOB_SKILL(skilltree_gb, jobClsName, unlockLvHash, S
     local rowCount = 0;
     --deploy skill controlset
     local y = 0;
+    if jobClsName == "Common" then
+        skilltree_gb:RemoveAllChild()
+    end
     --total loop count == skill count in job
     for lv, lvList in pairs(unlockLvHash) do 
         local levelRow = CALC_LIST_LINE_BREAK(lvList, SKILL_COL_COUNT, SKILL_LINE_BREAK_COUNT);

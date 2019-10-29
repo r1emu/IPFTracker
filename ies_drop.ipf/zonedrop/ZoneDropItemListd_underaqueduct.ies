@@ -1,0 +1,11 @@
+ClassID,DropRatio,Money_Min,Money_Max,DPK_Min,DPK_Max,DPK_Expo,EPIK_Min,EPIK_Max,Zone,Type,GroupName,ItemClassName,DropGroup,ItemProperty
+90001,66,0,0,0,0,0,0,0,"","Item","Item","","DropGroup_Armor_400",""
+90002,33,0,0,0,0,0,0,0,"","Item","Item","","DropGroup_Weapon_400",""
+90003,7000,652,783,0,0,0,0,0,"","Money_Mid","Money","Moneybag1","",""
+90004,500,0,0,0,0,0,0,0,"","Item","Item","","DropGroup_FreeDungeon_270up_Jore",""
+90005,5,0,0,0,0,0,0,0,"","Item","Item","Abrasive_400","",""
+90006,100,0,0,0,0,0,0,0,"","Item","Item","D_UNDERAQUEDUCT_EVETN1_ITEM1","",""
+90007,41,0,0,0,0,0,0,0,"","Item","Item","misc_gemExpStone_randomQuest2_TA","",""
+90008,2,0,0,0,0,0,0,0,"","Item","Item","Moru_Gold","",""
+90009,20,0,0,0,0,0,0,0,"","Item","Item","","DropGroup_CardBook",""
+90010,2,0,0,0,0,0,0,0,"","Item","Item","Gem_Gacha_gold_coin","",""

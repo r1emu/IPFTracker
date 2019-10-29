@@ -195,21 +195,19 @@ function UPDATE_ITEM_TOOLTIP(tooltipframe, strarg, numarg1, numarg2, userdata, t
 
 	-- 메인 프레임. 즉 주된 툴팁 표시.
 	if isReadObj == 1 then -- IES가 없는 아이템. 가령 제작서의 완성 아이템 표시 등
-			
 		local class = itemObj;
 		if class ~= nil then
-			local ToolTipScp = _G[ 'ITEM_TOOLTIP_' .. class.ToolTipScp];
+			local ToolTipScp = _G['ITEM_TOOLTIP_' .. class.ToolTipScp];
 			ToolTipScp(tooltipframe, class, strarg, "mainframe", isForgeryItem);
 		end		
 	else
-		local ToolTipScp = _G[ 'ITEM_TOOLTIP_' .. itemObj.ToolTipScp];
+		local ToolTipScp = _G['ITEM_TOOLTIP_' .. itemObj.ToolTipScp];
 		if nil == noTradeCnt then
 			noTradeCnt = 0
 		end
-		ToolTipScp(tooltipframe, itemObj, strarg, "mainframe",noTradeCnt);
+		ToolTipScp(tooltipframe, itemObj, strarg, "mainframe", noTradeCnt);
 	end
 	
-
 	if isReadObj == 1 then
 		DestroyIES(itemObj);
 	end
@@ -338,15 +336,15 @@ function DRAW_SELL_PRICE(tooltipframe, invitem, yPos, mainframename)
     if itemProp:IsEnableShopTrade() == false then
         return yPos
     end
-    
+
 	local gBox = GET_CHILD(tooltipframe, mainframename,'ui::CGroupBox')
 	gBox:RemoveChild('tooltip_sellinfo');
-	
+
 	local tooltip_sellinfo_CSet = gBox:CreateControlSet('tooltip_sellinfo', 'tooltip_sellinfo', 0, yPos);
 	tolua.cast(tooltip_sellinfo_CSet, "ui::CControlSet");
 
 	local sellprice_text = GET_CHILD(tooltip_sellinfo_CSet,'sellprice','ui::CRichText')
-	sellprice_text:SetTextByKey("silver", geItemTable.GetSellPrice(itemProp) );
+	sellprice_text:SetTextByKey("silver", GET_COMMAED_STRING(geItemTable.GetSellPrice(itemProp)));
 	
 	local BOTTOM_MARGIN = tooltipframe:GetUserConfig("BOTTOM_MARGIN"); -- 맨 아랫쪽 여백
 	tooltip_sellinfo_CSet:Resize(gBox:GetWidth(), tooltip_sellinfo_CSet:GetHeight() + BOTTOM_MARGIN);
@@ -646,11 +644,38 @@ function GET_ENCHANT_JEWELL_ITEM_NAME_STRING(jewellItem)
 	return '['..string.format('LV. %d', jewellItem.Level)..'] '..jewellItem.Name;
 end
 
+function GET_ICOR_ITEM_NAME_STRING(item)
+	local name = item.Name;
+	local targetItem = nil;
+	
+	if 	TryGetProp(item, 'InheritanceItemName', 'None') ~= 'None' then
+		targetItem = GetClass('Item', item.InheritanceItemName);
+	elseif TryGetProp(item, 'InheritanceRandomItemName', 'None') ~= 'None' then
+		targetItem = GetClass('Item', item.InheritanceRandomItemName);
+	end
+
+	if targetItem == nil then
+		return name;
+	end
+	
+	local string = TryGetProp(targetItem, 'ReqToolTip', 'None');
+	if string ~= 'None' then
+		name = "["..targetItem.Name.."] "..item.Name;
+	end
+
+	return name;
+end
+
 function GET_EXTRACT_ITEM_NAME(invitem)
 	local name = invitem.Name;
 	if IS_ENCHANT_JEWELL_ITEM(invitem) == true then
 		return GET_ENCHANT_JEWELL_ITEM_NAME_STRING(invitem);
 	end
+
+	if IS_ICOR_ITEM(invitem) == true then
+		return GET_ICOR_ITEM_NAME_STRING(invitem);
+	end
+	
 	return name;
 end
 

@@ -1677,3 +1677,40 @@ function Achieve_Event_Steam_Guide_Master(pc)
     TxAddAchievePoint(tx, 'Achieve_Event_Steam_Guide_Master', 1)
     local ret = TxCommit(tx);
 end
+
+function SCR_USE_EVENT_NEARALL_ANIM_RUN(self)
+    local inputText = ShowTextInputDlg(self, 0, 'ITEM_EVENT_POSE_SELECT')
+    local poseID = 0;
+
+    if inputText ~= nil then
+        local clsList, cnt  = GetClassList("Pose");
+
+        for i = 0, cnt - 1 do
+            local cls = GetClassByIndexFromList(clsList, i);
+
+            if TranslateDicID(cls.Name) == inputText then
+                poseID = cls.ClassID
+                break;
+            end
+        end
+    end
+
+    if poseID == 0 then -- load fail
+        RunScript('SCR_USE_EVENT_NEARALL_ANIM_ROLLBACK', self);
+        return;
+    end
+
+    local objList, cnt = SelectObject(self, 100, "PC", 1);
+    if cnt <= 0 then
+        RunScript('SCR_USE_EVENT_NEARALL_ANIM_ROLLBACK', self);
+        return;
+    end
+
+    PlayPose(self, poseID);
+
+    for j = 1, cnt do -- play pose
+        if IS_PC(objList[j]) == true then
+            PlayPose(objList[j], poseID);
+        end
+    end
+end

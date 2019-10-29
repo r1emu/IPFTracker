@@ -193,18 +193,19 @@ function SCR_TX_BEAUTYSHOP_PURCHASE(pc, idSpaceList, classNameList, colorClassNa
 	for k,v in pairs(productList) do
 		local tx = TxBegin(pc);
 		local preDyeName = 'None';
-
-		if appliedHairDiscount == true and hairCouponItem ~= nil and hairCouponGuid ~= '0' then
-			TxTakeItemByObject(tx, hairCouponItem, 1, 'BeautyShop');
-		end
-
-		if appliedDyeDiscount == true and dyeCouponItem ~= nil and dyeCouponGuid ~= '0' then
-			TxTakeItemByObject(tx, dyeCouponItem, 1, 'BeautyShop');
-		end
-
 		local medalLog = 'BeautyShop';
 		local cmdIdx = 0;
 		if v.IDSpace == "Beauty_Shop_Hair" then
+
+			-- 쿠폰은 헤어 변경, 염색에만 적용된다.
+			if appliedHairDiscount == true and hairCouponItem ~= nil and hairCouponGuid ~= '0' then
+				TxTakeItemByObject(tx, hairCouponItem, 1, 'BeautyShop');
+			end
+	
+			if appliedDyeDiscount == true and dyeCouponItem ~= nil and dyeCouponGuid ~= '0' then
+				TxTakeItemByObject(tx, dyeCouponItem, 1, 'BeautyShop');
+			end
+			
 			local itemCls = GetClass('Item', v.ClassName);
 			hairEngName = itemCls.StringArg;
 			if v.ColorClassName ~= 'None' then				
@@ -259,8 +260,28 @@ function SCR_TX_BEAUTYSHOP_PURCHASE(pc, idSpaceList, classNameList, colorClassNa
 			TX_LIMIT_PAYMENT_STATE(pc, tx, totalPrice, freeMedal)
 		end
 		
+		local premiumDiff = 0; -- steam event --
+		if EVENT_STEAM_POPOSHOP_PRECHECK() == 'YES' then 
+			local currentFreeMedal = aobj.GiftMedal + aobj.Medal
+			if _price > currentFreeMedal then
+				premiumDiff = _price - currentFreeMedal
+			end
+			TxAddIESProp(tx, aobj, "EVENT_STEAM_BEAUTYSHOP_BUY_PRICE", premiumDiff, "PoPo_Shop_Prop");
+		end -- steam event --
+
 		local ret = TxCommit(tx);
-		if ret == "SUCCESS" then		
+		if ret == "SUCCESS" then
+			if EVENT_STEAM_POPOSHOP_PRECHECK() == 'YES' then -- steam event --
+				local premiumDiff_Popo = premiumDiff * 2 
+				CustomMongoLog(pc, "GivePCBangPointShopPoint", "Type", "Try", "ex_point", premiumDiff_Popo)
+				local pointResult = GivePCBangPointShopPoint(pc, premiumDiff_Popo, "PoPo_Shop")
+				local point_Type = "fail"
+				if pointResult == 1 then
+					point_Type = 'SUCCESS'
+				end
+				CustomMongoLog(pc, "GivePCBangPointShopPoint", "Type", point_Type, "point", premiumDiff_Popo)
+			end -- steam event --
+			
 			WRITE_BEAUTY_SHOP_LOG(pc, _productList, _stampCnt, preHairName, preDyeName, hairCouponName, dyeCouponName);
 		else
 			success = false;
