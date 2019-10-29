@@ -34,6 +34,6 @@
 	<Class Code="403" Desc="Use Hangout Farm"/>
 	<Class Code="404" Desc="Grow Hangout Companion"/>
 	<Class Code="405" Desc="Manage Hangout Raid"/>
-	<Class Code="501" Desc="아지트 꾸미기"/>
-	<Class Code="502" Desc="전문 시설 관리"/>
+	<Class Code="501" Desc="Decorate Hangout"/>
+	<Class Code="502" Desc="Manage Facilities"/>
 </ClaimCodes>
