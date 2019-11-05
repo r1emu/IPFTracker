@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <controlsetlist>
 	<controlset name="barrack_pet_mini" toggle="false" hittest="true" width="400" height="60" skin="">
@@ -2147,7 +2147,7 @@
 			<richtext name="item" rect="0 0 200 60" margin="110 0 0 0" caption="제작서" layout_gravity="left top" textalign="left top" resizebytext="false" fixwidth="true" hittest="false" fontname="brown_18"/>
 			<slot name="slot" skin="invenslot2" layout_gravity="left top" margin="0 0 0 0" rect="40 0 64 64"/>
 			<button name="btn" caption="{@st41b}{/}" margin="40 0 0 0" rect="0 0 70 70" layout_gravity="left top" LBtnUpScp="CRAFT_ITEM_ALL" texttooltip="{@st59}재료 아이템을 슬롯에 추가합니다.{/}" image="itemcraft_btn" clicksound="button_click_big_2" oversound="button_cursor_over_3"/>
-			<richtext name="needcount" rect="0 0 64 20" margin="38 0 0 5" format="{@st41b}x%s{/}" layout_gravity="left bottom" textalign="right center" resizebytext="false" fixwidth="true" hittest="false" param1="count" param1_def="99" fontname="white_18_b"/>
+			<richtext name="needcount" rect="0 0 66 20" margin="38 0 0 5" format="{@st41b}x%s{/}" layout_gravity="left bottom" textalign="right center" resizebytext="false" fixwidth="true" hittest="false" param1="count" param1_def="99" fontname="white_18_b"/>
 		</controls>
 	</controlset>
 	<controlset name="craftRecipe_detail_item_alchemist" hittest="true" width="470" height="68" hittestset="true">
@@ -4867,18 +4867,18 @@
 			<button name="sell_btn" rect="0 0 103 46" margin="538 0 0 0" layout_gravity="left center" LBtnUpScp="SCR_ANCIENT_MON_SELL" skin="test_red_button" caption="{@st42b}{s16}판매{/}" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" oversound="button_cursor_over_2" clicksound="button_click_stats_OK"/>
 		</controls>
 	</controlset>
-	<controlset name="event_stamp_tour_mission_block" hittest="true" width="468" height="192" stateskin="false">
+	<controlset name="event_stamp_tour_mission_block" hittest="true" width="546" height="230" stateskin="false">
 		<controls>
-			<picture name="bg" rect="0 0 468 192" margin="0 0 0 0" layout_gravity="center center" image="stamp_tour_list" stretch="true" draw="true"  hittest="false"/>
-			<groupbox name="title_gb" rect="0 0 458 40" margin="0 12 0 0" layout_gravity="center top" skin="stamp_tour_list_title" draw="true" scrollbar="false"  hittest="false"/>
-			<richtext name="levet_text" parent="title_gb" rect="0 0 150 20" margin="-2 0 0 0" layout_gravity="center center" format="{@st42b}{s20}%s" param1="value" param1_def="난이도"  hittest="false"/>
-			<richtext name="desc" rect="0 0 200 40" margin="0 58 0 0" layout_gravity="center top" format="{@st66b}{s18}%s" param1="value" param1_def="미션 내용" resizebytext="true" textalign="left center"  hittest="false"/>
-			<gauge name="gauge" rect="0 0 400 20" margin="0 90 0 0" layout_gravity="center top" skin="test_gauge_barrack_defence" text1="{@st42b}{s14}%v/%m" textoffset1="0 -1" textfont1="white_14_ol" textalign1="center top" inverse="false"  hittest="false"/>
-			<richtext name="reward" rect="0 0 100 30" margin="34 116 0 0" layout_gravity="left top" format="%s" param1="value" param1_def="보상" fontname="black_16_b"  hittest="false"/>
-			<groupbox name="reward_bg" rect="0 0 320 70" margin="0 116 32 0" layout_gravity="right top" scrollbar="false" draw="false"  hittest="false"/>
-			<picture name="check_bg" rect="0 0 460 184" margin="0 0 0 0" layout_gravity="center center" image="stamp_tour_list_accomplish" stretch="true" draw="false"  hittest="false"/>
-			<picture name="clear_bg" rect="0 0 460 184" margin="0 0 0 0" layout_gravity="center center" image="fullblack" stretch="true" draw="false"  hittest="false"/>
-			<picture name="clear_Pic" rect="0 0 140 140" margin="0 0 15 15" layout_gravity="right bottom" image="very_nice_stamp" stretch="true"  hittest="false"/>
+			<picture name="bg" rect="0 0 546 230" margin="0 0 0 0" layout_gravity="center center" image="stamp_tour_list" stretch="true" draw="true" hittest="false"/>
+			<groupbox name="title_gb" rect="0 0 550 40" margin="0 12 0 0" layout_gravity="center top" skin="stamp_tour_list_title" draw="true" scrollbar="false" hittest="false"/>
+			<richtext name="levet_text" parent="title_gb" rect="0 0 150 20" margin="-2 0 0 0" layout_gravity="center center" format="{@st42b}{s20}%s" param1="value" param1_def="난이도" hittest="false"/>
+			<richtext name="desc" rect="0 0 450 40" margin="0 60 0 0" layout_gravity="center top" format="{@st66b}{s18}%s" param1="value" param1_def="미션 내용" resizebytext="true" textalign="center center" hittest="false" fixwidth="true"/>
+			<gauge name="gauge" rect="0 0 400 20" margin="0 110 0 0" layout_gravity="center top" skin="test_gauge_barrack_defence" text1="{@st42b}{s14}%v/%m" textoffset1="0 -1" textfont1="white_14_ol" textalign1="center top" inverse="false" hittest="false"/>
+			<richtext name="reward" rect="0 0 100 30" margin="34 140 0 0" layout_gravity="left top" format="%s" param1="value" param1_def="보상" fontname="black_16_b" hittest="false"/>
+			<groupbox name="reward_bg" rect="0 0 440 85" margin="0 144 32 0" layout_gravity="right top" scrollbar="false" draw="false" hittest="false"/>
+			<picture name="check_bg" rect="0 0 540 222" margin="0 0 0 0" layout_gravity="center center" image="stamp_tour_list_accomplish" stretch="true" draw="false" hittest="false"/>
+			<picture name="clear_bg" rect="0 0 540 222" margin="0 0 0 0" layout_gravity="center center" image="fullblack" stretch="true" draw="false" hittest="false"/>
+			<picture name="clear_Pic" rect="0 0 140 140" margin="0 0 15 15" layout_gravity="right bottom" image="very_nice_stamp" stretch="true" hittest="false"/>
 		</controls>
 	</controlset>
 </controlsetlist>

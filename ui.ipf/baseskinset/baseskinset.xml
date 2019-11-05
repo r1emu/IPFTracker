@@ -7171,6 +7171,7 @@
 		<image name="stamp_tour_list" file="\skin\stamp_tour.tga" imgrect="954 1 468 192" CMM_Caption="스탬프 투어 목록"/>
 		<image name="stamp_tour_list_accomplish" file="\skin\stamp_tour.tga" imgrect="954 465 460 184" CMM_Caption="스탬프 투어 달성 활성화"/>
 		<image name="starmark_multipl05" file="\skin\pip_test2.tga" imgrect="734 238 20 15" CMM_Caption="거래등급optx5"/>
+		<image name="very_nice_stamp_eng" file="\skin\stamp_tour.tga" imgrect="1079 340 124 124" CMM_Caption="a++ 도장"/>
 	</imagelist>
 	<imagelist category="je_button">
 		<image name="menu_guild_info" file="\skin\guild_skin.tga" imgrect="165 298 45 45" CMM_Caption="길드 정보"/>

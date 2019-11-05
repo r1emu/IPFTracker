@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <idspace id="DialogText">
 	<Category Name="Quest">
 		<Class ClassID="884" ClassName="EVENT_1906_HELPER_NPC_DLG_1" Caption="이벤트 도우미" NextPage="None" ImgName="blank" VoiceName="None" Text="2019년 여름을 기념하는 이벤트가 진행 중입니다.{nl}{#003399}[이벤트] 바살로스 주화{/}  교환과 길드 활동 보상을 지원해드립니다." arg1="None" arg2="None" arg3="None" arg4="None" ShowBalloonSkin="None"/>
@@ -69,5 +69,10 @@
 		<Class OverrideType="ADD" ClassID="5010203" ClassName="STEAM_TREASURE_EVENT_1902_WEEKEND_NPC_DLG1" Caption="특별 접속 보상 이벤트 도우미" NextPage="None" ImgName="blank" VoiceName="None" Text="이벤트 기간동안 특별한 아이템을 획득할 수 있습니다.{nl}이벤트 배너를 참고해주세요." arg1="None" arg2="None" arg3="None" arg4="None" ShowBalloonSkin="None"/>
 		<Class OverrideType="ADD" ClassID="5010204" ClassName="STEAM_EVENT_FLOWER_DLG_1" Caption="이벤트 알림판" NextPage="None" ImgName="blank" VoiceName="None" Text="이벤트 기간동안 최초 꽃잎 5개는 삼색 경단 머리핀, 이후 꽃잎 5개는 벚꽃 머리핀으로 교환할 수 있습니다." arg1="None" arg2="None" arg3="None" arg4="None" ShowBalloonSkin="None"/>
 		<Class OverrideType="ADD" ClassID="5010207" ClassName="STEAM_EVENT_1905_WHITEDAY_DLG_1" Caption="내 마음도 받아줄래 이벤트 도우미" NextPage="None" ImgName="blank" VoiceName="None" Text="8/15일 하루동안 라떼 캣 헤어 악세사리를 1회 획득할 수 있습니다.{np}추가로 이벤트 기간 아래의 보상을 받을 수 있습니다.{nl}8/14일:화이트 데이 목걸이 (물리/14일) 1개{nl}8/15일:화이트 데이 목걸이 (마법/14일) 1개{nl}8/16일:화이트 데이 팔찌 (마법/14일) 2개{nl}8/17일:화이트 데이 팔찌 (물리/14일) 2개{nl}8/18일:화이트 데이 목걸이 (물리/14일) 1개{nl}8/19일:화이트 데이 팔찌 (물리/14일) 2개" arg1="None" arg2="None" arg3="None" arg4="None" ShowBalloonSkin="None"/>
+	</Category>
+	<Category Name="2019할로윈">
+		<Class ClassID="5600001" ClassName="EVENT_1910_HALLOWEEN_BORAD_DLG1" Caption="할로윈 밤의 소동 이벤트 도우미"/>
+		<Class ClassID="5600002" ClassName="EVENT_1910_HALLOWEEN_BORAD_DLG2" Caption="할로윈 밤의 소동 이벤트 도우미"/>
+		<Class ClassID="5600003" ClassName="EVENT_1910_HALLOWEEN_BORAD_DLG3" Caption="할로윈 밤의 소동 이벤트 도우미"/>
 	</Category>
 </idspace>

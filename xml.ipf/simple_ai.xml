@@ -5452,6 +5452,22 @@
             <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
         </StartList>
     </AI>
+    <AI Name="EVENT_1910_HALLOWEEN_necrovanter" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="S_AI_CUSTOM_SCRIPT" Client="NO" UseSleep="YES">
+                <Str Str="EVENT_1910_NECRO_AI"/>
+                <Num Num="0"/>
+            </ToolScp>
+        </List>
+    </AI>
+    <AI Name="EVENT_1910_NECRO_LIGHT" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="S_AI_CUSTOM_SCRIPT" Client="NO" UseSleep="YES">
+                <Str Str="EVENT_1910_NECRO_LIGHT_AI"/>
+                <Num Num="0"/>
+            </ToolScp>
+        </List>
+    </AI>
     <AI Name="EVENT_CURSED_COAST_POTAL" ActiveMessageMapInBattle="1">
 		<StartList>
 			<ToolScp Scp="S_AI_EFFECT_ATTACH" Client="NO" UseSleep="NO">

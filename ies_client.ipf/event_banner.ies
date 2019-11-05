@@ -1,5 +1,5 @@
 ClassID,StartTimeYYYYMM,StartTimeDDHHMM,NewTimeYYYYMM,NewTimeDDHHMM,EndTimeYYYYMM,EndTimeDDHHMM,DeadlineTimeYYYYMM,DeadlineTimeDDHHMM,ExchangeTimeYYYYMM,ExchangeTimeDDHHMM,ClassName,Name,ImagePath,url,UserCommand1,UserCommand2,UserCommand3
-999901,201910,290000,201911,30000,201911,50000,201910,310000,0,0,"inGame_E1","Premium Arts Package","inGame_E1","https://treeofsavior.com/page/news/view.php?n=1842","","",""
+999901,201911,50000,201911,100000,201912,30000,201911,280000,0,0,"inGame_E1","Halloween Midnight Rumble Event","inGame_E1","https://treeofsavior.com/page/news/view.php?n=1843","","",""
 999902,201910,290000,201911,30000,201911,260000,201911,210000,0,0,"inGame_E2","Halloween UpHill Defense Event","inGame_E2","https://treeofsavior.com/page/news/view.php?n=1838","","",""
 999903,201910,290000,201911,30000,201912,30000,201911,260000,0,0,"inGame_E3","The Grimoire Mater Event","inGame_E3","https://treeofsavior.com/page/news/view.php?n=1840","","",""
 999904,201910,290000,201911,30000,201912,30000,201911,260000,0,0,"inGame_E4","TOS Stamp Tour Event","inGame_E4","https://treeofsavior.com/page/news/view.php?n=1839","","",""
@@ -12,7 +12,7 @@ ClassID,StartTimeYYYYMM,StartTimeDDHHMM,NewTimeYYYYMM,NewTimeDDHHMM,EndTimeYYYYM
 999911,201908,130000,201908,180000,202011,120000,201911,70000,0,0,"inGame_E11","UPDATE: First Time Shoppers Only","inGame_E11","https://treeofsavior.com/page/news/view.php?n=1786","","",""
 999912,201906,110000,201906,160000,202011,120000,201911,70000,0,0,"inGame_E12","30TP Bundle AVAILABLE FOR PURCHASE","inGame_E12","https://store.steampowered.com/itemstore/372000/browse/?filter=All","","",""
 999913,201903,260000,201903,310000,202011,120000,202011,70000,0,0,"inGame_E13","[SPECIAL] GM's Astro Ambition Package","inGame_E13","https://treeofsavior.com/page/news/view.php?n=1661","","",""
-999914,201712,260000,201712,310000,202011,120000,202011,70000,0,0,"inGame_E14","Patch Notes","inGame_E14","https://treeofsavior.com/page/news/view.php?n=1837","","",""
+999914,201712,260000,201712,310000,202011,120000,202011,70000,0,0,"inGame_E14","Patch Notes","inGame_E14","https://treeofsavior.com/page/news/view.php?n=1844","","",""
 999915,201711,70000,201711,120000,202011,120000,202011,70000,0,0,"inGame_E15","Master Blacksmith Pack","inGame_E15","http://store.steampowered.com/app/716440","","",""
 999916,201712,260000,201712,310000,202011,120000,202011,70000,0,0,"inGame_E16","New Rank Booster Pack","inGame_E16","http://store.steampowered.com/app/372000","","",""
 999917,201802,60000,201802,10000,202011,120000,202011,70000,0,0,"inGame_E17","Rookie Savior Event: Get Ahead","inGame_E17","https://treeofsavior.com/page/news/view.php?n=1551","","",""

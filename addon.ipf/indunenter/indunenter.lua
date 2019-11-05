@@ -364,16 +364,12 @@ function INDUNENTER_DROPBOX_ITEM_LIST(parent, control)
     indunRewardItemList['accBtn'] = { };
     indunRewardItemList['materialBtn'] = { };
 
-    local allIndunRewardItemList, allIndunRewardItemCount = GetClassList('reward_freedungeon');
-    if dungeonType == "Indun" or dungeonType == "UniqueRaid" or dungeonType == "Raid" then
-        allIndunRewardItemList, allIndunRewardItemCount = GetClassList('reward_indun');
-    end
+    allIndunRewardItemList, allIndunRewardItemCount = GetClassList('reward_indun');
     
     if groupList ~= nil then
         for i = 1, #groupList do
             local itemCls = GetClass('Item', groupList[i])
             local itemStringArg = TryGetProp(itemCls, 'StringArg')
-
             for j = 0, allIndunRewardItemCount - 1  do
                 local indunRewardItemClass = GetClassByIndexFromList(allIndunRewardItemList, j);
                 if indunRewardItemClass ~= nil and TryGetProp(indunRewardItemClass, 'Group') == itemStringArg then
@@ -715,8 +711,13 @@ function INDUNENTER_MAKE_COUNT_BOX(frame, noPicBox, indunCls)
                 maxCount = maxCount + playPerResetNexonPC;
             end
         end
-        countData:SetTextByKey("max", maxCount);
-
+        local maxText = maxCount
+        local infinity = TryGetProp(indunCls, 'EnableInfiniteEnter', 'NO')
+        if indunCls.AdmissionItemName ~= "None" or infinity == 'YES' then
+            maxText = "{img infinity_text 20 10}"
+        end
+        
+        countData:SetTextByKey("max", maxText);
         -- set min/max multi count
         local minCount = frame:GetUserConfig('MULTI_MIN');
         frame:SetUserValue("MIN_MULTI_CNT", minCount);

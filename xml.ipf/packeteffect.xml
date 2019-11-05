@@ -103,6 +103,17 @@
         <Effect Name="F_buff_basic048"/>
         <Effect Name="Item_Moringponia_Staff"/>
         <Effect Name="STM_PIZZA_BUFF"/>
+        <Effect Name="MonGroup"/>
+        <Effect Name="F_burstup001_blue_light2"/>
+        <Effect Name="F_hit_candy_halloween2"/>
+        <Effect Name="F_hit_candy_halloween"/>
+        <Effect Name="Fever"/>
+        <Effect Name="MonGroup"/>
+        <Effect Name="F_burstup001_blue_light2"/>
+        <Effect Name="F_hit_candy_halloween"/>
+        <Effect Name="Fever"/>
+        <Effect Name="I_halloween_buff"/>
+        <Effect Name="Quset_3"/>
     </Category>
     <Category ID="135">
         <Effect Name="HaveToPutPetAtBarrack"/>

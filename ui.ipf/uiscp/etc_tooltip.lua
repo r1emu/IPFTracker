@@ -69,7 +69,7 @@ function DRAW_ETC_COMMON_TOOLTIP(tooltipframe, invitem, mainframename, from)
 	--EVENT_1909_ANCIENT
 	if invitem.ClassName == 'EVENT_190919_ANCIENT_MONSTER_PIECE' then
 		local mon = GetClass('Ancient', invitem.KeyWord);
-		fullname = mon.Name .. '{/}[★]'
+		fullname = mon.Name .. '{/}['..ScpArgMsg('StarRating')..']'
 		if mon.Rarity == 1 then
 			fullname =  "{#ffffff}"..fullname
 		elseif mon.Rarity == 2 then

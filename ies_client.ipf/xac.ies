@@ -19603,3 +19603,4 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 660060,"2019halloween03_accessory","","","","char_hi\pc\accessory\accessory_2019halloween03.xac","char_texture\pc\accessory\","bg_hi\ErrorBox.mtl","","","NO"
 660061,"helmet_2019halloween02_m","","","","item_hi\pc_item\equip\helmet\helmet_2019halloween02_m.xac","item_texture\","bg_hi\ErrorBox.mtl","","","NO"
 660062,"helmet_2019halloween02_f","","","","item_hi\pc_item\equip\helmet\helmet_2019halloween02_f.xac","item_texture\","bg_hi\ErrorBox.mtl","","","NO"
+711500,"wing_halloween_balloon","","","","char_hi\npc\wing_halloween_balloon\wing_halloween_balloon_set.xac","char_texture\npc\wing_halloween_balloon\","bg_hi\ErrorBox.mtl","","","NO"

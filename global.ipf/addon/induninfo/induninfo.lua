@@ -318,6 +318,9 @@ function INDUNINFO_MAKE_DETAIL_INFO_BOX(frame, indunClassID)
 
         moveBox:ShowWindow(1);
         local moveBtn = GET_CHILD_RECURSIVELY(moveBox, 'moveBtn');
+		if config.GetServiceNation() == 'GLOBAL' then
+            moveBtn:SetTextByKey('btnText', 'Warp')
+        end
         moveBtn:SetUserValue('MOVE_INDUN_CLASSID', indunCls.ClassID);
     else
         if posBox:GetHeight() ~= originHeight then

@@ -6531,6 +6531,7 @@
 		<image name="icon_item_selectbox_squadron01" file="\icon\payment\icon_item_selectbox_squadron01.png" imgrect="0 0 256 256" CMM_Caption="전대물 선택상자01"/>
 		<image name="icon_item_selectbox_squadron02" file="\icon\payment\icon_item_selectbox_squadron02.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_selectbox_squadron03" file="\icon\payment\icon_item_selectbox_squadron03.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_1911_halloweenballoon_01" file="\icon\payment\icon_item_1911_halloweenballoon_01.png" imgrect="0 0 256 256" CMM_Caption="11월 여큡 유령 풍선"/>
 		<image name="icon_item_Tos_squad_weapon" file="\icon\payment\icon_item_Tos_squad_weapon.png" imgrect="0 0 256 256" CMM_Caption="2019_전대물 무기상자"/>
 		<image name="icon_item_TOS_squad_Full" file="\icon\payment\icon_item_TOS_squad_Full.png" imgrect="0 0 256 256" CMM_Caption="2019_전대물 전체 세트 상자"/>
 		<image name="icon_item_2019halloween_effectcos" file="\icon\payment\icon_item_2019halloween_effectcos.png" imgrect="0 0 256 256" CMM_Caption="2019_할로윈 이펙트"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <idspace id="Anchor_c_Klaipe">
 	<Category>
 		<Class OverrideType="ADD" ClassID="10001" GenType="50001" PosX="94.879028" PosY="148.82733" PosZ="390.55286" Direction="180" Name="게시판"/>
@@ -7,5 +7,6 @@
 		<Class OverrideType="ADD" ClassID="10004" GenType="50004" PosX="302.3" PosY="79.9" PosZ="73" Direction="0" Name="보너스 큐브"/>
 		<Class OverrideType="REMOVE" ClassID="10005" GenType="50005" PosX="59" PosY="149" PosZ="305" Direction="180" Name="친구 추천 도우미"/>
 		<Class OverrideType="REMOVE" ClassID="10007" GenType="50007" PosX="59" PosY="149" PosZ="305" Direction="180" Name="초기화 지원 도우미"/>
+		<Class OverrideType="ADD" ClassID="10008" GenType="50008" PosX="63" PosY="149" PosZ="312" Direction="180" Name="할로윈 밤의 소동 이벤트 도우미"/>
 	</Category>
 </idspace>
