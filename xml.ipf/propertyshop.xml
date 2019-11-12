@@ -80,9 +80,9 @@
 		<Item Script="None" Name="PVP_BRC04_119" Count="2" Price="1" DailyBuyLimit="1"/>
 	</Shop>
 	<Shop Name="GUILD_CONTRIBUTION_SHOP" PointScript="GET_GUILD_CONTRIBUTION_POINT">
-		<!--<<Item Script="None" Name="BRC99_114_guildshop_7d" Count="1" Price="1000" DailyBuyLimit="0"/>
+		<Item Script="None" Name="BRC99_114_guildshop_7d" Count="1" Price="1000" DailyBuyLimit="0"/>
 		<Item Script="None" Name="NECK99_102_guildshop_7d" Count="1" Price="4000" DailyBuyLimit="0"/>
-		Item Script="None" Name="Ghaca_Guild_Contribution_Shop_MISC" Count="1" Price="20" DailyBuyLimit="0"/>-->
+		<Item Script="None" Name="Ghaca_Guild_Contribution_Shop_MISC" Count="1" Price="20" DailyBuyLimit="0"/>
 	</Shop>
 	<Shop Name="GUILD_MILEAGE_SHOP" PointScript="GET_GUILD_MILEAGE_POINT">
 		<Item Script="None" Name="GuildQuestEnterCount_1add" Count="1" Price="5000" DailyBuyLimit="0"/>
