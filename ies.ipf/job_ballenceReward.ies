@@ -1,5 +1,5 @@
 ClassID,JobChangePoint,ClassName,Name,EngName,CtrlType,BaseClass,RewardDay_Start,RewardDay_End,RewardItem_1,RewardItem_2,RewardItem_3,RewardItem_4,RewardItem_5,RewardItem_6
-1,0,"JobChangeDate","날짜설정","Warrior","Warrior","RANKRESET_191028","2019/10/28","2019/11/13","","","","","",""
+1,0,"JobChangeDate","날짜설정","Warrior","Warrior","RANKRESET_191028","2019/10/28","2019/11/11","","","","","",""
 1001,1000,"Char1_1","[소드맨]","Warrior","Warrior","Base","","","Premium_SkillReset_14d/1","Premium_Abillitypoint_14d/1","","","",""
 1002,1000,"Char1_2","[하이랜더]","Highlander","Warrior","","","","Premium_SkillReset_14d/1","Premium_Abillitypoint_14d/1","","","",""
 1003,1000,"Char1_3","[펠타스타]","Peltasta","Warrior","","","","Premium_SkillReset_14d/1","Premium_Abillitypoint_14d/1","","","",""
