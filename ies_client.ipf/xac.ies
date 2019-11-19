@@ -2986,7 +2986,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 18255,"cleric_m_mizuki01","","","","char_hi\pc\Cleric_m\Cleric_m_swimsuit01.xac","char_texture\pc\body\Cleric_m_swimsuit01\","bg_hi\ErrorBox.mtl","S;Dummy_LF_armband","","NO"
 18256,"cleric_m_alice01","","","","char_hi\pc\Cleric_m\Cleric_m_alice01.xac","char_texture\pc\body\Cleric_m_alice01\","bg_hi\ErrorBox.mtl","S;Dummy_LU_armband","","NO"
 18257,"cleric_m_uniform01","","","","char_hi\pc\Cleric_m\Cleric_m_uniform01.xac","char_texture\pc\body\Cleric_m_uniform01\","bg_hi\ErrorBox.mtl","S;Dummy_LU_armband","","NO"
-18258,"cleric_m_monk01_3","","","","char_hi\pc\Cleric_m\Cleric_m_monk01_3.xac","char_texture\pc\body\Cleric_m_monk01_3\","bg_hi\ErrorBox.mtl","M;Dummy_LU_armband","","NO"
+18258,"cleric_m_monk01_3","","","","char_hi\pc\Cleric_m\Cleric_m_monk01_3.xac","char_texture\pc\body\Cleric_m_monk01_3\","bg_hi\ErrorBox.mtl","L;Dummy_LU_armband","","NO"
 18259,"cleric_m_cleric01_3","","","","char_hi\pc\Cleric_m\Cleric_m_cleric01_3.xac","char_texture\pc\body\Cleric_m_cleric01_3\","bg_hi\ErrorBox.mtl","M;Dummy_LU_armband","","NO"
 18260,"cleric_m_manish01","","","","char_hi\pc\Cleric_m\Cleric_m_mannish01.xac","char_texture\pc\body\Cleric_m_mannish01\","bg_hi\ErrorBox.mtl","S;Dummy_LU_armband","","NO"
 18261,"cleric_m_christmas01","","","","char_hi\pc\Cleric_m\Cleric_m_christmas01.xac","char_texture\pc\body\Cleric_m_christmas01\","bg_hi\ErrorBox.mtl","S;Dummy_LU_armband","","NO"

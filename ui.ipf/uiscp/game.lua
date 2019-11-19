@@ -3641,7 +3641,7 @@ end
 
 function ON_RIDING_VEHICLE(onoff)
     local commanderPC = GetCommanderPC()
-    if IsBuffApplied(commanderPC, 'pet_PetHanaming_buff') == 'YES' then -- no ride
+    if IsBuffApplied(commanderPC, 'pet_PetHanaming_buff') == 'YES' or IsBuffApplied(commanderPC, 'Levitation_Buff') == 'YES' then -- no ride
         return;
     end
 	

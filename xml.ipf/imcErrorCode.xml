@@ -605,4 +605,5 @@
 	<Code Code="ERROR_INVALID_HOUSING_ITEM" Team="tos_team" Category="LOGIC" SubCategory="" Logger="root" Enabled="YES" CallStack="NO" Desc="하우징 아이템 정보가 올바르지 않습니다."/>
 <Code Code="ERROR_GUILD_EVENT" Team="PROGRAM" Category="DB" SubCategory="" Logger="root" Enabled="YES" CallStack="NO" Desc="길드 미션 실행 실패 관련."/>
 <Code Code="CRITICAL_MOVE_SYNC" Team="tos_team" Category="CRITICAL" SubCategory="" Logger="root" Enabled="YES" CallStack="NO" Desc="이동 동기화 로그"/>
+	<Code Code="WARNING_ABUSING_USER" Team="PROGRAM" Category="CRITICAL" SubCategory="" Logger="root" Enabled="YES" CallStack="YES" Desc="어뷰징 의심 유저"/>
 </imcErrorCode>
