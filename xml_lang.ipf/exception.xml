@@ -197,9 +197,6 @@
 	<Word Msg="{img Collar_New_Class_Artist 24 24}New Class Artist"/>
 	<Word Msg="삽질왕"/>
 	<Word Msg="icon_item_stringglasses"/>
-	<Word Msg="class"/>
-	<Word Msg="assassin"/>
-	<Word Msg="glasses"/>
 	<Word Msg="애로우"/>
 	<Word Msg="bridesmaid"/>
 	<Word Msg="Chafperor"/>
@@ -209,5 +206,10 @@
 	<Word Msg="icon_item_accessory_blackglass"/>
 	<Word Msg="icon_item_chassepot_1"/>
 	<Word Msg="SMALLSIZE"/>
-  <Word Msg="musket_bnhierophant"/>
+	<Word Msg="musket_bnhierophant"/>
+	<Word Msg="JEWEL"/>
+	<Word Msg="jewel"/>
+	<Word Msg="spike"/>
+	<Word Msg="Spike"/>
+	<Word Msg="SPIKE"/>
 </Exception>

@@ -19266,6 +19266,7 @@ ClassID,ClassName,BoneTrans,BoneAni,BoneAniPath,Mesh,Path,MtlName,ArmbandInfo,St
 656781,"armband_angrybear_L","","","","item_hi\pc_item\weapon\armband_angrybear_L.xac","item_texture\","bg_hi\ErrorBox.mtl","","","NO"
 656782,"armband_angrybear_M","","","","item_hi\pc_item\weapon\armband_angrybear_M.xac","item_texture\","bg_hi\ErrorBox.mtl","","","NO"
 656783,"armband_angrybear_S","","","","item_hi\pc_item\weapon\armband_angrybear_S.xac","item_texture\","bg_hi\ErrorBox.mtl","","","NO"
+656786,"pet_sparrow","","","","char_hi\monster\pet_sparrow_set.xac","char_texture\monster\pet_sparrow\","bg_hi\ErrorBox.mtl","","","NO"
 900001,"h_bench_01_brown","","","","char_hi\housing\h_bench_01\h_bench_01.xac","char_texture\housing\h_bench_01\","bg_hi\ErrorBox.mtl","","","NO"
 900002,"h_street_lamp_01","","","","char_hi\housing\h_street_lamp_01\h_street_lamp_01.xac","char_texture\housing\h_street_lamp_01\","bg_hi\ErrorBox.mtl","","","NO"
 900003,"h_hydrangea_01_blue","","","","char_hi\housing\h_hydrangea_01\h_hydrangea_01.xac","char_texture\housing\h_hydrangea_01\","bg_hi\ErrorBox.mtl","","","NO"

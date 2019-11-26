@@ -6339,6 +6339,9 @@
 		<image name="test_companion_25" file="\icon\companion.tga" imgrect="0 615 100 122" CMM_Caption="디오니스_탭버튼"/>
 		<image name="test_companion_25_cursoron" file="\icon\companion.tga" imgrect="101 615 100 122"/>
 		<image name="test_companion_25_clicked" file="\icon\companion.tga" imgrect="101 615 100 122"/>
+		<image name="test_companion_26" file="\icon\companion.tga" imgrect="202 615 100 122" CMM_Caption="참새_탭버튼"/>
+		<image name="test_companion_26_cursoron" file="\icon\companion.tga" imgrect="303 615 100 122"/>
+		<image name="test_companion_26_clicked" file="\icon\companion.tga" imgrect="303 615 100 122"/>
 		<image name="test_com_ability" file="\skin\pip_test.tga" imgrect="1832 851 54 35" CMM_Caption="컴패니언_특성플러스"/>
 		<image name="test_com_ability_cursoron" file="\skin\pip_test.tga" imgrect="1832 887 54 35"/>
 		<image name="test_com_ability_clicked" file="\skin\pip_test.tga" imgrect="1832 923 54 35"/>
@@ -7757,6 +7760,7 @@
 		<image name="companion_gold_pig" file="\icon\companion_Velhider.tga" imgrect="480 80 80 80"/>
 		<image name="companion_chick_crowtit" file="\icon\companion_Velhider.tga" imgrect="480 160 80 80"/>
 		<image name="companion_Dionys" file="\icon\companion_Velhider.tga" imgrect="480 240 80 80"/>
+		<image name="companion_sparrow" file="\icon\companion_Velhider.tga" imgrect="0 320 80 80"/>
 		<image name="bg_w" file="\skin\button.tga" imgrect="252 974 50 50"/>
 		<image name="barrack_signboard" file="\skin\barrack.tga" imgrect="356 0 257 192"/>
 		<image name="barrack_attack_icon" file="\skin\barrack.tga" imgrect="59 720 55 61"/>
@@ -9854,6 +9858,7 @@
 		<image name="icon_reinforce_discount" file="\icon\buff_icon2.tga" imgrect="256 1664 128 128" CMM_Caption="강화 50% 할인"/>
 		<image name="icon_healhsp_speedup" file="\icon\buff_icon2.tga" imgrect="384 1664 128 128" CMM_Caption="이동 속도증가,HP,SP회복"/>
 		<image name="icon_ability_archer_TigerHunter9" file="\icon\buff_icon2.tga" imgrect="512 1664 128 128" CMM_Caption="산포 버프 아이콘"/>
+		<image name="icon_pet_sparrow_buff" file="\icon\buff_icon2.tga" imgrect="640 1664 128 128" CMM_Caption="참새 버프"/>
 		<image name="icon_Ancient_Fire_Buff" file="\icon\buff_icon2.tga" imgrect="768 1664 128 128" CMM_Caption="불속성"/>
 		<image name="icon_Ancient_Ice_Buff" file="\icon\buff_icon2.tga" imgrect="896 1664 128 128" CMM_Caption="얼음속성"/>
 		<image name="icon_Ancient_Lightning_Buff" file="\icon\buff_icon2.tga" imgrect="0 1792 128 128" CMM_Caption="전기속성"/>
