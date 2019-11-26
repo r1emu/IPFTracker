@@ -212,4 +212,10 @@
 	<Word Msg="spike"/>
 	<Word Msg="Spike"/>
 	<Word Msg="SPIKE"/>
+	<Word Msg="Spice"/>
+	<Word Msg="spice"/>
+	<Word Msg="SPICE"/>
+	<Word Msg="Spicy"/>
+	<Word Msg="SPICY"/>
+	<Word Msg="spicy"/>
 </Exception>
